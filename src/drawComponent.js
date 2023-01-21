@@ -1,4 +1,4 @@
-function drawComponent(ctx=document.createElement("canvas").getContext("2d"), component, centerX, centerY, width, height, angle=0, opacity=100) {
+function drawComponent(ctx, component, centerX, centerY, width, height, angle=0, opacity=100) {
     ctx.restore();
     ctx.save();
     
