@@ -6,7 +6,9 @@
     import drawComponent from "./drawComponent";
 
     var flareComponents = {
-        hotspot: new SpotComponent(256, {}),
+        hotspot: new SpotComponent(256, {
+            deformationFrequency: 0.012,
+        }),
         streak: new SpotComponent(256, {
             deformationAmount: 0,
             intensity: 0,
@@ -35,7 +37,7 @@
     
     function renderFlare(renderHotspot=false, renderStreak=false) {
         if (renderHotspot) {
-            flareComponents.hotspot.radius = flareSettings.hotspot.radius;
+            flareComponents.hotspot.radius = flareSettings.hotspot.radius / 2;
             flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity;
             flareComponents.hotspot.render();
         }
