@@ -6,7 +6,11 @@
     import drawComponent from "./drawComponent";
 
     var flareComponents = {
-        hotspot: new SpotComponent(256, {})
+        hotspot: new SpotComponent(256, {}),
+        streak: new SpotComponent(256, {
+            deformationAmount: 0,
+            intensity: 0,
+        })
     };
 
     var flareSettings = {
@@ -18,16 +22,24 @@
         },
         hotspot: {
             radius: 500
+        },
+        streak: {
+            thickness: 64,
+            width: 1600,
         }
     };
 
     var baseCanvas;
     
-    function renderFlare(renderHotspot=false) {
+    function renderFlare(renderHotspot=false, renderStreak=false) {
         if (renderHotspot) {
             flareComponents.hotspot.radius = flareSettings.hotspot.radius;
             
             flareComponents.hotspot.render();
+        }
+        if (renderStreak) {
+            flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness / 2);
+            flareComponents.streak.render();
         }
 
         var ctx = baseCanvas.getContext("2d");
@@ -37,9 +49,10 @@
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
         drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2);
+        drawComponent(ctx, flareComponents.streak, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width, flareSettings.streak.thickness);
     }
 
-    window.onload = renderFlare;
+    window.onload = function() { renderFlare(true, true); };
 </script>
 
 <canvas bind:this={baseCanvas} width={1920} height={1080}></canvas>
@@ -53,7 +66,10 @@
 </Collapsible>
 <Collapsible title={"hi"}>
     <Slider min={0} max={900} bind:value={flareSettings.hotspot.radius} on:input={function() { renderFlare(true); }}></Slider>
-    <button>{flareSettings.hotspot.radius}</button>
+</Collapsible>
+<Collapsible title={"anamorphic streak"}>
+    Thickness: <Slider min={0} max={100} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }}></Slider> <br />
+    Length: <Slider min={0} max={3210} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }}></Slider> <br />
 </Collapsible>
 
 <style>
