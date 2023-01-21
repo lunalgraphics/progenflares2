@@ -1,0 +1,15 @@
+function drawComponent(ctx=document.createElement("canvas").getContext("2d"), component, centerX, centerY, width, height, angle=0, opacity=100) {
+    ctx.restore();
+    ctx.save();
+    
+    ctx.translate(centerX, centerY);
+    ctx.rotate(angle * Math.PI / 180); // degrees
+    ctx.globalAlpha = opacity / 100;
+    ctx.globalCompositeOperation = "screen";
+    ctx.drawImage(component.canvas, -width / 2, -height / 2, width, height);
+
+    ctx.restore();
+    ctx.save();
+}
+
+module.exports = drawComponent;

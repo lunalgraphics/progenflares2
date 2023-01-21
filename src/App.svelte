@@ -3,6 +3,7 @@
     import colorvibrance from "./colorvibrance";
     import SpotComponent from "./SpotComponent";
     import Slider from "./Slider.svelte";
+    import drawComponent from "./drawComponent";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {})
