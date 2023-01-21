@@ -16,6 +16,7 @@
     };
 
     var flareSettings = {
+        downscaling: 2,
         positioning: {
             x: 960,
             y: 540,
@@ -37,13 +38,13 @@
     
     function renderFlare(renderHotspot=false, renderStreak=false) {
         if (renderHotspot) {
-            flareComponents.hotspot.radius = flareSettings.hotspot.radius / 2;
-            flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity;
+            flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
+            flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity / flareSettings.downscaling;
             flareComponents.hotspot.render();
         }
         if (renderStreak) {
-            flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness / 2);
-            flareComponents.streak.options.intensity = flareSettings.streak.intensity;
+            flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness / 2 / flareSettings.downscaling);
+            flareComponents.streak.options.intensity = flareSettings.streak.intensity / flareSettings.downscaling;
             flareComponents.streak.render();
         }
 
@@ -63,6 +64,15 @@
 <canvas bind:this={baseCanvas} width={1920} height={1080}></canvas>
 
 <br uh />
+
+Preview quality
+<select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true); }}>
+    <option value={1}>100%</option>
+    <option value={2}>50%</option>
+    <option value={4}>25%</option>
+</select>
+<br uh />
+
 <Collapsible title={"positioning"}>
     X: <Slider min={0} max={1920} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }}></Slider> <br />
     Y: <Slider min={0} max={1080} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }}></Slider> <br />
