@@ -1,6 +1,10 @@
 <script>
+	import Collapsible from "./Collapsible.svelte";
+	
 	export let name;
 </script>
+
+<Collapsible title={"hi"}>Hello</Collapsible>
 
 <main>
 	<h1>Hello {name}!</h1>
