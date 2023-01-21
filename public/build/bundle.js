@@ -1283,7 +1283,7 @@ var app = (function () {
             ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
             ctx.drawImage(EllipticalGradient_1.canvas, 0, this.options.intensity, this.canvas.width, this.canvas.height - this.options.intensity);
 
-            var deformationTexture = new FractalNoise_1(this.canvas.width, this.canvas.height, {
+            var deformationTexture = new FractalNoise_1(1024, 1024, {
                 baseFrequency: [this.options.deformationFrequency, 0]
             });
             deformationTexture.render();
@@ -1292,7 +1292,7 @@ var app = (function () {
             ctx.save();
             ctx.globalCompositeOperation = "soft-light";
             ctx.filter = `saturate(0) contrast(${this.options.deformationAmount})`;
-            ctx.drawImage(deformationTexture.canvas, 0, 0);
+            ctx.drawImage(deformationTexture.canvas, 0, 0, this.canvas.width, this.canvas.height);
 
             ctx.restore();
             ctx.save();
@@ -2199,7 +2199,7 @@ var app = (function () {
     	validate_slots('App', slots, []);
 
     	var flareComponents = {
-    		hotspot: new SpotComponent(256, { deformationFrequency: 0.012 }),
+    		hotspot: new SpotComponent(256, { deformationFrequency: 0.006 }),
     		streak: new SpotComponent(256, { deformationAmount: 0, intensity: 0 })
     	};
 

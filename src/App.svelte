@@ -7,7 +7,7 @@
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
-            deformationFrequency: 0.012,
+            deformationFrequency: 0.006,
         }),
         streak: new SpotComponent(256, {
             deformationAmount: 0,

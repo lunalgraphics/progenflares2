@@ -31,7 +31,7 @@ class SpotComponent {
         ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         ctx.drawImage(PrerenderedEllipticalGradient.canvas, 0, this.options.intensity, this.canvas.width, this.canvas.height - this.options.intensity);
 
-        var deformationTexture = new FractalNoise(this.canvas.width, this.canvas.height, {
+        var deformationTexture = new FractalNoise(1024, 1024, {
             baseFrequency: [this.options.deformationFrequency, 0]
         });
         deformationTexture.render();
@@ -40,7 +40,7 @@ class SpotComponent {
         ctx.save();
         ctx.globalCompositeOperation = "soft-light";
         ctx.filter = `saturate(0) contrast(${this.options.deformationAmount})`;
-        ctx.drawImage(deformationTexture.canvas, 0, 0);
+        ctx.drawImage(deformationTexture.canvas, 0, 0, this.canvas.width, this.canvas.height);
 
         ctx.restore();
         ctx.save();
