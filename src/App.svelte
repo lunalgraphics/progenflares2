@@ -21,11 +21,13 @@
             pivotY: 540
         },
         hotspot: {
-            radius: 500
+            radius: 500,
+            intensity: 5,
         },
         streak: {
             thickness: 64,
             width: 1600,
+            intensity: 3,
         }
     };
 
@@ -34,11 +36,12 @@
     function renderFlare(renderHotspot=false, renderStreak=false) {
         if (renderHotspot) {
             flareComponents.hotspot.radius = flareSettings.hotspot.radius;
-            
+            flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity;
             flareComponents.hotspot.render();
         }
         if (renderStreak) {
             flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness / 2);
+            flareComponents.streak.options.intensity = flareSettings.streak.intensity;
             flareComponents.streak.render();
         }
 
@@ -65,11 +68,13 @@
     Pivot Y: <Slider min={0} max={1080} bind:value={flareSettings.positioning.pivotY} on:input={function() { renderFlare(); }}></Slider> <br />
 </Collapsible>
 <Collapsible title={"hi"}>
-    <Slider min={0} max={900} bind:value={flareSettings.hotspot.radius} on:input={function() { renderFlare(true); }}></Slider>
+    Size: <Slider min={0} max={900} bind:value={flareSettings.hotspot.radius} on:input={function() { renderFlare(true); }}></Slider> <br />
+    Intensity: <Slider min={0} max={50} bind:value={flareSettings.hotspot.intensity} on:input={function() { renderFlare(true); }}></Slider> <br />
 </Collapsible>
 <Collapsible title={"anamorphic streak"}>
     Thickness: <Slider min={0} max={100} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }}></Slider> <br />
     Length: <Slider min={0} max={3210} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }}></Slider> <br />
+    Intensity: <Slider min={0} max={50} bind:value={flareSettings.streak.intensity} on:input={function() { renderFlare(false, true); }}></Slider> <br />
 </Collapsible>
 
 <style>
