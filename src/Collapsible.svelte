@@ -8,9 +8,18 @@
     const dispatch = createEventDispatcher();
 
     export let title;
+    export let collapsed = false;
+
+    let nameTag;
+    let contents;
+
+    function toggleCollapse() {
+        collapsed = !collapsed;
+    }
 </script>
 
-<h1>{title}</h1>
-<slot>
-    <div></div>
-</slot>
+<b bind:this={nameTag} on:mousedown={toggleCollapse} style="user-select: none;">{title}</b>
+<br />
+<div bind:this={contents} style="display: {collapsed?"none":"block"};">
+    <slot></slot>
+</div>
