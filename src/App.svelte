@@ -30,7 +30,7 @@
         streak: {
             thickness: 64,
             width: 1600,
-            intensity: 3,
+            intensity: 5,
         }
     };
 
@@ -43,7 +43,7 @@
             flareComponents.hotspot.render();
         }
         if (renderStreak) {
-            flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness / 2 / flareSettings.downscaling);
+            flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness / flareSettings.downscaling);
             flareComponents.streak.options.intensity = flareSettings.streak.intensity / flareSettings.downscaling;
             flareComponents.streak.render();
         }

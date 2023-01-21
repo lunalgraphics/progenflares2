@@ -1683,10 +1683,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 76, 126, 2758);
-    			add_location(br1, file, 77, 126, 2891);
-    			add_location(br2, file, 78, 137, 3035);
-    			add_location(br3, file, 79, 137, 3179);
+    			add_location(br0, file, 76, 126, 2754);
+    			add_location(br1, file, 77, 126, 2887);
+    			add_location(br2, file, 78, 137, 3031);
+    			add_location(br3, file, 79, 137, 3175);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -1843,8 +1843,8 @@ var app = (function () {
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
-    			add_location(br0, file, 82, 133, 3361);
-    			add_location(br1, file, 83, 140, 3508);
+    			add_location(br0, file, 82, 133, 3357);
+    			add_location(br1, file, 83, 140, 3504);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -1986,9 +1986,9 @@ var app = (function () {
     			create_component(slider2.$$.fragment);
     			t5 = space();
     			br2 = element("br");
-    			add_location(br0, file, 86, 147, 3719);
-    			add_location(br1, file, 87, 141, 3867);
-    			add_location(br2, file, 88, 146, 4020);
+    			add_location(br0, file, 86, 147, 3715);
+    			add_location(br1, file, 87, 141, 3863);
+    			add_location(br2, file, 88, 146, 4016);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2146,22 +2146,22 @@ var app = (function () {
     			attr_dev(canvas, "width", 1920);
     			attr_dev(canvas, "height", 1080);
     			attr_dev(canvas, "class", "svelte-13xw3n8");
-    			add_location(canvas, file, 63, 0, 2273);
+    			add_location(canvas, file, 63, 0, 2269);
     			attr_dev(br0, "uh", "");
-    			add_location(br0, file, 65, 0, 2342);
+    			add_location(br0, file, 65, 0, 2338);
     			option0.__value = 1;
     			option0.value = option0.__value;
-    			add_location(option0, file, 69, 4, 2473);
+    			add_location(option0, file, 69, 4, 2469);
     			option1.__value = 2;
     			option1.value = option1.__value;
-    			add_location(option1, file, 70, 4, 2509);
+    			add_location(option1, file, 70, 4, 2505);
     			option2.__value = 4;
     			option2.value = option2.__value;
-    			add_location(option2, file, 71, 4, 2544);
+    			add_location(option2, file, 71, 4, 2540);
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler*/ ctx[4].call(select));
-    			add_location(select, file, 68, 0, 2369);
+    			add_location(select, file, 68, 0, 2365);
     			attr_dev(br1, "uh", "");
-    			add_location(br1, file, 73, 0, 2585);
+    			add_location(br1, file, 73, 0, 2581);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2280,7 +2280,7 @@ var app = (function () {
     		downscaling: 2,
     		positioning: { x: 960, y: 540, pivotX: 960, pivotY: 540 },
     		hotspot: { radius: 500, intensity: 5 },
-    		streak: { thickness: 64, width: 1600, intensity: 3 }
+    		streak: { thickness: 64, width: 1600, intensity: 5 }
     	};
 
     	var baseCanvas;
@@ -2293,7 +2293,7 @@ var app = (function () {
     		}
 
     		if (renderStreak) {
-    			flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness / 2 / flareSettings.downscaling);
+    			flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness / flareSettings.downscaling);
     			flareComponents.streak.options.intensity = flareSettings.streak.intensity / flareSettings.downscaling;
     			flareComponents.streak.render();
     		}
