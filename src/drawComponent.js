@@ -1,4 +1,6 @@
 function drawComponent(ctx, component, centerX, centerY, width, height, angle=0, opacity=100) {
+    if (width <= 0 || height <= 0 || opacity <= 0) return;
+
     ctx.restore();
     ctx.save();
     
