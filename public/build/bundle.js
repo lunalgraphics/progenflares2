@@ -700,9 +700,207 @@ var app = (function () {
     	}
     }
 
+    /*
+    colorvibrance.js - a JS library for colorizing black-background overlays
+
+    Written by yikuansun (https://github.com/yikuansun)
+    */
+    function colorvibrance(ctx, hue=200, saturation=100) {
+        ctx.save();
+
+        // get color map
+        ctx.fillStyle = `hsl(${hue}deg, ${saturation}%, ${50 - saturation / 4}%)`;
+        ctx.globalCompositeOperation = "soft-light";
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        ctx.restore();
+    }
+
+    var colorvibrance_1 = colorvibrance;
+
+    class EllipticalGradient {
+        canvas = document.createElement("canvas");
+
+        getLuma(distance, maxDistance) {
+            return 1 - Math.sqrt(1 - Math.pow(distance / maxDistance - 1, 2));
+        }
+
+        constructor() {
+            var canv = this.canvas;
+            canv.width = 2048;
+            canv.height = 2048;
+            var ctx = canv.getContext("2d");
+            ctx.restore();
+            ctx.save();
+
+            ctx.fillRect(0, 0, canv.width, canv.height);
+
+            var iData = ctx.getImageData(0, 0, canv.width, canv.height);
+            var data = iData.data;
+            for (var i = 0; i < data.length; i += 4) {
+                var distFromTop = Math.floor(i / 4 / canv.width);
+                var pixelBrightness = this.getLuma(distFromTop, canv.height);
+                data[i] = 255 * pixelBrightness;
+                data[i + 1] = 255 * pixelBrightness;
+                data[i + 2] = 255 * pixelBrightness;
+            }
+            ctx.putImageData(iData, 0, 0);
+        }
+    }
+
+    class PrerenderedEllipticalGradient {
+        static canvas = (new EllipticalGradient()).canvas;
+    }
+
+    var EllipticalGradient_1 = PrerenderedEllipticalGradient;
+
+    class FractalNoise {
+        canvas = document.createElement("canvas");
+        svgFilter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
+        options = {
+            baseFrequency: [0.01, 0.01],
+            type: "fractalNoise",
+            numOctaves: 10,
+            seed: 1,
+            stitchTiles: "stitch"
+        };
+        width = 1920;
+        height = 1080;
+
+        setOptions(options) {
+            for (var opt in options) {
+                this.options[opt] = options[opt];
+            }
+            this.svgFilter.innerHTML = `<feTurbulence
+            baseFrequency="${this.options.baseFrequency.join(" ")}"
+            type="${this.options.type}"
+            numOctaves="${this.options.numOctaves}"
+            seed="${this.options.seed}"
+            stitchTiles="${this.options.stitchTiles}"
+            color-interpolation-filters="linearRGB"
+        />`;
+        }
+
+        constructor(width, height, options) {
+            this.svgFilter.id = `fNoiseFilter${Math.random().toFixed(8).replace("0.", "")}`;
+            this.svgFilter.setAttribute("x", "0%");
+            this.svgFilter.setAttribute("y", "0%");
+            this.svgFilter.setAttribute("width", "100%");
+            this.svgFilter.setAttribute("height", "100%");
+            this.setOptions(options);
+            this.width = width;
+            this.height = height;
+        }
+
+        render() {
+            this.canvas.width = this.width;
+            this.canvas.height = this.height;
+            var canv = this.canvas;
+
+            var ctx = canv.getContext("2d");
+            ctx.restore();
+            ctx.save();
+            ctx.clearRect(0, 0, canv.width, canv.height);
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canv.width, canv.height);
+            ctx.restore();
+            ctx.save();
+
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.appendChild(this.svgFilter);
+            document.body.appendChild(svg);
+            ctx.filter = `url(#${this.svgFilter.id})`;
+            ctx.fillRect(0, 0, canv.width, canv.height);
+            svg.remove();
+        }
+    }
+
+    var FractalNoise_1 = FractalNoise;
+
+    function polarCoordinatesFilter(ctx) {
+        var canvas = ctx.canvas;
+        var inputImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        var outputImageData = new ImageData(canvas.width, canvas.height);
+        var inputData = inputImageData.data;
+        var outputData = outputImageData.data;
+        var origin = { x: canvas.width / 2, y: canvas.height / 2 };
+        var outputX = -1, outputY = 0;
+        var inputX = -1, inputY = 0;
+        for (var i = 0; i < outputData.length; i += 4) {
+            outputX++;
+            if (outputX >= canvas.width) {
+                outputY++;
+                outputX = 0;
+            }
+            var angle = Math.atan2(outputY - origin.y, outputX - origin.x);
+            var radius = Math.sqrt(Math.pow(outputX - origin.x, 2) + Math.pow(outputY - origin.y, 2));
+            if (radius > canvas.width / 2) {
+                continue;
+            }
+            inputX = Math.round(angle / Math.PI / 2 * canvas.width);
+            inputY = Math.round(radius * 2);
+            var inputI = 4 * (inputY * canvas.width + inputX);
+            outputData[i] = inputData[inputI];
+            outputData[i + 1] = inputData[inputI + 1];
+            outputData[i + 2] = inputData[inputI + 2];
+            outputData[i + 3] = 255;
+        }
+        ctx.putImageData(outputImageData, 0, 0);
+    }
+
+    var polarCoordinatesFilter_1 = polarCoordinatesFilter;
+
+    class SpotComponent {
+        canvas = document.createElement("canvas");
+        options = {
+            intensity: 10,
+            deformationFrequency: 0.006,
+            deformationAmount: 1.6,
+            hue: 200,
+            saturation: 100,
+        };
+        radius = 1024;
+
+        constructor(radius, options) {
+            this.radius = radius;
+            for (var opt in options) {
+                this.options[opt] = options[opt];
+            }
+        }
+
+        render() {
+            this.canvas.width = this.radius * 2;
+            this.canvas.height = this.radius * 2;
+            var ctx = this.canvas.getContext("2d");
+            ctx.restore();
+            ctx.save();
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+            ctx.drawImage(EllipticalGradient_1.canvas, 0, this.options.intensity, this.canvas.width, this.canvas.height - this.options.intensity);
+
+            var deformationTexture = new FractalNoise_1(this.canvas.width, this.canvas.height, {
+                baseFrequency: [this.options.deformationFrequency, 0]
+            });
+            deformationTexture.render();
+
+            ctx.restore();
+            ctx.save();
+            ctx.globalCompositeOperation = "soft-light";
+            ctx.filter = `saturate(0) contrast(${this.options.deformationAmount})`;
+            ctx.drawImage(deformationTexture.canvas, 0, 0);
+
+            ctx.restore();
+            ctx.save();
+            colorvibrance_1(ctx, this.options.hue, this.options.saturation);
+
+            polarCoordinatesFilter_1(ctx);
+        }
+    }
+
     /* src/App.svelte generated by Svelte v3.55.1 */
 
-    // (7:0) <Collapsible title={"hi"}>
+    // (15:0) <Collapsible title={"hi"}>
     function create_default_slot(ctx) {
     	let t;
 
@@ -722,7 +920,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(7:0) <Collapsible title={\\\"hi\\\"}>",
+    		source: "(15:0) <Collapsible title={\\\"hi\\\"}>",
     		ctx
     	});
 
@@ -756,7 +954,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const collapsible_changes = {};
 
-    			if (dirty & /*$$scope*/ 2) {
+    			if (dirty & /*$$scope*/ 4) {
     				collapsible_changes.$$scope = { dirty, ctx };
     			}
 
@@ -790,41 +988,41 @@ var app = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
-    	let { name } = $$props;
+    	var flareComponents = { hotspot: new SpotComponent(256, {}) };
 
-    	$$self.$$.on_mount.push(function () {
-    		if (name === undefined && !('name' in $$props || $$self.$$.bound[$$self.$$.props['name']])) {
-    			console.warn("<App> was created without expected prop 'name'");
-    		}
-    	});
+    	function renderFlare(renderHotspot = false) {
+    		if (renderHotspot) flareComponents.hotspot.render();
+    	}
 
-    	const writable_props = ['name'];
+    	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$$set = $$props => {
-    		if ('name' in $$props) $$invalidate(0, name = $$props.name);
-    	};
-
-    	$$self.$capture_state = () => ({ Collapsible, name });
+    	$$self.$capture_state = () => ({
+    		Collapsible,
+    		colorvibrance: colorvibrance_1,
+    		SpotComponent,
+    		flareComponents,
+    		renderFlare
+    	});
 
     	$$self.$inject_state = $$props => {
-    		if ('name' in $$props) $$invalidate(0, name = $$props.name);
+    		if ('flareComponents' in $$props) flareComponents = $$props.flareComponents;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name];
+    	return [];
     }
 
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { name: 0 });
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -832,14 +1030,6 @@ var app = (function () {
     			options,
     			id: create_fragment.name
     		});
-    	}
-
-    	get name() {
-    		throw new Error("<App>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set name(value) {
-    		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
