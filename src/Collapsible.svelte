@@ -4,6 +4,7 @@
 
 <script>
     import { createEventDispatcher } from 'svelte';
+    import { slide } from "svelte/transition";
 
     const dispatch = createEventDispatcher();
 
@@ -20,6 +21,8 @@
 
 <b bind:this={nameTag} on:mousedown={toggleCollapse} style="user-select: none;">{title}</b>
 <br />
-<div bind:this={contents} style="display: {collapsed?"none":"block"};">
-    <slot></slot>
-</div>
+{#if (!collapsed)}
+    <div bind:this={contents} in:slide out:slide>
+        <slot></slot>
+    </div>
+{/if}
