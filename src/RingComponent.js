@@ -30,12 +30,13 @@ class RingComponent {
         ctx.restore();
         ctx.save();
         ctx.beginPath();
-        ctx.arc(this.radius, this.radius, this.radius - this.options.blur, 0, 2 * Math.PI, true);
-        var gradient = ctx.createRadialGradient(this.radius, this.radius, 0, this.radius, this.radius, this.radius - this.options.blur);
+        ctx.arc(this.radius, this.radius, this.radius - this.options.blur * 2, 0, 2 * Math.PI, true);
+        var gradient = ctx.createRadialGradient(this.radius, this.radius, 0, this.radius, this.radius, this.radius - this.options.blur * 2);
         gradient.addColorStop(0, "black");
         gradient.addColorStop(1 - (this.options.thickness / this.radius), "black");
         gradient.addColorStop(1, "white");
         ctx.fillStyle = gradient;
+        ctx.filter = `blur(${this.options.blur}px)`;
         ctx.fill();
     }
 }
