@@ -6,7 +6,7 @@ class RingComponent {
     options = {
         thickness: 10,
         blur: 3,
-        cropSize: 50,
+        cropSize: 200,
         cropHardness: 50,
     };
 
@@ -38,6 +38,19 @@ class RingComponent {
         ctx.fillStyle = gradient;
         ctx.filter = `blur(${this.options.blur}px)`;
         ctx.fill();
+        var cropGradient = ctx.createLinearGradient(0, 0, 0, this.options.cropSize);
+        cropGradient.addColorStop(0, "black");
+        cropGradient.addColorStop(this.options.cropHardness / 100, "black");
+        cropGradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+        ctx.fillStyle = cropGradient;
+        ctx.fillRect(0, 0, this.canvas.width, this.options.cropSize);
+        cropGradient = ctx.createLinearGradient(0, this.canvas.height - this.options.cropSize, 0, this.canvas.height);
+        cropGradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+        cropGradient.addColorStop(1 - this.options.cropHardness / 100, "black");
+        cropGradient.addColorStop(1, "black");
+        ctx.fillStyle = cropGradient;
+        ctx.fillRect(0, this.canvas.height - this.options.cropSize, this.canvas.width, this.options.cropSize);
+
     }
 }
 

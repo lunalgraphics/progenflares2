@@ -15,7 +15,7 @@
             intensity: 0,
         }),
         ring: new RingComponent(256, {
-
+            cropSize: 0,
         }),
     };
 
@@ -40,7 +40,7 @@
             radius: 400,
             thickness: 50,
             blur: 3,
-            cropSize: 50,
+            cropSize: 0,
             cropHardness: 50,
             alpha: 50,
         }
@@ -63,6 +63,8 @@
             flareComponents.ring.radius = Math.floor(flareSettings.ring.radius / flareSettings.downscaling);
             flareComponents.ring.options.thickness = flareSettings.ring.thickness / flareSettings.downscaling;
             flareComponents.ring.options.blur = flareSettings.ring.blur / flareSettings.downscaling;
+            flareComponents.ring.options.cropSize = flareSettings.ring.cropSize / flareSettings.downscaling;
+            flareComponents.ring.options.cropHardness = flareSettings.ring.cropHardness;
             flareComponents.ring.render();
         }
 
@@ -112,6 +114,8 @@ Preview quality
     Thickness: <Slider min={0} max={500} bind:value={flareSettings.ring.thickness} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
     Softness: <Slider min={0} max={50} bind:value={flareSettings.ring.blur} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.ring.alpha} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
+    Crop Size: <Slider min={0} max={400} bind:value={flareSettings.ring.cropSize} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
+    Crop Hardness: <Slider min={0} max={100} bind:value={flareSettings.ring.cropHardness} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
 </Collapsible>
 
 <style>
