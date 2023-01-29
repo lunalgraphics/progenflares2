@@ -33,7 +33,7 @@ class RingComponent {
         ctx.arc(this.radius, this.radius, this.radius - this.options.blur * 2, 0, 2 * Math.PI, true);
         var gradient = ctx.createRadialGradient(this.radius, this.radius, 0, this.radius, this.radius, this.radius - this.options.blur * 2);
         gradient.addColorStop(0, "black");
-        gradient.addColorStop(1 - (this.options.thickness / this.radius), "black");
+        gradient.addColorStop(Math.max(1 - (this.options.thickness / this.radius), 0), "black");
         gradient.addColorStop(1, "white");
         ctx.fillStyle = gradient;
         ctx.filter = `blur(${this.options.blur}px)`;
