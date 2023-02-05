@@ -1803,10 +1803,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 111, 126, 4443);
-    			add_location(br1, file, 112, 126, 4576);
-    			add_location(br2, file, 113, 137, 4720);
-    			add_location(br3, file, 114, 137, 4864);
+    			add_location(br0, file, 111, 126, 4444);
+    			add_location(br1, file, 112, 126, 4577);
+    			add_location(br2, file, 113, 137, 4721);
+    			add_location(br3, file, 114, 137, 4865);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -1963,8 +1963,8 @@ var app = (function () {
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
-    			add_location(br0, file, 117, 133, 5046);
-    			add_location(br1, file, 118, 140, 5193);
+    			add_location(br0, file, 117, 133, 5047);
+    			add_location(br1, file, 118, 140, 5194);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2059,7 +2059,7 @@ var app = (function () {
     		/*slider0_value_binding_2*/ ctx[19](value);
     	}
 
-    	let slider0_props = { min: 0, max: 100 };
+    	let slider0_props = { min: 0, max: 200 };
 
     	if (/*flareSettings*/ ctx[0].streak.thickness !== void 0) {
     		slider0_props.value = /*flareSettings*/ ctx[0].streak.thickness;
@@ -2087,7 +2087,7 @@ var app = (function () {
     		/*slider2_value_binding_1*/ ctx[23](value);
     	}
 
-    	let slider2_props = { min: 0, max: 50 };
+    	let slider2_props = { min: -25, max: 50 };
 
     	if (/*flareSettings*/ ctx[0].streak.intensity !== void 0) {
     		slider2_props.value = /*flareSettings*/ ctx[0].streak.intensity;
@@ -2129,10 +2129,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 121, 147, 5404);
-    			add_location(br1, file, 122, 141, 5552);
-    			add_location(br2, file, 123, 146, 5705);
-    			add_location(br3, file, 124, 141, 5853);
+    			add_location(br0, file, 121, 147, 5405);
+    			add_location(br1, file, 122, 141, 5553);
+    			add_location(br2, file, 123, 148, 5708);
+    			add_location(br3, file, 124, 141, 5856);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2331,7 +2331,7 @@ var app = (function () {
     		/*slider4_value_binding*/ ctx[35](value);
     	}
 
-    	let slider4_props = { min: 0, max: 400 };
+    	let slider4_props = { min: 0, max: 810 };
 
     	if (/*flareSettings*/ ctx[0].ring.cropSize !== void 0) {
     		slider4_props.value = /*flareSettings*/ ctx[0].ring.cropSize;
@@ -2381,12 +2381,12 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 127, 146, 6056);
-    			add_location(br1, file, 128, 152, 6215);
-    			add_location(br2, file, 129, 145, 6367);
-    			add_location(br3, file, 130, 144, 6518);
-    			add_location(br4, file, 131, 151, 6676);
-    			add_location(br5, file, 132, 159, 6842);
+    			add_location(br0, file, 127, 146, 6059);
+    			add_location(br1, file, 128, 152, 6218);
+    			add_location(br2, file, 129, 145, 6370);
+    			add_location(br3, file, 130, 144, 6521);
+    			add_location(br4, file, 131, 151, 6679);
+    			add_location(br5, file, 132, 159, 6845);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2615,22 +2615,22 @@ var app = (function () {
     			attr_dev(canvas, "width", 1920);
     			attr_dev(canvas, "height", 1080);
     			attr_dev(canvas, "class", "svelte-13xw3n8");
-    			add_location(canvas, file, 98, 0, 3883);
+    			add_location(canvas, file, 98, 0, 3884);
     			attr_dev(br0, "uh", "");
-    			add_location(br0, file, 100, 0, 4003);
+    			add_location(br0, file, 100, 0, 4004);
     			option0.__value = 1;
     			option0.value = option0.__value;
-    			add_location(option0, file, 104, 4, 4140);
+    			add_location(option0, file, 104, 4, 4141);
     			option1.__value = 2;
     			option1.value = option1.__value;
-    			add_location(option1, file, 105, 4, 4176);
+    			add_location(option1, file, 105, 4, 4177);
     			option2.__value = 4;
     			option2.value = option2.__value;
-    			add_location(option2, file, 106, 4, 4211);
+    			add_location(option2, file, 106, 4, 4212);
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler*/ ctx[5].call(select));
-    			add_location(select, file, 103, 0, 4030);
+    			add_location(select, file, 103, 0, 4031);
     			attr_dev(br1, "uh", "");
-    			add_location(br1, file, 108, 0, 4252);
+    			add_location(br1, file, 108, 0, 4253);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2774,11 +2774,11 @@ var app = (function () {
     		},
     		ring: {
     			radius: 400,
-    			thickness: 50,
-    			blur: 3,
+    			thickness: 81,
+    			blur: 10,
     			cropSize: 0,
     			cropHardness: 50,
-    			alpha: 50
+    			alpha: 21
     		}
     	};
 
