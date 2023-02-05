@@ -1705,7 +1705,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src/App.svelte";
 
-    // (105:0) <Collapsible title={"positioning"} collapsed={false}>
+    // (111:0) <Collapsible title={"positioning"} collapsed={false}>
     function create_default_slot_3(ctx) {
     	let t0;
     	let slider0;
@@ -1803,10 +1803,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 105, 126, 4194);
-    			add_location(br1, file, 106, 126, 4327);
-    			add_location(br2, file, 107, 137, 4471);
-    			add_location(br3, file, 108, 137, 4615);
+    			add_location(br0, file, 111, 126, 4443);
+    			add_location(br1, file, 112, 126, 4576);
+    			add_location(br2, file, 113, 137, 4720);
+    			add_location(br3, file, 114, 137, 4864);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -1904,14 +1904,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(105:0) <Collapsible title={\\\"positioning\\\"} collapsed={false}>",
+    		source: "(111:0) <Collapsible title={\\\"positioning\\\"} collapsed={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (111:0) <Collapsible title={"hi"}>
+    // (117:0) <Collapsible title={"hi"}>
     function create_default_slot_2(ctx) {
     	let t0;
     	let slider0;
@@ -1963,8 +1963,8 @@ var app = (function () {
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
-    			add_location(br0, file, 111, 133, 4797);
-    			add_location(br1, file, 112, 140, 4944);
+    			add_location(br0, file, 117, 133, 5046);
+    			add_location(br1, file, 118, 140, 5193);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2024,14 +2024,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(111:0) <Collapsible title={\\\"hi\\\"}>",
+    		source: "(117:0) <Collapsible title={\\\"hi\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (115:0) <Collapsible title={"anamorphic streak"}>
+    // (121:0) <Collapsible title={"anamorphic streak"}>
     function create_default_slot_1(ctx) {
     	let t0;
     	let slider0;
@@ -2048,6 +2048,11 @@ var app = (function () {
     	let updating_value_2;
     	let t5;
     	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
     	let current;
 
     	function slider0_value_binding_2(value) {
@@ -2092,6 +2097,20 @@ var app = (function () {
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_1));
     	slider2.$on("input", /*input_handler_8*/ ctx[24]);
 
+    	function slider3_value_binding_1(value) {
+    		/*slider3_value_binding_1*/ ctx[25](value);
+    	}
+
+    	let slider3_props = { min: 1, max: 16 };
+
+    	if (/*flareSettings*/ ctx[0].streak.count !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].streak.count;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_1));
+    	slider3.$on("input", /*input_handler_9*/ ctx[26]);
+
     	const block = {
     		c: function create() {
     			t0 = text("Thickness: ");
@@ -2106,9 +2125,14 @@ var app = (function () {
     			create_component(slider2.$$.fragment);
     			t5 = space();
     			br2 = element("br");
-    			add_location(br0, file, 115, 147, 5155);
-    			add_location(br1, file, 116, 141, 5303);
-    			add_location(br2, file, 117, 146, 5456);
+    			t6 = text("\n    Starring: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			add_location(br0, file, 121, 147, 5404);
+    			add_location(br1, file, 122, 141, 5552);
+    			add_location(br2, file, 123, 146, 5705);
+    			add_location(br3, file, 124, 141, 5853);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2123,6 +2147,10 @@ var app = (function () {
     			mount_component(slider2, target, anchor);
     			insert_dev(target, t5, anchor);
     			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -2153,18 +2181,29 @@ var app = (function () {
     			}
 
     			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].streak.count;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(slider0.$$.fragment, local);
     			transition_in(slider1.$$.fragment, local);
     			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(slider0.$$.fragment, local);
     			transition_out(slider1.$$.fragment, local);
     			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -2180,6 +2219,10 @@ var app = (function () {
     			destroy_component(slider2, detaching);
     			if (detaching) detach_dev(t5);
     			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
     		}
     	};
 
@@ -2187,14 +2230,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(115:0) <Collapsible title={\\\"anamorphic streak\\\"}>",
+    		source: "(121:0) <Collapsible title={\\\"anamorphic streak\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (120:0) <Collapsible title={"ring thing"}>
+    // (127:0) <Collapsible title={"ring thing"}>
     function create_default_slot(ctx) {
     	let t0;
     	let slider0;
@@ -2229,7 +2272,7 @@ var app = (function () {
     	let current;
 
     	function slider0_value_binding_3(value) {
-    		/*slider0_value_binding_3*/ ctx[25](value);
+    		/*slider0_value_binding_3*/ ctx[27](value);
     	}
 
     	let slider0_props = { min: 0, max: 810 };
@@ -2240,10 +2283,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_3));
-    	slider0.$on("input", /*input_handler_9*/ ctx[26]);
+    	slider0.$on("input", /*input_handler_10*/ ctx[28]);
 
     	function slider1_value_binding_3(value) {
-    		/*slider1_value_binding_3*/ ctx[27](value);
+    		/*slider1_value_binding_3*/ ctx[29](value);
     	}
 
     	let slider1_props = { min: 0, max: 500 };
@@ -2254,10 +2297,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_3));
-    	slider1.$on("input", /*input_handler_10*/ ctx[28]);
+    	slider1.$on("input", /*input_handler_11*/ ctx[30]);
 
     	function slider2_value_binding_2(value) {
-    		/*slider2_value_binding_2*/ ctx[29](value);
+    		/*slider2_value_binding_2*/ ctx[31](value);
     	}
 
     	let slider2_props = { min: 0, max: 50 };
@@ -2268,10 +2311,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_2));
-    	slider2.$on("input", /*input_handler_11*/ ctx[30]);
+    	slider2.$on("input", /*input_handler_12*/ ctx[32]);
 
-    	function slider3_value_binding_1(value) {
-    		/*slider3_value_binding_1*/ ctx[31](value);
+    	function slider3_value_binding_2(value) {
+    		/*slider3_value_binding_2*/ ctx[33](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -2281,11 +2324,11 @@ var app = (function () {
     	}
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
-    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_1));
-    	slider3.$on("input", /*input_handler_12*/ ctx[32]);
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_2));
+    	slider3.$on("input", /*input_handler_13*/ ctx[34]);
 
     	function slider4_value_binding(value) {
-    		/*slider4_value_binding*/ ctx[33](value);
+    		/*slider4_value_binding*/ ctx[35](value);
     	}
 
     	let slider4_props = { min: 0, max: 400 };
@@ -2296,10 +2339,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding));
-    	slider4.$on("input", /*input_handler_13*/ ctx[34]);
+    	slider4.$on("input", /*input_handler_14*/ ctx[36]);
 
     	function slider5_value_binding(value) {
-    		/*slider5_value_binding*/ ctx[35](value);
+    		/*slider5_value_binding*/ ctx[37](value);
     	}
 
     	let slider5_props = { min: 0, max: 100 };
@@ -2310,7 +2353,7 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding));
-    	slider5.$on("input", /*input_handler_14*/ ctx[36]);
+    	slider5.$on("input", /*input_handler_15*/ ctx[38]);
 
     	const block = {
     		c: function create() {
@@ -2338,12 +2381,12 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 120, 146, 5659);
-    			add_location(br1, file, 121, 152, 5818);
-    			add_location(br2, file, 122, 145, 5970);
-    			add_location(br3, file, 123, 144, 6121);
-    			add_location(br4, file, 124, 151, 6279);
-    			add_location(br5, file, 125, 159, 6445);
+    			add_location(br0, file, 127, 146, 6056);
+    			add_location(br1, file, 128, 152, 6215);
+    			add_location(br2, file, 129, 145, 6367);
+    			add_location(br3, file, 130, 144, 6518);
+    			add_location(br4, file, 131, 151, 6676);
+    			add_location(br5, file, 132, 159, 6842);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2479,7 +2522,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(120:0) <Collapsible title={\\\"ring thing\\\"}>",
+    		source: "(127:0) <Collapsible title={\\\"ring thing\\\"}>",
     		ctx
     	});
 
@@ -2572,22 +2615,22 @@ var app = (function () {
     			attr_dev(canvas, "width", 1920);
     			attr_dev(canvas, "height", 1080);
     			attr_dev(canvas, "class", "svelte-13xw3n8");
-    			add_location(canvas, file, 92, 0, 3634);
+    			add_location(canvas, file, 98, 0, 3883);
     			attr_dev(br0, "uh", "");
-    			add_location(br0, file, 94, 0, 3754);
+    			add_location(br0, file, 100, 0, 4003);
     			option0.__value = 1;
     			option0.value = option0.__value;
-    			add_location(option0, file, 98, 4, 3891);
+    			add_location(option0, file, 104, 4, 4140);
     			option1.__value = 2;
     			option1.value = option1.__value;
-    			add_location(option1, file, 99, 4, 3927);
+    			add_location(option1, file, 105, 4, 4176);
     			option2.__value = 4;
     			option2.value = option2.__value;
-    			add_location(option2, file, 100, 4, 3962);
+    			add_location(option2, file, 106, 4, 4211);
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler*/ ctx[5].call(select));
-    			add_location(select, file, 97, 0, 3781);
+    			add_location(select, file, 103, 0, 4030);
     			attr_dev(br1, "uh", "");
-    			add_location(br1, file, 102, 0, 4003);
+    			add_location(br1, file, 108, 0, 4252);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2633,28 +2676,28 @@ var app = (function () {
 
     			const collapsible0_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[1] & /*$$scope*/ 512) {
     				collapsible0_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible0.$set(collapsible0_changes);
     			const collapsible1_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[1] & /*$$scope*/ 512) {
     				collapsible1_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible1.$set(collapsible1_changes);
     			const collapsible2_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[1] & /*$$scope*/ 512) {
     				collapsible2_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible2.$set(collapsible2_changes);
     			const collapsible3_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[1] & /*$$scope*/ 128) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[1] & /*$$scope*/ 512) {
     				collapsible3_changes.$$scope = { dirty, ctx };
     			}
 
@@ -2722,7 +2765,13 @@ var app = (function () {
     		downscaling: 2,
     		positioning: { x: 960, y: 540, pivotX: 960, pivotY: 540 },
     		hotspot: { radius: 500, intensity: 5 },
-    		streak: { thickness: 64, width: 1600, intensity: 5 },
+    		streak: {
+    			thickness: 64,
+    			width: 1600,
+    			intensity: 5,
+    			count: 1,
+    			angle: 0
+    		},
     		ring: {
     			radius: 400,
     			thickness: 50,
@@ -2764,7 +2813,13 @@ var app = (function () {
     		ctx.fillStyle = "black";
     		ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
     		drawComponent_1(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2);
-    		drawComponent_1(ctx, flareComponents.streak, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width, flareSettings.streak.thickness);
+    		var streakAngle = flareSettings.streak.angle;
+
+    		for (var i = 0; i < flareSettings.streak.count; i++) {
+    			drawComponent_1(ctx, flareComponents.streak, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width, flareSettings.streak.thickness, streakAngle);
+    			streakAngle += 180 / flareSettings.streak.count;
+    		}
+
     		drawComponent_1(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius, flareSettings.ring.radius, 0, flareSettings.ring.alpha);
     	}
 
@@ -2900,6 +2955,17 @@ var app = (function () {
     		renderFlare(false, true);
     	};
 
+    	function slider3_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.count, value)) {
+    			flareSettings.streak.count = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_9 = function () {
+    		renderFlare(false, true);
+    	};
+
     	function slider0_value_binding_3(value) {
     		if ($$self.$$.not_equal(flareSettings.ring.radius, value)) {
     			flareSettings.ring.radius = value;
@@ -2907,7 +2973,7 @@ var app = (function () {
     		}
     	}
 
-    	const input_handler_9 = function () {
+    	const input_handler_10 = function () {
     		renderFlare(false, false, true);
     	};
 
@@ -2918,7 +2984,7 @@ var app = (function () {
     		}
     	}
 
-    	const input_handler_10 = function () {
+    	const input_handler_11 = function () {
     		renderFlare(false, false, true);
     	};
 
@@ -2929,18 +2995,18 @@ var app = (function () {
     		}
     	}
 
-    	const input_handler_11 = function () {
+    	const input_handler_12 = function () {
     		renderFlare(false, false, true);
     	};
 
-    	function slider3_value_binding_1(value) {
+    	function slider3_value_binding_2(value) {
     		if ($$self.$$.not_equal(flareSettings.ring.alpha, value)) {
     			flareSettings.ring.alpha = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
 
-    	const input_handler_12 = function () {
+    	const input_handler_13 = function () {
     		renderFlare(false, false, true);
     	};
 
@@ -2951,7 +3017,7 @@ var app = (function () {
     		}
     	}
 
-    	const input_handler_13 = function () {
+    	const input_handler_14 = function () {
     		renderFlare(false, false, true);
     	};
 
@@ -2962,7 +3028,7 @@ var app = (function () {
     		}
     	}
 
-    	const input_handler_14 = function () {
+    	const input_handler_15 = function () {
     		renderFlare(false, false, true);
     	};
 
@@ -3017,18 +3083,20 @@ var app = (function () {
     		input_handler_7,
     		slider2_value_binding_1,
     		input_handler_8,
-    		slider0_value_binding_3,
-    		input_handler_9,
-    		slider1_value_binding_3,
-    		input_handler_10,
-    		slider2_value_binding_2,
-    		input_handler_11,
     		slider3_value_binding_1,
+    		input_handler_9,
+    		slider0_value_binding_3,
+    		input_handler_10,
+    		slider1_value_binding_3,
+    		input_handler_11,
+    		slider2_value_binding_2,
     		input_handler_12,
-    		slider4_value_binding,
+    		slider3_value_binding_2,
     		input_handler_13,
+    		slider4_value_binding,
+    		input_handler_14,
     		slider5_value_binding,
-    		input_handler_14
+    		input_handler_15
     	];
     }
 

@@ -36,6 +36,8 @@
             thickness: 64,
             width: 1600,
             intensity: 5,
+            count: 1,
+            angle: 0,
         },
         ring: {
             radius: 400,
@@ -76,7 +78,11 @@
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
         drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2);
-        drawComponent(ctx, flareComponents.streak, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width, flareSettings.streak.thickness);
+        var streakAngle = flareSettings.streak.angle;
+        for (var i = 0; i < flareSettings.streak.count; i++) {
+            drawComponent(ctx, flareComponents.streak, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width, flareSettings.streak.thickness, streakAngle);
+            streakAngle += 180 / flareSettings.streak.count;
+        }
         drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius, flareSettings.ring.radius, 0, flareSettings.ring.alpha);
     }
 
@@ -116,6 +122,7 @@ Preview quality
     Thickness: <Slider min={0} max={100} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }}></Slider> <br />
     Length: <Slider min={0} max={3210} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }}></Slider> <br />
     Intensity: <Slider min={0} max={50} bind:value={flareSettings.streak.intensity} on:input={function() { renderFlare(false, true); }}></Slider> <br />
+    Starring: <Slider min={1} max={16} bind:value={flareSettings.streak.count} on:input={function() { renderFlare(false, true); }}></Slider> <br />
 </Collapsible>
 <Collapsible title={"ring thing"}>
     Radius: <Slider min={0} max={810} bind:value={flareSettings.ring.radius} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
