@@ -5,6 +5,7 @@
     import RingComponent from "./RingComponent";
     import Slider from "./Slider.svelte";
     import drawComponent from "./drawComponent";
+    import canvasClickDrag from "./canvasClickDrag";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -80,9 +81,16 @@
     }
 
     window.onload = function() { renderFlare(true, true, true); };
+
+    function handleClickDrag(e) {
+        console.log(e.detail);
+        flareSettings.positioning.x = e.detail.x;
+        flareSettings.positioning.y = e.detail.y;
+        renderFlare();
+    }
 </script>
 
-<canvas bind:this={baseCanvas} width={1920} height={1080}></canvas>
+<canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={1920} height={1080}></canvas>
 
 <br uh />
 
