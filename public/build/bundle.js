@@ -2109,7 +2109,7 @@ var app = (function () {
     		/*slider3_value_binding_1*/ ctx[25](value);
     	}
 
-    	let slider3_props = { min: 1, max: 16 };
+    	let slider3_props = { min: 1, max: 8 };
 
     	if (/*flareSettings*/ ctx[0].streak.count !== void 0) {
     		slider3_props.value = /*flareSettings*/ ctx[0].streak.count;
@@ -2140,7 +2140,7 @@ var app = (function () {
     			add_location(br0, file, 125, 147, 5651);
     			add_location(br1, file, 126, 141, 5799);
     			add_location(br2, file, 127, 148, 5954);
-    			add_location(br3, file, 128, 141, 6102);
+    			add_location(br3, file, 128, 140, 6101);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2389,12 +2389,12 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 131, 146, 6305);
-    			add_location(br1, file, 132, 152, 6464);
-    			add_location(br2, file, 133, 145, 6616);
-    			add_location(br3, file, 134, 144, 6767);
-    			add_location(br4, file, 135, 151, 6925);
-    			add_location(br5, file, 136, 159, 7091);
+    			add_location(br0, file, 131, 146, 6304);
+    			add_location(br1, file, 132, 152, 6463);
+    			add_location(br2, file, 133, 145, 6615);
+    			add_location(br3, file, 134, 144, 6766);
+    			add_location(br4, file, 135, 151, 6924);
+    			add_location(br5, file, 136, 159, 7090);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);

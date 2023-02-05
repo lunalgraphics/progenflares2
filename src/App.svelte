@@ -126,7 +126,7 @@ Preview quality
     Thickness: <Slider min={0} max={200} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }}></Slider> <br />
     Length: <Slider min={0} max={3210} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }}></Slider> <br />
     Intensity: <Slider min={-25} max={50} bind:value={flareSettings.streak.intensity} on:input={function() { renderFlare(false, true); }}></Slider> <br />
-    Starring: <Slider min={1} max={16} bind:value={flareSettings.streak.count} on:input={function() { renderFlare(false, true); }}></Slider> <br />
+    Starring: <Slider min={1} max={8} bind:value={flareSettings.streak.count} on:input={function() { renderFlare(false, true); }}></Slider> <br />
 </Collapsible>
 <Collapsible title={"ring thing"}>
     Radius: <Slider min={0} max={810} bind:value={flareSettings.ring.radius} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
