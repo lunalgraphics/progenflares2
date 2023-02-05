@@ -1333,6 +1333,8 @@ var app = (function () {
             blur: 3,
             cropSize: 200,
             cropHardness: 50,
+            hue: 200,
+            saturation: 100,
         };
 
         setOptions(options) {
@@ -1354,6 +1356,8 @@ var app = (function () {
             ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             ctx.restore();
             ctx.save();
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
             ctx.beginPath();
             ctx.arc(this.radius, this.radius, this.radius - this.options.blur * 2, 0, 2 * Math.PI, true);
             var gradient = ctx.createRadialGradient(this.radius, this.radius, 0, this.radius, this.radius, this.radius - this.options.blur * 2);
@@ -1376,6 +1380,9 @@ var app = (function () {
             ctx.fillStyle = cropGradient;
             ctx.fillRect(0, this.canvas.height - this.options.cropSize, this.canvas.width, this.options.cropSize);
 
+            colorvibrance_1(ctx, this.options.hue, this.options.saturation);
+            ctx.restore();
+            ctx.save();
         }
     }
 
