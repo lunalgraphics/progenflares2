@@ -846,7 +846,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			if (default_slot) default_slot.c();
-    			add_location(div, file$2, 24, 4, 506);
+    			add_location(div, file$2, 24, 4, 505);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -933,8 +933,8 @@ var app = (function () {
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
     			set_style(b, "user-select", "none");
-    			add_location(b, file$2, 21, 0, 384);
-    			add_location(br, file$2, 22, 0, 476);
+    			add_location(b, file$2, 21, 0, 383);
+    			add_location(br, file$2, 22, 0, 475);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1021,7 +1021,7 @@ var app = (function () {
     	validate_slots('Collapsible', slots, ['default']);
     	const dispatch = createEventDispatcher();
     	let { title } = $$props;
-    	let { collapsed = false } = $$props;
+    	let { collapsed = true } = $$props;
     	let nameTag;
     	let contents;
 
@@ -1698,7 +1698,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src/App.svelte";
 
-    // (105:0) <Collapsible title={"positioning"}>
+    // (105:0) <Collapsible title={"positioning"} collapsed={false}>
     function create_default_slot_3(ctx) {
     	let t0;
     	let slider0;
@@ -1796,10 +1796,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 105, 126, 4176);
-    			add_location(br1, file, 106, 126, 4309);
-    			add_location(br2, file, 107, 137, 4453);
-    			add_location(br3, file, 108, 137, 4597);
+    			add_location(br0, file, 105, 126, 4194);
+    			add_location(br1, file, 106, 126, 4327);
+    			add_location(br2, file, 107, 137, 4471);
+    			add_location(br3, file, 108, 137, 4615);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -1897,7 +1897,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(105:0) <Collapsible title={\\\"positioning\\\"}>",
+    		source: "(105:0) <Collapsible title={\\\"positioning\\\"} collapsed={false}>",
     		ctx
     	});
 
@@ -1956,8 +1956,8 @@ var app = (function () {
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
-    			add_location(br0, file, 111, 133, 4779);
-    			add_location(br1, file, 112, 140, 4926);
+    			add_location(br0, file, 111, 133, 4797);
+    			add_location(br1, file, 112, 140, 4944);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2099,9 +2099,9 @@ var app = (function () {
     			create_component(slider2.$$.fragment);
     			t5 = space();
     			br2 = element("br");
-    			add_location(br0, file, 115, 147, 5137);
-    			add_location(br1, file, 116, 141, 5285);
-    			add_location(br2, file, 117, 146, 5438);
+    			add_location(br0, file, 115, 147, 5155);
+    			add_location(br1, file, 116, 141, 5303);
+    			add_location(br2, file, 117, 146, 5456);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2331,12 +2331,12 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 120, 146, 5641);
-    			add_location(br1, file, 121, 152, 5800);
-    			add_location(br2, file, 122, 145, 5952);
-    			add_location(br3, file, 123, 144, 6103);
-    			add_location(br4, file, 124, 151, 6261);
-    			add_location(br5, file, 125, 159, 6427);
+    			add_location(br0, file, 120, 146, 5659);
+    			add_location(br1, file, 121, 152, 5818);
+    			add_location(br2, file, 122, 145, 5970);
+    			add_location(br3, file, 123, 144, 6121);
+    			add_location(br4, file, 124, 151, 6279);
+    			add_location(br5, file, 125, 159, 6445);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2505,6 +2505,7 @@ var app = (function () {
     	collapsible0 = new Collapsible({
     			props: {
     				title: "positioning",
+    				collapsed: false,
     				$$slots: { default: [create_default_slot_3] },
     				$$scope: { ctx }
     			},

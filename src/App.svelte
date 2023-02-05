@@ -102,7 +102,7 @@ Preview quality
 </select>
 <br uh />
 
-<Collapsible title={"positioning"}>
+<Collapsible title={"positioning"} collapsed={false}>
     X: <Slider min={0} max={1920} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }}></Slider> <br />
     Y: <Slider min={0} max={1080} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }}></Slider> <br />
     Pivot X: <Slider min={0} max={1920} bind:value={flareSettings.positioning.pivotX} on:input={function() { renderFlare(); }}></Slider> <br />

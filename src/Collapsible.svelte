@@ -9,7 +9,7 @@
     const dispatch = createEventDispatcher();
 
     export let title;
-    export let collapsed = false;
+    export let collapsed = true;
 
     let nameTag;
     let contents;
