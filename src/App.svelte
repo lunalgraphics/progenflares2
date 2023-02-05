@@ -22,11 +22,15 @@
 
     var flareSettings = {
         downscaling: 2,
+        dimensions: {
+            width: 1920,
+            height: 1080,
+        },
         positioning: {
             x: 960,
             y: 540,
             pivotX: 960,
-            pivotY: 540
+            pivotY: 540,
         },
         hotspot: {
             radius: 500,
@@ -89,14 +93,14 @@
     window.onload = function() { renderFlare(true, true, true); };
 
     function handleClickDrag(e) {
-        console.log(e.detail);
+        //console.log(e.detail);
         flareSettings.positioning.x = e.detail.x;
         flareSettings.positioning.y = e.detail.y;
         renderFlare();
     }
 </script>
 
-<canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={1920} height={1080}></canvas>
+<canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height}></canvas>
 
 <br uh />
 
@@ -109,10 +113,10 @@ Preview quality
 <br uh />
 
 <Collapsible title={"positioning"} collapsed={false}>
-    X: <Slider min={0} max={1920} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }}></Slider> <br />
-    Y: <Slider min={0} max={1080} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }}></Slider> <br />
-    Pivot X: <Slider min={0} max={1920} bind:value={flareSettings.positioning.pivotX} on:input={function() { renderFlare(); }}></Slider> <br />
-    Pivot Y: <Slider min={0} max={1080} bind:value={flareSettings.positioning.pivotY} on:input={function() { renderFlare(); }}></Slider> <br />
+    X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }}></Slider> <br />
+    Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }}></Slider> <br />
+    Pivot X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.pivotX} on:input={function() { renderFlare(); }}></Slider> <br />
+    Pivot Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.pivotY} on:input={function() { renderFlare(); }}></Slider> <br />
 </Collapsible>
 <Collapsible title={"hi"}>
     Size: <Slider min={0} max={900} bind:value={flareSettings.hotspot.radius} on:input={function() { renderFlare(true); }}></Slider> <br />
