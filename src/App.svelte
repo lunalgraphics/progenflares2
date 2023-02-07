@@ -6,6 +6,7 @@
     import Slider from "./Slider.svelte";
     import drawComponent from "./drawComponent";
     import canvasClickDrag from "./canvasClickDrag";
+    import IrisComponent from "./IrisComponent";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -17,6 +18,9 @@
         }),
         ring: new RingComponent(256, {
             cropSize: 0,
+        }),
+        miIris: new IrisComponent(256, {
+
         }),
     };
 
@@ -88,6 +92,9 @@
             streakAngle += 180 / flareSettings.streak.count;
         }
         drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius, flareSettings.ring.radius, 0, flareSettings.ring.alpha);
+
+        flareComponents.miIris.render();
+        drawComponent(ctx, flareComponents.miIris, 960, 540, 512, 512, 0, 100);
     }
 
     window.onload = function() { renderFlare(true, true, true); };
