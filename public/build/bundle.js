@@ -1762,7 +1762,6 @@ var app = (function () {
 
             ctx.fillStyle = "black";
             ctx.filter = `blur(${this.options.fringeSize}px)`;
-            ctx.globalCompositeOperation = "multiply";
             ctx.fill();
             ctx.restore();
             ctx.save();
