@@ -1700,6 +1700,9 @@ var app = (function () {
         options = {
             roundness: 20,
             sides: 5,
+            fillAlpha: 25,
+            fringeAlpha: 50,
+            fringeSize: 10,
         };
 
         setOptions(options) {
@@ -1752,7 +1755,14 @@ var app = (function () {
                 else ctx.lineTo(x, y);
             }
             
-            ctx.fillStyle = "white";
+            ctx.fillStyle = `hsl(0deg, 0%, ${this.options.fringeAlpha}%)`;
+            ctx.fill();
+            ctx.restore();
+            ctx.save();
+
+            ctx.fillStyle = `hsl(0deg, 0%, ${this.options.fillAlpha}%)`;
+            ctx.filter = `blur(${this.options.fringeSize}px)`;
+            ctx.globalCompositeOperation = "multiply";
             ctx.fill();
             
             ctx.restore();
