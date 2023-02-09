@@ -1888,10 +1888,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 138, 152, 5742);
-    			add_location(br1, file, 139, 153, 5902);
-    			add_location(br2, file, 140, 163, 6072);
-    			add_location(br3, file, 141, 164, 6243);
+    			add_location(br0, file, 138, 152, 5757);
+    			add_location(br1, file, 139, 153, 5917);
+    			add_location(br2, file, 140, 163, 6087);
+    			add_location(br3, file, 141, 164, 6258);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2052,8 +2052,8 @@ var app = (function () {
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
-    			add_location(br0, file, 144, 133, 6425);
-    			add_location(br1, file, 145, 140, 6572);
+    			add_location(br0, file, 144, 133, 6440);
+    			add_location(br1, file, 145, 140, 6587);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2218,10 +2218,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 148, 147, 6783);
-    			add_location(br1, file, 149, 141, 6931);
-    			add_location(br2, file, 150, 148, 7086);
-    			add_location(br3, file, 151, 140, 7233);
+    			add_location(br0, file, 148, 147, 6798);
+    			add_location(br1, file, 149, 141, 6946);
+    			add_location(br2, file, 150, 148, 7101);
+    			add_location(br3, file, 151, 140, 7248);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2470,12 +2470,12 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 154, 146, 7436);
-    			add_location(br1, file, 155, 152, 7595);
-    			add_location(br2, file, 156, 145, 7747);
-    			add_location(br3, file, 157, 144, 7898);
-    			add_location(br4, file, 158, 151, 8056);
-    			add_location(br5, file, 159, 159, 8222);
+    			add_location(br0, file, 154, 146, 7451);
+    			add_location(br1, file, 155, 152, 7610);
+    			add_location(br2, file, 156, 145, 7762);
+    			add_location(br3, file, 157, 144, 7913);
+    			add_location(br4, file, 158, 151, 8071);
+    			add_location(br5, file, 159, 159, 8237);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2762,12 +2762,12 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 162, 155, 8434);
-    			add_location(br1, file, 163, 152, 8593);
-    			add_location(br2, file, 164, 161, 8761);
-    			add_location(br3, file, 165, 156, 8924);
-    			add_location(br4, file, 166, 164, 9095);
-    			add_location(br5, file, 167, 166, 9268);
+    			add_location(br0, file, 162, 155, 8449);
+    			add_location(br1, file, 163, 152, 8608);
+    			add_location(br2, file, 164, 161, 8776);
+    			add_location(br3, file, 165, 156, 8939);
+    			add_location(br4, file, 166, 164, 9110);
+    			add_location(br5, file, 167, 166, 9283);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -3011,22 +3011,22 @@ var app = (function () {
     			attr_dev(canvas, "width", canvas_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas, "height", canvas_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas, "class", "svelte-13xw3n8");
-    			add_location(canvas, file, 125, 0, 5103);
+    			add_location(canvas, file, 125, 0, 5118);
     			attr_dev(br0, "uh", "");
-    			add_location(br0, file, 127, 0, 5276);
+    			add_location(br0, file, 127, 0, 5291);
     			option0.__value = 1;
     			option0.value = option0.__value;
-    			add_location(option0, file, 131, 4, 5413);
+    			add_location(option0, file, 131, 4, 5428);
     			option1.__value = 2;
     			option1.value = option1.__value;
-    			add_location(option1, file, 132, 4, 5449);
+    			add_location(option1, file, 132, 4, 5464);
     			option2.__value = 4;
     			option2.value = option2.__value;
-    			add_location(option2, file, 133, 4, 5484);
+    			add_location(option2, file, 133, 4, 5499);
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler*/ ctx[5].call(select));
-    			add_location(select, file, 130, 0, 5303);
+    			add_location(select, file, 130, 0, 5318);
     			attr_dev(br1, "uh", "");
-    			add_location(br1, file, 135, 0, 5525);
+    			add_location(br1, file, 135, 0, 5540);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3192,15 +3192,15 @@ var app = (function () {
     			angle: 0
     		},
     		ring: {
-    			radius: 400,
-    			thickness: 81,
-    			blur: 10,
+    			radius: 200,
+    			thickness: 40,
+    			blur: 5,
     			cropSize: 0,
     			cropHardness: 50,
     			alpha: 21
     		},
     		miIris: {
-    			radius: 512,
+    			radius: 128,
     			sides: 5,
     			roundness: 20,
     			fillAlpha: 25,
@@ -3262,8 +3262,8 @@ var app = (function () {
     			streakAngle += 180 / flareSettings.streak.count;
     		}
 
-    		drawComponent_1(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius, flareSettings.ring.radius, 0, flareSettings.ring.alpha);
-    		drawComponent_1(ctx, flareComponents.miIris, 960, 540, flareSettings.miIris.radius, flareSettings.miIris.radius, 0, 100);
+    		drawComponent_1(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2, 0, flareSettings.ring.alpha);
+    		drawComponent_1(ctx, flareComponents.miIris, 960, 540, flareSettings.miIris.radius * 2, flareSettings.miIris.radius * 2, 0, 100);
     	}
 
     	window.onload = function () {

@@ -48,15 +48,15 @@
             angle: 0,
         },
         ring: {
-            radius: 400,
-            thickness: 81,
-            blur: 10,
+            radius: 200,
+            thickness: 40,
+            blur: 5,
             cropSize: 0,
             cropHardness: 50,
             alpha: 21,
         },
         miIris: {
-            radius: 512,
+            radius: 128,
             sides: 5,
             roundness: 20,
             fillAlpha: 25,
@@ -108,9 +108,9 @@
             drawComponent(ctx, flareComponents.streak, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width, flareSettings.streak.thickness, streakAngle);
             streakAngle += 180 / flareSettings.streak.count;
         }
-        drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius, flareSettings.ring.radius, 0, flareSettings.ring.alpha);
+        drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2, 0, flareSettings.ring.alpha);
 
-        drawComponent(ctx, flareComponents.miIris, 960, 540, flareSettings.miIris.radius, flareSettings.miIris.radius, 0, 100);
+        drawComponent(ctx, flareComponents.miIris, 960, 540, flareSettings.miIris.radius * 2, flareSettings.miIris.radius * 2, 0, 100);
     }
 
     window.onload = function() { renderFlare(true, true, true, true); };
