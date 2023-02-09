@@ -20,7 +20,7 @@
             cropSize: 0,
         }),
         miIris: new IrisComponent(256, {
-
+            roundness: 20,
         }),
     };
 
@@ -54,12 +54,20 @@
             cropSize: 0,
             cropHardness: 50,
             alpha: 21,
+        },
+        miIris: {
+            radius: 512,
+            sides: 5,
+            roundness: 20,
+            fillAlpha: 25,
+            fringeAlpha: 50,
+            fringeSize: 10,
         }
     };
 
     var baseCanvas;
     
-    function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false) {
+    function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false) {
         if (renderHotspot) {
             flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
             flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity / flareSettings.downscaling;
@@ -78,6 +86,15 @@
             flareComponents.ring.options.cropHardness = flareSettings.ring.cropHardness;
             flareComponents.ring.render();
         }
+        if (renderMI) {
+            flareComponents.miIris.radius = Math.floor(flareSettings.miIris.radius / flareSettings.downscaling);
+            flareComponents.miIris.options.sides = flareSettings.miIris.sides;
+            flareComponents.miIris.options.roundness = flareSettings.miIris.roundness;
+            flareComponents.miIris.options.fillAlpha = flareSettings.miIris.fillAlpha;
+            flareComponents.miIris.options.fringeAlpha = flareSettings.miIris.fringeAlpha;
+            flareComponents.miIris.options.fringeSize = Math.floor(flareSettings.miIris.fringeSize / flareSettings.downscaling);
+            flareComponents.miIris.render();
+        }
 
         var ctx = baseCanvas.getContext("2d");
         ctx.restore();
@@ -93,11 +110,10 @@
         }
         drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius, flareSettings.ring.radius, 0, flareSettings.ring.alpha);
 
-        flareComponents.miIris.render();
-        drawComponent(ctx, flareComponents.miIris, 960, 540, 512, 512, 0, 100);
+        drawComponent(ctx, flareComponents.miIris, 960, 540, flareSettings.miIris.radius, flareSettings.miIris.radius, 0, 100);
     }
 
-    window.onload = function() { renderFlare(true, true, true); };
+    window.onload = function() { renderFlare(true, true, true, true); };
 
     function handleClickDrag(e) {
         //console.log(e.detail);
@@ -142,6 +158,14 @@ Preview quality
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.ring.alpha} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
     Crop Size: <Slider min={0} max={810} bind:value={flareSettings.ring.cropSize} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
     Crop Hardness: <Slider min={0} max={100} bind:value={flareSettings.ring.cropHardness} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
+</Collapsible>
+<Collapsible title={"Multi-Iris"}>
+    Radius: <Slider min={0} max={810} bind:value={flareSettings.miIris.radius} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Sides: <Slider min={5} max={10} bind:value={flareSettings.miIris.sides} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Roundness: <Slider min={0} max={100} bind:value={flareSettings.miIris.roundness} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Fill: <Slider min={0} max={100} bind:value={flareSettings.miIris.fillAlpha} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Fringe Size: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeSize} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeAlpha} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
 </Collapsible>
 
 <style>
