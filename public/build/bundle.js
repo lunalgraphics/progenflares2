@@ -169,8 +169,14 @@ var app = (function () {
         else if (node.getAttribute(attribute) !== value)
             node.setAttribute(attribute, value);
     }
+    function to_number(value) {
+        return value === '' ? null : +value;
+    }
     function children(element) {
         return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
     }
     function set_style(node, key, value, important) {
         if (value === null) {
@@ -754,10 +760,6 @@ var app = (function () {
             dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
         else
             dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
-    }
-    function prop_dev(node, property, value) {
-        node[property] = value;
-        dispatch_dev('SvelteDOMSetProperty', { node, property, value });
     }
     function set_data_dev(text, data) {
         data = '' + data;
@@ -1398,30 +1400,33 @@ var app = (function () {
     			attr_dev(input0, "type", "range");
     			attr_dev(input0, "min", /*min*/ ctx[1]);
     			attr_dev(input0, "max", /*max*/ ctx[2]);
-    			input0.value = /*value*/ ctx[0];
     			attr_dev(input0, "step", /*step*/ ctx[3]);
     			attr_dev(input0, "class", "svelte-n1z3wa");
-    			add_location(input0, file$1, 27, 0, 476);
+    			add_location(input0, file$1, 27, 0, 478);
     			attr_dev(input1, "type", "number");
-    			input1.value = /*value*/ ctx[0];
     			attr_dev(input1, "step", /*step*/ ctx[3]);
     			attr_dev(input1, "class", "svelte-n1z3wa");
-    			add_location(input1, file$1, 28, 0, 615);
+    			add_location(input1, file$1, 28, 0, 622);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, input0, anchor);
-    			/*input0_binding*/ ctx[8](input0);
+    			set_input_value(input0, /*value*/ ctx[0]);
+    			/*input0_binding*/ ctx[9](input0);
     			insert_dev(target, t, anchor);
     			insert_dev(target, input1, anchor);
-    			/*input1_binding*/ ctx[9](input1);
+    			set_input_value(input1, /*value*/ ctx[0]);
+    			/*input1_binding*/ ctx[11](input1);
 
     			if (!mounted) {
     				dispose = [
+    					listen_dev(input0, "change", /*input0_change_input_handler*/ ctx[8]),
+    					listen_dev(input0, "input", /*input0_change_input_handler*/ ctx[8]),
     					listen_dev(input0, "input", /*updateValues*/ ctx[6], false, false, false),
     					listen_dev(input0, "change", /*onChange*/ ctx[7], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[10]),
     					listen_dev(input1, "input", /*updateValues*/ ctx[6], false, false, false),
     					listen_dev(input1, "change", /*onChange*/ ctx[7], false, false, false)
     				];
@@ -1438,30 +1443,30 @@ var app = (function () {
     				attr_dev(input0, "max", /*max*/ ctx[2]);
     			}
 
-    			if (dirty & /*value*/ 1) {
-    				prop_dev(input0, "value", /*value*/ ctx[0]);
-    			}
-
     			if (dirty & /*step*/ 8) {
     				attr_dev(input0, "step", /*step*/ ctx[3]);
     			}
 
-    			if (dirty & /*value*/ 1 && input1.value !== /*value*/ ctx[0]) {
-    				prop_dev(input1, "value", /*value*/ ctx[0]);
+    			if (dirty & /*value*/ 1) {
+    				set_input_value(input0, /*value*/ ctx[0]);
     			}
 
     			if (dirty & /*step*/ 8) {
     				attr_dev(input1, "step", /*step*/ ctx[3]);
+    			}
+
+    			if (dirty & /*value*/ 1 && to_number(input1.value) !== /*value*/ ctx[0]) {
+    				set_input_value(input1, /*value*/ ctx[0]);
     			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(input0);
-    			/*input0_binding*/ ctx[8](null);
+    			/*input0_binding*/ ctx[9](null);
     			if (detaching) detach_dev(t);
     			if (detaching) detach_dev(input1);
-    			/*input1_binding*/ ctx[9](null);
+    			/*input1_binding*/ ctx[11](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -1492,7 +1497,7 @@ var app = (function () {
     	let rangeElement;
 
     	function updateValues() {
-    		$$invalidate(0, value = parseFloat(this.value));
+    		//value = parseFloat(this.value);
     		dispatch("input");
     	}
 
@@ -1516,11 +1521,21 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Slider> was created with unknown prop '${key}'`);
     	});
 
+    	function input0_change_input_handler() {
+    		value = to_number(this.value);
+    		$$invalidate(0, value);
+    	}
+
     	function input0_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
     			rangeElement = $$value;
     			$$invalidate(5, rangeElement);
     		});
+    	}
+
+    	function input1_input_handler() {
+    		value = to_number(this.value);
+    		$$invalidate(0, value);
     	}
 
     	function input1_binding($$value) {
@@ -1573,7 +1588,9 @@ var app = (function () {
     		rangeElement,
     		updateValues,
     		onChange,
+    		input0_change_input_handler,
     		input0_binding,
+    		input1_input_handler,
     		input1_binding
     	];
     }

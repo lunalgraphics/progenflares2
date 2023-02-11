@@ -16,7 +16,7 @@
     let rangeElement;
 
     function updateValues() {
-        value = parseFloat(this.value);
+        //value = parseFloat(this.value);
         dispatch("input");
     }
 
@@ -25,8 +25,8 @@
     }
 </script>
 
-<input type="range" min={min} max={max} value={value} step={step} bind:this={rangeElement} on:input={updateValues} on:change={onChange} />
-<input type="number" value={value} step={step} bind:this={numberElement} on:input={updateValues} on:change={onChange} />
+<input type="range" min={min} max={max} bind:value={value} step={step} bind:this={rangeElement} on:input={updateValues} on:change={onChange} />
+<input type="number" bind:value={value} step={step} bind:this={numberElement} on:input={updateValues} on:change={onChange} />
 
 <svelte:options accessors={true} />
 
