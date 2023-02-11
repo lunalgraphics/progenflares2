@@ -198,6 +198,13 @@ Preview quality
     Fill: <Slider min={0} max={100} bind:value={flareSettings.miIris.fillAlpha} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Fringe Size: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeSize} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeAlpha} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Count Towards: <Slider min={0} max={50} bind:value={flareSettings.miIris.countTowards} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Count Away: <Slider min={0} max={50} bind:value={flareSettings.miIris.countAway} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Spread: <Slider min={0} max={100} bind:value={flareSettings.miIris.spread} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Size Variance: <Slider min={0} max={100} bind:value={flareSettings.miIris.sizeVariance} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Perspective: <Slider min={0} max={100} bind:value={flareSettings.miIris.perspective} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Alpha Variance: <Slider min={0} max={100} bind:value={flareSettings.miIris.alphaVariance} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Random Seed: <Slider min={0} max={999} bind:value={flareSettings.miIris.seed} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
 </Collapsible>
 
 <style>
