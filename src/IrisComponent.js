@@ -9,6 +9,8 @@ class IrisComponent {
         fillAlpha: 25,
         fringeAlpha: 50,
         fringeSize: 10,
+        hue: 200,
+        saturation: 100,
     };
 
     setOptions(options) {
@@ -75,7 +77,10 @@ class IrisComponent {
         ctx.fillStyle = "white";
         ctx.globalAlpha = this.options.fillAlpha / 100;
         ctx.fill();
+        ctx.restore();
+        ctx.save();
         
+        colorvibrance(ctx, this.options.hue, this.options.saturation);
         ctx.restore();
         ctx.save();
     }

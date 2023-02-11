@@ -7,6 +7,7 @@
     import drawComponent from "./drawComponent";
     import canvasClickDrag from "./canvasClickDrag";
     import IrisComponent from "./IrisComponent";
+    import seedrandom from "../node_modules/seedrandom";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -58,12 +59,19 @@
             alpha: 21,
         },
         miIris: {
-            radius: 128,
+            radius: 81,
             sides: 5,
             roundness: 20,
             fillAlpha: 25,
             fringeAlpha: 50,
             fringeSize: 10,
+            countAway: 5,
+            countTowards: 12,
+            spread: 30,
+            sizeVariance: 40,
+            perspective: 100,
+            alphaVariance: 50,
+            seed: 123,
         }
     };
 
@@ -114,7 +122,25 @@
         }
         drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2, 0, flareSettings.ring.alpha);
 
-        drawComponent(ctx, flareComponents.miIris, 960, 540, flareSettings.miIris.radius * 2, flareSettings.miIris.radius * 2, 0, 100);
+        var miRng = seedrandom(flareSettings.miIris.seed);
+        for (var i = 1; i < flareSettings.miIris.countTowards; i++) {
+            var irisPosition = {
+                x: flareSettings.positioning.x + i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
+                y: flareSettings.positioning.y + i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
+            };
+            var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+            irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
+            drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale, 0, 100 - flareSettings.miIris.alphaVariance * miRng());
+        }
+        for (var i = 1; i < flareSettings.miIris.countAway; i++) {
+            var irisPosition = {
+                x: flareSettings.positioning.x - i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
+                y: flareSettings.positioning.y - i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
+            };
+            var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+            irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
+            drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale, 0, 100 - flareSettings.miIris.alphaVariance * miRng());
+        }
     }
 
     window.onload = function() { renderFlare(true, true, true, true); };
