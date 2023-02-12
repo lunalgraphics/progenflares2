@@ -11,6 +11,7 @@ class IrisComponent {
         fringeSize: 10,
         hue: 200,
         saturation: 100,
+        blur: 5,
     };
 
     setOptions(options) {
@@ -77,6 +78,16 @@ class IrisComponent {
         ctx.fillStyle = "white";
         ctx.globalAlpha = this.options.fillAlpha / 100;
         ctx.fill();
+        ctx.restore();
+        ctx.save();
+
+        var blurBuff = document.createElement("canvas");
+        blurBuff.width = this.canvas.width; blurBuff.height = this.canvas.height;
+        blurBuff.getContext("2d").drawImage(this.canvas, 0, 0);
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        ctx.filter = `blur(${this.options.blur}px)`;
+        ctx.drawImage(blurBuff, this.options.blur, this.options.blur, this.canvas.width - 2 * this.options.blur, this.canvas.height - 2 * this.options.blur);
         ctx.restore();
         ctx.save();
         

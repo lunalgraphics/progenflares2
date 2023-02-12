@@ -66,6 +66,7 @@
             fillAlpha: 25,
             fringeAlpha: 50,
             fringeSize: 10,
+            blur: 4,
             countAway: 5,
             countTowards: 12,
             spread: 30,
@@ -106,6 +107,7 @@
             flareComponents.miIris.options.fillAlpha = flareSettings.miIris.fillAlpha;
             flareComponents.miIris.options.fringeAlpha = flareSettings.miIris.fringeAlpha;
             flareComponents.miIris.options.fringeSize = Math.floor(flareSettings.miIris.fringeSize / flareSettings.downscaling);
+            flareComponents.miIris.options.blur = Math.floor(flareSettings.miIris.blur / flareSettings.downscaling);
             flareComponents.miIris.render();
         }
 
@@ -202,6 +204,7 @@ Preview quality
     Fill: <Slider min={0} max={100} bind:value={flareSettings.miIris.fillAlpha} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Fringe Size: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeSize} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeAlpha} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Softness: <Slider min={0} max={30} bind:value={flareSettings.miIris.blur} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Count Towards: <Slider min={0} max={50} bind:value={flareSettings.miIris.countTowards} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Count Away: <Slider min={0} max={50} bind:value={flareSettings.miIris.countAway} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Spread: <Slider min={0} max={100} bind:value={flareSettings.miIris.spread} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
