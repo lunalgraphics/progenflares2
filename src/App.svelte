@@ -121,7 +121,7 @@
         var streakAngle = flareSettings.streak.angle;
         for (var i = 0; i < flareSettings.streak.count; i++) {
             var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
-            if (i % 2 == 1) streakOffset *= -1;
+            if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * ((i % 2 == 0)?-1:1);
             drawComponent(ctx, flareComponents.streak, flareSettings.positioning.x + Math.cos(streakAngle * Math.PI / 180) * streakOffset, flareSettings.positioning.y + Math.sin(streakAngle * Math.PI / 180) * streakOffset, flareSettings.streak.width, flareSettings.streak.thickness, streakAngle);
             streakAngle += 180 / flareSettings.streak.count;
         }
