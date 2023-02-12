@@ -49,6 +49,7 @@
             intensity: 5,
             count: 1,
             angle: 0,
+            shift: 1,
         },
         ring: {
             radius: 200,
@@ -117,7 +118,9 @@
         drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2);
         var streakAngle = flareSettings.streak.angle;
         for (var i = 0; i < flareSettings.streak.count; i++) {
-            drawComponent(ctx, flareComponents.streak, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width, flareSettings.streak.thickness, streakAngle);
+            var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
+            if (i % 2 == 1) streakOffset *= -1;
+            drawComponent(ctx, flareComponents.streak, flareSettings.positioning.x + Math.cos(streakAngle * Math.PI / 180) * streakOffset, flareSettings.positioning.y + Math.sin(streakAngle * Math.PI / 180) * streakOffset, flareSettings.streak.width, flareSettings.streak.thickness, streakAngle);
             streakAngle += 180 / flareSettings.streak.count;
         }
         drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2, 0, flareSettings.ring.alpha);
@@ -182,6 +185,7 @@ Preview quality
     Length: <Slider min={0} max={3210} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }}></Slider> <br />
     Intensity: <Slider min={-25} max={50} bind:value={flareSettings.streak.intensity} on:input={function() { renderFlare(false, true); }}></Slider> <br />
     Starring: <Slider min={1} max={8} bind:value={flareSettings.streak.count} on:input={function() { renderFlare(false, true); }}></Slider> <br />
+    Shift: <Slider min={0} max={100} bind:value={flareSettings.streak.shift} on:input={function() { renderFlare(false, true); }}></Slider> <br />
 </Collapsible>
 <Collapsible title={"ring thing"}>
     Radius: <Slider min={0} max={810} bind:value={flareSettings.ring.radius} on:input={function() { renderFlare(false, false, true); }}></Slider> <br />
