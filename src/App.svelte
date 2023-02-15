@@ -50,7 +50,7 @@
             intensity: 5,
             count: 1,
             angle: 0,
-            shift: 1,
+            shift: 36,
         },
         ring: {
             radius: 200,

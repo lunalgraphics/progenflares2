@@ -2917,10 +2917,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 177, 152, 8942);
-    			add_location(br1, file, 178, 153, 9102);
-    			add_location(br2, file, 179, 163, 9272);
-    			add_location(br3, file, 180, 164, 9443);
+    			add_location(br0, file, 177, 152, 8943);
+    			add_location(br1, file, 178, 153, 9103);
+    			add_location(br2, file, 179, 163, 9273);
+    			add_location(br3, file, 180, 164, 9444);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -3127,10 +3127,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 183, 133, 9625);
-    			add_location(br1, file, 184, 140, 9772);
-    			add_location(br2, file, 185, 171, 9950);
-    			add_location(br3, file, 186, 167, 10124);
+    			add_location(br0, file, 183, 133, 9626);
+    			add_location(br1, file, 184, 140, 9773);
+    			add_location(br2, file, 185, 171, 9951);
+    			add_location(br3, file, 186, 167, 10125);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -3356,11 +3356,11 @@ var app = (function () {
     			create_component(slider4.$$.fragment);
     			t9 = space();
     			br4 = element("br");
-    			add_location(br0, file, 189, 147, 10335);
-    			add_location(br1, file, 190, 141, 10483);
-    			add_location(br2, file, 191, 148, 10638);
-    			add_location(br3, file, 192, 140, 10785);
-    			add_location(br4, file, 193, 139, 10931);
+    			add_location(br0, file, 189, 147, 10336);
+    			add_location(br1, file, 190, 141, 10484);
+    			add_location(br2, file, 191, 148, 10639);
+    			add_location(br3, file, 192, 140, 10786);
+    			add_location(br4, file, 193, 139, 10932);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -3628,12 +3628,12 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 196, 146, 11134);
-    			add_location(br1, file, 197, 152, 11293);
-    			add_location(br2, file, 198, 145, 11445);
-    			add_location(br3, file, 199, 144, 11596);
-    			add_location(br4, file, 200, 151, 11754);
-    			add_location(br5, file, 201, 159, 11920);
+    			add_location(br0, file, 196, 146, 11135);
+    			add_location(br1, file, 197, 152, 11294);
+    			add_location(br2, file, 198, 145, 11446);
+    			add_location(br3, file, 199, 144, 11597);
+    			add_location(br4, file, 200, 151, 11755);
+    			add_location(br5, file, 201, 159, 11921);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4104,20 +4104,20 @@ var app = (function () {
     			create_component(slider13.$$.fragment);
     			t27 = space();
     			br13 = element("br");
-    			add_location(br0, file, 204, 155, 12132);
-    			add_location(br1, file, 205, 152, 12291);
-    			add_location(br2, file, 206, 161, 12459);
-    			add_location(br3, file, 207, 156, 12622);
-    			add_location(br4, file, 208, 164, 12793);
-    			add_location(br5, file, 209, 166, 12966);
-    			add_location(br6, file, 210, 154, 13127);
-    			add_location(br7, file, 211, 167, 13301);
-    			add_location(br8, file, 212, 161, 13469);
-    			add_location(br9, file, 213, 155, 13631);
-    			add_location(br10, file, 214, 168, 13806);
-    			add_location(br11, file, 215, 165, 13978);
-    			add_location(br12, file, 216, 170, 14155);
-    			add_location(br13, file, 217, 158, 14320);
+    			add_location(br0, file, 204, 155, 12133);
+    			add_location(br1, file, 205, 152, 12292);
+    			add_location(br2, file, 206, 161, 12460);
+    			add_location(br3, file, 207, 156, 12623);
+    			add_location(br4, file, 208, 164, 12794);
+    			add_location(br5, file, 209, 166, 12967);
+    			add_location(br6, file, 210, 154, 13128);
+    			add_location(br7, file, 211, 167, 13302);
+    			add_location(br8, file, 212, 161, 13470);
+    			add_location(br9, file, 213, 155, 13632);
+    			add_location(br10, file, 214, 168, 13807);
+    			add_location(br11, file, 215, 165, 13979);
+    			add_location(br12, file, 216, 170, 14156);
+    			add_location(br13, file, 217, 158, 14321);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4513,22 +4513,22 @@ var app = (function () {
     			attr_dev(canvas, "width", canvas_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas, "height", canvas_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas, "class", "svelte-13xw3n8");
-    			add_location(canvas, file, 164, 0, 8303);
+    			add_location(canvas, file, 164, 0, 8304);
     			attr_dev(br0, "uh", "");
-    			add_location(br0, file, 166, 0, 8476);
+    			add_location(br0, file, 166, 0, 8477);
     			option0.__value = 1;
     			option0.value = option0.__value;
-    			add_location(option0, file, 170, 4, 8613);
+    			add_location(option0, file, 170, 4, 8614);
     			option1.__value = 2;
     			option1.value = option1.__value;
-    			add_location(option1, file, 171, 4, 8649);
+    			add_location(option1, file, 171, 4, 8650);
     			option2.__value = 4;
     			option2.value = option2.__value;
-    			add_location(option2, file, 172, 4, 8684);
+    			add_location(option2, file, 172, 4, 8685);
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler*/ ctx[5].call(select));
-    			add_location(select, file, 169, 0, 8503);
+    			add_location(select, file, 169, 0, 8504);
     			attr_dev(br1, "uh", "");
-    			add_location(br1, file, 174, 0, 8725);
+    			add_location(br1, file, 174, 0, 8726);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4697,7 +4697,7 @@ var app = (function () {
     			intensity: 5,
     			count: 1,
     			angle: 0,
-    			shift: 1
+    			shift: 36
     		},
     		ring: {
     			radius: 200,
