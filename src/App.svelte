@@ -8,6 +8,7 @@
     import canvasClickDrag from "./canvasClickDrag";
     import IrisComponent from "./IrisComponent";
     import seedrandom from "../node_modules/seedrandom";
+    import HalfComponent from "./HalfComponent";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -49,7 +50,7 @@
             intensity: 5,
             count: 1,
             angle: 0,
-            shift: 1,
+            shift: 36,
         },
         ring: {
             radius: 200,
@@ -91,6 +92,8 @@
             flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
             flareComponents.streak.options.intensity = flareSettings.streak.intensity / flareSettings.downscaling;
             flareComponents.streak.render();
+            flareComponents.streakLeftHalf = new HalfComponent(flareComponents.streak.canvas, 2048, 2048, true, false);
+            flareComponents.streakRightHalf = new HalfComponent(flareComponents.streak.canvas, 2048, 2048, false, true);
         }
         if (renderRing) {
             flareComponents.ring.radius = Math.floor(flareSettings.ring.radius / flareSettings.downscaling);
@@ -121,8 +124,9 @@
         var streakAngle = flareSettings.streak.angle;
         for (var i = 0; i < flareSettings.streak.count; i++) {
             var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
-            if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * ((i % 2 == 0)?-1:1);
-            drawComponent(ctx, flareComponents.streak, flareSettings.positioning.x + Math.cos(streakAngle * Math.PI / 180) * streakOffset, flareSettings.positioning.y + Math.sin(streakAngle * Math.PI / 180) * streakOffset, flareSettings.streak.width, flareSettings.streak.thickness, streakAngle);
+            if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * ((i % 2 == 0)?-1:1) / 100 * flareSettings.streak.width;
+            drawComponent(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle);
+            drawComponent(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle);
             streakAngle += 180 / flareSettings.streak.count;
         }
         drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2, 0, flareSettings.ring.alpha);
