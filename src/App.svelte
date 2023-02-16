@@ -92,8 +92,8 @@
             flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
             flareComponents.streak.options.intensity = flareSettings.streak.intensity / flareSettings.downscaling;
             flareComponents.streak.render();
-            flareComponents.streakLeftHalf = new HalfComponent(flareComponents.streak.canvas, 2048, 2048, true, false);
-            flareComponents.streakRightHalf = new HalfComponent(flareComponents.streak.canvas, 2048, 2048, false, true);
+            flareComponents.streakLeftHalf = new HalfComponent(flareComponents.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, true, false);
+            flareComponents.streakRightHalf = new HalfComponent(flareComponents.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, false, true);
         }
         if (renderRing) {
             flareComponents.ring.radius = Math.floor(flareSettings.ring.radius / flareSettings.downscaling);
@@ -128,6 +128,7 @@
             drawComponent(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle);
             drawComponent(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle);
             streakAngle += 180 / flareSettings.streak.count;
+            console.log(flareSettings.streak.width + streakOffset);
         }
         drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2, 0, flareSettings.ring.alpha);
 
