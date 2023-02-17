@@ -24,6 +24,10 @@
         miIris: new IrisComponent(256, {
             roundness: 20,
         }),
+        glow: new SpotComponent(256, {
+            deformationAmount: 0,
+            intensity: 0,
+        }),
     };
 
     var flareSettings = {
@@ -75,12 +79,17 @@
             perspective: 100,
             alphaVariance: 50,
             seed: 123,
-        }
+        },
+        glow: {
+            radius: 800,
+            alpha: 40,
+            softening: 0,
+        },
     };
 
     var baseCanvas;
     
-    function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false) {
+    function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false) {
         if (renderHotspot) {
             flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
             flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity / flareSettings.downscaling;
@@ -112,6 +121,10 @@
             flareComponents.miIris.options.fringeSize = Math.floor(flareSettings.miIris.fringeSize / flareSettings.downscaling);
             flareComponents.miIris.options.blur = Math.floor(flareSettings.miIris.blur / flareSettings.downscaling);
             flareComponents.miIris.render();
+        }
+        if (renderGlow) {
+            flareComponents.glow.radius = flareSettings.glow.radius;
+            flareComponents.glow.render();
         }
 
         var ctx = baseCanvas.getContext("2d");
@@ -151,9 +164,11 @@
             irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
             drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale, 0, 100 - flareSettings.miIris.alphaVariance * miRng());
         }
+
+        drawComponent(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2, 0, flareSettings.glow.alpha);
     }
 
-    window.onload = function() { renderFlare(true, true, true, true); };
+    window.onload = function() { renderFlare(true, true, true, true, true); };
 
     function handleClickDrag(e) {
         //console.log(e.detail);
