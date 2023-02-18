@@ -26,7 +26,7 @@
         }),
         glow: new SpotComponent(256, {
             deformationAmount: 0,
-            intensity: 0,
+            intensity: -50,
         }),
     };
 
@@ -82,7 +82,7 @@
         },
         glow: {
             radius: 800,
-            alpha: 40,
+            alpha: 80,
             softening: 0,
         },
     };
