@@ -12,6 +12,7 @@ class IrisComponent {
         hue: 200,
         saturation: 100,
         blur: 5,
+        angle: 0,
     };
 
     setOptions(options) {
@@ -38,7 +39,7 @@ class IrisComponent {
         ctx.beginPath();
 
         var polarPoints = []; // [r, theta]
-        var startAngle = 0;
+        var startAngle = this.options.angle * Math.PI / 180;
         for (var i = 0; i < this.options.sides; i++) {
             polarPoints.push([this.radius, startAngle]);
             var r1, r = this.radius, theta = 0;

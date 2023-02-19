@@ -68,6 +68,7 @@
             radius: 81,
             sides: 5,
             roundness: 20,
+            angle: 0,
             fillAlpha: 25,
             fringeAlpha: 50,
             fringeSize: 10,
@@ -120,6 +121,7 @@
             flareComponents.miIris.options.fringeAlpha = flareSettings.miIris.fringeAlpha;
             flareComponents.miIris.options.fringeSize = Math.floor(flareSettings.miIris.fringeSize / flareSettings.downscaling);
             flareComponents.miIris.options.blur = Math.floor(flareSettings.miIris.blur / flareSettings.downscaling);
+            flareComponents.miIris.options.angle = flareSettings.miIris.angle;
             flareComponents.miIris.render();
         }
         if (renderGlow) {
@@ -232,6 +234,7 @@ Preview quality
     Perspective: <Slider min={0} max={100} bind:value={flareSettings.miIris.perspective} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Alpha Variance: <Slider min={0} max={100} bind:value={flareSettings.miIris.alphaVariance} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Random Seed: <Slider min={0} max={999} bind:value={flareSettings.miIris.seed} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+    Angle: <Slider min={0} max={360} bind:value={flareSettings.miIris.angle} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
 </Collapsible>
 <Collapsible title={"Glow"}>
     Radius: <Slider min={0} max={1200} bind:value={flareSettings.glow.radius} on:input={function() { renderFlare(false, false, false, false, true); }}></Slider> <br />
