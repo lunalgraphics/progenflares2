@@ -123,7 +123,8 @@
             flareComponents.miIris.render();
         }
         if (renderGlow) {
-            flareComponents.glow.radius = flareSettings.glow.radius;
+            flareComponents.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
+            flareComponents.glow.options.intensity = Math.floor(-flareSettings.glow.softening / flareSettings.downscaling);
             flareComponents.glow.render();
         }
 
@@ -141,7 +142,6 @@
             drawComponent(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle);
             drawComponent(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle);
             streakAngle += 180 / flareSettings.streak.count;
-            console.log(flareSettings.streak.width + streakOffset);
         }
         drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2, 0, flareSettings.ring.alpha);
 
@@ -232,6 +232,11 @@ Preview quality
     Perspective: <Slider min={0} max={100} bind:value={flareSettings.miIris.perspective} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Alpha Variance: <Slider min={0} max={100} bind:value={flareSettings.miIris.alphaVariance} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
     Random Seed: <Slider min={0} max={999} bind:value={flareSettings.miIris.seed} on:input={function() { renderFlare(false, false, false, true); }}></Slider> <br />
+</Collapsible>
+<Collapsible title={"Glow"}>
+    Radius: <Slider min={0} max={1200} bind:value={flareSettings.glow.radius} on:input={function() { renderFlare(false, false, false, false, true); }}></Slider> <br />
+    Alpha: <Slider min={0} max={100} bind:value={flareSettings.glow.alpha} on:input={function() { renderFlare(false, false, false, false, true); }}></Slider> <br />
+    Softness: <Slider min={0} max={200} bind:value={flareSettings.glow.softening} on:input={function() { renderFlare(false, false, false, false, true); }}></Slider> <br />
 </Collapsible>
 
 <style>
