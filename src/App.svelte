@@ -47,6 +47,7 @@
             intensity: 5,
             deformationAmount: 1.6,
             deformationFrequency: 0.006,
+            deformationSeed: 1,
         },
         streak: {
             thickness: 64,
@@ -96,6 +97,7 @@
             flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity / flareSettings.downscaling;
             flareComponents.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
             flareComponents.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
+            flareComponents.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
             flareComponents.hotspot.render();
         }
         if (renderStreak) {
@@ -217,6 +219,7 @@ Preview quality
     Intensity: <Slider min={0} max={50} bind:value={flareSettings.hotspot.intensity} on:input={function() { renderFlare(true); }}></Slider> <br />
     Rays Frequency: <Slider min={0} max={0.05} step={0.001} bind:value={flareSettings.hotspot.deformationFrequency} on:input={function() { renderFlare(true); }}></Slider> <br />
     Rays Definition: <Slider min={0} max={2.1} step={0.01} bind:value={flareSettings.hotspot.deformationAmount} on:input={function() { renderFlare(true); }}></Slider> <br />
+    Seed: <Slider min={1} max={999} bind:value={flareSettings.hotspot.deformationSeed} on:input={function() { renderFlare(true); }}></Slider> <br />
 </Collapsible>
 <Collapsible title={"anamorphic streak"}>
     Thickness: <Slider min={0} max={200} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }}></Slider> <br />

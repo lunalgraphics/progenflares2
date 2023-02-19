@@ -9,6 +9,7 @@ class SpotComponent {
         intensity: 10,
         deformationFrequency: 0.006,
         deformationAmount: 1.6,
+        deformationSeed: 1,
         hue: 200,
         saturation: 100,
     };
@@ -32,7 +33,8 @@ class SpotComponent {
         ctx.drawImage(PrerenderedEllipticalGradient.canvas, 0, this.options.intensity, this.canvas.width, this.canvas.height - this.options.intensity);
 
         var deformationTexture = new FractalNoise(1024, 1024, {
-            baseFrequency: [this.options.deformationFrequency, 0]
+            baseFrequency: [this.options.deformationFrequency, 0],
+            seed: this.options.deformationSeed,
         });
         deformationTexture.render();
 
