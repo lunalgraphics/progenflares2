@@ -178,7 +178,21 @@
         flareSettings.positioning.y = e.detail.y;
         renderFlare();
     }
+
+    function createDownloadLink() {
+        var initialDownscaling = flareSettings.downscaling;
+        flareSettings.downscaling = 1;
+        renderFlare(true, true, true, true, true);
+        var a = document.createElement("a");
+        a.href = baseCanvas.toDataURL();
+        a.download = "ProgenFlares2-flare.png";
+        flareSettings.downscaling = initialDownscaling;
+        renderFlare(true, true, true, true, true);
+        return a;
+    }
 </script>
+
+<button on:click={function() { createDownloadLink().click(); }}>Export</button> <br />
 
 <canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height}></canvas>
 
