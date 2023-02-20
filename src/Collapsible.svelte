@@ -19,10 +19,29 @@
     }
 </script>
 
-<b bind:this={nameTag} on:mousedown={toggleCollapse} style="user-select: none;">{title}</b>
-<br />
+<div id={"nameTag"} on:mousedown={toggleCollapse}>
+    <div style={"width: 18px; text-align: center; display: inline-block;"}>
+        {collapsed?"+":"-"}
+    </div>
+    <b>{title}</b>
+</div>
+
 {#if (!collapsed)}
-    <div bind:this={contents} in:slide out:slide>
+    <div id={"contents"} in:slide out:slide>
         <slot></slot>
     </div>
 {/if}
+
+<style>
+    #nameTag {
+        user-select: none;
+        border-bottom: 1px solid grey;
+        padding: 10px 5px;
+        box-sizing: border-box;
+    }
+    #contents {
+        padding: 2px 2px 5px 25px;
+        box-sizing: border-box;
+        line-height: 25px;
+    }
+</style>

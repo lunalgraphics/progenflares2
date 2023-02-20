@@ -211,8 +211,7 @@ Preview quality
 <br uh />
 
 <div style={`
-width: 321px;
-line-height: 25px;
+width: 360px;
 `}>
 <Collapsible title={"positioning"} collapsed={false}>
     X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }} /> <br />
