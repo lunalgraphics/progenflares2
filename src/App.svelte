@@ -49,6 +49,7 @@
             deformationFrequency: 0.006,
             deformationSeed: 1,
             alpha: 100,
+            angle: 0,
         },
         streak: {
             thickness: 64,
@@ -58,6 +59,7 @@
             angle: 0,
             shift: 36,
             alpha: 100,
+            angle: 0,
         },
         ring: {
             radius: 200,
@@ -140,7 +142,7 @@
         ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
-        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2, 0, flareSettings.hotspot.alpha);
+        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2, flareSettings.hotspot.angle, flareSettings.hotspot.alpha);
         var streakAngle = flareSettings.streak.angle;
         for (var i = 0; i < flareSettings.streak.count; i++) {
             var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
@@ -221,6 +223,7 @@ width: 360px;
 </Collapsible>
 <Collapsible title={"hi"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.hotspot.alpha} on:input={function() { renderFlare(true); }} /> <br />
+    Angle: <Slider min={0} max={360} bind:value={flareSettings.hotspot.angle} on:input={function() { renderFlare(true); }} /> <br />
     Size: <Slider min={0} max={900} bind:value={flareSettings.hotspot.radius} on:input={function() { renderFlare(true); }} /> <br />
     Intensity: <Slider min={0} max={50} bind:value={flareSettings.hotspot.intensity} on:input={function() { renderFlare(true); }} /> <br />
     Rays Frequency: <Slider min={0} max={0.05} step={0.001} bind:value={flareSettings.hotspot.deformationFrequency} on:input={function() { renderFlare(true); }} /> <br />
@@ -229,6 +232,7 @@ width: 360px;
 </Collapsible>
 <Collapsible title={"anamorphic streak"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.streak.alpha} on:input={function() { renderFlare(false, true); }} /> <br />
+    Angle: <Slider min={0} max={360} bind:value={flareSettings.streak.angle} on:input={function() { renderFlare(false, true); }} /> <br />
     Thickness: <Slider min={0} max={200} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }} /> <br />
     Length: <Slider min={0} max={3210} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }} /> <br />
     Intensity: <Slider min={-25} max={50} bind:value={flareSettings.streak.intensity} on:input={function() { renderFlare(false, true); }} /> <br />
