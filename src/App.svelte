@@ -140,7 +140,7 @@
         ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
-        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2, flareSettings.hotspot.alpha);
+        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2, 0, flareSettings.hotspot.alpha);
         var streakAngle = flareSettings.streak.angle;
         for (var i = 0; i < flareSettings.streak.count; i++) {
             var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
