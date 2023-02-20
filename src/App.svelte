@@ -210,6 +210,10 @@ Preview quality
 </select>
 <br uh />
 
+<div style={`
+width: 321px;
+line-height: 25px;
+`}>
 <Collapsible title={"positioning"} collapsed={false}>
     X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }} /> <br />
     Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }} /> <br />
@@ -262,9 +266,13 @@ Preview quality
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.glow.alpha} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Softness: <Slider min={0} max={200} bind:value={flareSettings.glow.softening} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
 </Collapsible>
+</div>
 
 <style>
     canvas {
         width: 600px;
+    }
+    :global(slider) {
+        float: right;
     }
 </style>

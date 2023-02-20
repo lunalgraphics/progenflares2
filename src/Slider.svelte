@@ -25,8 +25,10 @@
     }
 </script>
 
+<slider>
 <input type="range" min={min} max={max} bind:value={value} step={step} bind:this={rangeElement} on:input={updateValues} on:change={onChange} />
 <input type="number" bind:value={value} step={step} bind:this={numberElement} on:input={updateValues} on:change={onChange} />
+</slider>
 
 <svelte:options accessors={true} />
 
