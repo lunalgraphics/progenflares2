@@ -3717,10 +3717,10 @@ var app = (function () {
     		/*slider0_value_binding_3*/ ctx[45](value);
     	}
 
-    	let slider0_props = { min: 0, max: 810 };
+    	let slider0_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].ring.radius !== void 0) {
-    		slider0_props.value = /*flareSettings*/ ctx[0].ring.radius;
+    	if (/*flareSettings*/ ctx[0].ring.alpha !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].ring.alpha;
     	}
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
@@ -3731,10 +3731,10 @@ var app = (function () {
     		/*slider1_value_binding_3*/ ctx[47](value);
     	}
 
-    	let slider1_props = { min: 0, max: 500 };
+    	let slider1_props = { min: 0, max: 810 };
 
-    	if (/*flareSettings*/ ctx[0].ring.thickness !== void 0) {
-    		slider1_props.value = /*flareSettings*/ ctx[0].ring.thickness;
+    	if (/*flareSettings*/ ctx[0].ring.radius !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].ring.radius;
     	}
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
@@ -3745,10 +3745,10 @@ var app = (function () {
     		/*slider2_value_binding_3*/ ctx[49](value);
     	}
 
-    	let slider2_props = { min: 0, max: 50 };
+    	let slider2_props = { min: 0, max: 500 };
 
-    	if (/*flareSettings*/ ctx[0].ring.blur !== void 0) {
-    		slider2_props.value = /*flareSettings*/ ctx[0].ring.blur;
+    	if (/*flareSettings*/ ctx[0].ring.thickness !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].ring.thickness;
     	}
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
@@ -3759,10 +3759,10 @@ var app = (function () {
     		/*slider3_value_binding_3*/ ctx[51](value);
     	}
 
-    	let slider3_props = { min: 0, max: 100 };
+    	let slider3_props = { min: 0, max: 50 };
 
-    	if (/*flareSettings*/ ctx[0].ring.alpha !== void 0) {
-    		slider3_props.value = /*flareSettings*/ ctx[0].ring.alpha;
+    	if (/*flareSettings*/ ctx[0].ring.blur !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].ring.blur;
     	}
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
@@ -3799,19 +3799,19 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t0 = text("Radius: ");
+    			t0 = text("Alpha: ");
     			create_component(slider0.$$.fragment);
     			t1 = space();
     			br0 = element("br");
-    			t2 = text("\n    Thickness: ");
+    			t2 = text("\n    Radius: ");
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
-    			t4 = text("\n    Softness: ");
+    			t4 = text("\n    Thickness: ");
     			create_component(slider2.$$.fragment);
     			t5 = space();
     			br2 = element("br");
-    			t6 = text("\n    Alpha: ");
+    			t6 = text("\n    Softness: ");
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
@@ -3823,10 +3823,10 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 242, 139, 13599);
-    			add_location(br1, file, 243, 145, 13751);
-    			add_location(br2, file, 244, 138, 13896);
-    			add_location(br3, file, 245, 137, 14040);
+    			add_location(br0, file, 242, 137, 13597);
+    			add_location(br1, file, 243, 139, 13743);
+    			add_location(br2, file, 244, 145, 13895);
+    			add_location(br3, file, 245, 138, 14040);
     			add_location(br4, file, 246, 144, 14191);
     			add_location(br5, file, 247, 152, 14350);
     		},
@@ -3862,7 +3862,7 @@ var app = (function () {
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
     				updating_value = true;
-    				slider0_changes.value = /*flareSettings*/ ctx[0].ring.radius;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].ring.alpha;
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -3871,7 +3871,7 @@ var app = (function () {
 
     			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_1 = true;
-    				slider1_changes.value = /*flareSettings*/ ctx[0].ring.thickness;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].ring.radius;
     				add_flush_callback(() => updating_value_1 = false);
     			}
 
@@ -3880,7 +3880,7 @@ var app = (function () {
 
     			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_2 = true;
-    				slider2_changes.value = /*flareSettings*/ ctx[0].ring.blur;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].ring.thickness;
     				add_flush_callback(() => updating_value_2 = false);
     			}
 
@@ -3889,7 +3889,7 @@ var app = (function () {
 
     			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_3 = true;
-    				slider3_changes.value = /*flareSettings*/ ctx[0].ring.alpha;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].ring.blur;
     				add_flush_callback(() => updating_value_3 = false);
     			}
 
@@ -4054,10 +4054,10 @@ var app = (function () {
     		/*slider0_value_binding_4*/ ctx[57](value);
     	}
 
-    	let slider0_props = { min: 0, max: 810 };
+    	let slider0_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.radius !== void 0) {
-    		slider0_props.value = /*flareSettings*/ ctx[0].miIris.radius;
+    	if (/*flareSettings*/ ctx[0].miIris.fillAlpha !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].miIris.fillAlpha;
     	}
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
@@ -4068,10 +4068,10 @@ var app = (function () {
     		/*slider1_value_binding_4*/ ctx[59](value);
     	}
 
-    	let slider1_props = { min: 5, max: 10 };
+    	let slider1_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.sides !== void 0) {
-    		slider1_props.value = /*flareSettings*/ ctx[0].miIris.sides;
+    	if (/*flareSettings*/ ctx[0].miIris.fringeAlpha !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].miIris.fringeAlpha;
     	}
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
@@ -4082,10 +4082,10 @@ var app = (function () {
     		/*slider2_value_binding_4*/ ctx[61](value);
     	}
 
-    	let slider2_props = { min: 0, max: 100 };
+    	let slider2_props = { min: 0, max: 360 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.roundness !== void 0) {
-    		slider2_props.value = /*flareSettings*/ ctx[0].miIris.roundness;
+    	if (/*flareSettings*/ ctx[0].miIris.angle !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].miIris.angle;
     	}
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
@@ -4096,10 +4096,10 @@ var app = (function () {
     		/*slider3_value_binding_4*/ ctx[63](value);
     	}
 
-    	let slider3_props = { min: 0, max: 100 };
+    	let slider3_props = { min: 0, max: 810 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.fillAlpha !== void 0) {
-    		slider3_props.value = /*flareSettings*/ ctx[0].miIris.fillAlpha;
+    	if (/*flareSettings*/ ctx[0].miIris.radius !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].miIris.radius;
     	}
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
@@ -4110,10 +4110,10 @@ var app = (function () {
     		/*slider4_value_binding_3*/ ctx[65](value);
     	}
 
-    	let slider4_props = { min: 0, max: 100 };
+    	let slider4_props = { min: 5, max: 10 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.fringeSize !== void 0) {
-    		slider4_props.value = /*flareSettings*/ ctx[0].miIris.fringeSize;
+    	if (/*flareSettings*/ ctx[0].miIris.sides !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].miIris.sides;
     	}
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
@@ -4126,8 +4126,8 @@ var app = (function () {
 
     	let slider5_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.fringeAlpha !== void 0) {
-    		slider5_props.value = /*flareSettings*/ ctx[0].miIris.fringeAlpha;
+    	if (/*flareSettings*/ ctx[0].miIris.roundness !== void 0) {
+    		slider5_props.value = /*flareSettings*/ ctx[0].miIris.roundness;
     	}
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
@@ -4138,10 +4138,10 @@ var app = (function () {
     		/*slider6_value_binding_2*/ ctx[69](value);
     	}
 
-    	let slider6_props = { min: 0, max: 30 };
+    	let slider6_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.blur !== void 0) {
-    		slider6_props.value = /*flareSettings*/ ctx[0].miIris.blur;
+    	if (/*flareSettings*/ ctx[0].miIris.fringeSize !== void 0) {
+    		slider6_props.value = /*flareSettings*/ ctx[0].miIris.fringeSize;
     	}
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
@@ -4152,10 +4152,10 @@ var app = (function () {
     		/*slider7_value_binding*/ ctx[71](value);
     	}
 
-    	let slider7_props = { min: 0, max: 50 };
+    	let slider7_props = { min: 0, max: 30 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.countTowards !== void 0) {
-    		slider7_props.value = /*flareSettings*/ ctx[0].miIris.countTowards;
+    	if (/*flareSettings*/ ctx[0].miIris.blur !== void 0) {
+    		slider7_props.value = /*flareSettings*/ ctx[0].miIris.blur;
     	}
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
@@ -4168,8 +4168,8 @@ var app = (function () {
 
     	let slider8_props = { min: 0, max: 50 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.countAway !== void 0) {
-    		slider8_props.value = /*flareSettings*/ ctx[0].miIris.countAway;
+    	if (/*flareSettings*/ ctx[0].miIris.countTowards !== void 0) {
+    		slider8_props.value = /*flareSettings*/ ctx[0].miIris.countTowards;
     	}
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
@@ -4180,10 +4180,10 @@ var app = (function () {
     		/*slider9_value_binding*/ ctx[75](value);
     	}
 
-    	let slider9_props = { min: 0, max: 100 };
+    	let slider9_props = { min: 0, max: 50 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.spread !== void 0) {
-    		slider9_props.value = /*flareSettings*/ ctx[0].miIris.spread;
+    	if (/*flareSettings*/ ctx[0].miIris.countAway !== void 0) {
+    		slider9_props.value = /*flareSettings*/ ctx[0].miIris.countAway;
     	}
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
@@ -4196,8 +4196,8 @@ var app = (function () {
 
     	let slider10_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.sizeVariance !== void 0) {
-    		slider10_props.value = /*flareSettings*/ ctx[0].miIris.sizeVariance;
+    	if (/*flareSettings*/ ctx[0].miIris.spread !== void 0) {
+    		slider10_props.value = /*flareSettings*/ ctx[0].miIris.spread;
     	}
 
     	slider10 = new Slider({ props: slider10_props, $$inline: true });
@@ -4210,8 +4210,8 @@ var app = (function () {
 
     	let slider11_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.perspective !== void 0) {
-    		slider11_props.value = /*flareSettings*/ ctx[0].miIris.perspective;
+    	if (/*flareSettings*/ ctx[0].miIris.sizeVariance !== void 0) {
+    		slider11_props.value = /*flareSettings*/ ctx[0].miIris.sizeVariance;
     	}
 
     	slider11 = new Slider({ props: slider11_props, $$inline: true });
@@ -4224,8 +4224,8 @@ var app = (function () {
 
     	let slider12_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.alphaVariance !== void 0) {
-    		slider12_props.value = /*flareSettings*/ ctx[0].miIris.alphaVariance;
+    	if (/*flareSettings*/ ctx[0].miIris.perspective !== void 0) {
+    		slider12_props.value = /*flareSettings*/ ctx[0].miIris.perspective;
     	}
 
     	slider12 = new Slider({ props: slider12_props, $$inline: true });
@@ -4236,10 +4236,10 @@ var app = (function () {
     		/*slider13_value_binding*/ ctx[83](value);
     	}
 
-    	let slider13_props = { min: 0, max: 999 };
+    	let slider13_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.seed !== void 0) {
-    		slider13_props.value = /*flareSettings*/ ctx[0].miIris.seed;
+    	if (/*flareSettings*/ ctx[0].miIris.alphaVariance !== void 0) {
+    		slider13_props.value = /*flareSettings*/ ctx[0].miIris.alphaVariance;
     	}
 
     	slider13 = new Slider({ props: slider13_props, $$inline: true });
@@ -4250,10 +4250,10 @@ var app = (function () {
     		/*slider14_value_binding*/ ctx[85](value);
     	}
 
-    	let slider14_props = { min: 0, max: 360 };
+    	let slider14_props = { min: 0, max: 999 };
 
-    	if (/*flareSettings*/ ctx[0].miIris.angle !== void 0) {
-    		slider14_props.value = /*flareSettings*/ ctx[0].miIris.angle;
+    	if (/*flareSettings*/ ctx[0].miIris.seed !== void 0) {
+    		slider14_props.value = /*flareSettings*/ ctx[0].miIris.seed;
     	}
 
     	slider14 = new Slider({ props: slider14_props, $$inline: true });
@@ -4262,81 +4262,81 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t0 = text("Radius: ");
+    			t0 = text("Fill Alpha: ");
     			create_component(slider0.$$.fragment);
     			t1 = space();
     			br0 = element("br");
-    			t2 = text("\n    Sides: ");
+    			t2 = text("\n    Fringe Alpha: ");
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
-    			t4 = text("\n    Roundness: ");
+    			t4 = text("\n    Angle: ");
     			create_component(slider2.$$.fragment);
     			t5 = space();
     			br2 = element("br");
-    			t6 = text("\n    Fill: ");
+    			t6 = text("\n    Radius: ");
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			t8 = text("\n    Fringe Size: ");
+    			t8 = text("\n    Sides: ");
     			create_component(slider4.$$.fragment);
     			t9 = space();
     			br4 = element("br");
-    			t10 = text("\n    Fringe Alpha: ");
+    			t10 = text("\n    Roundness: ");
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			t12 = text("\n    Softness: ");
+    			t12 = text("\n    Fringe Size: ");
     			create_component(slider6.$$.fragment);
     			t13 = space();
     			br6 = element("br");
-    			t14 = text("\n    Count Towards: ");
+    			t14 = text("\n    Softness: ");
     			create_component(slider7.$$.fragment);
     			t15 = space();
     			br7 = element("br");
-    			t16 = text("\n    Count Away: ");
+    			t16 = text("\n    Count Towards: ");
     			create_component(slider8.$$.fragment);
     			t17 = space();
     			br8 = element("br");
-    			t18 = text("\n    Spread: ");
+    			t18 = text("\n    Count Away: ");
     			create_component(slider9.$$.fragment);
     			t19 = space();
     			br9 = element("br");
-    			t20 = text("\n    Size Variance: ");
+    			t20 = text("\n    Spread: ");
     			create_component(slider10.$$.fragment);
     			t21 = space();
     			br10 = element("br");
-    			t22 = text("\n    Perspective: ");
+    			t22 = text("\n    Size Variance: ");
     			create_component(slider11.$$.fragment);
     			t23 = space();
     			br11 = element("br");
-    			t24 = text("\n    Alpha Variance: ");
+    			t24 = text("\n    Perspective: ");
     			create_component(slider12.$$.fragment);
     			t25 = space();
     			br12 = element("br");
-    			t26 = text("\n    Random Seed: ");
+    			t26 = text("\n    Alpha Variance: ");
     			create_component(slider13.$$.fragment);
     			t27 = space();
     			br13 = element("br");
-    			t28 = text("\n    Angle: ");
+    			t28 = text("\n    Random Seed: ");
     			create_component(slider14.$$.fragment);
     			t29 = space();
     			br14 = element("br");
-    			add_location(br0, file, 250, 148, 14555);
-    			add_location(br1, file, 251, 145, 14707);
-    			add_location(br2, file, 252, 154, 14868);
-    			add_location(br3, file, 253, 149, 15024);
-    			add_location(br4, file, 254, 157, 15188);
-    			add_location(br5, file, 255, 159, 15354);
-    			add_location(br6, file, 256, 147, 15508);
-    			add_location(br7, file, 257, 160, 15675);
-    			add_location(br8, file, 258, 154, 15836);
-    			add_location(br9, file, 259, 148, 15991);
-    			add_location(br10, file, 260, 161, 16159);
-    			add_location(br11, file, 261, 158, 16324);
-    			add_location(br12, file, 262, 163, 16494);
-    			add_location(br13, file, 263, 151, 16652);
-    			add_location(br14, file, 264, 146, 16805);
+    			add_location(br0, file, 250, 155, 14562);
+    			add_location(br1, file, 251, 159, 14728);
+    			add_location(br2, file, 252, 146, 14881);
+    			add_location(br3, file, 253, 148, 15036);
+    			add_location(br4, file, 254, 145, 15188);
+    			add_location(br5, file, 255, 154, 15349);
+    			add_location(br6, file, 256, 157, 15513);
+    			add_location(br7, file, 257, 147, 15667);
+    			add_location(br8, file, 258, 160, 15834);
+    			add_location(br9, file, 259, 154, 15995);
+    			add_location(br10, file, 260, 148, 16150);
+    			add_location(br11, file, 261, 161, 16318);
+    			add_location(br12, file, 262, 158, 16483);
+    			add_location(br13, file, 263, 163, 16653);
+    			add_location(br14, file, 264, 151, 16811);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4406,7 +4406,7 @@ var app = (function () {
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
     				updating_value = true;
-    				slider0_changes.value = /*flareSettings*/ ctx[0].miIris.radius;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].miIris.fillAlpha;
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -4415,7 +4415,7 @@ var app = (function () {
 
     			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_1 = true;
-    				slider1_changes.value = /*flareSettings*/ ctx[0].miIris.sides;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].miIris.fringeAlpha;
     				add_flush_callback(() => updating_value_1 = false);
     			}
 
@@ -4424,7 +4424,7 @@ var app = (function () {
 
     			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_2 = true;
-    				slider2_changes.value = /*flareSettings*/ ctx[0].miIris.roundness;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].miIris.angle;
     				add_flush_callback(() => updating_value_2 = false);
     			}
 
@@ -4433,7 +4433,7 @@ var app = (function () {
 
     			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_3 = true;
-    				slider3_changes.value = /*flareSettings*/ ctx[0].miIris.fillAlpha;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].miIris.radius;
     				add_flush_callback(() => updating_value_3 = false);
     			}
 
@@ -4442,7 +4442,7 @@ var app = (function () {
 
     			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_4 = true;
-    				slider4_changes.value = /*flareSettings*/ ctx[0].miIris.fringeSize;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].miIris.sides;
     				add_flush_callback(() => updating_value_4 = false);
     			}
 
@@ -4451,7 +4451,7 @@ var app = (function () {
 
     			if (!updating_value_5 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_5 = true;
-    				slider5_changes.value = /*flareSettings*/ ctx[0].miIris.fringeAlpha;
+    				slider5_changes.value = /*flareSettings*/ ctx[0].miIris.roundness;
     				add_flush_callback(() => updating_value_5 = false);
     			}
 
@@ -4460,7 +4460,7 @@ var app = (function () {
 
     			if (!updating_value_6 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_6 = true;
-    				slider6_changes.value = /*flareSettings*/ ctx[0].miIris.blur;
+    				slider6_changes.value = /*flareSettings*/ ctx[0].miIris.fringeSize;
     				add_flush_callback(() => updating_value_6 = false);
     			}
 
@@ -4469,7 +4469,7 @@ var app = (function () {
 
     			if (!updating_value_7 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_7 = true;
-    				slider7_changes.value = /*flareSettings*/ ctx[0].miIris.countTowards;
+    				slider7_changes.value = /*flareSettings*/ ctx[0].miIris.blur;
     				add_flush_callback(() => updating_value_7 = false);
     			}
 
@@ -4478,7 +4478,7 @@ var app = (function () {
 
     			if (!updating_value_8 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_8 = true;
-    				slider8_changes.value = /*flareSettings*/ ctx[0].miIris.countAway;
+    				slider8_changes.value = /*flareSettings*/ ctx[0].miIris.countTowards;
     				add_flush_callback(() => updating_value_8 = false);
     			}
 
@@ -4487,7 +4487,7 @@ var app = (function () {
 
     			if (!updating_value_9 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_9 = true;
-    				slider9_changes.value = /*flareSettings*/ ctx[0].miIris.spread;
+    				slider9_changes.value = /*flareSettings*/ ctx[0].miIris.countAway;
     				add_flush_callback(() => updating_value_9 = false);
     			}
 
@@ -4496,7 +4496,7 @@ var app = (function () {
 
     			if (!updating_value_10 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_10 = true;
-    				slider10_changes.value = /*flareSettings*/ ctx[0].miIris.sizeVariance;
+    				slider10_changes.value = /*flareSettings*/ ctx[0].miIris.spread;
     				add_flush_callback(() => updating_value_10 = false);
     			}
 
@@ -4505,7 +4505,7 @@ var app = (function () {
 
     			if (!updating_value_11 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_11 = true;
-    				slider11_changes.value = /*flareSettings*/ ctx[0].miIris.perspective;
+    				slider11_changes.value = /*flareSettings*/ ctx[0].miIris.sizeVariance;
     				add_flush_callback(() => updating_value_11 = false);
     			}
 
@@ -4514,7 +4514,7 @@ var app = (function () {
 
     			if (!updating_value_12 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_12 = true;
-    				slider12_changes.value = /*flareSettings*/ ctx[0].miIris.alphaVariance;
+    				slider12_changes.value = /*flareSettings*/ ctx[0].miIris.perspective;
     				add_flush_callback(() => updating_value_12 = false);
     			}
 
@@ -4523,7 +4523,7 @@ var app = (function () {
 
     			if (!updating_value_13 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_13 = true;
-    				slider13_changes.value = /*flareSettings*/ ctx[0].miIris.seed;
+    				slider13_changes.value = /*flareSettings*/ ctx[0].miIris.alphaVariance;
     				add_flush_callback(() => updating_value_13 = false);
     			}
 
@@ -4532,7 +4532,7 @@ var app = (function () {
 
     			if (!updating_value_14 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_14 = true;
-    				slider14_changes.value = /*flareSettings*/ ctx[0].miIris.angle;
+    				slider14_changes.value = /*flareSettings*/ ctx[0].miIris.seed;
     				add_flush_callback(() => updating_value_14 = false);
     			}
 
@@ -4673,10 +4673,10 @@ var app = (function () {
     		/*slider0_value_binding_5*/ ctx[87](value);
     	}
 
-    	let slider0_props = { min: 0, max: 1200 };
+    	let slider0_props = { min: 0, max: 100 };
 
-    	if (/*flareSettings*/ ctx[0].glow.radius !== void 0) {
-    		slider0_props.value = /*flareSettings*/ ctx[0].glow.radius;
+    	if (/*flareSettings*/ ctx[0].glow.alpha !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].glow.alpha;
     	}
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
@@ -4687,10 +4687,10 @@ var app = (function () {
     		/*slider1_value_binding_5*/ ctx[89](value);
     	}
 
-    	let slider1_props = { min: 0, max: 100 };
+    	let slider1_props = { min: 0, max: 1200 };
 
-    	if (/*flareSettings*/ ctx[0].glow.alpha !== void 0) {
-    		slider1_props.value = /*flareSettings*/ ctx[0].glow.alpha;
+    	if (/*flareSettings*/ ctx[0].glow.radius !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].glow.radius;
     	}
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
@@ -4713,11 +4713,11 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t0 = text("Radius: ");
+    			t0 = text("Alpha: ");
     			create_component(slider0.$$.fragment);
     			t1 = space();
     			br0 = element("br");
-    			t2 = text("\n    Alpha: ");
+    			t2 = text("\n    Radius: ");
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
@@ -4725,9 +4725,9 @@ var app = (function () {
     			create_component(slider2.$$.fragment);
     			t5 = space();
     			br2 = element("br");
-    			add_location(br0, file, 267, 154, 17010);
-    			add_location(br1, file, 268, 151, 17168);
-    			add_location(br2, file, 269, 158, 17333);
+    			add_location(br0, file, 267, 151, 17013);
+    			add_location(br1, file, 268, 154, 17174);
+    			add_location(br2, file, 269, 158, 17339);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4749,7 +4749,7 @@ var app = (function () {
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
     				updating_value = true;
-    				slider0_changes.value = /*flareSettings*/ ctx[0].glow.radius;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].glow.alpha;
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -4758,7 +4758,7 @@ var app = (function () {
 
     			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
     				updating_value_1 = true;
-    				slider1_changes.value = /*flareSettings*/ ctx[0].glow.alpha;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].glow.radius;
     				add_flush_callback(() => updating_value_1 = false);
     			}
 
@@ -5532,8 +5532,8 @@ width: 360px;
     	};
 
     	function slider0_value_binding_3(value) {
-    		if ($$self.$$.not_equal(flareSettings.ring.radius, value)) {
-    			flareSettings.ring.radius = value;
+    		if ($$self.$$.not_equal(flareSettings.ring.alpha, value)) {
+    			flareSettings.ring.alpha = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5543,8 +5543,8 @@ width: 360px;
     	};
 
     	function slider1_value_binding_3(value) {
-    		if ($$self.$$.not_equal(flareSettings.ring.thickness, value)) {
-    			flareSettings.ring.thickness = value;
+    		if ($$self.$$.not_equal(flareSettings.ring.radius, value)) {
+    			flareSettings.ring.radius = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5554,8 +5554,8 @@ width: 360px;
     	};
 
     	function slider2_value_binding_3(value) {
-    		if ($$self.$$.not_equal(flareSettings.ring.blur, value)) {
-    			flareSettings.ring.blur = value;
+    		if ($$self.$$.not_equal(flareSettings.ring.thickness, value)) {
+    			flareSettings.ring.thickness = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5565,8 +5565,8 @@ width: 360px;
     	};
 
     	function slider3_value_binding_3(value) {
-    		if ($$self.$$.not_equal(flareSettings.ring.alpha, value)) {
-    			flareSettings.ring.alpha = value;
+    		if ($$self.$$.not_equal(flareSettings.ring.blur, value)) {
+    			flareSettings.ring.blur = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5598,8 +5598,8 @@ width: 360px;
     	};
 
     	function slider0_value_binding_4(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.radius, value)) {
-    			flareSettings.miIris.radius = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.fillAlpha, value)) {
+    			flareSettings.miIris.fillAlpha = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5609,8 +5609,8 @@ width: 360px;
     	};
 
     	function slider1_value_binding_4(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.sides, value)) {
-    			flareSettings.miIris.sides = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.fringeAlpha, value)) {
+    			flareSettings.miIris.fringeAlpha = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5620,8 +5620,8 @@ width: 360px;
     	};
 
     	function slider2_value_binding_4(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.roundness, value)) {
-    			flareSettings.miIris.roundness = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.angle, value)) {
+    			flareSettings.miIris.angle = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5631,8 +5631,8 @@ width: 360px;
     	};
 
     	function slider3_value_binding_4(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.fillAlpha, value)) {
-    			flareSettings.miIris.fillAlpha = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.radius, value)) {
+    			flareSettings.miIris.radius = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5642,8 +5642,8 @@ width: 360px;
     	};
 
     	function slider4_value_binding_3(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.fringeSize, value)) {
-    			flareSettings.miIris.fringeSize = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.sides, value)) {
+    			flareSettings.miIris.sides = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5653,8 +5653,8 @@ width: 360px;
     	};
 
     	function slider5_value_binding_3(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.fringeAlpha, value)) {
-    			flareSettings.miIris.fringeAlpha = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.roundness, value)) {
+    			flareSettings.miIris.roundness = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5664,8 +5664,8 @@ width: 360px;
     	};
 
     	function slider6_value_binding_2(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.blur, value)) {
-    			flareSettings.miIris.blur = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.fringeSize, value)) {
+    			flareSettings.miIris.fringeSize = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5675,8 +5675,8 @@ width: 360px;
     	};
 
     	function slider7_value_binding(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.countTowards, value)) {
-    			flareSettings.miIris.countTowards = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.blur, value)) {
+    			flareSettings.miIris.blur = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5686,8 +5686,8 @@ width: 360px;
     	};
 
     	function slider8_value_binding(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.countAway, value)) {
-    			flareSettings.miIris.countAway = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.countTowards, value)) {
+    			flareSettings.miIris.countTowards = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5697,8 +5697,8 @@ width: 360px;
     	};
 
     	function slider9_value_binding(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.spread, value)) {
-    			flareSettings.miIris.spread = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.countAway, value)) {
+    			flareSettings.miIris.countAway = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5708,8 +5708,8 @@ width: 360px;
     	};
 
     	function slider10_value_binding(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.sizeVariance, value)) {
-    			flareSettings.miIris.sizeVariance = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.spread, value)) {
+    			flareSettings.miIris.spread = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5719,8 +5719,8 @@ width: 360px;
     	};
 
     	function slider11_value_binding(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.perspective, value)) {
-    			flareSettings.miIris.perspective = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.sizeVariance, value)) {
+    			flareSettings.miIris.sizeVariance = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5730,8 +5730,8 @@ width: 360px;
     	};
 
     	function slider12_value_binding(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.alphaVariance, value)) {
-    			flareSettings.miIris.alphaVariance = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.perspective, value)) {
+    			flareSettings.miIris.perspective = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5741,8 +5741,8 @@ width: 360px;
     	};
 
     	function slider13_value_binding(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.seed, value)) {
-    			flareSettings.miIris.seed = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.alphaVariance, value)) {
+    			flareSettings.miIris.alphaVariance = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5752,8 +5752,8 @@ width: 360px;
     	};
 
     	function slider14_value_binding(value) {
-    		if ($$self.$$.not_equal(flareSettings.miIris.angle, value)) {
-    			flareSettings.miIris.angle = value;
+    		if ($$self.$$.not_equal(flareSettings.miIris.seed, value)) {
+    			flareSettings.miIris.seed = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5763,8 +5763,8 @@ width: 360px;
     	};
 
     	function slider0_value_binding_5(value) {
-    		if ($$self.$$.not_equal(flareSettings.glow.radius, value)) {
-    			flareSettings.glow.radius = value;
+    		if ($$self.$$.not_equal(flareSettings.glow.alpha, value)) {
+    			flareSettings.glow.alpha = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
@@ -5774,8 +5774,8 @@ width: 360px;
     	};
 
     	function slider1_value_binding_5(value) {
-    		if ($$self.$$.not_equal(flareSettings.glow.alpha, value)) {
-    			flareSettings.glow.alpha = value;
+    		if ($$self.$$.not_equal(flareSettings.glow.radius, value)) {
+    			flareSettings.glow.radius = value;
     			$$invalidate(0, flareSettings);
     		}
     	}
