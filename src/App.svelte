@@ -87,9 +87,9 @@
             seed: 123,
         },
         glow: {
-            radius: 800,
+            radius: 960,
             alpha: 80,
-            softening: 0,
+            softening: 70,
         },
     };
 

@@ -2897,10 +2897,10 @@ var app = (function () {
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
-    			add_location(br0, file, 218, 145, 10811);
-    			add_location(br1, file, 219, 146, 10964);
-    			add_location(br2, file, 220, 156, 11127);
-    			add_location(br3, file, 221, 157, 11291);
+    			add_location(br0, file, 218, 145, 10812);
+    			add_location(br1, file, 219, 146, 10965);
+    			add_location(br2, file, 220, 156, 11128);
+    			add_location(br3, file, 221, 157, 11292);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -3176,13 +3176,13 @@ var app = (function () {
     			create_component(slider6.$$.fragment);
     			t13 = space();
     			br6 = element("br");
-    			add_location(br0, file, 224, 126, 11466);
-    			add_location(br1, file, 225, 126, 11599);
-    			add_location(br2, file, 226, 126, 11732);
-    			add_location(br3, file, 227, 133, 11872);
-    			add_location(br4, file, 228, 164, 12043);
-    			add_location(br5, file, 229, 160, 12210);
-    			add_location(br6, file, 230, 135, 12352);
+    			add_location(br0, file, 224, 126, 11467);
+    			add_location(br1, file, 225, 126, 11600);
+    			add_location(br2, file, 226, 126, 11733);
+    			add_location(br3, file, 227, 133, 11873);
+    			add_location(br4, file, 228, 164, 12044);
+    			add_location(br5, file, 229, 160, 12211);
+    			add_location(br6, file, 230, 135, 12353);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -3511,13 +3511,13 @@ var app = (function () {
     			create_component(slider6.$$.fragment);
     			t13 = space();
     			br6 = element("br");
-    			add_location(br0, file, 233, 132, 12548);
-    			add_location(br1, file, 234, 132, 12687);
-    			add_location(br2, file, 235, 140, 12834);
-    			add_location(br3, file, 236, 134, 12975);
-    			add_location(br4, file, 237, 141, 13123);
-    			add_location(br5, file, 238, 133, 13263);
-    			add_location(br6, file, 239, 132, 13402);
+    			add_location(br0, file, 233, 132, 12549);
+    			add_location(br1, file, 234, 132, 12688);
+    			add_location(br2, file, 235, 140, 12835);
+    			add_location(br3, file, 236, 134, 12976);
+    			add_location(br4, file, 237, 141, 13124);
+    			add_location(br5, file, 238, 133, 13264);
+    			add_location(br6, file, 239, 132, 13403);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -3823,12 +3823,12 @@ var app = (function () {
     			create_component(slider5.$$.fragment);
     			t11 = space();
     			br5 = element("br");
-    			add_location(br0, file, 242, 139, 13598);
-    			add_location(br1, file, 243, 145, 13750);
-    			add_location(br2, file, 244, 138, 13895);
-    			add_location(br3, file, 245, 137, 14039);
-    			add_location(br4, file, 246, 144, 14190);
-    			add_location(br5, file, 247, 152, 14349);
+    			add_location(br0, file, 242, 139, 13599);
+    			add_location(br1, file, 243, 145, 13751);
+    			add_location(br2, file, 244, 138, 13896);
+    			add_location(br3, file, 245, 137, 14040);
+    			add_location(br4, file, 246, 144, 14191);
+    			add_location(br5, file, 247, 152, 14350);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4322,21 +4322,21 @@ var app = (function () {
     			create_component(slider14.$$.fragment);
     			t29 = space();
     			br14 = element("br");
-    			add_location(br0, file, 250, 148, 14554);
-    			add_location(br1, file, 251, 145, 14706);
-    			add_location(br2, file, 252, 154, 14867);
-    			add_location(br3, file, 253, 149, 15023);
-    			add_location(br4, file, 254, 157, 15187);
-    			add_location(br5, file, 255, 159, 15353);
-    			add_location(br6, file, 256, 147, 15507);
-    			add_location(br7, file, 257, 160, 15674);
-    			add_location(br8, file, 258, 154, 15835);
-    			add_location(br9, file, 259, 148, 15990);
-    			add_location(br10, file, 260, 161, 16158);
-    			add_location(br11, file, 261, 158, 16323);
-    			add_location(br12, file, 262, 163, 16493);
-    			add_location(br13, file, 263, 151, 16651);
-    			add_location(br14, file, 264, 146, 16804);
+    			add_location(br0, file, 250, 148, 14555);
+    			add_location(br1, file, 251, 145, 14707);
+    			add_location(br2, file, 252, 154, 14868);
+    			add_location(br3, file, 253, 149, 15024);
+    			add_location(br4, file, 254, 157, 15188);
+    			add_location(br5, file, 255, 159, 15354);
+    			add_location(br6, file, 256, 147, 15508);
+    			add_location(br7, file, 257, 160, 15675);
+    			add_location(br8, file, 258, 154, 15836);
+    			add_location(br9, file, 259, 148, 15991);
+    			add_location(br10, file, 260, 161, 16159);
+    			add_location(br11, file, 261, 158, 16324);
+    			add_location(br12, file, 262, 163, 16494);
+    			add_location(br13, file, 263, 151, 16652);
+    			add_location(br14, file, 264, 146, 16805);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4725,9 +4725,9 @@ var app = (function () {
     			create_component(slider2.$$.fragment);
     			t5 = space();
     			br2 = element("br");
-    			add_location(br0, file, 267, 154, 17009);
-    			add_location(br1, file, 268, 151, 17167);
-    			add_location(br2, file, 269, 158, 17332);
+    			add_location(br0, file, 267, 154, 17010);
+    			add_location(br1, file, 268, 151, 17168);
+    			add_location(br2, file, 269, 158, 17333);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4935,33 +4935,33 @@ var app = (function () {
     			create_component(collapsible4.$$.fragment);
     			t14 = space();
     			create_component(collapsible5.$$.fragment);
-    			add_location(button, file, 200, 0, 10059);
-    			add_location(br0, file, 200, 80, 10139);
+    			add_location(button, file, 200, 0, 10060);
+    			add_location(br0, file, 200, 80, 10140);
     			attr_dev(canvas, "width", canvas_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas, "height", canvas_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas, "class", "svelte-pmfap2");
-    			add_location(canvas, file, 202, 0, 10147);
+    			add_location(canvas, file, 202, 0, 10148);
     			attr_dev(br1, "uh", "");
-    			add_location(br1, file, 204, 0, 10320);
+    			add_location(br1, file, 204, 0, 10321);
     			option0.__value = 1;
     			option0.value = option0.__value;
-    			add_location(option0, file, 208, 4, 10457);
+    			add_location(option0, file, 208, 4, 10458);
     			option1.__value = 2;
     			option1.value = option1.__value;
-    			add_location(option1, file, 209, 4, 10493);
+    			add_location(option1, file, 209, 4, 10494);
     			option2.__value = 4;
     			option2.value = option2.__value;
-    			add_location(option2, file, 210, 4, 10528);
+    			add_location(option2, file, 210, 4, 10529);
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler*/ ctx[7].call(select));
-    			add_location(select, file, 207, 0, 10347);
+    			add_location(select, file, 207, 0, 10348);
     			attr_dev(br2, "uh", "");
-    			add_location(br2, file, 212, 0, 10569);
+    			add_location(br2, file, 212, 0, 10570);
 
     			attr_dev(div, "style", `
 width: 360px;
 `);
 
-    			add_location(div, file, 214, 0, 10580);
+    			add_location(div, file, 214, 0, 10581);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5182,7 +5182,7 @@ width: 360px;
     			alphaVariance: 50,
     			seed: 123
     		},
-    		glow: { radius: 800, alpha: 80, softening: 0 }
+    		glow: { radius: 960, alpha: 80, softening: 70 }
     	};
 
     	var baseCanvas;
