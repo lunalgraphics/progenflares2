@@ -50,6 +50,8 @@
             deformationSeed: 1,
             alpha: 100,
             angle: 0,
+            hue: 200,
+            saturation: 100,
         },
         streak: {
             thickness: 64,
@@ -60,6 +62,8 @@
             shift: 36,
             alpha: 100,
             angle: 0,
+            hue: 200,
+            saturation: 100,
         },
         ring: {
             radius: 200,
@@ -68,6 +72,8 @@
             cropSize: 0,
             cropHardness: 50,
             alpha: 21,
+            hue: 200,
+            saturation: 100,
         },
         miIris: {
             radius: 81,
@@ -85,11 +91,15 @@
             perspective: 100,
             alphaVariance: 50,
             seed: 123,
+            hue: 200,
+            saturation: 100,
         },
         glow: {
             radius: 960,
             alpha: 80,
             softening: 70,
+            hue: 200,
+            saturation: 100,
         },
     };
 
@@ -102,11 +112,15 @@
             flareComponents.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
             flareComponents.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
             flareComponents.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
+            flareComponents.hotspot.options.hue = flareSettings.hotspot.hue;
+            flareComponents.hotspot.options.saturation = flareSettings.hotspot.saturation;
             flareComponents.hotspot.render();
         }
         if (renderStreak) {
             flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
             flareComponents.streak.options.intensity = flareSettings.streak.intensity / flareSettings.downscaling;
+            flareComponents.streak.options.hue = flareSettings.streak.hue;
+            flareComponents.streak.options.saturation = flareSettings.streak.saturation;
             flareComponents.streak.render();
             flareComponents.streakLeftHalf = new HalfComponent(flareComponents.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, true, false);
             flareComponents.streakRightHalf = new HalfComponent(flareComponents.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, false, true);
@@ -117,6 +131,8 @@
             flareComponents.ring.options.blur = flareSettings.ring.blur / flareSettings.downscaling;
             flareComponents.ring.options.cropSize = flareSettings.ring.cropSize / flareSettings.downscaling;
             flareComponents.ring.options.cropHardness = flareSettings.ring.cropHardness;
+            flareComponents.ring.options.hue = flareSettings.ring.hue;
+            flareComponents.ring.options.saturation = flareSettings.ring.saturation;
             flareComponents.ring.render();
         }
         if (renderMI) {
@@ -128,11 +144,15 @@
             flareComponents.miIris.options.fringeSize = Math.floor(flareSettings.miIris.fringeSize / flareSettings.downscaling);
             flareComponents.miIris.options.blur = Math.floor(flareSettings.miIris.blur / flareSettings.downscaling);
             flareComponents.miIris.options.angle = flareSettings.miIris.angle;
+            flareComponents.miIris.options.hue = flareSettings.miIris.hue;
+            flareComponents.miIris.options.saturation = flareSettings.miIris.saturation;
             flareComponents.miIris.render();
         }
         if (renderGlow) {
             flareComponents.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
             flareComponents.glow.options.intensity = Math.floor(-flareSettings.glow.softening / flareSettings.downscaling);
+            flareComponents.glow.options.hue = flareSettings.glow.hue;
+            flareComponents.glow.options.saturation = flareSettings.glow.saturation;
             flareComponents.glow.render();
         }
 
@@ -224,6 +244,8 @@ width: 360px;
 <Collapsible title={"hi"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.hotspot.alpha} on:input={function() { renderFlare(true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.hotspot.angle} on:input={function() { renderFlare(true); }} /> <br />
+    Hue: <Slider min={0} max={360} bind:value={flareSettings.hotspot.hue} on:input={function() { renderFlare(true); }} /> <br />
+    Saturation: <Slider min={0} max={100} bind:value={flareSettings.hotspot.saturation} on:input={function() { renderFlare(true); }} /> <br />
     Size: <Slider min={0} max={900} bind:value={flareSettings.hotspot.radius} on:input={function() { renderFlare(true); }} /> <br />
     Intensity: <Slider min={0} max={50} bind:value={flareSettings.hotspot.intensity} on:input={function() { renderFlare(true); }} /> <br />
     Rays Frequency: <Slider min={0} max={0.05} step={0.001} bind:value={flareSettings.hotspot.deformationFrequency} on:input={function() { renderFlare(true); }} /> <br />
@@ -233,6 +255,8 @@ width: 360px;
 <Collapsible title={"anamorphic streak"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.streak.alpha} on:input={function() { renderFlare(false, true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.streak.angle} on:input={function() { renderFlare(false, true); }} /> <br />
+    Hue: <Slider min={0} max={360} bind:value={flareSettings.streak.hue} on:input={function() { renderFlare(false, true); }} /> <br />
+    Saturation: <Slider min={0} max={100} bind:value={flareSettings.streak.saturation} on:input={function() { renderFlare(false, true); }} /> <br />
     Thickness: <Slider min={0} max={200} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }} /> <br />
     Length: <Slider min={0} max={3210} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }} /> <br />
     Intensity: <Slider min={-25} max={50} bind:value={flareSettings.streak.intensity} on:input={function() { renderFlare(false, true); }} /> <br />
@@ -241,6 +265,8 @@ width: 360px;
 </Collapsible>
 <Collapsible title={"ring thing"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.ring.alpha} on:input={function() { renderFlare(false, false, true); }} /> <br />
+    Hue: <Slider min={0} max={360} bind:value={flareSettings.ring.hue} on:input={function() { renderFlare(false, false, true); }} /> <br />
+    Saturation: <Slider min={0} max={100} bind:value={flareSettings.ring.saturation} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Radius: <Slider min={0} max={810} bind:value={flareSettings.ring.radius} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Thickness: <Slider min={0} max={500} bind:value={flareSettings.ring.thickness} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Softness: <Slider min={0} max={50} bind:value={flareSettings.ring.blur} on:input={function() { renderFlare(false, false, true); }} /> <br />
@@ -251,6 +277,8 @@ width: 360px;
     Fill Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fillAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.miIris.angle} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
+    Hue: <Slider min={0} max={360} bind:value={flareSettings.miIris.hue} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
+    Saturation: <Slider min={0} max={100} bind:value={flareSettings.miIris.saturation} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Radius: <Slider min={0} max={810} bind:value={flareSettings.miIris.radius} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Sides: <Slider min={5} max={10} bind:value={flareSettings.miIris.sides} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Roundness: <Slider min={0} max={100} bind:value={flareSettings.miIris.roundness} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
@@ -266,6 +294,8 @@ width: 360px;
 </Collapsible>
 <Collapsible title={"Glow"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.glow.alpha} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
+    Hue: <Slider min={0} max={360} bind:value={flareSettings.glow.hue} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
+    Saturation: <Slider min={0} max={100} bind:value={flareSettings.glow.saturation} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Radius: <Slider min={0} max={1200} bind:value={flareSettings.glow.radius} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Softness: <Slider min={0} max={200} bind:value={flareSettings.glow.softening} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
 </Collapsible>
