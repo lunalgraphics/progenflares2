@@ -52,6 +52,7 @@
             angle: 0,
             hue: 200,
             saturation: 100,
+            anamorph: 0,
         },
         streak: {
             thickness: 64,
@@ -74,6 +75,7 @@
             alpha: 21,
             hue: 200,
             saturation: 100,
+            anamorph: 0,
         },
         miIris: {
             radius: 81,
@@ -93,6 +95,7 @@
             seed: 123,
             hue: 200,
             saturation: 100,
+            anamorph: 0,
         },
         glow: {
             radius: 960,
@@ -100,6 +103,7 @@
             softening: 70,
             hue: 200,
             saturation: 100,
+            anamorph: 0,
         },
     };
 
@@ -162,7 +166,7 @@
         ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
-        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2, flareSettings.hotspot.angle, flareSettings.hotspot.alpha);
+        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), flareSettings.hotspot.angle, flareSettings.hotspot.alpha);
         var streakAngle = flareSettings.streak.angle;
         for (var i = 0; i < flareSettings.streak.count; i++) {
             var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
@@ -171,7 +175,7 @@
             drawComponent(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha);
             streakAngle += 180 / flareSettings.streak.count;
         }
-        drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2, 0, flareSettings.ring.alpha);
+        drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha);
 
         var miRng = seedrandom(flareSettings.miIris.seed);
         for (var i = 1; i < flareSettings.miIris.countTowards; i++) {
@@ -181,7 +185,7 @@
             };
             var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
             irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-            drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale, 0, 100 - flareSettings.miIris.alphaVariance * miRng());
+            drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng());
         }
         for (var i = 1; i < flareSettings.miIris.countAway; i++) {
             var irisPosition = {
@@ -190,10 +194,10 @@
             };
             var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
             irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-            drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale, 0, 100 - flareSettings.miIris.alphaVariance * miRng());
+            drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng());
         }
 
-        drawComponent(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2, 0, flareSettings.glow.alpha);
+        drawComponent(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha);
     }
 
     window.onload = function() { renderFlare(true, true, true, true, true); };
@@ -251,6 +255,7 @@ width: 360px;
     Rays Frequency: <Slider min={0} max={0.05} step={0.001} bind:value={flareSettings.hotspot.deformationFrequency} on:input={function() { renderFlare(true); }} /> <br />
     Rays Definition: <Slider min={0} max={2.1} step={0.01} bind:value={flareSettings.hotspot.deformationAmount} on:input={function() { renderFlare(true); }} /> <br />
     Seed: <Slider min={1} max={999} bind:value={flareSettings.hotspot.deformationSeed} on:input={function() { renderFlare(true); }} /> <br />
+    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.hotspot.anamorph} on:input={function() { renderFlare(true); }} /> <br />
 </Collapsible>
 <Collapsible title={"anamorphic streak"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.streak.alpha} on:input={function() { renderFlare(false, true); }} /> <br />
@@ -272,6 +277,7 @@ width: 360px;
     Softness: <Slider min={0} max={50} bind:value={flareSettings.ring.blur} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Crop Size: <Slider min={0} max={810} bind:value={flareSettings.ring.cropSize} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Crop Hardness: <Slider min={0} max={100} bind:value={flareSettings.ring.cropHardness} on:input={function() { renderFlare(false, false, true); }} /> <br />
+    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.ring.anamorph} on:input={function() { renderFlare(false, false, true); }} /> <br />
 </Collapsible>
 <Collapsible title={"Multi-Iris"}>
     Fill Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fillAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
@@ -291,6 +297,7 @@ width: 360px;
     Perspective: <Slider min={0} max={100} bind:value={flareSettings.miIris.perspective} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Alpha Variance: <Slider min={0} max={100} bind:value={flareSettings.miIris.alphaVariance} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Random Seed: <Slider min={0} max={999} bind:value={flareSettings.miIris.seed} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
+    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.miIris.anamorph} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
 </Collapsible>
 <Collapsible title={"Glow"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.glow.alpha} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
@@ -298,6 +305,7 @@ width: 360px;
     Saturation: <Slider min={0} max={100} bind:value={flareSettings.glow.saturation} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Radius: <Slider min={0} max={1200} bind:value={flareSettings.glow.radius} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Softness: <Slider min={0} max={200} bind:value={flareSettings.glow.softening} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
+    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.glow.anamorph} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
 </Collapsible>
 </div>
 
