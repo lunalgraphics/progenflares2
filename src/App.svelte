@@ -220,9 +220,25 @@
         renderFlare(true, true, true, true, true);
         return a;
     }
+
+    function createPresetSaveLink() {
+        var fileContents = JSON.stringify({
+            hotspot: flareSettings.hotspot,
+            streak: flareSettings.streak,
+            ring: flareSettings.ring,
+            miIris: flareSettings.miIris,
+            glow: flareSettings.glow,
+        });
+        var textFile = new Blob([fileContents], { "type": "application/json" });
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(textFile);
+        a.download = "ProgenFlares2-preset.pgf2";
+        return a;
+    }
 </script>
 
 <button on:click={function() { createDownloadLink().click(); }}>Export</button> <br />
+<button on:click={function() { createPresetSaveLink().click(); }}>Save Preset</button> <br />
 
 <canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height}></canvas>
 
