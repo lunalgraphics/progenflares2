@@ -9,6 +9,7 @@
     import IrisComponent from "./IrisComponent";
     import seedrandom from "../node_modules/seedrandom";
     import HalfComponent from "./HalfComponent";
+    import PresetPicker from "./PresetPicker.svelte";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -235,6 +236,13 @@
         a.download = "ProgenFlares2-preset.pgf2";
         return a;
     }
+
+    function setPreset(presetData) {
+        for (var key in presetData) {
+            flareSettings[key] = presetData[key];
+        }
+        renderFlare(true, true, true, true, true);
+    }
 </script>
 
 <button on:click={function() { createDownloadLink().click(); }}>Export</button> <br />
@@ -255,6 +263,7 @@ Preview quality
 <div style={`
 width: 360px;
 `}>
+<PresetPicker on:choose={ function(e) { setPreset(e.detail); } } />
 <Collapsible title={"positioning"} collapsed={false}>
     X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }} /> <br />
     Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }} /> <br />
