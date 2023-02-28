@@ -246,7 +246,6 @@
 </script>
 
 <button on:click={function() { createDownloadLink().click(); }}>Export</button> <br />
-<button on:click={function() { createPresetSaveLink().click(); }}>Save Preset</button> <br />
 
 <canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height}></canvas>
 
@@ -260,10 +259,21 @@ Preview quality
 </select>
 <br uh />
 
+<div id={"controlPanel"}>
+
 <div style={`
-width: 360px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding: 5px;
+    box-sizing: border-box;
+        border-bottom: 1px solid grey;
 `}>
-<PresetPicker on:choose={ function(e) { setPreset(e.detail); } } />
+    <PresetPicker on:choose={ function(e) { setPreset(e.detail); } } />
+    <button on:click={function() { createPresetSaveLink().click(); }} style={"float: right;"}>Save Preset</button>
+</div>
+
 <Collapsible title={"positioning"} collapsed={false}>
     X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }} /> <br />
     Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }} /> <br />
@@ -340,5 +350,14 @@ width: 360px;
     }
     :global(slider) {
         float: right;
+    }
+    #controlPanel {
+        width: 360px;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        overflow-y: scroll;
+        border-left: 1px solid grey;
     }
 </style>

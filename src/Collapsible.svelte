@@ -43,5 +43,6 @@
         padding: 2px 2px 5px 25px;
         box-sizing: border-box;
         line-height: 25px;
+        border-bottom: 1px solid grey;
     }
 </style>
