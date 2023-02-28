@@ -2820,7 +2820,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 43, 12, 2703);
+    			add_location(option, file$1, 43, 12, 3486);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2880,17 +2880,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 39, 4, 2479);
+    			add_location(option0, file$1, 39, 4, 3262);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 40, 4, 2549);
+    			add_location(option1, file$1, 40, 4, 3332);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 41, 4, 2612);
+    			add_location(optgroup, file$1, 41, 4, 3395);
     			attr_dev(select, "class", "svelte-p9lfnu");
-    			add_location(select, file$1, 38, 0, 2420);
+    			add_location(select, file$1, 38, 0, 3203);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-p9lfnu");
-    			add_location(input, file$1, 48, 0, 2813);
+    			add_location(input, file$1, 48, 0, 3596);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3046,7 +3046,73 @@ var app = (function () {
     				}
     			}
     		},
-    		{ name: "hello", data: {} },
+    		{
+    			name: "Simple Cyan",
+    			data: {
+    				"hotspot": {
+    					"radius": 500,
+    					"intensity": 5,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 64,
+    					"width": 1600,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 100,
+    					"hue": 200,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 21,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 81,
+    					"sides": 5,
+    					"roundness": 20,
+    					"angle": 0,
+    					"fillAlpha": 25,
+    					"fringeAlpha": 50,
+    					"fringeSize": 10,
+    					"blur": 4,
+    					"countAway": 5,
+    					"countTowards": 12,
+    					"spread": 30,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 123,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 80,
+    					"softening": 70,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				}
+    			}
+    		},
     		{
     			name: "Sea of Fog",
     			data: {
