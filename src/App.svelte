@@ -249,19 +249,24 @@
     }
 </script>
 
+<div id={"exportPanel"}>
 <button on:click={function() { createDownloadLink().click(); }}>Export</button> <br />
+</div>
 
-<canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height}></canvas>
+<div id={"previewSection"}>
+    <div class={"centered"}>
+        <canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height}></canvas>
+    </div>
+</div>
 
-<br uh />
-
+<div id={"sectionAbovePreview"}>
 Preview quality
 <select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true, true); }}>
     <option value={1}>100%</option>
     <option value={2}>50%</option>
     <option value={4}>25%</option>
 </select>
-<br uh />
+</div>
 
 <div id={"controlPanel"}>
 
@@ -351,7 +356,8 @@ Preview quality
 
 <style>
     canvas {
-        width: 600px;
+        max-width: calc(100vw - 360px - 50px);
+        max-height: calc(100vh - 2 * 84px - 50px);
     }
     :global(slider) {
         float: right;
@@ -364,5 +370,39 @@ Preview quality
         top: 0;
         overflow-y: scroll;
         border-left: 1px solid grey;
+    }
+    #previewSection {
+        width: calc(100vw - 360px);
+        height: calc(100vh - 2 * 84px);
+        box-sizing: border-box;
+        position: fixed;
+        top: 84px;
+        left: 0;
+    }
+    .centered {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #sectionAbovePreview {
+        width: calc(100vw - 360px);
+        height: 84px;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    #exportPanel {
+        width: calc(100vw - 360px);
+        height: 84px;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
     }
 </style>
