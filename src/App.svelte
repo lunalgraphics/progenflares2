@@ -238,8 +238,11 @@
     }
 
     function setPreset(presetData) {
-        for (var key in presetData) {
-            flareSettings[key] = presetData[key];
+        for (var keyi in presetData) {
+            if (!flareSettings[keyi]) flareSettings[keyi] = {};
+            for (var keyj in presetData[keyi]) {
+                flareSettings[keyi][keyj] = presetData[keyi][keyj];
+            }
         }
         renderFlare(true, true, true, true, true);
     }
