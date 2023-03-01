@@ -10,6 +10,7 @@
     import seedrandom from "../node_modules/seedrandom";
     import HalfComponent from "./HalfComponent";
     import PresetPicker from "./PresetPicker.svelte";
+    import { fade } from "svelte/transition";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -247,6 +248,17 @@
         }
         renderFlare(true, true, true, true, true);
     }
+
+    var startScreenVisible = true;
+    function onStart() {
+        //setPreset({"hotspot":{"radius":595,"intensity":19,"deformationAmount":1.5,"deformationFrequency":0.01,"deformationSeed":998,"alpha":100,"angle":0,"hue":39,"saturation":88,"anamorph":0},"streak":{"thickness":121,"width":2435,"intensity":-25,"count":1,"angle":0,"shift":48,"alpha":100,"hue":216,"saturation":100},"ring":{"radius":300,"thickness":50,"blur":4,"cropSize":0,"cropHardness":50,"alpha":0,"hue":200,"saturation":100,"anamorph":0},"miIris":{"radius":81,"sides":6,"roundness":32,"angle":0,"fillAlpha":12,"fringeAlpha":25,"fringeSize":10,"blur":4,"countAway":5,"countTowards":12,"spread":30,"sizeVariance":40,"perspective":100,"alphaVariance":50,"seed":333,"hue":39,"saturation":100,"hueVariance":40,"anamorph":0},"glow":{"radius":999,"alpha":25,"softening":0,"hue":23,"saturation":100,"anamorph":0}});
+        flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2;
+        flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2;
+        flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5;
+        flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5;
+        renderFlare(true, true, true, true, true);
+        startScreenVisible = false;
+    }
 </script>
 
 <div id={"exportPanel"}>
@@ -354,6 +366,18 @@ Preview quality
 </Collapsible>
 </div>
 
+{#if startScreenVisible}
+    <div id={"startScreen"} out:fade>
+        PROGEN FLARES 2
+        <br />
+        doc width <input type="number" bind:value={flareSettings.dimensions.width} />
+        <br />
+        doc height<input type="number" bind:value={flareSettings.dimensions.height} />
+        <br />
+        <button on:click={onStart}>go</button>
+    </div>
+{/if}
+
 <style>
     canvas {
         max-width: calc(100vw - 360px - 50px);
@@ -403,6 +427,14 @@ Preview quality
         padding: 20px;
         position: fixed;
         bottom: 0;
+        left: 0;
+    }
+    #startScreen {
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        position: fixed;
+        top: 0;
         left: 0;
     }
 </style>
