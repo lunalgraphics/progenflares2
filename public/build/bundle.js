@@ -2821,7 +2821,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 44, 12, 4316);
+    			add_location(option, file$1, 44, 12, 4384);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2881,17 +2881,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 40, 4, 4092);
+    			add_location(option0, file$1, 40, 4, 4160);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 41, 4, 4162);
+    			add_location(option1, file$1, 41, 4, 4230);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 42, 4, 4225);
+    			add_location(optgroup, file$1, 42, 4, 4293);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 39, 0, 4033);
+    			add_location(select, file$1, 39, 0, 4101);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 49, 0, 4426);
+    			add_location(input, file$1, 49, 0, 4494);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3032,9 +3032,10 @@ var app = (function () {
     					"sizeVariance": 40,
     					"perspective": 100,
     					"alphaVariance": 50,
-    					"seed": 131,
+    					"seed": 333,
     					"hue": 39,
     					"saturation": 100,
+    					"hueVariance": 40,
     					"anamorph": 0
     				},
     				"glow": {
@@ -3102,6 +3103,7 @@ var app = (function () {
     					"seed": 123,
     					"hue": 200,
     					"saturation": 100,
+    					"hueVariance": 30,
     					"anamorph": 0
     				},
     				"glow": {
@@ -3169,6 +3171,7 @@ var app = (function () {
     					"seed": 285,
     					"hue": 29,
     					"saturation": 100,
+    					"hueVariance": 44,
     					"anamorph": 35
     				},
     				"glow": {
@@ -3233,9 +3236,10 @@ var app = (function () {
     					"sizeVariance": 40,
     					"perspective": 100,
     					"alphaVariance": 50,
-    					"seed": 338,
+    					"seed": 342,
     					"hue": 283,
     					"saturation": 100,
+    					"hueVariance": 20,
     					"anamorph": 0
     				},
     				"glow": {
