@@ -2808,7 +2808,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (43:8) {#each builtInPresets as preset}
+    // (44:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2820,7 +2820,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 43, 12, 3486);
+    			add_location(option, file$1, 44, 12, 4316);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2836,7 +2836,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(43:8) {#each builtInPresets as preset}",
+    		source: "(44:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2880,17 +2880,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 39, 4, 3262);
+    			add_location(option0, file$1, 40, 4, 4092);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 40, 4, 3332);
+    			add_location(option1, file$1, 41, 4, 4162);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 41, 4, 3395);
-    			attr_dev(select, "class", "svelte-p9lfnu");
-    			add_location(select, file$1, 38, 0, 3203);
+    			add_location(optgroup, file$1, 42, 4, 4225);
+    			attr_dev(select, "class", "svelte-1cxpn51");
+    			add_location(select, file$1, 39, 0, 4033);
     			attr_dev(input, "type", "file");
-    			attr_dev(input, "class", "svelte-p9lfnu");
-    			add_location(input, file$1, 48, 0, 3596);
+    			attr_dev(input, "class", "svelte-1cxpn51");
+    			add_location(input, file$1, 49, 0, 4426);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3108,6 +3108,73 @@ var app = (function () {
     					"alpha": 80,
     					"softening": 70,
     					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Flamboyant Anamorphic",
+    			data: {
+    				"hotspot": {
+    					"radius": 802,
+    					"intensity": 16,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 36,
+    					"saturation": 100,
+    					"anamorph": 42
+    				},
+    				"streak": {
+    					"thickness": 95,
+    					"width": 3210,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 54,
+    					"alpha": 100,
+    					"hue": 29,
+    					"saturation": 81
+    				},
+    				"ring": {
+    					"radius": 333,
+    					"thickness": 67,
+    					"blur": 7,
+    					"cropSize": 0,
+    					"cropHardness": 23,
+    					"alpha": 16,
+    					"hue": 12,
+    					"saturation": 100,
+    					"anamorph": 42
+    				},
+    				"miIris": {
+    					"radius": 84,
+    					"sides": 8,
+    					"roundness": 24,
+    					"angle": 24,
+    					"fillAlpha": 17,
+    					"fringeAlpha": 41,
+    					"fringeSize": 10,
+    					"blur": 4,
+    					"countAway": 8,
+    					"countTowards": 15,
+    					"spread": 25,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 285,
+    					"hue": 29,
+    					"saturation": 100,
+    					"anamorph": 35
+    				},
+    				"glow": {
+    					"radius": 1117,
+    					"alpha": 44,
+    					"softening": 26,
+    					"hue": 10,
     					"saturation": 100,
     					"anamorph": 0
     				}
