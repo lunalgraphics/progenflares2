@@ -2821,7 +2821,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (44:8) {#each builtInPresets as preset}
+    // (45:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2833,7 +2833,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 44, 12, 4384);
+    			add_location(option, file$1, 45, 12, 5223);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2849,7 +2849,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(44:8) {#each builtInPresets as preset}",
+    		source: "(45:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2893,17 +2893,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 40, 4, 4160);
+    			add_location(option0, file$1, 41, 4, 4999);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 41, 4, 4230);
+    			add_location(option1, file$1, 42, 4, 5069);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 42, 4, 4293);
+    			add_location(optgroup, file$1, 43, 4, 5132);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 39, 0, 4101);
+    			add_location(select, file$1, 40, 0, 4940);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 49, 0, 4494);
+    			add_location(input, file$1, 50, 0, 5333);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3260,6 +3260,74 @@ var app = (function () {
     					"softening": 70,
     					"hue": 281,
     					"saturation": 100,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Interstellar",
+    			data: {
+    				"hotspot": {
+    					"radius": 288,
+    					"intensity": 37,
+    					"deformationAmount": 0.87,
+    					"deformationFrequency": 0.01,
+    					"deformationSeed": 290,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 31,
+    					"saturation": 49,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 46,
+    					"width": 1028,
+    					"intensity": -10,
+    					"count": 5,
+    					"angle": 21,
+    					"shift": 32,
+    					"alpha": 100,
+    					"hue": 47,
+    					"saturation": 14
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 81,
+    					"sides": 5,
+    					"roundness": 42,
+    					"angle": 55,
+    					"fillAlpha": 9,
+    					"fringeAlpha": 21,
+    					"fringeSize": 10,
+    					"blur": 4,
+    					"countAway": 8,
+    					"countTowards": 15,
+    					"spread": 28,
+    					"sizeVariance": 53,
+    					"perspective": 100,
+    					"alphaVariance": 71,
+    					"seed": 342,
+    					"hue": 222,
+    					"saturation": 26,
+    					"hueVariance": 102,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 1064,
+    					"alpha": 44,
+    					"softening": 70,
+    					"hue": 188,
+    					"saturation": 58,
     					"anamorph": 0
     				}
     			}
