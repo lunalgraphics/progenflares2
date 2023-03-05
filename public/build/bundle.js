@@ -3201,7 +3201,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 372,
-    					"intensity": 37,
+    					"intensity": 21,
     					"deformationAmount": 0.76,
     					"deformationFrequency": 0.01,
     					"deformationSeed": 157,
@@ -3269,7 +3269,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 288,
-    					"intensity": 37,
+    					"intensity": 12,
     					"deformationAmount": 0.87,
     					"deformationFrequency": 0.01,
     					"deformationSeed": 290,
