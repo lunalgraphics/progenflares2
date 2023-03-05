@@ -6207,10 +6207,10 @@ var app = (function () {
     			attr_dev(input1, "type", "number");
     			add_location(input1, file, 374, 18, 24157);
     			add_location(br2, file, 375, 8, 24234);
-    			attr_dev(button, "class", "svelte-b2vtk4");
+    			attr_dev(button, "class", "svelte-1pejm3v");
     			add_location(button, file, 376, 8, 24249);
     			attr_dev(div, "id", "startScreen");
-    			attr_dev(div, "class", "svelte-b2vtk4");
+    			attr_dev(div, "class", "svelte-1pejm3v");
     			add_location(div, file, 369, 4, 23965);
     		},
     		m: function mount(target, anchor) {
@@ -6422,20 +6422,20 @@ var app = (function () {
     			t17 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(button0, "class", "svelte-b2vtk4");
+    			attr_dev(button0, "class", "svelte-1pejm3v");
     			add_location(button0, file, 264, 0, 13876);
     			add_location(br, file, 264, 80, 13956);
     			attr_dev(div0, "id", "exportPanel");
-    			attr_dev(div0, "class", "svelte-b2vtk4");
+    			attr_dev(div0, "class", "svelte-1pejm3v");
     			add_location(div0, file, 263, 0, 13851);
     			attr_dev(canvas, "width", canvas_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas, "height", canvas_height_value = /*flareSettings*/ ctx[0].dimensions.height);
-    			attr_dev(canvas, "class", "svelte-b2vtk4");
+    			attr_dev(canvas, "class", "svelte-1pejm3v");
     			add_location(canvas, file, 269, 8, 14036);
-    			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-b2vtk4"));
+    			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-1pejm3v"));
     			add_location(div1, file, 268, 4, 14003);
     			attr_dev(div2, "id", "previewSection");
-    			attr_dev(div2, "class", "svelte-b2vtk4");
+    			attr_dev(div2, "class", "svelte-1pejm3v");
     			add_location(div2, file, 267, 0, 13971);
     			option0.__value = 1;
     			option0.value = option0.__value;
@@ -6449,10 +6449,10 @@ var app = (function () {
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler*/ ctx[11].call(select));
     			add_location(select, file, 275, 0, 14276);
     			attr_dev(div3, "id", "sectionAbovePreview");
-    			attr_dev(div3, "class", "svelte-b2vtk4");
+    			attr_dev(div3, "class", "svelte-1pejm3v");
     			add_location(div3, file, 273, 0, 14227);
     			attr_dev(button1, "style", "float: right;");
-    			attr_dev(button1, "class", "svelte-b2vtk4");
+    			attr_dev(button1, "class", "svelte-1pejm3v");
     			add_location(button1, file, 294, 4, 14811);
 
     			attr_dev(div4, "style", `
@@ -6467,7 +6467,7 @@ var app = (function () {
 
     			add_location(div4, file, 284, 0, 14533);
     			attr_dev(div5, "id", "controlPanel");
-    			attr_dev(div5, "class", "svelte-b2vtk4");
+    			attr_dev(div5, "class", "svelte-1pejm3v");
     			add_location(div5, file, 282, 0, 14506);
     		},
     		l: function claim(nodes) {

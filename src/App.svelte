@@ -484,4 +484,7 @@ Preview quality
         border: 1px solid #555555;
         color: var(--color-scheme-1);
     }
+    :global(select), :global(button) {
+        margin-bottom: 0;
+    }
 </style>
