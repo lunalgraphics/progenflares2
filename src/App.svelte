@@ -487,4 +487,17 @@ Preview quality
     :global(select), :global(button) {
         margin-bottom: 0;
     }
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        opacity: 0;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #333333;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555555;
+    }
 </style>
