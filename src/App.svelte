@@ -286,7 +286,7 @@ Preview quality
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: white;
+    background-color: var(--color-scheme-6);
     padding: 5px;
     box-sizing: border-box;
         border-bottom: 1px solid grey;
@@ -379,12 +379,39 @@ Preview quality
 {/if}
 
 <style>
+    :root {
+        --color-scheme-1: #f27700;
+        --color-scheme-2: #d06100;
+        --color-scheme-3: #a24200;
+        --color-scheme-4: #712200;
+        --color-scheme-5: #430300;
+        /*--color-scheme-6: #181d29;*/
+        --color-scheme-6: #242424;
+    }
+    :global(body) {
+        background-color: var(--color-scheme-6);
+        color: whitesmoke;
+    }
     canvas {
         max-width: calc(100vw - 360px - 50px);
         max-height: calc(100vh - 2 * 84px - 50px);
     }
     :global(slider) {
         float: right;
+        accent-color: var(--color-scheme-1);
+    }
+    :global(input[type=number]) {
+        color: var(--color-scheme-1);
+        background-color: #181818;
+        border: 1px solid #181818;
+    }
+    :global(input[type=number]):focus {
+        border: 1px solid var(--color-scheme-1);
+        box-shadow: inset 0 0 4px var(--color-scheme-1);
+        outline: none!important;
+    }
+    :global(input[type=number]):hover {
+        border: 1px solid var(--color-scheme-1);
     }
     #controlPanel {
         width: 360px;
@@ -432,9 +459,29 @@ Preview quality
     #startScreen {
         width: 100vw;
         height: 100vh;
-        background-color: white;
+        background-color: var(--color-scheme-6);
         position: fixed;
         top: 0;
         left: 0;
+    }
+    button {
+        padding: 4px 12px;
+        background-color: #333333;
+        border: 1px solid #555555;
+        color: var(--color-scheme-1);
+    }
+    button:focus, :global(select):focus {
+        border: 1px solid var(--color-scheme-1);
+        box-shadow: inset 0 0 4px var(--color-scheme-1);
+        outline: none!important;
+    }
+    button:hover, :global(select):hover {
+        border: 1px solid var(--color-scheme-1);
+    }
+    :global(select) {
+        padding: 4px;
+        background-color: #333333;
+        border: 1px solid #555555;
+        color: var(--color-scheme-1);
     }
 </style>
