@@ -2821,7 +2821,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (45:8) {#each builtInPresets as preset}
+    // (46:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2833,7 +2833,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 45, 12, 5223);
+    			add_location(option, file$1, 46, 12, 6052);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2849,7 +2849,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(45:8) {#each builtInPresets as preset}",
+    		source: "(46:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2893,17 +2893,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 41, 4, 4999);
+    			add_location(option0, file$1, 42, 4, 5828);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 42, 4, 5069);
+    			add_location(option1, file$1, 43, 4, 5898);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 43, 4, 5132);
+    			add_location(optgroup, file$1, 44, 4, 5961);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 40, 0, 4940);
+    			add_location(select, file$1, 41, 0, 5769);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 50, 0, 5333);
+    			add_location(input, file$1, 51, 0, 6162);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3328,6 +3328,74 @@ var app = (function () {
     					"softening": 70,
     					"hue": 188,
     					"saturation": 58,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Sunflower",
+    			data: {
+    				"hotspot": {
+    					"radius": 324,
+    					"intensity": 12,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.01,
+    					"deformationSeed": 109,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 36,
+    					"saturation": 25,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 64,
+    					"width": 1600,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 12,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 14,
+    					"hue": 52,
+    					"saturation": 28,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 59,
+    					"sides": 5,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 12,
+    					"fringeAlpha": 40,
+    					"fringeSize": 17,
+    					"blur": 5,
+    					"countAway": 7,
+    					"countTowards": 15,
+    					"spread": 18,
+    					"sizeVariance": 50,
+    					"perspective": 100,
+    					"alphaVariance": 100,
+    					"seed": 117,
+    					"hue": 60,
+    					"saturation": 40,
+    					"hueVariance": 82,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 50,
+    					"softening": 70,
+    					"hue": 34,
+    					"saturation": 45,
     					"anamorph": 0
     				}
     			}
