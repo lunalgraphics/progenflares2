@@ -40,7 +40,7 @@
         box-sizing: border-box;
     }
     #contents {
-        padding: 2px 2px 5px 25px;
+        padding: 2px 5px 5px 25px;
         box-sizing: border-box;
         line-height: 25px;
         border-bottom: 1px solid #373737;
