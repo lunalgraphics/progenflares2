@@ -289,7 +289,7 @@ Preview quality
     background-color: var(--color-scheme-6);
     padding: 5px;
     box-sizing: border-box;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid #353535;
 `}>
     <PresetPicker on:choose={ function(e) { setPreset(e.detail); } } />
     <button on:click={function() { createPresetSaveLink().click(); }} style={"float: right;"}>Save Preset</button>
@@ -420,7 +420,7 @@ Preview quality
         right: 0;
         top: 0;
         overflow-y: scroll;
-        border-left: 1px solid grey;
+        border-left: 1px solid #353535;
     }
     #previewSection {
         width: calc(100vw - 360px);

@@ -35,7 +35,7 @@
 <style>
     #nameTag {
         user-select: none;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid #373737;
         padding: 10px 5px;
         box-sizing: border-box;
     }
@@ -43,6 +43,6 @@
         padding: 2px 2px 5px 25px;
         box-sizing: border-box;
         line-height: 25px;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid #373737;
     }
 </style>
