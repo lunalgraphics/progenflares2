@@ -368,13 +368,15 @@ Preview quality
 
 {#if startScreenVisible}
     <div id={"startScreen"} out:fade>
-        PROGEN FLARES 2
-        <br />
-        doc width <input type="number" bind:value={flareSettings.dimensions.width} />
-        <br />
-        doc height<input type="number" bind:value={flareSettings.dimensions.height} />
-        <br />
-        <button on:click={onStart}>go</button>
+        <div class={"centered"} style={"text-align: center;"}>
+            PROGEN FLARES 2
+            <br /> <br />
+            <label style={"width: 145px; text-align: left; display: inline-block;"}>Doc Width</label> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
+            <br />
+            <label style={"width: 145px; text-align: left; display: inline-block;"}>Doc Height</label> <input type="number" bind:value={flareSettings.dimensions.height} style={"width: 80px;"} />
+            <br /> <br />
+            <button on:click={onStart}>go</button>
+        </div>
     </div>
 {/if}
 

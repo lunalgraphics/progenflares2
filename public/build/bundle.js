@@ -6359,74 +6359,118 @@ var app = (function () {
 
     // (369:0) {#if startScreenVisible}
     function create_if_block(ctx) {
-    	let div;
+    	let div1;
+    	let div0;
     	let t0;
     	let br0;
     	let t1;
-    	let input0;
-    	let t2;
     	let br1;
-    	let t3;
-    	let input1;
+    	let t2;
+    	let label0;
     	let t4;
-    	let br2;
+    	let input0;
     	let t5;
+    	let br2;
+    	let t6;
+    	let label1;
+    	let t8;
+    	let input1;
+    	let t9;
+    	let br3;
+    	let t10;
+    	let br4;
+    	let t11;
     	let button;
-    	let div_outro;
+    	let div1_outro;
     	let current;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			t0 = text("PROGEN FLARES 2\n        ");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text("PROGEN FLARES 2\n            ");
     			br0 = element("br");
-    			t1 = text("\n        doc width ");
-    			input0 = element("input");
-    			t2 = space();
+    			t1 = space();
     			br1 = element("br");
-    			t3 = text("\n        doc height");
-    			input1 = element("input");
+    			t2 = space();
+    			label0 = element("label");
+    			label0.textContent = "Doc Width";
     			t4 = space();
-    			br2 = element("br");
+    			input0 = element("input");
     			t5 = space();
+    			br2 = element("br");
+    			t6 = space();
+    			label1 = element("label");
+    			label1.textContent = "Doc Height";
+    			t8 = space();
+    			input1 = element("input");
+    			t9 = space();
+    			br3 = element("br");
+    			t10 = space();
+    			br4 = element("br");
+    			t11 = space();
     			button = element("button");
     			button.textContent = "go";
     			attr_dev(br0, "class", "svelte-fohwgs");
-    			add_location(br0, file, 371, 8, 24046);
-    			attr_dev(input0, "type", "number");
-    			attr_dev(input0, "class", "svelte-fohwgs");
-    			add_location(input0, file, 372, 18, 24071);
+    			add_location(br0, file, 372, 12, 24117);
     			attr_dev(br1, "class", "svelte-fohwgs");
-    			add_location(br1, file, 373, 8, 24147);
-    			attr_dev(input1, "type", "number");
-    			attr_dev(input1, "class", "svelte-fohwgs");
-    			add_location(input1, file, 374, 18, 24172);
+    			add_location(br1, file, 372, 19, 24124);
+    			attr_dev(label0, "style", "width: 145px; text-align: left; display: inline-block;");
+    			attr_dev(label0, "class", "svelte-fohwgs");
+    			add_location(label0, file, 373, 12, 24143);
+    			attr_dev(input0, "type", "number");
+    			attr_dev(input0, "style", "width: 80px;");
+    			attr_dev(input0, "class", "svelte-fohwgs");
+    			add_location(input0, file, 373, 102, 24233);
     			attr_dev(br2, "class", "svelte-fohwgs");
-    			add_location(br2, file, 375, 8, 24249);
+    			add_location(br2, file, 374, 12, 24336);
+    			attr_dev(label1, "style", "width: 145px; text-align: left; display: inline-block;");
+    			attr_dev(label1, "class", "svelte-fohwgs");
+    			add_location(label1, file, 375, 12, 24355);
+    			attr_dev(input1, "type", "number");
+    			attr_dev(input1, "style", "width: 80px;");
+    			attr_dev(input1, "class", "svelte-fohwgs");
+    			add_location(input1, file, 375, 103, 24446);
+    			attr_dev(br3, "class", "svelte-fohwgs");
+    			add_location(br3, file, 376, 12, 24550);
+    			attr_dev(br4, "class", "svelte-fohwgs");
+    			add_location(br4, file, 376, 19, 24557);
     			attr_dev(button, "class", "svelte-fohwgs");
-    			add_location(button, file, 376, 8, 24264);
-    			attr_dev(div, "id", "startScreen");
-    			attr_dev(div, "class", "svelte-fohwgs");
-    			add_location(div, file, 369, 4, 23980);
+    			add_location(button, file, 377, 12, 24576);
+    			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-fohwgs"));
+    			attr_dev(div0, "style", "text-align: center;");
+    			add_location(div0, file, 370, 8, 24022);
+    			attr_dev(div1, "id", "startScreen");
+    			attr_dev(div1, "class", "svelte-fohwgs");
+    			add_location(div1, file, 369, 4, 23980);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, t0);
-    			append_dev(div, br0);
-    			append_dev(div, t1);
-    			append_dev(div, input0);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div0, br0);
+    			append_dev(div0, t1);
+    			append_dev(div0, br1);
+    			append_dev(div0, t2);
+    			append_dev(div0, label0);
+    			append_dev(div0, t4);
+    			append_dev(div0, input0);
     			set_input_value(input0, /*flareSettings*/ ctx[0].dimensions.width);
-    			append_dev(div, t2);
-    			append_dev(div, br1);
-    			append_dev(div, t3);
-    			append_dev(div, input1);
+    			append_dev(div0, t5);
+    			append_dev(div0, br2);
+    			append_dev(div0, t6);
+    			append_dev(div0, label1);
+    			append_dev(div0, t8);
+    			append_dev(div0, input1);
     			set_input_value(input1, /*flareSettings*/ ctx[0].dimensions.height);
-    			append_dev(div, t4);
-    			append_dev(div, br2);
-    			append_dev(div, t5);
-    			append_dev(div, button);
+    			append_dev(div0, t9);
+    			append_dev(div0, br3);
+    			append_dev(div0, t10);
+    			append_dev(div0, br4);
+    			append_dev(div0, t11);
+    			append_dev(div0, button);
     			current = true;
 
     			if (!mounted) {
@@ -6450,16 +6494,16 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			if (div_outro) div_outro.end(1);
+    			if (div1_outro) div1_outro.end(1);
     			current = true;
     		},
     		o: function outro(local) {
-    			div_outro = create_out_transition(div, fade, {});
+    			div1_outro = create_out_transition(div1, fade, {});
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			if (detaching && div_outro) div_outro.end();
+    			if (detaching) detach_dev(div1);
+    			if (detaching && div1_outro) div1_outro.end();
     			mounted = false;
     			run_all(dispose);
     		}
