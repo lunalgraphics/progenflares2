@@ -24,8 +24,8 @@ class RingComponent {
     }
 
     render() {
-        this.canvas.width = this.radius * 2;
-        this.canvas.height = this.radius * 2;
+        this.canvas.width = Math.max(this.radius * 2, 2);
+        this.canvas.height = Math.max(this.radius * 2, 2);
         
         var ctx = this.canvas.getContext("2d");
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -34,8 +34,8 @@ class RingComponent {
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         ctx.beginPath();
-        ctx.arc(this.radius, this.radius, this.radius - this.options.blur * 2, 0, 2 * Math.PI, true);
-        var gradient = ctx.createRadialGradient(this.radius, this.radius, 0, this.radius, this.radius, this.radius - this.options.blur * 2);
+        ctx.arc(this.radius, this.radius, Math.max(this.radius - this.options.blur * 2, 2), 0, 2 * Math.PI, true);
+        var gradient = ctx.createRadialGradient(this.radius, this.radius, 0, this.radius, this.radius, Math.max(this.radius - this.options.blur * 2, 2));
         gradient.addColorStop(0, "black");
         gradient.addColorStop(Math.max(1 - (this.options.thickness / this.radius), 0), "black");
         gradient.addColorStop(1, "white");

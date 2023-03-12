@@ -23,8 +23,8 @@ class SpotComponent {
     }
 
     render() {
-        this.canvas.width = this.radius * 2;
-        this.canvas.height = this.radius * 2;
+        this.canvas.width = Math.max(this.radius * 2, 2);
+        this.canvas.height = Math.max(this.radius * 2, 2);
         var ctx = this.canvas.getContext("2d");
         ctx.restore();
         ctx.save();

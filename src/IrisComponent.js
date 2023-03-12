@@ -27,8 +27,8 @@ class IrisComponent {
     }
 
     render() {
-        this.canvas.width = this.radius * 2;
-        this.canvas.height = this.radius * 2;
+        this.canvas.width = Math.max(this.radius * 2, 2);
+        this.canvas.height = Math.max(this.radius * 2, 2);
         
         var ctx = this.canvas.getContext("2d");
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
