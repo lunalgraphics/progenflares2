@@ -88,7 +88,7 @@ class IrisComponent {
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         ctx.filter = `blur(${this.options.blur}px)`;
-        ctx.drawImage(blurBuff, this.options.blur, this.options.blur, this.canvas.width - 2 * this.options.blur, this.canvas.height - 2 * this.options.blur);
+        ctx.drawImage(blurBuff, this.options.blur * 2, this.options.blur * 2, this.canvas.width - 4 * this.options.blur, this.canvas.height - 4 * this.options.blur);
         ctx.restore();
         ctx.save();
         
