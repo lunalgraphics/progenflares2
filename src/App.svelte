@@ -410,7 +410,7 @@ Preview quality
     }
     :global(input[type=number]):focus {
         border: 1px solid var(--color-scheme-1);
-        box-shadow: inset 0 0 4px var(--color-scheme-1);
+        box-shadow: inset 0 0 4px var(--color-scheme-2);
         outline: none!important;
     }
     :global(input[type=number]):hover {
@@ -475,7 +475,7 @@ Preview quality
     }
     button:focus, :global(select):focus {
         border: 1px solid var(--color-scheme-1);
-        box-shadow: inset 0 0 4px var(--color-scheme-1);
+        box-shadow: inset 0 0 4px var(--color-scheme-2);
         outline: none!important;
     }
     button:hover, :global(select):hover {
