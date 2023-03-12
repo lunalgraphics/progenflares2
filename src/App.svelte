@@ -393,6 +393,7 @@ Preview quality
     :global(body) {
         background-color: var(--color-scheme-6);
         color: whitesmoke;
+        user-select: none;
     }
     canvas {
         max-width: calc(100vw - 360px - 50px);
@@ -501,5 +502,8 @@ Preview quality
     }
     ::-webkit-scrollbar-thumb:hover {
         background: #555555;
+    }
+    :global(::selection) {
+        background-color: var(--color-scheme-4);
     }
 </style>
