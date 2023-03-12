@@ -2821,7 +2821,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (46:8) {#each builtInPresets as preset}
+    // (47:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2833,7 +2833,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 46, 12, 6052);
+    			add_location(option, file$1, 47, 12, 6891);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2849,7 +2849,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(46:8) {#each builtInPresets as preset}",
+    		source: "(47:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2893,17 +2893,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 42, 4, 5828);
+    			add_location(option0, file$1, 43, 4, 6667);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 43, 4, 5898);
+    			add_location(option1, file$1, 44, 4, 6737);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 44, 4, 5961);
+    			add_location(optgroup, file$1, 45, 4, 6800);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 41, 0, 5769);
+    			add_location(select, file$1, 42, 0, 6608);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 51, 0, 6162);
+    			add_location(input, file$1, 52, 0, 7001);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3396,6 +3396,74 @@ var app = (function () {
     					"softening": 70,
     					"hue": 34,
     					"saturation": 45,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Emerald Light",
+    			data: {
+    				"hotspot": {
+    					"radius": 352,
+    					"intensity": 12,
+    					"deformationAmount": 1,
+    					"deformationFrequency": 0.007,
+    					"deformationSeed": 497,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 135,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 64,
+    					"width": 1600,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 238,
+    					"thickness": 40,
+    					"blur": 4,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 7,
+    					"hue": 125,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 41,
+    					"sides": 10,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 40,
+    					"fringeAlpha": 0,
+    					"fringeSize": 10,
+    					"blur": 15,
+    					"countAway": 5,
+    					"countTowards": 12,
+    					"spread": 25,
+    					"sizeVariance": 58,
+    					"perspective": 0,
+    					"alphaVariance": 100,
+    					"seed": 470,
+    					"hue": 165,
+    					"saturation": 100,
+    					"hueVariance": 12,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 44,
+    					"softening": 70,
+    					"hue": 122,
+    					"saturation": 100,
     					"anamorph": 0
     				}
     			}
