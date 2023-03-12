@@ -2821,7 +2821,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (47:8) {#each builtInPresets as preset}
+    // (48:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2833,7 +2833,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 47, 12, 6891);
+    			add_location(option, file$1, 48, 12, 7733);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2849,7 +2849,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(47:8) {#each builtInPresets as preset}",
+    		source: "(48:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2893,17 +2893,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 43, 4, 6667);
+    			add_location(option0, file$1, 44, 4, 7509);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 44, 4, 6737);
+    			add_location(option1, file$1, 45, 4, 7579);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 45, 4, 6800);
+    			add_location(optgroup, file$1, 46, 4, 7642);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 42, 0, 6608);
+    			add_location(select, file$1, 43, 0, 7450);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 52, 0, 7001);
+    			add_location(input, file$1, 53, 0, 7843);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3463,6 +3463,74 @@ var app = (function () {
     					"alpha": 44,
     					"softening": 70,
     					"hue": 122,
+    					"saturation": 100,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Blue Dwarf",
+    			data: {
+    				"hotspot": {
+    					"radius": 611,
+    					"intensity": 16,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.01,
+    					"deformationSeed": 157,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 204,
+    					"saturation": 100,
+    					"anamorph": 50
+    				},
+    				"streak": {
+    					"thickness": 83,
+    					"width": 3210,
+    					"intensity": 10,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 100,
+    					"hue": 214,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 400,
+    					"thickness": 74,
+    					"blur": 13,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 8,
+    					"hue": 230,
+    					"saturation": 100,
+    					"anamorph": 50
+    				},
+    				"miIris": {
+    					"radius": 73,
+    					"sides": 6,
+    					"roundness": 45,
+    					"angle": 0,
+    					"fillAlpha": 20,
+    					"fringeAlpha": 30,
+    					"fringeSize": 10,
+    					"blur": 5,
+    					"countAway": 7,
+    					"countTowards": 12,
+    					"spread": 30,
+    					"sizeVariance": 27,
+    					"perspective": 100,
+    					"alphaVariance": 81,
+    					"seed": 271,
+    					"hue": 211,
+    					"saturation": 100,
+    					"hueVariance": 36,
+    					"anamorph": 50
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 57,
+    					"softening": 12,
+    					"hue": 212,
     					"saturation": 100,
     					"anamorph": 0
     				}
