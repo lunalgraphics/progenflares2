@@ -1407,11 +1407,11 @@ var app = (function () {
     			attr_dev(input0, "min", /*min*/ ctx[1]);
     			attr_dev(input0, "max", /*max*/ ctx[2]);
     			attr_dev(input0, "step", /*step*/ ctx[3]);
-    			attr_dev(input0, "class", "svelte-n1z3wa");
+    			attr_dev(input0, "class", "svelte-169olcs");
     			add_location(input0, file$2, 28, 0, 487);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "step", /*step*/ ctx[3]);
-    			attr_dev(input1, "class", "svelte-n1z3wa");
+    			attr_dev(input1, "class", "svelte-169olcs");
     			add_location(input1, file$2, 29, 0, 631);
     			add_location(slider, file$2, 27, 0, 478);
     		},

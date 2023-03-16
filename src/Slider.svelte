@@ -44,5 +44,6 @@
         padding: 0;
         margin: 0;
         vertical-align: middle;
+        width: 128px;
     }
 </style>
