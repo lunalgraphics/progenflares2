@@ -266,9 +266,7 @@
 </div>
 
 <div id={"previewSection"}>
-    <div class={"centered"}>
-        <canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height}></canvas>
-    </div>
+    <canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
 </div>
 
 <div id={"sectionAbovePreview"}>
@@ -396,8 +394,8 @@ Preview quality
         user-select: none;
     }
     canvas {
-        max-width: calc(100vw - 360px - 50px);
-        max-height: calc(100vh - 2 * 84px - 50px);
+        max-width: calc(100% - 50px);
+        max-height: calc(100% - 50px);
     }
     :global(slider) {
         float: right;
@@ -429,6 +427,7 @@ Preview quality
         width: calc(100vw - 360px);
         height: calc(100vh - 2 * 84px);
         box-sizing: border-box;
+        padding: 25px;
         position: fixed;
         top: 84px;
         left: 0;
