@@ -110,7 +110,7 @@
         },
     };
 
-    var baseCanvas;
+    var baseCanvas, referenceImage;
     
     function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false) {
         if (renderHotspot) {
@@ -265,8 +265,9 @@
 <button on:click={function() { createDownloadLink().click(); }}>Export</button> <br />
 </div>
 
-<div id={"previewSection"}>
-    <canvas bind:this={baseCanvas} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
+<div id={"previewSection"}>   
+    <canvas bind:this={referenceImage} id={"referenceImage"} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
+    <canvas bind:this={baseCanvas} id={"baseCanvas"} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
 </div>
 
 <div id={"sectionAbovePreview"}>
@@ -393,9 +394,16 @@ Preview quality
         color: whitesmoke;
         user-select: none;
     }
-    canvas {
+    #baseCanvas, #referenceImage {
         max-width: calc(100% - 50px);
         max-height: calc(100% - 50px);
+    }
+    #referenceImage {
+        background-color: black;
+        background-size: 100% 100%;
+    }
+    #baseCanvas {
+        mix-blend-mode: screen;
     }
     :global(slider) {
         float: right;
