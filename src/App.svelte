@@ -278,6 +278,8 @@
                 fR.readAsDataURL(file);
             });
             fileInput.click();
+            if (referenceImage.style.backgroundImage == "") this.value = "None";
+            else this.value = "Custom";
         }
     }
 </script>
