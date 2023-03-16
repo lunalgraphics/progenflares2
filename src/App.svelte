@@ -259,6 +259,27 @@
         renderFlare(true, true, true, true, true);
         startScreenVisible = false;
     }
+
+    function handleRISelect() {
+        if (this.value == "None") {
+            referenceImage.style.backgroundImage = "";
+        }
+        if (this.value == "Import From Computer") {
+            var fileInput = document.createElement("input");
+            fileInput.type = "file";
+            fileInput.accept = "image/png, image/jpeg";
+            fileInput.addEventListener("change", () => {
+                var file = fileInput.files[0];
+                var fR = new FileReader();
+                fR.addEventListener("loadend", (e) => {
+                    referenceImage.style.backgroundImage = `url("${e.target.result}")`;
+                    this.value = "Custom";
+                });
+                fR.readAsDataURL(file);
+            });
+            fileInput.click();
+        }
+    }
 </script>
 
 <div id={"exportPanel"}>
@@ -276,6 +297,13 @@ Preview quality
     <option value={1}>100%</option>
     <option value={2}>50%</option>
     <option value={4}>25%</option>
+</select>
+<span style={"white-space: pre; color: grey;"}>{"    |    "}</span>
+Reference Image
+<select on:change={handleRISelect} style={"width: 100px;"}>
+    <option>None</option>
+    <option>Import From Computer</option>
+    <option hidden>Custom</option>
 </select>
 </div>
 
