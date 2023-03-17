@@ -102,7 +102,7 @@
         },
         glow: {
             radius: 960,
-            alpha: 80,
+            alpha: 50,
             softening: 70,
             hue: 200,
             saturation: 100,
