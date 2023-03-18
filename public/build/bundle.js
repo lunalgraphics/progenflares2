@@ -3285,7 +3285,7 @@ var app = (function () {
     					"intensity": -10,
     					"count": 5,
     					"angle": 21,
-    					"shift": 32,
+    					"shift": 18,
     					"alpha": 100,
     					"hue": 47,
     					"saturation": 14
