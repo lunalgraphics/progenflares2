@@ -544,3 +544,7 @@ Reference Image
         background-color: var(--color-scheme-4);
     }
 </style>
+
+<svelte:head>
+    <title>Progen Flares 2</title>
+</svelte:head>
