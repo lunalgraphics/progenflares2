@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35731/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -3885,13 +3885,13 @@ var app = (function () {
     			t7 = space();
     			br3 = element("br");
     			attr_dev(br0, "class", "svelte-yqs4gv");
-    			add_location(br0, file, 327, 151, 16492);
+    			add_location(br0, file, 327, 151, 16490);
     			attr_dev(br1, "class", "svelte-yqs4gv");
-    			add_location(br1, file, 328, 152, 16651);
+    			add_location(br1, file, 328, 152, 16649);
     			attr_dev(br2, "class", "svelte-yqs4gv");
-    			add_location(br2, file, 329, 156, 16814);
+    			add_location(br2, file, 329, 156, 16812);
     			attr_dev(br3, "class", "svelte-yqs4gv");
-    			add_location(br3, file, 330, 157, 16978);
+    			add_location(br3, file, 330, 157, 16976);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4237,25 +4237,25 @@ var app = (function () {
     			t19 = space();
     			br9 = element("br");
     			attr_dev(br0, "class", "svelte-yqs4gv");
-    			add_location(br0, file, 333, 126, 17158);
+    			add_location(br0, file, 333, 126, 17156);
     			attr_dev(br1, "class", "svelte-yqs4gv");
-    			add_location(br1, file, 334, 126, 17291);
+    			add_location(br1, file, 334, 126, 17289);
     			attr_dev(br2, "class", "svelte-yqs4gv");
-    			add_location(br2, file, 335, 122, 17420);
+    			add_location(br2, file, 335, 122, 17418);
     			attr_dev(br3, "class", "svelte-yqs4gv");
-    			add_location(br3, file, 336, 136, 17563);
+    			add_location(br3, file, 336, 136, 17561);
     			attr_dev(br4, "class", "svelte-yqs4gv");
-    			add_location(br4, file, 337, 126, 17696);
+    			add_location(br4, file, 337, 126, 17694);
     			attr_dev(br5, "class", "svelte-yqs4gv");
-    			add_location(br5, file, 338, 133, 17836);
+    			add_location(br5, file, 338, 133, 17834);
     			attr_dev(br6, "class", "svelte-yqs4gv");
-    			add_location(br6, file, 339, 164, 18007);
+    			add_location(br6, file, 339, 164, 18005);
     			attr_dev(br7, "class", "svelte-yqs4gv");
-    			add_location(br7, file, 340, 160, 18174);
+    			add_location(br7, file, 340, 160, 18172);
     			attr_dev(br8, "class", "svelte-yqs4gv");
-    			add_location(br8, file, 341, 142, 18323);
+    			add_location(br8, file, 341, 142, 18321);
     			attr_dev(br9, "class", "svelte-yqs4gv");
-    			add_location(br9, file, 342, 132, 18462);
+    			add_location(br9, file, 342, 132, 18460);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4688,23 +4688,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-yqs4gv");
-    			add_location(br0, file, 345, 132, 18647);
+    			add_location(br0, file, 345, 132, 18645);
     			attr_dev(br1, "class", "svelte-yqs4gv");
-    			add_location(br1, file, 346, 132, 18786);
+    			add_location(br1, file, 346, 132, 18784);
     			attr_dev(br2, "class", "svelte-yqs4gv");
-    			add_location(br2, file, 347, 128, 18921);
+    			add_location(br2, file, 347, 128, 18919);
     			attr_dev(br3, "class", "svelte-yqs4gv");
-    			add_location(br3, file, 348, 142, 19070);
+    			add_location(br3, file, 348, 142, 19068);
     			attr_dev(br4, "class", "svelte-yqs4gv");
-    			add_location(br4, file, 349, 140, 19217);
+    			add_location(br4, file, 349, 140, 19215);
     			attr_dev(br5, "class", "svelte-yqs4gv");
-    			add_location(br5, file, 350, 134, 19358);
+    			add_location(br5, file, 350, 134, 19356);
     			attr_dev(br6, "class", "svelte-yqs4gv");
-    			add_location(br6, file, 351, 141, 19506);
+    			add_location(br6, file, 351, 141, 19504);
     			attr_dev(br7, "class", "svelte-yqs4gv");
-    			add_location(br7, file, 352, 133, 19646);
+    			add_location(br7, file, 352, 133, 19644);
     			attr_dev(br8, "class", "svelte-yqs4gv");
-    			add_location(br8, file, 353, 132, 19785);
+    			add_location(br8, file, 353, 132, 19783);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5118,23 +5118,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-yqs4gv");
-    			add_location(br0, file, 356, 137, 19973);
+    			add_location(br0, file, 356, 137, 19971);
     			attr_dev(br1, "class", "svelte-yqs4gv");
-    			add_location(br1, file, 357, 133, 20113);
+    			add_location(br1, file, 357, 133, 20111);
     			attr_dev(br2, "class", "svelte-yqs4gv");
-    			add_location(br2, file, 358, 147, 20267);
+    			add_location(br2, file, 358, 147, 20265);
     			attr_dev(br3, "class", "svelte-yqs4gv");
-    			add_location(br3, file, 359, 137, 20411);
+    			add_location(br3, file, 359, 137, 20409);
     			attr_dev(br4, "class", "svelte-yqs4gv");
-    			add_location(br4, file, 360, 145, 20563);
+    			add_location(br4, file, 360, 145, 20561);
     			attr_dev(br5, "class", "svelte-yqs4gv");
-    			add_location(br5, file, 361, 138, 20708);
+    			add_location(br5, file, 361, 138, 20706);
     			attr_dev(br6, "class", "svelte-yqs4gv");
-    			add_location(br6, file, 362, 144, 20859);
+    			add_location(br6, file, 362, 144, 20857);
     			attr_dev(br7, "class", "svelte-yqs4gv");
-    			add_location(br7, file, 363, 152, 21018);
+    			add_location(br7, file, 363, 152, 21016);
     			attr_dev(br8, "class", "svelte-yqs4gv");
-    			add_location(br8, file, 364, 143, 21168);
+    			add_location(br8, file, 364, 143, 21166);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5778,43 +5778,43 @@ var app = (function () {
     			t37 = space();
     			br18 = element("br");
     			attr_dev(br0, "class", "svelte-yqs4gv");
-    			add_location(br0, file, 367, 155, 21380);
+    			add_location(br0, file, 367, 155, 21378);
     			attr_dev(br1, "class", "svelte-yqs4gv");
-    			add_location(br1, file, 368, 159, 21546);
+    			add_location(br1, file, 368, 159, 21544);
     			attr_dev(br2, "class", "svelte-yqs4gv");
-    			add_location(br2, file, 369, 146, 21699);
+    			add_location(br2, file, 369, 146, 21697);
     			attr_dev(br3, "class", "svelte-yqs4gv");
-    			add_location(br3, file, 370, 142, 21848);
+    			add_location(br3, file, 370, 142, 21846);
     			attr_dev(br4, "class", "svelte-yqs4gv");
-    			add_location(br4, file, 371, 156, 22011);
+    			add_location(br4, file, 371, 156, 22009);
     			attr_dev(br5, "class", "svelte-yqs4gv");
-    			add_location(br5, file, 372, 146, 22164);
+    			add_location(br5, file, 372, 146, 22162);
     			attr_dev(br6, "class", "svelte-yqs4gv");
-    			add_location(br6, file, 373, 145, 22316);
+    			add_location(br6, file, 373, 145, 22314);
     			attr_dev(br7, "class", "svelte-yqs4gv");
-    			add_location(br7, file, 374, 154, 22477);
+    			add_location(br7, file, 374, 154, 22475);
     			attr_dev(br8, "class", "svelte-yqs4gv");
-    			add_location(br8, file, 375, 157, 22641);
+    			add_location(br8, file, 375, 157, 22639);
     			attr_dev(br9, "class", "svelte-yqs4gv");
-    			add_location(br9, file, 376, 147, 22795);
+    			add_location(br9, file, 376, 147, 22793);
     			attr_dev(br10, "class", "svelte-yqs4gv");
-    			add_location(br10, file, 377, 160, 22962);
+    			add_location(br10, file, 377, 160, 22960);
     			attr_dev(br11, "class", "svelte-yqs4gv");
-    			add_location(br11, file, 378, 154, 23123);
+    			add_location(br11, file, 378, 154, 23121);
     			attr_dev(br12, "class", "svelte-yqs4gv");
-    			add_location(br12, file, 379, 148, 23278);
+    			add_location(br12, file, 379, 148, 23276);
     			attr_dev(br13, "class", "svelte-yqs4gv");
-    			add_location(br13, file, 380, 161, 23446);
+    			add_location(br13, file, 380, 161, 23444);
     			attr_dev(br14, "class", "svelte-yqs4gv");
-    			add_location(br14, file, 381, 158, 23611);
+    			add_location(br14, file, 381, 158, 23609);
     			attr_dev(br15, "class", "svelte-yqs4gv");
-    			add_location(br15, file, 382, 163, 23781);
+    			add_location(br15, file, 382, 163, 23779);
     			attr_dev(br16, "class", "svelte-yqs4gv");
-    			add_location(br16, file, 383, 159, 23947);
+    			add_location(br16, file, 383, 159, 23945);
     			attr_dev(br17, "class", "svelte-yqs4gv");
-    			add_location(br17, file, 384, 151, 24105);
+    			add_location(br17, file, 384, 151, 24103);
     			attr_dev(br18, "class", "svelte-yqs4gv");
-    			add_location(br18, file, 385, 152, 24264);
+    			add_location(br18, file, 385, 152, 24262);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6349,17 +6349,17 @@ var app = (function () {
     			t11 = space();
     			br5 = element("br");
     			attr_dev(br0, "class", "svelte-yqs4gv");
-    			add_location(br0, file, 388, 151, 24466);
+    			add_location(br0, file, 388, 151, 24464);
     			attr_dev(br1, "class", "svelte-yqs4gv");
-    			add_location(br1, file, 389, 147, 24620);
+    			add_location(br1, file, 389, 147, 24618);
     			attr_dev(br2, "class", "svelte-yqs4gv");
-    			add_location(br2, file, 390, 161, 24788);
+    			add_location(br2, file, 390, 161, 24786);
     			attr_dev(br3, "class", "svelte-yqs4gv");
-    			add_location(br3, file, 391, 154, 24949);
+    			add_location(br3, file, 391, 154, 24947);
     			attr_dev(br4, "class", "svelte-yqs4gv");
-    			add_location(br4, file, 392, 158, 25114);
+    			add_location(br4, file, 392, 158, 25112);
     			attr_dev(br5, "class", "svelte-yqs4gv");
-    			add_location(br5, file, 393, 157, 25278);
+    			add_location(br5, file, 393, 157, 25276);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6559,37 +6559,37 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "go";
     			attr_dev(br0, "class", "svelte-yqs4gv");
-    			add_location(br0, file, 401, 12, 25474);
+    			add_location(br0, file, 401, 12, 25472);
     			attr_dev(br1, "class", "svelte-yqs4gv");
-    			add_location(br1, file, 401, 19, 25481);
+    			add_location(br1, file, 401, 19, 25479);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-yqs4gv");
-    			add_location(span0, file, 402, 12, 25500);
+    			add_location(span0, file, 402, 12, 25498);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-yqs4gv");
-    			add_location(input0, file, 402, 100, 25588);
+    			add_location(input0, file, 402, 100, 25586);
     			attr_dev(br2, "class", "svelte-yqs4gv");
-    			add_location(br2, file, 403, 12, 25691);
+    			add_location(br2, file, 403, 12, 25689);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-yqs4gv");
-    			add_location(span1, file, 404, 12, 25710);
+    			add_location(span1, file, 404, 12, 25708);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-yqs4gv");
-    			add_location(input1, file, 404, 101, 25799);
+    			add_location(input1, file, 404, 101, 25797);
     			attr_dev(br3, "class", "svelte-yqs4gv");
-    			add_location(br3, file, 405, 12, 25903);
+    			add_location(br3, file, 405, 12, 25901);
     			attr_dev(br4, "class", "svelte-yqs4gv");
-    			add_location(br4, file, 405, 19, 25910);
+    			add_location(br4, file, 405, 19, 25908);
     			attr_dev(button, "class", "svelte-yqs4gv");
-    			add_location(button, file, 406, 12, 25929);
+    			add_location(button, file, 406, 12, 25927);
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-yqs4gv"));
     			attr_dev(div0, "style", "text-align: center;");
-    			add_location(div0, file, 399, 8, 25379);
+    			add_location(div0, file, 399, 8, 25377);
     			attr_dev(div1, "id", "startScreen");
     			attr_dev(div1, "class", "svelte-yqs4gv");
-    			add_location(div1, file, 398, 4, 25337);
+    			add_location(div1, file, 398, 4, 25335);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -6832,65 +6832,65 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t25 = space();
     			attr_dev(button0, "class", "svelte-yqs4gv");
-    			add_location(button0, file, 287, 0, 14810);
+    			add_location(button0, file, 287, 0, 14808);
     			attr_dev(br, "class", "svelte-yqs4gv");
-    			add_location(br, file, 287, 80, 14890);
+    			add_location(br, file, 287, 80, 14888);
     			attr_dev(div0, "id", "exportPanel");
     			attr_dev(div0, "class", "svelte-yqs4gv");
-    			add_location(div0, file, 286, 0, 14785);
+    			add_location(div0, file, 286, 0, 14783);
     			attr_dev(canvas0, "id", "referenceImage");
     			attr_dev(canvas0, "width", canvas0_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas0, "height", canvas0_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas0, "class", "" + (null_to_empty("centered") + " svelte-yqs4gv"));
-    			add_location(canvas0, file, 291, 4, 14940);
+    			add_location(canvas0, file, 291, 4, 14938);
     			attr_dev(canvas1, "id", "baseCanvas");
     			attr_dev(canvas1, "width", canvas1_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas1, "height", canvas1_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas1, "class", "" + (null_to_empty("centered") + " svelte-yqs4gv"));
-    			add_location(canvas1, file, 292, 4, 15110);
+    			add_location(canvas1, file, 292, 4, 15108);
     			attr_dev(div1, "id", "previewSection");
     			attr_dev(div1, "class", "svelte-yqs4gv");
-    			add_location(div1, file, 290, 0, 14905);
+    			add_location(div1, file, 290, 0, 14903);
     			option0.__value = 1;
     			option0.value = option0.__value;
     			attr_dev(option0, "class", "svelte-yqs4gv");
-    			add_location(option0, file, 298, 4, 15486);
+    			add_location(option0, file, 298, 4, 15484);
     			option1.__value = 2;
     			option1.value = option1.__value;
     			attr_dev(option1, "class", "svelte-yqs4gv");
-    			add_location(option1, file, 299, 4, 15522);
+    			add_location(option1, file, 299, 4, 15520);
     			option2.__value = 4;
     			option2.value = option2.__value;
     			attr_dev(option2, "class", "svelte-yqs4gv");
-    			add_location(option2, file, 300, 4, 15557);
+    			add_location(option2, file, 300, 4, 15555);
     			attr_dev(select0, "class", "svelte-yqs4gv");
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[14].call(select0));
-    			add_location(select0, file, 297, 0, 15376);
+    			add_location(select0, file, 297, 0, 15374);
     			attr_dev(span, "style", "white-space: pre; color: grey;");
     			attr_dev(span, "class", "svelte-yqs4gv");
-    			add_location(span, file, 302, 0, 15598);
+    			add_location(span, file, 302, 0, 15596);
     			option3.__value = "None";
     			option3.value = option3.__value;
     			attr_dev(option3, "class", "svelte-yqs4gv");
-    			add_location(option3, file, 305, 4, 15746);
+    			add_location(option3, file, 305, 4, 15744);
     			option4.__value = "Import From Computer";
     			option4.value = option4.__value;
     			attr_dev(option4, "class", "svelte-yqs4gv");
-    			add_location(option4, file, 306, 4, 15772);
+    			add_location(option4, file, 306, 4, 15770);
     			option5.hidden = true;
     			option5.__value = "Custom";
     			option5.value = option5.__value;
     			attr_dev(option5, "class", "svelte-yqs4gv");
-    			add_location(option5, file, 307, 4, 15814);
+    			add_location(option5, file, 307, 4, 15812);
     			attr_dev(select1, "style", "width: 100px;");
     			attr_dev(select1, "class", "svelte-yqs4gv");
-    			add_location(select1, file, 304, 0, 15682);
+    			add_location(select1, file, 304, 0, 15680);
     			attr_dev(div2, "id", "sectionAbovePreview");
     			attr_dev(div2, "class", "svelte-yqs4gv");
-    			add_location(div2, file, 295, 0, 15327);
+    			add_location(div2, file, 295, 0, 15325);
     			attr_dev(button1, "style", "float: right;");
     			attr_dev(button1, "class", "svelte-yqs4gv");
-    			add_location(button1, file, 323, 4, 16168);
+    			add_location(button1, file, 323, 4, 16166);
 
     			attr_dev(div3, "style", `
     position: sticky;
@@ -6903,10 +6903,10 @@ var app = (function () {
 `);
 
     			attr_dev(div3, "class", "svelte-yqs4gv");
-    			add_location(div3, file, 313, 0, 15890);
+    			add_location(div3, file, 313, 0, 15888);
     			attr_dev(div4, "id", "controlPanel");
     			attr_dev(div4, "class", "svelte-yqs4gv");
-    			add_location(div4, file, 311, 0, 15863);
+    			add_location(div4, file, 311, 0, 15861);
     			document_1.title = "Progen Flares 2";
     		},
     		l: function claim(nodes) {
@@ -7367,9 +7367,73 @@ var app = (function () {
     	var startScreenVisible = true;
 
     	function onStart() {
-    		//setPreset({"hotspot":{"radius":595,"intensity":19,"deformationAmount":1.5,"deformationFrequency":0.01,"deformationSeed":998,"alpha":100,"angle":0,"hue":39,"saturation":88,"anamorph":0},"streak":{"thickness":121,"width":2435,"intensity":-25,"count":1,"angle":0,"shift":48,"alpha":100,"hue":216,"saturation":100},"ring":{"radius":300,"thickness":50,"blur":4,"cropSize":0,"cropHardness":50,"alpha":0,"hue":200,"saturation":100,"anamorph":0},"miIris":{"radius":81,"sides":6,"roundness":32,"angle":0,"fillAlpha":12,"fringeAlpha":25,"fringeSize":10,"blur":4,"countAway":5,"countTowards":12,"spread":30,"sizeVariance":40,"perspective":100,"alphaVariance":50,"seed":333,"hue":39,"saturation":100,"hueVariance":40,"anamorph":0},"glow":{"radius":999,"alpha":25,"softening":0,"hue":23,"saturation":100,"anamorph":0}});
-    		$$invalidate(0, flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2, flareSettings);
+    		setPreset({
+    			"hotspot": {
+    				"radius": 595,
+    				"intensity": 19,
+    				"deformationAmount": 1.5,
+    				"deformationFrequency": 0.01,
+    				"deformationSeed": 239,
+    				"alpha": 100,
+    				"angle": 0,
+    				"hue": 39,
+    				"saturation": 88,
+    				"anamorph": 0
+    			},
+    			"streak": {
+    				"thickness": 121,
+    				"width": 2435,
+    				"intensity": -25,
+    				"count": 1,
+    				"angle": 0,
+    				"shift": 48,
+    				"alpha": 100,
+    				"hue": 216,
+    				"saturation": 100
+    			},
+    			"ring": {
+    				"radius": 300,
+    				"thickness": 50,
+    				"blur": 4,
+    				"cropSize": 0,
+    				"cropHardness": 50,
+    				"alpha": 0,
+    				"hue": 200,
+    				"saturation": 100,
+    				"anamorph": 0
+    			},
+    			"miIris": {
+    				"radius": 81,
+    				"sides": 6,
+    				"roundness": 32,
+    				"angle": 0,
+    				"fillAlpha": 12,
+    				"fringeAlpha": 25,
+    				"fringeSize": 10,
+    				"blur": 4,
+    				"countAway": 5,
+    				"countTowards": 12,
+    				"spread": 30,
+    				"sizeVariance": 40,
+    				"perspective": 100,
+    				"alphaVariance": 50,
+    				"seed": 333,
+    				"hue": 39,
+    				"saturation": 100,
+    				"hueVariance": 40,
+    				"anamorph": 0
+    			},
+    			"glow": {
+    				"radius": 999,
+    				"alpha": 25,
+    				"softening": 0,
+    				"hue": 23,
+    				"saturation": 100,
+    				"anamorph": 0
+    			}
+    		});
 
+    		$$invalidate(0, flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2, flareSettings);
     		$$invalidate(0, flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2, flareSettings);
     		$$invalidate(0, flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5, flareSettings);
     		$$invalidate(0, flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5, flareSettings);
