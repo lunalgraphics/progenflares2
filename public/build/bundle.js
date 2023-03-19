@@ -3407,7 +3407,7 @@ var app = (function () {
     			}
     		},
     		{
-    			name: "Emerald Light",
+    			name: "Daisy's Beacon",
     			data: {
     				"hotspot": {
     					"radius": 352,
@@ -3417,7 +3417,7 @@ var app = (function () {
     					"deformationSeed": 497,
     					"alpha": 100,
     					"angle": 0,
-    					"hue": 135,
+    					"hue": 81,
     					"saturation": 100,
     					"anamorph": 0
     				},
