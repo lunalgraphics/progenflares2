@@ -2827,7 +2827,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (50:8) {#each builtInPresets as preset}
+    // (51:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2839,7 +2839,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 50, 12, 8599);
+    			add_location(option, file$1, 51, 12, 9444);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2855,7 +2855,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(50:8) {#each builtInPresets as preset}",
+    		source: "(51:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2899,17 +2899,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 46, 4, 8375);
+    			add_location(option0, file$1, 47, 4, 9220);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 47, 4, 8445);
+    			add_location(option1, file$1, 48, 4, 9290);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 48, 4, 8508);
+    			add_location(optgroup, file$1, 49, 4, 9353);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 45, 0, 8316);
+    			add_location(select, file$1, 46, 0, 9161);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 55, 0, 8709);
+    			add_location(input, file$1, 56, 0, 9554);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3605,6 +3605,74 @@ var app = (function () {
     					"alpha": 28,
     					"softening": 0,
     					"hue": 205,
+    					"saturation": 100,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Golden Century",
+    			data: {
+    				"hotspot": {
+    					"radius": 632,
+    					"intensity": 11,
+    					"deformationAmount": 1.42,
+    					"deformationFrequency": 0.012,
+    					"deformationSeed": 216,
+    					"alpha": 94,
+    					"angle": 0,
+    					"hue": 45,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 92,
+    					"width": 3210,
+    					"intensity": 0,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 100,
+    					"hue": 42,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 406,
+    					"thickness": 44,
+    					"blur": 6,
+    					"cropSize": 392,
+    					"cropHardness": 62,
+    					"alpha": 25,
+    					"hue": 27,
+    					"saturation": 100,
+    					"anamorph": 50
+    				},
+    				"miIris": {
+    					"radius": 152,
+    					"sides": 5,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 25,
+    					"fringeAlpha": 0,
+    					"fringeSize": 10,
+    					"blur": 30,
+    					"countAway": 9,
+    					"countTowards": 16,
+    					"spread": 19,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 342,
+    					"hue": 42,
+    					"saturation": 100,
+    					"hueVariance": 16,
+    					"anamorph": 88
+    				},
+    				"glow": {
+    					"radius": 1082,
+    					"alpha": 39,
+    					"softening": 26,
+    					"hue": 45,
     					"saturation": 100,
     					"anamorph": 0
     				}
