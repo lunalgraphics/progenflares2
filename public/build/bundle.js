@@ -2839,7 +2839,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 51, 12, 9444);
+    			add_location(option, file$1, 51, 12, 9445);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2899,17 +2899,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 47, 4, 9220);
+    			add_location(option0, file$1, 47, 4, 9221);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 48, 4, 9290);
+    			add_location(option1, file$1, 48, 4, 9291);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 49, 4, 9353);
+    			add_location(optgroup, file$1, 49, 4, 9354);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 46, 0, 9161);
+    			add_location(select, file$1, 46, 0, 9162);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 56, 0, 9554);
+    			add_location(input, file$1, 56, 0, 9555);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3342,10 +3342,10 @@ var app = (function () {
     			name: "Sunflower",
     			data: {
     				"hotspot": {
-    					"radius": 324,
-    					"intensity": 12,
+    					"radius": 476,
+    					"intensity": 15,
     					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.01,
+    					"deformationFrequency": 0.015,
     					"deformationSeed": 109,
     					"alpha": 100,
     					"angle": 0,
@@ -3365,7 +3365,7 @@ var app = (function () {
     					"saturation": 100
     				},
     				"ring": {
-    					"radius": 200,
+    					"radius": 281,
     					"thickness": 40,
     					"blur": 12,
     					"cropSize": 0,
@@ -3380,10 +3380,10 @@ var app = (function () {
     					"sides": 5,
     					"roundness": 100,
     					"angle": 0,
-    					"fillAlpha": 12,
-    					"fringeAlpha": 40,
+    					"fillAlpha": 10,
+    					"fringeAlpha": 21,
     					"fringeSize": 17,
-    					"blur": 5,
+    					"blur": 2,
     					"countAway": 7,
     					"countTowards": 15,
     					"spread": 18,
@@ -3397,7 +3397,7 @@ var app = (function () {
     					"anamorph": 0
     				},
     				"glow": {
-    					"radius": 960,
+    					"radius": 935,
     					"alpha": 50,
     					"softening": 70,
     					"hue": 34,
