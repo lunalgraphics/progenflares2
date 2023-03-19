@@ -39,6 +39,7 @@
             dispatch("choose", JSON.parse(e.target.result));
         });
         fR.readAsText(file);
+        this.value = null;
     }
 </script>
 

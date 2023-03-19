@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35731/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -2827,7 +2827,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (49:8) {#each builtInPresets as preset}
+    // (50:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2839,7 +2839,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 49, 12, 8572);
+    			add_location(option, file$1, 50, 12, 8599);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2855,7 +2855,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(49:8) {#each builtInPresets as preset}",
+    		source: "(50:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2899,17 +2899,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 45, 4, 8348);
+    			add_location(option0, file$1, 46, 4, 8375);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 46, 4, 8418);
+    			add_location(option1, file$1, 47, 4, 8445);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 47, 4, 8481);
+    			add_location(optgroup, file$1, 48, 4, 8508);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 44, 0, 8289);
+    			add_location(select, file$1, 45, 0, 8316);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 54, 0, 8682);
+    			add_location(input, file$1, 55, 0, 8709);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3631,6 +3631,7 @@ var app = (function () {
     		});
 
     		fR.readAsText(file);
+    		this.value = null;
     	}
 
     	const writable_props = [];
