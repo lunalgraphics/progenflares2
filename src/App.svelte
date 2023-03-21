@@ -538,7 +538,7 @@ Reference Image
         background: #333333;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: #555555;
+        background: var(--color-scheme-3);
     }
     :global(::selection) {
         background-color: var(--color-scheme-4);
