@@ -4318,7 +4318,7 @@ var app = (function () {
     		/*slider4_value_binding*/ ctx[34](value);
     	}
 
-    	let slider4_props = { min: 0, max: 900 };
+    	let slider4_props = { min: 0, max: 1000 };
 
     	if (/*flareSettings*/ ctx[0].hotspot.radius !== void 0) {
     		slider4_props.value = /*flareSettings*/ ctx[0].hotspot.radius;
@@ -4449,17 +4449,17 @@ var app = (function () {
     			attr_dev(br3, "class", "svelte-1lq6abv");
     			add_location(br3, file, 336, 136, 17561);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 337, 126, 17694);
+    			add_location(br4, file, 337, 127, 17695);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 338, 133, 17834);
+    			add_location(br5, file, 338, 133, 17835);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 339, 164, 18005);
+    			add_location(br6, file, 339, 164, 18006);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 340, 160, 18172);
+    			add_location(br7, file, 340, 160, 18173);
     			attr_dev(br8, "class", "svelte-1lq6abv");
-    			add_location(br8, file, 341, 142, 18321);
+    			add_location(br8, file, 341, 142, 18322);
     			attr_dev(br9, "class", "svelte-1lq6abv");
-    			add_location(br9, file, 342, 132, 18460);
+    			add_location(br9, file, 342, 132, 18461);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4801,7 +4801,7 @@ var app = (function () {
     		/*slider5_value_binding_1*/ ctx[56](value);
     	}
 
-    	let slider5_props = { min: 0, max: 3210 };
+    	let slider5_props = { min: 0, max: 5000 };
 
     	if (/*flareSettings*/ ctx[0].streak.width !== void 0) {
     		slider5_props.value = /*flareSettings*/ ctx[0].streak.width;
@@ -4815,7 +4815,7 @@ var app = (function () {
     		/*slider6_value_binding_1*/ ctx[58](value);
     	}
 
-    	let slider6_props = { min: -25, max: 50 };
+    	let slider6_props = { min: -30, max: 50 };
 
     	if (/*flareSettings*/ ctx[0].streak.intensity !== void 0) {
     		slider6_props.value = /*flareSettings*/ ctx[0].streak.intensity;
@@ -4892,23 +4892,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 345, 132, 18645);
+    			add_location(br0, file, 345, 132, 18646);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 346, 132, 18784);
+    			add_location(br1, file, 346, 132, 18785);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 347, 128, 18919);
+    			add_location(br2, file, 347, 128, 18920);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 348, 142, 19068);
+    			add_location(br3, file, 348, 142, 19069);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 349, 140, 19215);
+    			add_location(br4, file, 349, 140, 19216);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 350, 134, 19356);
+    			add_location(br5, file, 350, 134, 19357);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 351, 141, 19504);
+    			add_location(br6, file, 351, 141, 19505);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 352, 133, 19644);
+    			add_location(br7, file, 352, 133, 19645);
     			attr_dev(br8, "class", "svelte-1lq6abv");
-    			add_location(br8, file, 353, 132, 19783);
+    			add_location(br8, file, 353, 132, 19784);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5322,23 +5322,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 356, 137, 19971);
+    			add_location(br0, file, 356, 137, 19972);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 357, 133, 20111);
+    			add_location(br1, file, 357, 133, 20112);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 358, 147, 20265);
+    			add_location(br2, file, 358, 147, 20266);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 359, 137, 20409);
+    			add_location(br3, file, 359, 137, 20410);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 360, 145, 20561);
+    			add_location(br4, file, 360, 145, 20562);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 361, 138, 20706);
+    			add_location(br5, file, 361, 138, 20707);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 362, 144, 20857);
+    			add_location(br6, file, 362, 144, 20858);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 363, 152, 21016);
+    			add_location(br7, file, 363, 152, 21017);
     			attr_dev(br8, "class", "svelte-1lq6abv");
-    			add_location(br8, file, 364, 143, 21166);
+    			add_location(br8, file, 364, 143, 21167);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5725,7 +5725,7 @@ var app = (function () {
     		/*slider6_value_binding_3*/ ctx[94](value);
     	}
 
-    	let slider6_props = { min: 5, max: 10 };
+    	let slider6_props = { min: 3, max: 12 };
 
     	if (/*flareSettings*/ ctx[0].miIris.sides !== void 0) {
     		slider6_props.value = /*flareSettings*/ ctx[0].miIris.sides;
@@ -5982,43 +5982,43 @@ var app = (function () {
     			t37 = space();
     			br18 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 367, 155, 21378);
+    			add_location(br0, file, 367, 155, 21379);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 368, 159, 21544);
+    			add_location(br1, file, 368, 159, 21545);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 369, 146, 21697);
+    			add_location(br2, file, 369, 146, 21698);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 370, 142, 21846);
+    			add_location(br3, file, 370, 142, 21847);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 371, 156, 22009);
+    			add_location(br4, file, 371, 156, 22010);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 372, 146, 22162);
+    			add_location(br5, file, 372, 146, 22163);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 373, 145, 22314);
+    			add_location(br6, file, 373, 145, 22315);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 374, 154, 22475);
+    			add_location(br7, file, 374, 154, 22476);
     			attr_dev(br8, "class", "svelte-1lq6abv");
-    			add_location(br8, file, 375, 157, 22639);
+    			add_location(br8, file, 375, 157, 22640);
     			attr_dev(br9, "class", "svelte-1lq6abv");
-    			add_location(br9, file, 376, 147, 22793);
+    			add_location(br9, file, 376, 147, 22794);
     			attr_dev(br10, "class", "svelte-1lq6abv");
-    			add_location(br10, file, 377, 160, 22960);
+    			add_location(br10, file, 377, 160, 22961);
     			attr_dev(br11, "class", "svelte-1lq6abv");
-    			add_location(br11, file, 378, 154, 23121);
+    			add_location(br11, file, 378, 154, 23122);
     			attr_dev(br12, "class", "svelte-1lq6abv");
-    			add_location(br12, file, 379, 148, 23276);
+    			add_location(br12, file, 379, 148, 23277);
     			attr_dev(br13, "class", "svelte-1lq6abv");
-    			add_location(br13, file, 380, 161, 23444);
+    			add_location(br13, file, 380, 161, 23445);
     			attr_dev(br14, "class", "svelte-1lq6abv");
-    			add_location(br14, file, 381, 158, 23609);
+    			add_location(br14, file, 381, 158, 23610);
     			attr_dev(br15, "class", "svelte-1lq6abv");
-    			add_location(br15, file, 382, 163, 23779);
+    			add_location(br15, file, 382, 163, 23780);
     			attr_dev(br16, "class", "svelte-1lq6abv");
-    			add_location(br16, file, 383, 159, 23945);
+    			add_location(br16, file, 383, 159, 23946);
     			attr_dev(br17, "class", "svelte-1lq6abv");
-    			add_location(br17, file, 384, 151, 24103);
+    			add_location(br17, file, 384, 151, 24104);
     			attr_dev(br18, "class", "svelte-1lq6abv");
-    			add_location(br18, file, 385, 152, 24262);
+    			add_location(br18, file, 385, 152, 24263);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6488,7 +6488,7 @@ var app = (function () {
     		/*slider3_value_binding_5*/ ctx[126](value);
     	}
 
-    	let slider3_props = { min: 0, max: 1200 };
+    	let slider3_props = { min: 0, max: 1500 };
 
     	if (/*flareSettings*/ ctx[0].glow.radius !== void 0) {
     		slider3_props.value = /*flareSettings*/ ctx[0].glow.radius;
@@ -6553,17 +6553,17 @@ var app = (function () {
     			t11 = space();
     			br5 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 388, 151, 24464);
+    			add_location(br0, file, 388, 151, 24465);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 389, 147, 24618);
+    			add_location(br1, file, 389, 147, 24619);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 390, 161, 24786);
+    			add_location(br2, file, 390, 161, 24787);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 391, 154, 24947);
+    			add_location(br3, file, 391, 154, 24948);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 392, 158, 25112);
+    			add_location(br4, file, 392, 158, 25113);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 393, 157, 25276);
+    			add_location(br5, file, 393, 157, 25277);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6763,37 +6763,37 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "go";
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 401, 12, 25472);
+    			add_location(br0, file, 401, 12, 25473);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 401, 19, 25479);
+    			add_location(br1, file, 401, 19, 25480);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-1lq6abv");
-    			add_location(span0, file, 402, 12, 25498);
+    			add_location(span0, file, 402, 12, 25499);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-1lq6abv");
-    			add_location(input0, file, 402, 100, 25586);
+    			add_location(input0, file, 402, 100, 25587);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 403, 12, 25689);
+    			add_location(br2, file, 403, 12, 25690);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-1lq6abv");
-    			add_location(span1, file, 404, 12, 25708);
+    			add_location(span1, file, 404, 12, 25709);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-1lq6abv");
-    			add_location(input1, file, 404, 101, 25797);
+    			add_location(input1, file, 404, 101, 25798);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 405, 12, 25901);
+    			add_location(br3, file, 405, 12, 25902);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 405, 19, 25908);
+    			add_location(br4, file, 405, 19, 25909);
     			attr_dev(button, "class", "svelte-1lq6abv");
-    			add_location(button, file, 406, 12, 25927);
+    			add_location(button, file, 406, 12, 25928);
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-1lq6abv"));
     			attr_dev(div0, "style", "text-align: center;");
-    			add_location(div0, file, 399, 8, 25377);
+    			add_location(div0, file, 399, 8, 25378);
     			attr_dev(div1, "id", "startScreen");
     			attr_dev(div1, "class", "svelte-1lq6abv");
-    			add_location(div1, file, 398, 4, 25335);
+    			add_location(div1, file, 398, 4, 25336);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
