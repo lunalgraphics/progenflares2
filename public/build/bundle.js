@@ -2827,7 +2827,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (51:8) {#each builtInPresets as preset}
+    // (52:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2839,7 +2839,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 51, 12, 9445);
+    			add_location(option, file$1, 52, 12, 10295);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2855,7 +2855,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(51:8) {#each builtInPresets as preset}",
+    		source: "(52:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2899,17 +2899,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 47, 4, 9221);
+    			add_location(option0, file$1, 48, 4, 10071);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 48, 4, 9291);
+    			add_location(option1, file$1, 49, 4, 10141);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 49, 4, 9354);
+    			add_location(optgroup, file$1, 50, 4, 10204);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 46, 0, 9162);
+    			add_location(select, file$1, 47, 0, 10012);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 56, 0, 9555);
+    			add_location(input, file$1, 57, 0, 10405);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3675,6 +3675,74 @@ var app = (function () {
     					"hue": 45,
     					"saturation": 100,
     					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Industrial Anamorphic",
+    			data: {
+    				"hotspot": {
+    					"radius": 531,
+    					"intensity": 35,
+    					"deformationAmount": 0,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 25,
+    					"saturation": 21,
+    					"anamorph": 60
+    				},
+    				"streak": {
+    					"thickness": 115,
+    					"width": 2695,
+    					"intensity": -12,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 100,
+    					"hue": 222,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 121,
+    					"sides": 5,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 25,
+    					"fringeAlpha": 0,
+    					"fringeSize": 10,
+    					"blur": 30,
+    					"countAway": 8,
+    					"countTowards": 18,
+    					"spread": 30,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 123,
+    					"hue": 222,
+    					"saturation": 100,
+    					"hueVariance": 30,
+    					"anamorph": 72
+    				},
+    				"glow": {
+    					"radius": 1111,
+    					"alpha": 45,
+    					"softening": 0,
+    					"hue": 21,
+    					"saturation": 100,
+    					"anamorph": 37
     				}
     			}
     		}
