@@ -2827,7 +2827,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (52:8) {#each builtInPresets as preset}
+    // (53:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2839,7 +2839,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 52, 12, 10295);
+    			add_location(option, file$1, 53, 12, 11126);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2855,7 +2855,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(52:8) {#each builtInPresets as preset}",
+    		source: "(53:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2899,17 +2899,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 48, 4, 10071);
+    			add_location(option0, file$1, 49, 4, 10902);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 49, 4, 10141);
+    			add_location(option1, file$1, 50, 4, 10972);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 50, 4, 10204);
+    			add_location(optgroup, file$1, 51, 4, 11035);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 47, 0, 10012);
+    			add_location(select, file$1, 48, 0, 10843);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 57, 0, 10405);
+    			add_location(input, file$1, 58, 0, 11236);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3743,6 +3743,74 @@ var app = (function () {
     					"hue": 21,
     					"saturation": 100,
     					"anamorph": 37
+    				}
+    			}
+    		},
+    		{
+    			name: "Hexastar",
+    			data: {
+    				"hotspot": {
+    					"radius": 345,
+    					"intensity": 5,
+    					"deformationAmount": 2.1,
+    					"deformationFrequency": 0.015,
+    					"deformationSeed": 633,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 200,
+    					"saturation": 0,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 42,
+    					"width": 1212,
+    					"intensity": 12,
+    					"count": 3,
+    					"angle": 0,
+    					"shift": 0,
+    					"alpha": 100,
+    					"hue": 200,
+    					"saturation": 0
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 64,
+    					"sides": 6,
+    					"roundness": 45,
+    					"angle": 0,
+    					"fillAlpha": 10,
+    					"fringeAlpha": 10,
+    					"fringeSize": 25,
+    					"blur": 3,
+    					"countAway": 10,
+    					"countTowards": 19,
+    					"spread": 20,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 64,
+    					"seed": 397,
+    					"hue": 200,
+    					"saturation": 20,
+    					"hueVariance": 180,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 48,
+    					"softening": 70,
+    					"hue": 196,
+    					"saturation": 24,
+    					"anamorph": 0
     				}
     			}
     		}
