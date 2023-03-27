@@ -397,7 +397,7 @@ Reference Image
 
 {#if startScreenVisible}
     <div id={"startScreen"} out:fade>
-        <div class={"centered"} style={"text-align: center;"}>
+        <div class={"centered"} style={"text-align: center; padding: 32px; background-color: var(--color-scheme-6); border-radius: 8px;"}>
             PROGEN FLARES 2
             <br /> <br />
             <span style={"width: 145px; text-align: left; display: inline-block;"}>Doc Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
@@ -405,6 +405,8 @@ Reference Image
             <span style={"width: 145px; text-align: left; display: inline-block;"}>Doc Height</span> <input type="number" bind:value={flareSettings.dimensions.height} style={"width: 80px;"} />
             <br /> <br />
             <button on:click={onStart}>go</button>
+            <br /> <br />
+            <span style={"font-size: 10px;"}>&copy; 2023 Lunal Graphics<br />Developed by Yikuan Sun</span>
         </div>
     </div>
 {/if}
