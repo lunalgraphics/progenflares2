@@ -397,7 +397,7 @@ Reference Image
 
 {#if startScreenVisible}
     <div id={"startScreen"} out:fade>
-        <div class={"centered"} style={"text-align: center; padding: 32px; background-color: var(--color-scheme-6); border-radius: 8px;"}>
+        <div class={"centered"} style={"text-align: center; padding: 32px; background-color: #24242480; border-radius: 8px;"}>
             PROGEN FLARES 2
             <br /> <br />
             <span style={"width: 145px; text-align: left; display: inline-block;"}>Doc Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
