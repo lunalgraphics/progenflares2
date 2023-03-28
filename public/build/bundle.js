@@ -2827,7 +2827,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (54:8) {#each builtInPresets as preset}
+    // (55:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2839,7 +2839,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 54, 12, 11963);
+    			add_location(option, file$1, 55, 12, 12802);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2855,7 +2855,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(54:8) {#each builtInPresets as preset}",
+    		source: "(55:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2899,17 +2899,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 50, 4, 11739);
+    			add_location(option0, file$1, 51, 4, 12578);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 51, 4, 11809);
+    			add_location(option1, file$1, 52, 4, 12648);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 52, 4, 11872);
+    			add_location(optgroup, file$1, 53, 4, 12711);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 49, 0, 11680);
+    			add_location(select, file$1, 50, 0, 12519);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 59, 0, 12073);
+    			add_location(input, file$1, 60, 0, 12912);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3877,6 +3877,74 @@ var app = (function () {
     					"alpha": 50,
     					"softening": 70,
     					"hue": 9,
+    					"saturation": 100,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Cherry Tree",
+    			data: {
+    				"hotspot": {
+    					"radius": 443,
+    					"intensity": 5,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 325,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 99,
+    					"width": 3232,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 50,
+    					"alpha": 100,
+    					"hue": 284,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 462,
+    					"thickness": 83,
+    					"blur": 9,
+    					"cropSize": 443,
+    					"cropHardness": 82,
+    					"alpha": 21,
+    					"hue": 298,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 57,
+    					"sides": 8,
+    					"roundness": 42,
+    					"angle": 0,
+    					"fillAlpha": 16,
+    					"fringeAlpha": 32,
+    					"fringeSize": 30,
+    					"blur": 4,
+    					"countAway": 8,
+    					"countTowards": 16,
+    					"spread": 30,
+    					"sizeVariance": 47,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 315,
+    					"hue": 292,
+    					"saturation": 100,
+    					"hueVariance": 25,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 50,
+    					"softening": 70,
+    					"hue": 279,
     					"saturation": 100,
     					"anamorph": 0
     				}
