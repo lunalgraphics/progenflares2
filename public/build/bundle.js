@@ -2839,7 +2839,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 55, 12, 12802);
+    			add_location(option, file$1, 55, 12, 12804);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2899,17 +2899,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 51, 4, 12578);
+    			add_location(option0, file$1, 51, 4, 12580);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 52, 4, 12648);
+    			add_location(option1, file$1, 52, 4, 12650);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 53, 4, 12711);
+    			add_location(optgroup, file$1, 53, 4, 12713);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 50, 0, 12519);
+    			add_location(select, file$1, 50, 0, 12521);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 60, 0, 12912);
+    			add_location(input, file$1, 60, 0, 12914);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3889,8 +3889,8 @@ var app = (function () {
     					"radius": 443,
     					"intensity": 5,
     					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.006,
-    					"deformationSeed": 1,
+    					"deformationFrequency": 0.008,
+    					"deformationSeed": 320,
     					"alpha": 100,
     					"angle": 0,
     					"hue": 325,
