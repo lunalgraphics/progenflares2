@@ -868,7 +868,7 @@ var app = (function () {
     			div = element("div");
     			if (default_slot) default_slot.c();
     			attr_dev(div, "id", "contents");
-    			attr_dev(div, "class", "svelte-14haxfs");
+    			attr_dev(div, "class", "svelte-augxo2");
     			add_location(div, file$3, 29, 4, 599);
     		},
     		m: function mount(target, anchor) {
@@ -962,7 +962,7 @@ var app = (function () {
     			add_location(div0, file$3, 22, 4, 438);
     			add_location(b, file$3, 25, 4, 553);
     			attr_dev(div1, "id", "nameTag");
-    			attr_dev(div1, "class", "svelte-14haxfs");
+    			attr_dev(div1, "class", "svelte-augxo2");
     			add_location(div1, file$3, 21, 0, 383);
     		},
     		l: function claim(nodes) {

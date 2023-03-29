@@ -42,7 +42,7 @@
     #contents {
         padding: 2px 5px 5px 25px;
         box-sizing: border-box;
-        line-height: 25px;
+        line-height: 27px;
         border-bottom: 1px solid #373737;
     }
 </style>
