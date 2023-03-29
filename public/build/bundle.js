@@ -4225,13 +4225,13 @@ var app = (function () {
     			t7 = space();
     			br3 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 321, 151, 16393);
+    			add_location(br0, file, 321, 151, 16356);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 322, 152, 16552);
+    			add_location(br1, file, 322, 152, 16515);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 323, 156, 16715);
+    			add_location(br2, file, 323, 156, 16678);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 324, 157, 16879);
+    			add_location(br3, file, 324, 157, 16842);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4577,25 +4577,25 @@ var app = (function () {
     			t19 = space();
     			br9 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 327, 126, 17059);
+    			add_location(br0, file, 327, 126, 17022);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 328, 126, 17192);
+    			add_location(br1, file, 328, 126, 17155);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 329, 122, 17321);
+    			add_location(br2, file, 329, 122, 17284);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 330, 136, 17464);
+    			add_location(br3, file, 330, 136, 17427);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 331, 127, 17598);
+    			add_location(br4, file, 331, 127, 17561);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 332, 133, 17738);
+    			add_location(br5, file, 332, 133, 17701);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 333, 164, 17909);
+    			add_location(br6, file, 333, 164, 17872);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 334, 160, 18076);
+    			add_location(br7, file, 334, 160, 18039);
     			attr_dev(br8, "class", "svelte-1lq6abv");
-    			add_location(br8, file, 335, 142, 18225);
+    			add_location(br8, file, 335, 142, 18188);
     			attr_dev(br9, "class", "svelte-1lq6abv");
-    			add_location(br9, file, 336, 132, 18364);
+    			add_location(br9, file, 336, 132, 18327);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5028,23 +5028,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 339, 132, 18549);
+    			add_location(br0, file, 339, 132, 18512);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 340, 132, 18688);
+    			add_location(br1, file, 340, 132, 18651);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 341, 128, 18823);
+    			add_location(br2, file, 341, 128, 18786);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 342, 142, 18972);
+    			add_location(br3, file, 342, 142, 18935);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 343, 140, 19119);
+    			add_location(br4, file, 343, 140, 19082);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 344, 134, 19260);
+    			add_location(br5, file, 344, 134, 19223);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 345, 141, 19408);
+    			add_location(br6, file, 345, 141, 19371);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 346, 133, 19548);
+    			add_location(br7, file, 346, 133, 19511);
     			attr_dev(br8, "class", "svelte-1lq6abv");
-    			add_location(br8, file, 347, 132, 19687);
+    			add_location(br8, file, 347, 132, 19650);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5458,23 +5458,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 350, 137, 19875);
+    			add_location(br0, file, 350, 137, 19838);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 351, 133, 20015);
+    			add_location(br1, file, 351, 133, 19978);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 352, 147, 20169);
+    			add_location(br2, file, 352, 147, 20132);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 353, 137, 20313);
+    			add_location(br3, file, 353, 137, 20276);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 354, 145, 20465);
+    			add_location(br4, file, 354, 145, 20428);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 355, 138, 20610);
+    			add_location(br5, file, 355, 138, 20573);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 356, 144, 20761);
+    			add_location(br6, file, 356, 144, 20724);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 357, 152, 20920);
+    			add_location(br7, file, 357, 152, 20883);
     			attr_dev(br8, "class", "svelte-1lq6abv");
-    			add_location(br8, file, 358, 143, 21070);
+    			add_location(br8, file, 358, 143, 21033);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6118,43 +6118,43 @@ var app = (function () {
     			t37 = space();
     			br18 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 361, 155, 21282);
+    			add_location(br0, file, 361, 155, 21245);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 362, 159, 21448);
+    			add_location(br1, file, 362, 159, 21411);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 363, 146, 21601);
+    			add_location(br2, file, 363, 146, 21564);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 364, 142, 21750);
+    			add_location(br3, file, 364, 142, 21713);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 365, 156, 21913);
+    			add_location(br4, file, 365, 156, 21876);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 366, 146, 22066);
+    			add_location(br5, file, 366, 146, 22029);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 367, 145, 22218);
+    			add_location(br6, file, 367, 145, 22181);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 368, 154, 22379);
+    			add_location(br7, file, 368, 154, 22342);
     			attr_dev(br8, "class", "svelte-1lq6abv");
-    			add_location(br8, file, 369, 157, 22543);
+    			add_location(br8, file, 369, 157, 22506);
     			attr_dev(br9, "class", "svelte-1lq6abv");
-    			add_location(br9, file, 370, 147, 22697);
+    			add_location(br9, file, 370, 147, 22660);
     			attr_dev(br10, "class", "svelte-1lq6abv");
-    			add_location(br10, file, 371, 160, 22864);
+    			add_location(br10, file, 371, 160, 22827);
     			attr_dev(br11, "class", "svelte-1lq6abv");
-    			add_location(br11, file, 372, 154, 23025);
+    			add_location(br11, file, 372, 154, 22988);
     			attr_dev(br12, "class", "svelte-1lq6abv");
-    			add_location(br12, file, 373, 148, 23180);
+    			add_location(br12, file, 373, 148, 23143);
     			attr_dev(br13, "class", "svelte-1lq6abv");
-    			add_location(br13, file, 374, 161, 23348);
+    			add_location(br13, file, 374, 161, 23311);
     			attr_dev(br14, "class", "svelte-1lq6abv");
-    			add_location(br14, file, 375, 158, 23513);
+    			add_location(br14, file, 375, 158, 23476);
     			attr_dev(br15, "class", "svelte-1lq6abv");
-    			add_location(br15, file, 376, 163, 23683);
+    			add_location(br15, file, 376, 163, 23646);
     			attr_dev(br16, "class", "svelte-1lq6abv");
-    			add_location(br16, file, 377, 159, 23849);
+    			add_location(br16, file, 377, 159, 23812);
     			attr_dev(br17, "class", "svelte-1lq6abv");
-    			add_location(br17, file, 378, 151, 24007);
+    			add_location(br17, file, 378, 151, 23970);
     			attr_dev(br18, "class", "svelte-1lq6abv");
-    			add_location(br18, file, 379, 152, 24166);
+    			add_location(br18, file, 379, 152, 24129);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6689,17 +6689,17 @@ var app = (function () {
     			t11 = space();
     			br5 = element("br");
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 382, 151, 24368);
+    			add_location(br0, file, 382, 151, 24331);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 383, 147, 24522);
+    			add_location(br1, file, 383, 147, 24485);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 384, 161, 24690);
+    			add_location(br2, file, 384, 161, 24653);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 385, 152, 24849);
+    			add_location(br3, file, 385, 152, 24812);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 386, 158, 25014);
+    			add_location(br4, file, 386, 158, 24977);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 387, 157, 25178);
+    			add_location(br5, file, 387, 157, 25141);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6922,48 +6922,48 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-1lq6abv"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); background-color: var(--color-scheme-6); opacity: 0.72; border-radius: 5px;");
-    			add_location(div0, file, 393, 8, 25279);
+    			add_location(div0, file, 393, 8, 25242);
     			attr_dev(br0, "class", "svelte-1lq6abv");
-    			add_location(br0, file, 396, 12, 25564);
+    			add_location(br0, file, 396, 12, 25527);
     			attr_dev(br1, "class", "svelte-1lq6abv");
-    			add_location(br1, file, 396, 19, 25571);
+    			add_location(br1, file, 396, 19, 25534);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-1lq6abv");
-    			add_location(span0, file, 397, 12, 25590);
+    			add_location(span0, file, 397, 12, 25553);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-1lq6abv");
-    			add_location(input0, file, 397, 100, 25678);
+    			add_location(input0, file, 397, 100, 25641);
     			attr_dev(br2, "class", "svelte-1lq6abv");
-    			add_location(br2, file, 398, 12, 25781);
+    			add_location(br2, file, 398, 12, 25744);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-1lq6abv");
-    			add_location(span1, file, 399, 12, 25800);
+    			add_location(span1, file, 399, 12, 25763);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-1lq6abv");
-    			add_location(input1, file, 399, 101, 25889);
+    			add_location(input1, file, 399, 101, 25852);
     			attr_dev(br3, "class", "svelte-1lq6abv");
-    			add_location(br3, file, 400, 12, 25993);
+    			add_location(br3, file, 400, 12, 25956);
     			attr_dev(br4, "class", "svelte-1lq6abv");
-    			add_location(br4, file, 400, 19, 26000);
+    			add_location(br4, file, 400, 19, 25963);
     			attr_dev(button, "class", "svelte-1lq6abv");
-    			add_location(button, file, 401, 12, 26019);
+    			add_location(button, file, 401, 12, 25982);
     			attr_dev(br5, "class", "svelte-1lq6abv");
-    			add_location(br5, file, 402, 12, 26070);
+    			add_location(br5, file, 402, 12, 26033);
     			attr_dev(br6, "class", "svelte-1lq6abv");
-    			add_location(br6, file, 402, 19, 26077);
+    			add_location(br6, file, 402, 19, 26040);
     			attr_dev(br7, "class", "svelte-1lq6abv");
-    			add_location(br7, file, 403, 71, 26155);
+    			add_location(br7, file, 403, 71, 26118);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-1lq6abv");
-    			add_location(span2, file, 403, 12, 26096);
+    			add_location(span2, file, 403, 12, 26059);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-1lq6abv"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 394, 8, 25469);
+    			add_location(div1, file, 394, 8, 25432);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-1lq6abv");
-    			add_location(div2, file, 392, 4, 25237);
+    			add_location(div2, file, 392, 4, 25200);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -7074,31 +7074,29 @@ var app = (function () {
     	let t9;
     	let span;
     	let t11;
-    	let button1;
-    	let t13;
-    	let label;
     	let input;
+    	let t12;
+    	let button1;
     	let t14;
-    	let t15;
     	let div4;
     	let div3;
     	let presetpicker;
-    	let t16;
+    	let t15;
     	let button2;
-    	let t18;
+    	let t17;
     	let collapsible0;
-    	let t19;
+    	let t18;
     	let collapsible1;
-    	let t20;
+    	let t19;
     	let collapsible2;
-    	let t21;
+    	let t20;
     	let collapsible3;
-    	let t22;
+    	let t21;
     	let collapsible4;
-    	let t23;
+    	let t22;
     	let collapsible5;
+    	let t23;
     	let t24;
-    	let t25;
     	let current;
     	let mounted;
     	let dispose;
@@ -7187,35 +7185,33 @@ var app = (function () {
     			t9 = space();
     			span = element("span");
     			span.textContent = `${"    |    "}`;
-    			t11 = text("\nReference Image\n");
+    			t11 = space();
+    			input = element("input");
+    			t12 = text("\nReference Image\n");
     			button1 = element("button");
     			button1.textContent = "Import";
-    			t13 = space();
-    			label = element("label");
-    			input = element("input");
-    			t14 = text(" Show");
-    			t15 = space();
+    			t14 = space();
     			div4 = element("div");
     			div3 = element("div");
     			create_component(presetpicker.$$.fragment);
-    			t16 = space();
+    			t15 = space();
     			button2 = element("button");
     			button2.textContent = "Save Preset";
-    			t18 = space();
+    			t17 = space();
     			create_component(collapsible0.$$.fragment);
-    			t19 = space();
+    			t18 = space();
     			create_component(collapsible1.$$.fragment);
-    			t20 = space();
+    			t19 = space();
     			create_component(collapsible2.$$.fragment);
-    			t21 = space();
+    			t20 = space();
     			create_component(collapsible3.$$.fragment);
-    			t22 = space();
+    			t21 = space();
     			create_component(collapsible4.$$.fragment);
-    			t23 = space();
+    			t22 = space();
     			create_component(collapsible5.$$.fragment);
-    			t24 = space();
+    			t23 = space();
     			if (if_block) if_block.c();
-    			t25 = space();
+    			t24 = space();
     			attr_dev(button0, "class", "svelte-1lq6abv");
     			add_location(button0, file, 284, 0, 14699);
     			attr_dev(br, "class", "svelte-1lq6abv");
@@ -7254,21 +7250,19 @@ var app = (function () {
     			attr_dev(span, "style", "white-space: pre; color: grey;");
     			attr_dev(span, "class", "svelte-1lq6abv");
     			add_location(span, file, 299, 0, 15487);
-    			attr_dev(button1, "class", "svelte-1lq6abv");
-    			add_location(button1, file, 301, 0, 15571);
     			attr_dev(input, "type", "checkbox");
     			input.checked = true;
+    			attr_dev(input, "style", "margin-bottom: 0;");
     			attr_dev(input, "class", "svelte-1lq6abv");
-    			add_location(input, file, 302, 52, 15673);
-    			attr_dev(label, "style", "display: inline; margin-left: 4px;");
-    			attr_dev(label, "class", "svelte-1lq6abv");
-    			add_location(label, file, 302, 0, 15621);
+    			add_location(input, file, 300, 0, 15555);
+    			attr_dev(button1, "class", "svelte-1lq6abv");
+    			add_location(button1, file, 302, 0, 15669);
     			attr_dev(div2, "id", "sectionAbovePreview");
     			attr_dev(div2, "class", "svelte-1lq6abv");
     			add_location(div2, file, 292, 0, 15216);
     			attr_dev(button2, "style", "float: right;");
     			attr_dev(button2, "class", "svelte-1lq6abv");
-    			add_location(button2, file, 317, 4, 16069);
+    			add_location(button2, file, 317, 4, 16032);
 
     			attr_dev(div3, "style", `
     position: sticky;
@@ -7281,10 +7275,10 @@ var app = (function () {
 `);
 
     			attr_dev(div3, "class", "svelte-1lq6abv");
-    			add_location(div3, file, 307, 0, 15791);
+    			add_location(div3, file, 307, 0, 15754);
     			attr_dev(div4, "id", "controlPanel");
     			attr_dev(div4, "class", "svelte-1lq6abv");
-    			add_location(div4, file, 305, 0, 15764);
+    			add_location(div4, file, 305, 0, 15727);
     			document_1.title = "Progen Flares 2";
     		},
     		l: function claim(nodes) {
@@ -7313,32 +7307,30 @@ var app = (function () {
     			append_dev(div2, t9);
     			append_dev(div2, span);
     			append_dev(div2, t11);
+    			append_dev(div2, input);
+    			append_dev(div2, t12);
     			append_dev(div2, button1);
-    			append_dev(div2, t13);
-    			append_dev(div2, label);
-    			append_dev(label, input);
-    			append_dev(label, t14);
-    			insert_dev(target, t15, anchor);
+    			insert_dev(target, t14, anchor);
     			insert_dev(target, div4, anchor);
     			append_dev(div4, div3);
     			mount_component(presetpicker, div3, null);
-    			append_dev(div3, t16);
+    			append_dev(div3, t15);
     			append_dev(div3, button2);
-    			append_dev(div4, t18);
+    			append_dev(div4, t17);
     			mount_component(collapsible0, div4, null);
-    			append_dev(div4, t19);
+    			append_dev(div4, t18);
     			mount_component(collapsible1, div4, null);
-    			append_dev(div4, t20);
+    			append_dev(div4, t19);
     			mount_component(collapsible2, div4, null);
-    			append_dev(div4, t21);
+    			append_dev(div4, t20);
     			mount_component(collapsible3, div4, null);
-    			append_dev(div4, t22);
+    			append_dev(div4, t21);
     			mount_component(collapsible4, div4, null);
-    			append_dev(div4, t23);
+    			append_dev(div4, t22);
     			mount_component(collapsible5, div4, null);
-    			insert_dev(target, t24, anchor);
+    			insert_dev(target, t23, anchor);
     			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, t25, anchor);
+    			insert_dev(target, t24, anchor);
     			current = true;
 
     			if (!mounted) {
@@ -7348,8 +7340,8 @@ var app = (function () {
     					listen_dev(canvas1, "clickDrag", /*handleClickDrag*/ ctx[5], false, false, false),
     					listen_dev(select, "change", /*select_change_handler*/ ctx[15]),
     					listen_dev(select, "change", /*change_handler*/ ctx[16], false, false, false),
-    					listen_dev(button1, "click", /*handleRIbutton*/ ctx[10], false, false, false),
     					listen_dev(input, "change", /*handleRIcheckbox*/ ctx[11], false, false, false),
+    					listen_dev(button1, "click", /*handleRIbutton*/ ctx[10], false, false, false),
     					listen_dev(button2, "click", /*click_handler_1*/ ctx[18], false, false, false)
     				];
 
@@ -7431,7 +7423,7 @@ var app = (function () {
     					if_block = create_if_block(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(t25.parentNode, t25);
+    					if_block.m(t24.parentNode, t24);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -7474,7 +7466,7 @@ var app = (function () {
     			/*canvas1_binding*/ ctx[14](null);
     			if (detaching) detach_dev(t4);
     			if (detaching) detach_dev(div2);
-    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(t14);
     			if (detaching) detach_dev(div4);
     			destroy_component(presetpicker);
     			destroy_component(collapsible0);
@@ -7483,9 +7475,9 @@ var app = (function () {
     			destroy_component(collapsible3);
     			destroy_component(collapsible4);
     			destroy_component(collapsible5);
-    			if (detaching) detach_dev(t24);
+    			if (detaching) detach_dev(t23);
     			if (if_block) if_block.d(detaching);
-    			if (detaching) detach_dev(t25);
+    			if (detaching) detach_dev(t24);
     			mounted = false;
     			run_all(dispose);
     		}

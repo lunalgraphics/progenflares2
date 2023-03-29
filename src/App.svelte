@@ -298,9 +298,9 @@ Preview quality
     <option value={4}>25%</option>
 </select>
 <span style={"white-space: pre; color: grey;"}>{"    |    "}</span>
+<input type="checkbox" on:change={handleRIcheckbox} checked={true} style={"margin-bottom: 0;"} />
 Reference Image
 <button on:click={handleRIbutton}>Import</button>
-<label style={"display: inline; margin-left: 4px;"}><input type="checkbox" on:change={handleRIcheckbox} checked={true} /> Show</label>
 </div>
 
 <div id={"controlPanel"}>
