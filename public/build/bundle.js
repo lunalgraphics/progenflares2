@@ -2827,7 +2827,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (55:8) {#each builtInPresets as preset}
+    // (56:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
     	let t_value = /*preset*/ ctx[8].name + "";
@@ -2839,7 +2839,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 55, 12, 12804);
+    			add_location(option, file$1, 56, 12, 13643);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2855,7 +2855,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(55:8) {#each builtInPresets as preset}",
+    		source: "(56:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2899,17 +2899,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 51, 4, 12580);
+    			add_location(option0, file$1, 52, 4, 13419);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 52, 4, 12650);
+    			add_location(option1, file$1, 53, 4, 13489);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 53, 4, 12713);
+    			add_location(optgroup, file$1, 54, 4, 13552);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 50, 0, 12521);
+    			add_location(select, file$1, 51, 0, 13360);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 60, 0, 12914);
+    			add_location(input, file$1, 61, 0, 13753);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3946,6 +3946,74 @@ var app = (function () {
     					"softening": 70,
     					"hue": 279,
     					"saturation": 100,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Ancient Mariner",
+    			data: {
+    				"hotspot": {
+    					"radius": 347,
+    					"intensity": 10,
+    					"deformationAmount": 0,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 176,
+    					"saturation": 14,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 56,
+    					"width": 1100,
+    					"intensity": 11,
+    					"count": 2,
+    					"angle": 45,
+    					"shift": 0,
+    					"alpha": 100,
+    					"hue": 188,
+    					"saturation": 18
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 60,
+    					"sides": 8,
+    					"roundness": 42,
+    					"angle": 22,
+    					"fillAlpha": 12,
+    					"fringeAlpha": 12,
+    					"fringeSize": 22,
+    					"blur": 3,
+    					"countAway": 9,
+    					"countTowards": 19,
+    					"spread": 24,
+    					"sizeVariance": 32,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 438,
+    					"hue": 180,
+    					"saturation": 100,
+    					"hueVariance": 45,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 1114,
+    					"alpha": 32,
+    					"softening": 33,
+    					"hue": 212,
+    					"saturation": 37,
     					"anamorph": 0
     				}
     			}
