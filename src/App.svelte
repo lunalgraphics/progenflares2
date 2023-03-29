@@ -260,11 +260,7 @@
         startScreenVisible = false;
     }
 
-    function handleRISelect() {
-        if (this.value == "None") {
-            referenceImage.style.backgroundImage = "";
-        }
-        if (this.value == "Import From Computer") {
+    function handleRIbutton() {
             var fileInput = document.createElement("input");
             fileInput.type = "file";
             fileInput.accept = "image/png, image/jpeg";
@@ -278,9 +274,10 @@
                 fR.readAsDataURL(file);
             });
             fileInput.click();
-            if (referenceImage.style.backgroundImage == "") this.value = "None";
-            else this.value = "Custom";
-        }
+    }
+    function handleRIcheckbox() {
+        if (this.checked) referenceImage.style.backgroundSize = "100% 100%";
+        else referenceImage.style.backgroundSize = "0 0";
     }
 </script>
 
@@ -302,11 +299,8 @@ Preview quality
 </select>
 <span style={"white-space: pre; color: grey;"}>{"    |    "}</span>
 Reference Image
-<select on:change={handleRISelect} style={"width: 100px;"}>
-    <option>None</option>
-    <option>Import From Computer</option>
-    <option hidden>Custom</option>
-</select>
+<button on:click={handleRIbutton}>Import</button>
+<label style={"display: inline; margin-left: 4px;"}><input type="checkbox" on:change={handleRIcheckbox} checked={true} /> Show</label>
 </div>
 
 <div id={"controlPanel"}>
