@@ -540,6 +540,9 @@ Reference Image
     :global(::selection) {
         background-color: var(--color-scheme-4);
     }
+    :global(input[type=checkbox]) {
+        accent-color: var(--color-scheme-2);
+    }
 </style>
 
 <svelte:head>
