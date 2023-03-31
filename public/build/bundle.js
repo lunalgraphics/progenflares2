@@ -31,6 +31,14 @@ var app = (function () {
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
     }
+    let src_url_equal_anchor;
+    function src_url_equal(element_src, url) {
+        if (!src_url_equal_anchor) {
+            src_url_equal_anchor = document.createElement('a');
+        }
+        src_url_equal_anchor.href = url;
+        return element_src === src_url_equal_anchor.href;
+    }
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
     }
@@ -6848,6 +6856,8 @@ var app = (function () {
     	let div0;
     	let t0;
     	let div1;
+    	let img;
+    	let img_src_value;
     	let t1;
     	let br0;
     	let t2;
@@ -6888,7 +6898,8 @@ var app = (function () {
     			div0 = element("div");
     			t0 = space();
     			div1 = element("div");
-    			t1 = text("PROGEN FLARES 2\n            ");
+    			img = element("img");
+    			t1 = space();
     			br0 = element("br");
     			t2 = space();
     			br1 = element("br");
@@ -6923,41 +6934,46 @@ var app = (function () {
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-7v897s"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); background-color: var(--color-scheme-6); opacity: 0.72; border-radius: 5px;");
     			add_location(div0, file, 393, 8, 25242);
+    			attr_dev(img, "alt", "PROGEN FLARES 2");
+    			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "width", "321");
+    			attr_dev(img, "class", "svelte-7v897s");
+    			add_location(img, file, 395, 12, 25499);
     			attr_dev(br0, "class", "svelte-7v897s");
-    			add_location(br0, file, 396, 12, 25527);
+    			add_location(br0, file, 396, 12, 25574);
     			attr_dev(br1, "class", "svelte-7v897s");
-    			add_location(br1, file, 396, 19, 25534);
+    			add_location(br1, file, 396, 19, 25581);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-7v897s");
-    			add_location(span0, file, 397, 12, 25553);
+    			add_location(span0, file, 397, 12, 25600);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-7v897s");
-    			add_location(input0, file, 397, 100, 25641);
+    			add_location(input0, file, 397, 100, 25688);
     			attr_dev(br2, "class", "svelte-7v897s");
-    			add_location(br2, file, 398, 12, 25744);
+    			add_location(br2, file, 398, 12, 25791);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-7v897s");
-    			add_location(span1, file, 399, 12, 25763);
+    			add_location(span1, file, 399, 12, 25810);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-7v897s");
-    			add_location(input1, file, 399, 101, 25852);
+    			add_location(input1, file, 399, 101, 25899);
     			attr_dev(br3, "class", "svelte-7v897s");
-    			add_location(br3, file, 400, 12, 25956);
+    			add_location(br3, file, 400, 12, 26003);
     			attr_dev(br4, "class", "svelte-7v897s");
-    			add_location(br4, file, 400, 19, 25963);
+    			add_location(br4, file, 400, 19, 26010);
     			attr_dev(button, "class", "svelte-7v897s");
-    			add_location(button, file, 401, 12, 25982);
+    			add_location(button, file, 401, 12, 26029);
     			attr_dev(br5, "class", "svelte-7v897s");
-    			add_location(br5, file, 402, 12, 26033);
+    			add_location(br5, file, 402, 12, 26080);
     			attr_dev(br6, "class", "svelte-7v897s");
-    			add_location(br6, file, 402, 19, 26040);
+    			add_location(br6, file, 402, 19, 26087);
     			attr_dev(br7, "class", "svelte-7v897s");
-    			add_location(br7, file, 403, 71, 26118);
+    			add_location(br7, file, 403, 71, 26165);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-7v897s");
-    			add_location(span2, file, 403, 12, 26059);
+    			add_location(span2, file, 403, 12, 26106);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-7v897s"));
     			attr_dev(div1, "style", "text-align: center;");
     			add_location(div1, file, 394, 8, 25432);
@@ -6970,6 +6986,7 @@ var app = (function () {
     			append_dev(div2, div0);
     			append_dev(div2, t0);
     			append_dev(div2, div1);
+    			append_dev(div1, img);
     			append_dev(div1, t1);
     			append_dev(div1, br0);
     			append_dev(div1, t2);
