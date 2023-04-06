@@ -501,6 +501,8 @@ Reference Image
         position: fixed;
         top: 0;
         left: 0;
+        background-image: url("../coverImage.jpg");
+        background-size: cover;
     }
     button {
         padding: 4px 12px;
