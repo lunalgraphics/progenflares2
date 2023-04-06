@@ -503,6 +503,7 @@ Reference Image
         left: 0;
         background-image: url("../coverImage.jpg");
         background-size: cover;
+        background-position: center;
     }
     button {
         padding: 4px 12px;
