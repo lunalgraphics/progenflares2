@@ -393,7 +393,7 @@ Reference Image
     <div id={"startScreen"} out:fade>
         <div class={"centered"} style={"width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); background-color: var(--color-scheme-6); opacity: 0.72; border-radius: 5px;"}></div>
         <div class={"centered"} style={"text-align: center;"}>
-            <img alt="PROGEN FLARES 2" src="./textLogo.png" width="321" />
+            <img alt="PROGEN FLARES 2" src="./textLogo.png" width="321" draggable={false} />
             <br /> <br />
             <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
             <br />
