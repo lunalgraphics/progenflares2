@@ -440,6 +440,7 @@ Reference Image
         color: var(--color-scheme-1);
         background-color: #181818;
         border: 1px solid #181818;
+        transition: border 0.2s, box-shadow 0.2s;
     }
     :global(input[type=number]):focus {
         border: 1px solid var(--color-scheme-1);
@@ -506,6 +507,7 @@ Reference Image
         background-color: #333333;
         border: 1px solid #555555;
         color: var(--color-scheme-1);
+        transition: border 0.2s, box-shadow 0.2s, background-color 0.2s;
     }
     button:focus, :global(select):focus {
         border: 1px solid var(--color-scheme-1);
@@ -520,6 +522,7 @@ Reference Image
         background-color: #333333;
         border: 1px solid #555555;
         color: var(--color-scheme-1);
+        transition: border 0.2s, box-shadow 0.2s;
     }
     :global(select), :global(button) {
         margin-bottom: 0;
