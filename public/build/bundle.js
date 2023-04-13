@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -4292,11 +4292,11 @@ var app = (function () {
     			create_component(slider1.$$.fragment);
     			t3 = space();
     			br1 = element("br");
-    			t4 = text("\n    Pivot X: ");
+    			t4 = text("\n    Focus X: ");
     			create_component(slider2.$$.fragment);
     			t5 = space();
     			br2 = element("br");
-    			t6 = text("\n    Pivot Y: ");
+    			t6 = text("\n    Focus Y: ");
     			create_component(slider3.$$.fragment);
     			t7 = space();
     			br3 = element("br");
