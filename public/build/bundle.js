@@ -3011,7 +3011,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 595,
-    					"intensity": 19,
+    					"intensity": 10,
     					"deformationAmount": 1.5,
     					"deformationFrequency": 0.01,
     					"deformationSeed": 239,
@@ -3044,14 +3044,14 @@ var app = (function () {
     					"anamorph": 0
     				},
     				"miIris": {
-    					"radius": 81,
+    					"radius": 72,
     					"sides": 6,
-    					"roundness": 32,
+    					"roundness": 50,
     					"angle": 0,
-    					"fillAlpha": 12,
-    					"fringeAlpha": 25,
-    					"fringeSize": 10,
-    					"blur": 4,
+    					"fillAlpha": 10,
+    					"fringeAlpha": 12,
+    					"fringeSize": 28,
+    					"blur": 3,
     					"countAway": 5,
     					"countTowards": 12,
     					"spread": 30,
@@ -7828,7 +7828,7 @@ var app = (function () {
     		setPreset({
     			"hotspot": {
     				"radius": 595,
-    				"intensity": 19,
+    				"intensity": 10,
     				"deformationAmount": 1.5,
     				"deformationFrequency": 0.01,
     				"deformationSeed": 239,
@@ -7861,14 +7861,14 @@ var app = (function () {
     				"anamorph": 0
     			},
     			"miIris": {
-    				"radius": 81,
+    				"radius": 72,
     				"sides": 6,
-    				"roundness": 32,
+    				"roundness": 50,
     				"angle": 0,
-    				"fillAlpha": 12,
-    				"fringeAlpha": 25,
-    				"fringeSize": 10,
-    				"blur": 4,
+    				"fillAlpha": 10,
+    				"fringeAlpha": 12,
+    				"fringeSize": 28,
+    				"blur": 3,
     				"countAway": 5,
     				"countTowards": 12,
     				"spread": 30,
