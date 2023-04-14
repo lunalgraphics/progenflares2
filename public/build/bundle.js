@@ -2847,7 +2847,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 57, 12, 14476);
+    			add_location(option, file$1, 57, 12, 14479);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2907,17 +2907,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 53, 4, 14252);
+    			add_location(option0, file$1, 53, 4, 14255);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 54, 4, 14322);
+    			add_location(option1, file$1, 54, 4, 14325);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 55, 4, 14385);
+    			add_location(optgroup, file$1, 55, 4, 14388);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 52, 0, 14193);
+    			add_location(select, file$1, 52, 0, 14196);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 62, 0, 14586);
+    			add_location(input, file$1, 62, 0, 14589);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3551,7 +3551,7 @@ var app = (function () {
     			}
     		},
     		{
-    			name: "Space Song",
+    			name: "Clair de Lune",
     			data: {
     				"hotspot": {
     					"radius": 550,
