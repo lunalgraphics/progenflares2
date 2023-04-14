@@ -260,6 +260,7 @@
         startScreenVisible = false;
     }
 
+    var rIcheckbox;
     function handleRIbutton() {
             var fileInput = document.createElement("input");
             fileInput.type = "file";
@@ -270,6 +271,8 @@
                 fR.addEventListener("loadend", (e) => {
                     referenceImage.style.backgroundImage = `url("${e.target.result}")`;
                     this.value = "Custom";
+                    rIcheckbox.checked = true;
+                    (handleRIcheckbox.bind(rIcheckbox))();
                 });
                 fR.readAsDataURL(file);
             });
@@ -298,7 +301,7 @@ Preview quality
     <option value={4}>25%</option>
 </select>
 <span style={"white-space: pre; color: grey;"}>{"    |    "}</span>
-<input type="checkbox" on:change={handleRIcheckbox} checked={true} style={"margin-bottom: 0;"} />
+<input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} checked={true} style={"margin-bottom: 0;"} />
 Reference Image
 <button on:click={handleRIbutton}>Import</button>
 </div>
