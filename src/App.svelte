@@ -34,6 +34,7 @@
 
     var flareSettings = {
         downscaling: 2,
+        exportType: "png",
         dimensions: {
             width: 1920,
             height: 1080,
@@ -217,8 +218,8 @@
         flareSettings.downscaling = 1;
         renderFlare(true, true, true, true, true);
         var a = document.createElement("a");
-        a.href = baseCanvas.toDataURL();
-        a.download = "ProgenFlares2-flare.png";
+        a.href = baseCanvas.toDataURL("image/" + flareSettings.exportType);
+        a.download = "ProgenFlares2-flare." + flareSettings.exportType;
         flareSettings.downscaling = initialDownscaling;
         renderFlare(true, true, true, true, true);
         return a;
@@ -285,7 +286,13 @@
 </script>
 
 <div id={"exportPanel"}>
-<button on:click={function() { createDownloadLink().click(); }}>Export</button> <br />
+<button on:click={function() { createDownloadLink().click(); }}>Export</button>
+<span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
+<select bind:value={flareSettings.exportType}>
+    <option value={"png"}>PNG</option>
+    <option value={"jpeg"}>JPG</option>
+    <option value={"webp"}>WebP</option>
+</select>
 </div>
 
 <div id={"previewSection"}>   
