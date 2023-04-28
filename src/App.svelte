@@ -559,6 +559,30 @@ Reference Image
     :global(input[type=checkbox]) {
         accent-color: var(--color-scheme-2);
     }
+    :global(input[type=range]) {
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none!important;
+        background-color: #353535!important;
+        height: 5px!important;
+        border: 0!important;
+    }
+    :global(input[type="range"]::-webkit-slider-thumb) {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 10px!important;
+        width: 10px!important;
+        background-color: var(--color-scheme-2)!important;
+        border-radius: 50%;
+        border: 0!important;
+    }
+    :global( input[type="range"]::-moz-range-thumb) {
+        height: 10px!important;
+        width: 10px!important;
+        background-color: var(--color-scheme-2)!important;
+        border-radius: 50%;
+        border: 0!important;
+    }
 </style>
 
 <svelte:head>
