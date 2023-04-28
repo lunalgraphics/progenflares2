@@ -451,14 +451,17 @@ Reference Image
         background-color: #181818;
         border: 1px solid #181818;
         transition: border 0.2s, box-shadow 0.2s;
+        -moz-appearance: textfield;
     }
     :global(input[type=number]):focus {
         border: 1px solid var(--color-scheme-1);
         box-shadow: inset 0 0 4px var(--color-scheme-2);
         outline: none!important;
+        -moz-appearance: revert!important;
     }
     :global(input[type=number]):hover {
         border: 1px solid var(--color-scheme-1);
+        -moz-appearance: revert!important;
     }
     #controlPanel {
         width: 360px;
