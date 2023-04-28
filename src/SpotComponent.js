@@ -12,6 +12,7 @@ class SpotComponent {
         deformationSeed: 1,
         hue: 200,
         saturation: 100,
+        angle: 0,
     };
     radius = 1024;
 
@@ -42,7 +43,9 @@ class SpotComponent {
         ctx.save();
         ctx.globalCompositeOperation = "soft-light";
         ctx.filter = `saturate(0) contrast(${this.options.deformationAmount})`;
-        ctx.drawImage(deformationTexture.canvas, 0, 0, this.canvas.width, this.canvas.height);
+        var deformationOffset = this.canvas.width * this.options.angle / 360;
+        ctx.drawImage(deformationTexture.canvas, deformationOffset, 0, this.canvas.width, this.canvas.height);
+        ctx.drawImage(deformationTexture.canvas, deformationOffset - this.canvas.width, 0, this.canvas.width, this.canvas.height);
 
         ctx.restore();
         ctx.save();

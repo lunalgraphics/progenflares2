@@ -122,6 +122,7 @@
             flareComponents.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
             flareComponents.hotspot.options.hue = flareSettings.hotspot.hue;
             flareComponents.hotspot.options.saturation = flareSettings.hotspot.saturation;
+            flareComponents.hotspot.options.angle = flareSettings.hotspot.angle;
             flareComponents.hotspot.render();
         }
         if (renderStreak) {
@@ -170,7 +171,7 @@
         ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
-        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), flareSettings.hotspot.angle, flareSettings.hotspot.alpha);
+        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha);
         var streakAngle = flareSettings.streak.angle;
         for (var i = 0; i < flareSettings.streak.count; i++) {
             var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
