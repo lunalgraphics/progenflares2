@@ -576,16 +576,22 @@ Reference Image
         appearance: none;
         height: 10px!important;
         width: 10px!important;
-        background-color: var(--color-scheme-2)!important;
+        background-color: var(--color-scheme-1)!important;
         border-radius: 50%;
         border: 0!important;
+    }
+    :global(input[type="range"]::-webkit-slider-thumb:hover) {
+        background-color: var(--color-scheme-3)!important;
     }
     :global( input[type="range"]::-moz-range-thumb) {
         height: 10px!important;
         width: 10px!important;
-        background-color: var(--color-scheme-2)!important;
+        background-color: var(--color-scheme-1)!important;
         border-radius: 50%;
         border: 0!important;
+    }
+    :global( input[type="range"]::-moz-range-thumb:hover) {
+        background-color: var(--color-scheme-3)!important;
     }
 </style>
 
