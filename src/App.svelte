@@ -402,7 +402,7 @@ Reference Image
 
 {#if startScreenVisible}
     <div id={"startScreen"} out:fade>
-        <div class={"centered"} style={"width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); background-color: var(--color-scheme-6); opacity: 0.72; border-radius: 5px;"}></div>
+        <div class={"centered"} style={"width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;"}></div>
         <div class={"centered"} style={"text-align: center;"}>
             <img alt="PROGEN FLARES 2" src="./textLogo.png" width="321" draggable={false} />
             <br /> <br />
