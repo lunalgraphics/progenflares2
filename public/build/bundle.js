@@ -4193,7 +4193,7 @@ var app = (function () {
     const { document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (332:0) <Collapsible title={"Positioning"} collapsed={false}>
+    // (332:0) <Collapsible title={"Global"} collapsed={false}>
     function create_default_slot_5(ctx) {
     	let t0;
     	let slider0;
@@ -4304,13 +4304,13 @@ var app = (function () {
     			t7 = space();
     			br3 = element("br");
     			attr_dev(br0, "class", "svelte-c1iie3");
-    			add_location(br0, file, 332, 151, 16902);
+    			add_location(br0, file, 332, 151, 16897);
     			attr_dev(br1, "class", "svelte-c1iie3");
-    			add_location(br1, file, 333, 152, 17061);
+    			add_location(br1, file, 333, 152, 17056);
     			attr_dev(br2, "class", "svelte-c1iie3");
-    			add_location(br2, file, 334, 156, 17224);
+    			add_location(br2, file, 334, 156, 17219);
     			attr_dev(br3, "class", "svelte-c1iie3");
-    			add_location(br3, file, 335, 157, 17388);
+    			add_location(br3, file, 335, 157, 17383);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4412,7 +4412,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(332:0) <Collapsible title={\\\"Positioning\\\"} collapsed={false}>",
+    		source: "(332:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
     		ctx
     	});
 
@@ -4656,25 +4656,25 @@ var app = (function () {
     			t19 = space();
     			br9 = element("br");
     			attr_dev(br0, "class", "svelte-c1iie3");
-    			add_location(br0, file, 338, 126, 17568);
+    			add_location(br0, file, 338, 126, 17563);
     			attr_dev(br1, "class", "svelte-c1iie3");
-    			add_location(br1, file, 339, 126, 17701);
+    			add_location(br1, file, 339, 126, 17696);
     			attr_dev(br2, "class", "svelte-c1iie3");
-    			add_location(br2, file, 340, 122, 17830);
+    			add_location(br2, file, 340, 122, 17825);
     			attr_dev(br3, "class", "svelte-c1iie3");
-    			add_location(br3, file, 341, 136, 17973);
+    			add_location(br3, file, 341, 136, 17968);
     			attr_dev(br4, "class", "svelte-c1iie3");
-    			add_location(br4, file, 342, 127, 18107);
+    			add_location(br4, file, 342, 127, 18102);
     			attr_dev(br5, "class", "svelte-c1iie3");
-    			add_location(br5, file, 343, 133, 18247);
+    			add_location(br5, file, 343, 133, 18242);
     			attr_dev(br6, "class", "svelte-c1iie3");
-    			add_location(br6, file, 344, 164, 18418);
+    			add_location(br6, file, 344, 164, 18413);
     			attr_dev(br7, "class", "svelte-c1iie3");
-    			add_location(br7, file, 345, 160, 18585);
+    			add_location(br7, file, 345, 160, 18580);
     			attr_dev(br8, "class", "svelte-c1iie3");
-    			add_location(br8, file, 346, 142, 18734);
+    			add_location(br8, file, 346, 142, 18729);
     			attr_dev(br9, "class", "svelte-c1iie3");
-    			add_location(br9, file, 347, 132, 18873);
+    			add_location(br9, file, 347, 132, 18868);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5107,23 +5107,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-c1iie3");
-    			add_location(br0, file, 350, 132, 19058);
+    			add_location(br0, file, 350, 132, 19053);
     			attr_dev(br1, "class", "svelte-c1iie3");
-    			add_location(br1, file, 351, 132, 19197);
+    			add_location(br1, file, 351, 132, 19192);
     			attr_dev(br2, "class", "svelte-c1iie3");
-    			add_location(br2, file, 352, 128, 19332);
+    			add_location(br2, file, 352, 128, 19327);
     			attr_dev(br3, "class", "svelte-c1iie3");
-    			add_location(br3, file, 353, 142, 19481);
+    			add_location(br3, file, 353, 142, 19476);
     			attr_dev(br4, "class", "svelte-c1iie3");
-    			add_location(br4, file, 354, 140, 19628);
+    			add_location(br4, file, 354, 140, 19623);
     			attr_dev(br5, "class", "svelte-c1iie3");
-    			add_location(br5, file, 355, 134, 19769);
+    			add_location(br5, file, 355, 134, 19764);
     			attr_dev(br6, "class", "svelte-c1iie3");
-    			add_location(br6, file, 356, 141, 19917);
+    			add_location(br6, file, 356, 141, 19912);
     			attr_dev(br7, "class", "svelte-c1iie3");
-    			add_location(br7, file, 357, 133, 20057);
+    			add_location(br7, file, 357, 133, 20052);
     			attr_dev(br8, "class", "svelte-c1iie3");
-    			add_location(br8, file, 358, 132, 20196);
+    			add_location(br8, file, 358, 132, 20191);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5537,23 +5537,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-c1iie3");
-    			add_location(br0, file, 361, 137, 20384);
+    			add_location(br0, file, 361, 137, 20379);
     			attr_dev(br1, "class", "svelte-c1iie3");
-    			add_location(br1, file, 362, 133, 20524);
+    			add_location(br1, file, 362, 133, 20519);
     			attr_dev(br2, "class", "svelte-c1iie3");
-    			add_location(br2, file, 363, 147, 20678);
+    			add_location(br2, file, 363, 147, 20673);
     			attr_dev(br3, "class", "svelte-c1iie3");
-    			add_location(br3, file, 364, 137, 20822);
+    			add_location(br3, file, 364, 137, 20817);
     			attr_dev(br4, "class", "svelte-c1iie3");
-    			add_location(br4, file, 365, 145, 20974);
+    			add_location(br4, file, 365, 145, 20969);
     			attr_dev(br5, "class", "svelte-c1iie3");
-    			add_location(br5, file, 366, 138, 21119);
+    			add_location(br5, file, 366, 138, 21114);
     			attr_dev(br6, "class", "svelte-c1iie3");
-    			add_location(br6, file, 367, 144, 21270);
+    			add_location(br6, file, 367, 144, 21265);
     			attr_dev(br7, "class", "svelte-c1iie3");
-    			add_location(br7, file, 368, 152, 21429);
+    			add_location(br7, file, 368, 152, 21424);
     			attr_dev(br8, "class", "svelte-c1iie3");
-    			add_location(br8, file, 369, 143, 21579);
+    			add_location(br8, file, 369, 143, 21574);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6197,43 +6197,43 @@ var app = (function () {
     			t37 = space();
     			br18 = element("br");
     			attr_dev(br0, "class", "svelte-c1iie3");
-    			add_location(br0, file, 372, 155, 21791);
+    			add_location(br0, file, 372, 155, 21786);
     			attr_dev(br1, "class", "svelte-c1iie3");
-    			add_location(br1, file, 373, 159, 21957);
+    			add_location(br1, file, 373, 159, 21952);
     			attr_dev(br2, "class", "svelte-c1iie3");
-    			add_location(br2, file, 374, 146, 22110);
+    			add_location(br2, file, 374, 146, 22105);
     			attr_dev(br3, "class", "svelte-c1iie3");
-    			add_location(br3, file, 375, 142, 22259);
+    			add_location(br3, file, 375, 142, 22254);
     			attr_dev(br4, "class", "svelte-c1iie3");
-    			add_location(br4, file, 376, 156, 22422);
+    			add_location(br4, file, 376, 156, 22417);
     			attr_dev(br5, "class", "svelte-c1iie3");
-    			add_location(br5, file, 377, 146, 22575);
+    			add_location(br5, file, 377, 146, 22570);
     			attr_dev(br6, "class", "svelte-c1iie3");
-    			add_location(br6, file, 378, 145, 22727);
+    			add_location(br6, file, 378, 145, 22722);
     			attr_dev(br7, "class", "svelte-c1iie3");
-    			add_location(br7, file, 379, 154, 22888);
+    			add_location(br7, file, 379, 154, 22883);
     			attr_dev(br8, "class", "svelte-c1iie3");
-    			add_location(br8, file, 380, 157, 23052);
+    			add_location(br8, file, 380, 157, 23047);
     			attr_dev(br9, "class", "svelte-c1iie3");
-    			add_location(br9, file, 381, 147, 23206);
+    			add_location(br9, file, 381, 147, 23201);
     			attr_dev(br10, "class", "svelte-c1iie3");
-    			add_location(br10, file, 382, 160, 23373);
+    			add_location(br10, file, 382, 160, 23368);
     			attr_dev(br11, "class", "svelte-c1iie3");
-    			add_location(br11, file, 383, 154, 23534);
+    			add_location(br11, file, 383, 154, 23529);
     			attr_dev(br12, "class", "svelte-c1iie3");
-    			add_location(br12, file, 384, 148, 23689);
+    			add_location(br12, file, 384, 148, 23684);
     			attr_dev(br13, "class", "svelte-c1iie3");
-    			add_location(br13, file, 385, 161, 23857);
+    			add_location(br13, file, 385, 161, 23852);
     			attr_dev(br14, "class", "svelte-c1iie3");
-    			add_location(br14, file, 386, 158, 24022);
+    			add_location(br14, file, 386, 158, 24017);
     			attr_dev(br15, "class", "svelte-c1iie3");
-    			add_location(br15, file, 387, 163, 24192);
+    			add_location(br15, file, 387, 163, 24187);
     			attr_dev(br16, "class", "svelte-c1iie3");
-    			add_location(br16, file, 388, 159, 24358);
+    			add_location(br16, file, 388, 159, 24353);
     			attr_dev(br17, "class", "svelte-c1iie3");
-    			add_location(br17, file, 389, 151, 24516);
+    			add_location(br17, file, 389, 151, 24511);
     			attr_dev(br18, "class", "svelte-c1iie3");
-    			add_location(br18, file, 390, 152, 24675);
+    			add_location(br18, file, 390, 152, 24670);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6768,17 +6768,17 @@ var app = (function () {
     			t11 = space();
     			br5 = element("br");
     			attr_dev(br0, "class", "svelte-c1iie3");
-    			add_location(br0, file, 393, 151, 24877);
+    			add_location(br0, file, 393, 151, 24872);
     			attr_dev(br1, "class", "svelte-c1iie3");
-    			add_location(br1, file, 394, 147, 25031);
+    			add_location(br1, file, 394, 147, 25026);
     			attr_dev(br2, "class", "svelte-c1iie3");
-    			add_location(br2, file, 395, 161, 25199);
+    			add_location(br2, file, 395, 161, 25194);
     			attr_dev(br3, "class", "svelte-c1iie3");
-    			add_location(br3, file, 396, 152, 25358);
+    			add_location(br3, file, 396, 152, 25353);
     			attr_dev(br4, "class", "svelte-c1iie3");
-    			add_location(br4, file, 397, 158, 25523);
+    			add_location(br4, file, 397, 158, 25518);
     			attr_dev(br5, "class", "svelte-c1iie3");
-    			add_location(br5, file, 398, 157, 25687);
+    			add_location(br5, file, 398, 157, 25682);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -7004,54 +7004,54 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-c1iie3"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
-    			add_location(div0, file, 404, 8, 25788);
+    			add_location(div0, file, 404, 8, 25783);
     			attr_dev(img, "alt", "PROGEN FLARES 2");
     			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "321");
     			attr_dev(img, "draggable", false);
     			attr_dev(img, "class", "svelte-c1iie3");
-    			add_location(img, file, 406, 12, 26037);
+    			add_location(img, file, 406, 12, 26032);
     			attr_dev(br0, "class", "svelte-c1iie3");
-    			add_location(br0, file, 407, 12, 26130);
+    			add_location(br0, file, 407, 12, 26125);
     			attr_dev(br1, "class", "svelte-c1iie3");
-    			add_location(br1, file, 407, 19, 26137);
+    			add_location(br1, file, 407, 19, 26132);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-c1iie3");
-    			add_location(span0, file, 408, 12, 26156);
+    			add_location(span0, file, 408, 12, 26151);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-c1iie3");
-    			add_location(input0, file, 408, 102, 26246);
+    			add_location(input0, file, 408, 102, 26241);
     			attr_dev(br2, "class", "svelte-c1iie3");
-    			add_location(br2, file, 409, 12, 26349);
+    			add_location(br2, file, 409, 12, 26344);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-c1iie3");
-    			add_location(span1, file, 410, 12, 26368);
+    			add_location(span1, file, 410, 12, 26363);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-c1iie3");
-    			add_location(input1, file, 410, 103, 26459);
+    			add_location(input1, file, 410, 103, 26454);
     			attr_dev(br3, "class", "svelte-c1iie3");
-    			add_location(br3, file, 411, 12, 26563);
+    			add_location(br3, file, 411, 12, 26558);
     			attr_dev(br4, "class", "svelte-c1iie3");
-    			add_location(br4, file, 411, 19, 26570);
+    			add_location(br4, file, 411, 19, 26565);
     			attr_dev(button, "class", "svelte-c1iie3");
-    			add_location(button, file, 412, 12, 26589);
+    			add_location(button, file, 412, 12, 26584);
     			attr_dev(br5, "class", "svelte-c1iie3");
-    			add_location(br5, file, 413, 12, 26644);
+    			add_location(br5, file, 413, 12, 26639);
     			attr_dev(br6, "class", "svelte-c1iie3");
-    			add_location(br6, file, 413, 19, 26651);
+    			add_location(br6, file, 413, 19, 26646);
     			attr_dev(br7, "class", "svelte-c1iie3");
-    			add_location(br7, file, 414, 71, 26729);
+    			add_location(br7, file, 414, 71, 26724);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-c1iie3");
-    			add_location(span2, file, 414, 12, 26670);
+    			add_location(span2, file, 414, 12, 26665);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-c1iie3"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 405, 8, 25970);
+    			add_location(div1, file, 405, 8, 25965);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-c1iie3");
-    			add_location(div2, file, 403, 4, 25746);
+    			add_location(div2, file, 403, 4, 25741);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -7199,7 +7199,7 @@ var app = (function () {
 
     	collapsible0 = new Collapsible({
     			props: {
-    				title: "Positioning",
+    				title: "Global",
     				collapsed: false,
     				$$slots: { default: [create_default_slot_5] },
     				$$scope: { ctx }

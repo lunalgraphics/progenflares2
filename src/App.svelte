@@ -329,7 +329,7 @@ Reference Image
     <button on:click={function() { createPresetSaveLink().click(); }} style={"float: right;"}>Save Preset</button>
 </div>
 
-<Collapsible title={"Positioning"} collapsed={false}>
+<Collapsible title={"Global"} collapsed={false}>
     Light X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }} /> <br />
     Light Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }} /> <br />
     Focus X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.pivotX} on:input={function() { renderFlare(); }} /> <br />
