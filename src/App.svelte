@@ -11,6 +11,7 @@
     import HalfComponent from "./HalfComponent";
     import PresetPicker from "./PresetPicker.svelte";
     import { fade } from "svelte/transition";
+    import HSLColorPicker from "./HSLColorPicker.svelte";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -340,8 +341,7 @@ Reference Image
 <Collapsible title={"Hotspot"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.hotspot.alpha} on:input={function() { renderFlare(true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.hotspot.angle} on:input={function() { renderFlare(true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.hotspot.hue} on:input={function() { renderFlare(true); }} /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.hotspot.saturation} on:input={function() { renderFlare(true); }} /> <br />
+    Color: <HSLColorPicker bind:hue={flareSettings.hotspot.hue} bind:saturation={flareSettings.hotspot.saturation} lightness={50} on:input={function() { renderFlare(true); }} /> <br />
     Size: <Slider min={0} max={1000} bind:value={flareSettings.hotspot.radius} on:input={function() { renderFlare(true); }} /> <br />
     Intensity: <Slider min={0} max={50} bind:value={flareSettings.hotspot.intensity} on:input={function() { renderFlare(true); }} /> <br />
     Rays Frequency: <Slider min={0} max={0.05} step={0.001} bind:value={flareSettings.hotspot.deformationFrequency} on:input={function() { renderFlare(true); }} /> <br />
@@ -352,8 +352,7 @@ Reference Image
 <Collapsible title={"Streak"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.streak.alpha} on:input={function() { renderFlare(false, true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.streak.angle} on:input={function() { renderFlare(false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.streak.hue} on:input={function() { renderFlare(false, true); }} /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.streak.saturation} on:input={function() { renderFlare(false, true); }} /> <br />
+    Color: <HSLColorPicker bind:hue={flareSettings.streak.hue} bind:saturation={flareSettings.streak.saturation} lightness={50} on:input={function() { renderFlare(false, true); }} /> <br />
     Thickness: <Slider min={0} max={200} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }} /> <br />
     Length: <Slider min={0} max={5000} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }} /> <br />
     Intensity: <Slider min={-30} max={50} bind:value={flareSettings.streak.intensity} on:input={function() { renderFlare(false, true); }} /> <br />
@@ -362,8 +361,7 @@ Reference Image
 </Collapsible>
 <Collapsible title={"Ring"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.ring.alpha} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.ring.hue} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.ring.saturation} on:input={function() { renderFlare(false, false, true); }} /> <br />
+    Color: <HSLColorPicker bind:hue={flareSettings.ring.hue} bind:saturation={flareSettings.ring.saturation} lightness={50} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Size: <Slider min={0} max={810} bind:value={flareSettings.ring.radius} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Thickness: <Slider min={0} max={500} bind:value={flareSettings.ring.thickness} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Softness: <Slider min={0} max={50} bind:value={flareSettings.ring.blur} on:input={function() { renderFlare(false, false, true); }} /> <br />
@@ -375,8 +373,7 @@ Reference Image
     Fill Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fillAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.miIris.angle} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.miIris.hue} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.miIris.saturation} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
+    Color: <HSLColorPicker bind:hue={flareSettings.miIris.hue} bind:saturation={flareSettings.miIris.saturation} lightness={50} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Size: <Slider min={0} max={810} bind:value={flareSettings.miIris.radius} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Edges: <Slider min={3} max={12} bind:value={flareSettings.miIris.sides} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Roundness: <Slider min={0} max={100} bind:value={flareSettings.miIris.roundness} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
@@ -394,8 +391,7 @@ Reference Image
 </Collapsible>
 <Collapsible title={"Glow"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.glow.alpha} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.glow.hue} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.glow.saturation} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
+    Color: <HSLColorPicker bind:hue={flareSettings.glow.hue} bind:saturation={flareSettings.glow.saturation} lightness={50} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Size: <Slider min={0} max={1500} bind:value={flareSettings.glow.radius} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Softness: <Slider min={0} max={200} bind:value={flareSettings.glow.softening} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Anamorph: <Slider min={0} max={100} bind:value={flareSettings.glow.anamorph} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
@@ -449,6 +445,9 @@ Reference Image
         float: right;
         accent-color: var(--color-scheme-1);
     }
+    :global(hslcolorpicker) {
+        float: right;
+    }
     :global(input[type=number]) {
         color: var(--color-scheme-1);
         background-color: #181818;
@@ -465,6 +464,20 @@ Reference Image
     :global(input[type=number]):hover {
         border: 1px solid var(--color-scheme-1);
         -moz-appearance: revert!important;
+    }
+    :global(input[type=color]) {
+        background-color: #333333;
+        border: 1px solid #555555;
+        transition: border 0.2s, box-shadow 0.2s;
+        border-radius: 2px;
+    }
+    :global(input[type=color]):focus {
+        border: 1px solid var(--color-scheme-1);
+        box-shadow: inset 0 0 4px var(--color-scheme-2);
+        outline: none!important;
+    }
+    :global(input[type=color]):hover {
+        border: 1px solid var(--color-scheme-1);
     }
     #controlPanel {
         width: 360px;
