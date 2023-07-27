@@ -4466,7 +4466,7 @@ var app = (function () {
     const { document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (334:0) <Collapsible title={"Global"} collapsed={false}>
+    // (335:0) <Collapsible title={"Global"} collapsed={false}>
     function create_default_slot_5(ctx) {
     	let t0;
     	let slider0;
@@ -4600,15 +4600,15 @@ var app = (function () {
     			t9 = space();
     			br4 = element("br");
     			attr_dev(br0, "class", "svelte-acbemq");
-    			add_location(br0, file, 334, 151, 17207);
+    			add_location(br0, file, 335, 151, 17256);
     			attr_dev(br1, "class", "svelte-acbemq");
-    			add_location(br1, file, 335, 152, 17366);
+    			add_location(br1, file, 336, 152, 17415);
     			attr_dev(br2, "class", "svelte-acbemq");
-    			add_location(br2, file, 336, 156, 17529);
+    			add_location(br2, file, 337, 156, 17578);
     			attr_dev(br3, "class", "svelte-acbemq");
-    			add_location(br3, file, 337, 157, 17693);
+    			add_location(br3, file, 338, 157, 17742);
     			attr_dev(br4, "class", "svelte-acbemq");
-    			add_location(br4, file, 338, 144, 17844);
+    			add_location(br4, file, 339, 144, 17893);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4729,14 +4729,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(334:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
+    		source: "(335:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (341:0) <Collapsible title={"Hotspot"}>
+    // (342:0) <Collapsible title={"Hotspot"}>
     function create_default_slot_4(ctx) {
     	let t0;
     	let slider0;
@@ -4964,23 +4964,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-acbemq");
-    			add_location(br0, file, 341, 126, 18024);
+    			add_location(br0, file, 342, 126, 18073);
     			attr_dev(br1, "class", "svelte-acbemq");
-    			add_location(br1, file, 342, 126, 18157);
+    			add_location(br1, file, 343, 126, 18206);
     			attr_dev(br2, "class", "svelte-acbemq");
-    			add_location(br2, file, 343, 178, 18342);
+    			add_location(br2, file, 344, 178, 18391);
     			attr_dev(br3, "class", "svelte-acbemq");
-    			add_location(br3, file, 344, 127, 18476);
+    			add_location(br3, file, 345, 127, 18525);
     			attr_dev(br4, "class", "svelte-acbemq");
-    			add_location(br4, file, 345, 133, 18616);
+    			add_location(br4, file, 346, 133, 18665);
     			attr_dev(br5, "class", "svelte-acbemq");
-    			add_location(br5, file, 346, 164, 18787);
+    			add_location(br5, file, 347, 164, 18836);
     			attr_dev(br6, "class", "svelte-acbemq");
-    			add_location(br6, file, 347, 160, 18954);
+    			add_location(br6, file, 348, 160, 19003);
     			attr_dev(br7, "class", "svelte-acbemq");
-    			add_location(br7, file, 348, 142, 19103);
+    			add_location(br7, file, 349, 142, 19152);
     			attr_dev(br8, "class", "svelte-acbemq");
-    			add_location(br8, file, 349, 132, 19242);
+    			add_location(br8, file, 350, 132, 19291);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5179,14 +5179,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(341:0) <Collapsible title={\\\"Hotspot\\\"}>",
+    		source: "(342:0) <Collapsible title={\\\"Hotspot\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (352:0) <Collapsible title={"Streak"}>
+    // (353:0) <Collapsible title={"Streak"}>
     function create_default_slot_3(ctx) {
     	let t0;
     	let slider0;
@@ -5391,21 +5391,21 @@ var app = (function () {
     			t15 = space();
     			br7 = element("br");
     			attr_dev(br0, "class", "svelte-acbemq");
-    			add_location(br0, file, 352, 132, 19427);
+    			add_location(br0, file, 353, 132, 19476);
     			attr_dev(br1, "class", "svelte-acbemq");
-    			add_location(br1, file, 353, 132, 19566);
+    			add_location(br1, file, 354, 132, 19615);
     			attr_dev(br2, "class", "svelte-acbemq");
-    			add_location(br2, file, 354, 183, 19756);
+    			add_location(br2, file, 355, 183, 19805);
     			attr_dev(br3, "class", "svelte-acbemq");
-    			add_location(br3, file, 355, 140, 19903);
+    			add_location(br3, file, 356, 140, 19952);
     			attr_dev(br4, "class", "svelte-acbemq");
-    			add_location(br4, file, 356, 134, 20044);
+    			add_location(br4, file, 357, 134, 20093);
     			attr_dev(br5, "class", "svelte-acbemq");
-    			add_location(br5, file, 357, 141, 20192);
+    			add_location(br5, file, 358, 141, 20241);
     			attr_dev(br6, "class", "svelte-acbemq");
-    			add_location(br6, file, 358, 133, 20332);
+    			add_location(br6, file, 359, 133, 20381);
     			attr_dev(br7, "class", "svelte-acbemq");
-    			add_location(br7, file, 359, 132, 20471);
+    			add_location(br7, file, 360, 132, 20520);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5585,14 +5585,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(352:0) <Collapsible title={\\\"Streak\\\"}>",
+    		source: "(353:0) <Collapsible title={\\\"Streak\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (362:0) <Collapsible title={"Ring"}>
+    // (363:0) <Collapsible title={"Ring"}>
     function create_default_slot_2(ctx) {
     	let t0;
     	let slider0;
@@ -5797,21 +5797,21 @@ var app = (function () {
     			t15 = space();
     			br7 = element("br");
     			attr_dev(br0, "class", "svelte-acbemq");
-    			add_location(br0, file, 362, 137, 20659);
+    			add_location(br0, file, 363, 137, 20708);
     			attr_dev(br1, "class", "svelte-acbemq");
-    			add_location(br1, file, 363, 186, 20852);
+    			add_location(br1, file, 364, 186, 20901);
     			attr_dev(br2, "class", "svelte-acbemq");
-    			add_location(br2, file, 364, 137, 20996);
+    			add_location(br2, file, 365, 137, 21045);
     			attr_dev(br3, "class", "svelte-acbemq");
-    			add_location(br3, file, 365, 145, 21148);
+    			add_location(br3, file, 366, 145, 21197);
     			attr_dev(br4, "class", "svelte-acbemq");
-    			add_location(br4, file, 366, 138, 21293);
+    			add_location(br4, file, 367, 138, 21342);
     			attr_dev(br5, "class", "svelte-acbemq");
-    			add_location(br5, file, 367, 144, 21444);
+    			add_location(br5, file, 368, 144, 21493);
     			attr_dev(br6, "class", "svelte-acbemq");
-    			add_location(br6, file, 368, 152, 21603);
+    			add_location(br6, file, 369, 152, 21652);
     			attr_dev(br7, "class", "svelte-acbemq");
-    			add_location(br7, file, 369, 143, 21753);
+    			add_location(br7, file, 370, 143, 21802);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5991,14 +5991,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(362:0) <Collapsible title={\\\"Ring\\\"}>",
+    		source: "(363:0) <Collapsible title={\\\"Ring\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (372:0) <Collapsible title={"Multi-Iris"}>
+    // (373:0) <Collapsible title={"Multi-Iris"}>
     function create_default_slot_1(ctx) {
     	let t0;
     	let slider0;
@@ -6433,41 +6433,41 @@ var app = (function () {
     			t35 = space();
     			br17 = element("br");
     			attr_dev(br0, "class", "svelte-acbemq");
-    			add_location(br0, file, 372, 155, 21965);
+    			add_location(br0, file, 373, 155, 22014);
     			attr_dev(br1, "class", "svelte-acbemq");
-    			add_location(br1, file, 373, 159, 22131);
+    			add_location(br1, file, 374, 159, 22180);
     			attr_dev(br2, "class", "svelte-acbemq");
-    			add_location(br2, file, 374, 146, 22284);
+    			add_location(br2, file, 375, 146, 22333);
     			attr_dev(br3, "class", "svelte-acbemq");
-    			add_location(br3, file, 375, 197, 22488);
+    			add_location(br3, file, 376, 197, 22537);
     			attr_dev(br4, "class", "svelte-acbemq");
-    			add_location(br4, file, 376, 146, 22641);
+    			add_location(br4, file, 377, 146, 22690);
     			attr_dev(br5, "class", "svelte-acbemq");
-    			add_location(br5, file, 377, 145, 22793);
+    			add_location(br5, file, 378, 145, 22842);
     			attr_dev(br6, "class", "svelte-acbemq");
-    			add_location(br6, file, 378, 154, 22954);
+    			add_location(br6, file, 379, 154, 23003);
     			attr_dev(br7, "class", "svelte-acbemq");
-    			add_location(br7, file, 379, 157, 23118);
+    			add_location(br7, file, 380, 157, 23167);
     			attr_dev(br8, "class", "svelte-acbemq");
-    			add_location(br8, file, 380, 147, 23272);
+    			add_location(br8, file, 381, 147, 23321);
     			attr_dev(br9, "class", "svelte-acbemq");
-    			add_location(br9, file, 381, 160, 23439);
+    			add_location(br9, file, 382, 160, 23488);
     			attr_dev(br10, "class", "svelte-acbemq");
-    			add_location(br10, file, 382, 154, 23600);
+    			add_location(br10, file, 383, 154, 23649);
     			attr_dev(br11, "class", "svelte-acbemq");
-    			add_location(br11, file, 383, 148, 23755);
+    			add_location(br11, file, 384, 148, 23804);
     			attr_dev(br12, "class", "svelte-acbemq");
-    			add_location(br12, file, 384, 161, 23923);
+    			add_location(br12, file, 385, 161, 23972);
     			attr_dev(br13, "class", "svelte-acbemq");
-    			add_location(br13, file, 385, 158, 24088);
+    			add_location(br13, file, 386, 158, 24137);
     			attr_dev(br14, "class", "svelte-acbemq");
-    			add_location(br14, file, 386, 163, 24258);
+    			add_location(br14, file, 387, 163, 24307);
     			attr_dev(br15, "class", "svelte-acbemq");
-    			add_location(br15, file, 387, 159, 24424);
+    			add_location(br15, file, 388, 159, 24473);
     			attr_dev(br16, "class", "svelte-acbemq");
-    			add_location(br16, file, 388, 151, 24582);
+    			add_location(br16, file, 389, 151, 24631);
     			attr_dev(br17, "class", "svelte-acbemq");
-    			add_location(br17, file, 389, 152, 24741);
+    			add_location(br17, file, 390, 152, 24790);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6837,14 +6837,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(372:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
+    		source: "(373:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (392:0) <Collapsible title={"Glow"}>
+    // (393:0) <Collapsible title={"Glow"}>
     function create_default_slot(ctx) {
     	let t0;
     	let slider0;
@@ -6980,15 +6980,15 @@ var app = (function () {
     			t9 = space();
     			br4 = element("br");
     			attr_dev(br0, "class", "svelte-acbemq");
-    			add_location(br0, file, 392, 151, 24943);
+    			add_location(br0, file, 393, 151, 24992);
     			attr_dev(br1, "class", "svelte-acbemq");
-    			add_location(br1, file, 393, 200, 25150);
+    			add_location(br1, file, 394, 200, 25199);
     			attr_dev(br2, "class", "svelte-acbemq");
-    			add_location(br2, file, 394, 152, 25309);
+    			add_location(br2, file, 395, 152, 25358);
     			attr_dev(br3, "class", "svelte-acbemq");
-    			add_location(br3, file, 395, 158, 25474);
+    			add_location(br3, file, 396, 158, 25523);
     			attr_dev(br4, "class", "svelte-acbemq");
-    			add_location(br4, file, 396, 157, 25638);
+    			add_location(br4, file, 397, 157, 25687);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -7111,14 +7111,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(392:0) <Collapsible title={\\\"Glow\\\"}>",
+    		source: "(393:0) <Collapsible title={\\\"Glow\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (401:0) {#if startScreenVisible}
+    // (402:0) {#if startScreenVisible}
     function create_if_block(ctx) {
     	let div2;
     	let div0;
@@ -7201,54 +7201,54 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-acbemq"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
-    			add_location(div0, file, 402, 8, 25739);
+    			add_location(div0, file, 403, 8, 25788);
     			attr_dev(img, "alt", "PROGEN FLARES 2");
     			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "321");
     			attr_dev(img, "draggable", false);
     			attr_dev(img, "class", "svelte-acbemq");
-    			add_location(img, file, 404, 12, 25988);
+    			add_location(img, file, 405, 12, 26037);
     			attr_dev(br0, "class", "svelte-acbemq");
-    			add_location(br0, file, 405, 12, 26081);
+    			add_location(br0, file, 406, 12, 26130);
     			attr_dev(br1, "class", "svelte-acbemq");
-    			add_location(br1, file, 405, 19, 26088);
+    			add_location(br1, file, 406, 19, 26137);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-acbemq");
-    			add_location(span0, file, 406, 12, 26107);
+    			add_location(span0, file, 407, 12, 26156);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-acbemq");
-    			add_location(input0, file, 406, 102, 26197);
+    			add_location(input0, file, 407, 102, 26246);
     			attr_dev(br2, "class", "svelte-acbemq");
-    			add_location(br2, file, 407, 12, 26300);
+    			add_location(br2, file, 408, 12, 26349);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-acbemq");
-    			add_location(span1, file, 408, 12, 26319);
+    			add_location(span1, file, 409, 12, 26368);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-acbemq");
-    			add_location(input1, file, 408, 103, 26410);
+    			add_location(input1, file, 409, 103, 26459);
     			attr_dev(br3, "class", "svelte-acbemq");
-    			add_location(br3, file, 409, 12, 26514);
+    			add_location(br3, file, 410, 12, 26563);
     			attr_dev(br4, "class", "svelte-acbemq");
-    			add_location(br4, file, 409, 19, 26521);
+    			add_location(br4, file, 410, 19, 26570);
     			attr_dev(button, "class", "svelte-acbemq");
-    			add_location(button, file, 410, 12, 26540);
+    			add_location(button, file, 411, 12, 26589);
     			attr_dev(br5, "class", "svelte-acbemq");
-    			add_location(br5, file, 411, 12, 26595);
+    			add_location(br5, file, 412, 12, 26644);
     			attr_dev(br6, "class", "svelte-acbemq");
-    			add_location(br6, file, 411, 19, 26602);
+    			add_location(br6, file, 412, 19, 26651);
     			attr_dev(br7, "class", "svelte-acbemq");
-    			add_location(br7, file, 412, 71, 26680);
+    			add_location(br7, file, 413, 71, 26729);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-acbemq");
-    			add_location(span2, file, 412, 12, 26621);
+    			add_location(span2, file, 413, 12, 26670);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-acbemq"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 403, 8, 25921);
+    			add_location(div1, file, 404, 8, 25970);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-acbemq");
-    			add_location(div2, file, 401, 4, 25697);
+    			add_location(div2, file, 402, 4, 25746);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -7329,7 +7329,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(401:0) {#if startScreenVisible}",
+    		source: "(402:0) {#if startScreenVisible}",
     		ctx
     	});
 
@@ -7362,32 +7362,33 @@ var app = (function () {
     	let option3;
     	let option4;
     	let option5;
-    	let t14;
+    	let option6;
+    	let t15;
     	let span1;
-    	let t16;
-    	let input;
     	let t17;
+    	let input;
+    	let t18;
     	let button1;
-    	let t19;
+    	let t20;
     	let div4;
     	let div3;
     	let presetpicker;
-    	let t20;
+    	let t21;
     	let button2;
-    	let t22;
-    	let collapsible0;
     	let t23;
-    	let collapsible1;
+    	let collapsible0;
     	let t24;
-    	let collapsible2;
+    	let collapsible1;
     	let t25;
-    	let collapsible3;
+    	let collapsible2;
     	let t26;
-    	let collapsible4;
+    	let collapsible3;
     	let t27;
-    	let collapsible5;
+    	let collapsible4;
     	let t28;
+    	let collapsible5;
     	let t29;
+    	let t30;
     	let current;
     	let mounted;
     	let dispose;
@@ -7482,36 +7483,38 @@ var app = (function () {
     			option4.textContent = "50%";
     			option5 = element("option");
     			option5.textContent = "25%";
-    			t14 = space();
+    			option6 = element("option");
+    			option6.textContent = "12.5%";
+    			t15 = space();
     			span1 = element("span");
     			span1.textContent = `${"    |    "}`;
-    			t16 = space();
+    			t17 = space();
     			input = element("input");
-    			t17 = text("\nReference Image\n");
+    			t18 = text("\nReference Image\n");
     			button1 = element("button");
     			button1.textContent = "Import";
-    			t19 = space();
+    			t20 = space();
     			div4 = element("div");
     			div3 = element("div");
     			create_component(presetpicker.$$.fragment);
-    			t20 = space();
+    			t21 = space();
     			button2 = element("button");
     			button2.textContent = "Save Preset";
-    			t22 = space();
-    			create_component(collapsible0.$$.fragment);
     			t23 = space();
-    			create_component(collapsible1.$$.fragment);
+    			create_component(collapsible0.$$.fragment);
     			t24 = space();
-    			create_component(collapsible2.$$.fragment);
+    			create_component(collapsible1.$$.fragment);
     			t25 = space();
-    			create_component(collapsible3.$$.fragment);
+    			create_component(collapsible2.$$.fragment);
     			t26 = space();
-    			create_component(collapsible4.$$.fragment);
+    			create_component(collapsible3.$$.fragment);
     			t27 = space();
-    			create_component(collapsible5.$$.fragment);
+    			create_component(collapsible4.$$.fragment);
     			t28 = space();
-    			if (if_block) if_block.c();
+    			create_component(collapsible5.$$.fragment);
     			t29 = space();
+    			if (if_block) if_block.c();
+    			t30 = space();
     			attr_dev(button0, "class", "svelte-acbemq");
     			add_location(button0, file, 291, 0, 15276);
     			attr_dev(span0, "style", "display: inline-block; margin-left: 5px; margin-right: 5px;");
@@ -7551,34 +7554,38 @@ var app = (function () {
     			option3.__value = 1;
     			option3.value = option3.__value;
     			attr_dev(option3, "class", "svelte-acbemq");
-    			add_location(option3, file, 308, 4, 16208);
+    			add_location(option3, file, 308, 4, 16220);
     			option4.__value = 2;
     			option4.value = option4.__value;
     			attr_dev(option4, "class", "svelte-acbemq");
-    			add_location(option4, file, 309, 4, 16244);
+    			add_location(option4, file, 309, 4, 16256);
     			option5.__value = 4;
     			option5.value = option5.__value;
     			attr_dev(option5, "class", "svelte-acbemq");
-    			add_location(option5, file, 310, 4, 16279);
+    			add_location(option5, file, 310, 4, 16291);
+    			option6.__value = 8;
+    			option6.value = option6.__value;
+    			attr_dev(option6, "class", "svelte-acbemq");
+    			add_location(option6, file, 311, 4, 16326);
     			attr_dev(select1, "class", "svelte-acbemq");
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[17].call(select1));
     			add_location(select1, file, 307, 0, 16098);
     			attr_dev(span1, "style", "white-space: pre; color: grey;");
     			attr_dev(span1, "class", "svelte-acbemq");
-    			add_location(span1, file, 312, 0, 16320);
+    			add_location(span1, file, 313, 0, 16369);
     			attr_dev(input, "type", "checkbox");
     			input.checked = true;
     			attr_dev(input, "style", "margin-bottom: 0;");
     			attr_dev(input, "class", "svelte-acbemq");
-    			add_location(input, file, 313, 0, 16388);
+    			add_location(input, file, 314, 0, 16437);
     			attr_dev(button1, "class", "svelte-acbemq");
-    			add_location(button1, file, 315, 0, 16525);
+    			add_location(button1, file, 316, 0, 16574);
     			attr_dev(div2, "id", "sectionAbovePreview");
     			attr_dev(div2, "class", "svelte-acbemq");
     			add_location(div2, file, 305, 0, 16049);
     			attr_dev(button2, "style", "float: right;");
     			attr_dev(button2, "class", "svelte-acbemq");
-    			add_location(button2, file, 330, 4, 16888);
+    			add_location(button2, file, 331, 4, 16937);
 
     			attr_dev(div3, "style", `
     position: sticky;
@@ -7591,10 +7598,10 @@ var app = (function () {
 `);
 
     			attr_dev(div3, "class", "svelte-acbemq");
-    			add_location(div3, file, 320, 0, 16610);
+    			add_location(div3, file, 321, 0, 16659);
     			attr_dev(div4, "id", "controlPanel");
     			attr_dev(div4, "class", "svelte-acbemq");
-    			add_location(div4, file, 318, 0, 16583);
+    			add_location(div4, file, 319, 0, 16632);
     			document_1.title = "Progen Flares 2";
     		},
     		l: function claim(nodes) {
@@ -7625,35 +7632,36 @@ var app = (function () {
     			append_dev(select1, option3);
     			append_dev(select1, option4);
     			append_dev(select1, option5);
+    			append_dev(select1, option6);
     			select_option(select1, /*flareSettings*/ ctx[0].downscaling);
-    			append_dev(div2, t14);
+    			append_dev(div2, t15);
     			append_dev(div2, span1);
-    			append_dev(div2, t16);
+    			append_dev(div2, t17);
     			append_dev(div2, input);
     			/*input_binding*/ ctx[19](input);
-    			append_dev(div2, t17);
+    			append_dev(div2, t18);
     			append_dev(div2, button1);
-    			insert_dev(target, t19, anchor);
+    			insert_dev(target, t20, anchor);
     			insert_dev(target, div4, anchor);
     			append_dev(div4, div3);
     			mount_component(presetpicker, div3, null);
-    			append_dev(div3, t20);
+    			append_dev(div3, t21);
     			append_dev(div3, button2);
-    			append_dev(div4, t22);
-    			mount_component(collapsible0, div4, null);
     			append_dev(div4, t23);
-    			mount_component(collapsible1, div4, null);
+    			mount_component(collapsible0, div4, null);
     			append_dev(div4, t24);
-    			mount_component(collapsible2, div4, null);
+    			mount_component(collapsible1, div4, null);
     			append_dev(div4, t25);
-    			mount_component(collapsible3, div4, null);
+    			mount_component(collapsible2, div4, null);
     			append_dev(div4, t26);
-    			mount_component(collapsible4, div4, null);
+    			mount_component(collapsible3, div4, null);
     			append_dev(div4, t27);
+    			mount_component(collapsible4, div4, null);
+    			append_dev(div4, t28);
     			mount_component(collapsible5, div4, null);
-    			insert_dev(target, t28, anchor);
-    			if (if_block) if_block.m(target, anchor);
     			insert_dev(target, t29, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t30, anchor);
     			current = true;
 
     			if (!mounted) {
@@ -7751,7 +7759,7 @@ var app = (function () {
     					if_block = create_if_block(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(t29.parentNode, t29);
+    					if_block.m(t30.parentNode, t30);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -7795,7 +7803,7 @@ var app = (function () {
     			if (detaching) detach_dev(t9);
     			if (detaching) detach_dev(div2);
     			/*input_binding*/ ctx[19](null);
-    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(t20);
     			if (detaching) detach_dev(div4);
     			destroy_component(presetpicker);
     			destroy_component(collapsible0);
@@ -7804,9 +7812,9 @@ var app = (function () {
     			destroy_component(collapsible3);
     			destroy_component(collapsible4);
     			destroy_component(collapsible5);
-    			if (detaching) detach_dev(t28);
-    			if (if_block) if_block.d(detaching);
     			if (detaching) detach_dev(t29);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(t30);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -7836,7 +7844,7 @@ var app = (function () {
     	};
 
     	var flareSettings = {
-    		downscaling: 2,
+    		downscaling: 4,
     		exportType: "png",
     		sizeMultiplier: 1,
     		dimensions: { width: 1920, height: 1080 },
@@ -8208,7 +8216,7 @@ var app = (function () {
     	}
 
     	const change_handler = function () {
-    		renderFlare(true, true, true);
+    		renderFlare(true, true, true, true, true);
     	};
 
     	function input_binding($$value) {

@@ -34,7 +34,7 @@
     };
 
     var flareSettings = {
-        downscaling: 2,
+        downscaling: 4,
         exportType: "png",
         sizeMultiplier: 1,
         dimensions: {
@@ -305,10 +305,11 @@
 
 <div id={"sectionAbovePreview"}>
 Preview quality
-<select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true, true); }}>
+<select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true, true, true, true); }}>
     <option value={1}>100%</option>
     <option value={2}>50%</option>
     <option value={4}>25%</option>
+    <option value={8}>12.5%</option>
 </select>
 <span style={"white-space: pre; color: grey;"}>{"    |    "}</span>
 <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} checked={true} style={"margin-bottom: 0;"} />
