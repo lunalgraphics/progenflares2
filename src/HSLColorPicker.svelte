@@ -3,7 +3,7 @@
 </script>
 
 <script>
-    import { createEventDispatcher } from 'svelte';
+    import { createEventDispatcher, onMount } from 'svelte';
 
     const dispatch = createEventDispatcher();
 
@@ -13,10 +13,17 @@
 
     let inputElement;
     var hexValue = "#123456";
-    $: hexValue = hsl2Hex({
-        h: hue,
-        s: saturation,
-        l: lightness,
+    var setHexValue = function(h, s, l) {
+        hexValue = hsl2Hex({
+            h: h,
+            s: s,
+            l: l,
+        });
+        if (inputElement) inputElement.value = hexValue;
+    };
+    $: setHexValue(hue, saturation, lightness);
+    onMount(function() {
+        setHexValue(hue, saturation, lightness);
     });
 
     function hex2Hsl(hex="#000000") {
@@ -69,7 +76,7 @@
     }
 
     function updateValues() {
-        var hsl = hex2Hsl(hexValue);
+        var hsl = hex2Hsl(inputElement.value);
         hue = Math.round(hsl.h);
         saturation = Math.round(hsl.s);
         lightness = Math.round(hsl.l);
@@ -82,7 +89,7 @@
 </script>
 
 <hslcolorpicker>
-    <input type="color" bind:value={hexValue} bind:this={inputElement} on:input={updateValues} on:change={onChange} />
+    <input type="color" bind:this={inputElement} on:input={updateValues} on:change={onChange} />
     <!--<code>{`h: ${hue}, s: ${saturation}, l: ${lightness}`}</code>-->
 </hslcolorpicker>
 

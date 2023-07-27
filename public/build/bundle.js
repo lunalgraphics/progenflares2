@@ -290,6 +290,18 @@ var app = (function () {
         return current_component;
     }
     /**
+     * The `onMount` function schedules a callback to run as soon as the component has been mounted to the DOM.
+     * It must be called during the component's initialisation (but doesn't need to live *inside* the component;
+     * it can be called from an external module).
+     *
+     * `onMount` does not run inside a [server-side component](/docs#run-time-server-side-component-api).
+     *
+     * https://svelte.dev/docs#run-time-svelte-onmount
+     */
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
+    }
+    /**
      * Creates an event dispatcher that can be used to dispatch [component events](/docs#template-syntax-component-directives-on-eventname).
      * Event dispatchers are functions that can take two arguments: `name` and `detail`.
      *
@@ -4203,8 +4215,8 @@ var app = (function () {
     			input = element("input");
     			attr_dev(input, "type", "color");
     			attr_dev(input, "class", "svelte-12cgdzu");
-    			add_location(input, file$1, 84, 4, 2124);
-    			add_location(hslcolorpicker, file$1, 83, 0, 2103);
+    			add_location(input, file$1, 91, 4, 2377);
+    			add_location(hslcolorpicker, file$1, 90, 0, 2356);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4212,29 +4224,23 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, hslcolorpicker, anchor);
     			append_dev(hslcolorpicker, input);
-    			set_input_value(input, /*hexValue*/ ctx[1]);
-    			/*input_binding*/ ctx[8](input);
+    			/*input_binding*/ ctx[6](input);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[7]),
-    					listen_dev(input, "input", /*updateValues*/ ctx[2], false, false, false),
-    					listen_dev(input, "change", /*onChange*/ ctx[3], false, false, false)
+    					listen_dev(input, "input", /*updateValues*/ ctx[1], false, false, false),
+    					listen_dev(input, "change", /*onChange*/ ctx[2], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*hexValue*/ 2) {
-    				set_input_value(input, /*hexValue*/ ctx[1]);
-    			}
-    		},
+    		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(hslcolorpicker);
-    			/*input_binding*/ ctx[8](null);
+    			/*input_binding*/ ctx[6](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -4313,11 +4319,20 @@ var app = (function () {
     	let inputElement;
     	var hexValue = "#123456";
 
+    	var setHexValue = function (h, s, l) {
+    		hexValue = hsl2Hex({ h, s, l });
+    		if (inputElement) $$invalidate(0, inputElement.value = hexValue, inputElement);
+    	};
+
+    	onMount(function () {
+    		setHexValue(hue, saturation, lightness);
+    	});
+
     	function updateValues() {
-    		var hsl = hex2Hsl(hexValue);
-    		$$invalidate(4, hue = Math.round(hsl.h));
-    		$$invalidate(5, saturation = Math.round(hsl.s));
-    		$$invalidate(6, lightness = Math.round(hsl.l));
+    		var hsl = hex2Hsl(inputElement.value);
+    		$$invalidate(3, hue = Math.round(hsl.h));
+    		$$invalidate(4, saturation = Math.round(hsl.s));
+    		$$invalidate(5, lightness = Math.round(hsl.l));
     		dispatch("input");
     	}
 
@@ -4345,11 +4360,6 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<HSLColorPicker> was created with unknown prop '${key}'`);
     	});
 
-    	function input_input_handler() {
-    		hexValue = this.value;
-    		((($$invalidate(1, hexValue), $$invalidate(4, hue)), $$invalidate(5, saturation)), $$invalidate(6, lightness));
-    	}
-
     	function input_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
     			inputElement = $$value;
@@ -4358,20 +4368,22 @@ var app = (function () {
     	}
 
     	$$self.$$set = $$props => {
-    		if ('hue' in $$props) $$invalidate(4, hue = $$props.hue);
-    		if ('saturation' in $$props) $$invalidate(5, saturation = $$props.saturation);
-    		if ('lightness' in $$props) $$invalidate(6, lightness = $$props.lightness);
+    		if ('hue' in $$props) $$invalidate(3, hue = $$props.hue);
+    		if ('saturation' in $$props) $$invalidate(4, saturation = $$props.saturation);
+    		if ('lightness' in $$props) $$invalidate(5, lightness = $$props.lightness);
     	};
 
     	$$self.$capture_state = () => ({
     		current,
     		createEventDispatcher,
+    		onMount,
     		dispatch,
     		hue,
     		saturation,
     		lightness,
     		inputElement,
     		hexValue,
+    		setHexValue,
     		hex2Hsl,
     		hsl2Hex,
     		updateValues,
@@ -4379,11 +4391,12 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('hue' in $$props) $$invalidate(4, hue = $$props.hue);
-    		if ('saturation' in $$props) $$invalidate(5, saturation = $$props.saturation);
-    		if ('lightness' in $$props) $$invalidate(6, lightness = $$props.lightness);
+    		if ('hue' in $$props) $$invalidate(3, hue = $$props.hue);
+    		if ('saturation' in $$props) $$invalidate(4, saturation = $$props.saturation);
+    		if ('lightness' in $$props) $$invalidate(5, lightness = $$props.lightness);
     		if ('inputElement' in $$props) $$invalidate(0, inputElement = $$props.inputElement);
-    		if ('hexValue' in $$props) $$invalidate(1, hexValue = $$props.hexValue);
+    		if ('hexValue' in $$props) hexValue = $$props.hexValue;
+    		if ('setHexValue' in $$props) $$invalidate(9, setHexValue = $$props.setHexValue);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -4391,20 +4404,18 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*hue, saturation, lightness*/ 112) {
-    			$$invalidate(1, hexValue = hsl2Hex({ h: hue, s: saturation, l: lightness }));
+    		if ($$self.$$.dirty & /*hue, saturation, lightness*/ 56) {
+    			setHexValue(hue, saturation, lightness);
     		}
     	};
 
     	return [
     		inputElement,
-    		hexValue,
     		updateValues,
     		onChange,
     		hue,
     		saturation,
     		lightness,
-    		input_input_handler,
     		input_binding
     	];
     }
@@ -4412,7 +4423,7 @@ var app = (function () {
     class HSLColorPicker extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { hue: 4, saturation: 5, lightness: 6 });
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { hue: 3, saturation: 4, lightness: 5 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -4423,7 +4434,7 @@ var app = (function () {
     	}
 
     	get hue() {
-    		return this.$$.ctx[4];
+    		return this.$$.ctx[3];
     	}
 
     	set hue(hue) {
@@ -4432,7 +4443,7 @@ var app = (function () {
     	}
 
     	get saturation() {
-    		return this.$$.ctx[5];
+    		return this.$$.ctx[4];
     	}
 
     	set saturation(saturation) {
@@ -4441,7 +4452,7 @@ var app = (function () {
     	}
 
     	get lightness() {
-    		return this.$$.ctx[6];
+    		return this.$$.ctx[5];
     	}
 
     	set lightness(lightness) {
