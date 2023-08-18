@@ -151,8 +151,8 @@
             flareComponents.miIris.options.roundness = flareSettings.miIris.roundness;
             flareComponents.miIris.options.fillAlpha = flareSettings.miIris.fillAlpha;
             flareComponents.miIris.options.fringeAlpha = flareSettings.miIris.fringeAlpha;
-            flareComponents.miIris.options.fringeSize = Math.floor(flareSettings.miIris.fringeSize / flareSettings.downscaling);
-            flareComponents.miIris.options.blur = Math.floor(flareSettings.miIris.blur / flareSettings.downscaling);
+            flareComponents.miIris.options.fringeSize = flareSettings.miIris.fringeSize / flareSettings.downscaling;
+            flareComponents.miIris.options.blur = flareSettings.miIris.blur / flareSettings.downscaling;
             flareComponents.miIris.options.angle = flareSettings.miIris.angle;
             flareComponents.miIris.options.hue = flareSettings.miIris.hue;
             flareComponents.miIris.options.saturation = flareSettings.miIris.saturation;
@@ -160,7 +160,7 @@
         }
         if (renderGlow) {
             flareComponents.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
-            flareComponents.glow.options.intensity = Math.floor(-flareSettings.glow.softening / flareSettings.downscaling);
+            flareComponents.glow.options.intensity = -flareSettings.glow.softening / flareSettings.downscaling;
             flareComponents.glow.options.hue = flareSettings.glow.hue;
             flareComponents.glow.options.saturation = flareSettings.glow.saturation;
             flareComponents.glow.render();
