@@ -110,6 +110,11 @@
             saturation: 100,
             anamorph: 0,
         },
+        lensOrbs: {
+            count: 100,
+            threshold: 800,
+            seed: 124,
+        },
     };
 
     var baseCanvas, referenceImage;
@@ -204,6 +209,17 @@
         }
 
         drawComponent(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
+
+        var lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
+        for (var i = 1; i < flareSettings.lensOrbs.count; i++) {
+            var orbPosition = {
+                x: lensOrbsRng() * flareSettings.dimensions.width,
+                y: lensOrbsRng() * flareSettings.dimensions.height,
+            };
+            var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
+            var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 25);
+            drawComponent(ctx, flareComponents.miIris, orbPosition.x, orbPosition.y, 100, 100, 0, orbAlpha, 0, flareSettings.sizeMultiplier);
+        }
     }
 
     window.onload = function() { renderFlare(true, true, true, true, true); };
