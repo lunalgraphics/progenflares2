@@ -11,6 +11,7 @@
     export let min = 0;
     export let max;
     export let step = 1;
+    export let className = null;
 
     let numberElement;
     let rangeElement;
@@ -25,7 +26,7 @@
     }
 </script>
 
-<slider>
+<slider class={className}>
 <input type="range" min={min} max={max} bind:value={value} step={step} bind:this={rangeElement} on:input={updateValues} on:change={onChange} />
 <input type="number" bind:value={value} step={step} bind:this={numberElement} on:input={updateValues} on:change={onChange} />
 </slider>
