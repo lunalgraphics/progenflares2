@@ -4219,7 +4219,7 @@ var app = (function () {
     const { document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (351:0) <Collapsible title={"Global"} collapsed={false}>
+    // (381:0) <Collapsible title={"Global"} collapsed={false}>
     function create_default_slot_5(ctx) {
     	let t0;
     	let slider0;
@@ -4353,15 +4353,15 @@ var app = (function () {
     			t9 = space();
     			br4 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 351, 151, 18045);
+    			add_location(br0, file, 381, 151, 19954);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 352, 152, 18204);
+    			add_location(br1, file, 382, 152, 20113);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 353, 156, 18367);
+    			add_location(br2, file, 383, 156, 20276);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 354, 157, 18531);
+    			add_location(br3, file, 384, 157, 20440);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 355, 144, 18682);
+    			add_location(br4, file, 385, 144, 20591);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4482,14 +4482,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(351:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
+    		source: "(381:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (358:0) <Collapsible title={"Hotspot"}>
+    // (388:0) <Collapsible title={"Hotspot"}>
     function create_default_slot_4(ctx) {
     	let t0;
     	let slider0;
@@ -4726,25 +4726,25 @@ var app = (function () {
     			t19 = space();
     			br9 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 358, 126, 18862);
+    			add_location(br0, file, 388, 126, 20771);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 359, 126, 18995);
+    			add_location(br1, file, 389, 126, 20904);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 360, 144, 19146);
+    			add_location(br2, file, 390, 144, 21055);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 361, 136, 19289);
+    			add_location(br3, file, 391, 136, 21198);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 362, 127, 19423);
+    			add_location(br4, file, 392, 127, 21332);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 363, 133, 19563);
+    			add_location(br5, file, 393, 133, 21472);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 364, 164, 19734);
+    			add_location(br6, file, 394, 164, 21643);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 365, 160, 19901);
+    			add_location(br7, file, 395, 160, 21810);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 366, 142, 20050);
+    			add_location(br8, file, 396, 142, 21959);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 367, 132, 20189);
+    			add_location(br9, file, 397, 132, 22098);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4956,14 +4956,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(358:0) <Collapsible title={\\\"Hotspot\\\"}>",
+    		source: "(388:0) <Collapsible title={\\\"Hotspot\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (370:0) <Collapsible title={"Streak"}>
+    // (400:0) <Collapsible title={"Streak"}>
     function create_default_slot_3(ctx) {
     	let t0;
     	let slider0;
@@ -5177,23 +5177,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 370, 132, 20374);
+    			add_location(br0, file, 400, 132, 22283);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 371, 132, 20513);
+    			add_location(br1, file, 401, 132, 22422);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 372, 150, 20670);
+    			add_location(br2, file, 402, 150, 22579);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 373, 142, 20819);
+    			add_location(br3, file, 403, 142, 22728);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 374, 140, 20966);
+    			add_location(br4, file, 404, 140, 22875);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 375, 134, 21107);
+    			add_location(br5, file, 405, 134, 23016);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 376, 141, 21255);
+    			add_location(br6, file, 406, 141, 23164);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 377, 133, 21395);
+    			add_location(br7, file, 407, 133, 23304);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 378, 132, 21534);
+    			add_location(br8, file, 408, 132, 23443);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5386,14 +5386,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(370:0) <Collapsible title={\\\"Streak\\\"}>",
+    		source: "(400:0) <Collapsible title={\\\"Streak\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (381:0) <Collapsible title={"Ring"}>
+    // (411:0) <Collapsible title={"Ring"}>
     function create_default_slot_2(ctx) {
     	let t0;
     	let slider0;
@@ -5607,23 +5607,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 381, 137, 21722);
+    			add_location(br0, file, 411, 137, 23631);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 382, 155, 21884);
+    			add_location(br1, file, 412, 155, 23793);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 383, 147, 22038);
+    			add_location(br2, file, 413, 147, 23947);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 384, 137, 22182);
+    			add_location(br3, file, 414, 137, 24091);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 385, 145, 22334);
+    			add_location(br4, file, 415, 145, 24243);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 386, 138, 22479);
+    			add_location(br5, file, 416, 138, 24388);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 387, 144, 22630);
+    			add_location(br6, file, 417, 144, 24539);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 388, 152, 22789);
+    			add_location(br7, file, 418, 152, 24698);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 389, 143, 22939);
+    			add_location(br8, file, 419, 143, 24848);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5816,14 +5816,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(381:0) <Collapsible title={\\\"Ring\\\"}>",
+    		source: "(411:0) <Collapsible title={\\\"Ring\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (392:0) <Collapsible title={"Multi-Iris"}>
+    // (422:0) <Collapsible title={"Multi-Iris"}>
     function create_default_slot_1(ctx) {
     	let t0;
     	let slider0;
@@ -6267,43 +6267,43 @@ var app = (function () {
     			t37 = space();
     			br18 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 392, 155, 23151);
+    			add_location(br0, file, 422, 155, 25060);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 393, 159, 23317);
+    			add_location(br1, file, 423, 159, 25226);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 394, 146, 23470);
+    			add_location(br2, file, 424, 146, 25379);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 395, 164, 23641);
+    			add_location(br3, file, 425, 164, 25550);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 396, 156, 23804);
+    			add_location(br4, file, 426, 156, 25713);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 397, 146, 23957);
+    			add_location(br5, file, 427, 146, 25866);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 398, 145, 24109);
+    			add_location(br6, file, 428, 145, 26018);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 399, 154, 24270);
+    			add_location(br7, file, 429, 154, 26179);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 400, 157, 24434);
+    			add_location(br8, file, 430, 157, 26343);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 401, 147, 24588);
+    			add_location(br9, file, 431, 147, 26497);
     			attr_dev(br10, "class", "svelte-viz99f");
-    			add_location(br10, file, 402, 160, 24755);
+    			add_location(br10, file, 432, 160, 26664);
     			attr_dev(br11, "class", "svelte-viz99f");
-    			add_location(br11, file, 403, 154, 24916);
+    			add_location(br11, file, 433, 154, 26825);
     			attr_dev(br12, "class", "svelte-viz99f");
-    			add_location(br12, file, 404, 148, 25071);
+    			add_location(br12, file, 434, 148, 26980);
     			attr_dev(br13, "class", "svelte-viz99f");
-    			add_location(br13, file, 405, 161, 25239);
+    			add_location(br13, file, 435, 161, 27148);
     			attr_dev(br14, "class", "svelte-viz99f");
-    			add_location(br14, file, 406, 158, 25404);
+    			add_location(br14, file, 436, 158, 27313);
     			attr_dev(br15, "class", "svelte-viz99f");
-    			add_location(br15, file, 407, 163, 25574);
+    			add_location(br15, file, 437, 163, 27483);
     			attr_dev(br16, "class", "svelte-viz99f");
-    			add_location(br16, file, 408, 159, 25740);
+    			add_location(br16, file, 438, 159, 27649);
     			attr_dev(br17, "class", "svelte-viz99f");
-    			add_location(br17, file, 409, 151, 25898);
+    			add_location(br17, file, 439, 151, 27807);
     			attr_dev(br18, "class", "svelte-viz99f");
-    			add_location(br18, file, 410, 152, 26057);
+    			add_location(br18, file, 440, 152, 27966);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6686,14 +6686,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(392:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
+    		source: "(422:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (413:0) <Collapsible title={"Glow"}>
+    // (443:0) <Collapsible title={"Glow"}>
     function create_default_slot(ctx) {
     	let t0;
     	let slider0;
@@ -6838,17 +6838,17 @@ var app = (function () {
     			t11 = space();
     			br5 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 413, 151, 26259);
+    			add_location(br0, file, 443, 151, 28168);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 414, 169, 26435);
+    			add_location(br1, file, 444, 169, 28344);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 415, 161, 26603);
+    			add_location(br2, file, 445, 161, 28512);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 416, 152, 26762);
+    			add_location(br3, file, 446, 152, 28671);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 417, 158, 26927);
+    			add_location(br4, file, 447, 158, 28836);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 418, 157, 27091);
+    			add_location(br5, file, 448, 157, 29000);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6984,14 +6984,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(413:0) <Collapsible title={\\\"Glow\\\"}>",
+    		source: "(443:0) <Collapsible title={\\\"Glow\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (423:0) {#if startScreenVisible}
+    // (453:0) {#if startScreenVisible}
     function create_if_block(ctx) {
     	let div2;
     	let div0;
@@ -7074,54 +7074,54 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
-    			add_location(div0, file, 424, 8, 27192);
+    			add_location(div0, file, 454, 8, 29101);
     			attr_dev(img, "alt", "PROGEN FLARES 2");
     			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "321");
     			attr_dev(img, "draggable", false);
     			attr_dev(img, "class", "svelte-viz99f");
-    			add_location(img, file, 426, 12, 27441);
+    			add_location(img, file, 456, 12, 29350);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 427, 12, 27534);
+    			add_location(br0, file, 457, 12, 29443);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 427, 19, 27541);
+    			add_location(br1, file, 457, 19, 29450);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 428, 12, 27560);
+    			add_location(span0, file, 458, 12, 29469);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-viz99f");
-    			add_location(input0, file, 428, 102, 27650);
+    			add_location(input0, file, 458, 102, 29559);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 429, 12, 27753);
+    			add_location(br2, file, 459, 12, 29662);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 430, 12, 27772);
+    			add_location(span1, file, 460, 12, 29681);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-viz99f");
-    			add_location(input1, file, 430, 103, 27863);
+    			add_location(input1, file, 460, 103, 29772);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 431, 12, 27967);
+    			add_location(br3, file, 461, 12, 29876);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 431, 19, 27974);
+    			add_location(br4, file, 461, 19, 29883);
     			attr_dev(button, "class", "svelte-viz99f");
-    			add_location(button, file, 432, 12, 27993);
+    			add_location(button, file, 462, 12, 29902);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 433, 12, 28048);
+    			add_location(br5, file, 463, 12, 29957);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 433, 19, 28055);
+    			add_location(br6, file, 463, 19, 29964);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 434, 71, 28133);
+    			add_location(br7, file, 464, 71, 30042);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-viz99f");
-    			add_location(span2, file, 434, 12, 28074);
+    			add_location(span2, file, 464, 12, 29983);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 425, 8, 27374);
+    			add_location(div1, file, 455, 8, 29283);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 423, 4, 27150);
+    			add_location(div2, file, 453, 4, 29059);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -7202,7 +7202,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(423:0) {#if startScreenVisible}",
+    		source: "(453:0) {#if startScreenVisible}",
     		ctx
     	});
 
@@ -7392,80 +7392,80 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t31 = space();
     			attr_dev(button0, "class", "svelte-viz99f");
-    			add_location(button0, file, 306, 0, 16026);
+    			add_location(button0, file, 336, 0, 17935);
     			attr_dev(span0, "style", "display: inline-block; margin-left: 5px; margin-right: 5px;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 307, 0, 16106);
+    			add_location(span0, file, 337, 0, 18015);
     			option0.__value = "png";
     			option0.value = option0.__value;
     			attr_dev(option0, "class", "svelte-viz99f");
-    			add_location(option0, file, 309, 4, 16243);
+    			add_location(option0, file, 339, 4, 18152);
     			option1.__value = "jpeg";
     			option1.value = option1.__value;
     			attr_dev(option1, "class", "svelte-viz99f");
-    			add_location(option1, file, 310, 4, 16282);
+    			add_location(option1, file, 340, 4, 18191);
     			option2.__value = "webp";
     			option2.value = option2.__value;
     			attr_dev(option2, "class", "svelte-viz99f");
-    			add_location(option2, file, 311, 4, 16322);
+    			add_location(option2, file, 341, 4, 18231);
     			attr_dev(select0, "class", "svelte-viz99f");
     			if (/*flareSettings*/ ctx[0].exportType === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[14].call(select0));
-    			add_location(select0, file, 308, 0, 16192);
+    			add_location(select0, file, 338, 0, 18101);
     			attr_dev(div0, "id", "exportPanel");
     			attr_dev(div0, "class", "svelte-viz99f");
-    			add_location(div0, file, 305, 0, 16001);
+    			add_location(div0, file, 335, 0, 17910);
     			attr_dev(canvas0, "id", "referenceImage");
     			attr_dev(canvas0, "width", canvas0_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas0, "height", canvas0_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas0, file, 316, 4, 16412);
+    			add_location(canvas0, file, 346, 4, 18321);
     			attr_dev(canvas1, "id", "baseCanvas");
     			attr_dev(canvas1, "width", canvas1_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas1, "height", canvas1_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas1, file, 317, 4, 16582);
+    			add_location(canvas1, file, 347, 4, 18491);
     			attr_dev(div1, "id", "previewSection");
     			attr_dev(div1, "class", "svelte-viz99f");
-    			add_location(div1, file, 315, 0, 16377);
+    			add_location(div1, file, 345, 0, 18286);
     			option3.__value = 1;
     			option3.value = option3.__value;
     			attr_dev(option3, "class", "svelte-viz99f");
-    			add_location(option3, file, 323, 4, 16970);
+    			add_location(option3, file, 353, 4, 18879);
     			option4.__value = 5 / 4;
     			option4.value = option4.__value;
     			attr_dev(option4, "class", "svelte-viz99f");
-    			add_location(option4, file, 324, 4, 17006);
+    			add_location(option4, file, 354, 4, 18915);
     			option5.__value = 5 / 3;
     			option5.value = option5.__value;
     			attr_dev(option5, "class", "svelte-viz99f");
-    			add_location(option5, file, 325, 4, 17043);
+    			add_location(option5, file, 355, 4, 18952);
     			option6.__value = 5 / 2;
     			option6.value = option6.__value;
     			attr_dev(option6, "class", "svelte-viz99f");
-    			add_location(option6, file, 326, 4, 17080);
+    			add_location(option6, file, 356, 4, 18989);
     			option7.__value = 5;
     			option7.value = option7.__value;
     			attr_dev(option7, "class", "svelte-viz99f");
-    			add_location(option7, file, 327, 4, 17117);
+    			add_location(option7, file, 357, 4, 19026);
     			attr_dev(select1, "class", "svelte-viz99f");
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[17].call(select1));
-    			add_location(select1, file, 322, 0, 16848);
+    			add_location(select1, file, 352, 0, 18757);
     			attr_dev(span1, "style", "white-space: pre; color: grey;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 329, 0, 17158);
+    			add_location(span1, file, 359, 0, 19067);
     			attr_dev(input, "type", "checkbox");
     			input.checked = true;
     			attr_dev(input, "style", "margin-bottom: 0;");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 330, 0, 17226);
+    			add_location(input, file, 360, 0, 19135);
     			attr_dev(button1, "class", "svelte-viz99f");
-    			add_location(button1, file, 332, 0, 17363);
+    			add_location(button1, file, 362, 0, 19272);
     			attr_dev(div2, "id", "sectionAbovePreview");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 320, 0, 16799);
+    			add_location(div2, file, 350, 0, 18708);
     			attr_dev(button2, "style", "float: right;");
     			attr_dev(button2, "class", "svelte-viz99f");
-    			add_location(button2, file, 347, 4, 17726);
+    			add_location(button2, file, 377, 4, 19635);
 
     			attr_dev(div3, "style", `
     position: sticky;
@@ -7478,10 +7478,10 @@ var app = (function () {
 `);
 
     			attr_dev(div3, "class", "svelte-viz99f");
-    			add_location(div3, file, 337, 0, 17448);
+    			add_location(div3, file, 367, 0, 19357);
     			attr_dev(div4, "id", "controlPanel");
     			attr_dev(div4, "class", "svelte-viz99f");
-    			add_location(div4, file, 335, 0, 17421);
+    			add_location(div4, file, 365, 0, 19330);
     			document_1.title = "Progen Flares 2";
     		},
     		l: function claim(nodes) {
@@ -7721,7 +7721,8 @@ var app = (function () {
     		streak: new SpotComponent(256, { deformationAmount: 0, intensity: 0 }),
     		ring: new RingComponent(256, { cropSize: 0 }),
     		miIris: new IrisComponent(256, { roundness: 20 }),
-    		glow: new SpotComponent(256, { deformationAmount: 0, intensity: -50 })
+    		glow: new SpotComponent(256, { deformationAmount: 0, intensity: -50 }),
+    		lensOrbs: new IrisComponent(256, {})
     	};
 
     	var flareSettings = {
@@ -7794,7 +7795,25 @@ var app = (function () {
     			saturation: 100,
     			anamorph: 0
     		},
-    		lensOrbs: { count: 100, threshold: 800, seed: 124 }
+    		lensOrbs: {
+    			radius: 45,
+    			sides: 6,
+    			roundness: 100,
+    			angle: 0,
+    			fillAlpha: 8,
+    			fringeAlpha: 11,
+    			fringeSize: 17,
+    			blur: 5,
+    			count: 100,
+    			threshold: 800,
+    			seed: 124,
+    			sizeVariance: 0,
+    			alphaVariance: 50,
+    			hue: 200,
+    			saturation: 100,
+    			hueVariance: 360,
+    			anamorph: 0
+    		}
     	};
 
     	var baseCanvas, referenceImage;
@@ -7804,7 +7823,8 @@ var app = (function () {
     	renderStreak = false,
     	renderRing = false,
     	renderMI = false,
-    	renderGlow = false
+    	renderGlow = false,
+    	renderLensOrbs = false
     	) {
     		if (renderHotspot) {
     			flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
@@ -7861,6 +7881,20 @@ var app = (function () {
     			flareComponents.glow.render();
     		}
 
+    		if (renderLensOrbs) {
+    			flareComponents.lensOrbs.radius = Math.floor(flareSettings.lensOrbs.radius / flareSettings.downscaling);
+    			flareComponents.lensOrbs.options.sides = flareSettings.lensOrbs.sides;
+    			flareComponents.lensOrbs.options.roundness = flareSettings.lensOrbs.roundness;
+    			flareComponents.lensOrbs.options.fillAlpha = flareSettings.lensOrbs.fillAlpha;
+    			flareComponents.lensOrbs.options.fringeAlpha = flareSettings.lensOrbs.fringeAlpha;
+    			flareComponents.lensOrbs.options.fringeSize = flareSettings.lensOrbs.fringeSize / flareSettings.downscaling;
+    			flareComponents.lensOrbs.options.blur = flareSettings.lensOrbs.blur / flareSettings.downscaling;
+    			flareComponents.lensOrbs.options.angle = flareSettings.lensOrbs.angle;
+    			flareComponents.lensOrbs.options.hue = flareSettings.lensOrbs.hue;
+    			flareComponents.lensOrbs.options.saturation = flareSettings.lensOrbs.saturation;
+    			flareComponents.lensOrbs.render();
+    		}
+
     		var ctx = baseCanvas.getContext("2d");
     		ctx.restore();
     		ctx.save();
@@ -7913,13 +7947,15 @@ var app = (function () {
     			};
 
     			var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
-    			var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 25);
-    			drawComponent_1(ctx, flareComponents.miIris, orbPosition.x, orbPosition.y, 100, 100, 0, orbAlpha, 0, flareSettings.sizeMultiplier);
+    			var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
+    			orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
+    			var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
+    			drawComponent_1(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), flareSettings.lensOrbs.angle, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
     		}
     	}
 
     	window.onload = function () {
-    		renderFlare(true, true, true, true, true);
+    		renderFlare(true, true, true, true, true, true);
     	};
 
     	function handleClickDrag(e) {

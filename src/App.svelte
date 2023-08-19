@@ -30,6 +30,7 @@
             deformationAmount: 0,
             intensity: -50,
         }),
+        lensOrbs: new IrisComponent(256, {}),
     };
 
     var flareSettings = {
@@ -111,15 +112,29 @@
             anamorph: 0,
         },
         lensOrbs: {
+            radius: 45,
+            sides: 6,
+            roundness: 100,
+            angle: 0,
+            fillAlpha: 8,
+            fringeAlpha: 11,
+            fringeSize: 17,
+            blur: 5,
             count: 100,
             threshold: 800,
             seed: 124,
+            sizeVariance: 0,
+            alphaVariance: 50,
+            hue: 200,
+            saturation: 100,
+            hueVariance: 360,
+            anamorph: 0,
         },
     };
 
     var baseCanvas, referenceImage;
     
-    function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false) {
+    function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false, renderLensOrbs=false) {
         if (renderHotspot) {
             flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
             flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity / flareSettings.downscaling;
@@ -170,6 +185,19 @@
             flareComponents.glow.options.saturation = flareSettings.glow.saturation;
             flareComponents.glow.render();
         }
+        if (renderLensOrbs) {
+            flareComponents.lensOrbs.radius = Math.floor(flareSettings.lensOrbs.radius / flareSettings.downscaling);
+            flareComponents.lensOrbs.options.sides = flareSettings.lensOrbs.sides;
+            flareComponents.lensOrbs.options.roundness = flareSettings.lensOrbs.roundness;
+            flareComponents.lensOrbs.options.fillAlpha = flareSettings.lensOrbs.fillAlpha;
+            flareComponents.lensOrbs.options.fringeAlpha = flareSettings.lensOrbs.fringeAlpha;
+            flareComponents.lensOrbs.options.fringeSize = flareSettings.lensOrbs.fringeSize / flareSettings.downscaling;
+            flareComponents.lensOrbs.options.blur = flareSettings.lensOrbs.blur / flareSettings.downscaling;
+            flareComponents.lensOrbs.options.angle = flareSettings.lensOrbs.angle;
+            flareComponents.lensOrbs.options.hue = flareSettings.lensOrbs.hue;
+            flareComponents.lensOrbs.options.saturation = flareSettings.lensOrbs.saturation;
+            flareComponents.lensOrbs.render();
+        }
 
         var ctx = baseCanvas.getContext("2d");
         ctx.restore();
@@ -217,12 +245,14 @@
                 y: lensOrbsRng() * flareSettings.dimensions.height,
             };
             var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
-            var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 25);
-            drawComponent(ctx, flareComponents.miIris, orbPosition.x, orbPosition.y, 100, 100, 0, orbAlpha, 0, flareSettings.sizeMultiplier);
+            var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
+            orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
+            var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
+            drawComponent(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), flareSettings.lensOrbs.angle, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
         }
     }
 
-    window.onload = function() { renderFlare(true, true, true, true, true); };
+    window.onload = function() { renderFlare(true, true, true, true, true, true); };
 
     function handleClickDrag(e) {
         //console.log(e.detail);
