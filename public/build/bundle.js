@@ -4219,7 +4219,7 @@ var app = (function () {
     const { document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (381:0) <Collapsible title={"Global"} collapsed={false}>
+    // (403:0) <Collapsible title={"Global"} collapsed={false}>
     function create_default_slot_5(ctx) {
     	let t0;
     	let slider0;
@@ -4249,7 +4249,7 @@ var app = (function () {
     	let current;
 
     	function slider0_value_binding(value) {
-    		/*slider0_value_binding*/ ctx[22](value);
+    		/*slider0_value_binding*/ ctx[23](value);
     	}
 
     	let slider0_props = {
@@ -4263,10 +4263,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding));
-    	slider0.$on("input", /*input_handler*/ ctx[23]);
+    	slider0.$on("input", /*input_handler*/ ctx[24]);
 
     	function slider1_value_binding(value) {
-    		/*slider1_value_binding*/ ctx[24](value);
+    		/*slider1_value_binding*/ ctx[25](value);
     	}
 
     	let slider1_props = {
@@ -4280,10 +4280,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding));
-    	slider1.$on("input", /*input_handler_1*/ ctx[25]);
+    	slider1.$on("input", /*input_handler_1*/ ctx[26]);
 
     	function slider2_value_binding(value) {
-    		/*slider2_value_binding*/ ctx[26](value);
+    		/*slider2_value_binding*/ ctx[27](value);
     	}
 
     	let slider2_props = {
@@ -4297,10 +4297,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding));
-    	slider2.$on("input", /*input_handler_2*/ ctx[27]);
+    	slider2.$on("input", /*input_handler_2*/ ctx[28]);
 
     	function slider3_value_binding(value) {
-    		/*slider3_value_binding*/ ctx[28](value);
+    		/*slider3_value_binding*/ ctx[29](value);
     	}
 
     	let slider3_props = {
@@ -4314,13 +4314,13 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding));
-    	slider3.$on("input", /*input_handler_3*/ ctx[29]);
+    	slider3.$on("input", /*input_handler_3*/ ctx[30]);
 
     	function slider4_value_binding(value) {
-    		/*slider4_value_binding*/ ctx[30](value);
+    		/*slider4_value_binding*/ ctx[31](value);
     	}
 
-    	let slider4_props = { min: 0, max: 2, step: 0.01 };
+    	let slider4_props = { min: 0.01, max: 2, step: 0.01 };
 
     	if (/*flareSettings*/ ctx[0].sizeMultiplier !== void 0) {
     		slider4_props.value = /*flareSettings*/ ctx[0].sizeMultiplier;
@@ -4328,7 +4328,8 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding));
-    	slider4.$on("input", /*input_handler_4*/ ctx[31]);
+    	slider4.$on("input", /*input_handler_4*/ ctx[32]);
+    	slider4.$on("change", /*handleScaleMultiplier*/ ctx[13]);
 
     	const block = {
     		c: function create() {
@@ -4353,15 +4354,15 @@ var app = (function () {
     			t9 = space();
     			br4 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 381, 151, 19954);
+    			add_location(br0, file, 403, 151, 21286);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 382, 152, 20113);
+    			add_location(br1, file, 404, 152, 21445);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 383, 156, 20276);
+    			add_location(br2, file, 405, 156, 21608);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 384, 157, 20440);
+    			add_location(br3, file, 406, 157, 21772);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 385, 144, 20591);
+    			add_location(br4, file, 407, 181, 21960);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4482,14 +4483,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(381:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
+    		source: "(403:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (388:0) <Collapsible title={"Hotspot"}>
+    // (410:0) <Collapsible title={"Hotspot"}>
     function create_default_slot_4(ctx) {
     	let t0;
     	let slider0;
@@ -4544,7 +4545,7 @@ var app = (function () {
     	let current;
 
     	function slider0_value_binding_1(value) {
-    		/*slider0_value_binding_1*/ ctx[32](value);
+    		/*slider0_value_binding_1*/ ctx[33](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -4555,10 +4556,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_1));
-    	slider0.$on("input", /*input_handler_5*/ ctx[33]);
+    	slider0.$on("input", /*input_handler_5*/ ctx[34]);
 
     	function slider1_value_binding_1(value) {
-    		/*slider1_value_binding_1*/ ctx[34](value);
+    		/*slider1_value_binding_1*/ ctx[35](value);
     	}
 
     	let slider1_props = { min: 0, max: 360 };
@@ -4569,10 +4570,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_1));
-    	slider1.$on("input", /*input_handler_6*/ ctx[35]);
+    	slider1.$on("input", /*input_handler_6*/ ctx[36]);
 
     	function slider2_value_binding_1(value) {
-    		/*slider2_value_binding_1*/ ctx[36](value);
+    		/*slider2_value_binding_1*/ ctx[37](value);
     	}
 
     	let slider2_props = { min: 0, max: 360, className: "hueSlider" };
@@ -4583,10 +4584,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_1));
-    	slider2.$on("input", /*input_handler_7*/ ctx[37]);
+    	slider2.$on("input", /*input_handler_7*/ ctx[38]);
 
     	function slider3_value_binding_1(value) {
-    		/*slider3_value_binding_1*/ ctx[38](value);
+    		/*slider3_value_binding_1*/ ctx[39](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -4597,10 +4598,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_1));
-    	slider3.$on("input", /*input_handler_8*/ ctx[39]);
+    	slider3.$on("input", /*input_handler_8*/ ctx[40]);
 
     	function slider4_value_binding_1(value) {
-    		/*slider4_value_binding_1*/ ctx[40](value);
+    		/*slider4_value_binding_1*/ ctx[41](value);
     	}
 
     	let slider4_props = { min: 0, max: 1000 };
@@ -4611,10 +4612,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_1));
-    	slider4.$on("input", /*input_handler_9*/ ctx[41]);
+    	slider4.$on("input", /*input_handler_9*/ ctx[42]);
 
     	function slider5_value_binding(value) {
-    		/*slider5_value_binding*/ ctx[42](value);
+    		/*slider5_value_binding*/ ctx[43](value);
     	}
 
     	let slider5_props = { min: 0, max: 50 };
@@ -4625,10 +4626,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding));
-    	slider5.$on("input", /*input_handler_10*/ ctx[43]);
+    	slider5.$on("input", /*input_handler_10*/ ctx[44]);
 
     	function slider6_value_binding(value) {
-    		/*slider6_value_binding*/ ctx[44](value);
+    		/*slider6_value_binding*/ ctx[45](value);
     	}
 
     	let slider6_props = { min: 0, max: 0.05, step: 0.001 };
@@ -4639,10 +4640,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding));
-    	slider6.$on("input", /*input_handler_11*/ ctx[45]);
+    	slider6.$on("input", /*input_handler_11*/ ctx[46]);
 
     	function slider7_value_binding(value) {
-    		/*slider7_value_binding*/ ctx[46](value);
+    		/*slider7_value_binding*/ ctx[47](value);
     	}
 
     	let slider7_props = { min: 0, max: 2.1, step: 0.01 };
@@ -4653,10 +4654,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding));
-    	slider7.$on("input", /*input_handler_12*/ ctx[47]);
+    	slider7.$on("input", /*input_handler_12*/ ctx[48]);
 
     	function slider8_value_binding(value) {
-    		/*slider8_value_binding*/ ctx[48](value);
+    		/*slider8_value_binding*/ ctx[49](value);
     	}
 
     	let slider8_props = { min: 1, max: 999 };
@@ -4667,10 +4668,10 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding));
-    	slider8.$on("input", /*input_handler_13*/ ctx[49]);
+    	slider8.$on("input", /*input_handler_13*/ ctx[50]);
 
     	function slider9_value_binding(value) {
-    		/*slider9_value_binding*/ ctx[50](value);
+    		/*slider9_value_binding*/ ctx[51](value);
     	}
 
     	let slider9_props = { min: 0, max: 100 };
@@ -4681,7 +4682,7 @@ var app = (function () {
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding));
-    	slider9.$on("input", /*input_handler_14*/ ctx[51]);
+    	slider9.$on("input", /*input_handler_14*/ ctx[52]);
 
     	const block = {
     		c: function create() {
@@ -4726,25 +4727,25 @@ var app = (function () {
     			t19 = space();
     			br9 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 388, 126, 20771);
+    			add_location(br0, file, 410, 126, 22140);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 389, 126, 20904);
+    			add_location(br1, file, 411, 126, 22273);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 390, 144, 21055);
+    			add_location(br2, file, 412, 144, 22424);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 391, 136, 21198);
+    			add_location(br3, file, 413, 136, 22567);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 392, 127, 21332);
+    			add_location(br4, file, 414, 127, 22701);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 393, 133, 21472);
+    			add_location(br5, file, 415, 133, 22841);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 394, 164, 21643);
+    			add_location(br6, file, 416, 164, 23012);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 395, 160, 21810);
+    			add_location(br7, file, 417, 160, 23179);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 396, 142, 21959);
+    			add_location(br8, file, 418, 142, 23328);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 397, 132, 22098);
+    			add_location(br9, file, 419, 132, 23467);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4956,14 +4957,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(388:0) <Collapsible title={\\\"Hotspot\\\"}>",
+    		source: "(410:0) <Collapsible title={\\\"Hotspot\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (400:0) <Collapsible title={"Streak"}>
+    // (422:0) <Collapsible title={"Streak"}>
     function create_default_slot_3(ctx) {
     	let t0;
     	let slider0;
@@ -5013,7 +5014,7 @@ var app = (function () {
     	let current;
 
     	function slider0_value_binding_2(value) {
-    		/*slider0_value_binding_2*/ ctx[52](value);
+    		/*slider0_value_binding_2*/ ctx[53](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -5024,10 +5025,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_2));
-    	slider0.$on("input", /*input_handler_15*/ ctx[53]);
+    	slider0.$on("input", /*input_handler_15*/ ctx[54]);
 
     	function slider1_value_binding_2(value) {
-    		/*slider1_value_binding_2*/ ctx[54](value);
+    		/*slider1_value_binding_2*/ ctx[55](value);
     	}
 
     	let slider1_props = { min: 0, max: 360 };
@@ -5038,10 +5039,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_2));
-    	slider1.$on("input", /*input_handler_16*/ ctx[55]);
+    	slider1.$on("input", /*input_handler_16*/ ctx[56]);
 
     	function slider2_value_binding_2(value) {
-    		/*slider2_value_binding_2*/ ctx[56](value);
+    		/*slider2_value_binding_2*/ ctx[57](value);
     	}
 
     	let slider2_props = { min: 0, max: 360, className: "hueSlider" };
@@ -5052,10 +5053,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_2));
-    	slider2.$on("input", /*input_handler_17*/ ctx[57]);
+    	slider2.$on("input", /*input_handler_17*/ ctx[58]);
 
     	function slider3_value_binding_2(value) {
-    		/*slider3_value_binding_2*/ ctx[58](value);
+    		/*slider3_value_binding_2*/ ctx[59](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -5066,10 +5067,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_2));
-    	slider3.$on("input", /*input_handler_18*/ ctx[59]);
+    	slider3.$on("input", /*input_handler_18*/ ctx[60]);
 
     	function slider4_value_binding_2(value) {
-    		/*slider4_value_binding_2*/ ctx[60](value);
+    		/*slider4_value_binding_2*/ ctx[61](value);
     	}
 
     	let slider4_props = { min: 0, max: 200 };
@@ -5080,10 +5081,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_2));
-    	slider4.$on("input", /*input_handler_19*/ ctx[61]);
+    	slider4.$on("input", /*input_handler_19*/ ctx[62]);
 
     	function slider5_value_binding_1(value) {
-    		/*slider5_value_binding_1*/ ctx[62](value);
+    		/*slider5_value_binding_1*/ ctx[63](value);
     	}
 
     	let slider5_props = { min: 0, max: 5000 };
@@ -5094,10 +5095,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_1));
-    	slider5.$on("input", /*input_handler_20*/ ctx[63]);
+    	slider5.$on("input", /*input_handler_20*/ ctx[64]);
 
     	function slider6_value_binding_1(value) {
-    		/*slider6_value_binding_1*/ ctx[64](value);
+    		/*slider6_value_binding_1*/ ctx[65](value);
     	}
 
     	let slider6_props = { min: -30, max: 50 };
@@ -5108,10 +5109,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_1));
-    	slider6.$on("input", /*input_handler_21*/ ctx[65]);
+    	slider6.$on("input", /*input_handler_21*/ ctx[66]);
 
     	function slider7_value_binding_1(value) {
-    		/*slider7_value_binding_1*/ ctx[66](value);
+    		/*slider7_value_binding_1*/ ctx[67](value);
     	}
 
     	let slider7_props = { min: 1, max: 8 };
@@ -5122,10 +5123,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_1));
-    	slider7.$on("input", /*input_handler_22*/ ctx[67]);
+    	slider7.$on("input", /*input_handler_22*/ ctx[68]);
 
     	function slider8_value_binding_1(value) {
-    		/*slider8_value_binding_1*/ ctx[68](value);
+    		/*slider8_value_binding_1*/ ctx[69](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -5136,7 +5137,7 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_1));
-    	slider8.$on("input", /*input_handler_23*/ ctx[69]);
+    	slider8.$on("input", /*input_handler_23*/ ctx[70]);
 
     	const block = {
     		c: function create() {
@@ -5177,23 +5178,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 400, 132, 22283);
+    			add_location(br0, file, 422, 132, 23652);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 401, 132, 22422);
+    			add_location(br1, file, 423, 132, 23791);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 402, 150, 22579);
+    			add_location(br2, file, 424, 150, 23948);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 403, 142, 22728);
+    			add_location(br3, file, 425, 142, 24097);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 404, 140, 22875);
+    			add_location(br4, file, 426, 140, 24244);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 405, 134, 23016);
+    			add_location(br5, file, 427, 134, 24385);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 406, 141, 23164);
+    			add_location(br6, file, 428, 141, 24533);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 407, 133, 23304);
+    			add_location(br7, file, 429, 133, 24673);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 408, 132, 23443);
+    			add_location(br8, file, 430, 132, 24812);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5386,14 +5387,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(400:0) <Collapsible title={\\\"Streak\\\"}>",
+    		source: "(422:0) <Collapsible title={\\\"Streak\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (411:0) <Collapsible title={"Ring"}>
+    // (433:0) <Collapsible title={"Ring"}>
     function create_default_slot_2(ctx) {
     	let t0;
     	let slider0;
@@ -5443,7 +5444,7 @@ var app = (function () {
     	let current;
 
     	function slider0_value_binding_3(value) {
-    		/*slider0_value_binding_3*/ ctx[70](value);
+    		/*slider0_value_binding_3*/ ctx[71](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -5454,10 +5455,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_3));
-    	slider0.$on("input", /*input_handler_24*/ ctx[71]);
+    	slider0.$on("input", /*input_handler_24*/ ctx[72]);
 
     	function slider1_value_binding_3(value) {
-    		/*slider1_value_binding_3*/ ctx[72](value);
+    		/*slider1_value_binding_3*/ ctx[73](value);
     	}
 
     	let slider1_props = { min: 0, max: 360, className: "hueSlider" };
@@ -5468,10 +5469,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_3));
-    	slider1.$on("input", /*input_handler_25*/ ctx[73]);
+    	slider1.$on("input", /*input_handler_25*/ ctx[74]);
 
     	function slider2_value_binding_3(value) {
-    		/*slider2_value_binding_3*/ ctx[74](value);
+    		/*slider2_value_binding_3*/ ctx[75](value);
     	}
 
     	let slider2_props = { min: 0, max: 100 };
@@ -5482,10 +5483,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_3));
-    	slider2.$on("input", /*input_handler_26*/ ctx[75]);
+    	slider2.$on("input", /*input_handler_26*/ ctx[76]);
 
     	function slider3_value_binding_3(value) {
-    		/*slider3_value_binding_3*/ ctx[76](value);
+    		/*slider3_value_binding_3*/ ctx[77](value);
     	}
 
     	let slider3_props = { min: 0, max: 810 };
@@ -5496,10 +5497,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_3));
-    	slider3.$on("input", /*input_handler_27*/ ctx[77]);
+    	slider3.$on("input", /*input_handler_27*/ ctx[78]);
 
     	function slider4_value_binding_3(value) {
-    		/*slider4_value_binding_3*/ ctx[78](value);
+    		/*slider4_value_binding_3*/ ctx[79](value);
     	}
 
     	let slider4_props = { min: 0, max: 500 };
@@ -5510,10 +5511,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_3));
-    	slider4.$on("input", /*input_handler_28*/ ctx[79]);
+    	slider4.$on("input", /*input_handler_28*/ ctx[80]);
 
     	function slider5_value_binding_2(value) {
-    		/*slider5_value_binding_2*/ ctx[80](value);
+    		/*slider5_value_binding_2*/ ctx[81](value);
     	}
 
     	let slider5_props = { min: 0, max: 50 };
@@ -5524,10 +5525,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_2));
-    	slider5.$on("input", /*input_handler_29*/ ctx[81]);
+    	slider5.$on("input", /*input_handler_29*/ ctx[82]);
 
     	function slider6_value_binding_2(value) {
-    		/*slider6_value_binding_2*/ ctx[82](value);
+    		/*slider6_value_binding_2*/ ctx[83](value);
     	}
 
     	let slider6_props = { min: 0, max: 810 };
@@ -5538,10 +5539,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_2));
-    	slider6.$on("input", /*input_handler_30*/ ctx[83]);
+    	slider6.$on("input", /*input_handler_30*/ ctx[84]);
 
     	function slider7_value_binding_2(value) {
-    		/*slider7_value_binding_2*/ ctx[84](value);
+    		/*slider7_value_binding_2*/ ctx[85](value);
     	}
 
     	let slider7_props = { min: 0, max: 100 };
@@ -5552,10 +5553,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_2));
-    	slider7.$on("input", /*input_handler_31*/ ctx[85]);
+    	slider7.$on("input", /*input_handler_31*/ ctx[86]);
 
     	function slider8_value_binding_2(value) {
-    		/*slider8_value_binding_2*/ ctx[86](value);
+    		/*slider8_value_binding_2*/ ctx[87](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -5566,7 +5567,7 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_2));
-    	slider8.$on("input", /*input_handler_32*/ ctx[87]);
+    	slider8.$on("input", /*input_handler_32*/ ctx[88]);
 
     	const block = {
     		c: function create() {
@@ -5607,23 +5608,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 411, 137, 23631);
+    			add_location(br0, file, 433, 137, 25000);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 412, 155, 23793);
+    			add_location(br1, file, 434, 155, 25162);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 413, 147, 23947);
+    			add_location(br2, file, 435, 147, 25316);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 414, 137, 24091);
+    			add_location(br3, file, 436, 137, 25460);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 415, 145, 24243);
+    			add_location(br4, file, 437, 145, 25612);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 416, 138, 24388);
+    			add_location(br5, file, 438, 138, 25757);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 417, 144, 24539);
+    			add_location(br6, file, 439, 144, 25908);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 418, 152, 24698);
+    			add_location(br7, file, 440, 152, 26067);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 419, 143, 24848);
+    			add_location(br8, file, 441, 143, 26217);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5816,14 +5817,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(411:0) <Collapsible title={\\\"Ring\\\"}>",
+    		source: "(433:0) <Collapsible title={\\\"Ring\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (422:0) <Collapsible title={"Multi-Iris"}>
+    // (444:0) <Collapsible title={"Multi-Iris"}>
     function create_default_slot_1(ctx) {
     	let t0;
     	let slider0;
@@ -5923,7 +5924,7 @@ var app = (function () {
     	let current;
 
     	function slider0_value_binding_4(value) {
-    		/*slider0_value_binding_4*/ ctx[88](value);
+    		/*slider0_value_binding_4*/ ctx[89](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -5934,10 +5935,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_4));
-    	slider0.$on("input", /*input_handler_33*/ ctx[89]);
+    	slider0.$on("input", /*input_handler_33*/ ctx[90]);
 
     	function slider1_value_binding_4(value) {
-    		/*slider1_value_binding_4*/ ctx[90](value);
+    		/*slider1_value_binding_4*/ ctx[91](value);
     	}
 
     	let slider1_props = { min: 0, max: 100 };
@@ -5948,10 +5949,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_4));
-    	slider1.$on("input", /*input_handler_34*/ ctx[91]);
+    	slider1.$on("input", /*input_handler_34*/ ctx[92]);
 
     	function slider2_value_binding_4(value) {
-    		/*slider2_value_binding_4*/ ctx[92](value);
+    		/*slider2_value_binding_4*/ ctx[93](value);
     	}
 
     	let slider2_props = { min: 0, max: 360 };
@@ -5962,10 +5963,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_4));
-    	slider2.$on("input", /*input_handler_35*/ ctx[93]);
+    	slider2.$on("input", /*input_handler_35*/ ctx[94]);
 
     	function slider3_value_binding_4(value) {
-    		/*slider3_value_binding_4*/ ctx[94](value);
+    		/*slider3_value_binding_4*/ ctx[95](value);
     	}
 
     	let slider3_props = { min: 0, max: 360, className: "hueSlider" };
@@ -5976,10 +5977,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_4));
-    	slider3.$on("input", /*input_handler_36*/ ctx[95]);
+    	slider3.$on("input", /*input_handler_36*/ ctx[96]);
 
     	function slider4_value_binding_4(value) {
-    		/*slider4_value_binding_4*/ ctx[96](value);
+    		/*slider4_value_binding_4*/ ctx[97](value);
     	}
 
     	let slider4_props = { min: 0, max: 100 };
@@ -5990,10 +5991,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_4));
-    	slider4.$on("input", /*input_handler_37*/ ctx[97]);
+    	slider4.$on("input", /*input_handler_37*/ ctx[98]);
 
     	function slider5_value_binding_3(value) {
-    		/*slider5_value_binding_3*/ ctx[98](value);
+    		/*slider5_value_binding_3*/ ctx[99](value);
     	}
 
     	let slider5_props = { min: 0, max: 810 };
@@ -6004,10 +6005,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_3));
-    	slider5.$on("input", /*input_handler_38*/ ctx[99]);
+    	slider5.$on("input", /*input_handler_38*/ ctx[100]);
 
     	function slider6_value_binding_3(value) {
-    		/*slider6_value_binding_3*/ ctx[100](value);
+    		/*slider6_value_binding_3*/ ctx[101](value);
     	}
 
     	let slider6_props = { min: 3, max: 12 };
@@ -6018,10 +6019,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_3));
-    	slider6.$on("input", /*input_handler_39*/ ctx[101]);
+    	slider6.$on("input", /*input_handler_39*/ ctx[102]);
 
     	function slider7_value_binding_3(value) {
-    		/*slider7_value_binding_3*/ ctx[102](value);
+    		/*slider7_value_binding_3*/ ctx[103](value);
     	}
 
     	let slider7_props = { min: 0, max: 100 };
@@ -6032,10 +6033,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_3));
-    	slider7.$on("input", /*input_handler_40*/ ctx[103]);
+    	slider7.$on("input", /*input_handler_40*/ ctx[104]);
 
     	function slider8_value_binding_3(value) {
-    		/*slider8_value_binding_3*/ ctx[104](value);
+    		/*slider8_value_binding_3*/ ctx[105](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -6046,10 +6047,10 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_3));
-    	slider8.$on("input", /*input_handler_41*/ ctx[105]);
+    	slider8.$on("input", /*input_handler_41*/ ctx[106]);
 
     	function slider9_value_binding_1(value) {
-    		/*slider9_value_binding_1*/ ctx[106](value);
+    		/*slider9_value_binding_1*/ ctx[107](value);
     	}
 
     	let slider9_props = { min: 0, max: 30 };
@@ -6060,10 +6061,10 @@ var app = (function () {
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding_1));
-    	slider9.$on("input", /*input_handler_42*/ ctx[107]);
+    	slider9.$on("input", /*input_handler_42*/ ctx[108]);
 
     	function slider10_value_binding(value) {
-    		/*slider10_value_binding*/ ctx[108](value);
+    		/*slider10_value_binding*/ ctx[109](value);
     	}
 
     	let slider10_props = { min: 0, max: 50 };
@@ -6074,10 +6075,10 @@ var app = (function () {
 
     	slider10 = new Slider({ props: slider10_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider10, 'value', slider10_value_binding));
-    	slider10.$on("input", /*input_handler_43*/ ctx[109]);
+    	slider10.$on("input", /*input_handler_43*/ ctx[110]);
 
     	function slider11_value_binding(value) {
-    		/*slider11_value_binding*/ ctx[110](value);
+    		/*slider11_value_binding*/ ctx[111](value);
     	}
 
     	let slider11_props = { min: 0, max: 50 };
@@ -6088,10 +6089,10 @@ var app = (function () {
 
     	slider11 = new Slider({ props: slider11_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider11, 'value', slider11_value_binding));
-    	slider11.$on("input", /*input_handler_44*/ ctx[111]);
+    	slider11.$on("input", /*input_handler_44*/ ctx[112]);
 
     	function slider12_value_binding(value) {
-    		/*slider12_value_binding*/ ctx[112](value);
+    		/*slider12_value_binding*/ ctx[113](value);
     	}
 
     	let slider12_props = { min: 0, max: 100 };
@@ -6102,10 +6103,10 @@ var app = (function () {
 
     	slider12 = new Slider({ props: slider12_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider12, 'value', slider12_value_binding));
-    	slider12.$on("input", /*input_handler_45*/ ctx[113]);
+    	slider12.$on("input", /*input_handler_45*/ ctx[114]);
 
     	function slider13_value_binding(value) {
-    		/*slider13_value_binding*/ ctx[114](value);
+    		/*slider13_value_binding*/ ctx[115](value);
     	}
 
     	let slider13_props = { min: 0, max: 100 };
@@ -6116,10 +6117,10 @@ var app = (function () {
 
     	slider13 = new Slider({ props: slider13_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider13, 'value', slider13_value_binding));
-    	slider13.$on("input", /*input_handler_46*/ ctx[115]);
+    	slider13.$on("input", /*input_handler_46*/ ctx[116]);
 
     	function slider14_value_binding(value) {
-    		/*slider14_value_binding*/ ctx[116](value);
+    		/*slider14_value_binding*/ ctx[117](value);
     	}
 
     	let slider14_props = { min: 0, max: 100 };
@@ -6130,10 +6131,10 @@ var app = (function () {
 
     	slider14 = new Slider({ props: slider14_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider14, 'value', slider14_value_binding));
-    	slider14.$on("input", /*input_handler_47*/ ctx[117]);
+    	slider14.$on("input", /*input_handler_47*/ ctx[118]);
 
     	function slider15_value_binding(value) {
-    		/*slider15_value_binding*/ ctx[118](value);
+    		/*slider15_value_binding*/ ctx[119](value);
     	}
 
     	let slider15_props = { min: 0, max: 100 };
@@ -6144,10 +6145,10 @@ var app = (function () {
 
     	slider15 = new Slider({ props: slider15_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider15, 'value', slider15_value_binding));
-    	slider15.$on("input", /*input_handler_48*/ ctx[119]);
+    	slider15.$on("input", /*input_handler_48*/ ctx[120]);
 
     	function slider16_value_binding(value) {
-    		/*slider16_value_binding*/ ctx[120](value);
+    		/*slider16_value_binding*/ ctx[121](value);
     	}
 
     	let slider16_props = { min: 0, max: 180 };
@@ -6158,10 +6159,10 @@ var app = (function () {
 
     	slider16 = new Slider({ props: slider16_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider16, 'value', slider16_value_binding));
-    	slider16.$on("input", /*input_handler_49*/ ctx[121]);
+    	slider16.$on("input", /*input_handler_49*/ ctx[122]);
 
     	function slider17_value_binding(value) {
-    		/*slider17_value_binding*/ ctx[122](value);
+    		/*slider17_value_binding*/ ctx[123](value);
     	}
 
     	let slider17_props = { min: 0, max: 999 };
@@ -6172,10 +6173,10 @@ var app = (function () {
 
     	slider17 = new Slider({ props: slider17_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider17, 'value', slider17_value_binding));
-    	slider17.$on("input", /*input_handler_50*/ ctx[123]);
+    	slider17.$on("input", /*input_handler_50*/ ctx[124]);
 
     	function slider18_value_binding(value) {
-    		/*slider18_value_binding*/ ctx[124](value);
+    		/*slider18_value_binding*/ ctx[125](value);
     	}
 
     	let slider18_props = { min: 0, max: 100 };
@@ -6186,7 +6187,7 @@ var app = (function () {
 
     	slider18 = new Slider({ props: slider18_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider18, 'value', slider18_value_binding));
-    	slider18.$on("input", /*input_handler_51*/ ctx[125]);
+    	slider18.$on("input", /*input_handler_51*/ ctx[126]);
 
     	const block = {
     		c: function create() {
@@ -6267,43 +6268,43 @@ var app = (function () {
     			t37 = space();
     			br18 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 422, 155, 25060);
+    			add_location(br0, file, 444, 155, 26429);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 423, 159, 25226);
+    			add_location(br1, file, 445, 159, 26595);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 424, 146, 25379);
+    			add_location(br2, file, 446, 146, 26748);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 425, 164, 25550);
+    			add_location(br3, file, 447, 164, 26919);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 426, 156, 25713);
+    			add_location(br4, file, 448, 156, 27082);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 427, 146, 25866);
+    			add_location(br5, file, 449, 146, 27235);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 428, 145, 26018);
+    			add_location(br6, file, 450, 145, 27387);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 429, 154, 26179);
+    			add_location(br7, file, 451, 154, 27548);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 430, 157, 26343);
+    			add_location(br8, file, 452, 157, 27712);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 431, 147, 26497);
+    			add_location(br9, file, 453, 147, 27866);
     			attr_dev(br10, "class", "svelte-viz99f");
-    			add_location(br10, file, 432, 160, 26664);
+    			add_location(br10, file, 454, 160, 28033);
     			attr_dev(br11, "class", "svelte-viz99f");
-    			add_location(br11, file, 433, 154, 26825);
+    			add_location(br11, file, 455, 154, 28194);
     			attr_dev(br12, "class", "svelte-viz99f");
-    			add_location(br12, file, 434, 148, 26980);
+    			add_location(br12, file, 456, 148, 28349);
     			attr_dev(br13, "class", "svelte-viz99f");
-    			add_location(br13, file, 435, 161, 27148);
+    			add_location(br13, file, 457, 161, 28517);
     			attr_dev(br14, "class", "svelte-viz99f");
-    			add_location(br14, file, 436, 158, 27313);
+    			add_location(br14, file, 458, 158, 28682);
     			attr_dev(br15, "class", "svelte-viz99f");
-    			add_location(br15, file, 437, 163, 27483);
+    			add_location(br15, file, 459, 163, 28852);
     			attr_dev(br16, "class", "svelte-viz99f");
-    			add_location(br16, file, 438, 159, 27649);
+    			add_location(br16, file, 460, 159, 29018);
     			attr_dev(br17, "class", "svelte-viz99f");
-    			add_location(br17, file, 439, 151, 27807);
+    			add_location(br17, file, 461, 151, 29176);
     			attr_dev(br18, "class", "svelte-viz99f");
-    			add_location(br18, file, 440, 152, 27966);
+    			add_location(br18, file, 462, 152, 29335);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6686,14 +6687,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(422:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
+    		source: "(444:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (443:0) <Collapsible title={"Glow"}>
+    // (465:0) <Collapsible title={"Glow"}>
     function create_default_slot(ctx) {
     	let t0;
     	let slider0;
@@ -6728,7 +6729,7 @@ var app = (function () {
     	let current;
 
     	function slider0_value_binding_5(value) {
-    		/*slider0_value_binding_5*/ ctx[126](value);
+    		/*slider0_value_binding_5*/ ctx[127](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -6739,10 +6740,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_5));
-    	slider0.$on("input", /*input_handler_52*/ ctx[127]);
+    	slider0.$on("input", /*input_handler_52*/ ctx[128]);
 
     	function slider1_value_binding_5(value) {
-    		/*slider1_value_binding_5*/ ctx[128](value);
+    		/*slider1_value_binding_5*/ ctx[129](value);
     	}
 
     	let slider1_props = { min: 0, max: 360, className: "hueSlider" };
@@ -6753,10 +6754,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_5));
-    	slider1.$on("input", /*input_handler_53*/ ctx[129]);
+    	slider1.$on("input", /*input_handler_53*/ ctx[130]);
 
     	function slider2_value_binding_5(value) {
-    		/*slider2_value_binding_5*/ ctx[130](value);
+    		/*slider2_value_binding_5*/ ctx[131](value);
     	}
 
     	let slider2_props = { min: 0, max: 100 };
@@ -6767,10 +6768,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_5));
-    	slider2.$on("input", /*input_handler_54*/ ctx[131]);
+    	slider2.$on("input", /*input_handler_54*/ ctx[132]);
 
     	function slider3_value_binding_5(value) {
-    		/*slider3_value_binding_5*/ ctx[132](value);
+    		/*slider3_value_binding_5*/ ctx[133](value);
     	}
 
     	let slider3_props = { min: 0, max: 1500 };
@@ -6781,10 +6782,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_5));
-    	slider3.$on("input", /*input_handler_55*/ ctx[133]);
+    	slider3.$on("input", /*input_handler_55*/ ctx[134]);
 
     	function slider4_value_binding_5(value) {
-    		/*slider4_value_binding_5*/ ctx[134](value);
+    		/*slider4_value_binding_5*/ ctx[135](value);
     	}
 
     	let slider4_props = { min: 0, max: 200 };
@@ -6795,10 +6796,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_5));
-    	slider4.$on("input", /*input_handler_56*/ ctx[135]);
+    	slider4.$on("input", /*input_handler_56*/ ctx[136]);
 
     	function slider5_value_binding_4(value) {
-    		/*slider5_value_binding_4*/ ctx[136](value);
+    		/*slider5_value_binding_4*/ ctx[137](value);
     	}
 
     	let slider5_props = { min: 0, max: 100 };
@@ -6809,7 +6810,7 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_4));
-    	slider5.$on("input", /*input_handler_57*/ ctx[137]);
+    	slider5.$on("input", /*input_handler_57*/ ctx[138]);
 
     	const block = {
     		c: function create() {
@@ -6838,17 +6839,17 @@ var app = (function () {
     			t11 = space();
     			br5 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 443, 151, 28168);
+    			add_location(br0, file, 465, 151, 29537);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 444, 169, 28344);
+    			add_location(br1, file, 466, 169, 29713);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 445, 161, 28512);
+    			add_location(br2, file, 467, 161, 29881);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 446, 152, 28671);
+    			add_location(br3, file, 468, 152, 30040);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 447, 158, 28836);
+    			add_location(br4, file, 469, 158, 30205);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 448, 157, 29000);
+    			add_location(br5, file, 470, 157, 30369);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6984,14 +6985,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(443:0) <Collapsible title={\\\"Glow\\\"}>",
+    		source: "(465:0) <Collapsible title={\\\"Glow\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (453:0) {#if startScreenVisible}
+    // (475:0) {#if startScreenVisible}
     function create_if_block(ctx) {
     	let div2;
     	let div0;
@@ -7074,54 +7075,54 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
-    			add_location(div0, file, 454, 8, 29101);
+    			add_location(div0, file, 476, 8, 30470);
     			attr_dev(img, "alt", "PROGEN FLARES 2");
     			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "321");
     			attr_dev(img, "draggable", false);
     			attr_dev(img, "class", "svelte-viz99f");
-    			add_location(img, file, 456, 12, 29350);
+    			add_location(img, file, 478, 12, 30719);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 457, 12, 29443);
+    			add_location(br0, file, 479, 12, 30812);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 457, 19, 29450);
+    			add_location(br1, file, 479, 19, 30819);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 458, 12, 29469);
+    			add_location(span0, file, 480, 12, 30838);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-viz99f");
-    			add_location(input0, file, 458, 102, 29559);
+    			add_location(input0, file, 480, 102, 30928);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 459, 12, 29662);
+    			add_location(br2, file, 481, 12, 31031);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 460, 12, 29681);
+    			add_location(span1, file, 482, 12, 31050);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-viz99f");
-    			add_location(input1, file, 460, 103, 29772);
+    			add_location(input1, file, 482, 103, 31141);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 461, 12, 29876);
+    			add_location(br3, file, 483, 12, 31245);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 461, 19, 29883);
+    			add_location(br4, file, 483, 19, 31252);
     			attr_dev(button, "class", "svelte-viz99f");
-    			add_location(button, file, 462, 12, 29902);
+    			add_location(button, file, 484, 12, 31271);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 463, 12, 29957);
+    			add_location(br5, file, 485, 12, 31326);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 463, 19, 29964);
+    			add_location(br6, file, 485, 19, 31333);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 464, 71, 30042);
+    			add_location(br7, file, 486, 71, 31411);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-viz99f");
-    			add_location(span2, file, 464, 12, 29983);
+    			add_location(span2, file, 486, 12, 31352);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 455, 8, 29283);
+    			add_location(div1, file, 477, 8, 30652);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 453, 4, 29059);
+    			add_location(div2, file, 475, 4, 30428);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -7164,8 +7165,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[138]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[139]),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[139]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[140]),
     					listen_dev(button, "click", /*onStart*/ ctx[10], false, false, false)
     				];
 
@@ -7202,7 +7203,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(453:0) {#if startScreenVisible}",
+    		source: "(475:0) {#if startScreenVisible}",
     		ctx
     	});
 
@@ -7267,7 +7268,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	presetpicker = new PresetPicker({ $$inline: true });
-    	presetpicker.$on("choose", /*choose_handler*/ ctx[20]);
+    	presetpicker.$on("choose", /*choose_handler*/ ctx[21]);
 
     	collapsible0 = new Collapsible({
     			props: {
@@ -7392,80 +7393,80 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t31 = space();
     			attr_dev(button0, "class", "svelte-viz99f");
-    			add_location(button0, file, 336, 0, 17935);
+    			add_location(button0, file, 358, 0, 19267);
     			attr_dev(span0, "style", "display: inline-block; margin-left: 5px; margin-right: 5px;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 337, 0, 18015);
+    			add_location(span0, file, 359, 0, 19347);
     			option0.__value = "png";
     			option0.value = option0.__value;
     			attr_dev(option0, "class", "svelte-viz99f");
-    			add_location(option0, file, 339, 4, 18152);
+    			add_location(option0, file, 361, 4, 19484);
     			option1.__value = "jpeg";
     			option1.value = option1.__value;
     			attr_dev(option1, "class", "svelte-viz99f");
-    			add_location(option1, file, 340, 4, 18191);
+    			add_location(option1, file, 362, 4, 19523);
     			option2.__value = "webp";
     			option2.value = option2.__value;
     			attr_dev(option2, "class", "svelte-viz99f");
-    			add_location(option2, file, 341, 4, 18231);
+    			add_location(option2, file, 363, 4, 19563);
     			attr_dev(select0, "class", "svelte-viz99f");
-    			if (/*flareSettings*/ ctx[0].exportType === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[14].call(select0));
-    			add_location(select0, file, 338, 0, 18101);
+    			if (/*flareSettings*/ ctx[0].exportType === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[15].call(select0));
+    			add_location(select0, file, 360, 0, 19433);
     			attr_dev(div0, "id", "exportPanel");
     			attr_dev(div0, "class", "svelte-viz99f");
-    			add_location(div0, file, 335, 0, 17910);
+    			add_location(div0, file, 357, 0, 19242);
     			attr_dev(canvas0, "id", "referenceImage");
     			attr_dev(canvas0, "width", canvas0_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas0, "height", canvas0_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas0, file, 346, 4, 18321);
+    			add_location(canvas0, file, 368, 4, 19653);
     			attr_dev(canvas1, "id", "baseCanvas");
     			attr_dev(canvas1, "width", canvas1_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas1, "height", canvas1_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas1, file, 347, 4, 18491);
+    			add_location(canvas1, file, 369, 4, 19823);
     			attr_dev(div1, "id", "previewSection");
     			attr_dev(div1, "class", "svelte-viz99f");
-    			add_location(div1, file, 345, 0, 18286);
+    			add_location(div1, file, 367, 0, 19618);
     			option3.__value = 1;
     			option3.value = option3.__value;
     			attr_dev(option3, "class", "svelte-viz99f");
-    			add_location(option3, file, 353, 4, 18879);
+    			add_location(option3, file, 375, 4, 20211);
     			option4.__value = 5 / 4;
     			option4.value = option4.__value;
     			attr_dev(option4, "class", "svelte-viz99f");
-    			add_location(option4, file, 354, 4, 18915);
+    			add_location(option4, file, 376, 4, 20247);
     			option5.__value = 5 / 3;
     			option5.value = option5.__value;
     			attr_dev(option5, "class", "svelte-viz99f");
-    			add_location(option5, file, 355, 4, 18952);
+    			add_location(option5, file, 377, 4, 20284);
     			option6.__value = 5 / 2;
     			option6.value = option6.__value;
     			attr_dev(option6, "class", "svelte-viz99f");
-    			add_location(option6, file, 356, 4, 18989);
+    			add_location(option6, file, 378, 4, 20321);
     			option7.__value = 5;
     			option7.value = option7.__value;
     			attr_dev(option7, "class", "svelte-viz99f");
-    			add_location(option7, file, 357, 4, 19026);
+    			add_location(option7, file, 379, 4, 20358);
     			attr_dev(select1, "class", "svelte-viz99f");
-    			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[17].call(select1));
-    			add_location(select1, file, 352, 0, 18757);
+    			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[18].call(select1));
+    			add_location(select1, file, 374, 0, 20089);
     			attr_dev(span1, "style", "white-space: pre; color: grey;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 359, 0, 19067);
+    			add_location(span1, file, 381, 0, 20399);
     			attr_dev(input, "type", "checkbox");
     			input.checked = true;
     			attr_dev(input, "style", "margin-bottom: 0;");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 360, 0, 19135);
+    			add_location(input, file, 382, 0, 20467);
     			attr_dev(button1, "class", "svelte-viz99f");
-    			add_location(button1, file, 362, 0, 19272);
+    			add_location(button1, file, 384, 0, 20604);
     			attr_dev(div2, "id", "sectionAbovePreview");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 350, 0, 18708);
+    			add_location(div2, file, 372, 0, 20040);
     			attr_dev(button2, "style", "float: right;");
     			attr_dev(button2, "class", "svelte-viz99f");
-    			add_location(button2, file, 377, 4, 19635);
+    			add_location(button2, file, 399, 4, 20967);
 
     			attr_dev(div3, "style", `
     position: sticky;
@@ -7478,10 +7479,10 @@ var app = (function () {
 `);
 
     			attr_dev(div3, "class", "svelte-viz99f");
-    			add_location(div3, file, 367, 0, 19357);
+    			add_location(div3, file, 389, 0, 20689);
     			attr_dev(div4, "id", "controlPanel");
     			attr_dev(div4, "class", "svelte-viz99f");
-    			add_location(div4, file, 365, 0, 19330);
+    			add_location(div4, file, 387, 0, 20662);
     			document_1.title = "Progen Flares 2";
     		},
     		l: function claim(nodes) {
@@ -7501,10 +7502,10 @@ var app = (function () {
     			insert_dev(target, t7, anchor);
     			insert_dev(target, div1, anchor);
     			append_dev(div1, canvas0);
-    			/*canvas0_binding*/ ctx[15](canvas0);
+    			/*canvas0_binding*/ ctx[16](canvas0);
     			append_dev(div1, t8);
     			append_dev(div1, canvas1);
-    			/*canvas1_binding*/ ctx[16](canvas1);
+    			/*canvas1_binding*/ ctx[17](canvas1);
     			insert_dev(target, t9, anchor);
     			insert_dev(target, div2, anchor);
     			append_dev(div2, t10);
@@ -7519,7 +7520,7 @@ var app = (function () {
     			append_dev(div2, span1);
     			append_dev(div2, t18);
     			append_dev(div2, input);
-    			/*input_binding*/ ctx[19](input);
+    			/*input_binding*/ ctx[20](input);
     			append_dev(div2, t19);
     			append_dev(div2, button1);
     			insert_dev(target, t21, anchor);
@@ -7547,15 +7548,15 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler*/ ctx[13], false, false, false),
-    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[14]),
+    					listen_dev(button0, "click", /*click_handler*/ ctx[14], false, false, false),
+    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[15]),
     					action_destroyer(canvasClickDrag_1.call(null, canvas1)),
     					listen_dev(canvas1, "clickDrag", /*handleClickDrag*/ ctx[6], false, false, false),
-    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[17]),
-    					listen_dev(select1, "change", /*change_handler*/ ctx[18], false, false, false),
+    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[18]),
+    					listen_dev(select1, "change", /*change_handler*/ ctx[19], false, false, false),
     					listen_dev(input, "change", /*handleRIcheckbox*/ ctx[12], false, false, false),
     					listen_dev(button1, "click", /*handleRIbutton*/ ctx[11], false, false, false),
-    					listen_dev(button2, "click", /*click_handler_1*/ ctx[21], false, false, false)
+    					listen_dev(button2, "click", /*click_handler_1*/ ctx[22], false, false, false)
     				];
 
     				mounted = true;
@@ -7588,42 +7589,42 @@ var app = (function () {
 
     			const collapsible0_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 131072) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
     				collapsible0_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible0.$set(collapsible0_changes);
     			const collapsible1_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 131072) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
     				collapsible1_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible1.$set(collapsible1_changes);
     			const collapsible2_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 131072) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
     				collapsible2_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible2.$set(collapsible2_changes);
     			const collapsible3_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 131072) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
     				collapsible3_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible3.$set(collapsible3_changes);
     			const collapsible4_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 131072) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
     				collapsible4_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible4.$set(collapsible4_changes);
     			const collapsible5_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 131072) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
     				collapsible5_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7679,11 +7680,11 @@ var app = (function () {
     			if (detaching) detach_dev(div0);
     			if (detaching) detach_dev(t7);
     			if (detaching) detach_dev(div1);
-    			/*canvas0_binding*/ ctx[15](null);
-    			/*canvas1_binding*/ ctx[16](null);
+    			/*canvas0_binding*/ ctx[16](null);
+    			/*canvas1_binding*/ ctx[17](null);
     			if (detaching) detach_dev(t9);
     			if (detaching) detach_dev(div2);
-    			/*input_binding*/ ctx[19](null);
+    			/*input_binding*/ ctx[20](null);
     			if (detaching) detach_dev(t21);
     			if (detaching) detach_dev(div4);
     			destroy_component(presetpicker);
@@ -8109,6 +8110,28 @@ var app = (function () {
 
     	function handleRIcheckbox() {
     		if (this.checked) $$invalidate(2, referenceImage.style.backgroundSize = "100% 100%", referenceImage); else $$invalidate(2, referenceImage.style.backgroundSize = "0 0", referenceImage);
+    	}
+
+    	function handleScaleMultiplier() {
+    		$$invalidate(0, flareSettings.hotspot.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.hotspot.intensity *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.streak.thickness *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.streak.width *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.streak.intensity *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.ring.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.ring.thickness *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.ring.blur *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.ring.cropSize *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.miIris.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.miIris.fringeSize *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.miIris.blur *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.glow.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.glow.softening *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.lensOrbs.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.lensOrbs.fringeSize *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.lensOrbs.blur *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.sizeMultiplier = 1, flareSettings);
+    		renderFlare(true, true, true, true, true, true);
     	}
 
     	const writable_props = [];
@@ -8838,7 +8861,8 @@ var app = (function () {
     		onStart,
     		rIcheckbox,
     		handleRIbutton,
-    		handleRIcheckbox
+    		handleRIcheckbox,
+    		handleScaleMultiplier
     	});
 
     	$$self.$inject_state = $$props => {
@@ -8868,6 +8892,7 @@ var app = (function () {
     		onStart,
     		handleRIbutton,
     		handleRIcheckbox,
+    		handleScaleMultiplier,
     		click_handler,
     		select0_change_handler,
     		canvas0_binding,

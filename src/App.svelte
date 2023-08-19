@@ -331,6 +331,28 @@
         if (this.checked) referenceImage.style.backgroundSize = "100% 100%";
         else referenceImage.style.backgroundSize = "0 0";
     }
+
+    function handleScaleMultiplier() {
+        flareSettings.hotspot.radius *= flareSettings.sizeMultiplier;
+        flareSettings.hotspot.intensity *= flareSettings.sizeMultiplier;
+        flareSettings.streak.thickness *= flareSettings.sizeMultiplier;
+        flareSettings.streak.width *= flareSettings.sizeMultiplier;
+        flareSettings.streak.intensity *= flareSettings.sizeMultiplier;
+        flareSettings.ring.radius *= flareSettings.sizeMultiplier;
+        flareSettings.ring.thickness *= flareSettings.sizeMultiplier;
+        flareSettings.ring.blur *= flareSettings.sizeMultiplier;
+        flareSettings.ring.cropSize *= flareSettings.sizeMultiplier;
+        flareSettings.miIris.radius *= flareSettings.sizeMultiplier;
+        flareSettings.miIris.fringeSize *= flareSettings.sizeMultiplier;
+        flareSettings.miIris.blur *= flareSettings.sizeMultiplier;
+        flareSettings.glow.radius *= flareSettings.sizeMultiplier;
+        flareSettings.glow.softening *= flareSettings.sizeMultiplier;
+        flareSettings.lensOrbs.radius *= flareSettings.sizeMultiplier;
+        flareSettings.lensOrbs.fringeSize *= flareSettings.sizeMultiplier;
+        flareSettings.lensOrbs.blur *= flareSettings.sizeMultiplier;
+        flareSettings.sizeMultiplier = 1;
+        renderFlare(true, true, true, true, true, true);
+    }
 </script>
 
 <div id={"exportPanel"}>
@@ -383,7 +405,7 @@ Reference Image
     Light Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }} /> <br />
     Focus X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.pivotX} on:input={function() { renderFlare(); }} /> <br />
     Focus Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.pivotY} on:input={function() { renderFlare(); }} /> <br />
-    Scale Multiplier: <Slider min={0} max={2} step={0.01} bind:value={flareSettings.sizeMultiplier} on:input={function() { renderFlare(); }} /> <br />
+    Scale Multiplier: <Slider min={0.01} max={2} step={0.01} bind:value={flareSettings.sizeMultiplier} on:input={function() { renderFlare(); }} on:change={handleScaleMultiplier} /> <br />
 </Collapsible>
 <Collapsible title={"Hotspot"}>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.hotspot.alpha} on:input={function() { renderFlare(true); }} /> <br />
