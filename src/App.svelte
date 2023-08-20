@@ -121,7 +121,7 @@
             fringeSize: 17,
             blur: 5,
             count: 100,
-            threshold: 800,
+            threshold: 1200,
             seed: 124,
             sizeVariance: 0,
             alphaVariance: 50,
