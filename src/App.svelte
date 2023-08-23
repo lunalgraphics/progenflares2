@@ -470,6 +470,25 @@ Reference Image
     Softness: <Slider min={0} max={200} bind:value={flareSettings.glow.softening} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Anamorph: <Slider min={0} max={100} bind:value={flareSettings.glow.anamorph} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
 </Collapsible>
+<Collapsible title={"Lens Orbs"}>
+    Count: <Slider min={0} max={200} bind:value={flareSettings.lensOrbs.count} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Threshold: <Slider min={0} max={1500} bind:value={flareSettings.lensOrbs.threshold} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Fill Alpha: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.fillAlpha} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.fringeAlpha} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Angle: <Slider min={0} max={360} bind:value={flareSettings.lensOrbs.angle} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Hue: <Slider min={0} max={360} bind:value={flareSettings.lensOrbs.hue} on:input={function() { renderFlare(false, false, false, false, false, true); }} className="hueSlider" /> <br />
+    Saturation: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.saturation} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Size: <Slider min={0} max={810} bind:value={flareSettings.lensOrbs.radius} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Edges: <Slider min={3} max={12} bind:value={flareSettings.lensOrbs.sides} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Roundness: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.roundness} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Fringe Size: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.fringeSize} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Softness: <Slider min={0} max={30} bind:value={flareSettings.lensOrbs.blur} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Size Variance: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.sizeVariance} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Alpha Variance: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.alphaVariance} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Hue Variance: <Slider min={0} max={180} bind:value={flareSettings.lensOrbs.hueVariance} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Random Seed: <Slider min={0} max={999} bind:value={flareSettings.lensOrbs.seed} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.anamorph} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
+</Collapsible>
 </div>
 
 {#if startScreenVisible}

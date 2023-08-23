@@ -4220,7 +4220,7 @@ var app = (function () {
     const file = "src/App.svelte";
 
     // (403:0) <Collapsible title={"Global"} collapsed={false}>
-    function create_default_slot_5(ctx) {
+    function create_default_slot_6(ctx) {
     	let t0;
     	let slider0;
     	let updating_value;
@@ -4481,7 +4481,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5.name,
+    		id: create_default_slot_6.name,
     		type: "slot",
     		source: "(403:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
     		ctx
@@ -4491,7 +4491,7 @@ var app = (function () {
     }
 
     // (410:0) <Collapsible title={"Hotspot"}>
-    function create_default_slot_4(ctx) {
+    function create_default_slot_5(ctx) {
     	let t0;
     	let slider0;
     	let updating_value;
@@ -4955,7 +4955,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4.name,
+    		id: create_default_slot_5.name,
     		type: "slot",
     		source: "(410:0) <Collapsible title={\\\"Hotspot\\\"}>",
     		ctx
@@ -4965,7 +4965,7 @@ var app = (function () {
     }
 
     // (422:0) <Collapsible title={"Streak"}>
-    function create_default_slot_3(ctx) {
+    function create_default_slot_4(ctx) {
     	let t0;
     	let slider0;
     	let updating_value;
@@ -5385,7 +5385,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3.name,
+    		id: create_default_slot_4.name,
     		type: "slot",
     		source: "(422:0) <Collapsible title={\\\"Streak\\\"}>",
     		ctx
@@ -5395,7 +5395,7 @@ var app = (function () {
     }
 
     // (433:0) <Collapsible title={"Ring"}>
-    function create_default_slot_2(ctx) {
+    function create_default_slot_3(ctx) {
     	let t0;
     	let slider0;
     	let updating_value;
@@ -5815,7 +5815,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2.name,
+    		id: create_default_slot_3.name,
     		type: "slot",
     		source: "(433:0) <Collapsible title={\\\"Ring\\\"}>",
     		ctx
@@ -5825,7 +5825,7 @@ var app = (function () {
     }
 
     // (444:0) <Collapsible title={"Multi-Iris"}>
-    function create_default_slot_1(ctx) {
+    function create_default_slot_2(ctx) {
     	let t0;
     	let slider0;
     	let updating_value;
@@ -6685,7 +6685,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1.name,
+    		id: create_default_slot_2.name,
     		type: "slot",
     		source: "(444:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
     		ctx
@@ -6695,7 +6695,7 @@ var app = (function () {
     }
 
     // (465:0) <Collapsible title={"Glow"}>
-    function create_default_slot(ctx) {
+    function create_default_slot_1(ctx) {
     	let t0;
     	let slider0;
     	let updating_value;
@@ -6983,7 +6983,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot.name,
+    		id: create_default_slot_1.name,
     		type: "slot",
     		source: "(465:0) <Collapsible title={\\\"Glow\\\"}>",
     		ctx
@@ -6992,7 +6992,789 @@ var app = (function () {
     	return block;
     }
 
-    // (475:0) {#if startScreenVisible}
+    // (473:0) <Collapsible title={"Lens Orbs"}>
+    function create_default_slot(ctx) {
+    	let t0;
+    	let slider0;
+    	let updating_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let slider1;
+    	let updating_value_1;
+    	let t3;
+    	let br1;
+    	let t4;
+    	let slider2;
+    	let updating_value_2;
+    	let t5;
+    	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
+    	let t8;
+    	let slider4;
+    	let updating_value_4;
+    	let t9;
+    	let br4;
+    	let t10;
+    	let slider5;
+    	let updating_value_5;
+    	let t11;
+    	let br5;
+    	let t12;
+    	let slider6;
+    	let updating_value_6;
+    	let t13;
+    	let br6;
+    	let t14;
+    	let slider7;
+    	let updating_value_7;
+    	let t15;
+    	let br7;
+    	let t16;
+    	let slider8;
+    	let updating_value_8;
+    	let t17;
+    	let br8;
+    	let t18;
+    	let slider9;
+    	let updating_value_9;
+    	let t19;
+    	let br9;
+    	let t20;
+    	let slider10;
+    	let updating_value_10;
+    	let t21;
+    	let br10;
+    	let t22;
+    	let slider11;
+    	let updating_value_11;
+    	let t23;
+    	let br11;
+    	let t24;
+    	let slider12;
+    	let updating_value_12;
+    	let t25;
+    	let br12;
+    	let t26;
+    	let slider13;
+    	let updating_value_13;
+    	let t27;
+    	let br13;
+    	let t28;
+    	let slider14;
+    	let updating_value_14;
+    	let t29;
+    	let br14;
+    	let t30;
+    	let slider15;
+    	let updating_value_15;
+    	let t31;
+    	let br15;
+    	let t32;
+    	let slider16;
+    	let updating_value_16;
+    	let t33;
+    	let br16;
+    	let current;
+
+    	function slider0_value_binding_6(value) {
+    		/*slider0_value_binding_6*/ ctx[139](value);
+    	}
+
+    	let slider0_props = { min: 0, max: 200 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.count !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].lensOrbs.count;
+    	}
+
+    	slider0 = new Slider({ props: slider0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_6));
+    	slider0.$on("input", /*input_handler_58*/ ctx[140]);
+
+    	function slider1_value_binding_6(value) {
+    		/*slider1_value_binding_6*/ ctx[141](value);
+    	}
+
+    	let slider1_props = { min: 0, max: 1500 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.threshold !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].lensOrbs.threshold;
+    	}
+
+    	slider1 = new Slider({ props: slider1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_6));
+    	slider1.$on("input", /*input_handler_59*/ ctx[142]);
+
+    	function slider2_value_binding_6(value) {
+    		/*slider2_value_binding_6*/ ctx[143](value);
+    	}
+
+    	let slider2_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.fillAlpha !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].lensOrbs.fillAlpha;
+    	}
+
+    	slider2 = new Slider({ props: slider2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_6));
+    	slider2.$on("input", /*input_handler_60*/ ctx[144]);
+
+    	function slider3_value_binding_6(value) {
+    		/*slider3_value_binding_6*/ ctx[145](value);
+    	}
+
+    	let slider3_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.fringeAlpha !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].lensOrbs.fringeAlpha;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_6));
+    	slider3.$on("input", /*input_handler_61*/ ctx[146]);
+
+    	function slider4_value_binding_6(value) {
+    		/*slider4_value_binding_6*/ ctx[147](value);
+    	}
+
+    	let slider4_props = { min: 0, max: 360 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.angle !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].lensOrbs.angle;
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_6));
+    	slider4.$on("input", /*input_handler_62*/ ctx[148]);
+
+    	function slider5_value_binding_5(value) {
+    		/*slider5_value_binding_5*/ ctx[149](value);
+    	}
+
+    	let slider5_props = { min: 0, max: 360, className: "hueSlider" };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.hue !== void 0) {
+    		slider5_props.value = /*flareSettings*/ ctx[0].lensOrbs.hue;
+    	}
+
+    	slider5 = new Slider({ props: slider5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_5));
+    	slider5.$on("input", /*input_handler_63*/ ctx[150]);
+
+    	function slider6_value_binding_4(value) {
+    		/*slider6_value_binding_4*/ ctx[151](value);
+    	}
+
+    	let slider6_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.saturation !== void 0) {
+    		slider6_props.value = /*flareSettings*/ ctx[0].lensOrbs.saturation;
+    	}
+
+    	slider6 = new Slider({ props: slider6_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_4));
+    	slider6.$on("input", /*input_handler_64*/ ctx[152]);
+
+    	function slider7_value_binding_4(value) {
+    		/*slider7_value_binding_4*/ ctx[153](value);
+    	}
+
+    	let slider7_props = { min: 0, max: 810 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.radius !== void 0) {
+    		slider7_props.value = /*flareSettings*/ ctx[0].lensOrbs.radius;
+    	}
+
+    	slider7 = new Slider({ props: slider7_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_4));
+    	slider7.$on("input", /*input_handler_65*/ ctx[154]);
+
+    	function slider8_value_binding_4(value) {
+    		/*slider8_value_binding_4*/ ctx[155](value);
+    	}
+
+    	let slider8_props = { min: 3, max: 12 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.sides !== void 0) {
+    		slider8_props.value = /*flareSettings*/ ctx[0].lensOrbs.sides;
+    	}
+
+    	slider8 = new Slider({ props: slider8_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_4));
+    	slider8.$on("input", /*input_handler_66*/ ctx[156]);
+
+    	function slider9_value_binding_2(value) {
+    		/*slider9_value_binding_2*/ ctx[157](value);
+    	}
+
+    	let slider9_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.roundness !== void 0) {
+    		slider9_props.value = /*flareSettings*/ ctx[0].lensOrbs.roundness;
+    	}
+
+    	slider9 = new Slider({ props: slider9_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding_2));
+    	slider9.$on("input", /*input_handler_67*/ ctx[158]);
+
+    	function slider10_value_binding_1(value) {
+    		/*slider10_value_binding_1*/ ctx[159](value);
+    	}
+
+    	let slider10_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.fringeSize !== void 0) {
+    		slider10_props.value = /*flareSettings*/ ctx[0].lensOrbs.fringeSize;
+    	}
+
+    	slider10 = new Slider({ props: slider10_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider10, 'value', slider10_value_binding_1));
+    	slider10.$on("input", /*input_handler_68*/ ctx[160]);
+
+    	function slider11_value_binding_1(value) {
+    		/*slider11_value_binding_1*/ ctx[161](value);
+    	}
+
+    	let slider11_props = { min: 0, max: 30 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.blur !== void 0) {
+    		slider11_props.value = /*flareSettings*/ ctx[0].lensOrbs.blur;
+    	}
+
+    	slider11 = new Slider({ props: slider11_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider11, 'value', slider11_value_binding_1));
+    	slider11.$on("input", /*input_handler_69*/ ctx[162]);
+
+    	function slider12_value_binding_1(value) {
+    		/*slider12_value_binding_1*/ ctx[163](value);
+    	}
+
+    	let slider12_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.sizeVariance !== void 0) {
+    		slider12_props.value = /*flareSettings*/ ctx[0].lensOrbs.sizeVariance;
+    	}
+
+    	slider12 = new Slider({ props: slider12_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider12, 'value', slider12_value_binding_1));
+    	slider12.$on("input", /*input_handler_70*/ ctx[164]);
+
+    	function slider13_value_binding_1(value) {
+    		/*slider13_value_binding_1*/ ctx[165](value);
+    	}
+
+    	let slider13_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.alphaVariance !== void 0) {
+    		slider13_props.value = /*flareSettings*/ ctx[0].lensOrbs.alphaVariance;
+    	}
+
+    	slider13 = new Slider({ props: slider13_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider13, 'value', slider13_value_binding_1));
+    	slider13.$on("input", /*input_handler_71*/ ctx[166]);
+
+    	function slider14_value_binding_1(value) {
+    		/*slider14_value_binding_1*/ ctx[167](value);
+    	}
+
+    	let slider14_props = { min: 0, max: 180 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.hueVariance !== void 0) {
+    		slider14_props.value = /*flareSettings*/ ctx[0].lensOrbs.hueVariance;
+    	}
+
+    	slider14 = new Slider({ props: slider14_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider14, 'value', slider14_value_binding_1));
+    	slider14.$on("input", /*input_handler_72*/ ctx[168]);
+
+    	function slider15_value_binding_1(value) {
+    		/*slider15_value_binding_1*/ ctx[169](value);
+    	}
+
+    	let slider15_props = { min: 0, max: 999 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.seed !== void 0) {
+    		slider15_props.value = /*flareSettings*/ ctx[0].lensOrbs.seed;
+    	}
+
+    	slider15 = new Slider({ props: slider15_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider15, 'value', slider15_value_binding_1));
+    	slider15.$on("input", /*input_handler_73*/ ctx[170]);
+
+    	function slider16_value_binding_1(value) {
+    		/*slider16_value_binding_1*/ ctx[171](value);
+    	}
+
+    	let slider16_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.anamorph !== void 0) {
+    		slider16_props.value = /*flareSettings*/ ctx[0].lensOrbs.anamorph;
+    	}
+
+    	slider16 = new Slider({ props: slider16_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider16, 'value', slider16_value_binding_1));
+    	slider16.$on("input", /*input_handler_74*/ ctx[172]);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Count: ");
+    			create_component(slider0.$$.fragment);
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = text("\n    Threshold: ");
+    			create_component(slider1.$$.fragment);
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = text("\n    Fill Alpha: ");
+    			create_component(slider2.$$.fragment);
+    			t5 = space();
+    			br2 = element("br");
+    			t6 = text("\n    Fringe Alpha: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = text("\n    Angle: ");
+    			create_component(slider4.$$.fragment);
+    			t9 = space();
+    			br4 = element("br");
+    			t10 = text("\n    Hue: ");
+    			create_component(slider5.$$.fragment);
+    			t11 = space();
+    			br5 = element("br");
+    			t12 = text("\n    Saturation: ");
+    			create_component(slider6.$$.fragment);
+    			t13 = space();
+    			br6 = element("br");
+    			t14 = text("\n    Size: ");
+    			create_component(slider7.$$.fragment);
+    			t15 = space();
+    			br7 = element("br");
+    			t16 = text("\n    Edges: ");
+    			create_component(slider8.$$.fragment);
+    			t17 = space();
+    			br8 = element("br");
+    			t18 = text("\n    Roundness: ");
+    			create_component(slider9.$$.fragment);
+    			t19 = space();
+    			br9 = element("br");
+    			t20 = text("\n    Fringe Size: ");
+    			create_component(slider10.$$.fragment);
+    			t21 = space();
+    			br10 = element("br");
+    			t22 = text("\n    Softness: ");
+    			create_component(slider11.$$.fragment);
+    			t23 = space();
+    			br11 = element("br");
+    			t24 = text("\n    Size Variance: ");
+    			create_component(slider12.$$.fragment);
+    			t25 = space();
+    			br12 = element("br");
+    			t26 = text("\n    Alpha Variance: ");
+    			create_component(slider13.$$.fragment);
+    			t27 = space();
+    			br13 = element("br");
+    			t28 = text("\n    Hue Variance: ");
+    			create_component(slider14.$$.fragment);
+    			t29 = space();
+    			br14 = element("br");
+    			t30 = text("\n    Random Seed: ");
+    			create_component(slider15.$$.fragment);
+    			t31 = space();
+    			br15 = element("br");
+    			t32 = text("\n    Anamorph: ");
+    			create_component(slider16.$$.fragment);
+    			t33 = space();
+    			br16 = element("br");
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 473, 162, 30588);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 474, 171, 30766);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 475, 171, 30944);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 476, 175, 31126);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 477, 162, 31295);
+    			attr_dev(br5, "class", "svelte-viz99f");
+    			add_location(br5, file, 478, 180, 31482);
+    			attr_dev(br6, "class", "svelte-viz99f");
+    			add_location(br6, file, 479, 172, 31661);
+    			attr_dev(br7, "class", "svelte-viz99f");
+    			add_location(br7, file, 480, 162, 31830);
+    			attr_dev(br8, "class", "svelte-viz99f");
+    			add_location(br8, file, 481, 161, 31998);
+    			attr_dev(br9, "class", "svelte-viz99f");
+    			add_location(br9, file, 482, 170, 32175);
+    			attr_dev(br10, "class", "svelte-viz99f");
+    			add_location(br10, file, 483, 173, 32355);
+    			attr_dev(br11, "class", "svelte-viz99f");
+    			add_location(br11, file, 484, 163, 32525);
+    			attr_dev(br12, "class", "svelte-viz99f");
+    			add_location(br12, file, 485, 177, 32709);
+    			attr_dev(br13, "class", "svelte-viz99f");
+    			add_location(br13, file, 486, 179, 32895);
+    			attr_dev(br14, "class", "svelte-viz99f");
+    			add_location(br14, file, 487, 175, 33077);
+    			attr_dev(br15, "class", "svelte-viz99f");
+    			add_location(br15, file, 488, 167, 33251);
+    			attr_dev(br16, "class", "svelte-viz99f");
+    			add_location(br16, file, 489, 168, 33426);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			mount_component(slider0, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(slider1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(slider2, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(slider4, target, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, br4, anchor);
+    			insert_dev(target, t10, anchor);
+    			mount_component(slider5, target, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, br5, anchor);
+    			insert_dev(target, t12, anchor);
+    			mount_component(slider6, target, anchor);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, br6, anchor);
+    			insert_dev(target, t14, anchor);
+    			mount_component(slider7, target, anchor);
+    			insert_dev(target, t15, anchor);
+    			insert_dev(target, br7, anchor);
+    			insert_dev(target, t16, anchor);
+    			mount_component(slider8, target, anchor);
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, br8, anchor);
+    			insert_dev(target, t18, anchor);
+    			mount_component(slider9, target, anchor);
+    			insert_dev(target, t19, anchor);
+    			insert_dev(target, br9, anchor);
+    			insert_dev(target, t20, anchor);
+    			mount_component(slider10, target, anchor);
+    			insert_dev(target, t21, anchor);
+    			insert_dev(target, br10, anchor);
+    			insert_dev(target, t22, anchor);
+    			mount_component(slider11, target, anchor);
+    			insert_dev(target, t23, anchor);
+    			insert_dev(target, br11, anchor);
+    			insert_dev(target, t24, anchor);
+    			mount_component(slider12, target, anchor);
+    			insert_dev(target, t25, anchor);
+    			insert_dev(target, br12, anchor);
+    			insert_dev(target, t26, anchor);
+    			mount_component(slider13, target, anchor);
+    			insert_dev(target, t27, anchor);
+    			insert_dev(target, br13, anchor);
+    			insert_dev(target, t28, anchor);
+    			mount_component(slider14, target, anchor);
+    			insert_dev(target, t29, anchor);
+    			insert_dev(target, br14, anchor);
+    			insert_dev(target, t30, anchor);
+    			mount_component(slider15, target, anchor);
+    			insert_dev(target, t31, anchor);
+    			insert_dev(target, br15, anchor);
+    			insert_dev(target, t32, anchor);
+    			mount_component(slider16, target, anchor);
+    			insert_dev(target, t33, anchor);
+    			insert_dev(target, br16, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const slider0_changes = {};
+
+    			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value = true;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].lensOrbs.count;
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			slider0.$set(slider0_changes);
+    			const slider1_changes = {};
+
+    			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_1 = true;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].lensOrbs.threshold;
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			slider1.$set(slider1_changes);
+    			const slider2_changes = {};
+
+    			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_2 = true;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].lensOrbs.fillAlpha;
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].lensOrbs.fringeAlpha;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
+    			const slider4_changes = {};
+
+    			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].lensOrbs.angle;
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    			const slider5_changes = {};
+
+    			if (!updating_value_5 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_5 = true;
+    				slider5_changes.value = /*flareSettings*/ ctx[0].lensOrbs.hue;
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			slider5.$set(slider5_changes);
+    			const slider6_changes = {};
+
+    			if (!updating_value_6 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_6 = true;
+    				slider6_changes.value = /*flareSettings*/ ctx[0].lensOrbs.saturation;
+    				add_flush_callback(() => updating_value_6 = false);
+    			}
+
+    			slider6.$set(slider6_changes);
+    			const slider7_changes = {};
+
+    			if (!updating_value_7 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_7 = true;
+    				slider7_changes.value = /*flareSettings*/ ctx[0].lensOrbs.radius;
+    				add_flush_callback(() => updating_value_7 = false);
+    			}
+
+    			slider7.$set(slider7_changes);
+    			const slider8_changes = {};
+
+    			if (!updating_value_8 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_8 = true;
+    				slider8_changes.value = /*flareSettings*/ ctx[0].lensOrbs.sides;
+    				add_flush_callback(() => updating_value_8 = false);
+    			}
+
+    			slider8.$set(slider8_changes);
+    			const slider9_changes = {};
+
+    			if (!updating_value_9 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_9 = true;
+    				slider9_changes.value = /*flareSettings*/ ctx[0].lensOrbs.roundness;
+    				add_flush_callback(() => updating_value_9 = false);
+    			}
+
+    			slider9.$set(slider9_changes);
+    			const slider10_changes = {};
+
+    			if (!updating_value_10 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_10 = true;
+    				slider10_changes.value = /*flareSettings*/ ctx[0].lensOrbs.fringeSize;
+    				add_flush_callback(() => updating_value_10 = false);
+    			}
+
+    			slider10.$set(slider10_changes);
+    			const slider11_changes = {};
+
+    			if (!updating_value_11 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_11 = true;
+    				slider11_changes.value = /*flareSettings*/ ctx[0].lensOrbs.blur;
+    				add_flush_callback(() => updating_value_11 = false);
+    			}
+
+    			slider11.$set(slider11_changes);
+    			const slider12_changes = {};
+
+    			if (!updating_value_12 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_12 = true;
+    				slider12_changes.value = /*flareSettings*/ ctx[0].lensOrbs.sizeVariance;
+    				add_flush_callback(() => updating_value_12 = false);
+    			}
+
+    			slider12.$set(slider12_changes);
+    			const slider13_changes = {};
+
+    			if (!updating_value_13 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_13 = true;
+    				slider13_changes.value = /*flareSettings*/ ctx[0].lensOrbs.alphaVariance;
+    				add_flush_callback(() => updating_value_13 = false);
+    			}
+
+    			slider13.$set(slider13_changes);
+    			const slider14_changes = {};
+
+    			if (!updating_value_14 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_14 = true;
+    				slider14_changes.value = /*flareSettings*/ ctx[0].lensOrbs.hueVariance;
+    				add_flush_callback(() => updating_value_14 = false);
+    			}
+
+    			slider14.$set(slider14_changes);
+    			const slider15_changes = {};
+
+    			if (!updating_value_15 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_15 = true;
+    				slider15_changes.value = /*flareSettings*/ ctx[0].lensOrbs.seed;
+    				add_flush_callback(() => updating_value_15 = false);
+    			}
+
+    			slider15.$set(slider15_changes);
+    			const slider16_changes = {};
+
+    			if (!updating_value_16 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_16 = true;
+    				slider16_changes.value = /*flareSettings*/ ctx[0].lensOrbs.anamorph;
+    				add_flush_callback(() => updating_value_16 = false);
+    			}
+
+    			slider16.$set(slider16_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(slider0.$$.fragment, local);
+    			transition_in(slider1.$$.fragment, local);
+    			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider5.$$.fragment, local);
+    			transition_in(slider6.$$.fragment, local);
+    			transition_in(slider7.$$.fragment, local);
+    			transition_in(slider8.$$.fragment, local);
+    			transition_in(slider9.$$.fragment, local);
+    			transition_in(slider10.$$.fragment, local);
+    			transition_in(slider11.$$.fragment, local);
+    			transition_in(slider12.$$.fragment, local);
+    			transition_in(slider13.$$.fragment, local);
+    			transition_in(slider14.$$.fragment, local);
+    			transition_in(slider15.$$.fragment, local);
+    			transition_in(slider16.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(slider0.$$.fragment, local);
+    			transition_out(slider1.$$.fragment, local);
+    			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider5.$$.fragment, local);
+    			transition_out(slider6.$$.fragment, local);
+    			transition_out(slider7.$$.fragment, local);
+    			transition_out(slider8.$$.fragment, local);
+    			transition_out(slider9.$$.fragment, local);
+    			transition_out(slider10.$$.fragment, local);
+    			transition_out(slider11.$$.fragment, local);
+    			transition_out(slider12.$$.fragment, local);
+    			transition_out(slider13.$$.fragment, local);
+    			transition_out(slider14.$$.fragment, local);
+    			transition_out(slider15.$$.fragment, local);
+    			transition_out(slider16.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(br4);
+    			if (detaching) detach_dev(t10);
+    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(br5);
+    			if (detaching) detach_dev(t12);
+    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(br6);
+    			if (detaching) detach_dev(t14);
+    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(br7);
+    			if (detaching) detach_dev(t16);
+    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(br8);
+    			if (detaching) detach_dev(t18);
+    			destroy_component(slider9, detaching);
+    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(br9);
+    			if (detaching) detach_dev(t20);
+    			destroy_component(slider10, detaching);
+    			if (detaching) detach_dev(t21);
+    			if (detaching) detach_dev(br10);
+    			if (detaching) detach_dev(t22);
+    			destroy_component(slider11, detaching);
+    			if (detaching) detach_dev(t23);
+    			if (detaching) detach_dev(br11);
+    			if (detaching) detach_dev(t24);
+    			destroy_component(slider12, detaching);
+    			if (detaching) detach_dev(t25);
+    			if (detaching) detach_dev(br12);
+    			if (detaching) detach_dev(t26);
+    			destroy_component(slider13, detaching);
+    			if (detaching) detach_dev(t27);
+    			if (detaching) detach_dev(br13);
+    			if (detaching) detach_dev(t28);
+    			destroy_component(slider14, detaching);
+    			if (detaching) detach_dev(t29);
+    			if (detaching) detach_dev(br14);
+    			if (detaching) detach_dev(t30);
+    			destroy_component(slider15, detaching);
+    			if (detaching) detach_dev(t31);
+    			if (detaching) detach_dev(br15);
+    			if (detaching) detach_dev(t32);
+    			destroy_component(slider16, detaching);
+    			if (detaching) detach_dev(t33);
+    			if (detaching) detach_dev(br16);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot.name,
+    		type: "slot",
+    		source: "(473:0) <Collapsible title={\\\"Lens Orbs\\\"}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (494:0) {#if startScreenVisible}
     function create_if_block(ctx) {
     	let div2;
     	let div0;
@@ -7075,54 +7857,54 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
-    			add_location(div0, file, 476, 8, 30471);
+    			add_location(div0, file, 495, 8, 33527);
     			attr_dev(img, "alt", "PROGEN FLARES 2");
     			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "321");
     			attr_dev(img, "draggable", false);
     			attr_dev(img, "class", "svelte-viz99f");
-    			add_location(img, file, 478, 12, 30720);
+    			add_location(img, file, 497, 12, 33776);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 479, 12, 30813);
+    			add_location(br0, file, 498, 12, 33869);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 479, 19, 30820);
+    			add_location(br1, file, 498, 19, 33876);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 480, 12, 30839);
+    			add_location(span0, file, 499, 12, 33895);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-viz99f");
-    			add_location(input0, file, 480, 102, 30929);
+    			add_location(input0, file, 499, 102, 33985);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 481, 12, 31032);
+    			add_location(br2, file, 500, 12, 34088);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 482, 12, 31051);
+    			add_location(span1, file, 501, 12, 34107);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-viz99f");
-    			add_location(input1, file, 482, 103, 31142);
+    			add_location(input1, file, 501, 103, 34198);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 483, 12, 31246);
+    			add_location(br3, file, 502, 12, 34302);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 483, 19, 31253);
+    			add_location(br4, file, 502, 19, 34309);
     			attr_dev(button, "class", "svelte-viz99f");
-    			add_location(button, file, 484, 12, 31272);
+    			add_location(button, file, 503, 12, 34328);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 485, 12, 31327);
+    			add_location(br5, file, 504, 12, 34383);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 485, 19, 31334);
+    			add_location(br6, file, 504, 19, 34390);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 486, 71, 31412);
+    			add_location(br7, file, 505, 71, 34468);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-viz99f");
-    			add_location(span2, file, 486, 12, 31353);
+    			add_location(span2, file, 505, 12, 34409);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 477, 8, 30653);
+    			add_location(div1, file, 496, 8, 33709);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 475, 4, 30429);
+    			add_location(div2, file, 494, 4, 33485);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -7165,8 +7947,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[139]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[140]),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[173]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[174]),
     					listen_dev(button, "click", /*onStart*/ ctx[10], false, false, false)
     				];
 
@@ -7203,7 +7985,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(475:0) {#if startScreenVisible}",
+    		source: "(494:0) {#if startScreenVisible}",
     		ctx
     	});
 
@@ -7263,7 +8045,9 @@ var app = (function () {
     	let t29;
     	let collapsible5;
     	let t30;
+    	let collapsible6;
     	let t31;
+    	let t32;
     	let current;
     	let mounted;
     	let dispose;
@@ -7274,7 +8058,7 @@ var app = (function () {
     			props: {
     				title: "Global",
     				collapsed: false,
-    				$$slots: { default: [create_default_slot_5] },
+    				$$slots: { default: [create_default_slot_6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7283,7 +8067,7 @@ var app = (function () {
     	collapsible1 = new Collapsible({
     			props: {
     				title: "Hotspot",
-    				$$slots: { default: [create_default_slot_4] },
+    				$$slots: { default: [create_default_slot_5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7292,7 +8076,7 @@ var app = (function () {
     	collapsible2 = new Collapsible({
     			props: {
     				title: "Streak",
-    				$$slots: { default: [create_default_slot_3] },
+    				$$slots: { default: [create_default_slot_4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7301,7 +8085,7 @@ var app = (function () {
     	collapsible3 = new Collapsible({
     			props: {
     				title: "Ring",
-    				$$slots: { default: [create_default_slot_2] },
+    				$$slots: { default: [create_default_slot_3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7310,7 +8094,7 @@ var app = (function () {
     	collapsible4 = new Collapsible({
     			props: {
     				title: "Multi-Iris",
-    				$$slots: { default: [create_default_slot_1] },
+    				$$slots: { default: [create_default_slot_2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7319,6 +8103,15 @@ var app = (function () {
     	collapsible5 = new Collapsible({
     			props: {
     				title: "Glow",
+    				$$slots: { default: [create_default_slot_1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	collapsible6 = new Collapsible({
+    			props: {
+    				title: "Lens Orbs",
     				$$slots: { default: [create_default_slot] },
     				$$scope: { ctx }
     			},
@@ -7390,8 +8183,10 @@ var app = (function () {
     			t29 = space();
     			create_component(collapsible5.$$.fragment);
     			t30 = space();
-    			if (if_block) if_block.c();
+    			create_component(collapsible6.$$.fragment);
     			t31 = space();
+    			if (if_block) if_block.c();
+    			t32 = space();
     			attr_dev(button0, "class", "svelte-viz99f");
     			add_location(button0, file, 358, 0, 19268);
     			attr_dev(span0, "style", "display: inline-block; margin-left: 5px; margin-right: 5px;");
@@ -7541,9 +8336,11 @@ var app = (function () {
     			mount_component(collapsible4, div4, null);
     			append_dev(div4, t29);
     			mount_component(collapsible5, div4, null);
-    			insert_dev(target, t30, anchor);
-    			if (if_block) if_block.m(target, anchor);
+    			append_dev(div4, t30);
+    			mount_component(collapsible6, div4, null);
     			insert_dev(target, t31, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t32, anchor);
     			current = true;
 
     			if (!mounted) {
@@ -7589,46 +8386,53 @@ var app = (function () {
 
     			const collapsible0_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
     				collapsible0_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible0.$set(collapsible0_changes);
     			const collapsible1_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
     				collapsible1_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible1.$set(collapsible1_changes);
     			const collapsible2_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
     				collapsible2_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible2.$set(collapsible2_changes);
     			const collapsible3_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
     				collapsible3_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible3.$set(collapsible3_changes);
     			const collapsible4_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
     				collapsible4_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible4.$set(collapsible4_changes);
     			const collapsible5_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[4] & /*$$scope*/ 262144) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
     				collapsible5_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible5.$set(collapsible5_changes);
+    			const collapsible6_changes = {};
+
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
+    				collapsible6_changes.$$scope = { dirty, ctx };
+    			}
+
+    			collapsible6.$set(collapsible6_changes);
 
     			if (/*startScreenVisible*/ ctx[3]) {
     				if (if_block) {
@@ -7641,7 +8445,7 @@ var app = (function () {
     					if_block = create_if_block(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(t31.parentNode, t31);
+    					if_block.m(t32.parentNode, t32);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -7662,6 +8466,7 @@ var app = (function () {
     			transition_in(collapsible3.$$.fragment, local);
     			transition_in(collapsible4.$$.fragment, local);
     			transition_in(collapsible5.$$.fragment, local);
+    			transition_in(collapsible6.$$.fragment, local);
     			transition_in(if_block);
     			current = true;
     		},
@@ -7673,6 +8478,7 @@ var app = (function () {
     			transition_out(collapsible3.$$.fragment, local);
     			transition_out(collapsible4.$$.fragment, local);
     			transition_out(collapsible5.$$.fragment, local);
+    			transition_out(collapsible6.$$.fragment, local);
     			transition_out(if_block);
     			current = false;
     		},
@@ -7694,9 +8500,10 @@ var app = (function () {
     			destroy_component(collapsible3);
     			destroy_component(collapsible4);
     			destroy_component(collapsible5);
-    			if (detaching) detach_dev(t30);
-    			if (if_block) if_block.d(detaching);
+    			destroy_component(collapsible6);
     			if (detaching) detach_dev(t31);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(t32);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -8825,6 +9632,193 @@ var app = (function () {
     		renderFlare(false, false, false, false, true);
     	};
 
+    	function slider0_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.count, value)) {
+    			flareSettings.lensOrbs.count = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_58 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider1_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.threshold, value)) {
+    			flareSettings.lensOrbs.threshold = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_59 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider2_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.fillAlpha, value)) {
+    			flareSettings.lensOrbs.fillAlpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_60 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider3_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.fringeAlpha, value)) {
+    			flareSettings.lensOrbs.fringeAlpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_61 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider4_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.angle, value)) {
+    			flareSettings.lensOrbs.angle = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_62 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider5_value_binding_5(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.hue, value)) {
+    			flareSettings.lensOrbs.hue = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_63 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider6_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.saturation, value)) {
+    			flareSettings.lensOrbs.saturation = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_64 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider7_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.radius, value)) {
+    			flareSettings.lensOrbs.radius = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_65 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider8_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.sides, value)) {
+    			flareSettings.lensOrbs.sides = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_66 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider9_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.roundness, value)) {
+    			flareSettings.lensOrbs.roundness = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_67 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider10_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.fringeSize, value)) {
+    			flareSettings.lensOrbs.fringeSize = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_68 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider11_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.blur, value)) {
+    			flareSettings.lensOrbs.blur = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_69 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider12_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.sizeVariance, value)) {
+    			flareSettings.lensOrbs.sizeVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_70 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider13_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.alphaVariance, value)) {
+    			flareSettings.lensOrbs.alphaVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_71 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider14_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.hueVariance, value)) {
+    			flareSettings.lensOrbs.hueVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_72 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider15_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.seed, value)) {
+    			flareSettings.lensOrbs.seed = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_73 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider16_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.anamorph, value)) {
+    			flareSettings.lensOrbs.anamorph = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_74 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
     	function input0_input_handler() {
     		flareSettings.dimensions.width = to_number(this.value);
     		$$invalidate(0, flareSettings);
@@ -9018,6 +10012,40 @@ var app = (function () {
     		input_handler_56,
     		slider5_value_binding_4,
     		input_handler_57,
+    		slider0_value_binding_6,
+    		input_handler_58,
+    		slider1_value_binding_6,
+    		input_handler_59,
+    		slider2_value_binding_6,
+    		input_handler_60,
+    		slider3_value_binding_6,
+    		input_handler_61,
+    		slider4_value_binding_6,
+    		input_handler_62,
+    		slider5_value_binding_5,
+    		input_handler_63,
+    		slider6_value_binding_4,
+    		input_handler_64,
+    		slider7_value_binding_4,
+    		input_handler_65,
+    		slider8_value_binding_4,
+    		input_handler_66,
+    		slider9_value_binding_2,
+    		input_handler_67,
+    		slider10_value_binding_1,
+    		input_handler_68,
+    		slider11_value_binding_1,
+    		input_handler_69,
+    		slider12_value_binding_1,
+    		input_handler_70,
+    		slider13_value_binding_1,
+    		input_handler_71,
+    		slider14_value_binding_1,
+    		input_handler_72,
+    		slider15_value_binding_1,
+    		input_handler_73,
+    		slider16_value_binding_1,
+    		input_handler_74,
     		input0_input_handler,
     		input1_input_handler
     	];
@@ -9026,7 +10054,7 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, {}, null, [-1, -1, -1, -1, -1]);
+    		init(this, options, instance, create_fragment, safe_not_equal, {}, null, [-1, -1, -1, -1, -1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
