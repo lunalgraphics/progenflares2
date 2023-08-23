@@ -2876,7 +2876,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 57, 12, 14479);
+    			add_location(option, file$1, 57, 12, 14725);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2936,17 +2936,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 53, 4, 14255);
+    			add_location(option0, file$1, 53, 4, 14501);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 54, 4, 14325);
+    			add_location(option1, file$1, 54, 4, 14571);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 55, 4, 14388);
+    			add_location(optgroup, file$1, 55, 4, 14634);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 52, 0, 14196);
+    			add_location(select, file$1, 52, 0, 14442);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 62, 0, 14589);
+    			add_location(input, file$1, 62, 0, 14835);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3099,6 +3099,25 @@ var app = (function () {
     					"softening": 0,
     					"hue": 23,
     					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 6,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 123,
+    					"threshold": 1210,
+    					"seed": 222,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 16,
+    					"saturation": 100,
+    					"hueVariance": 0,
     					"anamorph": 0
     				}
     			}
@@ -4354,15 +4373,15 @@ var app = (function () {
     			t9 = space();
     			br4 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 404, 151, 21345);
+    			add_location(br0, file, 404, 151, 21591);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 405, 152, 21504);
+    			add_location(br1, file, 405, 152, 21750);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 406, 156, 21667);
+    			add_location(br2, file, 406, 156, 21913);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 407, 157, 21831);
+    			add_location(br3, file, 407, 157, 22077);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 408, 181, 22019);
+    			add_location(br4, file, 408, 181, 22265);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4727,25 +4746,25 @@ var app = (function () {
     			t19 = space();
     			br9 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 411, 126, 22199);
+    			add_location(br0, file, 411, 126, 22445);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 412, 126, 22332);
+    			add_location(br1, file, 412, 126, 22578);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 413, 144, 22483);
+    			add_location(br2, file, 413, 144, 22729);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 414, 136, 22626);
+    			add_location(br3, file, 414, 136, 22872);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 415, 127, 22760);
+    			add_location(br4, file, 415, 127, 23006);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 416, 133, 22900);
+    			add_location(br5, file, 416, 133, 23146);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 417, 164, 23071);
+    			add_location(br6, file, 417, 164, 23317);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 418, 160, 23238);
+    			add_location(br7, file, 418, 160, 23484);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 419, 142, 23387);
+    			add_location(br8, file, 419, 142, 23633);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 420, 132, 23526);
+    			add_location(br9, file, 420, 132, 23772);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5178,23 +5197,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 423, 132, 23711);
+    			add_location(br0, file, 423, 132, 23957);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 424, 132, 23850);
+    			add_location(br1, file, 424, 132, 24096);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 425, 150, 24007);
+    			add_location(br2, file, 425, 150, 24253);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 426, 142, 24156);
+    			add_location(br3, file, 426, 142, 24402);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 427, 140, 24303);
+    			add_location(br4, file, 427, 140, 24549);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 428, 134, 24444);
+    			add_location(br5, file, 428, 134, 24690);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 429, 141, 24592);
+    			add_location(br6, file, 429, 141, 24838);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 430, 133, 24732);
+    			add_location(br7, file, 430, 133, 24978);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 431, 132, 24871);
+    			add_location(br8, file, 431, 132, 25117);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -5608,23 +5627,23 @@ var app = (function () {
     			t17 = space();
     			br8 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 434, 137, 25059);
+    			add_location(br0, file, 434, 137, 25305);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 435, 155, 25221);
+    			add_location(br1, file, 435, 155, 25467);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 436, 147, 25375);
+    			add_location(br2, file, 436, 147, 25621);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 437, 137, 25519);
+    			add_location(br3, file, 437, 137, 25765);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 438, 145, 25671);
+    			add_location(br4, file, 438, 145, 25917);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 439, 138, 25816);
+    			add_location(br5, file, 439, 138, 26062);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 440, 144, 25967);
+    			add_location(br6, file, 440, 144, 26213);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 441, 152, 26126);
+    			add_location(br7, file, 441, 152, 26372);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 442, 143, 26276);
+    			add_location(br8, file, 442, 143, 26522);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6268,43 +6287,43 @@ var app = (function () {
     			t37 = space();
     			br18 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 445, 155, 26488);
+    			add_location(br0, file, 445, 155, 26734);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 446, 159, 26654);
+    			add_location(br1, file, 446, 159, 26900);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 447, 146, 26807);
+    			add_location(br2, file, 447, 146, 27053);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 448, 164, 26978);
+    			add_location(br3, file, 448, 164, 27224);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 449, 156, 27141);
+    			add_location(br4, file, 449, 156, 27387);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 450, 146, 27294);
+    			add_location(br5, file, 450, 146, 27540);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 451, 145, 27446);
+    			add_location(br6, file, 451, 145, 27692);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 452, 154, 27607);
+    			add_location(br7, file, 452, 154, 27853);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 453, 157, 27771);
+    			add_location(br8, file, 453, 157, 28017);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 454, 147, 27925);
+    			add_location(br9, file, 454, 147, 28171);
     			attr_dev(br10, "class", "svelte-viz99f");
-    			add_location(br10, file, 455, 160, 28092);
+    			add_location(br10, file, 455, 160, 28338);
     			attr_dev(br11, "class", "svelte-viz99f");
-    			add_location(br11, file, 456, 154, 28253);
+    			add_location(br11, file, 456, 154, 28499);
     			attr_dev(br12, "class", "svelte-viz99f");
-    			add_location(br12, file, 457, 148, 28408);
+    			add_location(br12, file, 457, 148, 28654);
     			attr_dev(br13, "class", "svelte-viz99f");
-    			add_location(br13, file, 458, 161, 28576);
+    			add_location(br13, file, 458, 161, 28822);
     			attr_dev(br14, "class", "svelte-viz99f");
-    			add_location(br14, file, 459, 158, 28741);
+    			add_location(br14, file, 459, 158, 28987);
     			attr_dev(br15, "class", "svelte-viz99f");
-    			add_location(br15, file, 460, 163, 28911);
+    			add_location(br15, file, 460, 163, 29157);
     			attr_dev(br16, "class", "svelte-viz99f");
-    			add_location(br16, file, 461, 159, 29077);
+    			add_location(br16, file, 461, 159, 29323);
     			attr_dev(br17, "class", "svelte-viz99f");
-    			add_location(br17, file, 462, 151, 29235);
+    			add_location(br17, file, 462, 151, 29481);
     			attr_dev(br18, "class", "svelte-viz99f");
-    			add_location(br18, file, 463, 152, 29394);
+    			add_location(br18, file, 463, 152, 29640);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -6839,17 +6858,17 @@ var app = (function () {
     			t11 = space();
     			br5 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 466, 151, 29596);
+    			add_location(br0, file, 466, 151, 29842);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 467, 169, 29772);
+    			add_location(br1, file, 467, 169, 30018);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 468, 161, 29940);
+    			add_location(br2, file, 468, 161, 30186);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 469, 152, 30099);
+    			add_location(br3, file, 469, 152, 30345);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 470, 158, 30264);
+    			add_location(br4, file, 470, 158, 30510);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 471, 157, 30428);
+    			add_location(br5, file, 471, 157, 30674);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -7390,39 +7409,39 @@ var app = (function () {
     			t33 = space();
     			br16 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 474, 162, 30646);
+    			add_location(br0, file, 474, 162, 30892);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 475, 171, 30824);
+    			add_location(br1, file, 475, 171, 31070);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 476, 171, 31002);
+    			add_location(br2, file, 476, 171, 31248);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 477, 175, 31184);
+    			add_location(br3, file, 477, 175, 31430);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 478, 162, 31353);
+    			add_location(br4, file, 478, 162, 31599);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 479, 180, 31540);
+    			add_location(br5, file, 479, 180, 31786);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 480, 172, 31719);
+    			add_location(br6, file, 480, 172, 31965);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 481, 162, 31888);
+    			add_location(br7, file, 481, 162, 32134);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 482, 161, 32056);
+    			add_location(br8, file, 482, 161, 32302);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 483, 170, 32233);
+    			add_location(br9, file, 483, 170, 32479);
     			attr_dev(br10, "class", "svelte-viz99f");
-    			add_location(br10, file, 484, 173, 32413);
+    			add_location(br10, file, 484, 173, 32659);
     			attr_dev(br11, "class", "svelte-viz99f");
-    			add_location(br11, file, 485, 163, 32583);
+    			add_location(br11, file, 485, 163, 32829);
     			attr_dev(br12, "class", "svelte-viz99f");
-    			add_location(br12, file, 486, 177, 32767);
+    			add_location(br12, file, 486, 177, 33013);
     			attr_dev(br13, "class", "svelte-viz99f");
-    			add_location(br13, file, 487, 179, 32953);
+    			add_location(br13, file, 487, 179, 33199);
     			attr_dev(br14, "class", "svelte-viz99f");
-    			add_location(br14, file, 488, 175, 33135);
+    			add_location(br14, file, 488, 175, 33381);
     			attr_dev(br15, "class", "svelte-viz99f");
-    			add_location(br15, file, 489, 167, 33309);
+    			add_location(br15, file, 489, 167, 33555);
     			attr_dev(br16, "class", "svelte-viz99f");
-    			add_location(br16, file, 490, 168, 33484);
+    			add_location(br16, file, 490, 168, 33730);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -7857,54 +7876,54 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
-    			add_location(div0, file, 496, 8, 33585);
+    			add_location(div0, file, 496, 8, 33831);
     			attr_dev(img, "alt", "PROGEN FLARES 2");
     			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "321");
     			attr_dev(img, "draggable", false);
     			attr_dev(img, "class", "svelte-viz99f");
-    			add_location(img, file, 498, 12, 33834);
+    			add_location(img, file, 498, 12, 34080);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 499, 12, 33927);
+    			add_location(br0, file, 499, 12, 34173);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 499, 19, 33934);
+    			add_location(br1, file, 499, 19, 34180);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 500, 12, 33953);
+    			add_location(span0, file, 500, 12, 34199);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-viz99f");
-    			add_location(input0, file, 500, 102, 34043);
+    			add_location(input0, file, 500, 102, 34289);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 501, 12, 34146);
+    			add_location(br2, file, 501, 12, 34392);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 502, 12, 34165);
+    			add_location(span1, file, 502, 12, 34411);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-viz99f");
-    			add_location(input1, file, 502, 103, 34256);
+    			add_location(input1, file, 502, 103, 34502);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 503, 12, 34360);
+    			add_location(br3, file, 503, 12, 34606);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 503, 19, 34367);
+    			add_location(br4, file, 503, 19, 34613);
     			attr_dev(button, "class", "svelte-viz99f");
-    			add_location(button, file, 504, 12, 34386);
+    			add_location(button, file, 504, 12, 34632);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 505, 12, 34441);
+    			add_location(br5, file, 505, 12, 34687);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 505, 19, 34448);
+    			add_location(br6, file, 505, 19, 34694);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 506, 71, 34526);
+    			add_location(br7, file, 506, 71, 34772);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-viz99f");
-    			add_location(span2, file, 506, 12, 34467);
+    			add_location(span2, file, 506, 12, 34713);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 497, 8, 33767);
+    			add_location(div1, file, 497, 8, 34013);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 495, 4, 33543);
+    			add_location(div2, file, 495, 4, 33789);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -8188,80 +8207,80 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t32 = space();
     			attr_dev(button0, "class", "svelte-viz99f");
-    			add_location(button0, file, 359, 0, 19326);
+    			add_location(button0, file, 359, 0, 19572);
     			attr_dev(span0, "style", "display: inline-block; margin-left: 5px; margin-right: 5px;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 360, 0, 19406);
+    			add_location(span0, file, 360, 0, 19652);
     			option0.__value = "png";
     			option0.value = option0.__value;
     			attr_dev(option0, "class", "svelte-viz99f");
-    			add_location(option0, file, 362, 4, 19543);
+    			add_location(option0, file, 362, 4, 19789);
     			option1.__value = "jpeg";
     			option1.value = option1.__value;
     			attr_dev(option1, "class", "svelte-viz99f");
-    			add_location(option1, file, 363, 4, 19582);
+    			add_location(option1, file, 363, 4, 19828);
     			option2.__value = "webp";
     			option2.value = option2.__value;
     			attr_dev(option2, "class", "svelte-viz99f");
-    			add_location(option2, file, 364, 4, 19622);
+    			add_location(option2, file, 364, 4, 19868);
     			attr_dev(select0, "class", "svelte-viz99f");
     			if (/*flareSettings*/ ctx[0].exportType === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[15].call(select0));
-    			add_location(select0, file, 361, 0, 19492);
+    			add_location(select0, file, 361, 0, 19738);
     			attr_dev(div0, "id", "exportPanel");
     			attr_dev(div0, "class", "svelte-viz99f");
-    			add_location(div0, file, 358, 0, 19301);
+    			add_location(div0, file, 358, 0, 19547);
     			attr_dev(canvas0, "id", "referenceImage");
     			attr_dev(canvas0, "width", canvas0_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas0, "height", canvas0_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas0, file, 369, 4, 19712);
+    			add_location(canvas0, file, 369, 4, 19958);
     			attr_dev(canvas1, "id", "baseCanvas");
     			attr_dev(canvas1, "width", canvas1_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas1, "height", canvas1_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas1, file, 370, 4, 19882);
+    			add_location(canvas1, file, 370, 4, 20128);
     			attr_dev(div1, "id", "previewSection");
     			attr_dev(div1, "class", "svelte-viz99f");
-    			add_location(div1, file, 368, 0, 19677);
+    			add_location(div1, file, 368, 0, 19923);
     			option3.__value = 1;
     			option3.value = option3.__value;
     			attr_dev(option3, "class", "svelte-viz99f");
-    			add_location(option3, file, 376, 4, 20270);
+    			add_location(option3, file, 376, 4, 20516);
     			option4.__value = 5 / 4;
     			option4.value = option4.__value;
     			attr_dev(option4, "class", "svelte-viz99f");
-    			add_location(option4, file, 377, 4, 20306);
+    			add_location(option4, file, 377, 4, 20552);
     			option5.__value = 5 / 3;
     			option5.value = option5.__value;
     			attr_dev(option5, "class", "svelte-viz99f");
-    			add_location(option5, file, 378, 4, 20343);
+    			add_location(option5, file, 378, 4, 20589);
     			option6.__value = 5 / 2;
     			option6.value = option6.__value;
     			attr_dev(option6, "class", "svelte-viz99f");
-    			add_location(option6, file, 379, 4, 20380);
+    			add_location(option6, file, 379, 4, 20626);
     			option7.__value = 5;
     			option7.value = option7.__value;
     			attr_dev(option7, "class", "svelte-viz99f");
-    			add_location(option7, file, 380, 4, 20417);
+    			add_location(option7, file, 380, 4, 20663);
     			attr_dev(select1, "class", "svelte-viz99f");
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[18].call(select1));
-    			add_location(select1, file, 375, 0, 20148);
+    			add_location(select1, file, 375, 0, 20394);
     			attr_dev(span1, "style", "white-space: pre; color: grey;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 382, 0, 20458);
+    			add_location(span1, file, 382, 0, 20704);
     			attr_dev(input, "type", "checkbox");
     			input.checked = true;
     			attr_dev(input, "style", "margin-bottom: 0;");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 383, 0, 20526);
+    			add_location(input, file, 383, 0, 20772);
     			attr_dev(button1, "class", "svelte-viz99f");
-    			add_location(button1, file, 385, 0, 20663);
+    			add_location(button1, file, 385, 0, 20909);
     			attr_dev(div2, "id", "sectionAbovePreview");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 373, 0, 20099);
+    			add_location(div2, file, 373, 0, 20345);
     			attr_dev(button2, "style", "float: right;");
     			attr_dev(button2, "class", "svelte-viz99f");
-    			add_location(button2, file, 400, 4, 21026);
+    			add_location(button2, file, 400, 4, 21272);
 
     			attr_dev(div3, "style", `
     position: sticky;
@@ -8274,10 +8293,10 @@ var app = (function () {
 `);
 
     			attr_dev(div3, "class", "svelte-viz99f");
-    			add_location(div3, file, 390, 0, 20748);
+    			add_location(div3, file, 390, 0, 20994);
     			attr_dev(div4, "id", "controlPanel");
     			attr_dev(div4, "class", "svelte-viz99f");
-    			add_location(div4, file, 388, 0, 20721);
+    			add_location(div4, file, 388, 0, 20967);
     			document_1.title = "Progen Flares 2";
     		},
     		l: function claim(nodes) {
@@ -8880,6 +8899,25 @@ var app = (function () {
     				"softening": 0,
     				"hue": 23,
     				"saturation": 100,
+    				"anamorph": 0
+    			},
+    			"lensOrbs": {
+    				"radius": 21,
+    				"sides": 6,
+    				"roundness": 100,
+    				"angle": 0,
+    				"fillAlpha": 3,
+    				"fringeAlpha": 6,
+    				"fringeSize": 4,
+    				"blur": 2,
+    				"count": 123,
+    				"threshold": 1210,
+    				"seed": 222,
+    				"sizeVariance": 0,
+    				"alphaVariance": 42,
+    				"hue": 16,
+    				"saturation": 100,
+    				"hueVariance": 0,
     				"anamorph": 0
     			}
     		});
