@@ -295,7 +295,7 @@
                 flareSettings[keyi][keyj] = presetData[keyi][keyj];
             }
         }
-        renderFlare(true, true, true, true, true);
+        renderFlare(true, true, true, true, true, true);
     }
 
     var startScreenVisible = true;
@@ -305,7 +305,7 @@
         flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2;
         flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5;
         flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5;
-        renderFlare(true, true, true, true, true);
+        renderFlare(true, true, true, true, true, true);
         startScreenVisible = false;
     }
 
