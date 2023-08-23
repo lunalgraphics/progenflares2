@@ -280,6 +280,7 @@
             ring: flareSettings.ring,
             miIris: flareSettings.miIris,
             glow: flareSettings.glow,
+            lensOrbs: flareSettings.lensOrbs,
         });
         var textFile = new Blob([fileContents], { "type": "application/json" });
         var a = document.createElement("a");
