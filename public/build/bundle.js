@@ -2876,7 +2876,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 57, 12, 14725);
+    			add_location(option, file$1, 57, 12, 18408);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2936,17 +2936,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 53, 4, 14501);
+    			add_location(option0, file$1, 53, 4, 18184);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 54, 4, 14571);
+    			add_location(option1, file$1, 54, 4, 18254);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 55, 4, 14634);
+    			add_location(optgroup, file$1, 55, 4, 18317);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 52, 0, 14442);
+    			add_location(select, file$1, 52, 0, 18125);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 62, 0, 14835);
+    			add_location(input, file$1, 62, 0, 18518);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3187,6 +3187,25 @@ var app = (function () {
     					"hue": 200,
     					"saturation": 100,
     					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 123,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
     				}
     			}
     		},
@@ -3255,6 +3274,25 @@ var app = (function () {
     					"hue": 10,
     					"saturation": 100,
     					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 22,
+    					"sides": 8,
+    					"roundness": 25,
+    					"angle": 24,
+    					"fillAlpha": 2,
+    					"fringeAlpha": 12,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 135,
+    					"threshold": 931,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 15,
+    					"hue": 14,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 42
     				}
     			}
     		},
@@ -3322,6 +3360,25 @@ var app = (function () {
     					"softening": 70,
     					"hue": 281,
     					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
     					"anamorph": 0
     				}
     			}
@@ -3391,6 +3448,25 @@ var app = (function () {
     					"hue": 188,
     					"saturation": 58,
     					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
     				}
     			}
     		},
@@ -3458,6 +3534,25 @@ var app = (function () {
     					"softening": 70,
     					"hue": 34,
     					"saturation": 45,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 25,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 2,
+    					"fringeAlpha": 4,
+    					"fringeSize": 12,
+    					"blur": 2,
+    					"count": 84,
+    					"threshold": 969,
+    					"seed": 40,
+    					"sizeVariance": 0,
+    					"alphaVariance": 32,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 99,
     					"anamorph": 0
     				}
     			}
@@ -3527,6 +3622,25 @@ var app = (function () {
     					"hue": 122,
     					"saturation": 100,
     					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
     				}
     			}
     		},
@@ -3595,6 +3709,25 @@ var app = (function () {
     					"hue": 212,
     					"saturation": 100,
     					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 28,
+    					"sides": 6,
+    					"roundness": 25,
+    					"angle": 0,
+    					"fillAlpha": 2,
+    					"fringeAlpha": 8,
+    					"fringeSize": 10,
+    					"blur": 2,
+    					"count": 135,
+    					"threshold": 931,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 15,
+    					"hue": 236,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 42
     				}
     			}
     		},
@@ -3662,6 +3795,25 @@ var app = (function () {
     					"softening": 0,
     					"hue": 205,
     					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 25,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 5,
+    					"fringeSize": 9,
+    					"blur": 2,
+    					"count": 111,
+    					"threshold": 1234,
+    					"seed": 315,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 223,
+    					"saturation": 100,
+    					"hueVariance": 0,
     					"anamorph": 0
     				}
     			}
@@ -3731,6 +3883,25 @@ var app = (function () {
     					"hue": 45,
     					"saturation": 100,
     					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
     				}
     			}
     		},
@@ -3799,6 +3970,25 @@ var app = (function () {
     					"hue": 21,
     					"saturation": 100,
     					"anamorph": 37
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
     				}
     			}
     		},
@@ -3866,6 +4056,25 @@ var app = (function () {
     					"softening": 70,
     					"hue": 196,
     					"saturation": 24,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 24,
+    					"sides": 6,
+    					"roundness": 16,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 4,
+    					"fringeSize": 6,
+    					"blur": 2,
+    					"count": 100,
+    					"threshold": 943,
+    					"seed": 678,
+    					"sizeVariance": 0,
+    					"alphaVariance": 100,
+    					"hue": 214,
+    					"saturation": 11,
+    					"hueVariance": 22,
     					"anamorph": 0
     				}
     			}
@@ -3935,6 +4144,25 @@ var app = (function () {
     					"hue": 9,
     					"saturation": 100,
     					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
     				}
     			}
     		},
@@ -4002,6 +4230,25 @@ var app = (function () {
     					"softening": 70,
     					"hue": 279,
     					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 24,
+    					"sides": 8,
+    					"roundness": 24,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 94,
+    					"threshold": 1045,
+    					"seed": 535,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 295,
+    					"saturation": 100,
+    					"hueVariance": 0,
     					"anamorph": 0
     				}
     			}
@@ -4071,6 +4318,25 @@ var app = (function () {
     					"hue": 212,
     					"saturation": 37,
     					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 24,
+    					"sides": 8,
+    					"roundness": 12,
+    					"angle": 0,
+    					"fillAlpha": 2,
+    					"fringeAlpha": 2,
+    					"fringeSize": 6,
+    					"blur": 2,
+    					"count": 99,
+    					"threshold": 943,
+    					"seed": 807,
+    					"sizeVariance": 0,
+    					"alphaVariance": 24,
+    					"hue": 196,
+    					"saturation": 11,
+    					"hueVariance": 22,
+    					"anamorph": 0
     				}
     			}
     		},
@@ -4138,6 +4404,25 @@ var app = (function () {
     					"softening": 70,
     					"hue": 45,
     					"saturation": 35,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 24,
+    					"sides": 6,
+    					"roundness": 12,
+    					"angle": 0,
+    					"fillAlpha": 1,
+    					"fringeAlpha": 2,
+    					"fringeSize": 12,
+    					"blur": 2,
+    					"count": 99,
+    					"threshold": 987,
+    					"seed": 807,
+    					"sizeVariance": 0,
+    					"alphaVariance": 50,
+    					"hue": 33,
+    					"saturation": 11,
+    					"hueVariance": 22,
     					"anamorph": 0
     				}
     			}
