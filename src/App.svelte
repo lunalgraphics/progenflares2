@@ -248,7 +248,7 @@
             var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
             orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
             var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
-            drawComponent(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), flareSettings.lensOrbs.angle, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
+            drawComponent(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
         }
     }
 
