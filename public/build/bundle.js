@@ -1,2 +1,10414 @@
-var app=function(){"use strict";function n(){}const e=n=>n;function t(n){return n()}function i(){return Object.create(null)}function a(n){n.forEach(t)}function s(n){return"function"==typeof n}function r(n,e){return n!=n?e==e:n!==e||n&&"object"==typeof n||"function"==typeof n}let o;function u(n,e,t,i){return n[1]&&i?function(n,e){for(const t in e)n[t]=e[t];return n}(t.ctx.slice(),n[1](i(e))):t.ctx}function l(n){return null==n?"":n}const c="undefined"!=typeof window;let h=c?()=>window.performance.now():()=>Date.now(),p=c?n=>requestAnimationFrame(n):n;const f=new Set;function d(n){f.forEach((e=>{e.c(n)||(f.delete(e),e.f())})),0!==f.size&&p(d)}function m(n){let e;return 0===f.size&&p(d),{promise:new Promise((t=>{f.add(e={c:n,f:t})})),abort(){f.delete(e)}}}function g(n,e){n.appendChild(e)}function $(n){if(!n)return document;const e=n.getRootNode?n.getRootNode():n.ownerDocument;return e&&e.host?e:n.ownerDocument}function v(n){const e=x("style");return function(n,e){g(n.head||n,e),e.sheet}($(n),e),e.sheet}function b(n,e,t){n.insertBefore(e,t||null)}function w(n){n.parentNode&&n.parentNode.removeChild(n)}function x(n){return document.createElement(n)}function y(n){return document.createTextNode(n)}function z(){return y(" ")}function k(n,e,t,i){return n.addEventListener(e,t,i),()=>n.removeEventListener(e,t,i)}function A(n,e,t){null==t?n.removeAttribute(e):n.getAttribute(e)!==t&&n.setAttribute(e,t)}function S(n){return""===n?null:+n}function I(n,e){e=""+e,n.wholeText!==e&&(n.data=e)}function O(n,e){n.value=null==e?"":e}function _(n,e){for(let t=0;t<n.options.length;t+=1){const i=n.options[t];if(i.__value===e)return void(i.selected=!0)}n.selectedIndex=-1}function V(n){const e=n.querySelector(":checked")||n.options[0];return e&&e.__value}function q(n,e,{bubbles:t=!1,cancelable:i=!1}={}){const a=document.createEvent("CustomEvent");return a.initCustomEvent(n,t,i,e),a}const M=new Map;let F,C=0;function T(n,e,t,i,a,s,r,o=0){const u=16.666/i;let l="{\n";for(let n=0;n<=1;n+=u){const i=e+(t-e)*s(n);l+=100*n+`%{${r(i,1-i)}}\n`}const c=l+`100% {${r(t,1-t)}}\n}`,h=`__svelte_${function(n){let e=5381,t=n.length;for(;t--;)e=(e<<5)-e^n.charCodeAt(t);return e>>>0}(c)}_${o}`,p=$(n),{stylesheet:f,rules:d}=M.get(p)||function(n,e){const t={stylesheet:v(e),rules:{}};return M.set(n,t),t}(p,n);d[h]||(d[h]=!0,f.insertRule(`@keyframes ${h} ${c}`,f.cssRules.length));const m=n.style.animation||"";return n.style.animation=`${m?`${m}, `:""}${h} ${i}ms linear ${a}ms 1 both`,C+=1,h}function E(n,e){const t=(n.style.animation||"").split(", "),i=t.filter(e?n=>n.indexOf(e)<0:n=>-1===n.indexOf("__svelte")),a=t.length-i.length;a&&(n.style.animation=i.join(", "),C-=a,C||p((()=>{C||(M.forEach((n=>{const{ownerNode:e}=n.stylesheet;e&&w(e)})),M.clear())})))}function R(n){F=n}function H(){const n=function(){if(!F)throw new Error("Function called outside component initialization");return F}();return(e,t,{cancelable:i=!1}={})=>{const a=n.$$.callbacks[e];if(a){const s=q(e,t,{cancelable:i});return a.slice().forEach((e=>{e.call(n,s)})),!s.defaultPrevented}return!0}}const P=[],L=[],N=[],j=[],D=Promise.resolve();let X=!1;function Y(n){N.push(n)}function B(n){j.push(n)}const G=new Set;let U,J=0;function W(){if(0!==J)return;const n=F;do{try{for(;J<P.length;){const n=P[J];J++,R(n),K(n.$$)}}catch(n){throw P.length=0,J=0,n}for(R(null),P.length=0,J=0;L.length;)L.pop()();for(let n=0;n<N.length;n+=1){const e=N[n];G.has(e)||(G.add(e),e())}N.length=0}while(P.length);for(;j.length;)j.pop()();X=!1,G.clear(),R(n)}function K(n){if(null!==n.fragment){n.update(),a(n.before_update);const e=n.dirty;n.dirty=[-1],n.fragment&&n.fragment.p(n.ctx,e),n.after_update.forEach(Y)}}function Q(){return U||(U=Promise.resolve(),U.then((()=>{U=null}))),U}function Z(n,e,t){n.dispatchEvent(q(`${e?"intro":"outro"}${t}`))}const nn=new Set;let en;function tn(){en={r:0,c:[],p:en}}function an(){en.r||a(en.c),en=en.p}function sn(n,e){n&&n.i&&(nn.delete(n),n.i(e))}function rn(n,e,t,i){if(n&&n.o){if(nn.has(n))return;nn.add(n),en.c.push((()=>{nn.delete(n),i&&(t&&n.d(1),i())})),n.o(e)}else i&&i()}const on={duration:0};function un(t,i,r){const o={direction:"out"};let u,l=i(t,r,o),c=!0;const p=en;function f(){const{delay:i=0,duration:s=300,easing:r=e,tick:o=n,css:f}=l||on;f&&(u=T(t,1,0,s,i,r,f));const d=h()+i,g=d+s;Y((()=>Z(t,!1,"start"))),m((n=>{if(c){if(n>=g)return o(0,1),Z(t,!1,"end"),--p.r||a(p.c),!1;if(n>=d){const e=r((n-d)/s);o(1-e,e)}}return c}))}return p.r+=1,s(l)?Q().then((()=>{l=l(o),f()})):f(),{end(n){n&&l.tick&&l.tick(1,0),c&&(u&&E(t,u),c=!1)}}}const ln="undefined"!=typeof window?window:"undefined"!=typeof globalThis?globalThis:global;function cn(n,e,t){const i=n.$$.props[e];void 0!==i&&(n.$$.bound[i]=t,t(n.$$.ctx[i]))}function hn(n){n&&n.c()}function pn(n,e,i,r){const{fragment:o,after_update:u}=n.$$;o&&o.m(e,i),r||Y((()=>{const e=n.$$.on_mount.map(t).filter(s);n.$$.on_destroy?n.$$.on_destroy.push(...e):a(e),n.$$.on_mount=[]})),u.forEach(Y)}function fn(n,e){const t=n.$$;null!==t.fragment&&(a(t.on_destroy),t.fragment&&t.fragment.d(e),t.on_destroy=t.fragment=null,t.ctx=[])}function dn(n,e){-1===n.$$.dirty[0]&&(P.push(n),X||(X=!0,D.then(W)),n.$$.dirty.fill(0)),n.$$.dirty[e/31|0]|=1<<e%31}function mn(e,t,s,r,o,u,l,c=[-1]){const h=F;R(e);const p=e.$$={fragment:null,ctx:[],props:u,update:n,not_equal:o,bound:i(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(t.context||(h?h.$$.context:[])),callbacks:i(),dirty:c,skip_bound:!1,root:t.target||h.$$.root};l&&l(p.root);let f=!1;if(p.ctx=s?s(e,t.props||{},((n,t,...i)=>{const a=i.length?i[0]:t;return p.ctx&&o(p.ctx[n],p.ctx[n]=a)&&(!p.skip_bound&&p.bound[n]&&p.bound[n](a),f&&dn(e,n)),t})):[],p.update(),f=!0,a(p.before_update),p.fragment=!!r&&r(p.ctx),t.target){if(t.hydrate){const n=function(n){return Array.from(n.childNodes)}(t.target);p.fragment&&p.fragment.l(n),n.forEach(w)}else p.fragment&&p.fragment.c();t.intro&&sn(e.$$.fragment),pn(e,t.target,t.anchor,t.customElement),W()}R(h)}class gn{$destroy(){fn(this,1),this.$destroy=n}$on(e,t){if(!s(t))return n;const i=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return i.push(t),()=>{const n=i.indexOf(t);-1!==n&&i.splice(n,1)}}$set(n){var e;this.$$set&&(e=n,0!==Object.keys(e).length)&&(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}function $n(n){const e=n-1;return e*e*e+1}function vn(n,{delay:t=0,duration:i=400,easing:a=e}={}){const s=+getComputedStyle(n).opacity;return{delay:t,duration:i,easing:a,css:n=>"opacity: "+n*s}}function bn(n,{delay:e=0,duration:t=400,easing:i=$n}={}){const a=getComputedStyle(n),s=+a.opacity,r=parseFloat(a.height),o=parseFloat(a.paddingTop),u=parseFloat(a.paddingBottom),l=parseFloat(a.marginTop),c=parseFloat(a.marginBottom),h=parseFloat(a.borderTopWidth),p=parseFloat(a.borderBottomWidth);return{delay:e,duration:t,easing:i,css:n=>`overflow: hidden;opacity: ${Math.min(20*n,1)*s};height: ${n*r}px;padding-top: ${n*o}px;padding-bottom: ${n*u}px;margin-top: ${n*l}px;margin-bottom: ${n*c}px;border-top-width: ${n*h}px;border-bottom-width: ${n*p}px;`}}function wn(t){let i,a,r,o;const l=t[4].default,c=function(n,e,t,i){if(n){const a=u(n,e,t,i);return n[0](a)}}(l,t,t[3],null);return{c(){i=x("div"),c&&c.c(),A(i,"id","contents"),A(i,"class","svelte-augxo2")},m(n,e){b(n,i,e),c&&c.m(i,null),o=!0},p(n,e){c&&c.p&&(!o||8&e)&&function(n,e,t,i,a,s){if(a){const r=u(e,t,i,s);n.p(r,a)}}(c,l,n,n[3],o?function(n,e,t,i){if(n[2]&&i){const a=n[2](i(t));if(void 0===e.dirty)return a;if("object"==typeof a){const n=[],t=Math.max(e.dirty.length,a.length);for(let i=0;i<t;i+=1)n[i]=e.dirty[i]|a[i];return n}return e.dirty|a}return e.dirty}(l,n[3],e,null):function(n){if(n.ctx.length>32){const e=[],t=n.ctx.length/32;for(let n=0;n<t;n++)e[n]=-1;return e}return-1}(n[3]),null)},i(t){o||(sn(c,t),Y((()=>{r&&r.end(1),a=function(t,i,a){const r={direction:"in"};let o,u,l=i(t,a,r),c=!1,p=0;function f(){o&&E(t,o)}function d(){const{delay:i=0,duration:a=300,easing:s=e,tick:r=n,css:d}=l||on;d&&(o=T(t,0,1,a,i,s,d,p++)),r(0,1);const g=h()+i,$=g+a;u&&u.abort(),c=!0,Y((()=>Z(t,!0,"start"))),u=m((n=>{if(c){if(n>=$)return r(1,0),Z(t,!0,"end"),f(),c=!1;if(n>=g){const e=s((n-g)/a);r(e,1-e)}}return c}))}let g=!1;return{start(){g||(g=!0,E(t),s(l)?(l=l(r),Q().then(d)):d())},invalidate(){g=!1},end(){c&&(f(),c=!1)}}}(i,bn,{}),a.start()})),o=!0)},o(n){rn(c,n),a&&a.invalidate(),r=un(i,bn,{}),o=!1},d(n){n&&w(i),c&&c.d(n),n&&r&&r.end()}}}function xn(n){let e,t,i,a,s,r,o,u,l,c,h,p=n[0]?"+":"-",f=!n[0]&&wn(n);return{c(){e=x("div"),t=x("div"),i=y(p),a=z(),s=x("b"),r=y(n[1]),o=z(),f&&f.c(),u=y(""),A(t,"style","width: 18px; text-align: center; display: inline-block;"),A(e,"id","nameTag"),A(e,"class","svelte-augxo2")},m(p,d){b(p,e,d),g(e,t),g(t,i),g(e,a),g(e,s),g(s,r),b(p,o,d),f&&f.m(p,d),b(p,u,d),l=!0,c||(h=k(e,"mousedown",n[2]),c=!0)},p(n,[e]){(!l||1&e)&&p!==(p=n[0]?"+":"-")&&I(i,p),(!l||2&e)&&I(r,n[1]),n[0]?f&&(tn(),rn(f,1,1,(()=>{f=null})),an()):f?(f.p(n,e),1&e&&sn(f,1)):(f=wn(n),f.c(),sn(f,1),f.m(u.parentNode,u))},i(n){l||(sn(f),l=!0)},o(n){rn(f),l=!1},d(n){n&&w(e),n&&w(o),f&&f.d(n),n&&w(u),c=!1,h()}}}function yn(n,e,t){let{$$slots:i={},$$scope:a}=e;H();let{title:s}=e,{collapsed:r=!0}=e;return n.$$set=n=>{"title"in n&&t(1,s=n.title),"collapsed"in n&&t(0,r=n.collapsed),"$$scope"in n&&t(3,a=n.$$scope)},[r,s,function(){t(0,r=!r)},a,i]}class zn extends gn{constructor(n){super(),mn(this,n,yn,xn,r,{title:1,collapsed:0})}}var kn=function(n,e=200,t=100){n.save(),n.fillStyle=`hsl(${e}deg, ${t}%, ${50-t/4}%)`,n.globalCompositeOperation="soft-light",n.fillRect(0,0,n.canvas.width,n.canvas.height),n.fillRect(0,0,n.canvas.width,n.canvas.height),n.restore()};class An{canvas=document.createElement("canvas");getLuma(n,e){return 1-Math.sqrt(1-Math.pow(n/e-1,2))}constructor(){var n=this.canvas;n.width=2048,n.height=2048;var e=n.getContext("2d");e.restore(),e.save(),e.fillRect(0,0,n.width,n.height);for(var t=e.getImageData(0,0,n.width,n.height),i=t.data,a=0;a<i.length;a+=4){var s=Math.floor(a/4/n.width),r=this.getLuma(s,n.height);i[a]=255*r,i[a+1]=255*r,i[a+2]=255*r}e.putImageData(t,0,0)}}class Sn{static canvas=(new An).canvas}var In=Sn;var On=class{canvas=document.createElement("canvas");svgFilter=document.createElementNS("http://www.w3.org/2000/svg","filter");options={baseFrequency:[.01,.01],type:"fractalNoise",numOctaves:10,seed:1,stitchTiles:"stitch"};width=1920;height=1080;setOptions(n){for(var e in n)this.options[e]=n[e];this.svgFilter.innerHTML=`<feTurbulence\n            baseFrequency="${this.options.baseFrequency.join(" ")}"\n            type="${this.options.type}"\n            numOctaves="${this.options.numOctaves}"\n            seed="${this.options.seed}"\n            stitchTiles="${this.options.stitchTiles}"\n            color-interpolation-filters="linearRGB"\n        />`}constructor(n,e,t){this.svgFilter.id=`fNoiseFilter${Math.random().toFixed(8).replace("0.","")}`,this.svgFilter.setAttribute("x","0%"),this.svgFilter.setAttribute("y","0%"),this.svgFilter.setAttribute("width","100%"),this.svgFilter.setAttribute("height","100%"),this.setOptions(t),this.width=n,this.height=e}render(){this.canvas.width=this.width,this.canvas.height=this.height;var n=this.canvas,e=n.getContext("2d");e.restore(),e.save(),e.clearRect(0,0,n.width,n.height),e.fillStyle="black",e.fillRect(0,0,n.width,n.height),e.restore(),e.save();var t=document.createElementNS("http://www.w3.org/2000/svg","svg");t.appendChild(this.svgFilter),document.body.appendChild(t),e.filter=`url(#${this.svgFilter.id})`,e.fillRect(0,0,n.width,n.height),t.remove()}};var _n=function(n){for(var e=n.canvas,t=n.getImageData(0,0,e.width,e.height),i=new ImageData(e.width,e.height),a=t.data,s=i.data,r=e.width/2,o=e.height/2,u=-1,l=0,c=-1,h=0;h<s.length;h+=4){++u>=e.width&&(l++,u=0);var p=Math.atan2(l-o,u-r),f=Math.sqrt(Math.pow(u-r,2)+Math.pow(l-o,2));if(!(f>e.width/2)){c=Math.round(p/Math.PI/2*e.width);var d=4*(Math.round(2*f)*e.width+c);s[h]=a[d],s[h+1]=a[d+1],s[h+2]=a[d+2],s[h+3]=255}}n.putImageData(i,0,0)};class Vn{canvas=document.createElement("canvas");options={intensity:10,deformationFrequency:.006,deformationAmount:1.6,deformationSeed:1,hue:200,saturation:100,angle:0};radius=1024;constructor(n,e){for(var t in this.radius=n,e)this.options[t]=e[t]}render(){this.canvas.width=Math.max(2*this.radius,2),this.canvas.height=Math.max(2*this.radius,2);var n=this.canvas.getContext("2d");n.restore(),n.save(),n.fillStyle="#FFFFFF",n.fillRect(0,0,this.canvas.width,this.canvas.height),n.drawImage(In.canvas,0,this.options.intensity,this.canvas.width,this.canvas.height-this.options.intensity);var e=new On(1024,1024,{baseFrequency:[this.options.deformationFrequency,0],seed:this.options.deformationSeed});e.render(),n.restore(),n.save(),n.globalCompositeOperation="soft-light",n.filter=`saturate(0) contrast(${this.options.deformationAmount})`;var t=this.canvas.width*this.options.angle/360;n.drawImage(e.canvas,t,0,this.canvas.width,this.canvas.height),n.drawImage(e.canvas,t-this.canvas.width,0,this.canvas.width,this.canvas.height),n.restore(),n.save(),kn(n,this.options.hue,this.options.saturation),_n(n)}}class qn{canvas=document.createElement("canvas");radius=512;options={thickness:10,blur:3,cropSize:200,cropHardness:50,hue:200,saturation:100};setOptions(n){for(var e in n)this.options[e]=n[e]}constructor(n,e){this.radius=n,this.setOptions(e)}render(){this.canvas.width=Math.max(2*this.radius,2),this.canvas.height=Math.max(2*this.radius,2);var n=this.canvas.getContext("2d");n.clearRect(0,0,this.canvas.width,this.canvas.height),n.restore(),n.save(),n.fillStyle="black",n.fillRect(0,0,this.canvas.width,this.canvas.height),n.beginPath(),n.arc(this.radius,this.radius,Math.max(this.radius-4*this.options.blur,2),0,2*Math.PI,!0);var e=n.createRadialGradient(this.radius,this.radius,0,this.radius,this.radius,Math.max(this.radius-4*this.options.blur,2));e.addColorStop(0,"black"),e.addColorStop(Math.max(1-this.options.thickness/this.radius,0),"black"),e.addColorStop(1,"white"),n.fillStyle=e,n.filter=`blur(${this.options.blur}px)`,n.fill();var t=n.createLinearGradient(0,0,0,this.options.cropSize);t.addColorStop(0,"black"),t.addColorStop(this.options.cropHardness/100,"black"),t.addColorStop(1,"rgba(0, 0, 0, 0)"),n.fillStyle=t,n.fillRect(0,0,this.canvas.width,this.options.cropSize),(t=n.createLinearGradient(0,this.canvas.height-this.options.cropSize,0,this.canvas.height)).addColorStop(0,"rgba(0, 0, 0, 0)"),t.addColorStop(1-this.options.cropHardness/100,"black"),t.addColorStop(1,"black"),n.fillStyle=t,n.fillRect(0,this.canvas.height-this.options.cropSize,this.canvas.width,this.options.cropSize),kn(n,this.options.hue,this.options.saturation),n.restore(),n.save()}}function Mn(e){let t,i,s,r,o,u;return{c(){t=x("slider"),i=x("input"),s=z(),r=x("input"),A(i,"type","range"),A(i,"min",e[1]),A(i,"max",e[2]),A(i,"step",e[3]),A(i,"class","svelte-169olcs"),A(r,"type","number"),A(r,"step",e[3]),A(r,"class","svelte-169olcs"),A(t,"class",e[4])},m(n,a){b(n,t,a),g(t,i),O(i,e[0]),e[10](i),g(t,s),g(t,r),O(r,e[0]),e[12](r),o||(u=[k(i,"change",e[9]),k(i,"input",e[9]),k(i,"input",e[7]),k(i,"change",e[8]),k(r,"input",e[11]),k(r,"input",e[7]),k(r,"change",e[8])],o=!0)},p(n,[e]){2&e&&A(i,"min",n[1]),4&e&&A(i,"max",n[2]),8&e&&A(i,"step",n[3]),1&e&&O(i,n[0]),8&e&&A(r,"step",n[3]),1&e&&S(r.value)!==n[0]&&O(r,n[0]),16&e&&A(t,"class",n[4])},i:n,o:n,d(n){n&&w(t),e[10](null),e[12](null),o=!1,a(u)}}}function Fn(n,e,t){const i=H();let a,s,{value:r}=e,{min:o=0}=e,{max:u}=e,{step:l=1}=e,{className:c=null}=e;return n.$$set=n=>{"value"in n&&t(0,r=n.value),"min"in n&&t(1,o=n.min),"max"in n&&t(2,u=n.max),"step"in n&&t(3,l=n.step),"className"in n&&t(4,c=n.className)},[r,o,u,l,c,a,s,function(){i("input")},function(){i("change")},function(){r=S(this.value),t(0,r)},function(n){L[n?"unshift":"push"]((()=>{s=n,t(6,s)}))},function(){r=S(this.value),t(0,r)},function(n){L[n?"unshift":"push"]((()=>{a=n,t(5,a)}))}]}class Cn extends gn{constructor(n){super(),mn(this,n,Fn,Mn,r,{value:0,min:1,max:2,step:3,className:4})}get value(){return this.$$.ctx[0]}set value(n){this.$$set({value:n}),W()}get min(){return this.$$.ctx[1]}set min(n){this.$$set({min:n}),W()}get max(){return this.$$.ctx[2]}set max(n){this.$$set({max:n}),W()}get step(){return this.$$.ctx[3]}set step(n){this.$$set({step:n}),W()}get className(){return this.$$.ctx[4]}set className(n){this.$$set({className:n}),W()}}var Tn=function(n,e,t,i,a,s,r=0,o=100,u=0,l=1){a<=0||s<=0||o<=0||l<=0||(n.restore(),n.save(),n.translate(t,i),n.rotate(r*Math.PI/180),n.globalAlpha=o/100,n.globalCompositeOperation="screen",(u>0||u<0)&&(n.filter=`hue-rotate(${u}deg)`),n.drawImage(e.canvas,-a/2*l,-s/2*l,a*l,s*l),n.restore(),n.save())};var En=function(n){var e=!1,t={x:0,y:0},i=e=>{var i=n.getBoundingClientRect(),a=e.clientX-i.x,s=e.clientY-i.y,r=i.width/n.width;t.x=Math.round(a/r),t.y=Math.round(s/r)},a=()=>{n.dispatchEvent(new CustomEvent("clickDrag",{detail:t}))},s=n=>{e=!0,i(n),a()},r=n=>{e=!1},o=n=>{e&&(i(n),a())};return n.addEventListener("mousedown",s),document.body.addEventListener("mousemove",o),document.body.addEventListener("mouseup",r),{destroy(){n.removeEventListener("mousedown",s),document.body.removeEventListener("mousemove",o),document.body.removeEventListener("mouseup",r)}}};class Rn{canvas=document.createElement("canvas");radius=512;options={roundness:20,sides:5,fillAlpha:25,fringeAlpha:50,fringeSize:10,hue:200,saturation:100,blur:5,angle:0};setOptions(n){for(var e in n)this.options[e]=n[e]}constructor(n,e){this.radius=n,this.setOptions(e)}render(){this.canvas.width=Math.max(2*this.radius,2),this.canvas.height=Math.max(2*this.radius,2);var n=this.canvas.getContext("2d");n.clearRect(0,0,this.canvas.width,this.canvas.height),n.restore(),n.save(),n.fillStyle="black",n.fillRect(0,0,this.canvas.width,this.canvas.height),n.beginPath();for(var e=[],t=this.options.angle*Math.PI/180,i=0;i<this.options.sides;i++){e.push([this.radius,t]);for(var a=this.radius,s=0,r=0;r<360;r++)s+=1/360*(2*Math.PI/this.options.sides),a=this.radius/Math.sin(Math.PI-s-.5*(Math.PI-2*Math.PI/this.options.sides))*Math.sin(.5*(Math.PI-2*Math.PI/this.options.sides))*(1-this.options.roundness/100)+this.radius*(this.options.roundness/100),e.push([a,t+s]);t+=2*Math.PI/this.options.sides}var o=!0;for(var u of e){a=u[0],s=u[1];var l=Math.cos(s)*a+this.radius,c=Math.sin(s)*a+this.radius;o?(n.moveTo(l,c),o=!1):n.lineTo(l,c)}n.fillStyle=`hsl(0deg, 0%, ${this.options.fringeAlpha}%)`,n.fill(),n.restore(),n.save(),n.fillStyle="black",n.filter=`blur(${this.options.fringeSize}px)`,n.fill(),n.restore(),n.save(),n.fillStyle="white",n.globalAlpha=this.options.fillAlpha/100,n.fill(),n.restore(),n.save();var h=document.createElement("canvas");h.width=this.canvas.width,h.height=this.canvas.height,h.getContext("2d").drawImage(this.canvas,0,0),n.fillStyle="black",n.fillRect(0,0,this.canvas.width,this.canvas.height),n.filter=`blur(${this.options.blur}px)`,n.drawImage(h,2*this.options.blur,2*this.options.blur,this.canvas.width-4*this.options.blur,this.canvas.height-4*this.options.blur),n.restore(),n.save(),kn(n,this.options.hue,this.options.saturation),n.restore(),n.save()}}var Hn="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function Pn(n){if(n.__esModule)return n;var e=Object.defineProperty({},"__esModule",{value:!0});return Object.keys(n).forEach((function(t){var i=Object.getOwnPropertyDescriptor(n,t);Object.defineProperty(e,t,i.get?i:{enumerable:!0,get:function(){return n[t]}})})),e}function Ln(n){var e={exports:{}};return n(e,e.exports),e.exports}var Nn=Ln((function(n){!function(n,e,t){function i(n){var e=this,t=function(){var n=4022871197,e=function(e){e=String(e);for(var t=0;t<e.length;t++){var i=.02519603282416938*(n+=e.charCodeAt(t));i-=n=i>>>0,n=(i*=n)>>>0,n+=4294967296*(i-=n)}return 2.3283064365386963e-10*(n>>>0)};return e}();e.next=function(){var n=2091639*e.s0+2.3283064365386963e-10*e.c;return e.s0=e.s1,e.s1=e.s2,e.s2=n-(e.c=0|n)},e.c=1,e.s0=t(" "),e.s1=t(" "),e.s2=t(" "),e.s0-=t(n),e.s0<0&&(e.s0+=1),e.s1-=t(n),e.s1<0&&(e.s1+=1),e.s2-=t(n),e.s2<0&&(e.s2+=1),t=null}function a(n,e){return e.c=n.c,e.s0=n.s0,e.s1=n.s1,e.s2=n.s2,e}function s(n,e){var t=new i(n),s=e&&e.state,r=t.next;return r.int32=function(){return 4294967296*t.next()|0},r.double=function(){return r()+11102230246251565e-32*(2097152*r()|0)},r.quick=r,s&&("object"==typeof s&&a(s,t),r.state=function(){return a(t,{})}),r}e&&e.exports?e.exports=s:t&&t.amd?t((function(){return s})):this.alea=s}(0,n,!1)})),jn=Ln((function(n){!function(n,e,t){function i(n){var e=this,t="";e.x=0,e.y=0,e.z=0,e.w=0,e.next=function(){var n=e.x^e.x<<11;return e.x=e.y,e.y=e.z,e.z=e.w,e.w^=e.w>>>19^n^n>>>8},n===(0|n)?e.x=n:t+=n;for(var i=0;i<t.length+64;i++)e.x^=0|t.charCodeAt(i),e.next()}function a(n,e){return e.x=n.x,e.y=n.y,e.z=n.z,e.w=n.w,e}function s(n,e){var t=new i(n),s=e&&e.state,r=function(){return(t.next()>>>0)/4294967296};return r.double=function(){do{var n=((t.next()>>>11)+(t.next()>>>0)/4294967296)/(1<<21)}while(0===n);return n},r.int32=t.next,r.quick=r,s&&("object"==typeof s&&a(s,t),r.state=function(){return a(t,{})}),r}e&&e.exports?e.exports=s:t&&t.amd?t((function(){return s})):this.xor128=s}(0,n,!1)})),Dn=Ln((function(n){!function(n,e,t){function i(n){var e=this,t="";e.next=function(){var n=e.x^e.x>>>2;return e.x=e.y,e.y=e.z,e.z=e.w,e.w=e.v,(e.d=e.d+362437|0)+(e.v=e.v^e.v<<4^n^n<<1)|0},e.x=0,e.y=0,e.z=0,e.w=0,e.v=0,n===(0|n)?e.x=n:t+=n;for(var i=0;i<t.length+64;i++)e.x^=0|t.charCodeAt(i),i==t.length&&(e.d=e.x<<10^e.x>>>4),e.next()}function a(n,e){return e.x=n.x,e.y=n.y,e.z=n.z,e.w=n.w,e.v=n.v,e.d=n.d,e}function s(n,e){var t=new i(n),s=e&&e.state,r=function(){return(t.next()>>>0)/4294967296};return r.double=function(){do{var n=((t.next()>>>11)+(t.next()>>>0)/4294967296)/(1<<21)}while(0===n);return n},r.int32=t.next,r.quick=r,s&&("object"==typeof s&&a(s,t),r.state=function(){return a(t,{})}),r}e&&e.exports?e.exports=s:t&&t.amd?t((function(){return s})):this.xorwow=s}(0,n,!1)})),Xn=Ln((function(n){!function(n,e,t){function i(n){var e=this;e.next=function(){var n,t,i=e.x,a=e.i;return n=i[a],t=(n^=n>>>7)^n<<24,t^=(n=i[a+1&7])^n>>>10,t^=(n=i[a+3&7])^n>>>3,t^=(n=i[a+4&7])^n<<7,n=i[a+7&7],t^=(n^=n<<13)^n<<9,i[a]=t,e.i=a+1&7,t},function(n,e){var t,i=[];if(e===(0|e))i[0]=e;else for(e=""+e,t=0;t<e.length;++t)i[7&t]=i[7&t]<<15^e.charCodeAt(t)+i[t+1&7]<<13;for(;i.length<8;)i.push(0);for(t=0;t<8&&0===i[t];++t);for(8==t?i[7]=-1:i[t],n.x=i,n.i=0,t=256;t>0;--t)n.next()}(e,n)}function a(n,e){return e.x=n.x.slice(),e.i=n.i,e}function s(n,e){null==n&&(n=+new Date);var t=new i(n),s=e&&e.state,r=function(){return(t.next()>>>0)/4294967296};return r.double=function(){do{var n=((t.next()>>>11)+(t.next()>>>0)/4294967296)/(1<<21)}while(0===n);return n},r.int32=t.next,r.quick=r,s&&(s.x&&a(s,t),r.state=function(){return a(t,{})}),r}e&&e.exports?e.exports=s:t&&t.amd?t((function(){return s})):this.xorshift7=s}(0,n,!1)})),Yn=Ln((function(n){!function(n,e,t){function i(n){var e=this;e.next=function(){var n,t,i=e.w,a=e.X,s=e.i;return e.w=i=i+1640531527|0,t=a[s+34&127],n=a[s=s+1&127],t^=t<<13,n^=n<<17,t^=t>>>15,n^=n>>>12,t=a[s]=t^n,e.i=s,t+(i^i>>>16)|0},function(n,e){var t,i,a,s,r,o=[],u=128;for(e===(0|e)?(i=e,e=null):(e+="\0",i=0,u=Math.max(u,e.length)),a=0,s=-32;s<u;++s)e&&(i^=e.charCodeAt((s+32)%e.length)),0===s&&(r=i),i^=i<<10,i^=i>>>15,i^=i<<4,i^=i>>>13,s>=0&&(r=r+1640531527|0,a=0==(t=o[127&s]^=i+r)?a+1:0);for(a>=128&&(o[127&(e&&e.length||0)]=-1),a=127,s=512;s>0;--s)i=o[a+34&127],t=o[a=a+1&127],i^=i<<13,t^=t<<17,i^=i>>>15,t^=t>>>12,o[a]=i^t;n.w=r,n.X=o,n.i=a}(e,n)}function a(n,e){return e.i=n.i,e.w=n.w,e.X=n.X.slice(),e}function s(n,e){null==n&&(n=+new Date);var t=new i(n),s=e&&e.state,r=function(){return(t.next()>>>0)/4294967296};return r.double=function(){do{var n=((t.next()>>>11)+(t.next()>>>0)/4294967296)/(1<<21)}while(0===n);return n},r.int32=t.next,r.quick=r,s&&(s.X&&a(s,t),r.state=function(){return a(t,{})}),r}e&&e.exports?e.exports=s:t&&t.amd?t((function(){return s})):this.xor4096=s}(0,n,!1)})),Bn=Ln((function(n){!function(n,e,t){function i(n){var e=this,t="";e.next=function(){var n=e.b,t=e.c,i=e.d,a=e.a;return n=n<<25^n>>>7^t,t=t-i|0,i=i<<24^i>>>8^a,a=a-n|0,e.b=n=n<<20^n>>>12^t,e.c=t=t-i|0,e.d=i<<16^t>>>16^a,e.a=a-n|0},e.a=0,e.b=0,e.c=-1640531527,e.d=1367130551,n===Math.floor(n)?(e.a=n/4294967296|0,e.b=0|n):t+=n;for(var i=0;i<t.length+20;i++)e.b^=0|t.charCodeAt(i),e.next()}function a(n,e){return e.a=n.a,e.b=n.b,e.c=n.c,e.d=n.d,e}function s(n,e){var t=new i(n),s=e&&e.state,r=function(){return(t.next()>>>0)/4294967296};return r.double=function(){do{var n=((t.next()>>>11)+(t.next()>>>0)/4294967296)/(1<<21)}while(0===n);return n},r.int32=t.next,r.quick=r,s&&("object"==typeof s&&a(s,t),r.state=function(){return a(t,{})}),r}e&&e.exports?e.exports=s:t&&t.amd?t((function(){return s})):this.tychei=s}(0,n,!1)})),Gn=Pn(Object.freeze({__proto__:null,default:{}})),Un=Ln((function(n){!function(e,t,i){var a,s=256,r=6,o="random",u=i.pow(s,r),l=i.pow(2,52),c=2*l,h=s-1;function p(n,h,p){var v=[],b=g(m((h=1==h?{entropy:!0}:h||{}).entropy?[n,$(t)]:null==n?function(){try{var n;return a&&(n=a.randomBytes)?n=n(s):(n=new Uint8Array(s),(e.crypto||e.msCrypto).getRandomValues(n)),$(n)}catch(n){var i=e.navigator,r=i&&i.plugins;return[+new Date,e,r,e.screen,$(t)]}}():n,3),v),w=new f(v),x=function(){for(var n=w.g(r),e=u,t=0;n<l;)n=(n+t)*s,e*=s,t=w.g(1);for(;n>=c;)n/=2,e/=2,t>>>=1;return(n+t)/e};return x.int32=function(){return 0|w.g(4)},x.quick=function(){return w.g(4)/4294967296},x.double=x,g($(w.S),t),(h.pass||p||function(n,e,t,a){return a&&(a.S&&d(a,w),n.state=function(){return d(w,{})}),t?(i[o]=n,e):n})(x,b,"global"in h?h.global:this==i,h.state)}function f(n){var e,t=n.length,i=this,a=0,r=i.i=i.j=0,o=i.S=[];for(t||(n=[t++]);a<s;)o[a]=a++;for(a=0;a<s;a++)o[a]=o[r=h&r+n[a%t]+(e=o[a])],o[r]=e;(i.g=function(n){for(var e,t=0,a=i.i,r=i.j,o=i.S;n--;)e=o[a=h&a+1],t=t*s+o[h&(o[a]=o[r=h&r+e])+(o[r]=e)];return i.i=a,i.j=r,t})(s)}function d(n,e){return e.i=n.i,e.j=n.j,e.S=n.S.slice(),e}function m(n,e){var t,i=[],a=typeof n;if(e&&"object"==a)for(t in n)try{i.push(m(n[t],e-1))}catch(n){}return i.length?i:"string"==a?n:n+"\0"}function g(n,e){for(var t,i=n+"",a=0;a<i.length;)e[h&a]=h&(t^=19*e[h&a])+i.charCodeAt(a++);return $(e)}function $(n){return String.fromCharCode.apply(0,n)}if(g(i.random(),t),n.exports){n.exports=p;try{a=Gn}catch(n){}}else i["seed"+o]=p}("undefined"!=typeof self?self:Hn,[],Math)}));Un.alea=Nn,Un.xor128=jn,Un.xorwow=Dn,Un.xorshift7=Xn,Un.xor4096=Yn,Un.tychei=Bn;var Jn=Un;class Wn{canvas=document.createElement("canvas");setCanvas(n,e,t,i=!0,a=!0){this.canvas.width=Math.max(2*Math.round(e/2),2),this.canvas.height=Math.max(t,2);var s=this.canvas.getContext("2d");s.drawImage(n,0,0,this.canvas.width,this.canvas.height),0==i&&s.clearRect(0,0,this.canvas.width/2,this.canvas.height),0==a&&s.clearRect(this.canvas.width/2,0,this.canvas.width/2,this.canvas.height)}constructor(n,e,t,i=!0,a=!0){this.setCanvas(n,e,t,i,a)}}function Kn(n,e,t){const i=n.slice();return i[8]=e[t],i}function Qn(e){let t,i,a=e[8].name+"";return{c(){t=x("option"),i=y(a),t.__value=JSON.stringify(e[8].data),t.value=t.__value},m(n,e){b(n,t,e),g(t,i)},p:n,d(n){n&&w(t)}}}function Zn(e){let t,i,s,r,o,u,l,c,h=e[2],p=[];for(let n=0;n<h.length;n+=1)p[n]=Qn(Kn(e,h,n));return{c(){t=x("select"),i=x("option"),i.textContent="Use a Preset",s=x("option"),s.textContent="Import .pgf2 file",r=x("optgroup");for(let n=0;n<p.length;n+=1)p[n].c();o=z(),u=x("input"),i.__value="",i.value=i.__value,i.selected=!0,i.disabled=!0,i.hidden=!0,s.__value="UPLOAD_PRESET",s.value=s.__value,A(r,"label","Built-In Presets"),A(t,"class","svelte-1cxpn51"),A(u,"type","file"),A(u,"class","svelte-1cxpn51")},m(n,a){b(n,t,a),g(t,i),g(t,s),g(t,r);for(let n=0;n<p.length;n+=1)p[n].m(r,null);e[5](t),b(n,o,a),b(n,u,a),e[6](u),l||(c=[k(t,"change",e[3]),k(u,"change",e[4])],l=!0)},p(n,[e]){if(4&e){let t;for(h=n[2],t=0;t<h.length;t+=1){const i=Kn(n,h,t);p[t]?p[t].p(i,e):(p[t]=Qn(i),p[t].c(),p[t].m(r,null))}for(;t<p.length;t+=1)p[t].d(1);p.length=h.length}},i:n,o:n,d(n){n&&w(t),function(n,e){for(let t=0;t<n.length;t+=1)n[t]&&n[t].d(e)}(p,n),e[5](null),n&&w(o),n&&w(u),e[6](null),l=!1,a(c)}}}function ne(n,e,t){const i=H();let a,s;var r=[{name:"Sun Digital",data:{hotspot:{radius:595,intensity:10,deformationAmount:1.5,deformationFrequency:.01,deformationSeed:239,alpha:100,angle:0,hue:39,saturation:88,anamorph:0},streak:{thickness:121,width:2435,intensity:-25,count:1,angle:0,shift:48,alpha:100,hue:216,saturation:100},ring:{radius:300,thickness:50,blur:4,cropSize:0,cropHardness:50,alpha:0,hue:200,saturation:100,anamorph:0},miIris:{radius:72,sides:6,roundness:50,angle:0,fillAlpha:10,fringeAlpha:12,fringeSize:28,blur:3,countAway:5,countTowards:12,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:333,hue:39,saturation:100,hueVariance:40,anamorph:0},glow:{radius:999,alpha:25,softening:0,hue:23,saturation:100,anamorph:0},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:6,fringeSize:4,blur:2,count:123,threshold:1210,seed:222,sizeVariance:0,alphaVariance:42,hue:16,saturation:100,hueVariance:0,anamorph:0}}},{name:"Simple Cyan",data:{hotspot:{radius:500,intensity:5,deformationAmount:1.6,deformationFrequency:.006,deformationSeed:1,alpha:100,angle:0,hue:200,saturation:100,anamorph:0},streak:{thickness:64,width:1600,intensity:5,count:1,angle:0,shift:36,alpha:100,hue:200,saturation:100},ring:{radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:21,hue:200,saturation:100,anamorph:0},miIris:{radius:81,sides:5,roundness:20,angle:0,fillAlpha:25,fringeAlpha:50,fringeSize:10,blur:4,countAway:5,countTowards:12,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:123,hue:200,saturation:100,hueVariance:30,anamorph:0},glow:{radius:960,alpha:50,softening:70,hue:200,saturation:100,anamorph:0},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:123,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0}}},{name:"Flamboyant Anamorphic",data:{hotspot:{radius:802,intensity:16,deformationAmount:1.6,deformationFrequency:.006,deformationSeed:1,alpha:100,angle:0,hue:36,saturation:100,anamorph:42},streak:{thickness:95,width:3210,intensity:5,count:1,angle:0,shift:54,alpha:100,hue:29,saturation:81},ring:{radius:333,thickness:67,blur:7,cropSize:0,cropHardness:23,alpha:16,hue:12,saturation:100,anamorph:42},miIris:{radius:84,sides:8,roundness:24,angle:24,fillAlpha:17,fringeAlpha:41,fringeSize:10,blur:4,countAway:8,countTowards:15,spread:25,sizeVariance:40,perspective:100,alphaVariance:50,seed:285,hue:29,saturation:100,hueVariance:44,anamorph:35},glow:{radius:1117,alpha:44,softening:26,hue:10,saturation:100,anamorph:0},lensOrbs:{radius:22,sides:8,roundness:25,angle:24,fillAlpha:2,fringeAlpha:12,fringeSize:4,blur:2,count:135,threshold:931,seed:100,sizeVariance:0,alphaVariance:15,hue:14,saturation:100,hueVariance:0,anamorph:42}}},{name:"Sea of Fog",data:{hotspot:{radius:372,intensity:21,deformationAmount:.76,deformationFrequency:.01,deformationSeed:157,alpha:100,angle:0,hue:287,saturation:48,anamorph:0},streak:{thickness:81,width:2145,intensity:10,count:1,angle:0,shift:45,alpha:100,hue:279,saturation:54},ring:{radius:356,thickness:42,blur:4,cropSize:543,cropHardness:35,alpha:100,hue:281,saturation:67,anamorph:0},miIris:{radius:81,sides:5,roundness:20,angle:54,fillAlpha:21,fringeAlpha:21,fringeSize:19,blur:3,countAway:5,countTowards:12,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:342,hue:283,saturation:100,hueVariance:20,anamorph:0},glow:{radius:1101,alpha:20,softening:70,hue:281,saturation:100,anamorph:0},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:0,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0}}},{name:"Interstellar",data:{hotspot:{radius:288,intensity:12,deformationAmount:.87,deformationFrequency:.01,deformationSeed:290,alpha:100,angle:0,hue:31,saturation:49,anamorph:0},streak:{thickness:46,width:1028,intensity:-10,count:5,angle:21,shift:18,alpha:100,hue:47,saturation:14},ring:{radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:0,hue:200,saturation:100,anamorph:0},miIris:{radius:81,sides:5,roundness:42,angle:55,fillAlpha:9,fringeAlpha:21,fringeSize:10,blur:4,countAway:8,countTowards:15,spread:28,sizeVariance:53,perspective:100,alphaVariance:71,seed:342,hue:222,saturation:26,hueVariance:102,anamorph:0},glow:{radius:1064,alpha:44,softening:70,hue:188,saturation:58,anamorph:0},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:0,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0}}},{name:"Sunflower",data:{hotspot:{radius:476,intensity:15,deformationAmount:1.6,deformationFrequency:.015,deformationSeed:109,alpha:100,angle:0,hue:36,saturation:25,anamorph:0},streak:{thickness:64,width:1600,intensity:5,count:1,angle:0,shift:36,alpha:0,hue:200,saturation:100},ring:{radius:281,thickness:40,blur:12,cropSize:0,cropHardness:50,alpha:14,hue:52,saturation:28,anamorph:0},miIris:{radius:59,sides:5,roundness:100,angle:0,fillAlpha:10,fringeAlpha:21,fringeSize:17,blur:2,countAway:7,countTowards:15,spread:18,sizeVariance:50,perspective:100,alphaVariance:100,seed:117,hue:60,saturation:40,hueVariance:82,anamorph:0},glow:{radius:935,alpha:50,softening:70,hue:34,saturation:45,anamorph:0},lensOrbs:{radius:25,sides:6,roundness:100,angle:0,fillAlpha:2,fringeAlpha:4,fringeSize:12,blur:2,count:84,threshold:969,seed:40,sizeVariance:0,alphaVariance:32,hue:210,saturation:100,hueVariance:99,anamorph:0}}},{name:"Daisy's Beacon",data:{hotspot:{radius:352,intensity:12,deformationAmount:1,deformationFrequency:.007,deformationSeed:497,alpha:100,angle:0,hue:81,saturation:100,anamorph:0},streak:{thickness:64,width:1600,intensity:5,count:1,angle:0,shift:36,alpha:0,hue:200,saturation:100},ring:{radius:270,thickness:40,blur:8,cropSize:0,cropHardness:50,alpha:7,hue:125,saturation:100,anamorph:0},miIris:{radius:41,sides:10,roundness:100,angle:0,fillAlpha:40,fringeAlpha:0,fringeSize:10,blur:15,countAway:5,countTowards:12,spread:25,sizeVariance:58,perspective:0,alphaVariance:100,seed:470,hue:165,saturation:100,hueVariance:12,anamorph:0},glow:{radius:960,alpha:44,softening:70,hue:122,saturation:100,anamorph:0},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:0,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0}}},{name:"Blue Dwarf",data:{hotspot:{radius:611,intensity:16,deformationAmount:1.6,deformationFrequency:.01,deformationSeed:157,alpha:100,angle:0,hue:204,saturation:100,anamorph:50},streak:{thickness:83,width:3210,intensity:10,count:1,angle:0,shift:36,alpha:100,hue:214,saturation:100},ring:{radius:400,thickness:74,blur:13,cropSize:0,cropHardness:50,alpha:8,hue:230,saturation:100,anamorph:50},miIris:{radius:73,sides:6,roundness:45,angle:0,fillAlpha:20,fringeAlpha:30,fringeSize:10,blur:5,countAway:7,countTowards:12,spread:30,sizeVariance:27,perspective:100,alphaVariance:81,seed:271,hue:211,saturation:100,hueVariance:36,anamorph:50},glow:{radius:960,alpha:57,softening:12,hue:212,saturation:100,anamorph:0},lensOrbs:{radius:28,sides:6,roundness:25,angle:0,fillAlpha:2,fringeAlpha:8,fringeSize:10,blur:2,count:135,threshold:931,seed:100,sizeVariance:0,alphaVariance:15,hue:236,saturation:100,hueVariance:0,anamorph:42}}},{name:"Clair de Lune",data:{hotspot:{radius:550,intensity:11,deformationAmount:1.6,deformationFrequency:.013,deformationSeed:139,alpha:100,angle:0,hue:200,saturation:19,anamorph:0},streak:{thickness:84,width:2661,intensity:12,count:1,angle:0,shift:50,alpha:100,hue:204,saturation:100},ring:{radius:325,thickness:37,blur:9,cropSize:0,cropHardness:50,alpha:8,hue:200,saturation:100,anamorph:0},miIris:{radius:60,sides:6,roundness:45,angle:0,fillAlpha:12,fringeAlpha:11,fringeSize:12,blur:3,countAway:7,countTowards:14,spread:40,sizeVariance:30,perspective:100,alphaVariance:50,seed:520,hue:210,saturation:100,hueVariance:36,anamorph:15},glow:{radius:1200,alpha:28,softening:0,hue:205,saturation:100,anamorph:0},lensOrbs:{radius:25,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:5,fringeSize:9,blur:2,count:111,threshold:1234,seed:315,sizeVariance:0,alphaVariance:42,hue:223,saturation:100,hueVariance:0,anamorph:0}}},{name:"Golden Century",data:{hotspot:{radius:632,intensity:11,deformationAmount:1.42,deformationFrequency:.012,deformationSeed:216,alpha:94,angle:0,hue:45,saturation:100,anamorph:0},streak:{thickness:92,width:3210,intensity:0,count:1,angle:0,shift:36,alpha:100,hue:42,saturation:100},ring:{radius:406,thickness:44,blur:6,cropSize:392,cropHardness:62,alpha:25,hue:27,saturation:100,anamorph:50},miIris:{radius:152,sides:5,roundness:100,angle:0,fillAlpha:25,fringeAlpha:0,fringeSize:10,blur:30,countAway:9,countTowards:16,spread:19,sizeVariance:40,perspective:100,alphaVariance:50,seed:342,hue:42,saturation:100,hueVariance:16,anamorph:88},glow:{radius:1082,alpha:39,softening:26,hue:45,saturation:100,anamorph:0},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:0,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0}}},{name:"Industrial Anamorphic",data:{hotspot:{radius:531,intensity:35,deformationAmount:0,deformationFrequency:.006,deformationSeed:1,alpha:100,angle:0,hue:25,saturation:21,anamorph:60},streak:{thickness:115,width:2695,intensity:-12,count:1,angle:0,shift:36,alpha:100,hue:222,saturation:100},ring:{radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:0,hue:200,saturation:100,anamorph:0},miIris:{radius:121,sides:5,roundness:100,angle:0,fillAlpha:25,fringeAlpha:0,fringeSize:10,blur:30,countAway:8,countTowards:18,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:123,hue:222,saturation:100,hueVariance:30,anamorph:72},glow:{radius:1111,alpha:45,softening:0,hue:21,saturation:100,anamorph:37},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:0,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0}}},{name:"Hexastar",data:{hotspot:{radius:345,intensity:5,deformationAmount:2.1,deformationFrequency:.015,deformationSeed:633,alpha:100,angle:0,hue:200,saturation:0,anamorph:0},streak:{thickness:42,width:1212,intensity:12,count:3,angle:0,shift:0,alpha:100,hue:200,saturation:0},ring:{radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:0,hue:200,saturation:100,anamorph:0},miIris:{radius:64,sides:6,roundness:45,angle:0,fillAlpha:10,fringeAlpha:10,fringeSize:25,blur:3,countAway:10,countTowards:19,spread:20,sizeVariance:40,perspective:100,alphaVariance:64,seed:397,hue:200,saturation:20,hueVariance:180,anamorph:0},glow:{radius:960,alpha:48,softening:70,hue:196,saturation:24,anamorph:0},lensOrbs:{radius:24,sides:6,roundness:16,angle:0,fillAlpha:3,fringeAlpha:4,fringeSize:6,blur:2,count:100,threshold:943,seed:678,sizeVariance:0,alphaVariance:100,hue:214,saturation:11,hueVariance:22,anamorph:0}}},{name:"Laser Meme",data:{hotspot:{radius:591,intensity:12,deformationAmount:2.1,deformationFrequency:.007,deformationSeed:611,alpha:100,angle:0,hue:14,saturation:100,anamorph:56},streak:{thickness:64,width:3210,intensity:5,count:1,angle:0,shift:50,alpha:100,hue:14,saturation:100},ring:{radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:0,hue:200,saturation:100,anamorph:0},miIris:{radius:49,sides:5,roundness:100,angle:0,fillAlpha:26,fringeAlpha:32,fringeSize:10,blur:4,countAway:9,countTowards:16,spread:30,sizeVariance:48,perspective:100,alphaVariance:100,seed:556,hue:25,saturation:100,hueVariance:25,anamorph:56},glow:{radius:960,alpha:50,softening:70,hue:9,saturation:100,anamorph:0},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:0,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0}}},{name:"Cherry Tree",data:{hotspot:{radius:443,intensity:5,deformationAmount:1.6,deformationFrequency:.008,deformationSeed:320,alpha:100,angle:0,hue:325,saturation:100,anamorph:0},streak:{thickness:99,width:3232,intensity:5,count:1,angle:0,shift:50,alpha:100,hue:284,saturation:100},ring:{radius:462,thickness:83,blur:9,cropSize:443,cropHardness:82,alpha:21,hue:298,saturation:100,anamorph:0},miIris:{radius:57,sides:8,roundness:42,angle:0,fillAlpha:16,fringeAlpha:32,fringeSize:30,blur:4,countAway:8,countTowards:16,spread:30,sizeVariance:47,perspective:100,alphaVariance:50,seed:315,hue:292,saturation:100,hueVariance:25,anamorph:0},glow:{radius:960,alpha:50,softening:70,hue:279,saturation:100,anamorph:0},lensOrbs:{radius:24,sides:8,roundness:24,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:94,threshold:1045,seed:535,sizeVariance:0,alphaVariance:42,hue:295,saturation:100,hueVariance:0,anamorph:0}}},{name:"Ancient Mariner",data:{hotspot:{radius:347,intensity:10,deformationAmount:0,deformationFrequency:.006,deformationSeed:1,alpha:100,angle:0,hue:176,saturation:14,anamorph:0},streak:{thickness:56,width:1100,intensity:11,count:2,angle:45,shift:0,alpha:100,hue:188,saturation:18},ring:{radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:0,hue:200,saturation:100,anamorph:0},miIris:{radius:60,sides:8,roundness:42,angle:22,fillAlpha:12,fringeAlpha:12,fringeSize:22,blur:3,countAway:9,countTowards:19,spread:24,sizeVariance:32,perspective:100,alphaVariance:50,seed:438,hue:180,saturation:100,hueVariance:45,anamorph:0},glow:{radius:1114,alpha:32,softening:33,hue:212,saturation:37,anamorph:0},lensOrbs:{radius:24,sides:8,roundness:12,angle:0,fillAlpha:2,fringeAlpha:2,fringeSize:6,blur:2,count:99,threshold:943,seed:807,sizeVariance:0,alphaVariance:24,hue:196,saturation:11,hueVariance:22,anamorph:0}}},{name:"Lemon Light",data:{hotspot:{radius:575,intensity:5,deformationAmount:1.6,deformationFrequency:.01,deformationSeed:134,alpha:100,angle:0,hue:48,saturation:27,anamorph:0},streak:{thickness:68,width:691,intensity:0,count:3,angle:30,shift:23,alpha:100,hue:51,saturation:18},ring:{radius:311,thickness:83,blur:13,cropSize:0,cropHardness:50,alpha:21,hue:45,saturation:100,anamorph:0},miIris:{radius:49,sides:5,roundness:100,angle:0,fillAlpha:25,fringeAlpha:50,fringeSize:10,blur:16,countAway:5,countTowards:16,spread:30,sizeVariance:37,perspective:100,alphaVariance:50,seed:329,hue:55,saturation:32,hueVariance:30,anamorph:0},glow:{radius:1203,alpha:50,softening:70,hue:45,saturation:35,anamorph:0},lensOrbs:{radius:24,sides:6,roundness:12,angle:0,fillAlpha:1,fringeAlpha:2,fringeSize:12,blur:2,count:99,threshold:987,seed:807,sizeVariance:0,alphaVariance:50,hue:33,saturation:11,hueVariance:22,anamorph:0}}}];return[a,s,r,function(){"UPLOAD_PRESET"==this.value?s.click():i("choose",JSON.parse(this.value)),this.value=""},function(){var n=this.files[0],e=new FileReader;e.addEventListener("loadend",(function(n){i("choose",JSON.parse(n.target.result))})),e.readAsText(n),this.value=null},function(n){L[n?"unshift":"push"]((()=>{a=n,t(0,a),t(2,r)}))},function(n){L[n?"unshift":"push"]((()=>{s=n,t(1,s)}))}]}class ee extends gn{constructor(n){super(),mn(this,n,ne,Zn,r,{})}}const{document:te}=ln;function ie(n){let e,t,i,a,s,r,o,u,l,c,h,p,f,d,m,g,$,v,k,S,I,O,_,V,q,M;function F(e){n[23](e)}let C={min:0,max:n[0].dimensions.width};function T(e){n[25](e)}void 0!==n[0].positioning.x&&(C.value=n[0].positioning.x),t=new Cn({props:C}),L.push((()=>cn(t,"value",F))),t.$on("input",n[24]);let E={min:0,max:n[0].dimensions.height};function R(e){n[27](e)}void 0!==n[0].positioning.y&&(E.value=n[0].positioning.y),o=new Cn({props:E}),L.push((()=>cn(o,"value",T))),o.$on("input",n[26]);let H={min:0,max:n[0].dimensions.width};function P(e){n[29](e)}void 0!==n[0].positioning.pivotX&&(H.value=n[0].positioning.pivotX),p=new Cn({props:H}),L.push((()=>cn(p,"value",R))),p.$on("input",n[28]);let N={min:0,max:n[0].dimensions.height};function j(e){n[31](e)}void 0!==n[0].positioning.pivotY&&(N.value=n[0].positioning.pivotY),$=new Cn({props:N}),L.push((()=>cn($,"value",P))),$.$on("input",n[30]);let D={min:.01,max:2,step:.01};return void 0!==n[0].sizeMultiplier&&(D.value=n[0].sizeMultiplier),O=new Cn({props:D}),L.push((()=>cn(O,"value",j))),O.$on("input",n[32]),O.$on("change",n[13]),{c(){e=y("Light X: "),hn(t.$$.fragment),a=z(),s=x("br"),r=y("\n    Light Y: "),hn(o.$$.fragment),l=z(),c=x("br"),h=y("\n    Focus X: "),hn(p.$$.fragment),d=z(),m=x("br"),g=y("\n    Focus Y: "),hn($.$$.fragment),k=z(),S=x("br"),I=y("\n    Scale Multiplier: "),hn(O.$$.fragment),V=z(),q=x("br"),A(s,"class","svelte-viz99f"),A(c,"class","svelte-viz99f"),A(m,"class","svelte-viz99f"),A(S,"class","svelte-viz99f"),A(q,"class","svelte-viz99f")},m(n,i){b(n,e,i),pn(t,n,i),b(n,a,i),b(n,s,i),b(n,r,i),pn(o,n,i),b(n,l,i),b(n,c,i),b(n,h,i),pn(p,n,i),b(n,d,i),b(n,m,i),b(n,g,i),pn($,n,i),b(n,k,i),b(n,S,i),b(n,I,i),pn(O,n,i),b(n,V,i),b(n,q,i),M=!0},p(n,e){const a={};1&e[0]&&(a.max=n[0].dimensions.width),!i&&1&e[0]&&(i=!0,a.value=n[0].positioning.x,B((()=>i=!1))),t.$set(a);const s={};1&e[0]&&(s.max=n[0].dimensions.height),!u&&1&e[0]&&(u=!0,s.value=n[0].positioning.y,B((()=>u=!1))),o.$set(s);const r={};1&e[0]&&(r.max=n[0].dimensions.width),!f&&1&e[0]&&(f=!0,r.value=n[0].positioning.pivotX,B((()=>f=!1))),p.$set(r);const l={};1&e[0]&&(l.max=n[0].dimensions.height),!v&&1&e[0]&&(v=!0,l.value=n[0].positioning.pivotY,B((()=>v=!1))),$.$set(l);const c={};!_&&1&e[0]&&(_=!0,c.value=n[0].sizeMultiplier,B((()=>_=!1))),O.$set(c)},i(n){M||(sn(t.$$.fragment,n),sn(o.$$.fragment,n),sn(p.$$.fragment,n),sn($.$$.fragment,n),sn(O.$$.fragment,n),M=!0)},o(n){rn(t.$$.fragment,n),rn(o.$$.fragment,n),rn(p.$$.fragment,n),rn($.$$.fragment,n),rn(O.$$.fragment,n),M=!1},d(n){n&&w(e),fn(t,n),n&&w(a),n&&w(s),n&&w(r),fn(o,n),n&&w(l),n&&w(c),n&&w(h),fn(p,n),n&&w(d),n&&w(m),n&&w(g),fn($,n),n&&w(k),n&&w(S),n&&w(I),fn(O,n),n&&w(V),n&&w(q)}}}function ae(n){let e,t,i,a,s,r,o,u,l,c,h,p,f,d,m,g,$,v,k,S,I,O,_,V,q,M,F,C,T,E,R,H,P,N,j,D,X,Y,G,U,J,W,K,Q,Z,nn,en,tn,an,on,un;function ln(e){n[33](e)}let dn={min:0,max:100};function mn(e){n[35](e)}void 0!==n[0].hotspot.alpha&&(dn.value=n[0].hotspot.alpha),t=new Cn({props:dn}),L.push((()=>cn(t,"value",ln))),t.$on("input",n[34]);let gn={min:0,max:360};function $n(e){n[37](e)}void 0!==n[0].hotspot.angle&&(gn.value=n[0].hotspot.angle),o=new Cn({props:gn}),L.push((()=>cn(o,"value",mn))),o.$on("input",n[36]);let vn={min:0,max:360,className:"hueSlider"};function bn(e){n[39](e)}void 0!==n[0].hotspot.hue&&(vn.value=n[0].hotspot.hue),p=new Cn({props:vn}),L.push((()=>cn(p,"value",$n))),p.$on("input",n[38]);let wn={min:0,max:100};function xn(e){n[41](e)}void 0!==n[0].hotspot.saturation&&(wn.value=n[0].hotspot.saturation),$=new Cn({props:wn}),L.push((()=>cn($,"value",bn))),$.$on("input",n[40]);let yn={min:0,max:1e3};function zn(e){n[43](e)}void 0!==n[0].hotspot.radius&&(yn.value=n[0].hotspot.radius),O=new Cn({props:yn}),L.push((()=>cn(O,"value",xn))),O.$on("input",n[42]);let kn={min:0,max:50};function An(e){n[45](e)}void 0!==n[0].hotspot.intensity&&(kn.value=n[0].hotspot.intensity),F=new Cn({props:kn}),L.push((()=>cn(F,"value",zn))),F.$on("input",n[44]);let Sn={min:0,max:.05,step:.001};function In(e){n[47](e)}void 0!==n[0].hotspot.deformationFrequency&&(Sn.value=n[0].hotspot.deformationFrequency),H=new Cn({props:Sn}),L.push((()=>cn(H,"value",An))),H.$on("input",n[46]);let On={min:0,max:2.1,step:.01};function _n(e){n[49](e)}void 0!==n[0].hotspot.deformationAmount&&(On.value=n[0].hotspot.deformationAmount),X=new Cn({props:On}),L.push((()=>cn(X,"value",In))),X.$on("input",n[48]);let Vn={min:1,max:999};function qn(e){n[51](e)}void 0!==n[0].hotspot.deformationSeed&&(Vn.value=n[0].hotspot.deformationSeed),W=new Cn({props:Vn}),L.push((()=>cn(W,"value",_n))),W.$on("input",n[50]);let Mn={min:0,max:100};return void 0!==n[0].hotspot.anamorph&&(Mn.value=n[0].hotspot.anamorph),en=new Cn({props:Mn}),L.push((()=>cn(en,"value",qn))),en.$on("input",n[52]),{c(){e=y("Alpha: "),hn(t.$$.fragment),a=z(),s=x("br"),r=y("\n    Angle: "),hn(o.$$.fragment),l=z(),c=x("br"),h=y("\n    Hue: "),hn(p.$$.fragment),d=z(),m=x("br"),g=y("\n    Saturation: "),hn($.$$.fragment),k=z(),S=x("br"),I=y("\n    Size: "),hn(O.$$.fragment),V=z(),q=x("br"),M=y("\n    Intensity: "),hn(F.$$.fragment),T=z(),E=x("br"),R=y("\n    Rays Frequency: "),hn(H.$$.fragment),N=z(),j=x("br"),D=y("\n    Rays Definition: "),hn(X.$$.fragment),G=z(),U=x("br"),J=y("\n    Random Seed: "),hn(W.$$.fragment),Q=z(),Z=x("br"),nn=y("\n    Anamorph: "),hn(en.$$.fragment),an=z(),on=x("br"),A(s,"class","svelte-viz99f"),A(c,"class","svelte-viz99f"),A(m,"class","svelte-viz99f"),A(S,"class","svelte-viz99f"),A(q,"class","svelte-viz99f"),A(E,"class","svelte-viz99f"),A(j,"class","svelte-viz99f"),A(U,"class","svelte-viz99f"),A(Z,"class","svelte-viz99f"),A(on,"class","svelte-viz99f")},m(n,i){b(n,e,i),pn(t,n,i),b(n,a,i),b(n,s,i),b(n,r,i),pn(o,n,i),b(n,l,i),b(n,c,i),b(n,h,i),pn(p,n,i),b(n,d,i),b(n,m,i),b(n,g,i),pn($,n,i),b(n,k,i),b(n,S,i),b(n,I,i),pn(O,n,i),b(n,V,i),b(n,q,i),b(n,M,i),pn(F,n,i),b(n,T,i),b(n,E,i),b(n,R,i),pn(H,n,i),b(n,N,i),b(n,j,i),b(n,D,i),pn(X,n,i),b(n,G,i),b(n,U,i),b(n,J,i),pn(W,n,i),b(n,Q,i),b(n,Z,i),b(n,nn,i),pn(en,n,i),b(n,an,i),b(n,on,i),un=!0},p(n,e){const a={};!i&&1&e[0]&&(i=!0,a.value=n[0].hotspot.alpha,B((()=>i=!1))),t.$set(a);const s={};!u&&1&e[0]&&(u=!0,s.value=n[0].hotspot.angle,B((()=>u=!1))),o.$set(s);const r={};!f&&1&e[0]&&(f=!0,r.value=n[0].hotspot.hue,B((()=>f=!1))),p.$set(r);const l={};!v&&1&e[0]&&(v=!0,l.value=n[0].hotspot.saturation,B((()=>v=!1))),$.$set(l);const c={};!_&&1&e[0]&&(_=!0,c.value=n[0].hotspot.radius,B((()=>_=!1))),O.$set(c);const h={};!C&&1&e[0]&&(C=!0,h.value=n[0].hotspot.intensity,B((()=>C=!1))),F.$set(h);const d={};!P&&1&e[0]&&(P=!0,d.value=n[0].hotspot.deformationFrequency,B((()=>P=!1))),H.$set(d);const m={};!Y&&1&e[0]&&(Y=!0,m.value=n[0].hotspot.deformationAmount,B((()=>Y=!1))),X.$set(m);const g={};!K&&1&e[0]&&(K=!0,g.value=n[0].hotspot.deformationSeed,B((()=>K=!1))),W.$set(g);const b={};!tn&&1&e[0]&&(tn=!0,b.value=n[0].hotspot.anamorph,B((()=>tn=!1))),en.$set(b)},i(n){un||(sn(t.$$.fragment,n),sn(o.$$.fragment,n),sn(p.$$.fragment,n),sn($.$$.fragment,n),sn(O.$$.fragment,n),sn(F.$$.fragment,n),sn(H.$$.fragment,n),sn(X.$$.fragment,n),sn(W.$$.fragment,n),sn(en.$$.fragment,n),un=!0)},o(n){rn(t.$$.fragment,n),rn(o.$$.fragment,n),rn(p.$$.fragment,n),rn($.$$.fragment,n),rn(O.$$.fragment,n),rn(F.$$.fragment,n),rn(H.$$.fragment,n),rn(X.$$.fragment,n),rn(W.$$.fragment,n),rn(en.$$.fragment,n),un=!1},d(n){n&&w(e),fn(t,n),n&&w(a),n&&w(s),n&&w(r),fn(o,n),n&&w(l),n&&w(c),n&&w(h),fn(p,n),n&&w(d),n&&w(m),n&&w(g),fn($,n),n&&w(k),n&&w(S),n&&w(I),fn(O,n),n&&w(V),n&&w(q),n&&w(M),fn(F,n),n&&w(T),n&&w(E),n&&w(R),fn(H,n),n&&w(N),n&&w(j),n&&w(D),fn(X,n),n&&w(G),n&&w(U),n&&w(J),fn(W,n),n&&w(Q),n&&w(Z),n&&w(nn),fn(en,n),n&&w(an),n&&w(on)}}}function se(n){let e,t,i,a,s,r,o,u,l,c,h,p,f,d,m,g,$,v,k,S,I,O,_,V,q,M,F,C,T,E,R,H,P,N,j,D,X,Y,G,U,J,W,K,Q,Z,nn;function en(e){n[53](e)}let tn={min:0,max:100};function an(e){n[55](e)}void 0!==n[0].streak.alpha&&(tn.value=n[0].streak.alpha),t=new Cn({props:tn}),L.push((()=>cn(t,"value",en))),t.$on("input",n[54]);let on={min:0,max:360};function un(e){n[57](e)}void 0!==n[0].streak.angle&&(on.value=n[0].streak.angle),o=new Cn({props:on}),L.push((()=>cn(o,"value",an))),o.$on("input",n[56]);let ln={min:0,max:360,className:"hueSlider"};function dn(e){n[59](e)}void 0!==n[0].streak.hue&&(ln.value=n[0].streak.hue),p=new Cn({props:ln}),L.push((()=>cn(p,"value",un))),p.$on("input",n[58]);let mn={min:0,max:100};function gn(e){n[61](e)}void 0!==n[0].streak.saturation&&(mn.value=n[0].streak.saturation),$=new Cn({props:mn}),L.push((()=>cn($,"value",dn))),$.$on("input",n[60]);let $n={min:0,max:200};function vn(e){n[63](e)}void 0!==n[0].streak.thickness&&($n.value=n[0].streak.thickness),O=new Cn({props:$n}),L.push((()=>cn(O,"value",gn))),O.$on("input",n[62]);let bn={min:0,max:5e3};function wn(e){n[65](e)}void 0!==n[0].streak.width&&(bn.value=n[0].streak.width),F=new Cn({props:bn}),L.push((()=>cn(F,"value",vn))),F.$on("input",n[64]);let xn={min:-30,max:50};function yn(e){n[67](e)}void 0!==n[0].streak.intensity&&(xn.value=n[0].streak.intensity),H=new Cn({props:xn}),L.push((()=>cn(H,"value",wn))),H.$on("input",n[66]);let zn={min:1,max:8};function kn(e){n[69](e)}void 0!==n[0].streak.count&&(zn.value=n[0].streak.count),X=new Cn({props:zn}),L.push((()=>cn(X,"value",yn))),X.$on("input",n[68]);let An={min:0,max:100};return void 0!==n[0].streak.shift&&(An.value=n[0].streak.shift),W=new Cn({props:An}),L.push((()=>cn(W,"value",kn))),W.$on("input",n[70]),{c(){e=y("Alpha: "),hn(t.$$.fragment),a=z(),s=x("br"),r=y("\n    Angle: "),hn(o.$$.fragment),l=z(),c=x("br"),h=y("\n    Hue: "),hn(p.$$.fragment),d=z(),m=x("br"),g=y("\n    Saturation: "),hn($.$$.fragment),k=z(),S=x("br"),I=y("\n    Thickness: "),hn(O.$$.fragment),V=z(),q=x("br"),M=y("\n    Length: "),hn(F.$$.fragment),T=z(),E=x("br"),R=y("\n    Intensity: "),hn(H.$$.fragment),N=z(),j=x("br"),D=y("\n    Starring: "),hn(X.$$.fragment),G=z(),U=x("br"),J=y("\n    Shift: "),hn(W.$$.fragment),Q=z(),Z=x("br"),A(s,"class","svelte-viz99f"),A(c,"class","svelte-viz99f"),A(m,"class","svelte-viz99f"),A(S,"class","svelte-viz99f"),A(q,"class","svelte-viz99f"),A(E,"class","svelte-viz99f"),A(j,"class","svelte-viz99f"),A(U,"class","svelte-viz99f"),A(Z,"class","svelte-viz99f")},m(n,i){b(n,e,i),pn(t,n,i),b(n,a,i),b(n,s,i),b(n,r,i),pn(o,n,i),b(n,l,i),b(n,c,i),b(n,h,i),pn(p,n,i),b(n,d,i),b(n,m,i),b(n,g,i),pn($,n,i),b(n,k,i),b(n,S,i),b(n,I,i),pn(O,n,i),b(n,V,i),b(n,q,i),b(n,M,i),pn(F,n,i),b(n,T,i),b(n,E,i),b(n,R,i),pn(H,n,i),b(n,N,i),b(n,j,i),b(n,D,i),pn(X,n,i),b(n,G,i),b(n,U,i),b(n,J,i),pn(W,n,i),b(n,Q,i),b(n,Z,i),nn=!0},p(n,e){const a={};!i&&1&e[0]&&(i=!0,a.value=n[0].streak.alpha,B((()=>i=!1))),t.$set(a);const s={};!u&&1&e[0]&&(u=!0,s.value=n[0].streak.angle,B((()=>u=!1))),o.$set(s);const r={};!f&&1&e[0]&&(f=!0,r.value=n[0].streak.hue,B((()=>f=!1))),p.$set(r);const l={};!v&&1&e[0]&&(v=!0,l.value=n[0].streak.saturation,B((()=>v=!1))),$.$set(l);const c={};!_&&1&e[0]&&(_=!0,c.value=n[0].streak.thickness,B((()=>_=!1))),O.$set(c);const h={};!C&&1&e[0]&&(C=!0,h.value=n[0].streak.width,B((()=>C=!1))),F.$set(h);const d={};!P&&1&e[0]&&(P=!0,d.value=n[0].streak.intensity,B((()=>P=!1))),H.$set(d);const m={};!Y&&1&e[0]&&(Y=!0,m.value=n[0].streak.count,B((()=>Y=!1))),X.$set(m);const g={};!K&&1&e[0]&&(K=!0,g.value=n[0].streak.shift,B((()=>K=!1))),W.$set(g)},i(n){nn||(sn(t.$$.fragment,n),sn(o.$$.fragment,n),sn(p.$$.fragment,n),sn($.$$.fragment,n),sn(O.$$.fragment,n),sn(F.$$.fragment,n),sn(H.$$.fragment,n),sn(X.$$.fragment,n),sn(W.$$.fragment,n),nn=!0)},o(n){rn(t.$$.fragment,n),rn(o.$$.fragment,n),rn(p.$$.fragment,n),rn($.$$.fragment,n),rn(O.$$.fragment,n),rn(F.$$.fragment,n),rn(H.$$.fragment,n),rn(X.$$.fragment,n),rn(W.$$.fragment,n),nn=!1},d(n){n&&w(e),fn(t,n),n&&w(a),n&&w(s),n&&w(r),fn(o,n),n&&w(l),n&&w(c),n&&w(h),fn(p,n),n&&w(d),n&&w(m),n&&w(g),fn($,n),n&&w(k),n&&w(S),n&&w(I),fn(O,n),n&&w(V),n&&w(q),n&&w(M),fn(F,n),n&&w(T),n&&w(E),n&&w(R),fn(H,n),n&&w(N),n&&w(j),n&&w(D),fn(X,n),n&&w(G),n&&w(U),n&&w(J),fn(W,n),n&&w(Q),n&&w(Z)}}}function re(n){let e,t,i,a,s,r,o,u,l,c,h,p,f,d,m,g,$,v,k,S,I,O,_,V,q,M,F,C,T,E,R,H,P,N,j,D,X,Y,G,U,J,W,K,Q,Z,nn;function en(e){n[71](e)}let tn={min:0,max:100};function an(e){n[73](e)}void 0!==n[0].ring.alpha&&(tn.value=n[0].ring.alpha),t=new Cn({props:tn}),L.push((()=>cn(t,"value",en))),t.$on("input",n[72]);let on={min:0,max:360,className:"hueSlider"};function un(e){n[75](e)}void 0!==n[0].ring.hue&&(on.value=n[0].ring.hue),o=new Cn({props:on}),L.push((()=>cn(o,"value",an))),o.$on("input",n[74]);let ln={min:0,max:100};function dn(e){n[77](e)}void 0!==n[0].ring.saturation&&(ln.value=n[0].ring.saturation),p=new Cn({props:ln}),L.push((()=>cn(p,"value",un))),p.$on("input",n[76]);let mn={min:0,max:810};function gn(e){n[79](e)}void 0!==n[0].ring.radius&&(mn.value=n[0].ring.radius),$=new Cn({props:mn}),L.push((()=>cn($,"value",dn))),$.$on("input",n[78]);let $n={min:0,max:500};function vn(e){n[81](e)}void 0!==n[0].ring.thickness&&($n.value=n[0].ring.thickness),O=new Cn({props:$n}),L.push((()=>cn(O,"value",gn))),O.$on("input",n[80]);let bn={min:0,max:50};function wn(e){n[83](e)}void 0!==n[0].ring.blur&&(bn.value=n[0].ring.blur),F=new Cn({props:bn}),L.push((()=>cn(F,"value",vn))),F.$on("input",n[82]);let xn={min:0,max:810};function yn(e){n[85](e)}void 0!==n[0].ring.cropSize&&(xn.value=n[0].ring.cropSize),H=new Cn({props:xn}),L.push((()=>cn(H,"value",wn))),H.$on("input",n[84]);let zn={min:0,max:100};function kn(e){n[87](e)}void 0!==n[0].ring.cropHardness&&(zn.value=n[0].ring.cropHardness),X=new Cn({props:zn}),L.push((()=>cn(X,"value",yn))),X.$on("input",n[86]);let An={min:0,max:100};return void 0!==n[0].ring.anamorph&&(An.value=n[0].ring.anamorph),W=new Cn({props:An}),L.push((()=>cn(W,"value",kn))),W.$on("input",n[88]),{c(){e=y("Alpha: "),hn(t.$$.fragment),a=z(),s=x("br"),r=y("\n    Hue: "),hn(o.$$.fragment),l=z(),c=x("br"),h=y("\n    Saturation: "),hn(p.$$.fragment),d=z(),m=x("br"),g=y("\n    Size: "),hn($.$$.fragment),k=z(),S=x("br"),I=y("\n    Thickness: "),hn(O.$$.fragment),V=z(),q=x("br"),M=y("\n    Softness: "),hn(F.$$.fragment),T=z(),E=x("br"),R=y("\n    Crop Size: "),hn(H.$$.fragment),N=z(),j=x("br"),D=y("\n    Crop Hardness: "),hn(X.$$.fragment),G=z(),U=x("br"),J=y("\n    Anamorph: "),hn(W.$$.fragment),Q=z(),Z=x("br"),A(s,"class","svelte-viz99f"),A(c,"class","svelte-viz99f"),A(m,"class","svelte-viz99f"),A(S,"class","svelte-viz99f"),A(q,"class","svelte-viz99f"),A(E,"class","svelte-viz99f"),A(j,"class","svelte-viz99f"),A(U,"class","svelte-viz99f"),A(Z,"class","svelte-viz99f")},m(n,i){b(n,e,i),pn(t,n,i),b(n,a,i),b(n,s,i),b(n,r,i),pn(o,n,i),b(n,l,i),b(n,c,i),b(n,h,i),pn(p,n,i),b(n,d,i),b(n,m,i),b(n,g,i),pn($,n,i),b(n,k,i),b(n,S,i),b(n,I,i),pn(O,n,i),b(n,V,i),b(n,q,i),b(n,M,i),pn(F,n,i),b(n,T,i),b(n,E,i),b(n,R,i),pn(H,n,i),b(n,N,i),b(n,j,i),b(n,D,i),pn(X,n,i),b(n,G,i),b(n,U,i),b(n,J,i),pn(W,n,i),b(n,Q,i),b(n,Z,i),nn=!0},p(n,e){const a={};!i&&1&e[0]&&(i=!0,a.value=n[0].ring.alpha,B((()=>i=!1))),t.$set(a);const s={};!u&&1&e[0]&&(u=!0,s.value=n[0].ring.hue,B((()=>u=!1))),o.$set(s);const r={};!f&&1&e[0]&&(f=!0,r.value=n[0].ring.saturation,B((()=>f=!1))),p.$set(r);const l={};!v&&1&e[0]&&(v=!0,l.value=n[0].ring.radius,B((()=>v=!1))),$.$set(l);const c={};!_&&1&e[0]&&(_=!0,c.value=n[0].ring.thickness,B((()=>_=!1))),O.$set(c);const h={};!C&&1&e[0]&&(C=!0,h.value=n[0].ring.blur,B((()=>C=!1))),F.$set(h);const d={};!P&&1&e[0]&&(P=!0,d.value=n[0].ring.cropSize,B((()=>P=!1))),H.$set(d);const m={};!Y&&1&e[0]&&(Y=!0,m.value=n[0].ring.cropHardness,B((()=>Y=!1))),X.$set(m);const g={};!K&&1&e[0]&&(K=!0,g.value=n[0].ring.anamorph,B((()=>K=!1))),W.$set(g)},i(n){nn||(sn(t.$$.fragment,n),sn(o.$$.fragment,n),sn(p.$$.fragment,n),sn($.$$.fragment,n),sn(O.$$.fragment,n),sn(F.$$.fragment,n),sn(H.$$.fragment,n),sn(X.$$.fragment,n),sn(W.$$.fragment,n),nn=!0)},o(n){rn(t.$$.fragment,n),rn(o.$$.fragment,n),rn(p.$$.fragment,n),rn($.$$.fragment,n),rn(O.$$.fragment,n),rn(F.$$.fragment,n),rn(H.$$.fragment,n),rn(X.$$.fragment,n),rn(W.$$.fragment,n),nn=!1},d(n){n&&w(e),fn(t,n),n&&w(a),n&&w(s),n&&w(r),fn(o,n),n&&w(l),n&&w(c),n&&w(h),fn(p,n),n&&w(d),n&&w(m),n&&w(g),fn($,n),n&&w(k),n&&w(S),n&&w(I),fn(O,n),n&&w(V),n&&w(q),n&&w(M),fn(F,n),n&&w(T),n&&w(E),n&&w(R),fn(H,n),n&&w(N),n&&w(j),n&&w(D),fn(X,n),n&&w(G),n&&w(U),n&&w(J),fn(W,n),n&&w(Q),n&&w(Z)}}}function oe(n){let e,t,i,a,s,r,o,u,l,c,h,p,f,d,m,g,$,v,k,S,I,O,_,V,q,M,F,C,T,E,R,H,P,N,j,D,X,Y,G,U,J,W,K,Q,Z,nn,en,tn,an,on,un,ln,dn,mn,gn,$n,vn,bn,wn,xn,yn,zn,kn,An,Sn,In,On,_n,Vn,qn,Mn,Fn,Tn,En,Rn,Hn,Pn,Ln,Nn,jn,Dn,Xn,Yn,Bn,Gn,Un,Jn,Wn,Kn,Qn,Zn,ne,ee,te,ie,ae;function se(e){n[89](e)}let re={min:0,max:100};function oe(e){n[91](e)}void 0!==n[0].miIris.fillAlpha&&(re.value=n[0].miIris.fillAlpha),t=new Cn({props:re}),L.push((()=>cn(t,"value",se))),t.$on("input",n[90]);let ue={min:0,max:100};function le(e){n[93](e)}void 0!==n[0].miIris.fringeAlpha&&(ue.value=n[0].miIris.fringeAlpha),o=new Cn({props:ue}),L.push((()=>cn(o,"value",oe))),o.$on("input",n[92]);let ce={min:0,max:360};function he(e){n[95](e)}void 0!==n[0].miIris.angle&&(ce.value=n[0].miIris.angle),p=new Cn({props:ce}),L.push((()=>cn(p,"value",le))),p.$on("input",n[94]);let pe={min:0,max:360,className:"hueSlider"};function fe(e){n[97](e)}void 0!==n[0].miIris.hue&&(pe.value=n[0].miIris.hue),$=new Cn({props:pe}),L.push((()=>cn($,"value",he))),$.$on("input",n[96]);let de={min:0,max:100};function me(e){n[99](e)}void 0!==n[0].miIris.saturation&&(de.value=n[0].miIris.saturation),O=new Cn({props:de}),L.push((()=>cn(O,"value",fe))),O.$on("input",n[98]);let ge={min:0,max:810};function $e(e){n[101](e)}void 0!==n[0].miIris.radius&&(ge.value=n[0].miIris.radius),F=new Cn({props:ge}),L.push((()=>cn(F,"value",me))),F.$on("input",n[100]);let ve={min:3,max:12};function be(e){n[103](e)}void 0!==n[0].miIris.sides&&(ve.value=n[0].miIris.sides),H=new Cn({props:ve}),L.push((()=>cn(H,"value",$e))),H.$on("input",n[102]);let we={min:0,max:100};function xe(e){n[105](e)}void 0!==n[0].miIris.roundness&&(we.value=n[0].miIris.roundness),X=new Cn({props:we}),L.push((()=>cn(X,"value",be))),X.$on("input",n[104]);let ye={min:0,max:100};function ze(e){n[107](e)}void 0!==n[0].miIris.fringeSize&&(ye.value=n[0].miIris.fringeSize),W=new Cn({props:ye}),L.push((()=>cn(W,"value",xe))),W.$on("input",n[106]);let ke={min:0,max:30};function Ae(e){n[109](e)}void 0!==n[0].miIris.blur&&(ke.value=n[0].miIris.blur),en=new Cn({props:ke}),L.push((()=>cn(en,"value",ze))),en.$on("input",n[108]);let Se={min:0,max:50};function Ie(e){n[111](e)}void 0!==n[0].miIris.countTowards&&(Se.value=n[0].miIris.countTowards),ln=new Cn({props:Se}),L.push((()=>cn(ln,"value",Ae))),ln.$on("input",n[110]);let Oe={min:0,max:50};function _e(e){n[113](e)}void 0!==n[0].miIris.countAway&&(Oe.value=n[0].miIris.countAway),vn=new Cn({props:Oe}),L.push((()=>cn(vn,"value",Ie))),vn.$on("input",n[112]);let Ve={min:0,max:100};function qe(e){n[115](e)}void 0!==n[0].miIris.spread&&(Ve.value=n[0].miIris.spread),zn=new Cn({props:Ve}),L.push((()=>cn(zn,"value",_e))),zn.$on("input",n[114]);let Me={min:0,max:100};function Fe(e){n[117](e)}void 0!==n[0].miIris.sizeVariance&&(Me.value=n[0].miIris.sizeVariance),On=new Cn({props:Me}),L.push((()=>cn(On,"value",qe))),On.$on("input",n[116]);let Ce={min:0,max:100};function Te(e){n[119](e)}void 0!==n[0].miIris.perspective&&(Ce.value=n[0].miIris.perspective),Fn=new Cn({props:Ce}),L.push((()=>cn(Fn,"value",Fe))),Fn.$on("input",n[118]);let Ee={min:0,max:100};function Re(e){n[121](e)}void 0!==n[0].miIris.alphaVariance&&(Ee.value=n[0].miIris.alphaVariance),Pn=new Cn({props:Ee}),L.push((()=>cn(Pn,"value",Te))),Pn.$on("input",n[120]);let He={min:0,max:180};function Pe(e){n[123](e)}void 0!==n[0].miIris.hueVariance&&(He.value=n[0].miIris.hueVariance),Xn=new Cn({props:He}),L.push((()=>cn(Xn,"value",Re))),Xn.$on("input",n[122]);let Le={min:0,max:999};function Ne(e){n[125](e)}void 0!==n[0].miIris.seed&&(Le.value=n[0].miIris.seed),Jn=new Cn({props:Le}),L.push((()=>cn(Jn,"value",Pe))),Jn.$on("input",n[124]);let je={min:0,max:100};return void 0!==n[0].miIris.anamorph&&(je.value=n[0].miIris.anamorph),ne=new Cn({props:je}),L.push((()=>cn(ne,"value",Ne))),ne.$on("input",n[126]),{c(){e=y("Fill Alpha: "),hn(t.$$.fragment),a=z(),s=x("br"),r=y("\n    Fringe Alpha: "),hn(o.$$.fragment),l=z(),c=x("br"),h=y("\n    Angle: "),hn(p.$$.fragment),d=z(),m=x("br"),g=y("\n    Hue: "),hn($.$$.fragment),k=z(),S=x("br"),I=y("\n    Saturation: "),hn(O.$$.fragment),V=z(),q=x("br"),M=y("\n    Size: "),hn(F.$$.fragment),T=z(),E=x("br"),R=y("\n    Edges: "),hn(H.$$.fragment),N=z(),j=x("br"),D=y("\n    Roundness: "),hn(X.$$.fragment),G=z(),U=x("br"),J=y("\n    Fringe Size: "),hn(W.$$.fragment),Q=z(),Z=x("br"),nn=y("\n    Softness: "),hn(en.$$.fragment),an=z(),on=x("br"),un=y("\n    Count Towards: "),hn(ln.$$.fragment),mn=z(),gn=x("br"),$n=y("\n    Count Away: "),hn(vn.$$.fragment),wn=z(),xn=x("br"),yn=y("\n    Spread: "),hn(zn.$$.fragment),An=z(),Sn=x("br"),In=y("\n    Size Variance: "),hn(On.$$.fragment),Vn=z(),qn=x("br"),Mn=y("\n    Perspective: "),hn(Fn.$$.fragment),En=z(),Rn=x("br"),Hn=y("\n    Alpha Variance: "),hn(Pn.$$.fragment),Nn=z(),jn=x("br"),Dn=y("\n    Hue Variance: "),hn(Xn.$$.fragment),Bn=z(),Gn=x("br"),Un=y("\n    Random Seed: "),hn(Jn.$$.fragment),Kn=z(),Qn=x("br"),Zn=y("\n    Anamorph: "),hn(ne.$$.fragment),te=z(),ie=x("br"),A(s,"class","svelte-viz99f"),A(c,"class","svelte-viz99f"),A(m,"class","svelte-viz99f"),A(S,"class","svelte-viz99f"),A(q,"class","svelte-viz99f"),A(E,"class","svelte-viz99f"),A(j,"class","svelte-viz99f"),A(U,"class","svelte-viz99f"),A(Z,"class","svelte-viz99f"),A(on,"class","svelte-viz99f"),A(gn,"class","svelte-viz99f"),A(xn,"class","svelte-viz99f"),A(Sn,"class","svelte-viz99f"),A(qn,"class","svelte-viz99f"),A(Rn,"class","svelte-viz99f"),A(jn,"class","svelte-viz99f"),A(Gn,"class","svelte-viz99f"),A(Qn,"class","svelte-viz99f"),A(ie,"class","svelte-viz99f")},m(n,i){b(n,e,i),pn(t,n,i),b(n,a,i),b(n,s,i),b(n,r,i),pn(o,n,i),b(n,l,i),b(n,c,i),b(n,h,i),pn(p,n,i),b(n,d,i),b(n,m,i),b(n,g,i),pn($,n,i),b(n,k,i),b(n,S,i),b(n,I,i),pn(O,n,i),b(n,V,i),b(n,q,i),b(n,M,i),pn(F,n,i),b(n,T,i),b(n,E,i),b(n,R,i),pn(H,n,i),b(n,N,i),b(n,j,i),b(n,D,i),pn(X,n,i),b(n,G,i),b(n,U,i),b(n,J,i),pn(W,n,i),b(n,Q,i),b(n,Z,i),b(n,nn,i),pn(en,n,i),b(n,an,i),b(n,on,i),b(n,un,i),pn(ln,n,i),b(n,mn,i),b(n,gn,i),b(n,$n,i),pn(vn,n,i),b(n,wn,i),b(n,xn,i),b(n,yn,i),pn(zn,n,i),b(n,An,i),b(n,Sn,i),b(n,In,i),pn(On,n,i),b(n,Vn,i),b(n,qn,i),b(n,Mn,i),pn(Fn,n,i),b(n,En,i),b(n,Rn,i),b(n,Hn,i),pn(Pn,n,i),b(n,Nn,i),b(n,jn,i),b(n,Dn,i),pn(Xn,n,i),b(n,Bn,i),b(n,Gn,i),b(n,Un,i),pn(Jn,n,i),b(n,Kn,i),b(n,Qn,i),b(n,Zn,i),pn(ne,n,i),b(n,te,i),b(n,ie,i),ae=!0},p(n,e){const a={};!i&&1&e[0]&&(i=!0,a.value=n[0].miIris.fillAlpha,B((()=>i=!1))),t.$set(a);const s={};!u&&1&e[0]&&(u=!0,s.value=n[0].miIris.fringeAlpha,B((()=>u=!1))),o.$set(s);const r={};!f&&1&e[0]&&(f=!0,r.value=n[0].miIris.angle,B((()=>f=!1))),p.$set(r);const l={};!v&&1&e[0]&&(v=!0,l.value=n[0].miIris.hue,B((()=>v=!1))),$.$set(l);const c={};!_&&1&e[0]&&(_=!0,c.value=n[0].miIris.saturation,B((()=>_=!1))),O.$set(c);const h={};!C&&1&e[0]&&(C=!0,h.value=n[0].miIris.radius,B((()=>C=!1))),F.$set(h);const d={};!P&&1&e[0]&&(P=!0,d.value=n[0].miIris.sides,B((()=>P=!1))),H.$set(d);const m={};!Y&&1&e[0]&&(Y=!0,m.value=n[0].miIris.roundness,B((()=>Y=!1))),X.$set(m);const g={};!K&&1&e[0]&&(K=!0,g.value=n[0].miIris.fringeSize,B((()=>K=!1))),W.$set(g);const b={};!tn&&1&e[0]&&(tn=!0,b.value=n[0].miIris.blur,B((()=>tn=!1))),en.$set(b);const w={};!dn&&1&e[0]&&(dn=!0,w.value=n[0].miIris.countTowards,B((()=>dn=!1))),ln.$set(w);const x={};!bn&&1&e[0]&&(bn=!0,x.value=n[0].miIris.countAway,B((()=>bn=!1))),vn.$set(x);const y={};!kn&&1&e[0]&&(kn=!0,y.value=n[0].miIris.spread,B((()=>kn=!1))),zn.$set(y);const z={};!_n&&1&e[0]&&(_n=!0,z.value=n[0].miIris.sizeVariance,B((()=>_n=!1))),On.$set(z);const k={};!Tn&&1&e[0]&&(Tn=!0,k.value=n[0].miIris.perspective,B((()=>Tn=!1))),Fn.$set(k);const A={};!Ln&&1&e[0]&&(Ln=!0,A.value=n[0].miIris.alphaVariance,B((()=>Ln=!1))),Pn.$set(A);const S={};!Yn&&1&e[0]&&(Yn=!0,S.value=n[0].miIris.hueVariance,B((()=>Yn=!1))),Xn.$set(S);const I={};!Wn&&1&e[0]&&(Wn=!0,I.value=n[0].miIris.seed,B((()=>Wn=!1))),Jn.$set(I);const V={};!ee&&1&e[0]&&(ee=!0,V.value=n[0].miIris.anamorph,B((()=>ee=!1))),ne.$set(V)},i(n){ae||(sn(t.$$.fragment,n),sn(o.$$.fragment,n),sn(p.$$.fragment,n),sn($.$$.fragment,n),sn(O.$$.fragment,n),sn(F.$$.fragment,n),sn(H.$$.fragment,n),sn(X.$$.fragment,n),sn(W.$$.fragment,n),sn(en.$$.fragment,n),sn(ln.$$.fragment,n),sn(vn.$$.fragment,n),sn(zn.$$.fragment,n),sn(On.$$.fragment,n),sn(Fn.$$.fragment,n),sn(Pn.$$.fragment,n),sn(Xn.$$.fragment,n),sn(Jn.$$.fragment,n),sn(ne.$$.fragment,n),ae=!0)},o(n){rn(t.$$.fragment,n),rn(o.$$.fragment,n),rn(p.$$.fragment,n),rn($.$$.fragment,n),rn(O.$$.fragment,n),rn(F.$$.fragment,n),rn(H.$$.fragment,n),rn(X.$$.fragment,n),rn(W.$$.fragment,n),rn(en.$$.fragment,n),rn(ln.$$.fragment,n),rn(vn.$$.fragment,n),rn(zn.$$.fragment,n),rn(On.$$.fragment,n),rn(Fn.$$.fragment,n),rn(Pn.$$.fragment,n),rn(Xn.$$.fragment,n),rn(Jn.$$.fragment,n),rn(ne.$$.fragment,n),ae=!1},d(n){n&&w(e),fn(t,n),n&&w(a),n&&w(s),n&&w(r),fn(o,n),n&&w(l),n&&w(c),n&&w(h),fn(p,n),n&&w(d),n&&w(m),n&&w(g),fn($,n),n&&w(k),n&&w(S),n&&w(I),fn(O,n),n&&w(V),n&&w(q),n&&w(M),fn(F,n),n&&w(T),n&&w(E),n&&w(R),fn(H,n),n&&w(N),n&&w(j),n&&w(D),fn(X,n),n&&w(G),n&&w(U),n&&w(J),fn(W,n),n&&w(Q),n&&w(Z),n&&w(nn),fn(en,n),n&&w(an),n&&w(on),n&&w(un),fn(ln,n),n&&w(mn),n&&w(gn),n&&w($n),fn(vn,n),n&&w(wn),n&&w(xn),n&&w(yn),fn(zn,n),n&&w(An),n&&w(Sn),n&&w(In),fn(On,n),n&&w(Vn),n&&w(qn),n&&w(Mn),fn(Fn,n),n&&w(En),n&&w(Rn),n&&w(Hn),fn(Pn,n),n&&w(Nn),n&&w(jn),n&&w(Dn),fn(Xn,n),n&&w(Bn),n&&w(Gn),n&&w(Un),fn(Jn,n),n&&w(Kn),n&&w(Qn),n&&w(Zn),fn(ne,n),n&&w(te),n&&w(ie)}}}function ue(n){let e,t,i,a,s,r,o,u,l,c,h,p,f,d,m,g,$,v,k,S,I,O,_,V,q,M,F,C,T,E,R;function H(e){n[127](e)}let P={min:0,max:100};function N(e){n[129](e)}void 0!==n[0].glow.alpha&&(P.value=n[0].glow.alpha),t=new Cn({props:P}),L.push((()=>cn(t,"value",H))),t.$on("input",n[128]);let j={min:0,max:360,className:"hueSlider"};function D(e){n[131](e)}void 0!==n[0].glow.hue&&(j.value=n[0].glow.hue),o=new Cn({props:j}),L.push((()=>cn(o,"value",N))),o.$on("input",n[130]);let X={min:0,max:100};function Y(e){n[133](e)}void 0!==n[0].glow.saturation&&(X.value=n[0].glow.saturation),p=new Cn({props:X}),L.push((()=>cn(p,"value",D))),p.$on("input",n[132]);let G={min:0,max:1500};function U(e){n[135](e)}void 0!==n[0].glow.radius&&(G.value=n[0].glow.radius),$=new Cn({props:G}),L.push((()=>cn($,"value",Y))),$.$on("input",n[134]);let J={min:0,max:200};function W(e){n[137](e)}void 0!==n[0].glow.softening&&(J.value=n[0].glow.softening),O=new Cn({props:J}),L.push((()=>cn(O,"value",U))),O.$on("input",n[136]);let K={min:0,max:100};return void 0!==n[0].glow.anamorph&&(K.value=n[0].glow.anamorph),F=new Cn({props:K}),L.push((()=>cn(F,"value",W))),F.$on("input",n[138]),{c(){e=y("Alpha: "),hn(t.$$.fragment),a=z(),s=x("br"),r=y("\n    Hue: "),hn(o.$$.fragment),l=z(),c=x("br"),h=y("\n    Saturation: "),hn(p.$$.fragment),d=z(),m=x("br"),g=y("\n    Size: "),hn($.$$.fragment),k=z(),S=x("br"),I=y("\n    Softness: "),hn(O.$$.fragment),V=z(),q=x("br"),M=y("\n    Anamorph: "),hn(F.$$.fragment),T=z(),E=x("br"),A(s,"class","svelte-viz99f"),A(c,"class","svelte-viz99f"),A(m,"class","svelte-viz99f"),A(S,"class","svelte-viz99f"),A(q,"class","svelte-viz99f"),A(E,"class","svelte-viz99f")},m(n,i){b(n,e,i),pn(t,n,i),b(n,a,i),b(n,s,i),b(n,r,i),pn(o,n,i),b(n,l,i),b(n,c,i),b(n,h,i),pn(p,n,i),b(n,d,i),b(n,m,i),b(n,g,i),pn($,n,i),b(n,k,i),b(n,S,i),b(n,I,i),pn(O,n,i),b(n,V,i),b(n,q,i),b(n,M,i),pn(F,n,i),b(n,T,i),b(n,E,i),R=!0},p(n,e){const a={};!i&&1&e[0]&&(i=!0,a.value=n[0].glow.alpha,B((()=>i=!1))),t.$set(a);const s={};!u&&1&e[0]&&(u=!0,s.value=n[0].glow.hue,B((()=>u=!1))),o.$set(s);const r={};!f&&1&e[0]&&(f=!0,r.value=n[0].glow.saturation,B((()=>f=!1))),p.$set(r);const l={};!v&&1&e[0]&&(v=!0,l.value=n[0].glow.radius,B((()=>v=!1))),$.$set(l);const c={};!_&&1&e[0]&&(_=!0,c.value=n[0].glow.softening,B((()=>_=!1))),O.$set(c);const h={};!C&&1&e[0]&&(C=!0,h.value=n[0].glow.anamorph,B((()=>C=!1))),F.$set(h)},i(n){R||(sn(t.$$.fragment,n),sn(o.$$.fragment,n),sn(p.$$.fragment,n),sn($.$$.fragment,n),sn(O.$$.fragment,n),sn(F.$$.fragment,n),R=!0)},o(n){rn(t.$$.fragment,n),rn(o.$$.fragment,n),rn(p.$$.fragment,n),rn($.$$.fragment,n),rn(O.$$.fragment,n),rn(F.$$.fragment,n),R=!1},d(n){n&&w(e),fn(t,n),n&&w(a),n&&w(s),n&&w(r),fn(o,n),n&&w(l),n&&w(c),n&&w(h),fn(p,n),n&&w(d),n&&w(m),n&&w(g),fn($,n),n&&w(k),n&&w(S),n&&w(I),fn(O,n),n&&w(V),n&&w(q),n&&w(M),fn(F,n),n&&w(T),n&&w(E)}}}function le(n){let e,t,i,a,s,r,o,u,l,c,h,p,f,d,m,g,$,v,k,S,I,O,_,V,q,M,F,C,T,E,R,H,P,N,j,D,X,Y,G,U,J,W,K,Q,Z,nn,en,tn,an,on,un,ln,dn,mn,gn,$n,vn,bn,wn,xn,yn,zn,kn,An,Sn,In,On,_n,Vn,qn,Mn,Fn,Tn,En,Rn,Hn,Pn,Ln,Nn,jn,Dn,Xn,Yn,Bn,Gn,Un;function Jn(e){n[139](e)}let Wn={min:0,max:200};function Kn(e){n[141](e)}void 0!==n[0].lensOrbs.count&&(Wn.value=n[0].lensOrbs.count),t=new Cn({props:Wn}),L.push((()=>cn(t,"value",Jn))),t.$on("input",n[140]);let Qn={min:0,max:1500};function Zn(e){n[143](e)}void 0!==n[0].lensOrbs.threshold&&(Qn.value=n[0].lensOrbs.threshold),o=new Cn({props:Qn}),L.push((()=>cn(o,"value",Kn))),o.$on("input",n[142]);let ne={min:0,max:100};function ee(e){n[145](e)}void 0!==n[0].lensOrbs.fillAlpha&&(ne.value=n[0].lensOrbs.fillAlpha),p=new Cn({props:ne}),L.push((()=>cn(p,"value",Zn))),p.$on("input",n[144]);let te={min:0,max:100};function ie(e){n[147](e)}void 0!==n[0].lensOrbs.fringeAlpha&&(te.value=n[0].lensOrbs.fringeAlpha),$=new Cn({props:te}),L.push((()=>cn($,"value",ee))),$.$on("input",n[146]);let ae={min:0,max:360};function se(e){n[149](e)}void 0!==n[0].lensOrbs.angle&&(ae.value=n[0].lensOrbs.angle),O=new Cn({props:ae}),L.push((()=>cn(O,"value",ie))),O.$on("input",n[148]);let re={min:0,max:360,className:"hueSlider"};function oe(e){n[151](e)}void 0!==n[0].lensOrbs.hue&&(re.value=n[0].lensOrbs.hue),F=new Cn({props:re}),L.push((()=>cn(F,"value",se))),F.$on("input",n[150]);let ue={min:0,max:100};function le(e){n[153](e)}void 0!==n[0].lensOrbs.saturation&&(ue.value=n[0].lensOrbs.saturation),H=new Cn({props:ue}),L.push((()=>cn(H,"value",oe))),H.$on("input",n[152]);let ce={min:0,max:810};function he(e){n[155](e)}void 0!==n[0].lensOrbs.radius&&(ce.value=n[0].lensOrbs.radius),X=new Cn({props:ce}),L.push((()=>cn(X,"value",le))),X.$on("input",n[154]);let pe={min:3,max:12};function fe(e){n[157](e)}void 0!==n[0].lensOrbs.sides&&(pe.value=n[0].lensOrbs.sides),W=new Cn({props:pe}),L.push((()=>cn(W,"value",he))),W.$on("input",n[156]);let de={min:0,max:100};function me(e){n[159](e)}void 0!==n[0].lensOrbs.roundness&&(de.value=n[0].lensOrbs.roundness),en=new Cn({props:de}),L.push((()=>cn(en,"value",fe))),en.$on("input",n[158]);let ge={min:0,max:100};function $e(e){n[161](e)}void 0!==n[0].lensOrbs.fringeSize&&(ge.value=n[0].lensOrbs.fringeSize),ln=new Cn({props:ge}),L.push((()=>cn(ln,"value",me))),ln.$on("input",n[160]);let ve={min:0,max:30};function be(e){n[163](e)}void 0!==n[0].lensOrbs.blur&&(ve.value=n[0].lensOrbs.blur),vn=new Cn({props:ve}),L.push((()=>cn(vn,"value",$e))),vn.$on("input",n[162]);let we={min:0,max:100};function xe(e){n[165](e)}void 0!==n[0].lensOrbs.sizeVariance&&(we.value=n[0].lensOrbs.sizeVariance),zn=new Cn({props:we}),L.push((()=>cn(zn,"value",be))),zn.$on("input",n[164]);let ye={min:0,max:100};function ze(e){n[167](e)}void 0!==n[0].lensOrbs.alphaVariance&&(ye.value=n[0].lensOrbs.alphaVariance),On=new Cn({props:ye}),L.push((()=>cn(On,"value",xe))),On.$on("input",n[166]);let ke={min:0,max:180};function Ae(e){n[169](e)}void 0!==n[0].lensOrbs.hueVariance&&(ke.value=n[0].lensOrbs.hueVariance),Fn=new Cn({props:ke}),L.push((()=>cn(Fn,"value",ze))),Fn.$on("input",n[168]);let Se={min:0,max:999};function Ie(e){n[171](e)}void 0!==n[0].lensOrbs.seed&&(Se.value=n[0].lensOrbs.seed),Pn=new Cn({props:Se}),L.push((()=>cn(Pn,"value",Ae))),Pn.$on("input",n[170]);let Oe={min:0,max:100};return void 0!==n[0].lensOrbs.anamorph&&(Oe.value=n[0].lensOrbs.anamorph),Xn=new Cn({props:Oe}),L.push((()=>cn(Xn,"value",Ie))),Xn.$on("input",n[172]),{c(){e=y("Count: "),hn(t.$$.fragment),a=z(),s=x("br"),r=y("\n    Threshold: "),hn(o.$$.fragment),l=z(),c=x("br"),h=y("\n    Fill Alpha: "),hn(p.$$.fragment),d=z(),m=x("br"),g=y("\n    Fringe Alpha: "),hn($.$$.fragment),k=z(),S=x("br"),I=y("\n    Angle: "),hn(O.$$.fragment),V=z(),q=x("br"),M=y("\n    Hue: "),hn(F.$$.fragment),T=z(),E=x("br"),R=y("\n    Saturation: "),hn(H.$$.fragment),N=z(),j=x("br"),D=y("\n    Size: "),hn(X.$$.fragment),G=z(),U=x("br"),J=y("\n    Edges: "),hn(W.$$.fragment),Q=z(),Z=x("br"),nn=y("\n    Roundness: "),hn(en.$$.fragment),an=z(),on=x("br"),un=y("\n    Fringe Size: "),hn(ln.$$.fragment),mn=z(),gn=x("br"),$n=y("\n    Softness: "),hn(vn.$$.fragment),wn=z(),xn=x("br"),yn=y("\n    Size Variance: "),hn(zn.$$.fragment),An=z(),Sn=x("br"),In=y("\n    Alpha Variance: "),hn(On.$$.fragment),Vn=z(),qn=x("br"),Mn=y("\n    Hue Variance: "),hn(Fn.$$.fragment),En=z(),Rn=x("br"),Hn=y("\n    Random Seed: "),hn(Pn.$$.fragment),Nn=z(),jn=x("br"),Dn=y("\n    Anamorph: "),hn(Xn.$$.fragment),Bn=z(),Gn=x("br"),A(s,"class","svelte-viz99f"),A(c,"class","svelte-viz99f"),A(m,"class","svelte-viz99f"),A(S,"class","svelte-viz99f"),A(q,"class","svelte-viz99f"),A(E,"class","svelte-viz99f"),A(j,"class","svelte-viz99f"),A(U,"class","svelte-viz99f"),A(Z,"class","svelte-viz99f"),A(on,"class","svelte-viz99f"),A(gn,"class","svelte-viz99f"),A(xn,"class","svelte-viz99f"),A(Sn,"class","svelte-viz99f"),A(qn,"class","svelte-viz99f"),A(Rn,"class","svelte-viz99f"),A(jn,"class","svelte-viz99f"),A(Gn,"class","svelte-viz99f")},m(n,i){b(n,e,i),pn(t,n,i),b(n,a,i),b(n,s,i),b(n,r,i),pn(o,n,i),b(n,l,i),b(n,c,i),b(n,h,i),pn(p,n,i),b(n,d,i),b(n,m,i),b(n,g,i),pn($,n,i),b(n,k,i),b(n,S,i),b(n,I,i),pn(O,n,i),b(n,V,i),b(n,q,i),b(n,M,i),pn(F,n,i),b(n,T,i),b(n,E,i),b(n,R,i),pn(H,n,i),b(n,N,i),b(n,j,i),b(n,D,i),pn(X,n,i),b(n,G,i),b(n,U,i),b(n,J,i),pn(W,n,i),b(n,Q,i),b(n,Z,i),b(n,nn,i),pn(en,n,i),b(n,an,i),b(n,on,i),b(n,un,i),pn(ln,n,i),b(n,mn,i),b(n,gn,i),b(n,$n,i),pn(vn,n,i),b(n,wn,i),b(n,xn,i),b(n,yn,i),pn(zn,n,i),b(n,An,i),b(n,Sn,i),b(n,In,i),pn(On,n,i),b(n,Vn,i),b(n,qn,i),b(n,Mn,i),pn(Fn,n,i),b(n,En,i),b(n,Rn,i),b(n,Hn,i),pn(Pn,n,i),b(n,Nn,i),b(n,jn,i),b(n,Dn,i),pn(Xn,n,i),b(n,Bn,i),b(n,Gn,i),Un=!0},p(n,e){const a={};!i&&1&e[0]&&(i=!0,a.value=n[0].lensOrbs.count,B((()=>i=!1))),t.$set(a);const s={};!u&&1&e[0]&&(u=!0,s.value=n[0].lensOrbs.threshold,B((()=>u=!1))),o.$set(s);const r={};!f&&1&e[0]&&(f=!0,r.value=n[0].lensOrbs.fillAlpha,B((()=>f=!1))),p.$set(r);const l={};!v&&1&e[0]&&(v=!0,l.value=n[0].lensOrbs.fringeAlpha,B((()=>v=!1))),$.$set(l);const c={};!_&&1&e[0]&&(_=!0,c.value=n[0].lensOrbs.angle,B((()=>_=!1))),O.$set(c);const h={};!C&&1&e[0]&&(C=!0,h.value=n[0].lensOrbs.hue,B((()=>C=!1))),F.$set(h);const d={};!P&&1&e[0]&&(P=!0,d.value=n[0].lensOrbs.saturation,B((()=>P=!1))),H.$set(d);const m={};!Y&&1&e[0]&&(Y=!0,m.value=n[0].lensOrbs.radius,B((()=>Y=!1))),X.$set(m);const g={};!K&&1&e[0]&&(K=!0,g.value=n[0].lensOrbs.sides,B((()=>K=!1))),W.$set(g);const b={};!tn&&1&e[0]&&(tn=!0,b.value=n[0].lensOrbs.roundness,B((()=>tn=!1))),en.$set(b);const w={};!dn&&1&e[0]&&(dn=!0,w.value=n[0].lensOrbs.fringeSize,B((()=>dn=!1))),ln.$set(w);const x={};!bn&&1&e[0]&&(bn=!0,x.value=n[0].lensOrbs.blur,B((()=>bn=!1))),vn.$set(x);const y={};!kn&&1&e[0]&&(kn=!0,y.value=n[0].lensOrbs.sizeVariance,B((()=>kn=!1))),zn.$set(y);const z={};!_n&&1&e[0]&&(_n=!0,z.value=n[0].lensOrbs.alphaVariance,B((()=>_n=!1))),On.$set(z);const k={};!Tn&&1&e[0]&&(Tn=!0,k.value=n[0].lensOrbs.hueVariance,B((()=>Tn=!1))),Fn.$set(k);const A={};!Ln&&1&e[0]&&(Ln=!0,A.value=n[0].lensOrbs.seed,B((()=>Ln=!1))),Pn.$set(A);const S={};!Yn&&1&e[0]&&(Yn=!0,S.value=n[0].lensOrbs.anamorph,B((()=>Yn=!1))),Xn.$set(S)},i(n){Un||(sn(t.$$.fragment,n),sn(o.$$.fragment,n),sn(p.$$.fragment,n),sn($.$$.fragment,n),sn(O.$$.fragment,n),sn(F.$$.fragment,n),sn(H.$$.fragment,n),sn(X.$$.fragment,n),sn(W.$$.fragment,n),sn(en.$$.fragment,n),sn(ln.$$.fragment,n),sn(vn.$$.fragment,n),sn(zn.$$.fragment,n),sn(On.$$.fragment,n),sn(Fn.$$.fragment,n),sn(Pn.$$.fragment,n),sn(Xn.$$.fragment,n),Un=!0)},o(n){rn(t.$$.fragment,n),rn(o.$$.fragment,n),rn(p.$$.fragment,n),rn($.$$.fragment,n),rn(O.$$.fragment,n),rn(F.$$.fragment,n),rn(H.$$.fragment,n),rn(X.$$.fragment,n),rn(W.$$.fragment,n),rn(en.$$.fragment,n),rn(ln.$$.fragment,n),rn(vn.$$.fragment,n),rn(zn.$$.fragment,n),rn(On.$$.fragment,n),rn(Fn.$$.fragment,n),rn(Pn.$$.fragment,n),rn(Xn.$$.fragment,n),Un=!1},d(n){n&&w(e),fn(t,n),n&&w(a),n&&w(s),n&&w(r),fn(o,n),n&&w(l),n&&w(c),n&&w(h),fn(p,n),n&&w(d),n&&w(m),n&&w(g),fn($,n),n&&w(k),n&&w(S),n&&w(I),fn(O,n),n&&w(V),n&&w(q),n&&w(M),fn(F,n),n&&w(T),n&&w(E),n&&w(R),fn(H,n),n&&w(N),n&&w(j),n&&w(D),fn(X,n),n&&w(G),n&&w(U),n&&w(J),fn(W,n),n&&w(Q),n&&w(Z),n&&w(nn),fn(en,n),n&&w(an),n&&w(on),n&&w(un),fn(ln,n),n&&w(mn),n&&w(gn),n&&w($n),fn(vn,n),n&&w(wn),n&&w(xn),n&&w(yn),fn(zn,n),n&&w(An),n&&w(Sn),n&&w(In),fn(On,n),n&&w(Vn),n&&w(qn),n&&w(Mn),fn(Fn,n),n&&w(En),n&&w(Rn),n&&w(Hn),fn(Pn,n),n&&w(Nn),n&&w(jn),n&&w(Dn),fn(Xn,n),n&&w(Bn),n&&w(Gn)}}}function ce(n){let e,t,i,s,r,u,c,h,p,f,d,m,$,v,y,I,_,V,q,M,F,C,T,E,R,H,P,L,N,j,D,X,Y,B,G,U;return{c(){var n,a;e=x("div"),t=x("div"),i=z(),s=x("div"),r=x("img"),c=z(),h=x("br"),p=z(),f=x("br"),d=z(),m=x("span"),m.textContent="Image Width",$=z(),v=x("input"),y=z(),I=x("br"),_=z(),V=x("span"),V.textContent="Image Height",q=z(),M=x("input"),F=z(),C=x("br"),T=z(),E=x("br"),R=z(),H=x("button"),H.textContent="Create",P=z(),L=x("br"),N=z(),j=x("br"),D=z(),X=x("span"),X.innerHTML='© 2023 Lunal Graphics<br class="svelte-viz99f"/>Developed by Yikuan Sun',A(t,"class",l("centered")+" svelte-viz99f"),A(t,"style","width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;"),A(r,"alt","PROGEN FLARES 2"),n=r.src,a=u="./textLogo.png",o||(o=document.createElement("a")),o.href=a,n!==o.href&&A(r,"src","./textLogo.png"),A(r,"width","321"),A(r,"draggable",!1),A(r,"class","svelte-viz99f"),A(h,"class","svelte-viz99f"),A(f,"class","svelte-viz99f"),A(m,"style","width: 145px; text-align: left; display: inline-block;"),A(m,"class","svelte-viz99f"),A(v,"type","number"),A(v,"style","width: 80px;"),A(v,"class","svelte-viz99f"),A(I,"class","svelte-viz99f"),A(V,"style","width: 145px; text-align: left; display: inline-block;"),A(V,"class","svelte-viz99f"),A(M,"type","number"),A(M,"style","width: 80px;"),A(M,"class","svelte-viz99f"),A(C,"class","svelte-viz99f"),A(E,"class","svelte-viz99f"),A(H,"class","svelte-viz99f"),A(L,"class","svelte-viz99f"),A(j,"class","svelte-viz99f"),A(X,"style","font-size: 10px;"),A(X,"class","svelte-viz99f"),A(s,"class",l("centered")+" svelte-viz99f"),A(s,"style","text-align: center;"),A(e,"id","startScreen"),A(e,"class","svelte-viz99f")},m(a,o){b(a,e,o),g(e,t),g(e,i),g(e,s),g(s,r),g(s,c),g(s,h),g(s,p),g(s,f),g(s,d),g(s,m),g(s,$),g(s,v),O(v,n[0].dimensions.width),g(s,y),g(s,I),g(s,_),g(s,V),g(s,q),g(s,M),O(M,n[0].dimensions.height),g(s,F),g(s,C),g(s,T),g(s,E),g(s,R),g(s,H),g(s,P),g(s,L),g(s,N),g(s,j),g(s,D),g(s,X),B=!0,G||(U=[k(v,"input",n[173]),k(M,"input",n[174]),k(H,"click",n[10])],G=!0)},p(n,e){1&e[0]&&S(v.value)!==n[0].dimensions.width&&O(v,n[0].dimensions.width),1&e[0]&&S(M.value)!==n[0].dimensions.height&&O(M,n[0].dimensions.height)},i(n){B||(Y&&Y.end(1),B=!0)},o(n){Y=un(e,vn,{}),B=!1},d(n){n&&w(e),n&&Y&&Y.end(),G=!1,a(U)}}}function he(e){let t,i,r,o,u,c,h,p,f,d,m,$,v,S,I,O,V,q,M,F,C,T,E,R,H,P,L,N,j,D,X,B,G,U,J,W,K,Q,Z,nn,en,on,un,ln,cn,dn,mn,gn,$n,vn,bn,wn,xn,yn,kn,An,Sn,In;K=new ee({}),K.$on("choose",e[21]),en=new zn({props:{title:"Global",collapsed:!1,$$slots:{default:[ie]},$$scope:{ctx:e}}}),un=new zn({props:{title:"Hotspot",$$slots:{default:[ae]},$$scope:{ctx:e}}}),cn=new zn({props:{title:"Streak",$$slots:{default:[se]},$$scope:{ctx:e}}}),mn=new zn({props:{title:"Ring",$$slots:{default:[re]},$$scope:{ctx:e}}}),$n=new zn({props:{title:"Multi-Iris",$$slots:{default:[oe]},$$scope:{ctx:e}}}),bn=new zn({props:{title:"Glow",$$slots:{default:[ue]},$$scope:{ctx:e}}}),xn=new zn({props:{title:"Lens Orbs",$$slots:{default:[le]},$$scope:{ctx:e}}});let On=e[3]&&ce(e);return{c(){t=x("div"),i=x("button"),i.textContent="Export",r=z(),o=x("span"),o.textContent="as",u=z(),c=x("select"),h=x("option"),h.textContent="PNG",p=x("option"),p.textContent="JPG",f=x("option"),f.textContent="WebP",d=z(),m=x("div"),$=x("canvas"),I=z(),O=x("canvas"),M=z(),F=x("div"),C=y("Preview quality\n"),T=x("select"),E=x("option"),E.textContent="100%",R=x("option"),R.textContent="80%",H=x("option"),H.textContent="60%",P=x("option"),P.textContent="40%",L=x("option"),L.textContent="20%",N=z(),j=x("span"),j.textContent="    |    ",D=z(),X=x("input"),B=y("\nReference Image\n"),G=x("button"),G.textContent="Import",U=z(),J=x("div"),W=x("div"),hn(K.$$.fragment),Q=z(),Z=x("button"),Z.textContent="Save Preset",nn=z(),hn(en.$$.fragment),on=z(),hn(un.$$.fragment),ln=z(),hn(cn.$$.fragment),dn=z(),hn(mn.$$.fragment),gn=z(),hn($n.$$.fragment),vn=z(),hn(bn.$$.fragment),wn=z(),hn(xn.$$.fragment),yn=z(),On&&On.c(),kn=z(),A(i,"class","svelte-viz99f"),A(o,"style","display: inline-block; margin-left: 5px; margin-right: 5px;"),A(o,"class","svelte-viz99f"),h.__value="png",h.value=h.__value,A(h,"class","svelte-viz99f"),p.__value="jpeg",p.value=p.__value,A(p,"class","svelte-viz99f"),f.__value="webp",f.value=f.__value,A(f,"class","svelte-viz99f"),A(c,"class","svelte-viz99f"),void 0===e[0].exportType&&Y((()=>e[15].call(c))),A(t,"id","exportPanel"),A(t,"class","svelte-viz99f"),A($,"id","referenceImage"),A($,"width",v=e[0].dimensions.width),A($,"height",S=e[0].dimensions.height),A($,"class",l("centered")+" svelte-viz99f"),A(O,"id","baseCanvas"),A(O,"width",V=e[0].dimensions.width),A(O,"height",q=e[0].dimensions.height),A(O,"class",l("centered")+" svelte-viz99f"),A(m,"id","previewSection"),A(m,"class","svelte-viz99f"),E.__value=1,E.value=E.__value,A(E,"class","svelte-viz99f"),R.__value=5/4,R.value=R.__value,A(R,"class","svelte-viz99f"),H.__value=5/3,H.value=H.__value,A(H,"class","svelte-viz99f"),P.__value=2.5,P.value=P.__value,A(P,"class","svelte-viz99f"),L.__value=5,L.value=L.__value,A(L,"class","svelte-viz99f"),A(T,"class","svelte-viz99f"),void 0===e[0].downscaling&&Y((()=>e[18].call(T))),A(j,"style","white-space: pre; color: grey;"),A(j,"class","svelte-viz99f"),A(X,"type","checkbox"),X.checked=!0,A(X,"style","margin-bottom: 0;"),A(X,"class","svelte-viz99f"),A(G,"class","svelte-viz99f"),A(F,"id","sectionAbovePreview"),A(F,"class","svelte-viz99f"),A(Z,"style","float: right;"),A(Z,"class","svelte-viz99f"),A(W,"style","\n    position: sticky;\n    top: 0;\n    width: 100%;\n    background-color: var(--color-scheme-6);\n    padding: 5px;\n    box-sizing: border-box;\n        border-bottom: 1px solid #353535;\n"),A(W,"class","svelte-viz99f"),A(J,"id","controlPanel"),A(J,"class","svelte-viz99f"),te.title="Progen Flares 2"},m(a,l){var v;b(a,t,l),g(t,i),g(t,r),g(t,o),g(t,u),g(t,c),g(c,h),g(c,p),g(c,f),_(c,e[0].exportType),b(a,d,l),b(a,m,l),g(m,$),e[16]($),g(m,I),g(m,O),e[17](O),b(a,M,l),b(a,F,l),g(F,C),g(F,T),g(T,E),g(T,R),g(T,H),g(T,P),g(T,L),_(T,e[0].downscaling),g(F,N),g(F,j),g(F,D),g(F,X),e[20](X),g(F,B),g(F,G),b(a,U,l),b(a,J,l),g(J,W),pn(K,W,null),g(W,Q),g(W,Z),g(J,nn),pn(en,J,null),g(J,on),pn(un,J,null),g(J,ln),pn(cn,J,null),g(J,dn),pn(mn,J,null),g(J,gn),pn($n,J,null),g(J,vn),pn(bn,J,null),g(J,wn),pn(xn,J,null),b(a,yn,l),On&&On.m(a,l),b(a,kn,l),An=!0,Sn||(In=[k(i,"click",e[14]),k(c,"change",e[15]),(v=En.call(null,O),v&&s(v.destroy)?v.destroy:n),k(O,"clickDrag",e[6]),k(T,"change",e[18]),k(T,"change",e[19]),k(X,"change",e[12]),k(G,"click",e[11]),k(Z,"click",e[22])],Sn=!0)},p(n,e){1&e[0]&&_(c,n[0].exportType),(!An||1&e[0]&&v!==(v=n[0].dimensions.width))&&A($,"width",v),(!An||1&e[0]&&S!==(S=n[0].dimensions.height))&&A($,"height",S),(!An||1&e[0]&&V!==(V=n[0].dimensions.width))&&A(O,"width",V),(!An||1&e[0]&&q!==(q=n[0].dimensions.height))&&A(O,"height",q),1&e[0]&&_(T,n[0].downscaling);const t={};1&e[0]|2097152&e[5]&&(t.$$scope={dirty:e,ctx:n}),en.$set(t);const i={};1&e[0]|2097152&e[5]&&(i.$$scope={dirty:e,ctx:n}),un.$set(i);const a={};1&e[0]|2097152&e[5]&&(a.$$scope={dirty:e,ctx:n}),cn.$set(a);const s={};1&e[0]|2097152&e[5]&&(s.$$scope={dirty:e,ctx:n}),mn.$set(s);const r={};1&e[0]|2097152&e[5]&&(r.$$scope={dirty:e,ctx:n}),$n.$set(r);const o={};1&e[0]|2097152&e[5]&&(o.$$scope={dirty:e,ctx:n}),bn.$set(o);const u={};1&e[0]|2097152&e[5]&&(u.$$scope={dirty:e,ctx:n}),xn.$set(u),n[3]?On?(On.p(n,e),8&e[0]&&sn(On,1)):(On=ce(n),On.c(),sn(On,1),On.m(kn.parentNode,kn)):On&&(tn(),rn(On,1,1,(()=>{On=null})),an())},i(n){An||(sn(K.$$.fragment,n),sn(en.$$.fragment,n),sn(un.$$.fragment,n),sn(cn.$$.fragment,n),sn(mn.$$.fragment,n),sn($n.$$.fragment,n),sn(bn.$$.fragment,n),sn(xn.$$.fragment,n),sn(On),An=!0)},o(n){rn(K.$$.fragment,n),rn(en.$$.fragment,n),rn(un.$$.fragment,n),rn(cn.$$.fragment,n),rn(mn.$$.fragment,n),rn($n.$$.fragment,n),rn(bn.$$.fragment,n),rn(xn.$$.fragment,n),rn(On),An=!1},d(n){n&&w(t),n&&w(d),n&&w(m),e[16](null),e[17](null),n&&w(M),n&&w(F),e[20](null),n&&w(U),n&&w(J),fn(K),fn(en),fn(un),fn(cn),fn(mn),fn($n),fn(bn),fn(xn),n&&w(yn),On&&On.d(n),n&&w(kn),Sn=!1,a(In)}}}function pe(n,e,t){var i,a,s={hotspot:new Vn(256,{deformationFrequency:.006}),streak:new Vn(256,{deformationAmount:0,intensity:0}),ring:new qn(256,{cropSize:0}),miIris:new Rn(256,{roundness:20}),glow:new Vn(256,{deformationAmount:0,intensity:-50}),lensOrbs:new Rn(256,{})},r={downscaling:2.5,exportType:"png",sizeMultiplier:1,dimensions:{width:1920,height:1080},positioning:{x:960,y:540,pivotX:960,pivotY:540},hotspot:{radius:500,intensity:5,deformationAmount:1.6,deformationFrequency:.006,deformationSeed:1,alpha:100,angle:0,hue:200,saturation:100,anamorph:0},streak:{thickness:64,width:1600,intensity:5,count:1,angle:0,shift:36,alpha:100,angle:0,hue:200,saturation:100},ring:{radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:21,hue:200,saturation:100,anamorph:0},miIris:{radius:81,sides:5,roundness:20,angle:0,fillAlpha:25,fringeAlpha:50,fringeSize:10,blur:4,countAway:5,countTowards:12,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:123,hue:200,saturation:100,hueVariance:30,anamorph:0},glow:{radius:960,alpha:50,softening:70,hue:200,saturation:100,anamorph:0},lensOrbs:{radius:45,sides:6,roundness:100,angle:0,fillAlpha:8,fringeAlpha:11,fringeSize:17,blur:5,count:100,threshold:1200,seed:124,sizeVariance:0,alphaVariance:50,hue:200,saturation:100,hueVariance:360,anamorph:0}};function o(n=!1,e=!1,t=!1,a=!1,o=!1,u=!1){n&&(s.hotspot.radius=Math.floor(r.hotspot.radius/r.downscaling),s.hotspot.options.intensity=r.hotspot.intensity/r.downscaling,s.hotspot.options.deformationAmount=r.hotspot.deformationAmount,s.hotspot.options.deformationFrequency=r.hotspot.deformationFrequency,s.hotspot.options.deformationSeed=r.hotspot.deformationSeed,s.hotspot.options.hue=r.hotspot.hue,s.hotspot.options.saturation=r.hotspot.saturation,s.hotspot.options.angle=r.hotspot.angle,s.hotspot.render()),e&&(s.streak.radius=Math.floor(2*r.streak.thickness/r.downscaling),s.streak.options.intensity=r.streak.intensity/r.downscaling,s.streak.options.hue=r.streak.hue,s.streak.options.saturation=r.streak.saturation,s.streak.render(),s.streakLeftHalf=new Wn(s.streak.canvas,2*r.streak.width,2*r.streak.thickness,!0,!1),s.streakRightHalf=new Wn(s.streak.canvas,2*r.streak.width,2*r.streak.thickness,!1,!0)),t&&(s.ring.radius=Math.floor(r.ring.radius/r.downscaling),s.ring.options.thickness=r.ring.thickness/r.downscaling,s.ring.options.blur=r.ring.blur/r.downscaling,s.ring.options.cropSize=r.ring.cropSize/r.downscaling,s.ring.options.cropHardness=r.ring.cropHardness,s.ring.options.hue=r.ring.hue,s.ring.options.saturation=r.ring.saturation,s.ring.render()),a&&(s.miIris.radius=Math.floor(r.miIris.radius/r.downscaling),s.miIris.options.sides=r.miIris.sides,s.miIris.options.roundness=r.miIris.roundness,s.miIris.options.fillAlpha=r.miIris.fillAlpha,s.miIris.options.fringeAlpha=r.miIris.fringeAlpha,s.miIris.options.fringeSize=r.miIris.fringeSize/r.downscaling,s.miIris.options.blur=r.miIris.blur/r.downscaling,s.miIris.options.angle=r.miIris.angle,s.miIris.options.hue=r.miIris.hue,s.miIris.options.saturation=r.miIris.saturation,s.miIris.render()),o&&(s.glow.radius=Math.floor(r.glow.radius/r.downscaling),s.glow.options.intensity=-r.glow.softening/r.downscaling,s.glow.options.hue=r.glow.hue,s.glow.options.saturation=r.glow.saturation,s.glow.render()),u&&(s.lensOrbs.radius=Math.floor(r.lensOrbs.radius/r.downscaling),s.lensOrbs.options.sides=r.lensOrbs.sides,s.lensOrbs.options.roundness=r.lensOrbs.roundness,s.lensOrbs.options.fillAlpha=r.lensOrbs.fillAlpha,s.lensOrbs.options.fringeAlpha=r.lensOrbs.fringeAlpha,s.lensOrbs.options.fringeSize=r.lensOrbs.fringeSize/r.downscaling,s.lensOrbs.options.blur=r.lensOrbs.blur/r.downscaling,s.lensOrbs.options.angle=r.lensOrbs.angle,s.lensOrbs.options.hue=r.lensOrbs.hue,s.lensOrbs.options.saturation=r.lensOrbs.saturation,s.lensOrbs.render());var l=i.getContext("2d");l.restore(),l.save(),l.clearRect(0,0,i.width,i.height),l.fillStyle="black",l.fillRect(0,0,i.width,i.height),Tn(l,s.hotspot,r.positioning.x,r.positioning.y,2*r.hotspot.radius,2*r.hotspot.radius*(1-r.hotspot.anamorph/100),0,r.hotspot.alpha,0,r.sizeMultiplier);for(var c=r.streak.angle,h=0;h<r.streak.count;h++){var p=(r.positioning.pivotX-r.positioning.x)*r.streak.shift/100;r.streak.count>1&&(p=r.streak.shift*(h%2==0?-1:1)/100*r.streak.width),Tn(l,s.streakRightHalf,r.positioning.x,r.positioning.y,r.streak.width+p,r.streak.thickness,c,r.streak.alpha,0,r.sizeMultiplier),Tn(l,s.streakLeftHalf,r.positioning.x,r.positioning.y,r.streak.width-p,r.streak.thickness,c,r.streak.alpha,0,r.sizeMultiplier),c+=180/r.streak.count}Tn(l,s.ring,r.positioning.x,r.positioning.y,2*r.ring.radius,2*r.ring.radius*(1-r.ring.anamorph/100),0,r.ring.alpha,0,r.sizeMultiplier);var f=Jn(r.miIris.seed);for(h=1;h<r.miIris.countTowards;h++){var d={x:r.positioning.x+h*(r.positioning.pivotX-r.positioning.x)*r.miIris.spread/100,y:r.positioning.y+h*(r.positioning.pivotY-r.positioning.y)*r.miIris.spread/100},m=1+2*(f()-.5)*r.miIris.sizeVariance/100;m-=(1-h/r.miIris.countTowards)*r.miIris.perspective/100,Tn(l,s.miIris,d.x,d.y,2*r.miIris.radius*m,2*r.miIris.radius*m*(1-r.miIris.anamorph/100),0,100-r.miIris.alphaVariance*f(),r.miIris.hueVariance*(2*f()-1),r.sizeMultiplier)}for(h=1;h<r.miIris.countAway;h++){d={x:r.positioning.x-h*(r.positioning.pivotX-r.positioning.x)*r.miIris.spread/100,y:r.positioning.y-h*(r.positioning.pivotY-r.positioning.y)*r.miIris.spread/100},m=1+2*(f()-.5)*r.miIris.sizeVariance/100;m-=(1-h/r.miIris.countTowards)*r.miIris.perspective/100,Tn(l,s.miIris,d.x,d.y,2*r.miIris.radius*m,2*r.miIris.radius*m*(1-r.miIris.anamorph/100),0,100-r.miIris.alphaVariance*f(),r.miIris.hueVariance*(2*f()-1),r.sizeMultiplier)}Tn(l,s.glow,r.positioning.x,r.positioning.y,2*r.glow.radius,2*r.glow.radius*(1-r.glow.anamorph/100),0,r.glow.alpha,0,r.sizeMultiplier);var g=Jn(r.lensOrbs.seed);for(h=1;h<r.lensOrbs.count;h++){var $={x:g()*r.dimensions.width,y:g()*r.dimensions.height},v=Math.sqrt(Math.pow(r.positioning.x-$.x,2)+Math.pow(r.positioning.y-$.y,2)),b=Math.max(0,100*(1-v/r.lensOrbs.threshold));b=Math.max(0,b-r.lensOrbs.alphaVariance*g());var w=1+2*(g()-.5)*r.lensOrbs.sizeVariance/100;Tn(l,s.lensOrbs,$.x,$.y,2*r.lensOrbs.radius*w,2*r.lensOrbs.radius*w*(1-r.lensOrbs.anamorph/100),0,b,r.lensOrbs.hueVariance*(2*g()-1),r.sizeMultiplier)}}function u(){var n=r.downscaling;t(0,r.downscaling=1,r),o(!0,!0,!0,!0,!0);var e=document.createElement("a");return e.href=i.toDataURL("image/"+r.exportType),e.download="ProgenFlares2-flare."+r.exportType,t(0,r.downscaling=n,r),o(!0,!0,!0,!0,!0),e}function l(){var n=JSON.stringify({hotspot:r.hotspot,streak:r.streak,ring:r.ring,miIris:r.miIris,glow:r.glow,lensOrbs:r.lensOrbs}),e=new Blob([n],{type:"application/json"}),t=document.createElement("a");return t.href=URL.createObjectURL(e),t.download="ProgenFlares2-preset.pgf2",t}function c(n){for(var e in n)for(var i in r[e]||t(0,r[e]={},r),n[e])t(0,r[e][i]=n[e][i],r);o(!0,!0,!0,!0,!0,!0)}window.onload=function(){o(!0,!0,!0,!0,!0,!0)};var h,p=!0;function f(){this.checked?t(2,a.style.backgroundSize="100% 100%",a):t(2,a.style.backgroundSize="0 0",a)}return[r,i,a,p,h,o,function(n){t(0,r.positioning.x=n.detail.x,r),t(0,r.positioning.y=n.detail.y,r),o()},u,l,c,function(){c({hotspot:{radius:595,intensity:10,deformationAmount:1.5,deformationFrequency:.01,deformationSeed:239,alpha:100,angle:0,hue:39,saturation:88,anamorph:0},streak:{thickness:121,width:2435,intensity:-25,count:1,angle:0,shift:48,alpha:100,hue:216,saturation:100},ring:{radius:300,thickness:50,blur:4,cropSize:0,cropHardness:50,alpha:0,hue:200,saturation:100,anamorph:0},miIris:{radius:72,sides:6,roundness:50,angle:0,fillAlpha:10,fringeAlpha:12,fringeSize:28,blur:3,countAway:5,countTowards:12,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:333,hue:39,saturation:100,hueVariance:40,anamorph:0},glow:{radius:999,alpha:25,softening:0,hue:23,saturation:100,anamorph:0},lensOrbs:{radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:6,fringeSize:4,blur:2,count:123,threshold:1210,seed:222,sizeVariance:0,alphaVariance:42,hue:16,saturation:100,hueVariance:0,anamorph:0}}),t(0,r.positioning.pivotX=r.dimensions.width/2,r),t(0,r.positioning.pivotY=r.dimensions.height/2,r),t(0,r.positioning.x=2*r.dimensions.width/5,r),t(0,r.positioning.y=2*r.dimensions.height/5,r),o(!0,!0,!0,!0,!0,!0),t(3,p=!1)},function(){var n=document.createElement("input");n.type="file",n.accept="image/png, image/jpeg",n.addEventListener("change",(()=>{var e=n.files[0],i=new FileReader;i.addEventListener("loadend",(n=>{t(2,a.style.backgroundImage=`url("${n.target.result}")`,a),this.value="Custom",t(4,h.checked=!0,h),f.bind(h)()})),i.readAsDataURL(e)})),n.click()},f,function(){t(0,r.hotspot.radius*=r.sizeMultiplier,r),t(0,r.hotspot.intensity*=r.sizeMultiplier,r),t(0,r.streak.thickness*=r.sizeMultiplier,r),t(0,r.streak.width*=r.sizeMultiplier,r),t(0,r.streak.intensity*=r.sizeMultiplier,r),t(0,r.ring.radius*=r.sizeMultiplier,r),t(0,r.ring.thickness*=r.sizeMultiplier,r),t(0,r.ring.blur*=r.sizeMultiplier,r),t(0,r.ring.cropSize*=r.sizeMultiplier,r),t(0,r.miIris.radius*=r.sizeMultiplier,r),t(0,r.miIris.fringeSize*=r.sizeMultiplier,r),t(0,r.miIris.blur*=r.sizeMultiplier,r),t(0,r.glow.radius*=r.sizeMultiplier,r),t(0,r.glow.softening*=r.sizeMultiplier,r),t(0,r.lensOrbs.radius*=r.sizeMultiplier,r),t(0,r.lensOrbs.fringeSize*=r.sizeMultiplier,r),t(0,r.lensOrbs.blur*=r.sizeMultiplier,r),t(0,r.sizeMultiplier=1,r),o(!0,!0,!0,!0,!0,!0)},function(){u().click()},function(){r.exportType=V(this),t(0,r)},function(n){L[n?"unshift":"push"]((()=>{t(2,a=n)}))},function(n){L[n?"unshift":"push"]((()=>{t(1,i=n)}))},function(){r.downscaling=V(this),t(0,r)},function(){o(!0,!0,!0,!0,!0)},function(n){L[n?"unshift":"push"]((()=>{t(4,h=n)}))},function(n){c(n.detail)},function(){l().click()},function(e){n.$$.not_equal(r.positioning.x,e)&&(r.positioning.x=e,t(0,r))},function(){o()},function(e){n.$$.not_equal(r.positioning.y,e)&&(r.positioning.y=e,t(0,r))},function(){o()},function(e){n.$$.not_equal(r.positioning.pivotX,e)&&(r.positioning.pivotX=e,t(0,r))},function(){o()},function(e){n.$$.not_equal(r.positioning.pivotY,e)&&(r.positioning.pivotY=e,t(0,r))},function(){o()},function(e){n.$$.not_equal(r.sizeMultiplier,e)&&(r.sizeMultiplier=e,t(0,r))},function(){o()},function(e){n.$$.not_equal(r.hotspot.alpha,e)&&(r.hotspot.alpha=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.angle,e)&&(r.hotspot.angle=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.hue,e)&&(r.hotspot.hue=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.saturation,e)&&(r.hotspot.saturation=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.radius,e)&&(r.hotspot.radius=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.intensity,e)&&(r.hotspot.intensity=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.deformationFrequency,e)&&(r.hotspot.deformationFrequency=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.deformationAmount,e)&&(r.hotspot.deformationAmount=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.deformationSeed,e)&&(r.hotspot.deformationSeed=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.hotspot.anamorph,e)&&(r.hotspot.anamorph=e,t(0,r))},function(){o(!0)},function(e){n.$$.not_equal(r.streak.alpha,e)&&(r.streak.alpha=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.streak.angle,e)&&(r.streak.angle=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.streak.hue,e)&&(r.streak.hue=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.streak.saturation,e)&&(r.streak.saturation=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.streak.thickness,e)&&(r.streak.thickness=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.streak.width,e)&&(r.streak.width=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.streak.intensity,e)&&(r.streak.intensity=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.streak.count,e)&&(r.streak.count=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.streak.shift,e)&&(r.streak.shift=e,t(0,r))},function(){o(!1,!0)},function(e){n.$$.not_equal(r.ring.alpha,e)&&(r.ring.alpha=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.ring.hue,e)&&(r.ring.hue=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.ring.saturation,e)&&(r.ring.saturation=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.ring.radius,e)&&(r.ring.radius=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.ring.thickness,e)&&(r.ring.thickness=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.ring.blur,e)&&(r.ring.blur=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.ring.cropSize,e)&&(r.ring.cropSize=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.ring.cropHardness,e)&&(r.ring.cropHardness=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.ring.anamorph,e)&&(r.ring.anamorph=e,t(0,r))},function(){o(!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.fillAlpha,e)&&(r.miIris.fillAlpha=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.fringeAlpha,e)&&(r.miIris.fringeAlpha=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.angle,e)&&(r.miIris.angle=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.hue,e)&&(r.miIris.hue=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.saturation,e)&&(r.miIris.saturation=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.radius,e)&&(r.miIris.radius=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.sides,e)&&(r.miIris.sides=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.roundness,e)&&(r.miIris.roundness=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.fringeSize,e)&&(r.miIris.fringeSize=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.blur,e)&&(r.miIris.blur=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.countTowards,e)&&(r.miIris.countTowards=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.countAway,e)&&(r.miIris.countAway=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.spread,e)&&(r.miIris.spread=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.sizeVariance,e)&&(r.miIris.sizeVariance=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.perspective,e)&&(r.miIris.perspective=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.alphaVariance,e)&&(r.miIris.alphaVariance=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.hueVariance,e)&&(r.miIris.hueVariance=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.seed,e)&&(r.miIris.seed=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.miIris.anamorph,e)&&(r.miIris.anamorph=e,t(0,r))},function(){o(!1,!1,!1,!0)},function(e){n.$$.not_equal(r.glow.alpha,e)&&(r.glow.alpha=e,t(0,r))},function(){o(!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.glow.hue,e)&&(r.glow.hue=e,t(0,r))},function(){o(!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.glow.saturation,e)&&(r.glow.saturation=e,t(0,r))},function(){o(!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.glow.radius,e)&&(r.glow.radius=e,t(0,r))},function(){o(!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.glow.softening,e)&&(r.glow.softening=e,t(0,r))},function(){o(!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.glow.anamorph,e)&&(r.glow.anamorph=e,t(0,r))},function(){o(!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.count,e)&&(r.lensOrbs.count=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.threshold,e)&&(r.lensOrbs.threshold=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.fillAlpha,e)&&(r.lensOrbs.fillAlpha=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.fringeAlpha,e)&&(r.lensOrbs.fringeAlpha=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.angle,e)&&(r.lensOrbs.angle=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.hue,e)&&(r.lensOrbs.hue=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.saturation,e)&&(r.lensOrbs.saturation=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.radius,e)&&(r.lensOrbs.radius=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.sides,e)&&(r.lensOrbs.sides=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.roundness,e)&&(r.lensOrbs.roundness=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.fringeSize,e)&&(r.lensOrbs.fringeSize=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.blur,e)&&(r.lensOrbs.blur=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.sizeVariance,e)&&(r.lensOrbs.sizeVariance=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.alphaVariance,e)&&(r.lensOrbs.alphaVariance=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.hueVariance,e)&&(r.lensOrbs.hueVariance=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.seed,e)&&(r.lensOrbs.seed=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(e){n.$$.not_equal(r.lensOrbs.anamorph,e)&&(r.lensOrbs.anamorph=e,t(0,r))},function(){o(!1,!1,!1,!1,!1,!0)},function(){r.dimensions.width=S(this.value),t(0,r)},function(){r.dimensions.height=S(this.value),t(0,r)}]}return new class extends gn{constructor(n){super(),mn(this,n,pe,he,r,{},null,[-1,-1,-1,-1,-1,-1])}}({target:document.body,props:{}})}();
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    const identity = x => x;
+    function assign(tar, src) {
+        // @ts-ignore
+        for (const k in src)
+            tar[k] = src[k];
+        return tar;
+    }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    let src_url_equal_anchor;
+    function src_url_equal(element_src, url) {
+        if (!src_url_equal_anchor) {
+            src_url_equal_anchor = document.createElement('a');
+        }
+        src_url_equal_anchor.href = url;
+        return element_src === src_url_equal_anchor.href;
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function create_slot(definition, ctx, $$scope, fn) {
+        if (definition) {
+            const slot_ctx = get_slot_context(definition, ctx, $$scope, fn);
+            return definition[0](slot_ctx);
+        }
+    }
+    function get_slot_context(definition, ctx, $$scope, fn) {
+        return definition[1] && fn
+            ? assign($$scope.ctx.slice(), definition[1](fn(ctx)))
+            : $$scope.ctx;
+    }
+    function get_slot_changes(definition, $$scope, dirty, fn) {
+        if (definition[2] && fn) {
+            const lets = definition[2](fn(dirty));
+            if ($$scope.dirty === undefined) {
+                return lets;
+            }
+            if (typeof lets === 'object') {
+                const merged = [];
+                const len = Math.max($$scope.dirty.length, lets.length);
+                for (let i = 0; i < len; i += 1) {
+                    merged[i] = $$scope.dirty[i] | lets[i];
+                }
+                return merged;
+            }
+            return $$scope.dirty | lets;
+        }
+        return $$scope.dirty;
+    }
+    function update_slot_base(slot, slot_definition, ctx, $$scope, slot_changes, get_slot_context_fn) {
+        if (slot_changes) {
+            const slot_context = get_slot_context(slot_definition, ctx, $$scope, get_slot_context_fn);
+            slot.p(slot_context, slot_changes);
+        }
+    }
+    function get_all_dirty_from_scope($$scope) {
+        if ($$scope.ctx.length > 32) {
+            const dirty = [];
+            const length = $$scope.ctx.length / 32;
+            for (let i = 0; i < length; i++) {
+                dirty[i] = -1;
+            }
+            return dirty;
+        }
+        return -1;
+    }
+    function null_to_empty(value) {
+        return value == null ? '' : value;
+    }
+    function action_destroyer(action_result) {
+        return action_result && is_function(action_result.destroy) ? action_result.destroy : noop;
+    }
+
+    const is_client = typeof window !== 'undefined';
+    let now = is_client
+        ? () => window.performance.now()
+        : () => Date.now();
+    let raf = is_client ? cb => requestAnimationFrame(cb) : noop;
+
+    const tasks = new Set();
+    function run_tasks(now) {
+        tasks.forEach(task => {
+            if (!task.c(now)) {
+                tasks.delete(task);
+                task.f();
+            }
+        });
+        if (tasks.size !== 0)
+            raf(run_tasks);
+    }
+    /**
+     * Creates a new task that runs on each raf frame
+     * until it returns a falsy value or is aborted
+     */
+    function loop(callback) {
+        let task;
+        if (tasks.size === 0)
+            raf(run_tasks);
+        return {
+            promise: new Promise(fulfill => {
+                tasks.add(task = { c: callback, f: fulfill });
+            }),
+            abort() {
+                tasks.delete(task);
+            }
+        };
+    }
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function get_root_for_style(node) {
+        if (!node)
+            return document;
+        const root = node.getRootNode ? node.getRootNode() : node.ownerDocument;
+        if (root && root.host) {
+            return root;
+        }
+        return node.ownerDocument;
+    }
+    function append_empty_stylesheet(node) {
+        const style_element = element('style');
+        append_stylesheet(get_root_for_style(node), style_element);
+        return style_element.sheet;
+    }
+    function append_stylesheet(node, style) {
+        append(node.head || node, style);
+        return style.sheet;
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        if (node.parentNode) {
+            node.parentNode.removeChild(node);
+        }
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function to_number(value) {
+        return value === '' ? null : +value;
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
+    }
+    function select_option(select, value) {
+        for (let i = 0; i < select.options.length; i += 1) {
+            const option = select.options[i];
+            if (option.__value === value) {
+                option.selected = true;
+                return;
+            }
+        }
+        select.selectedIndex = -1; // no option should be selected
+    }
+    function select_value(select) {
+        const selected_option = select.querySelector(':checked') || select.options[0];
+        return selected_option && selected_option.__value;
+    }
+    function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, bubbles, cancelable, detail);
+        return e;
+    }
+
+    // we need to store the information for multiple documents because a Svelte application could also contain iframes
+    // https://github.com/sveltejs/svelte/issues/3624
+    const managed_styles = new Map();
+    let active = 0;
+    // https://github.com/darkskyapp/string-hash/blob/master/index.js
+    function hash(str) {
+        let hash = 5381;
+        let i = str.length;
+        while (i--)
+            hash = ((hash << 5) - hash) ^ str.charCodeAt(i);
+        return hash >>> 0;
+    }
+    function create_style_information(doc, node) {
+        const info = { stylesheet: append_empty_stylesheet(node), rules: {} };
+        managed_styles.set(doc, info);
+        return info;
+    }
+    function create_rule(node, a, b, duration, delay, ease, fn, uid = 0) {
+        const step = 16.666 / duration;
+        let keyframes = '{\n';
+        for (let p = 0; p <= 1; p += step) {
+            const t = a + (b - a) * ease(p);
+            keyframes += p * 100 + `%{${fn(t, 1 - t)}}\n`;
+        }
+        const rule = keyframes + `100% {${fn(b, 1 - b)}}\n}`;
+        const name = `__svelte_${hash(rule)}_${uid}`;
+        const doc = get_root_for_style(node);
+        const { stylesheet, rules } = managed_styles.get(doc) || create_style_information(doc, node);
+        if (!rules[name]) {
+            rules[name] = true;
+            stylesheet.insertRule(`@keyframes ${name} ${rule}`, stylesheet.cssRules.length);
+        }
+        const animation = node.style.animation || '';
+        node.style.animation = `${animation ? `${animation}, ` : ''}${name} ${duration}ms linear ${delay}ms 1 both`;
+        active += 1;
+        return name;
+    }
+    function delete_rule(node, name) {
+        const previous = (node.style.animation || '').split(', ');
+        const next = previous.filter(name
+            ? anim => anim.indexOf(name) < 0 // remove specific animation
+            : anim => anim.indexOf('__svelte') === -1 // remove all Svelte animations
+        );
+        const deleted = previous.length - next.length;
+        if (deleted) {
+            node.style.animation = next.join(', ');
+            active -= deleted;
+            if (!active)
+                clear_rules();
+        }
+    }
+    function clear_rules() {
+        raf(() => {
+            if (active)
+                return;
+            managed_styles.forEach(info => {
+                const { ownerNode } = info.stylesheet;
+                // there is no ownerNode if it runs on jsdom.
+                if (ownerNode)
+                    detach(ownerNode);
+            });
+            managed_styles.clear();
+        });
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error('Function called outside component initialization');
+        return current_component;
+    }
+    /**
+     * Creates an event dispatcher that can be used to dispatch [component events](/docs#template-syntax-component-directives-on-eventname).
+     * Event dispatchers are functions that can take two arguments: `name` and `detail`.
+     *
+     * Component events created with `createEventDispatcher` create a
+     * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent).
+     * These events do not [bubble](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture).
+     * The `detail` argument corresponds to the [CustomEvent.detail](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail)
+     * property and can contain any type of data.
+     *
+     * https://svelte.dev/docs#run-time-svelte-createeventdispatcher
+     */
+    function createEventDispatcher() {
+        const component = get_current_component();
+        return (type, detail, { cancelable = false } = {}) => {
+            const callbacks = component.$$.callbacks[type];
+            if (callbacks) {
+                // TODO are there situations where events could be dispatched
+                // in a server (non-DOM) environment?
+                const event = custom_event(type, detail, { cancelable });
+                callbacks.slice().forEach(fn => {
+                    fn.call(component, event);
+                });
+                return !event.defaultPrevented;
+            }
+            return true;
+        };
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    function add_flush_callback(fn) {
+        flush_callbacks.push(fn);
+    }
+    // flush() calls callbacks in this order:
+    // 1. All beforeUpdate callbacks, in order: parents before children
+    // 2. All bind:this callbacks, in reverse order: children before parents.
+    // 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+    //    for afterUpdates called during the initial onMount, which are called in
+    //    reverse order: children before parents.
+    // Since callbacks might update component values, which could trigger another
+    // call to flush(), the following steps guard against this:
+    // 1. During beforeUpdate, any updated components will be added to the
+    //    dirty_components array and will cause a reentrant call to flush(). Because
+    //    the flush index is kept outside the function, the reentrant call will pick
+    //    up where the earlier call left off and go through all dirty components. The
+    //    current_component value is saved and restored so that the reentrant call will
+    //    not interfere with the "parent" flush() call.
+    // 2. bind:this callbacks cannot trigger new flush() calls.
+    // 3. During afterUpdate, any updated components will NOT have their afterUpdate
+    //    callback called a second time; the seen_callbacks set, outside the flush()
+    //    function, guarantees this behavior.
+    const seen_callbacks = new Set();
+    let flushidx = 0; // Do *not* move this inside the flush() function
+    function flush() {
+        // Do not reenter flush while dirty components are updated, as this can
+        // result in an infinite loop. Instead, let the inner flush handle it.
+        // Reentrancy is ok afterwards for bindings etc.
+        if (flushidx !== 0) {
+            return;
+        }
+        const saved_component = current_component;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            try {
+                while (flushidx < dirty_components.length) {
+                    const component = dirty_components[flushidx];
+                    flushidx++;
+                    set_current_component(component);
+                    update(component.$$);
+                }
+            }
+            catch (e) {
+                // reset dirty state to not end up in a deadlocked state and then rethrow
+                dirty_components.length = 0;
+                flushidx = 0;
+                throw e;
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            flushidx = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        seen_callbacks.clear();
+        set_current_component(saved_component);
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+
+    let promise;
+    function wait() {
+        if (!promise) {
+            promise = Promise.resolve();
+            promise.then(() => {
+                promise = null;
+            });
+        }
+        return promise;
+    }
+    function dispatch(node, direction, kind) {
+        node.dispatchEvent(custom_event(`${direction ? 'intro' : 'outro'}${kind}`));
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+        else if (callback) {
+            callback();
+        }
+    }
+    const null_transition = { duration: 0 };
+    function create_in_transition(node, fn, params) {
+        const options = { direction: 'in' };
+        let config = fn(node, params, options);
+        let running = false;
+        let animation_name;
+        let task;
+        let uid = 0;
+        function cleanup() {
+            if (animation_name)
+                delete_rule(node, animation_name);
+        }
+        function go() {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            if (css)
+                animation_name = create_rule(node, 0, 1, duration, delay, easing, css, uid++);
+            tick(0, 1);
+            const start_time = now() + delay;
+            const end_time = start_time + duration;
+            if (task)
+                task.abort();
+            running = true;
+            add_render_callback(() => dispatch(node, true, 'start'));
+            task = loop(now => {
+                if (running) {
+                    if (now >= end_time) {
+                        tick(1, 0);
+                        dispatch(node, true, 'end');
+                        cleanup();
+                        return running = false;
+                    }
+                    if (now >= start_time) {
+                        const t = easing((now - start_time) / duration);
+                        tick(t, 1 - t);
+                    }
+                }
+                return running;
+            });
+        }
+        let started = false;
+        return {
+            start() {
+                if (started)
+                    return;
+                started = true;
+                delete_rule(node);
+                if (is_function(config)) {
+                    config = config(options);
+                    wait().then(go);
+                }
+                else {
+                    go();
+                }
+            },
+            invalidate() {
+                started = false;
+            },
+            end() {
+                if (running) {
+                    cleanup();
+                    running = false;
+                }
+            }
+        };
+    }
+    function create_out_transition(node, fn, params) {
+        const options = { direction: 'out' };
+        let config = fn(node, params, options);
+        let running = true;
+        let animation_name;
+        const group = outros;
+        group.r += 1;
+        function go() {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            if (css)
+                animation_name = create_rule(node, 1, 0, duration, delay, easing, css);
+            const start_time = now() + delay;
+            const end_time = start_time + duration;
+            add_render_callback(() => dispatch(node, false, 'start'));
+            loop(now => {
+                if (running) {
+                    if (now >= end_time) {
+                        tick(0, 1);
+                        dispatch(node, false, 'end');
+                        if (!--group.r) {
+                            // this will result in `end()` being called,
+                            // so we don't need to clean up here
+                            run_all(group.c);
+                        }
+                        return false;
+                    }
+                    if (now >= start_time) {
+                        const t = easing((now - start_time) / duration);
+                        tick(1 - t, t);
+                    }
+                }
+                return running;
+            });
+        }
+        if (is_function(config)) {
+            wait().then(() => {
+                // @ts-ignore
+                config = config(options);
+                go();
+            });
+        }
+        else {
+            go();
+        }
+        return {
+            end(reset) {
+                if (reset && config.tick) {
+                    config.tick(1, 0);
+                }
+                if (running) {
+                    if (animation_name)
+                        delete_rule(node, animation_name);
+                    running = false;
+                }
+            }
+        };
+    }
+
+    const globals = (typeof window !== 'undefined'
+        ? window
+        : typeof globalThis !== 'undefined'
+            ? globalThis
+            : global);
+
+    function bind(component, name, callback) {
+        const index = component.$$.props[name];
+        if (index !== undefined) {
+            component.$$.bound[index] = callback;
+            callback(component.$$.ctx[index]);
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = component.$$.on_mount.map(run).filter(is_function);
+                // if the component was destroyed immediately
+                // it will update the `$$.on_destroy` reference to `null`.
+                // the destructured on_destroy may still reference to the old array
+                if (component.$$.on_destroy) {
+                    component.$$.on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: [],
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
+        };
+        append_styles && append_styles($$.root);
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    /**
+     * Base class for Svelte components. Used when dev=false.
+     */
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            if (!is_function(callback)) {
+                return noop;
+            }
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.55.1' }, detail), { bubbles: true }));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    /**
+     * Base class for Svelte components with some minor dev-enhancements. Used when dev=true.
+     */
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    function cubicOut(t) {
+        const f = t - 1.0;
+        return f * f * f + 1.0;
+    }
+
+    function fade(node, { delay = 0, duration = 400, easing = identity } = {}) {
+        const o = +getComputedStyle(node).opacity;
+        return {
+            delay,
+            duration,
+            easing,
+            css: t => `opacity: ${t * o}`
+        };
+    }
+    function slide(node, { delay = 0, duration = 400, easing = cubicOut } = {}) {
+        const style = getComputedStyle(node);
+        const opacity = +style.opacity;
+        const height = parseFloat(style.height);
+        const padding_top = parseFloat(style.paddingTop);
+        const padding_bottom = parseFloat(style.paddingBottom);
+        const margin_top = parseFloat(style.marginTop);
+        const margin_bottom = parseFloat(style.marginBottom);
+        const border_top_width = parseFloat(style.borderTopWidth);
+        const border_bottom_width = parseFloat(style.borderBottomWidth);
+        return {
+            delay,
+            duration,
+            easing,
+            css: t => 'overflow: hidden;' +
+                `opacity: ${Math.min(t * 20, 1) * opacity};` +
+                `height: ${t * height}px;` +
+                `padding-top: ${t * padding_top}px;` +
+                `padding-bottom: ${t * padding_bottom}px;` +
+                `margin-top: ${t * margin_top}px;` +
+                `margin-bottom: ${t * margin_bottom}px;` +
+                `border-top-width: ${t * border_top_width}px;` +
+                `border-bottom-width: ${t * border_bottom_width}px;`
+        };
+    }
+
+    /* src/Collapsible.svelte generated by Svelte v3.55.1 */
+    const file$3 = "src/Collapsible.svelte";
+
+    // (29:0) {#if (!collapsed)}
+    function create_if_block$1(ctx) {
+    	let div;
+    	let div_intro;
+    	let div_outro;
+    	let current;
+    	const default_slot_template = /*#slots*/ ctx[4].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[3], null);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (default_slot) default_slot.c();
+    			attr_dev(div, "id", "contents");
+    			attr_dev(div, "class", "svelte-augxo2");
+    			add_location(div, file$3, 29, 4, 599);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			if (default_slot) {
+    				default_slot.m(div, null);
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (default_slot) {
+    				if (default_slot.p && (!current || dirty & /*$$scope*/ 8)) {
+    					update_slot_base(
+    						default_slot,
+    						default_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[3],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[3])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[3], dirty, null),
+    						null
+    					);
+    				}
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(default_slot, local);
+
+    			add_render_callback(() => {
+    				if (div_outro) div_outro.end(1);
+    				div_intro = create_in_transition(div, slide, {});
+    				div_intro.start();
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(default_slot, local);
+    			if (div_intro) div_intro.invalidate();
+    			div_outro = create_out_transition(div, slide, {});
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (default_slot) default_slot.d(detaching);
+    			if (detaching && div_outro) div_outro.end();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$1.name,
+    		type: "if",
+    		source: "(29:0) {#if (!collapsed)}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	let div1;
+    	let div0;
+    	let t0_value = (/*collapsed*/ ctx[0] ? "+" : "-") + "";
+    	let t0;
+    	let t1;
+    	let b;
+    	let t2;
+    	let t3;
+    	let if_block_anchor;
+    	let current;
+    	let mounted;
+    	let dispose;
+    	let if_block = !/*collapsed*/ ctx[0] && create_if_block$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			b = element("b");
+    			t2 = text(/*title*/ ctx[1]);
+    			t3 = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			attr_dev(div0, "style", "width: 18px; text-align: center; display: inline-block;");
+    			add_location(div0, file$3, 22, 4, 438);
+    			add_location(b, file$3, 25, 4, 553);
+    			attr_dev(div1, "id", "nameTag");
+    			attr_dev(div1, "class", "svelte-augxo2");
+    			add_location(div1, file$3, 21, 0, 383);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div1, t1);
+    			append_dev(div1, b);
+    			append_dev(b, t2);
+    			insert_dev(target, t3, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(div1, "mousedown", /*toggleCollapse*/ ctx[2], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if ((!current || dirty & /*collapsed*/ 1) && t0_value !== (t0_value = (/*collapsed*/ ctx[0] ? "+" : "-") + "")) set_data_dev(t0, t0_value);
+    			if (!current || dirty & /*title*/ 2) set_data_dev(t2, /*title*/ ctx[1]);
+
+    			if (!/*collapsed*/ ctx[0]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*collapsed*/ 1) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(t3);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$3.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    let current$2;
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Collapsible', slots, ['default']);
+    	const dispatch = createEventDispatcher();
+    	let { title } = $$props;
+    	let { collapsed = true } = $$props;
+    	let nameTag;
+    	let contents;
+
+    	function toggleCollapse() {
+    		$$invalidate(0, collapsed = !collapsed);
+    	}
+
+    	$$self.$$.on_mount.push(function () {
+    		if (title === undefined && !('title' in $$props || $$self.$$.bound[$$self.$$.props['title']])) {
+    			console.warn("<Collapsible> was created without expected prop 'title'");
+    		}
+    	});
+
+    	const writable_props = ['title', 'collapsed'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Collapsible> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+    		if ('collapsed' in $$props) $$invalidate(0, collapsed = $$props.collapsed);
+    		if ('$$scope' in $$props) $$invalidate(3, $$scope = $$props.$$scope);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		current: current$2,
+    		createEventDispatcher,
+    		slide,
+    		dispatch,
+    		title,
+    		collapsed,
+    		nameTag,
+    		contents,
+    		toggleCollapse
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+    		if ('collapsed' in $$props) $$invalidate(0, collapsed = $$props.collapsed);
+    		if ('nameTag' in $$props) nameTag = $$props.nameTag;
+    		if ('contents' in $$props) contents = $$props.contents;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [collapsed, title, toggleCollapse, $$scope, slots];
+    }
+
+    class Collapsible extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { title: 1, collapsed: 0 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Collapsible",
+    			options,
+    			id: create_fragment$3.name
+    		});
+    	}
+
+    	get title() {
+    		throw new Error("<Collapsible>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Collapsible>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get collapsed() {
+    		throw new Error("<Collapsible>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set collapsed(value) {
+    		throw new Error("<Collapsible>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /*
+    colorvibrance.js - a JS library for colorizing black-background overlays
+
+    Written by yikuansun (https://github.com/yikuansun)
+    */
+    function colorvibrance(ctx, hue=200, saturation=100) {
+        ctx.save();
+
+        // get color map
+        ctx.fillStyle = `hsl(${hue}deg, ${saturation}%, ${50 - saturation / 4}%)`;
+        ctx.globalCompositeOperation = "soft-light";
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        ctx.restore();
+    }
+
+    var colorvibrance_1 = colorvibrance;
+
+    class EllipticalGradient {
+        canvas = document.createElement("canvas");
+
+        getLuma(distance, maxDistance) {
+            return 1 - Math.sqrt(1 - Math.pow(distance / maxDistance - 1, 2));
+        }
+
+        constructor() {
+            var canv = this.canvas;
+            canv.width = 2048;
+            canv.height = 2048;
+            var ctx = canv.getContext("2d");
+            ctx.restore();
+            ctx.save();
+
+            ctx.fillRect(0, 0, canv.width, canv.height);
+
+            var iData = ctx.getImageData(0, 0, canv.width, canv.height);
+            var data = iData.data;
+            for (var i = 0; i < data.length; i += 4) {
+                var distFromTop = Math.floor(i / 4 / canv.width);
+                var pixelBrightness = this.getLuma(distFromTop, canv.height);
+                data[i] = 255 * pixelBrightness;
+                data[i + 1] = 255 * pixelBrightness;
+                data[i + 2] = 255 * pixelBrightness;
+            }
+            ctx.putImageData(iData, 0, 0);
+        }
+    }
+
+    class PrerenderedEllipticalGradient {
+        static canvas = (new EllipticalGradient()).canvas;
+    }
+
+    var EllipticalGradient_1 = PrerenderedEllipticalGradient;
+
+    class FractalNoise {
+        canvas = document.createElement("canvas");
+        svgFilter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
+        options = {
+            baseFrequency: [0.01, 0.01],
+            type: "fractalNoise",
+            numOctaves: 10,
+            seed: 1,
+            stitchTiles: "stitch"
+        };
+        width = 1920;
+        height = 1080;
+
+        setOptions(options) {
+            for (var opt in options) {
+                this.options[opt] = options[opt];
+            }
+            this.svgFilter.innerHTML = `<feTurbulence
+            baseFrequency="${this.options.baseFrequency.join(" ")}"
+            type="${this.options.type}"
+            numOctaves="${this.options.numOctaves}"
+            seed="${this.options.seed}"
+            stitchTiles="${this.options.stitchTiles}"
+            color-interpolation-filters="linearRGB"
+        />`;
+        }
+
+        constructor(width, height, options) {
+            this.svgFilter.id = `fNoiseFilter${Math.random().toFixed(8).replace("0.", "")}`;
+            this.svgFilter.setAttribute("x", "0%");
+            this.svgFilter.setAttribute("y", "0%");
+            this.svgFilter.setAttribute("width", "100%");
+            this.svgFilter.setAttribute("height", "100%");
+            this.setOptions(options);
+            this.width = width;
+            this.height = height;
+        }
+
+        render() {
+            this.canvas.width = this.width;
+            this.canvas.height = this.height;
+            var canv = this.canvas;
+
+            var ctx = canv.getContext("2d");
+            ctx.restore();
+            ctx.save();
+            ctx.clearRect(0, 0, canv.width, canv.height);
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canv.width, canv.height);
+            ctx.restore();
+            ctx.save();
+
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.appendChild(this.svgFilter);
+            document.body.appendChild(svg);
+            ctx.filter = `url(#${this.svgFilter.id})`;
+            ctx.fillRect(0, 0, canv.width, canv.height);
+            svg.remove();
+        }
+    }
+
+    var FractalNoise_1 = FractalNoise;
+
+    function polarCoordinatesFilter(ctx) {
+        var canvas = ctx.canvas;
+        var inputImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        var outputImageData = new ImageData(canvas.width, canvas.height);
+        var inputData = inputImageData.data;
+        var outputData = outputImageData.data;
+        var origin = { x: canvas.width / 2, y: canvas.height / 2 };
+        var outputX = -1, outputY = 0;
+        var inputX = -1, inputY = 0;
+        for (var i = 0; i < outputData.length; i += 4) {
+            outputX++;
+            if (outputX >= canvas.width) {
+                outputY++;
+                outputX = 0;
+            }
+            var angle = Math.atan2(outputY - origin.y, outputX - origin.x);
+            var radius = Math.sqrt(Math.pow(outputX - origin.x, 2) + Math.pow(outputY - origin.y, 2));
+            if (radius > canvas.width / 2) {
+                continue;
+            }
+            inputX = Math.round(angle / Math.PI / 2 * canvas.width);
+            inputY = Math.round(radius * 2);
+            var inputI = 4 * (inputY * canvas.width + inputX);
+            outputData[i] = inputData[inputI];
+            outputData[i + 1] = inputData[inputI + 1];
+            outputData[i + 2] = inputData[inputI + 2];
+            outputData[i + 3] = 255;
+        }
+        ctx.putImageData(outputImageData, 0, 0);
+    }
+
+    var polarCoordinatesFilter_1 = polarCoordinatesFilter;
+
+    function intensity(ctx, threshold) {
+        var threshFunc = function(val, thresh) {
+            return 255 / (255 - thresh) * (val - 255 + thresh) + 255;
+        };
+        var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+        var data = imageData.data;
+        for (var i = 0; i < data.length; i += 4) {
+            for (var j = 0; j < 3; j++) {
+                data[i + j] = threshFunc(data[i + j], threshold);
+            }
+        }
+        ctx.putImageData(imageData, 0, 0);
+    }
+
+    class SpotComponent {
+        canvas = document.createElement("canvas");
+        options = {
+            intensity: 10,
+            deformationFrequency: 0.006,
+            deformationAmount: 1.6,
+            deformationSeed: 1,
+            hue: 200,
+            saturation: 100,
+            angle: 0,
+        };
+        radius = 1024;
+
+        constructor(radius, options) {
+            this.radius = radius;
+            for (var opt in options) {
+                this.options[opt] = options[opt];
+            }
+        }
+
+        render() {
+            this.canvas.width = Math.max(this.radius * 2, 2);
+            this.canvas.height = Math.max(this.radius * 2, 2);
+            var ctx = this.canvas.getContext("2d");
+            ctx.restore();
+            ctx.save();
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+            ctx.drawImage(EllipticalGradient_1.canvas, 0, 1, this.canvas.width, this.canvas.height - 1);
+
+            var deformationTexture = new FractalNoise_1(1024, 1024, {
+                baseFrequency: [this.options.deformationFrequency, 0],
+                seed: this.options.deformationSeed,
+            });
+            deformationTexture.render();
+
+            ctx.restore();
+            ctx.save();
+            ctx.globalCompositeOperation = "soft-light";
+            ctx.filter = `saturate(0) contrast(${this.options.deformationAmount})`;
+            var deformationOffset = this.canvas.width * this.options.angle / 360;
+            ctx.drawImage(deformationTexture.canvas, deformationOffset, 0, this.canvas.width, this.canvas.height);
+            ctx.drawImage(deformationTexture.canvas, deformationOffset - this.canvas.width, 0, this.canvas.width, this.canvas.height);
+
+            intensity(ctx, this.options.intensity * 255 / 100);
+
+            ctx.restore();
+            ctx.save();
+            colorvibrance_1(ctx, this.options.hue, this.options.saturation);
+
+            polarCoordinatesFilter_1(ctx);
+        }
+    }
+
+    class RingComponent {
+        canvas = document.createElement("canvas");
+        radius = 512;
+        options = {
+            thickness: 10,
+            blur: 3,
+            cropSize: 200,
+            cropHardness: 50,
+            hue: 200,
+            saturation: 100,
+        };
+
+        setOptions(options) {
+            for (var opt in options) {
+                this.options[opt] = options[opt];
+            }
+        }
+
+        constructor(radius, options) {
+            this.radius = radius;
+            this.setOptions(options);
+        }
+
+        render() {
+            this.canvas.width = Math.max(this.radius * 2, 2);
+            this.canvas.height = Math.max(this.radius * 2, 2);
+            
+            var ctx = this.canvas.getContext("2d");
+            ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            ctx.restore();
+            ctx.save();
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+            ctx.beginPath();
+            ctx.arc(this.radius, this.radius, Math.max(this.radius - this.options.blur * 4, 2), 0, 2 * Math.PI, true);
+            var gradient = ctx.createRadialGradient(this.radius, this.radius, 0, this.radius, this.radius, Math.max(this.radius - this.options.blur * 4, 2));
+            gradient.addColorStop(0, "black");
+            gradient.addColorStop(Math.max(1 - (this.options.thickness / this.radius), 0), "black");
+            gradient.addColorStop(1, "white");
+            ctx.fillStyle = gradient;
+            ctx.filter = `blur(${this.options.blur}px)`;
+            ctx.fill();
+            var cropGradient = ctx.createLinearGradient(0, 0, 0, this.options.cropSize);
+            cropGradient.addColorStop(0, "black");
+            cropGradient.addColorStop(this.options.cropHardness / 100, "black");
+            cropGradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+            ctx.fillStyle = cropGradient;
+            ctx.fillRect(0, 0, this.canvas.width, this.options.cropSize);
+            cropGradient = ctx.createLinearGradient(0, this.canvas.height - this.options.cropSize, 0, this.canvas.height);
+            cropGradient.addColorStop(0, "rgba(0, 0, 0, 0)");
+            cropGradient.addColorStop(1 - this.options.cropHardness / 100, "black");
+            cropGradient.addColorStop(1, "black");
+            ctx.fillStyle = cropGradient;
+            ctx.fillRect(0, this.canvas.height - this.options.cropSize, this.canvas.width, this.options.cropSize);
+
+            colorvibrance_1(ctx, this.options.hue, this.options.saturation);
+            ctx.restore();
+            ctx.save();
+        }
+    }
+
+    /* src/Slider.svelte generated by Svelte v3.55.1 */
+    const file$2 = "src/Slider.svelte";
+
+    function create_fragment$2(ctx) {
+    	let slider;
+    	let input0;
+    	let t;
+    	let input1;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			slider = element("slider");
+    			input0 = element("input");
+    			t = space();
+    			input1 = element("input");
+    			attr_dev(input0, "type", "range");
+    			attr_dev(input0, "min", /*min*/ ctx[1]);
+    			attr_dev(input0, "max", /*max*/ ctx[2]);
+    			attr_dev(input0, "step", /*step*/ ctx[3]);
+    			attr_dev(input0, "class", "svelte-169olcs");
+    			add_location(input0, file$2, 29, 0, 538);
+    			attr_dev(input1, "type", "number");
+    			attr_dev(input1, "step", /*step*/ ctx[3]);
+    			attr_dev(input1, "class", "svelte-169olcs");
+    			add_location(input1, file$2, 30, 0, 682);
+    			attr_dev(slider, "class", /*className*/ ctx[4]);
+    			add_location(slider, file$2, 28, 0, 511);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, slider, anchor);
+    			append_dev(slider, input0);
+    			set_input_value(input0, /*value*/ ctx[0]);
+    			/*input0_binding*/ ctx[10](input0);
+    			append_dev(slider, t);
+    			append_dev(slider, input1);
+    			set_input_value(input1, /*value*/ ctx[0]);
+    			/*input1_binding*/ ctx[12](input1);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "change", /*input0_change_input_handler*/ ctx[9]),
+    					listen_dev(input0, "input", /*input0_change_input_handler*/ ctx[9]),
+    					listen_dev(input0, "input", /*updateValues*/ ctx[7], false, false, false),
+    					listen_dev(input0, "change", /*onChange*/ ctx[8], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[11]),
+    					listen_dev(input1, "input", /*updateValues*/ ctx[7], false, false, false),
+    					listen_dev(input1, "change", /*onChange*/ ctx[8], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*min*/ 2) {
+    				attr_dev(input0, "min", /*min*/ ctx[1]);
+    			}
+
+    			if (dirty & /*max*/ 4) {
+    				attr_dev(input0, "max", /*max*/ ctx[2]);
+    			}
+
+    			if (dirty & /*step*/ 8) {
+    				attr_dev(input0, "step", /*step*/ ctx[3]);
+    			}
+
+    			if (dirty & /*value*/ 1) {
+    				set_input_value(input0, /*value*/ ctx[0]);
+    			}
+
+    			if (dirty & /*step*/ 8) {
+    				attr_dev(input1, "step", /*step*/ ctx[3]);
+    			}
+
+    			if (dirty & /*value*/ 1 && to_number(input1.value) !== /*value*/ ctx[0]) {
+    				set_input_value(input1, /*value*/ ctx[0]);
+    			}
+
+    			if (dirty & /*className*/ 16) {
+    				attr_dev(slider, "class", /*className*/ ctx[4]);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(slider);
+    			/*input0_binding*/ ctx[10](null);
+    			/*input1_binding*/ ctx[12](null);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$2.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    let current$1;
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Slider', slots, []);
+    	const dispatch = createEventDispatcher();
+    	let { value } = $$props;
+    	let { min = 0 } = $$props;
+    	let { max } = $$props;
+    	let { step = 1 } = $$props;
+    	let { className = null } = $$props;
+    	let numberElement;
+    	let rangeElement;
+
+    	function updateValues() {
+    		//value = parseFloat(this.value);
+    		dispatch("input");
+    	}
+
+    	function onChange() {
+    		dispatch("change");
+    	}
+
+    	$$self.$$.on_mount.push(function () {
+    		if (value === undefined && !('value' in $$props || $$self.$$.bound[$$self.$$.props['value']])) {
+    			console.warn("<Slider> was created without expected prop 'value'");
+    		}
+
+    		if (max === undefined && !('max' in $$props || $$self.$$.bound[$$self.$$.props['max']])) {
+    			console.warn("<Slider> was created without expected prop 'max'");
+    		}
+    	});
+
+    	const writable_props = ['value', 'min', 'max', 'step', 'className'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Slider> was created with unknown prop '${key}'`);
+    	});
+
+    	function input0_change_input_handler() {
+    		value = to_number(this.value);
+    		$$invalidate(0, value);
+    	}
+
+    	function input0_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			rangeElement = $$value;
+    			$$invalidate(6, rangeElement);
+    		});
+    	}
+
+    	function input1_input_handler() {
+    		value = to_number(this.value);
+    		$$invalidate(0, value);
+    	}
+
+    	function input1_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			numberElement = $$value;
+    			$$invalidate(5, numberElement);
+    		});
+    	}
+
+    	$$self.$$set = $$props => {
+    		if ('value' in $$props) $$invalidate(0, value = $$props.value);
+    		if ('min' in $$props) $$invalidate(1, min = $$props.min);
+    		if ('max' in $$props) $$invalidate(2, max = $$props.max);
+    		if ('step' in $$props) $$invalidate(3, step = $$props.step);
+    		if ('className' in $$props) $$invalidate(4, className = $$props.className);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		current: current$1,
+    		createEventDispatcher,
+    		dispatch,
+    		value,
+    		min,
+    		max,
+    		step,
+    		className,
+    		numberElement,
+    		rangeElement,
+    		updateValues,
+    		onChange
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('value' in $$props) $$invalidate(0, value = $$props.value);
+    		if ('min' in $$props) $$invalidate(1, min = $$props.min);
+    		if ('max' in $$props) $$invalidate(2, max = $$props.max);
+    		if ('step' in $$props) $$invalidate(3, step = $$props.step);
+    		if ('className' in $$props) $$invalidate(4, className = $$props.className);
+    		if ('numberElement' in $$props) $$invalidate(5, numberElement = $$props.numberElement);
+    		if ('rangeElement' in $$props) $$invalidate(6, rangeElement = $$props.rangeElement);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		value,
+    		min,
+    		max,
+    		step,
+    		className,
+    		numberElement,
+    		rangeElement,
+    		updateValues,
+    		onChange,
+    		input0_change_input_handler,
+    		input0_binding,
+    		input1_input_handler,
+    		input1_binding
+    	];
+    }
+
+    class Slider extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
+    			value: 0,
+    			min: 1,
+    			max: 2,
+    			step: 3,
+    			className: 4
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Slider",
+    			options,
+    			id: create_fragment$2.name
+    		});
+    	}
+
+    	get value() {
+    		return this.$$.ctx[0];
+    	}
+
+    	set value(value) {
+    		this.$$set({ value });
+    		flush();
+    	}
+
+    	get min() {
+    		return this.$$.ctx[1];
+    	}
+
+    	set min(min) {
+    		this.$$set({ min });
+    		flush();
+    	}
+
+    	get max() {
+    		return this.$$.ctx[2];
+    	}
+
+    	set max(max) {
+    		this.$$set({ max });
+    		flush();
+    	}
+
+    	get step() {
+    		return this.$$.ctx[3];
+    	}
+
+    	set step(step) {
+    		this.$$set({ step });
+    		flush();
+    	}
+
+    	get className() {
+    		return this.$$.ctx[4];
+    	}
+
+    	set className(className) {
+    		this.$$set({ className });
+    		flush();
+    	}
+    }
+
+    function drawComponent(ctx, component, centerX, centerY, width, height, angle=0, opacity=100, hueshift=0, scaler=1) {
+        if (width <= 0 || height <= 0 || opacity <= 0 || scaler <= 0) return;
+
+        ctx.restore();
+        ctx.save();
+        
+        ctx.translate(centerX, centerY);
+        ctx.rotate(angle * Math.PI / 180); // degrees
+        ctx.globalAlpha = opacity / 100;
+        ctx.globalCompositeOperation = "screen";
+        if (hueshift > 0 || hueshift < 0) ctx.filter = `hue-rotate(${hueshift}deg)`;
+        ctx.drawImage(component.canvas, -width / 2 * scaler, -height / 2 * scaler, width * scaler, height * scaler);
+
+        ctx.restore();
+        ctx.save();
+    }
+
+    var drawComponent_1 = drawComponent;
+
+    function canvasClickDrag(node) {
+        var mouseDown = false;
+        var relMousePos = { x: 0, y: 0 };
+        var setMousePos = (e) => {
+            var hitbox = node.getBoundingClientRect();
+            var truePos = {
+                x: e.clientX - hitbox.x,
+                y: e.clientY - hitbox.y
+            };
+            var scale = hitbox.width / node.width;
+            relMousePos.x = Math.round(truePos.x / scale);
+            relMousePos.y = Math.round(truePos.y / scale);
+        };
+        var dispatchEvt = () => {
+            node.dispatchEvent(
+                new CustomEvent("clickDrag", {
+                    detail: relMousePos
+                })
+            );
+        };
+        var handleMouseDown = (e) => {
+            mouseDown = true;
+            setMousePos(e);
+            dispatchEvt();
+        };
+        var handleMouseUp = (e) => {
+            mouseDown = false;
+        };
+        var handleMouseMove = (e) => {
+            if (mouseDown) {
+                setMousePos(e);
+                dispatchEvt();
+            }
+        };
+        node.addEventListener("mousedown", handleMouseDown);
+        document.body.addEventListener("mousemove", handleMouseMove);
+        document.body.addEventListener("mouseup", handleMouseUp);
+        return {
+            destroy() {
+                node.removeEventListener("mousedown", handleMouseDown);
+                document.body.removeEventListener("mousemove", handleMouseMove);
+                document.body.removeEventListener("mouseup", handleMouseUp);
+            }
+        };
+    }
+
+    var canvasClickDrag_1 = canvasClickDrag;
+
+    class IrisComponent {
+        canvas = document.createElement("canvas");
+        radius = 512;
+        options = {
+            roundness: 20,
+            sides: 5,
+            fillAlpha: 25,
+            fringeAlpha: 50,
+            fringeSize: 10,
+            hue: 200,
+            saturation: 100,
+            blur: 5,
+            angle: 0,
+        };
+
+        setOptions(options) {
+            for (var opt in options) {
+                this.options[opt] = options[opt];
+            }
+        }
+
+        constructor(radius, options) {
+            this.radius = radius;
+            this.setOptions(options);
+        }
+
+        render() {
+            this.canvas.width = Math.max(this.radius * 2, 2);
+            this.canvas.height = Math.max(this.radius * 2, 2);
+            
+            var ctx = this.canvas.getContext("2d");
+            ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            ctx.restore();
+            ctx.save();
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+            ctx.beginPath();
+
+            var polarPoints = []; // [r, theta]
+            var startAngle = this.options.angle * Math.PI / 180;
+            for (var i = 0; i < this.options.sides; i++) {
+                polarPoints.push([this.radius, startAngle]);
+                var r1, r = this.radius, theta = 0;
+                var resolution = 360;
+                for (var j = 0; j < resolution; j++) {
+                    theta += 1 / resolution * (Math.PI * 2 / this.options.sides);
+                    r1 = this.radius / Math.sin(Math.PI - theta - 0.5 * (Math.PI - 2 * Math.PI / this.options.sides)) * Math.sin(0.5 * (Math.PI - 2 * Math.PI / this.options.sides));
+                    r = r1 * (1 - this.options.roundness / 100) + this.radius * (this.options.roundness / 100);
+                    polarPoints.push([r, startAngle + theta]);
+                }
+                startAngle += Math.PI * 2 / this.options.sides;
+            }
+
+            //console.log(polarPoints);
+            var firstPoint = true;
+            for (var pt of polarPoints) {
+                var r = pt[0], theta = pt[1];
+                var x = Math.cos(theta) * r + this.radius, y = Math.sin(theta) * r + this.radius;
+                if (firstPoint) {
+                    ctx.moveTo(x, y);
+                    firstPoint = false;
+                }
+                else ctx.lineTo(x, y);
+            }
+            
+            ctx.fillStyle = `hsl(0deg, 0%, ${this.options.fringeAlpha}%)`;
+            ctx.fill();
+            ctx.restore();
+            ctx.save();
+
+            ctx.fillStyle = "black";
+            ctx.filter = `blur(${this.options.fringeSize}px)`;
+            ctx.fill();
+            ctx.restore();
+            ctx.save();
+
+            ctx.fillStyle = "white";
+            ctx.globalAlpha = this.options.fillAlpha / 100;
+            ctx.fill();
+            ctx.restore();
+            ctx.save();
+
+            var blurBuff = document.createElement("canvas");
+            blurBuff.width = this.canvas.width; blurBuff.height = this.canvas.height;
+            blurBuff.getContext("2d").drawImage(this.canvas, 0, 0);
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+            ctx.filter = `blur(${this.options.blur}px)`;
+            ctx.drawImage(blurBuff, this.options.blur * 2, this.options.blur * 2, this.canvas.width - 4 * this.options.blur, this.canvas.height - 4 * this.options.blur);
+            ctx.restore();
+            ctx.save();
+            
+            colorvibrance_1(ctx, this.options.hue, this.options.saturation);
+            ctx.restore();
+            ctx.save();
+        }
+    }
+
+    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+    function getAugmentedNamespace(n) {
+    	if (n.__esModule) return n;
+    	var a = Object.defineProperty({}, '__esModule', {value: true});
+    	Object.keys(n).forEach(function (k) {
+    		var d = Object.getOwnPropertyDescriptor(n, k);
+    		Object.defineProperty(a, k, d.get ? d : {
+    			enumerable: true,
+    			get: function () {
+    				return n[k];
+    			}
+    		});
+    	});
+    	return a;
+    }
+
+    function createCommonjsModule(fn) {
+      var module = { exports: {} };
+    	return fn(module, module.exports), module.exports;
+    }
+
+    var alea = createCommonjsModule(function (module) {
+    // A port of an algorithm by Johannes Baagøe <baagoe@baagoe.com>, 2010
+    // http://baagoe.com/en/RandomMusings/javascript/
+    // https://github.com/nquinlan/better-random-numbers-for-javascript-mirror
+    // Original work is under MIT license -
+
+    // Copyright (C) 2010 by Johannes Baagøe <baagoe@baagoe.org>
+    //
+    // Permission is hereby granted, free of charge, to any person obtaining a copy
+    // of this software and associated documentation files (the "Software"), to deal
+    // in the Software without restriction, including without limitation the rights
+    // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    // copies of the Software, and to permit persons to whom the Software is
+    // furnished to do so, subject to the following conditions:
+    //
+    // The above copyright notice and this permission notice shall be included in
+    // all copies or substantial portions of the Software.
+    //
+    // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    // THE SOFTWARE.
+
+
+
+    (function(global, module, define) {
+
+    function Alea(seed) {
+      var me = this, mash = Mash();
+
+      me.next = function() {
+        var t = 2091639 * me.s0 + me.c * 2.3283064365386963e-10; // 2^-32
+        me.s0 = me.s1;
+        me.s1 = me.s2;
+        return me.s2 = t - (me.c = t | 0);
+      };
+
+      // Apply the seeding algorithm from Baagoe.
+      me.c = 1;
+      me.s0 = mash(' ');
+      me.s1 = mash(' ');
+      me.s2 = mash(' ');
+      me.s0 -= mash(seed);
+      if (me.s0 < 0) { me.s0 += 1; }
+      me.s1 -= mash(seed);
+      if (me.s1 < 0) { me.s1 += 1; }
+      me.s2 -= mash(seed);
+      if (me.s2 < 0) { me.s2 += 1; }
+      mash = null;
+    }
+
+    function copy(f, t) {
+      t.c = f.c;
+      t.s0 = f.s0;
+      t.s1 = f.s1;
+      t.s2 = f.s2;
+      return t;
+    }
+
+    function impl(seed, opts) {
+      var xg = new Alea(seed),
+          state = opts && opts.state,
+          prng = xg.next;
+      prng.int32 = function() { return (xg.next() * 0x100000000) | 0; };
+      prng.double = function() {
+        return prng() + (prng() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
+      };
+      prng.quick = prng;
+      if (state) {
+        if (typeof(state) == 'object') copy(state, xg);
+        prng.state = function() { return copy(xg, {}); };
+      }
+      return prng;
+    }
+
+    function Mash() {
+      var n = 0xefc8249d;
+
+      var mash = function(data) {
+        data = String(data);
+        for (var i = 0; i < data.length; i++) {
+          n += data.charCodeAt(i);
+          var h = 0.02519603282416938 * n;
+          n = h >>> 0;
+          h -= n;
+          h *= n;
+          n = h >>> 0;
+          h -= n;
+          n += h * 0x100000000; // 2^32
+        }
+        return (n >>> 0) * 2.3283064365386963e-10; // 2^-32
+      };
+
+      return mash;
+    }
+
+
+    if (module && module.exports) {
+      module.exports = impl;
+    } else if (define && define.amd) {
+      define(function() { return impl; });
+    } else {
+      this.alea = impl;
+    }
+
+    })(
+      commonjsGlobal,
+      module,    // present in node.js
+      (typeof undefined) == 'function'    // present with an AMD loader
+    );
+    });
+
+    var xor128 = createCommonjsModule(function (module) {
+    // A Javascript implementaion of the "xor128" prng algorithm by
+    // George Marsaglia.  See http://www.jstatsoft.org/v08/i14/paper
+
+    (function(global, module, define) {
+
+    function XorGen(seed) {
+      var me = this, strseed = '';
+
+      me.x = 0;
+      me.y = 0;
+      me.z = 0;
+      me.w = 0;
+
+      // Set up generator function.
+      me.next = function() {
+        var t = me.x ^ (me.x << 11);
+        me.x = me.y;
+        me.y = me.z;
+        me.z = me.w;
+        return me.w ^= (me.w >>> 19) ^ t ^ (t >>> 8);
+      };
+
+      if (seed === (seed | 0)) {
+        // Integer seed.
+        me.x = seed;
+      } else {
+        // String seed.
+        strseed += seed;
+      }
+
+      // Mix in string seed, then discard an initial batch of 64 values.
+      for (var k = 0; k < strseed.length + 64; k++) {
+        me.x ^= strseed.charCodeAt(k) | 0;
+        me.next();
+      }
+    }
+
+    function copy(f, t) {
+      t.x = f.x;
+      t.y = f.y;
+      t.z = f.z;
+      t.w = f.w;
+      return t;
+    }
+
+    function impl(seed, opts) {
+      var xg = new XorGen(seed),
+          state = opts && opts.state,
+          prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+      prng.double = function() {
+        do {
+          var top = xg.next() >>> 11,
+              bot = (xg.next() >>> 0) / 0x100000000,
+              result = (top + bot) / (1 << 21);
+        } while (result === 0);
+        return result;
+      };
+      prng.int32 = xg.next;
+      prng.quick = prng;
+      if (state) {
+        if (typeof(state) == 'object') copy(state, xg);
+        prng.state = function() { return copy(xg, {}); };
+      }
+      return prng;
+    }
+
+    if (module && module.exports) {
+      module.exports = impl;
+    } else if (define && define.amd) {
+      define(function() { return impl; });
+    } else {
+      this.xor128 = impl;
+    }
+
+    })(
+      commonjsGlobal,
+      module,    // present in node.js
+      (typeof undefined) == 'function'    // present with an AMD loader
+    );
+    });
+
+    var xorwow = createCommonjsModule(function (module) {
+    // A Javascript implementaion of the "xorwow" prng algorithm by
+    // George Marsaglia.  See http://www.jstatsoft.org/v08/i14/paper
+
+    (function(global, module, define) {
+
+    function XorGen(seed) {
+      var me = this, strseed = '';
+
+      // Set up generator function.
+      me.next = function() {
+        var t = (me.x ^ (me.x >>> 2));
+        me.x = me.y; me.y = me.z; me.z = me.w; me.w = me.v;
+        return (me.d = (me.d + 362437 | 0)) +
+           (me.v = (me.v ^ (me.v << 4)) ^ (t ^ (t << 1))) | 0;
+      };
+
+      me.x = 0;
+      me.y = 0;
+      me.z = 0;
+      me.w = 0;
+      me.v = 0;
+
+      if (seed === (seed | 0)) {
+        // Integer seed.
+        me.x = seed;
+      } else {
+        // String seed.
+        strseed += seed;
+      }
+
+      // Mix in string seed, then discard an initial batch of 64 values.
+      for (var k = 0; k < strseed.length + 64; k++) {
+        me.x ^= strseed.charCodeAt(k) | 0;
+        if (k == strseed.length) {
+          me.d = me.x << 10 ^ me.x >>> 4;
+        }
+        me.next();
+      }
+    }
+
+    function copy(f, t) {
+      t.x = f.x;
+      t.y = f.y;
+      t.z = f.z;
+      t.w = f.w;
+      t.v = f.v;
+      t.d = f.d;
+      return t;
+    }
+
+    function impl(seed, opts) {
+      var xg = new XorGen(seed),
+          state = opts && opts.state,
+          prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+      prng.double = function() {
+        do {
+          var top = xg.next() >>> 11,
+              bot = (xg.next() >>> 0) / 0x100000000,
+              result = (top + bot) / (1 << 21);
+        } while (result === 0);
+        return result;
+      };
+      prng.int32 = xg.next;
+      prng.quick = prng;
+      if (state) {
+        if (typeof(state) == 'object') copy(state, xg);
+        prng.state = function() { return copy(xg, {}); };
+      }
+      return prng;
+    }
+
+    if (module && module.exports) {
+      module.exports = impl;
+    } else if (define && define.amd) {
+      define(function() { return impl; });
+    } else {
+      this.xorwow = impl;
+    }
+
+    })(
+      commonjsGlobal,
+      module,    // present in node.js
+      (typeof undefined) == 'function'    // present with an AMD loader
+    );
+    });
+
+    var xorshift7 = createCommonjsModule(function (module) {
+    // A Javascript implementaion of the "xorshift7" algorithm by
+    // François Panneton and Pierre L'ecuyer:
+    // "On the Xorgshift Random Number Generators"
+    // http://saluc.engr.uconn.edu/refs/crypto/rng/panneton05onthexorshift.pdf
+
+    (function(global, module, define) {
+
+    function XorGen(seed) {
+      var me = this;
+
+      // Set up generator function.
+      me.next = function() {
+        // Update xor generator.
+        var X = me.x, i = me.i, t, v;
+        t = X[i]; t ^= (t >>> 7); v = t ^ (t << 24);
+        t = X[(i + 1) & 7]; v ^= t ^ (t >>> 10);
+        t = X[(i + 3) & 7]; v ^= t ^ (t >>> 3);
+        t = X[(i + 4) & 7]; v ^= t ^ (t << 7);
+        t = X[(i + 7) & 7]; t = t ^ (t << 13); v ^= t ^ (t << 9);
+        X[i] = v;
+        me.i = (i + 1) & 7;
+        return v;
+      };
+
+      function init(me, seed) {
+        var j, X = [];
+
+        if (seed === (seed | 0)) {
+          // Seed state array using a 32-bit integer.
+          X[0] = seed;
+        } else {
+          // Seed state using a string.
+          seed = '' + seed;
+          for (j = 0; j < seed.length; ++j) {
+            X[j & 7] = (X[j & 7] << 15) ^
+                (seed.charCodeAt(j) + X[(j + 1) & 7] << 13);
+          }
+        }
+        // Enforce an array length of 8, not all zeroes.
+        while (X.length < 8) X.push(0);
+        for (j = 0; j < 8 && X[j] === 0; ++j);
+        if (j == 8) X[7] = -1; else X[j];
+
+        me.x = X;
+        me.i = 0;
+
+        // Discard an initial 256 values.
+        for (j = 256; j > 0; --j) {
+          me.next();
+        }
+      }
+
+      init(me, seed);
+    }
+
+    function copy(f, t) {
+      t.x = f.x.slice();
+      t.i = f.i;
+      return t;
+    }
+
+    function impl(seed, opts) {
+      if (seed == null) seed = +(new Date);
+      var xg = new XorGen(seed),
+          state = opts && opts.state,
+          prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+      prng.double = function() {
+        do {
+          var top = xg.next() >>> 11,
+              bot = (xg.next() >>> 0) / 0x100000000,
+              result = (top + bot) / (1 << 21);
+        } while (result === 0);
+        return result;
+      };
+      prng.int32 = xg.next;
+      prng.quick = prng;
+      if (state) {
+        if (state.x) copy(state, xg);
+        prng.state = function() { return copy(xg, {}); };
+      }
+      return prng;
+    }
+
+    if (module && module.exports) {
+      module.exports = impl;
+    } else if (define && define.amd) {
+      define(function() { return impl; });
+    } else {
+      this.xorshift7 = impl;
+    }
+
+    })(
+      commonjsGlobal,
+      module,    // present in node.js
+      (typeof undefined) == 'function'    // present with an AMD loader
+    );
+    });
+
+    var xor4096 = createCommonjsModule(function (module) {
+    // A Javascript implementaion of Richard Brent's Xorgens xor4096 algorithm.
+    //
+    // This fast non-cryptographic random number generator is designed for
+    // use in Monte-Carlo algorithms. It combines a long-period xorshift
+    // generator with a Weyl generator, and it passes all common batteries
+    // of stasticial tests for randomness while consuming only a few nanoseconds
+    // for each prng generated.  For background on the generator, see Brent's
+    // paper: "Some long-period random number generators using shifts and xors."
+    // http://arxiv.org/pdf/1004.3115v1.pdf
+    //
+    // Usage:
+    //
+    // var xor4096 = require('xor4096');
+    // random = xor4096(1);                        // Seed with int32 or string.
+    // assert.equal(random(), 0.1520436450538547); // (0, 1) range, 53 bits.
+    // assert.equal(random.int32(), 1806534897);   // signed int32, 32 bits.
+    //
+    // For nonzero numeric keys, this impelementation provides a sequence
+    // identical to that by Brent's xorgens 3 implementaion in C.  This
+    // implementation also provides for initalizing the generator with
+    // string seeds, or for saving and restoring the state of the generator.
+    //
+    // On Chrome, this prng benchmarks about 2.1 times slower than
+    // Javascript's built-in Math.random().
+
+    (function(global, module, define) {
+
+    function XorGen(seed) {
+      var me = this;
+
+      // Set up generator function.
+      me.next = function() {
+        var w = me.w,
+            X = me.X, i = me.i, t, v;
+        // Update Weyl generator.
+        me.w = w = (w + 0x61c88647) | 0;
+        // Update xor generator.
+        v = X[(i + 34) & 127];
+        t = X[i = ((i + 1) & 127)];
+        v ^= v << 13;
+        t ^= t << 17;
+        v ^= v >>> 15;
+        t ^= t >>> 12;
+        // Update Xor generator array state.
+        v = X[i] = v ^ t;
+        me.i = i;
+        // Result is the combination.
+        return (v + (w ^ (w >>> 16))) | 0;
+      };
+
+      function init(me, seed) {
+        var t, v, i, j, w, X = [], limit = 128;
+        if (seed === (seed | 0)) {
+          // Numeric seeds initialize v, which is used to generates X.
+          v = seed;
+          seed = null;
+        } else {
+          // String seeds are mixed into v and X one character at a time.
+          seed = seed + '\0';
+          v = 0;
+          limit = Math.max(limit, seed.length);
+        }
+        // Initialize circular array and weyl value.
+        for (i = 0, j = -32; j < limit; ++j) {
+          // Put the unicode characters into the array, and shuffle them.
+          if (seed) v ^= seed.charCodeAt((j + 32) % seed.length);
+          // After 32 shuffles, take v as the starting w value.
+          if (j === 0) w = v;
+          v ^= v << 10;
+          v ^= v >>> 15;
+          v ^= v << 4;
+          v ^= v >>> 13;
+          if (j >= 0) {
+            w = (w + 0x61c88647) | 0;     // Weyl.
+            t = (X[j & 127] ^= (v + w));  // Combine xor and weyl to init array.
+            i = (0 == t) ? i + 1 : 0;     // Count zeroes.
+          }
+        }
+        // We have detected all zeroes; make the key nonzero.
+        if (i >= 128) {
+          X[(seed && seed.length || 0) & 127] = -1;
+        }
+        // Run the generator 512 times to further mix the state before using it.
+        // Factoring this as a function slows the main generator, so it is just
+        // unrolled here.  The weyl generator is not advanced while warming up.
+        i = 127;
+        for (j = 4 * 128; j > 0; --j) {
+          v = X[(i + 34) & 127];
+          t = X[i = ((i + 1) & 127)];
+          v ^= v << 13;
+          t ^= t << 17;
+          v ^= v >>> 15;
+          t ^= t >>> 12;
+          X[i] = v ^ t;
+        }
+        // Storing state as object members is faster than using closure variables.
+        me.w = w;
+        me.X = X;
+        me.i = i;
+      }
+
+      init(me, seed);
+    }
+
+    function copy(f, t) {
+      t.i = f.i;
+      t.w = f.w;
+      t.X = f.X.slice();
+      return t;
+    }
+    function impl(seed, opts) {
+      if (seed == null) seed = +(new Date);
+      var xg = new XorGen(seed),
+          state = opts && opts.state,
+          prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+      prng.double = function() {
+        do {
+          var top = xg.next() >>> 11,
+              bot = (xg.next() >>> 0) / 0x100000000,
+              result = (top + bot) / (1 << 21);
+        } while (result === 0);
+        return result;
+      };
+      prng.int32 = xg.next;
+      prng.quick = prng;
+      if (state) {
+        if (state.X) copy(state, xg);
+        prng.state = function() { return copy(xg, {}); };
+      }
+      return prng;
+    }
+
+    if (module && module.exports) {
+      module.exports = impl;
+    } else if (define && define.amd) {
+      define(function() { return impl; });
+    } else {
+      this.xor4096 = impl;
+    }
+
+    })(
+      commonjsGlobal,                                     // window object or global
+      module,    // present in node.js
+      (typeof undefined) == 'function'    // present with an AMD loader
+    );
+    });
+
+    var tychei = createCommonjsModule(function (module) {
+    // A Javascript implementaion of the "Tyche-i" prng algorithm by
+    // Samuel Neves and Filipe Araujo.
+    // See https://eden.dei.uc.pt/~sneves/pubs/2011-snfa2.pdf
+
+    (function(global, module, define) {
+
+    function XorGen(seed) {
+      var me = this, strseed = '';
+
+      // Set up generator function.
+      me.next = function() {
+        var b = me.b, c = me.c, d = me.d, a = me.a;
+        b = (b << 25) ^ (b >>> 7) ^ c;
+        c = (c - d) | 0;
+        d = (d << 24) ^ (d >>> 8) ^ a;
+        a = (a - b) | 0;
+        me.b = b = (b << 20) ^ (b >>> 12) ^ c;
+        me.c = c = (c - d) | 0;
+        me.d = (d << 16) ^ (c >>> 16) ^ a;
+        return me.a = (a - b) | 0;
+      };
+
+      /* The following is non-inverted tyche, which has better internal
+       * bit diffusion, but which is about 25% slower than tyche-i in JS.
+      me.next = function() {
+        var a = me.a, b = me.b, c = me.c, d = me.d;
+        a = (me.a + me.b | 0) >>> 0;
+        d = me.d ^ a; d = d << 16 ^ d >>> 16;
+        c = me.c + d | 0;
+        b = me.b ^ c; b = b << 12 ^ d >>> 20;
+        me.a = a = a + b | 0;
+        d = d ^ a; me.d = d = d << 8 ^ d >>> 24;
+        me.c = c = c + d | 0;
+        b = b ^ c;
+        return me.b = (b << 7 ^ b >>> 25);
+      }
+      */
+
+      me.a = 0;
+      me.b = 0;
+      me.c = 2654435769 | 0;
+      me.d = 1367130551;
+
+      if (seed === Math.floor(seed)) {
+        // Integer seed.
+        me.a = (seed / 0x100000000) | 0;
+        me.b = seed | 0;
+      } else {
+        // String seed.
+        strseed += seed;
+      }
+
+      // Mix in string seed, then discard an initial batch of 64 values.
+      for (var k = 0; k < strseed.length + 20; k++) {
+        me.b ^= strseed.charCodeAt(k) | 0;
+        me.next();
+      }
+    }
+
+    function copy(f, t) {
+      t.a = f.a;
+      t.b = f.b;
+      t.c = f.c;
+      t.d = f.d;
+      return t;
+    }
+    function impl(seed, opts) {
+      var xg = new XorGen(seed),
+          state = opts && opts.state,
+          prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+      prng.double = function() {
+        do {
+          var top = xg.next() >>> 11,
+              bot = (xg.next() >>> 0) / 0x100000000,
+              result = (top + bot) / (1 << 21);
+        } while (result === 0);
+        return result;
+      };
+      prng.int32 = xg.next;
+      prng.quick = prng;
+      if (state) {
+        if (typeof(state) == 'object') copy(state, xg);
+        prng.state = function() { return copy(xg, {}); };
+      }
+      return prng;
+    }
+
+    if (module && module.exports) {
+      module.exports = impl;
+    } else if (define && define.amd) {
+      define(function() { return impl; });
+    } else {
+      this.tychei = impl;
+    }
+
+    })(
+      commonjsGlobal,
+      module,    // present in node.js
+      (typeof undefined) == 'function'    // present with an AMD loader
+    );
+    });
+
+    var _nodeResolve_empty = {};
+
+    var _nodeResolve_empty$1 = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        'default': _nodeResolve_empty
+    });
+
+    var require$$0 = /*@__PURE__*/getAugmentedNamespace(_nodeResolve_empty$1);
+
+    /*
+    Copyright 2019 David Bau.
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    */
+
+    var seedrandom$1 = createCommonjsModule(function (module) {
+    (function (global, pool, math) {
+    //
+    // The following constants are related to IEEE 754 limits.
+    //
+
+    var width = 256,        // each RC4 output is 0 <= x < 256
+        chunks = 6,         // at least six RC4 outputs for each double
+        digits = 52,        // there are 52 significant digits in a double
+        rngname = 'random', // rngname: name for Math.random and Math.seedrandom
+        startdenom = math.pow(width, chunks),
+        significance = math.pow(2, digits),
+        overflow = significance * 2,
+        mask = width - 1,
+        nodecrypto;         // node.js crypto module, initialized at the bottom.
+
+    //
+    // seedrandom()
+    // This is the seedrandom function described above.
+    //
+    function seedrandom(seed, options, callback) {
+      var key = [];
+      options = (options == true) ? { entropy: true } : (options || {});
+
+      // Flatten the seed string or build one from local entropy if needed.
+      var shortseed = mixkey(flatten(
+        options.entropy ? [seed, tostring(pool)] :
+        (seed == null) ? autoseed() : seed, 3), key);
+
+      // Use the seed to initialize an ARC4 generator.
+      var arc4 = new ARC4(key);
+
+      // This function returns a random double in [0, 1) that contains
+      // randomness in every bit of the mantissa of the IEEE 754 value.
+      var prng = function() {
+        var n = arc4.g(chunks),             // Start with a numerator n < 2 ^ 48
+            d = startdenom,                 //   and denominator d = 2 ^ 48.
+            x = 0;                          //   and no 'extra last byte'.
+        while (n < significance) {          // Fill up all significant digits by
+          n = (n + x) * width;              //   shifting numerator and
+          d *= width;                       //   denominator and generating a
+          x = arc4.g(1);                    //   new least-significant-byte.
+        }
+        while (n >= overflow) {             // To avoid rounding up, before adding
+          n /= 2;                           //   last byte, shift everything
+          d /= 2;                           //   right using integer math until
+          x >>>= 1;                         //   we have exactly the desired bits.
+        }
+        return (n + x) / d;                 // Form the number within [0, 1).
+      };
+
+      prng.int32 = function() { return arc4.g(4) | 0; };
+      prng.quick = function() { return arc4.g(4) / 0x100000000; };
+      prng.double = prng;
+
+      // Mix the randomness into accumulated entropy.
+      mixkey(tostring(arc4.S), pool);
+
+      // Calling convention: what to return as a function of prng, seed, is_math.
+      return (options.pass || callback ||
+          function(prng, seed, is_math_call, state) {
+            if (state) {
+              // Load the arc4 state from the given state if it has an S array.
+              if (state.S) { copy(state, arc4); }
+              // Only provide the .state method if requested via options.state.
+              prng.state = function() { return copy(arc4, {}); };
+            }
+
+            // If called as a method of Math (Math.seedrandom()), mutate
+            // Math.random because that is how seedrandom.js has worked since v1.0.
+            if (is_math_call) { math[rngname] = prng; return seed; }
+
+            // Otherwise, it is a newer calling convention, so return the
+            // prng directly.
+            else return prng;
+          })(
+      prng,
+      shortseed,
+      'global' in options ? options.global : (this == math),
+      options.state);
+    }
+
+    //
+    // ARC4
+    //
+    // An ARC4 implementation.  The constructor takes a key in the form of
+    // an array of at most (width) integers that should be 0 <= x < (width).
+    //
+    // The g(count) method returns a pseudorandom integer that concatenates
+    // the next (count) outputs from ARC4.  Its return value is a number x
+    // that is in the range 0 <= x < (width ^ count).
+    //
+    function ARC4(key) {
+      var t, keylen = key.length,
+          me = this, i = 0, j = me.i = me.j = 0, s = me.S = [];
+
+      // The empty key [] is treated as [0].
+      if (!keylen) { key = [keylen++]; }
+
+      // Set up S using the standard key scheduling algorithm.
+      while (i < width) {
+        s[i] = i++;
+      }
+      for (i = 0; i < width; i++) {
+        s[i] = s[j = mask & (j + key[i % keylen] + (t = s[i]))];
+        s[j] = t;
+      }
+
+      // The "g" method returns the next (count) outputs as one number.
+      (me.g = function(count) {
+        // Using instance members instead of closure state nearly doubles speed.
+        var t, r = 0,
+            i = me.i, j = me.j, s = me.S;
+        while (count--) {
+          t = s[i = mask & (i + 1)];
+          r = r * width + s[mask & ((s[i] = s[j = mask & (j + t)]) + (s[j] = t))];
+        }
+        me.i = i; me.j = j;
+        return r;
+        // For robust unpredictability, the function call below automatically
+        // discards an initial batch of values.  This is called RC4-drop[256].
+        // See http://google.com/search?q=rsa+fluhrer+response&btnI
+      })(width);
+    }
+
+    //
+    // copy()
+    // Copies internal state of ARC4 to or from a plain object.
+    //
+    function copy(f, t) {
+      t.i = f.i;
+      t.j = f.j;
+      t.S = f.S.slice();
+      return t;
+    }
+    //
+    // flatten()
+    // Converts an object tree to nested arrays of strings.
+    //
+    function flatten(obj, depth) {
+      var result = [], typ = (typeof obj), prop;
+      if (depth && typ == 'object') {
+        for (prop in obj) {
+          try { result.push(flatten(obj[prop], depth - 1)); } catch (e) {}
+        }
+      }
+      return (result.length ? result : typ == 'string' ? obj : obj + '\0');
+    }
+
+    //
+    // mixkey()
+    // Mixes a string seed into a key that is an array of integers, and
+    // returns a shortened string seed that is equivalent to the result key.
+    //
+    function mixkey(seed, key) {
+      var stringseed = seed + '', smear, j = 0;
+      while (j < stringseed.length) {
+        key[mask & j] =
+          mask & ((smear ^= key[mask & j] * 19) + stringseed.charCodeAt(j++));
+      }
+      return tostring(key);
+    }
+
+    //
+    // autoseed()
+    // Returns an object for autoseeding, using window.crypto and Node crypto
+    // module if available.
+    //
+    function autoseed() {
+      try {
+        var out;
+        if (nodecrypto && (out = nodecrypto.randomBytes)) {
+          // The use of 'out' to remember randomBytes makes tight minified code.
+          out = out(width);
+        } else {
+          out = new Uint8Array(width);
+          (global.crypto || global.msCrypto).getRandomValues(out);
+        }
+        return tostring(out);
+      } catch (e) {
+        var browser = global.navigator,
+            plugins = browser && browser.plugins;
+        return [+new Date, global, plugins, global.screen, tostring(pool)];
+      }
+    }
+
+    //
+    // tostring()
+    // Converts an array of charcodes to a string
+    //
+    function tostring(a) {
+      return String.fromCharCode.apply(0, a);
+    }
+
+    //
+    // When seedrandom.js is loaded, we immediately mix a few bits
+    // from the built-in RNG into the entropy pool.  Because we do
+    // not want to interfere with deterministic PRNG state later,
+    // seedrandom will not call math.random on its own again after
+    // initialization.
+    //
+    mixkey(math.random(), pool);
+
+    //
+    // Nodejs and AMD support: export the implementation as a module using
+    // either convention.
+    //
+    if (module.exports) {
+      module.exports = seedrandom;
+      // When in node.js, try using crypto package for autoseeding.
+      try {
+        nodecrypto = require$$0;
+      } catch (ex) {}
+    } else {
+      // When included as a plain script, set up Math.seedrandom global.
+      math['seed' + rngname] = seedrandom;
+    }
+
+
+    // End anonymous scope, and pass initial values.
+    })(
+      // global: `self` in browsers (including strict mode and web workers),
+      // otherwise `this` in Node and other environments
+      (typeof self !== 'undefined') ? self : commonjsGlobal,
+      [],     // pool: entropy pool starts empty
+      Math    // math: package containing random, pow, and seedrandom
+    );
+    });
+
+    // A library of seedable RNGs implemented in Javascript.
+    //
+    // Usage:
+    //
+    // var seedrandom = require('seedrandom');
+    // var random = seedrandom(1); // or any seed.
+    // var x = random();       // 0 <= x < 1.  Every bit is random.
+    // var x = random.quick(); // 0 <= x < 1.  32 bits of randomness.
+
+    // alea, a 53-bit multiply-with-carry generator by Johannes Baagøe.
+    // Period: ~2^116
+    // Reported to pass all BigCrush tests.
+
+
+    // xor128, a pure xor-shift generator by George Marsaglia.
+    // Period: 2^128-1.
+    // Reported to fail: MatrixRank and LinearComp.
+
+
+    // xorwow, George Marsaglia's 160-bit xor-shift combined plus weyl.
+    // Period: 2^192-2^32
+    // Reported to fail: CollisionOver, SimpPoker, and LinearComp.
+
+
+    // xorshift7, by François Panneton and Pierre L'ecuyer, takes
+    // a different approach: it adds robustness by allowing more shifts
+    // than Marsaglia's original three.  It is a 7-shift generator
+    // with 256 bits, that passes BigCrush with no systmatic failures.
+    // Period 2^256-1.
+    // No systematic BigCrush failures reported.
+
+
+    // xor4096, by Richard Brent, is a 4096-bit xor-shift with a
+    // very long period that also adds a Weyl generator. It also passes
+    // BigCrush with no systematic failures.  Its long period may
+    // be useful if you have many generators and need to avoid
+    // collisions.
+    // Period: 2^4128-2^32.
+    // No systematic BigCrush failures reported.
+
+
+    // Tyche-i, by Samuel Neves and Filipe Araujo, is a bit-shifting random
+    // number generator derived from ChaCha, a modern stream cipher.
+    // https://eden.dei.uc.pt/~sneves/pubs/2011-snfa2.pdf
+    // Period: ~2^127
+    // No systematic BigCrush failures reported.
+
+
+    // The original ARC4-based prng included in this library.
+    // Period: ~2^1600
+
+
+    seedrandom$1.alea = alea;
+    seedrandom$1.xor128 = xor128;
+    seedrandom$1.xorwow = xorwow;
+    seedrandom$1.xorshift7 = xorshift7;
+    seedrandom$1.xor4096 = xor4096;
+    seedrandom$1.tychei = tychei;
+
+    var seedrandom = seedrandom$1;
+
+    class HalfComponent {
+        canvas = document.createElement("canvas");
+        
+        setCanvas(canvas, width, height, leftHalf=true, rightHalf=true) {
+            this.canvas.width = Math.max(Math.round(width / 2) * 2, 2);
+            this.canvas.height = Math.max(height, 2);
+            var ctx = this.canvas.getContext("2d");
+            ctx.drawImage(canvas, 0, 0, this.canvas.width, this.canvas.height);
+            if (leftHalf == false) ctx.clearRect(0, 0, this.canvas.width / 2, this.canvas.height);
+            if (rightHalf == false) ctx.clearRect(this.canvas.width / 2, 0, this.canvas.width / 2, this.canvas.height);
+        }
+
+        constructor(canvas, width, height, leftHalf=true, rightHalf=true) {
+            this.setCanvas(canvas, width, height, leftHalf, rightHalf);
+        }
+    }
+
+    /* src/PresetPicker.svelte generated by Svelte v3.55.1 */
+    const file$1 = "src/PresetPicker.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[8] = list[i];
+    	return child_ctx;
+    }
+
+    // (57:8) {#each builtInPresets as preset}
+    function create_each_block(ctx) {
+    	let option;
+    	let t_value = /*preset*/ ctx[8].name + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
+    			option.value = option.__value;
+    			add_location(option, file$1, 57, 12, 18408);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(57:8) {#each builtInPresets as preset}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let select;
+    	let option0;
+    	let option1;
+    	let optgroup;
+    	let t2;
+    	let input;
+    	let mounted;
+    	let dispose;
+    	let each_value = /*builtInPresets*/ ctx[2];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			select = element("select");
+    			option0 = element("option");
+    			option0.textContent = "Use a Preset";
+    			option1 = element("option");
+    			option1.textContent = "Import .pgf2 file";
+    			optgroup = element("optgroup");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t2 = space();
+    			input = element("input");
+    			option0.__value = "";
+    			option0.value = option0.__value;
+    			option0.selected = true;
+    			option0.disabled = true;
+    			option0.hidden = true;
+    			add_location(option0, file$1, 53, 4, 18184);
+    			option1.__value = "UPLOAD_PRESET";
+    			option1.value = option1.__value;
+    			add_location(option1, file$1, 54, 4, 18254);
+    			attr_dev(optgroup, "label", "Built-In Presets");
+    			add_location(optgroup, file$1, 55, 4, 18317);
+    			attr_dev(select, "class", "svelte-1cxpn51");
+    			add_location(select, file$1, 52, 0, 18125);
+    			attr_dev(input, "type", "file");
+    			attr_dev(input, "class", "svelte-1cxpn51");
+    			add_location(input, file$1, 62, 0, 18518);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, select, anchor);
+    			append_dev(select, option0);
+    			append_dev(select, option1);
+    			append_dev(select, optgroup);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(optgroup, null);
+    			}
+
+    			/*select_binding*/ ctx[5](select);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, input, anchor);
+    			/*input_binding*/ ctx[6](input);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(select, "change", /*handleChange*/ ctx[3], false, false, false),
+    					listen_dev(input, "change", /*handleFileInput*/ ctx[4], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*JSON, builtInPresets*/ 4) {
+    				each_value = /*builtInPresets*/ ctx[2];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(optgroup, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(select);
+    			destroy_each(each_blocks, detaching);
+    			/*select_binding*/ ctx[5](null);
+    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(input);
+    			/*input_binding*/ ctx[6](null);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    let current;
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('PresetPicker', slots, []);
+    	const dispatch = createEventDispatcher();
+    	let dropdown;
+    	let fileInput;
+
+    	var builtInPresets = [
+    		{
+    			name: "Sun Digital",
+    			data: {
+    				"hotspot": {
+    					"radius": 595,
+    					"intensity": 10,
+    					"deformationAmount": 1.5,
+    					"deformationFrequency": 0.01,
+    					"deformationSeed": 239,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 39,
+    					"saturation": 88,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 121,
+    					"width": 2435,
+    					"intensity": -25,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 48,
+    					"alpha": 100,
+    					"hue": 216,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 300,
+    					"thickness": 50,
+    					"blur": 4,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 72,
+    					"sides": 6,
+    					"roundness": 50,
+    					"angle": 0,
+    					"fillAlpha": 10,
+    					"fringeAlpha": 12,
+    					"fringeSize": 28,
+    					"blur": 3,
+    					"countAway": 5,
+    					"countTowards": 12,
+    					"spread": 30,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 333,
+    					"hue": 39,
+    					"saturation": 100,
+    					"hueVariance": 40,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 999,
+    					"alpha": 25,
+    					"softening": 0,
+    					"hue": 23,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 6,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 123,
+    					"threshold": 1210,
+    					"seed": 222,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 16,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Simple Cyan",
+    			data: {
+    				"hotspot": {
+    					"radius": 500,
+    					"intensity": 5,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 64,
+    					"width": 1600,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 100,
+    					"hue": 200,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 21,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 81,
+    					"sides": 5,
+    					"roundness": 20,
+    					"angle": 0,
+    					"fillAlpha": 25,
+    					"fringeAlpha": 50,
+    					"fringeSize": 10,
+    					"blur": 4,
+    					"countAway": 5,
+    					"countTowards": 12,
+    					"spread": 30,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 123,
+    					"hue": 200,
+    					"saturation": 100,
+    					"hueVariance": 30,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 50,
+    					"softening": 70,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 123,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Flamboyant Anamorphic",
+    			data: {
+    				"hotspot": {
+    					"radius": 802,
+    					"intensity": 16,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 36,
+    					"saturation": 100,
+    					"anamorph": 42
+    				},
+    				"streak": {
+    					"thickness": 95,
+    					"width": 3210,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 54,
+    					"alpha": 100,
+    					"hue": 29,
+    					"saturation": 81
+    				},
+    				"ring": {
+    					"radius": 333,
+    					"thickness": 67,
+    					"blur": 7,
+    					"cropSize": 0,
+    					"cropHardness": 23,
+    					"alpha": 16,
+    					"hue": 12,
+    					"saturation": 100,
+    					"anamorph": 42
+    				},
+    				"miIris": {
+    					"radius": 84,
+    					"sides": 8,
+    					"roundness": 24,
+    					"angle": 24,
+    					"fillAlpha": 17,
+    					"fringeAlpha": 41,
+    					"fringeSize": 10,
+    					"blur": 4,
+    					"countAway": 8,
+    					"countTowards": 15,
+    					"spread": 25,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 285,
+    					"hue": 29,
+    					"saturation": 100,
+    					"hueVariance": 44,
+    					"anamorph": 35
+    				},
+    				"glow": {
+    					"radius": 1117,
+    					"alpha": 44,
+    					"softening": 26,
+    					"hue": 10,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 22,
+    					"sides": 8,
+    					"roundness": 25,
+    					"angle": 24,
+    					"fillAlpha": 2,
+    					"fringeAlpha": 12,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 135,
+    					"threshold": 931,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 15,
+    					"hue": 14,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 42
+    				}
+    			}
+    		},
+    		{
+    			name: "Sea of Fog",
+    			data: {
+    				"hotspot": {
+    					"radius": 372,
+    					"intensity": 21,
+    					"deformationAmount": 0.76,
+    					"deformationFrequency": 0.01,
+    					"deformationSeed": 157,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 287,
+    					"saturation": 48,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 81,
+    					"width": 2145,
+    					"intensity": 10,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 45,
+    					"alpha": 100,
+    					"hue": 279,
+    					"saturation": 54
+    				},
+    				"ring": {
+    					"radius": 356,
+    					"thickness": 42,
+    					"blur": 4,
+    					"cropSize": 543,
+    					"cropHardness": 35,
+    					"alpha": 100,
+    					"hue": 281,
+    					"saturation": 67,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 81,
+    					"sides": 5,
+    					"roundness": 20,
+    					"angle": 54,
+    					"fillAlpha": 21,
+    					"fringeAlpha": 21,
+    					"fringeSize": 19,
+    					"blur": 3,
+    					"countAway": 5,
+    					"countTowards": 12,
+    					"spread": 30,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 342,
+    					"hue": 283,
+    					"saturation": 100,
+    					"hueVariance": 20,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 1101,
+    					"alpha": 20,
+    					"softening": 70,
+    					"hue": 281,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Interstellar",
+    			data: {
+    				"hotspot": {
+    					"radius": 288,
+    					"intensity": 12,
+    					"deformationAmount": 0.87,
+    					"deformationFrequency": 0.01,
+    					"deformationSeed": 290,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 31,
+    					"saturation": 49,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 46,
+    					"width": 1028,
+    					"intensity": -10,
+    					"count": 5,
+    					"angle": 21,
+    					"shift": 18,
+    					"alpha": 100,
+    					"hue": 47,
+    					"saturation": 14
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 81,
+    					"sides": 5,
+    					"roundness": 42,
+    					"angle": 55,
+    					"fillAlpha": 9,
+    					"fringeAlpha": 21,
+    					"fringeSize": 10,
+    					"blur": 4,
+    					"countAway": 8,
+    					"countTowards": 15,
+    					"spread": 28,
+    					"sizeVariance": 53,
+    					"perspective": 100,
+    					"alphaVariance": 71,
+    					"seed": 342,
+    					"hue": 222,
+    					"saturation": 26,
+    					"hueVariance": 102,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 1064,
+    					"alpha": 44,
+    					"softening": 70,
+    					"hue": 188,
+    					"saturation": 58,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Sunflower",
+    			data: {
+    				"hotspot": {
+    					"radius": 476,
+    					"intensity": 15,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.015,
+    					"deformationSeed": 109,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 36,
+    					"saturation": 25,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 64,
+    					"width": 1600,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 281,
+    					"thickness": 40,
+    					"blur": 12,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 14,
+    					"hue": 52,
+    					"saturation": 28,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 59,
+    					"sides": 5,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 10,
+    					"fringeAlpha": 21,
+    					"fringeSize": 17,
+    					"blur": 2,
+    					"countAway": 7,
+    					"countTowards": 15,
+    					"spread": 18,
+    					"sizeVariance": 50,
+    					"perspective": 100,
+    					"alphaVariance": 100,
+    					"seed": 117,
+    					"hue": 60,
+    					"saturation": 40,
+    					"hueVariance": 82,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 935,
+    					"alpha": 50,
+    					"softening": 70,
+    					"hue": 34,
+    					"saturation": 45,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 25,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 2,
+    					"fringeAlpha": 4,
+    					"fringeSize": 12,
+    					"blur": 2,
+    					"count": 84,
+    					"threshold": 969,
+    					"seed": 40,
+    					"sizeVariance": 0,
+    					"alphaVariance": 32,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 99,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Daisy's Beacon",
+    			data: {
+    				"hotspot": {
+    					"radius": 352,
+    					"intensity": 12,
+    					"deformationAmount": 1,
+    					"deformationFrequency": 0.007,
+    					"deformationSeed": 497,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 81,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 64,
+    					"width": 1600,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 270,
+    					"thickness": 40,
+    					"blur": 8,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 7,
+    					"hue": 125,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 41,
+    					"sides": 10,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 40,
+    					"fringeAlpha": 0,
+    					"fringeSize": 10,
+    					"blur": 15,
+    					"countAway": 5,
+    					"countTowards": 12,
+    					"spread": 25,
+    					"sizeVariance": 58,
+    					"perspective": 0,
+    					"alphaVariance": 100,
+    					"seed": 470,
+    					"hue": 165,
+    					"saturation": 100,
+    					"hueVariance": 12,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 44,
+    					"softening": 70,
+    					"hue": 122,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Blue Dwarf",
+    			data: {
+    				"hotspot": {
+    					"radius": 611,
+    					"intensity": 16,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.01,
+    					"deformationSeed": 157,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 204,
+    					"saturation": 100,
+    					"anamorph": 50
+    				},
+    				"streak": {
+    					"thickness": 83,
+    					"width": 3210,
+    					"intensity": 10,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 100,
+    					"hue": 214,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 400,
+    					"thickness": 74,
+    					"blur": 13,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 8,
+    					"hue": 230,
+    					"saturation": 100,
+    					"anamorph": 50
+    				},
+    				"miIris": {
+    					"radius": 73,
+    					"sides": 6,
+    					"roundness": 45,
+    					"angle": 0,
+    					"fillAlpha": 20,
+    					"fringeAlpha": 30,
+    					"fringeSize": 10,
+    					"blur": 5,
+    					"countAway": 7,
+    					"countTowards": 12,
+    					"spread": 30,
+    					"sizeVariance": 27,
+    					"perspective": 100,
+    					"alphaVariance": 81,
+    					"seed": 271,
+    					"hue": 211,
+    					"saturation": 100,
+    					"hueVariance": 36,
+    					"anamorph": 50
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 57,
+    					"softening": 12,
+    					"hue": 212,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 28,
+    					"sides": 6,
+    					"roundness": 25,
+    					"angle": 0,
+    					"fillAlpha": 2,
+    					"fringeAlpha": 8,
+    					"fringeSize": 10,
+    					"blur": 2,
+    					"count": 135,
+    					"threshold": 931,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 15,
+    					"hue": 236,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 42
+    				}
+    			}
+    		},
+    		{
+    			name: "Clair de Lune",
+    			data: {
+    				"hotspot": {
+    					"radius": 550,
+    					"intensity": 11,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.013,
+    					"deformationSeed": 139,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 200,
+    					"saturation": 19,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 84,
+    					"width": 2661,
+    					"intensity": 12,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 50,
+    					"alpha": 100,
+    					"hue": 204,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 325,
+    					"thickness": 37,
+    					"blur": 9,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 8,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 60,
+    					"sides": 6,
+    					"roundness": 45,
+    					"angle": 0,
+    					"fillAlpha": 12,
+    					"fringeAlpha": 11,
+    					"fringeSize": 12,
+    					"blur": 3,
+    					"countAway": 7,
+    					"countTowards": 14,
+    					"spread": 40,
+    					"sizeVariance": 30,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 520,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 36,
+    					"anamorph": 15
+    				},
+    				"glow": {
+    					"radius": 1200,
+    					"alpha": 28,
+    					"softening": 0,
+    					"hue": 205,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 25,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 5,
+    					"fringeSize": 9,
+    					"blur": 2,
+    					"count": 111,
+    					"threshold": 1234,
+    					"seed": 315,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 223,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Golden Century",
+    			data: {
+    				"hotspot": {
+    					"radius": 632,
+    					"intensity": 11,
+    					"deformationAmount": 1.42,
+    					"deformationFrequency": 0.012,
+    					"deformationSeed": 216,
+    					"alpha": 94,
+    					"angle": 0,
+    					"hue": 45,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 92,
+    					"width": 3210,
+    					"intensity": 0,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 100,
+    					"hue": 42,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 406,
+    					"thickness": 44,
+    					"blur": 6,
+    					"cropSize": 392,
+    					"cropHardness": 62,
+    					"alpha": 25,
+    					"hue": 27,
+    					"saturation": 100,
+    					"anamorph": 50
+    				},
+    				"miIris": {
+    					"radius": 152,
+    					"sides": 5,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 25,
+    					"fringeAlpha": 0,
+    					"fringeSize": 10,
+    					"blur": 30,
+    					"countAway": 9,
+    					"countTowards": 16,
+    					"spread": 19,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 342,
+    					"hue": 42,
+    					"saturation": 100,
+    					"hueVariance": 16,
+    					"anamorph": 88
+    				},
+    				"glow": {
+    					"radius": 1082,
+    					"alpha": 39,
+    					"softening": 26,
+    					"hue": 45,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Industrial Anamorphic",
+    			data: {
+    				"hotspot": {
+    					"radius": 531,
+    					"intensity": 35,
+    					"deformationAmount": 0,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 25,
+    					"saturation": 21,
+    					"anamorph": 60
+    				},
+    				"streak": {
+    					"thickness": 115,
+    					"width": 2695,
+    					"intensity": -12,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 36,
+    					"alpha": 100,
+    					"hue": 222,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 121,
+    					"sides": 5,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 25,
+    					"fringeAlpha": 0,
+    					"fringeSize": 10,
+    					"blur": 30,
+    					"countAway": 8,
+    					"countTowards": 18,
+    					"spread": 30,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 123,
+    					"hue": 222,
+    					"saturation": 100,
+    					"hueVariance": 30,
+    					"anamorph": 72
+    				},
+    				"glow": {
+    					"radius": 1111,
+    					"alpha": 45,
+    					"softening": 0,
+    					"hue": 21,
+    					"saturation": 100,
+    					"anamorph": 37
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Hexastar",
+    			data: {
+    				"hotspot": {
+    					"radius": 345,
+    					"intensity": 5,
+    					"deformationAmount": 2.1,
+    					"deformationFrequency": 0.015,
+    					"deformationSeed": 633,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 200,
+    					"saturation": 0,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 42,
+    					"width": 1212,
+    					"intensity": 12,
+    					"count": 3,
+    					"angle": 0,
+    					"shift": 0,
+    					"alpha": 100,
+    					"hue": 200,
+    					"saturation": 0
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 64,
+    					"sides": 6,
+    					"roundness": 45,
+    					"angle": 0,
+    					"fillAlpha": 10,
+    					"fringeAlpha": 10,
+    					"fringeSize": 25,
+    					"blur": 3,
+    					"countAway": 10,
+    					"countTowards": 19,
+    					"spread": 20,
+    					"sizeVariance": 40,
+    					"perspective": 100,
+    					"alphaVariance": 64,
+    					"seed": 397,
+    					"hue": 200,
+    					"saturation": 20,
+    					"hueVariance": 180,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 48,
+    					"softening": 70,
+    					"hue": 196,
+    					"saturation": 24,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 24,
+    					"sides": 6,
+    					"roundness": 16,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 4,
+    					"fringeSize": 6,
+    					"blur": 2,
+    					"count": 100,
+    					"threshold": 943,
+    					"seed": 678,
+    					"sizeVariance": 0,
+    					"alphaVariance": 100,
+    					"hue": 214,
+    					"saturation": 11,
+    					"hueVariance": 22,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Laser Meme",
+    			data: {
+    				"hotspot": {
+    					"radius": 591,
+    					"intensity": 12,
+    					"deformationAmount": 2.1,
+    					"deformationFrequency": 0.007,
+    					"deformationSeed": 611,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 14,
+    					"saturation": 100,
+    					"anamorph": 56
+    				},
+    				"streak": {
+    					"thickness": 64,
+    					"width": 3210,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 50,
+    					"alpha": 100,
+    					"hue": 14,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 49,
+    					"sides": 5,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 26,
+    					"fringeAlpha": 32,
+    					"fringeSize": 10,
+    					"blur": 4,
+    					"countAway": 9,
+    					"countTowards": 16,
+    					"spread": 30,
+    					"sizeVariance": 48,
+    					"perspective": 100,
+    					"alphaVariance": 100,
+    					"seed": 556,
+    					"hue": 25,
+    					"saturation": 100,
+    					"hueVariance": 25,
+    					"anamorph": 56
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 50,
+    					"softening": 70,
+    					"hue": 9,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 21,
+    					"sides": 6,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 0,
+    					"threshold": 1210,
+    					"seed": 100,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 210,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Cherry Tree",
+    			data: {
+    				"hotspot": {
+    					"radius": 443,
+    					"intensity": 5,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.008,
+    					"deformationSeed": 320,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 325,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 99,
+    					"width": 3232,
+    					"intensity": 5,
+    					"count": 1,
+    					"angle": 0,
+    					"shift": 50,
+    					"alpha": 100,
+    					"hue": 284,
+    					"saturation": 100
+    				},
+    				"ring": {
+    					"radius": 462,
+    					"thickness": 83,
+    					"blur": 9,
+    					"cropSize": 443,
+    					"cropHardness": 82,
+    					"alpha": 21,
+    					"hue": 298,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 57,
+    					"sides": 8,
+    					"roundness": 42,
+    					"angle": 0,
+    					"fillAlpha": 16,
+    					"fringeAlpha": 32,
+    					"fringeSize": 30,
+    					"blur": 4,
+    					"countAway": 8,
+    					"countTowards": 16,
+    					"spread": 30,
+    					"sizeVariance": 47,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 315,
+    					"hue": 292,
+    					"saturation": 100,
+    					"hueVariance": 25,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 960,
+    					"alpha": 50,
+    					"softening": 70,
+    					"hue": 279,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 24,
+    					"sides": 8,
+    					"roundness": 24,
+    					"angle": 0,
+    					"fillAlpha": 3,
+    					"fringeAlpha": 8,
+    					"fringeSize": 4,
+    					"blur": 2,
+    					"count": 94,
+    					"threshold": 1045,
+    					"seed": 535,
+    					"sizeVariance": 0,
+    					"alphaVariance": 42,
+    					"hue": 295,
+    					"saturation": 100,
+    					"hueVariance": 0,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Ancient Mariner",
+    			data: {
+    				"hotspot": {
+    					"radius": 347,
+    					"intensity": 10,
+    					"deformationAmount": 0,
+    					"deformationFrequency": 0.006,
+    					"deformationSeed": 1,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 176,
+    					"saturation": 14,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 56,
+    					"width": 1100,
+    					"intensity": 11,
+    					"count": 2,
+    					"angle": 45,
+    					"shift": 0,
+    					"alpha": 100,
+    					"hue": 188,
+    					"saturation": 18
+    				},
+    				"ring": {
+    					"radius": 200,
+    					"thickness": 40,
+    					"blur": 5,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 0,
+    					"hue": 200,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 60,
+    					"sides": 8,
+    					"roundness": 42,
+    					"angle": 22,
+    					"fillAlpha": 12,
+    					"fringeAlpha": 12,
+    					"fringeSize": 22,
+    					"blur": 3,
+    					"countAway": 9,
+    					"countTowards": 19,
+    					"spread": 24,
+    					"sizeVariance": 32,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 438,
+    					"hue": 180,
+    					"saturation": 100,
+    					"hueVariance": 45,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 1114,
+    					"alpha": 32,
+    					"softening": 33,
+    					"hue": 212,
+    					"saturation": 37,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 24,
+    					"sides": 8,
+    					"roundness": 12,
+    					"angle": 0,
+    					"fillAlpha": 2,
+    					"fringeAlpha": 2,
+    					"fringeSize": 6,
+    					"blur": 2,
+    					"count": 99,
+    					"threshold": 943,
+    					"seed": 807,
+    					"sizeVariance": 0,
+    					"alphaVariance": 24,
+    					"hue": 196,
+    					"saturation": 11,
+    					"hueVariance": 22,
+    					"anamorph": 0
+    				}
+    			}
+    		},
+    		{
+    			name: "Lemon Light",
+    			data: {
+    				"hotspot": {
+    					"radius": 575,
+    					"intensity": 5,
+    					"deformationAmount": 1.6,
+    					"deformationFrequency": 0.01,
+    					"deformationSeed": 134,
+    					"alpha": 100,
+    					"angle": 0,
+    					"hue": 48,
+    					"saturation": 27,
+    					"anamorph": 0
+    				},
+    				"streak": {
+    					"thickness": 68,
+    					"width": 691,
+    					"intensity": 0,
+    					"count": 3,
+    					"angle": 30,
+    					"shift": 23,
+    					"alpha": 100,
+    					"hue": 51,
+    					"saturation": 18
+    				},
+    				"ring": {
+    					"radius": 311,
+    					"thickness": 83,
+    					"blur": 13,
+    					"cropSize": 0,
+    					"cropHardness": 50,
+    					"alpha": 21,
+    					"hue": 45,
+    					"saturation": 100,
+    					"anamorph": 0
+    				},
+    				"miIris": {
+    					"radius": 49,
+    					"sides": 5,
+    					"roundness": 100,
+    					"angle": 0,
+    					"fillAlpha": 25,
+    					"fringeAlpha": 50,
+    					"fringeSize": 10,
+    					"blur": 16,
+    					"countAway": 5,
+    					"countTowards": 16,
+    					"spread": 30,
+    					"sizeVariance": 37,
+    					"perspective": 100,
+    					"alphaVariance": 50,
+    					"seed": 329,
+    					"hue": 55,
+    					"saturation": 32,
+    					"hueVariance": 30,
+    					"anamorph": 0
+    				},
+    				"glow": {
+    					"radius": 1203,
+    					"alpha": 50,
+    					"softening": 70,
+    					"hue": 45,
+    					"saturation": 35,
+    					"anamorph": 0
+    				},
+    				"lensOrbs": {
+    					"radius": 24,
+    					"sides": 6,
+    					"roundness": 12,
+    					"angle": 0,
+    					"fillAlpha": 1,
+    					"fringeAlpha": 2,
+    					"fringeSize": 12,
+    					"blur": 2,
+    					"count": 99,
+    					"threshold": 987,
+    					"seed": 807,
+    					"sizeVariance": 0,
+    					"alphaVariance": 50,
+    					"hue": 33,
+    					"saturation": 11,
+    					"hueVariance": 22,
+    					"anamorph": 0
+    				}
+    			}
+    		}
+    	];
+
+    	function handleChange() {
+    		if (this.value == "UPLOAD_PRESET") {
+    			fileInput.click();
+    		} else {
+    			dispatch("choose", JSON.parse(this.value));
+    		}
+
+    		this.value = "";
+    	}
+
+    	function handleFileInput() {
+    		var file = this.files[0];
+    		var fR = new FileReader();
+
+    		fR.addEventListener("loadend", function (e) {
+    			dispatch("choose", JSON.parse(e.target.result));
+    		});
+
+    		fR.readAsText(file);
+    		this.value = null;
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<PresetPicker> was created with unknown prop '${key}'`);
+    	});
+
+    	function select_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			dropdown = $$value;
+    			$$invalidate(0, dropdown);
+    			$$invalidate(2, builtInPresets);
+    		});
+    	}
+
+    	function input_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			fileInput = $$value;
+    			$$invalidate(1, fileInput);
+    		});
+    	}
+
+    	$$self.$capture_state = () => ({
+    		current,
+    		createEventDispatcher,
+    		dispatch,
+    		dropdown,
+    		fileInput,
+    		builtInPresets,
+    		handleChange,
+    		handleFileInput
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('dropdown' in $$props) $$invalidate(0, dropdown = $$props.dropdown);
+    		if ('fileInput' in $$props) $$invalidate(1, fileInput = $$props.fileInput);
+    		if ('builtInPresets' in $$props) $$invalidate(2, builtInPresets = $$props.builtInPresets);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		dropdown,
+    		fileInput,
+    		builtInPresets,
+    		handleChange,
+    		handleFileInput,
+    		select_binding,
+    		input_binding
+    	];
+    }
+
+    class PresetPicker extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "PresetPicker",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+    }
+
+    /* src/App.svelte generated by Svelte v3.55.1 */
+
+    const { document: document_1 } = globals;
+    const file = "src/App.svelte";
+
+    // (401:0) <Collapsible title={"Global"} collapsed={false}>
+    function create_default_slot_6(ctx) {
+    	let t0;
+    	let slider0;
+    	let updating_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let slider1;
+    	let updating_value_1;
+    	let t3;
+    	let br1;
+    	let t4;
+    	let slider2;
+    	let updating_value_2;
+    	let t5;
+    	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
+    	let t8;
+    	let slider4;
+    	let updating_value_4;
+    	let t9;
+    	let br4;
+    	let current;
+
+    	function slider0_value_binding(value) {
+    		/*slider0_value_binding*/ ctx[23](value);
+    	}
+
+    	let slider0_props = {
+    		min: 0,
+    		max: /*flareSettings*/ ctx[0].dimensions.width
+    	};
+
+    	if (/*flareSettings*/ ctx[0].positioning.x !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].positioning.x;
+    	}
+
+    	slider0 = new Slider({ props: slider0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding));
+    	slider0.$on("input", /*input_handler*/ ctx[24]);
+
+    	function slider1_value_binding(value) {
+    		/*slider1_value_binding*/ ctx[25](value);
+    	}
+
+    	let slider1_props = {
+    		min: 0,
+    		max: /*flareSettings*/ ctx[0].dimensions.height
+    	};
+
+    	if (/*flareSettings*/ ctx[0].positioning.y !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].positioning.y;
+    	}
+
+    	slider1 = new Slider({ props: slider1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding));
+    	slider1.$on("input", /*input_handler_1*/ ctx[26]);
+
+    	function slider2_value_binding(value) {
+    		/*slider2_value_binding*/ ctx[27](value);
+    	}
+
+    	let slider2_props = {
+    		min: 0,
+    		max: /*flareSettings*/ ctx[0].dimensions.width
+    	};
+
+    	if (/*flareSettings*/ ctx[0].positioning.pivotX !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].positioning.pivotX;
+    	}
+
+    	slider2 = new Slider({ props: slider2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding));
+    	slider2.$on("input", /*input_handler_2*/ ctx[28]);
+
+    	function slider3_value_binding(value) {
+    		/*slider3_value_binding*/ ctx[29](value);
+    	}
+
+    	let slider3_props = {
+    		min: 0,
+    		max: /*flareSettings*/ ctx[0].dimensions.height
+    	};
+
+    	if (/*flareSettings*/ ctx[0].positioning.pivotY !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].positioning.pivotY;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding));
+    	slider3.$on("input", /*input_handler_3*/ ctx[30]);
+
+    	function slider4_value_binding(value) {
+    		/*slider4_value_binding*/ ctx[31](value);
+    	}
+
+    	let slider4_props = { min: 0.01, max: 2, step: 0.01 };
+
+    	if (/*flareSettings*/ ctx[0].sizeMultiplier !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].sizeMultiplier;
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding));
+    	slider4.$on("input", /*input_handler_4*/ ctx[32]);
+    	slider4.$on("change", /*handleScaleMultiplier*/ ctx[13]);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Light X: ");
+    			create_component(slider0.$$.fragment);
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = text("\n    Light Y: ");
+    			create_component(slider1.$$.fragment);
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = text("\n    Focus X: ");
+    			create_component(slider2.$$.fragment);
+    			t5 = space();
+    			br2 = element("br");
+    			t6 = text("\n    Focus Y: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = text("\n    Scale Multiplier: ");
+    			create_component(slider4.$$.fragment);
+    			t9 = space();
+    			br4 = element("br");
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 401, 151, 21265);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 402, 152, 21424);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 403, 156, 21587);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 404, 157, 21751);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 405, 181, 21939);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			mount_component(slider0, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(slider1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(slider2, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(slider4, target, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, br4, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const slider0_changes = {};
+    			if (dirty[0] & /*flareSettings*/ 1) slider0_changes.max = /*flareSettings*/ ctx[0].dimensions.width;
+
+    			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value = true;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].positioning.x;
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			slider0.$set(slider0_changes);
+    			const slider1_changes = {};
+    			if (dirty[0] & /*flareSettings*/ 1) slider1_changes.max = /*flareSettings*/ ctx[0].dimensions.height;
+
+    			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_1 = true;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].positioning.y;
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			slider1.$set(slider1_changes);
+    			const slider2_changes = {};
+    			if (dirty[0] & /*flareSettings*/ 1) slider2_changes.max = /*flareSettings*/ ctx[0].dimensions.width;
+
+    			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_2 = true;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].positioning.pivotX;
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+    			if (dirty[0] & /*flareSettings*/ 1) slider3_changes.max = /*flareSettings*/ ctx[0].dimensions.height;
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].positioning.pivotY;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
+    			const slider4_changes = {};
+
+    			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].sizeMultiplier;
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(slider0.$$.fragment, local);
+    			transition_in(slider1.$$.fragment, local);
+    			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(slider0.$$.fragment, local);
+    			transition_out(slider1.$$.fragment, local);
+    			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(br4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_6.name,
+    		type: "slot",
+    		source: "(401:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (408:0) <Collapsible title={"Hotspot"}>
+    function create_default_slot_5(ctx) {
+    	let t0;
+    	let slider0;
+    	let updating_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let slider1;
+    	let updating_value_1;
+    	let t3;
+    	let br1;
+    	let t4;
+    	let slider2;
+    	let updating_value_2;
+    	let t5;
+    	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
+    	let t8;
+    	let slider4;
+    	let updating_value_4;
+    	let t9;
+    	let br4;
+    	let t10;
+    	let slider5;
+    	let updating_value_5;
+    	let t11;
+    	let br5;
+    	let t12;
+    	let slider6;
+    	let updating_value_6;
+    	let t13;
+    	let br6;
+    	let t14;
+    	let slider7;
+    	let updating_value_7;
+    	let t15;
+    	let br7;
+    	let t16;
+    	let slider8;
+    	let updating_value_8;
+    	let t17;
+    	let br8;
+    	let t18;
+    	let slider9;
+    	let updating_value_9;
+    	let t19;
+    	let br9;
+    	let current;
+
+    	function slider0_value_binding_1(value) {
+    		/*slider0_value_binding_1*/ ctx[33](value);
+    	}
+
+    	let slider0_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.alpha !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].hotspot.alpha;
+    	}
+
+    	slider0 = new Slider({ props: slider0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_1));
+    	slider0.$on("input", /*input_handler_5*/ ctx[34]);
+
+    	function slider1_value_binding_1(value) {
+    		/*slider1_value_binding_1*/ ctx[35](value);
+    	}
+
+    	let slider1_props = { min: 0, max: 360 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.angle !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].hotspot.angle;
+    	}
+
+    	slider1 = new Slider({ props: slider1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_1));
+    	slider1.$on("input", /*input_handler_6*/ ctx[36]);
+
+    	function slider2_value_binding_1(value) {
+    		/*slider2_value_binding_1*/ ctx[37](value);
+    	}
+
+    	let slider2_props = { min: 0, max: 360, className: "hueSlider" };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.hue !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].hotspot.hue;
+    	}
+
+    	slider2 = new Slider({ props: slider2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_1));
+    	slider2.$on("input", /*input_handler_7*/ ctx[38]);
+
+    	function slider3_value_binding_1(value) {
+    		/*slider3_value_binding_1*/ ctx[39](value);
+    	}
+
+    	let slider3_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.saturation !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].hotspot.saturation;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_1));
+    	slider3.$on("input", /*input_handler_8*/ ctx[40]);
+
+    	function slider4_value_binding_1(value) {
+    		/*slider4_value_binding_1*/ ctx[41](value);
+    	}
+
+    	let slider4_props = { min: 0, max: 1000 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.radius !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].hotspot.radius;
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_1));
+    	slider4.$on("input", /*input_handler_9*/ ctx[42]);
+
+    	function slider5_value_binding(value) {
+    		/*slider5_value_binding*/ ctx[43](value);
+    	}
+
+    	let slider5_props = { min: 0, max: 50 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.intensity !== void 0) {
+    		slider5_props.value = /*flareSettings*/ ctx[0].hotspot.intensity;
+    	}
+
+    	slider5 = new Slider({ props: slider5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding));
+    	slider5.$on("input", /*input_handler_10*/ ctx[44]);
+
+    	function slider6_value_binding(value) {
+    		/*slider6_value_binding*/ ctx[45](value);
+    	}
+
+    	let slider6_props = { min: 0, max: 0.05, step: 0.001 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.deformationFrequency !== void 0) {
+    		slider6_props.value = /*flareSettings*/ ctx[0].hotspot.deformationFrequency;
+    	}
+
+    	slider6 = new Slider({ props: slider6_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding));
+    	slider6.$on("input", /*input_handler_11*/ ctx[46]);
+
+    	function slider7_value_binding(value) {
+    		/*slider7_value_binding*/ ctx[47](value);
+    	}
+
+    	let slider7_props = { min: 0, max: 2.1, step: 0.01 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.deformationAmount !== void 0) {
+    		slider7_props.value = /*flareSettings*/ ctx[0].hotspot.deformationAmount;
+    	}
+
+    	slider7 = new Slider({ props: slider7_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding));
+    	slider7.$on("input", /*input_handler_12*/ ctx[48]);
+
+    	function slider8_value_binding(value) {
+    		/*slider8_value_binding*/ ctx[49](value);
+    	}
+
+    	let slider8_props = { min: 1, max: 999 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.deformationSeed !== void 0) {
+    		slider8_props.value = /*flareSettings*/ ctx[0].hotspot.deformationSeed;
+    	}
+
+    	slider8 = new Slider({ props: slider8_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding));
+    	slider8.$on("input", /*input_handler_13*/ ctx[50]);
+
+    	function slider9_value_binding(value) {
+    		/*slider9_value_binding*/ ctx[51](value);
+    	}
+
+    	let slider9_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].hotspot.anamorph !== void 0) {
+    		slider9_props.value = /*flareSettings*/ ctx[0].hotspot.anamorph;
+    	}
+
+    	slider9 = new Slider({ props: slider9_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding));
+    	slider9.$on("input", /*input_handler_14*/ ctx[52]);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Alpha: ");
+    			create_component(slider0.$$.fragment);
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = text("\n    Angle: ");
+    			create_component(slider1.$$.fragment);
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = text("\n    Hue: ");
+    			create_component(slider2.$$.fragment);
+    			t5 = space();
+    			br2 = element("br");
+    			t6 = text("\n    Saturation: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = text("\n    Size: ");
+    			create_component(slider4.$$.fragment);
+    			t9 = space();
+    			br4 = element("br");
+    			t10 = text("\n    Intensity: ");
+    			create_component(slider5.$$.fragment);
+    			t11 = space();
+    			br5 = element("br");
+    			t12 = text("\n    Rays Frequency: ");
+    			create_component(slider6.$$.fragment);
+    			t13 = space();
+    			br6 = element("br");
+    			t14 = text("\n    Rays Definition: ");
+    			create_component(slider7.$$.fragment);
+    			t15 = space();
+    			br7 = element("br");
+    			t16 = text("\n    Random Seed: ");
+    			create_component(slider8.$$.fragment);
+    			t17 = space();
+    			br8 = element("br");
+    			t18 = text("\n    Anamorph: ");
+    			create_component(slider9.$$.fragment);
+    			t19 = space();
+    			br9 = element("br");
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 408, 126, 22119);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 409, 126, 22252);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 410, 144, 22403);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 411, 136, 22546);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 412, 127, 22680);
+    			attr_dev(br5, "class", "svelte-viz99f");
+    			add_location(br5, file, 413, 133, 22820);
+    			attr_dev(br6, "class", "svelte-viz99f");
+    			add_location(br6, file, 414, 164, 22991);
+    			attr_dev(br7, "class", "svelte-viz99f");
+    			add_location(br7, file, 415, 160, 23158);
+    			attr_dev(br8, "class", "svelte-viz99f");
+    			add_location(br8, file, 416, 142, 23307);
+    			attr_dev(br9, "class", "svelte-viz99f");
+    			add_location(br9, file, 417, 132, 23446);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			mount_component(slider0, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(slider1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(slider2, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(slider4, target, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, br4, anchor);
+    			insert_dev(target, t10, anchor);
+    			mount_component(slider5, target, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, br5, anchor);
+    			insert_dev(target, t12, anchor);
+    			mount_component(slider6, target, anchor);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, br6, anchor);
+    			insert_dev(target, t14, anchor);
+    			mount_component(slider7, target, anchor);
+    			insert_dev(target, t15, anchor);
+    			insert_dev(target, br7, anchor);
+    			insert_dev(target, t16, anchor);
+    			mount_component(slider8, target, anchor);
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, br8, anchor);
+    			insert_dev(target, t18, anchor);
+    			mount_component(slider9, target, anchor);
+    			insert_dev(target, t19, anchor);
+    			insert_dev(target, br9, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const slider0_changes = {};
+
+    			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value = true;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].hotspot.alpha;
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			slider0.$set(slider0_changes);
+    			const slider1_changes = {};
+
+    			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_1 = true;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].hotspot.angle;
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			slider1.$set(slider1_changes);
+    			const slider2_changes = {};
+
+    			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_2 = true;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].hotspot.hue;
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].hotspot.saturation;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
+    			const slider4_changes = {};
+
+    			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].hotspot.radius;
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    			const slider5_changes = {};
+
+    			if (!updating_value_5 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_5 = true;
+    				slider5_changes.value = /*flareSettings*/ ctx[0].hotspot.intensity;
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			slider5.$set(slider5_changes);
+    			const slider6_changes = {};
+
+    			if (!updating_value_6 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_6 = true;
+    				slider6_changes.value = /*flareSettings*/ ctx[0].hotspot.deformationFrequency;
+    				add_flush_callback(() => updating_value_6 = false);
+    			}
+
+    			slider6.$set(slider6_changes);
+    			const slider7_changes = {};
+
+    			if (!updating_value_7 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_7 = true;
+    				slider7_changes.value = /*flareSettings*/ ctx[0].hotspot.deformationAmount;
+    				add_flush_callback(() => updating_value_7 = false);
+    			}
+
+    			slider7.$set(slider7_changes);
+    			const slider8_changes = {};
+
+    			if (!updating_value_8 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_8 = true;
+    				slider8_changes.value = /*flareSettings*/ ctx[0].hotspot.deformationSeed;
+    				add_flush_callback(() => updating_value_8 = false);
+    			}
+
+    			slider8.$set(slider8_changes);
+    			const slider9_changes = {};
+
+    			if (!updating_value_9 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_9 = true;
+    				slider9_changes.value = /*flareSettings*/ ctx[0].hotspot.anamorph;
+    				add_flush_callback(() => updating_value_9 = false);
+    			}
+
+    			slider9.$set(slider9_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(slider0.$$.fragment, local);
+    			transition_in(slider1.$$.fragment, local);
+    			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider5.$$.fragment, local);
+    			transition_in(slider6.$$.fragment, local);
+    			transition_in(slider7.$$.fragment, local);
+    			transition_in(slider8.$$.fragment, local);
+    			transition_in(slider9.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(slider0.$$.fragment, local);
+    			transition_out(slider1.$$.fragment, local);
+    			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider5.$$.fragment, local);
+    			transition_out(slider6.$$.fragment, local);
+    			transition_out(slider7.$$.fragment, local);
+    			transition_out(slider8.$$.fragment, local);
+    			transition_out(slider9.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(br4);
+    			if (detaching) detach_dev(t10);
+    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(br5);
+    			if (detaching) detach_dev(t12);
+    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(br6);
+    			if (detaching) detach_dev(t14);
+    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(br7);
+    			if (detaching) detach_dev(t16);
+    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(br8);
+    			if (detaching) detach_dev(t18);
+    			destroy_component(slider9, detaching);
+    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(br9);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_5.name,
+    		type: "slot",
+    		source: "(408:0) <Collapsible title={\\\"Hotspot\\\"}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (420:0) <Collapsible title={"Streak"}>
+    function create_default_slot_4(ctx) {
+    	let t0;
+    	let slider0;
+    	let updating_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let slider1;
+    	let updating_value_1;
+    	let t3;
+    	let br1;
+    	let t4;
+    	let slider2;
+    	let updating_value_2;
+    	let t5;
+    	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
+    	let t8;
+    	let slider4;
+    	let updating_value_4;
+    	let t9;
+    	let br4;
+    	let t10;
+    	let slider5;
+    	let updating_value_5;
+    	let t11;
+    	let br5;
+    	let t12;
+    	let slider6;
+    	let updating_value_6;
+    	let t13;
+    	let br6;
+    	let t14;
+    	let slider7;
+    	let updating_value_7;
+    	let t15;
+    	let br7;
+    	let t16;
+    	let slider8;
+    	let updating_value_8;
+    	let t17;
+    	let br8;
+    	let current;
+
+    	function slider0_value_binding_2(value) {
+    		/*slider0_value_binding_2*/ ctx[53](value);
+    	}
+
+    	let slider0_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].streak.alpha !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].streak.alpha;
+    	}
+
+    	slider0 = new Slider({ props: slider0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_2));
+    	slider0.$on("input", /*input_handler_15*/ ctx[54]);
+
+    	function slider1_value_binding_2(value) {
+    		/*slider1_value_binding_2*/ ctx[55](value);
+    	}
+
+    	let slider1_props = { min: 0, max: 360 };
+
+    	if (/*flareSettings*/ ctx[0].streak.angle !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].streak.angle;
+    	}
+
+    	slider1 = new Slider({ props: slider1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_2));
+    	slider1.$on("input", /*input_handler_16*/ ctx[56]);
+
+    	function slider2_value_binding_2(value) {
+    		/*slider2_value_binding_2*/ ctx[57](value);
+    	}
+
+    	let slider2_props = { min: 0, max: 360, className: "hueSlider" };
+
+    	if (/*flareSettings*/ ctx[0].streak.hue !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].streak.hue;
+    	}
+
+    	slider2 = new Slider({ props: slider2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_2));
+    	slider2.$on("input", /*input_handler_17*/ ctx[58]);
+
+    	function slider3_value_binding_2(value) {
+    		/*slider3_value_binding_2*/ ctx[59](value);
+    	}
+
+    	let slider3_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].streak.saturation !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].streak.saturation;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_2));
+    	slider3.$on("input", /*input_handler_18*/ ctx[60]);
+
+    	function slider4_value_binding_2(value) {
+    		/*slider4_value_binding_2*/ ctx[61](value);
+    	}
+
+    	let slider4_props = { min: 0, max: 200 };
+
+    	if (/*flareSettings*/ ctx[0].streak.thickness !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].streak.thickness;
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_2));
+    	slider4.$on("input", /*input_handler_19*/ ctx[62]);
+
+    	function slider5_value_binding_1(value) {
+    		/*slider5_value_binding_1*/ ctx[63](value);
+    	}
+
+    	let slider5_props = { min: 0, max: 5000 };
+
+    	if (/*flareSettings*/ ctx[0].streak.width !== void 0) {
+    		slider5_props.value = /*flareSettings*/ ctx[0].streak.width;
+    	}
+
+    	slider5 = new Slider({ props: slider5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_1));
+    	slider5.$on("input", /*input_handler_20*/ ctx[64]);
+
+    	function slider6_value_binding_1(value) {
+    		/*slider6_value_binding_1*/ ctx[65](value);
+    	}
+
+    	let slider6_props = { min: -30, max: 50 };
+
+    	if (/*flareSettings*/ ctx[0].streak.intensity !== void 0) {
+    		slider6_props.value = /*flareSettings*/ ctx[0].streak.intensity;
+    	}
+
+    	slider6 = new Slider({ props: slider6_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_1));
+    	slider6.$on("input", /*input_handler_21*/ ctx[66]);
+
+    	function slider7_value_binding_1(value) {
+    		/*slider7_value_binding_1*/ ctx[67](value);
+    	}
+
+    	let slider7_props = { min: 1, max: 8 };
+
+    	if (/*flareSettings*/ ctx[0].streak.count !== void 0) {
+    		slider7_props.value = /*flareSettings*/ ctx[0].streak.count;
+    	}
+
+    	slider7 = new Slider({ props: slider7_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_1));
+    	slider7.$on("input", /*input_handler_22*/ ctx[68]);
+
+    	function slider8_value_binding_1(value) {
+    		/*slider8_value_binding_1*/ ctx[69](value);
+    	}
+
+    	let slider8_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].streak.shift !== void 0) {
+    		slider8_props.value = /*flareSettings*/ ctx[0].streak.shift;
+    	}
+
+    	slider8 = new Slider({ props: slider8_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_1));
+    	slider8.$on("input", /*input_handler_23*/ ctx[70]);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Alpha: ");
+    			create_component(slider0.$$.fragment);
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = text("\n    Angle: ");
+    			create_component(slider1.$$.fragment);
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = text("\n    Hue: ");
+    			create_component(slider2.$$.fragment);
+    			t5 = space();
+    			br2 = element("br");
+    			t6 = text("\n    Saturation: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = text("\n    Thickness: ");
+    			create_component(slider4.$$.fragment);
+    			t9 = space();
+    			br4 = element("br");
+    			t10 = text("\n    Length: ");
+    			create_component(slider5.$$.fragment);
+    			t11 = space();
+    			br5 = element("br");
+    			t12 = text("\n    Intensity: ");
+    			create_component(slider6.$$.fragment);
+    			t13 = space();
+    			br6 = element("br");
+    			t14 = text("\n    Starring: ");
+    			create_component(slider7.$$.fragment);
+    			t15 = space();
+    			br7 = element("br");
+    			t16 = text("\n    Shift: ");
+    			create_component(slider8.$$.fragment);
+    			t17 = space();
+    			br8 = element("br");
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 420, 132, 23631);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 421, 132, 23770);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 422, 150, 23927);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 423, 142, 24076);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 424, 140, 24223);
+    			attr_dev(br5, "class", "svelte-viz99f");
+    			add_location(br5, file, 425, 134, 24364);
+    			attr_dev(br6, "class", "svelte-viz99f");
+    			add_location(br6, file, 426, 141, 24512);
+    			attr_dev(br7, "class", "svelte-viz99f");
+    			add_location(br7, file, 427, 133, 24652);
+    			attr_dev(br8, "class", "svelte-viz99f");
+    			add_location(br8, file, 428, 132, 24791);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			mount_component(slider0, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(slider1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(slider2, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(slider4, target, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, br4, anchor);
+    			insert_dev(target, t10, anchor);
+    			mount_component(slider5, target, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, br5, anchor);
+    			insert_dev(target, t12, anchor);
+    			mount_component(slider6, target, anchor);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, br6, anchor);
+    			insert_dev(target, t14, anchor);
+    			mount_component(slider7, target, anchor);
+    			insert_dev(target, t15, anchor);
+    			insert_dev(target, br7, anchor);
+    			insert_dev(target, t16, anchor);
+    			mount_component(slider8, target, anchor);
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, br8, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const slider0_changes = {};
+
+    			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value = true;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].streak.alpha;
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			slider0.$set(slider0_changes);
+    			const slider1_changes = {};
+
+    			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_1 = true;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].streak.angle;
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			slider1.$set(slider1_changes);
+    			const slider2_changes = {};
+
+    			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_2 = true;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].streak.hue;
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].streak.saturation;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
+    			const slider4_changes = {};
+
+    			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].streak.thickness;
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    			const slider5_changes = {};
+
+    			if (!updating_value_5 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_5 = true;
+    				slider5_changes.value = /*flareSettings*/ ctx[0].streak.width;
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			slider5.$set(slider5_changes);
+    			const slider6_changes = {};
+
+    			if (!updating_value_6 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_6 = true;
+    				slider6_changes.value = /*flareSettings*/ ctx[0].streak.intensity;
+    				add_flush_callback(() => updating_value_6 = false);
+    			}
+
+    			slider6.$set(slider6_changes);
+    			const slider7_changes = {};
+
+    			if (!updating_value_7 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_7 = true;
+    				slider7_changes.value = /*flareSettings*/ ctx[0].streak.count;
+    				add_flush_callback(() => updating_value_7 = false);
+    			}
+
+    			slider7.$set(slider7_changes);
+    			const slider8_changes = {};
+
+    			if (!updating_value_8 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_8 = true;
+    				slider8_changes.value = /*flareSettings*/ ctx[0].streak.shift;
+    				add_flush_callback(() => updating_value_8 = false);
+    			}
+
+    			slider8.$set(slider8_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(slider0.$$.fragment, local);
+    			transition_in(slider1.$$.fragment, local);
+    			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider5.$$.fragment, local);
+    			transition_in(slider6.$$.fragment, local);
+    			transition_in(slider7.$$.fragment, local);
+    			transition_in(slider8.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(slider0.$$.fragment, local);
+    			transition_out(slider1.$$.fragment, local);
+    			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider5.$$.fragment, local);
+    			transition_out(slider6.$$.fragment, local);
+    			transition_out(slider7.$$.fragment, local);
+    			transition_out(slider8.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(br4);
+    			if (detaching) detach_dev(t10);
+    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(br5);
+    			if (detaching) detach_dev(t12);
+    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(br6);
+    			if (detaching) detach_dev(t14);
+    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(br7);
+    			if (detaching) detach_dev(t16);
+    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(br8);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_4.name,
+    		type: "slot",
+    		source: "(420:0) <Collapsible title={\\\"Streak\\\"}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (431:0) <Collapsible title={"Ring"}>
+    function create_default_slot_3(ctx) {
+    	let t0;
+    	let slider0;
+    	let updating_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let slider1;
+    	let updating_value_1;
+    	let t3;
+    	let br1;
+    	let t4;
+    	let slider2;
+    	let updating_value_2;
+    	let t5;
+    	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
+    	let t8;
+    	let slider4;
+    	let updating_value_4;
+    	let t9;
+    	let br4;
+    	let t10;
+    	let slider5;
+    	let updating_value_5;
+    	let t11;
+    	let br5;
+    	let t12;
+    	let slider6;
+    	let updating_value_6;
+    	let t13;
+    	let br6;
+    	let t14;
+    	let slider7;
+    	let updating_value_7;
+    	let t15;
+    	let br7;
+    	let t16;
+    	let slider8;
+    	let updating_value_8;
+    	let t17;
+    	let br8;
+    	let current;
+
+    	function slider0_value_binding_3(value) {
+    		/*slider0_value_binding_3*/ ctx[71](value);
+    	}
+
+    	let slider0_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].ring.alpha !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].ring.alpha;
+    	}
+
+    	slider0 = new Slider({ props: slider0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_3));
+    	slider0.$on("input", /*input_handler_24*/ ctx[72]);
+
+    	function slider1_value_binding_3(value) {
+    		/*slider1_value_binding_3*/ ctx[73](value);
+    	}
+
+    	let slider1_props = { min: 0, max: 360, className: "hueSlider" };
+
+    	if (/*flareSettings*/ ctx[0].ring.hue !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].ring.hue;
+    	}
+
+    	slider1 = new Slider({ props: slider1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_3));
+    	slider1.$on("input", /*input_handler_25*/ ctx[74]);
+
+    	function slider2_value_binding_3(value) {
+    		/*slider2_value_binding_3*/ ctx[75](value);
+    	}
+
+    	let slider2_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].ring.saturation !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].ring.saturation;
+    	}
+
+    	slider2 = new Slider({ props: slider2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_3));
+    	slider2.$on("input", /*input_handler_26*/ ctx[76]);
+
+    	function slider3_value_binding_3(value) {
+    		/*slider3_value_binding_3*/ ctx[77](value);
+    	}
+
+    	let slider3_props = { min: 0, max: 810 };
+
+    	if (/*flareSettings*/ ctx[0].ring.radius !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].ring.radius;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_3));
+    	slider3.$on("input", /*input_handler_27*/ ctx[78]);
+
+    	function slider4_value_binding_3(value) {
+    		/*slider4_value_binding_3*/ ctx[79](value);
+    	}
+
+    	let slider4_props = { min: 0, max: 500 };
+
+    	if (/*flareSettings*/ ctx[0].ring.thickness !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].ring.thickness;
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_3));
+    	slider4.$on("input", /*input_handler_28*/ ctx[80]);
+
+    	function slider5_value_binding_2(value) {
+    		/*slider5_value_binding_2*/ ctx[81](value);
+    	}
+
+    	let slider5_props = { min: 0, max: 50 };
+
+    	if (/*flareSettings*/ ctx[0].ring.blur !== void 0) {
+    		slider5_props.value = /*flareSettings*/ ctx[0].ring.blur;
+    	}
+
+    	slider5 = new Slider({ props: slider5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_2));
+    	slider5.$on("input", /*input_handler_29*/ ctx[82]);
+
+    	function slider6_value_binding_2(value) {
+    		/*slider6_value_binding_2*/ ctx[83](value);
+    	}
+
+    	let slider6_props = { min: 0, max: 810 };
+
+    	if (/*flareSettings*/ ctx[0].ring.cropSize !== void 0) {
+    		slider6_props.value = /*flareSettings*/ ctx[0].ring.cropSize;
+    	}
+
+    	slider6 = new Slider({ props: slider6_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_2));
+    	slider6.$on("input", /*input_handler_30*/ ctx[84]);
+
+    	function slider7_value_binding_2(value) {
+    		/*slider7_value_binding_2*/ ctx[85](value);
+    	}
+
+    	let slider7_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].ring.cropHardness !== void 0) {
+    		slider7_props.value = /*flareSettings*/ ctx[0].ring.cropHardness;
+    	}
+
+    	slider7 = new Slider({ props: slider7_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_2));
+    	slider7.$on("input", /*input_handler_31*/ ctx[86]);
+
+    	function slider8_value_binding_2(value) {
+    		/*slider8_value_binding_2*/ ctx[87](value);
+    	}
+
+    	let slider8_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].ring.anamorph !== void 0) {
+    		slider8_props.value = /*flareSettings*/ ctx[0].ring.anamorph;
+    	}
+
+    	slider8 = new Slider({ props: slider8_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_2));
+    	slider8.$on("input", /*input_handler_32*/ ctx[88]);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Alpha: ");
+    			create_component(slider0.$$.fragment);
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = text("\n    Hue: ");
+    			create_component(slider1.$$.fragment);
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = text("\n    Saturation: ");
+    			create_component(slider2.$$.fragment);
+    			t5 = space();
+    			br2 = element("br");
+    			t6 = text("\n    Size: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = text("\n    Thickness: ");
+    			create_component(slider4.$$.fragment);
+    			t9 = space();
+    			br4 = element("br");
+    			t10 = text("\n    Softness: ");
+    			create_component(slider5.$$.fragment);
+    			t11 = space();
+    			br5 = element("br");
+    			t12 = text("\n    Crop Size: ");
+    			create_component(slider6.$$.fragment);
+    			t13 = space();
+    			br6 = element("br");
+    			t14 = text("\n    Crop Hardness: ");
+    			create_component(slider7.$$.fragment);
+    			t15 = space();
+    			br7 = element("br");
+    			t16 = text("\n    Anamorph: ");
+    			create_component(slider8.$$.fragment);
+    			t17 = space();
+    			br8 = element("br");
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 431, 137, 24979);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 432, 155, 25141);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 433, 147, 25295);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 434, 137, 25439);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 435, 145, 25591);
+    			attr_dev(br5, "class", "svelte-viz99f");
+    			add_location(br5, file, 436, 138, 25736);
+    			attr_dev(br6, "class", "svelte-viz99f");
+    			add_location(br6, file, 437, 144, 25887);
+    			attr_dev(br7, "class", "svelte-viz99f");
+    			add_location(br7, file, 438, 152, 26046);
+    			attr_dev(br8, "class", "svelte-viz99f");
+    			add_location(br8, file, 439, 143, 26196);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			mount_component(slider0, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(slider1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(slider2, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(slider4, target, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, br4, anchor);
+    			insert_dev(target, t10, anchor);
+    			mount_component(slider5, target, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, br5, anchor);
+    			insert_dev(target, t12, anchor);
+    			mount_component(slider6, target, anchor);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, br6, anchor);
+    			insert_dev(target, t14, anchor);
+    			mount_component(slider7, target, anchor);
+    			insert_dev(target, t15, anchor);
+    			insert_dev(target, br7, anchor);
+    			insert_dev(target, t16, anchor);
+    			mount_component(slider8, target, anchor);
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, br8, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const slider0_changes = {};
+
+    			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value = true;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].ring.alpha;
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			slider0.$set(slider0_changes);
+    			const slider1_changes = {};
+
+    			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_1 = true;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].ring.hue;
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			slider1.$set(slider1_changes);
+    			const slider2_changes = {};
+
+    			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_2 = true;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].ring.saturation;
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].ring.radius;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
+    			const slider4_changes = {};
+
+    			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].ring.thickness;
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    			const slider5_changes = {};
+
+    			if (!updating_value_5 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_5 = true;
+    				slider5_changes.value = /*flareSettings*/ ctx[0].ring.blur;
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			slider5.$set(slider5_changes);
+    			const slider6_changes = {};
+
+    			if (!updating_value_6 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_6 = true;
+    				slider6_changes.value = /*flareSettings*/ ctx[0].ring.cropSize;
+    				add_flush_callback(() => updating_value_6 = false);
+    			}
+
+    			slider6.$set(slider6_changes);
+    			const slider7_changes = {};
+
+    			if (!updating_value_7 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_7 = true;
+    				slider7_changes.value = /*flareSettings*/ ctx[0].ring.cropHardness;
+    				add_flush_callback(() => updating_value_7 = false);
+    			}
+
+    			slider7.$set(slider7_changes);
+    			const slider8_changes = {};
+
+    			if (!updating_value_8 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_8 = true;
+    				slider8_changes.value = /*flareSettings*/ ctx[0].ring.anamorph;
+    				add_flush_callback(() => updating_value_8 = false);
+    			}
+
+    			slider8.$set(slider8_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(slider0.$$.fragment, local);
+    			transition_in(slider1.$$.fragment, local);
+    			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider5.$$.fragment, local);
+    			transition_in(slider6.$$.fragment, local);
+    			transition_in(slider7.$$.fragment, local);
+    			transition_in(slider8.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(slider0.$$.fragment, local);
+    			transition_out(slider1.$$.fragment, local);
+    			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider5.$$.fragment, local);
+    			transition_out(slider6.$$.fragment, local);
+    			transition_out(slider7.$$.fragment, local);
+    			transition_out(slider8.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(br4);
+    			if (detaching) detach_dev(t10);
+    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(br5);
+    			if (detaching) detach_dev(t12);
+    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(br6);
+    			if (detaching) detach_dev(t14);
+    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(br7);
+    			if (detaching) detach_dev(t16);
+    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(br8);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_3.name,
+    		type: "slot",
+    		source: "(431:0) <Collapsible title={\\\"Ring\\\"}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (442:0) <Collapsible title={"Multi-Iris"}>
+    function create_default_slot_2(ctx) {
+    	let t0;
+    	let slider0;
+    	let updating_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let slider1;
+    	let updating_value_1;
+    	let t3;
+    	let br1;
+    	let t4;
+    	let slider2;
+    	let updating_value_2;
+    	let t5;
+    	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
+    	let t8;
+    	let slider4;
+    	let updating_value_4;
+    	let t9;
+    	let br4;
+    	let t10;
+    	let slider5;
+    	let updating_value_5;
+    	let t11;
+    	let br5;
+    	let t12;
+    	let slider6;
+    	let updating_value_6;
+    	let t13;
+    	let br6;
+    	let t14;
+    	let slider7;
+    	let updating_value_7;
+    	let t15;
+    	let br7;
+    	let t16;
+    	let slider8;
+    	let updating_value_8;
+    	let t17;
+    	let br8;
+    	let t18;
+    	let slider9;
+    	let updating_value_9;
+    	let t19;
+    	let br9;
+    	let t20;
+    	let slider10;
+    	let updating_value_10;
+    	let t21;
+    	let br10;
+    	let t22;
+    	let slider11;
+    	let updating_value_11;
+    	let t23;
+    	let br11;
+    	let t24;
+    	let slider12;
+    	let updating_value_12;
+    	let t25;
+    	let br12;
+    	let t26;
+    	let slider13;
+    	let updating_value_13;
+    	let t27;
+    	let br13;
+    	let t28;
+    	let slider14;
+    	let updating_value_14;
+    	let t29;
+    	let br14;
+    	let t30;
+    	let slider15;
+    	let updating_value_15;
+    	let t31;
+    	let br15;
+    	let t32;
+    	let slider16;
+    	let updating_value_16;
+    	let t33;
+    	let br16;
+    	let t34;
+    	let slider17;
+    	let updating_value_17;
+    	let t35;
+    	let br17;
+    	let t36;
+    	let slider18;
+    	let updating_value_18;
+    	let t37;
+    	let br18;
+    	let current;
+
+    	function slider0_value_binding_4(value) {
+    		/*slider0_value_binding_4*/ ctx[89](value);
+    	}
+
+    	let slider0_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.fillAlpha !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].miIris.fillAlpha;
+    	}
+
+    	slider0 = new Slider({ props: slider0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_4));
+    	slider0.$on("input", /*input_handler_33*/ ctx[90]);
+
+    	function slider1_value_binding_4(value) {
+    		/*slider1_value_binding_4*/ ctx[91](value);
+    	}
+
+    	let slider1_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.fringeAlpha !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].miIris.fringeAlpha;
+    	}
+
+    	slider1 = new Slider({ props: slider1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_4));
+    	slider1.$on("input", /*input_handler_34*/ ctx[92]);
+
+    	function slider2_value_binding_4(value) {
+    		/*slider2_value_binding_4*/ ctx[93](value);
+    	}
+
+    	let slider2_props = { min: 0, max: 360 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.angle !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].miIris.angle;
+    	}
+
+    	slider2 = new Slider({ props: slider2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_4));
+    	slider2.$on("input", /*input_handler_35*/ ctx[94]);
+
+    	function slider3_value_binding_4(value) {
+    		/*slider3_value_binding_4*/ ctx[95](value);
+    	}
+
+    	let slider3_props = { min: 0, max: 360, className: "hueSlider" };
+
+    	if (/*flareSettings*/ ctx[0].miIris.hue !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].miIris.hue;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_4));
+    	slider3.$on("input", /*input_handler_36*/ ctx[96]);
+
+    	function slider4_value_binding_4(value) {
+    		/*slider4_value_binding_4*/ ctx[97](value);
+    	}
+
+    	let slider4_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.saturation !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].miIris.saturation;
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_4));
+    	slider4.$on("input", /*input_handler_37*/ ctx[98]);
+
+    	function slider5_value_binding_3(value) {
+    		/*slider5_value_binding_3*/ ctx[99](value);
+    	}
+
+    	let slider5_props = { min: 0, max: 810 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.radius !== void 0) {
+    		slider5_props.value = /*flareSettings*/ ctx[0].miIris.radius;
+    	}
+
+    	slider5 = new Slider({ props: slider5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_3));
+    	slider5.$on("input", /*input_handler_38*/ ctx[100]);
+
+    	function slider6_value_binding_3(value) {
+    		/*slider6_value_binding_3*/ ctx[101](value);
+    	}
+
+    	let slider6_props = { min: 3, max: 12 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.sides !== void 0) {
+    		slider6_props.value = /*flareSettings*/ ctx[0].miIris.sides;
+    	}
+
+    	slider6 = new Slider({ props: slider6_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_3));
+    	slider6.$on("input", /*input_handler_39*/ ctx[102]);
+
+    	function slider7_value_binding_3(value) {
+    		/*slider7_value_binding_3*/ ctx[103](value);
+    	}
+
+    	let slider7_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.roundness !== void 0) {
+    		slider7_props.value = /*flareSettings*/ ctx[0].miIris.roundness;
+    	}
+
+    	slider7 = new Slider({ props: slider7_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_3));
+    	slider7.$on("input", /*input_handler_40*/ ctx[104]);
+
+    	function slider8_value_binding_3(value) {
+    		/*slider8_value_binding_3*/ ctx[105](value);
+    	}
+
+    	let slider8_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.fringeSize !== void 0) {
+    		slider8_props.value = /*flareSettings*/ ctx[0].miIris.fringeSize;
+    	}
+
+    	slider8 = new Slider({ props: slider8_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_3));
+    	slider8.$on("input", /*input_handler_41*/ ctx[106]);
+
+    	function slider9_value_binding_1(value) {
+    		/*slider9_value_binding_1*/ ctx[107](value);
+    	}
+
+    	let slider9_props = { min: 0, max: 30 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.blur !== void 0) {
+    		slider9_props.value = /*flareSettings*/ ctx[0].miIris.blur;
+    	}
+
+    	slider9 = new Slider({ props: slider9_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding_1));
+    	slider9.$on("input", /*input_handler_42*/ ctx[108]);
+
+    	function slider10_value_binding(value) {
+    		/*slider10_value_binding*/ ctx[109](value);
+    	}
+
+    	let slider10_props = { min: 0, max: 50 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.countTowards !== void 0) {
+    		slider10_props.value = /*flareSettings*/ ctx[0].miIris.countTowards;
+    	}
+
+    	slider10 = new Slider({ props: slider10_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider10, 'value', slider10_value_binding));
+    	slider10.$on("input", /*input_handler_43*/ ctx[110]);
+
+    	function slider11_value_binding(value) {
+    		/*slider11_value_binding*/ ctx[111](value);
+    	}
+
+    	let slider11_props = { min: 0, max: 50 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.countAway !== void 0) {
+    		slider11_props.value = /*flareSettings*/ ctx[0].miIris.countAway;
+    	}
+
+    	slider11 = new Slider({ props: slider11_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider11, 'value', slider11_value_binding));
+    	slider11.$on("input", /*input_handler_44*/ ctx[112]);
+
+    	function slider12_value_binding(value) {
+    		/*slider12_value_binding*/ ctx[113](value);
+    	}
+
+    	let slider12_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.spread !== void 0) {
+    		slider12_props.value = /*flareSettings*/ ctx[0].miIris.spread;
+    	}
+
+    	slider12 = new Slider({ props: slider12_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider12, 'value', slider12_value_binding));
+    	slider12.$on("input", /*input_handler_45*/ ctx[114]);
+
+    	function slider13_value_binding(value) {
+    		/*slider13_value_binding*/ ctx[115](value);
+    	}
+
+    	let slider13_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.sizeVariance !== void 0) {
+    		slider13_props.value = /*flareSettings*/ ctx[0].miIris.sizeVariance;
+    	}
+
+    	slider13 = new Slider({ props: slider13_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider13, 'value', slider13_value_binding));
+    	slider13.$on("input", /*input_handler_46*/ ctx[116]);
+
+    	function slider14_value_binding(value) {
+    		/*slider14_value_binding*/ ctx[117](value);
+    	}
+
+    	let slider14_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.perspective !== void 0) {
+    		slider14_props.value = /*flareSettings*/ ctx[0].miIris.perspective;
+    	}
+
+    	slider14 = new Slider({ props: slider14_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider14, 'value', slider14_value_binding));
+    	slider14.$on("input", /*input_handler_47*/ ctx[118]);
+
+    	function slider15_value_binding(value) {
+    		/*slider15_value_binding*/ ctx[119](value);
+    	}
+
+    	let slider15_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.alphaVariance !== void 0) {
+    		slider15_props.value = /*flareSettings*/ ctx[0].miIris.alphaVariance;
+    	}
+
+    	slider15 = new Slider({ props: slider15_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider15, 'value', slider15_value_binding));
+    	slider15.$on("input", /*input_handler_48*/ ctx[120]);
+
+    	function slider16_value_binding(value) {
+    		/*slider16_value_binding*/ ctx[121](value);
+    	}
+
+    	let slider16_props = { min: 0, max: 180 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.hueVariance !== void 0) {
+    		slider16_props.value = /*flareSettings*/ ctx[0].miIris.hueVariance;
+    	}
+
+    	slider16 = new Slider({ props: slider16_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider16, 'value', slider16_value_binding));
+    	slider16.$on("input", /*input_handler_49*/ ctx[122]);
+
+    	function slider17_value_binding(value) {
+    		/*slider17_value_binding*/ ctx[123](value);
+    	}
+
+    	let slider17_props = { min: 0, max: 999 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.seed !== void 0) {
+    		slider17_props.value = /*flareSettings*/ ctx[0].miIris.seed;
+    	}
+
+    	slider17 = new Slider({ props: slider17_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider17, 'value', slider17_value_binding));
+    	slider17.$on("input", /*input_handler_50*/ ctx[124]);
+
+    	function slider18_value_binding(value) {
+    		/*slider18_value_binding*/ ctx[125](value);
+    	}
+
+    	let slider18_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].miIris.anamorph !== void 0) {
+    		slider18_props.value = /*flareSettings*/ ctx[0].miIris.anamorph;
+    	}
+
+    	slider18 = new Slider({ props: slider18_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider18, 'value', slider18_value_binding));
+    	slider18.$on("input", /*input_handler_51*/ ctx[126]);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Fill Alpha: ");
+    			create_component(slider0.$$.fragment);
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = text("\n    Fringe Alpha: ");
+    			create_component(slider1.$$.fragment);
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = text("\n    Angle: ");
+    			create_component(slider2.$$.fragment);
+    			t5 = space();
+    			br2 = element("br");
+    			t6 = text("\n    Hue: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = text("\n    Saturation: ");
+    			create_component(slider4.$$.fragment);
+    			t9 = space();
+    			br4 = element("br");
+    			t10 = text("\n    Size: ");
+    			create_component(slider5.$$.fragment);
+    			t11 = space();
+    			br5 = element("br");
+    			t12 = text("\n    Edges: ");
+    			create_component(slider6.$$.fragment);
+    			t13 = space();
+    			br6 = element("br");
+    			t14 = text("\n    Roundness: ");
+    			create_component(slider7.$$.fragment);
+    			t15 = space();
+    			br7 = element("br");
+    			t16 = text("\n    Fringe Size: ");
+    			create_component(slider8.$$.fragment);
+    			t17 = space();
+    			br8 = element("br");
+    			t18 = text("\n    Softness: ");
+    			create_component(slider9.$$.fragment);
+    			t19 = space();
+    			br9 = element("br");
+    			t20 = text("\n    Count Towards: ");
+    			create_component(slider10.$$.fragment);
+    			t21 = space();
+    			br10 = element("br");
+    			t22 = text("\n    Count Away: ");
+    			create_component(slider11.$$.fragment);
+    			t23 = space();
+    			br11 = element("br");
+    			t24 = text("\n    Spread: ");
+    			create_component(slider12.$$.fragment);
+    			t25 = space();
+    			br12 = element("br");
+    			t26 = text("\n    Size Variance: ");
+    			create_component(slider13.$$.fragment);
+    			t27 = space();
+    			br13 = element("br");
+    			t28 = text("\n    Perspective: ");
+    			create_component(slider14.$$.fragment);
+    			t29 = space();
+    			br14 = element("br");
+    			t30 = text("\n    Alpha Variance: ");
+    			create_component(slider15.$$.fragment);
+    			t31 = space();
+    			br15 = element("br");
+    			t32 = text("\n    Hue Variance: ");
+    			create_component(slider16.$$.fragment);
+    			t33 = space();
+    			br16 = element("br");
+    			t34 = text("\n    Random Seed: ");
+    			create_component(slider17.$$.fragment);
+    			t35 = space();
+    			br17 = element("br");
+    			t36 = text("\n    Anamorph: ");
+    			create_component(slider18.$$.fragment);
+    			t37 = space();
+    			br18 = element("br");
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 442, 155, 26408);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 443, 159, 26574);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 444, 146, 26727);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 445, 164, 26898);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 446, 156, 27061);
+    			attr_dev(br5, "class", "svelte-viz99f");
+    			add_location(br5, file, 447, 146, 27214);
+    			attr_dev(br6, "class", "svelte-viz99f");
+    			add_location(br6, file, 448, 145, 27366);
+    			attr_dev(br7, "class", "svelte-viz99f");
+    			add_location(br7, file, 449, 154, 27527);
+    			attr_dev(br8, "class", "svelte-viz99f");
+    			add_location(br8, file, 450, 157, 27691);
+    			attr_dev(br9, "class", "svelte-viz99f");
+    			add_location(br9, file, 451, 147, 27845);
+    			attr_dev(br10, "class", "svelte-viz99f");
+    			add_location(br10, file, 452, 160, 28012);
+    			attr_dev(br11, "class", "svelte-viz99f");
+    			add_location(br11, file, 453, 154, 28173);
+    			attr_dev(br12, "class", "svelte-viz99f");
+    			add_location(br12, file, 454, 148, 28328);
+    			attr_dev(br13, "class", "svelte-viz99f");
+    			add_location(br13, file, 455, 161, 28496);
+    			attr_dev(br14, "class", "svelte-viz99f");
+    			add_location(br14, file, 456, 158, 28661);
+    			attr_dev(br15, "class", "svelte-viz99f");
+    			add_location(br15, file, 457, 163, 28831);
+    			attr_dev(br16, "class", "svelte-viz99f");
+    			add_location(br16, file, 458, 159, 28997);
+    			attr_dev(br17, "class", "svelte-viz99f");
+    			add_location(br17, file, 459, 151, 29155);
+    			attr_dev(br18, "class", "svelte-viz99f");
+    			add_location(br18, file, 460, 152, 29314);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			mount_component(slider0, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(slider1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(slider2, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(slider4, target, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, br4, anchor);
+    			insert_dev(target, t10, anchor);
+    			mount_component(slider5, target, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, br5, anchor);
+    			insert_dev(target, t12, anchor);
+    			mount_component(slider6, target, anchor);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, br6, anchor);
+    			insert_dev(target, t14, anchor);
+    			mount_component(slider7, target, anchor);
+    			insert_dev(target, t15, anchor);
+    			insert_dev(target, br7, anchor);
+    			insert_dev(target, t16, anchor);
+    			mount_component(slider8, target, anchor);
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, br8, anchor);
+    			insert_dev(target, t18, anchor);
+    			mount_component(slider9, target, anchor);
+    			insert_dev(target, t19, anchor);
+    			insert_dev(target, br9, anchor);
+    			insert_dev(target, t20, anchor);
+    			mount_component(slider10, target, anchor);
+    			insert_dev(target, t21, anchor);
+    			insert_dev(target, br10, anchor);
+    			insert_dev(target, t22, anchor);
+    			mount_component(slider11, target, anchor);
+    			insert_dev(target, t23, anchor);
+    			insert_dev(target, br11, anchor);
+    			insert_dev(target, t24, anchor);
+    			mount_component(slider12, target, anchor);
+    			insert_dev(target, t25, anchor);
+    			insert_dev(target, br12, anchor);
+    			insert_dev(target, t26, anchor);
+    			mount_component(slider13, target, anchor);
+    			insert_dev(target, t27, anchor);
+    			insert_dev(target, br13, anchor);
+    			insert_dev(target, t28, anchor);
+    			mount_component(slider14, target, anchor);
+    			insert_dev(target, t29, anchor);
+    			insert_dev(target, br14, anchor);
+    			insert_dev(target, t30, anchor);
+    			mount_component(slider15, target, anchor);
+    			insert_dev(target, t31, anchor);
+    			insert_dev(target, br15, anchor);
+    			insert_dev(target, t32, anchor);
+    			mount_component(slider16, target, anchor);
+    			insert_dev(target, t33, anchor);
+    			insert_dev(target, br16, anchor);
+    			insert_dev(target, t34, anchor);
+    			mount_component(slider17, target, anchor);
+    			insert_dev(target, t35, anchor);
+    			insert_dev(target, br17, anchor);
+    			insert_dev(target, t36, anchor);
+    			mount_component(slider18, target, anchor);
+    			insert_dev(target, t37, anchor);
+    			insert_dev(target, br18, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const slider0_changes = {};
+
+    			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value = true;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].miIris.fillAlpha;
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			slider0.$set(slider0_changes);
+    			const slider1_changes = {};
+
+    			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_1 = true;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].miIris.fringeAlpha;
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			slider1.$set(slider1_changes);
+    			const slider2_changes = {};
+
+    			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_2 = true;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].miIris.angle;
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].miIris.hue;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
+    			const slider4_changes = {};
+
+    			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].miIris.saturation;
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    			const slider5_changes = {};
+
+    			if (!updating_value_5 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_5 = true;
+    				slider5_changes.value = /*flareSettings*/ ctx[0].miIris.radius;
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			slider5.$set(slider5_changes);
+    			const slider6_changes = {};
+
+    			if (!updating_value_6 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_6 = true;
+    				slider6_changes.value = /*flareSettings*/ ctx[0].miIris.sides;
+    				add_flush_callback(() => updating_value_6 = false);
+    			}
+
+    			slider6.$set(slider6_changes);
+    			const slider7_changes = {};
+
+    			if (!updating_value_7 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_7 = true;
+    				slider7_changes.value = /*flareSettings*/ ctx[0].miIris.roundness;
+    				add_flush_callback(() => updating_value_7 = false);
+    			}
+
+    			slider7.$set(slider7_changes);
+    			const slider8_changes = {};
+
+    			if (!updating_value_8 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_8 = true;
+    				slider8_changes.value = /*flareSettings*/ ctx[0].miIris.fringeSize;
+    				add_flush_callback(() => updating_value_8 = false);
+    			}
+
+    			slider8.$set(slider8_changes);
+    			const slider9_changes = {};
+
+    			if (!updating_value_9 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_9 = true;
+    				slider9_changes.value = /*flareSettings*/ ctx[0].miIris.blur;
+    				add_flush_callback(() => updating_value_9 = false);
+    			}
+
+    			slider9.$set(slider9_changes);
+    			const slider10_changes = {};
+
+    			if (!updating_value_10 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_10 = true;
+    				slider10_changes.value = /*flareSettings*/ ctx[0].miIris.countTowards;
+    				add_flush_callback(() => updating_value_10 = false);
+    			}
+
+    			slider10.$set(slider10_changes);
+    			const slider11_changes = {};
+
+    			if (!updating_value_11 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_11 = true;
+    				slider11_changes.value = /*flareSettings*/ ctx[0].miIris.countAway;
+    				add_flush_callback(() => updating_value_11 = false);
+    			}
+
+    			slider11.$set(slider11_changes);
+    			const slider12_changes = {};
+
+    			if (!updating_value_12 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_12 = true;
+    				slider12_changes.value = /*flareSettings*/ ctx[0].miIris.spread;
+    				add_flush_callback(() => updating_value_12 = false);
+    			}
+
+    			slider12.$set(slider12_changes);
+    			const slider13_changes = {};
+
+    			if (!updating_value_13 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_13 = true;
+    				slider13_changes.value = /*flareSettings*/ ctx[0].miIris.sizeVariance;
+    				add_flush_callback(() => updating_value_13 = false);
+    			}
+
+    			slider13.$set(slider13_changes);
+    			const slider14_changes = {};
+
+    			if (!updating_value_14 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_14 = true;
+    				slider14_changes.value = /*flareSettings*/ ctx[0].miIris.perspective;
+    				add_flush_callback(() => updating_value_14 = false);
+    			}
+
+    			slider14.$set(slider14_changes);
+    			const slider15_changes = {};
+
+    			if (!updating_value_15 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_15 = true;
+    				slider15_changes.value = /*flareSettings*/ ctx[0].miIris.alphaVariance;
+    				add_flush_callback(() => updating_value_15 = false);
+    			}
+
+    			slider15.$set(slider15_changes);
+    			const slider16_changes = {};
+
+    			if (!updating_value_16 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_16 = true;
+    				slider16_changes.value = /*flareSettings*/ ctx[0].miIris.hueVariance;
+    				add_flush_callback(() => updating_value_16 = false);
+    			}
+
+    			slider16.$set(slider16_changes);
+    			const slider17_changes = {};
+
+    			if (!updating_value_17 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_17 = true;
+    				slider17_changes.value = /*flareSettings*/ ctx[0].miIris.seed;
+    				add_flush_callback(() => updating_value_17 = false);
+    			}
+
+    			slider17.$set(slider17_changes);
+    			const slider18_changes = {};
+
+    			if (!updating_value_18 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_18 = true;
+    				slider18_changes.value = /*flareSettings*/ ctx[0].miIris.anamorph;
+    				add_flush_callback(() => updating_value_18 = false);
+    			}
+
+    			slider18.$set(slider18_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(slider0.$$.fragment, local);
+    			transition_in(slider1.$$.fragment, local);
+    			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider5.$$.fragment, local);
+    			transition_in(slider6.$$.fragment, local);
+    			transition_in(slider7.$$.fragment, local);
+    			transition_in(slider8.$$.fragment, local);
+    			transition_in(slider9.$$.fragment, local);
+    			transition_in(slider10.$$.fragment, local);
+    			transition_in(slider11.$$.fragment, local);
+    			transition_in(slider12.$$.fragment, local);
+    			transition_in(slider13.$$.fragment, local);
+    			transition_in(slider14.$$.fragment, local);
+    			transition_in(slider15.$$.fragment, local);
+    			transition_in(slider16.$$.fragment, local);
+    			transition_in(slider17.$$.fragment, local);
+    			transition_in(slider18.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(slider0.$$.fragment, local);
+    			transition_out(slider1.$$.fragment, local);
+    			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider5.$$.fragment, local);
+    			transition_out(slider6.$$.fragment, local);
+    			transition_out(slider7.$$.fragment, local);
+    			transition_out(slider8.$$.fragment, local);
+    			transition_out(slider9.$$.fragment, local);
+    			transition_out(slider10.$$.fragment, local);
+    			transition_out(slider11.$$.fragment, local);
+    			transition_out(slider12.$$.fragment, local);
+    			transition_out(slider13.$$.fragment, local);
+    			transition_out(slider14.$$.fragment, local);
+    			transition_out(slider15.$$.fragment, local);
+    			transition_out(slider16.$$.fragment, local);
+    			transition_out(slider17.$$.fragment, local);
+    			transition_out(slider18.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(br4);
+    			if (detaching) detach_dev(t10);
+    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(br5);
+    			if (detaching) detach_dev(t12);
+    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(br6);
+    			if (detaching) detach_dev(t14);
+    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(br7);
+    			if (detaching) detach_dev(t16);
+    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(br8);
+    			if (detaching) detach_dev(t18);
+    			destroy_component(slider9, detaching);
+    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(br9);
+    			if (detaching) detach_dev(t20);
+    			destroy_component(slider10, detaching);
+    			if (detaching) detach_dev(t21);
+    			if (detaching) detach_dev(br10);
+    			if (detaching) detach_dev(t22);
+    			destroy_component(slider11, detaching);
+    			if (detaching) detach_dev(t23);
+    			if (detaching) detach_dev(br11);
+    			if (detaching) detach_dev(t24);
+    			destroy_component(slider12, detaching);
+    			if (detaching) detach_dev(t25);
+    			if (detaching) detach_dev(br12);
+    			if (detaching) detach_dev(t26);
+    			destroy_component(slider13, detaching);
+    			if (detaching) detach_dev(t27);
+    			if (detaching) detach_dev(br13);
+    			if (detaching) detach_dev(t28);
+    			destroy_component(slider14, detaching);
+    			if (detaching) detach_dev(t29);
+    			if (detaching) detach_dev(br14);
+    			if (detaching) detach_dev(t30);
+    			destroy_component(slider15, detaching);
+    			if (detaching) detach_dev(t31);
+    			if (detaching) detach_dev(br15);
+    			if (detaching) detach_dev(t32);
+    			destroy_component(slider16, detaching);
+    			if (detaching) detach_dev(t33);
+    			if (detaching) detach_dev(br16);
+    			if (detaching) detach_dev(t34);
+    			destroy_component(slider17, detaching);
+    			if (detaching) detach_dev(t35);
+    			if (detaching) detach_dev(br17);
+    			if (detaching) detach_dev(t36);
+    			destroy_component(slider18, detaching);
+    			if (detaching) detach_dev(t37);
+    			if (detaching) detach_dev(br18);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2.name,
+    		type: "slot",
+    		source: "(442:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (463:0) <Collapsible title={"Glow"}>
+    function create_default_slot_1(ctx) {
+    	let t0;
+    	let slider0;
+    	let updating_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let slider1;
+    	let updating_value_1;
+    	let t3;
+    	let br1;
+    	let t4;
+    	let slider2;
+    	let updating_value_2;
+    	let t5;
+    	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
+    	let t8;
+    	let slider4;
+    	let updating_value_4;
+    	let t9;
+    	let br4;
+    	let t10;
+    	let slider5;
+    	let updating_value_5;
+    	let t11;
+    	let br5;
+    	let current;
+
+    	function slider0_value_binding_5(value) {
+    		/*slider0_value_binding_5*/ ctx[127](value);
+    	}
+
+    	let slider0_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].glow.alpha !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].glow.alpha;
+    	}
+
+    	slider0 = new Slider({ props: slider0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_5));
+    	slider0.$on("input", /*input_handler_52*/ ctx[128]);
+
+    	function slider1_value_binding_5(value) {
+    		/*slider1_value_binding_5*/ ctx[129](value);
+    	}
+
+    	let slider1_props = { min: 0, max: 360, className: "hueSlider" };
+
+    	if (/*flareSettings*/ ctx[0].glow.hue !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].glow.hue;
+    	}
+
+    	slider1 = new Slider({ props: slider1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_5));
+    	slider1.$on("input", /*input_handler_53*/ ctx[130]);
+
+    	function slider2_value_binding_5(value) {
+    		/*slider2_value_binding_5*/ ctx[131](value);
+    	}
+
+    	let slider2_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].glow.saturation !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].glow.saturation;
+    	}
+
+    	slider2 = new Slider({ props: slider2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_5));
+    	slider2.$on("input", /*input_handler_54*/ ctx[132]);
+
+    	function slider3_value_binding_5(value) {
+    		/*slider3_value_binding_5*/ ctx[133](value);
+    	}
+
+    	let slider3_props = { min: 0, max: 1500 };
+
+    	if (/*flareSettings*/ ctx[0].glow.radius !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].glow.radius;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_5));
+    	slider3.$on("input", /*input_handler_55*/ ctx[134]);
+
+    	function slider4_value_binding_5(value) {
+    		/*slider4_value_binding_5*/ ctx[135](value);
+    	}
+
+    	let slider4_props = { min: 0, max: 200 };
+
+    	if (/*flareSettings*/ ctx[0].glow.softening !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].glow.softening;
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_5));
+    	slider4.$on("input", /*input_handler_56*/ ctx[136]);
+
+    	function slider5_value_binding_4(value) {
+    		/*slider5_value_binding_4*/ ctx[137](value);
+    	}
+
+    	let slider5_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].glow.anamorph !== void 0) {
+    		slider5_props.value = /*flareSettings*/ ctx[0].glow.anamorph;
+    	}
+
+    	slider5 = new Slider({ props: slider5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_4));
+    	slider5.$on("input", /*input_handler_57*/ ctx[138]);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Alpha: ");
+    			create_component(slider0.$$.fragment);
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = text("\n    Hue: ");
+    			create_component(slider1.$$.fragment);
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = text("\n    Saturation: ");
+    			create_component(slider2.$$.fragment);
+    			t5 = space();
+    			br2 = element("br");
+    			t6 = text("\n    Size: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = text("\n    Softness: ");
+    			create_component(slider4.$$.fragment);
+    			t9 = space();
+    			br4 = element("br");
+    			t10 = text("\n    Anamorph: ");
+    			create_component(slider5.$$.fragment);
+    			t11 = space();
+    			br5 = element("br");
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 463, 151, 29516);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 464, 169, 29692);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 465, 161, 29860);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 466, 152, 30019);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 467, 158, 30184);
+    			attr_dev(br5, "class", "svelte-viz99f");
+    			add_location(br5, file, 468, 157, 30348);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			mount_component(slider0, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(slider1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(slider2, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(slider4, target, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, br4, anchor);
+    			insert_dev(target, t10, anchor);
+    			mount_component(slider5, target, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, br5, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const slider0_changes = {};
+
+    			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value = true;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].glow.alpha;
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			slider0.$set(slider0_changes);
+    			const slider1_changes = {};
+
+    			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_1 = true;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].glow.hue;
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			slider1.$set(slider1_changes);
+    			const slider2_changes = {};
+
+    			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_2 = true;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].glow.saturation;
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].glow.radius;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
+    			const slider4_changes = {};
+
+    			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].glow.softening;
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    			const slider5_changes = {};
+
+    			if (!updating_value_5 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_5 = true;
+    				slider5_changes.value = /*flareSettings*/ ctx[0].glow.anamorph;
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			slider5.$set(slider5_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(slider0.$$.fragment, local);
+    			transition_in(slider1.$$.fragment, local);
+    			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider5.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(slider0.$$.fragment, local);
+    			transition_out(slider1.$$.fragment, local);
+    			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider5.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(br4);
+    			if (detaching) detach_dev(t10);
+    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(br5);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1.name,
+    		type: "slot",
+    		source: "(463:0) <Collapsible title={\\\"Glow\\\"}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (471:0) <Collapsible title={"Lens Orbs"}>
+    function create_default_slot(ctx) {
+    	let t0;
+    	let slider0;
+    	let updating_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let slider1;
+    	let updating_value_1;
+    	let t3;
+    	let br1;
+    	let t4;
+    	let slider2;
+    	let updating_value_2;
+    	let t5;
+    	let br2;
+    	let t6;
+    	let slider3;
+    	let updating_value_3;
+    	let t7;
+    	let br3;
+    	let t8;
+    	let slider4;
+    	let updating_value_4;
+    	let t9;
+    	let br4;
+    	let t10;
+    	let slider5;
+    	let updating_value_5;
+    	let t11;
+    	let br5;
+    	let t12;
+    	let slider6;
+    	let updating_value_6;
+    	let t13;
+    	let br6;
+    	let t14;
+    	let slider7;
+    	let updating_value_7;
+    	let t15;
+    	let br7;
+    	let t16;
+    	let slider8;
+    	let updating_value_8;
+    	let t17;
+    	let br8;
+    	let t18;
+    	let slider9;
+    	let updating_value_9;
+    	let t19;
+    	let br9;
+    	let t20;
+    	let slider10;
+    	let updating_value_10;
+    	let t21;
+    	let br10;
+    	let t22;
+    	let slider11;
+    	let updating_value_11;
+    	let t23;
+    	let br11;
+    	let t24;
+    	let slider12;
+    	let updating_value_12;
+    	let t25;
+    	let br12;
+    	let t26;
+    	let slider13;
+    	let updating_value_13;
+    	let t27;
+    	let br13;
+    	let t28;
+    	let slider14;
+    	let updating_value_14;
+    	let t29;
+    	let br14;
+    	let t30;
+    	let slider15;
+    	let updating_value_15;
+    	let t31;
+    	let br15;
+    	let t32;
+    	let slider16;
+    	let updating_value_16;
+    	let t33;
+    	let br16;
+    	let current;
+
+    	function slider0_value_binding_6(value) {
+    		/*slider0_value_binding_6*/ ctx[139](value);
+    	}
+
+    	let slider0_props = { min: 0, max: 200 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.count !== void 0) {
+    		slider0_props.value = /*flareSettings*/ ctx[0].lensOrbs.count;
+    	}
+
+    	slider0 = new Slider({ props: slider0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_6));
+    	slider0.$on("input", /*input_handler_58*/ ctx[140]);
+
+    	function slider1_value_binding_6(value) {
+    		/*slider1_value_binding_6*/ ctx[141](value);
+    	}
+
+    	let slider1_props = { min: 0, max: 1500 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.threshold !== void 0) {
+    		slider1_props.value = /*flareSettings*/ ctx[0].lensOrbs.threshold;
+    	}
+
+    	slider1 = new Slider({ props: slider1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_6));
+    	slider1.$on("input", /*input_handler_59*/ ctx[142]);
+
+    	function slider2_value_binding_6(value) {
+    		/*slider2_value_binding_6*/ ctx[143](value);
+    	}
+
+    	let slider2_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.fillAlpha !== void 0) {
+    		slider2_props.value = /*flareSettings*/ ctx[0].lensOrbs.fillAlpha;
+    	}
+
+    	slider2 = new Slider({ props: slider2_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_6));
+    	slider2.$on("input", /*input_handler_60*/ ctx[144]);
+
+    	function slider3_value_binding_6(value) {
+    		/*slider3_value_binding_6*/ ctx[145](value);
+    	}
+
+    	let slider3_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.fringeAlpha !== void 0) {
+    		slider3_props.value = /*flareSettings*/ ctx[0].lensOrbs.fringeAlpha;
+    	}
+
+    	slider3 = new Slider({ props: slider3_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_6));
+    	slider3.$on("input", /*input_handler_61*/ ctx[146]);
+
+    	function slider4_value_binding_6(value) {
+    		/*slider4_value_binding_6*/ ctx[147](value);
+    	}
+
+    	let slider4_props = { min: 0, max: 360 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.angle !== void 0) {
+    		slider4_props.value = /*flareSettings*/ ctx[0].lensOrbs.angle;
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_6));
+    	slider4.$on("input", /*input_handler_62*/ ctx[148]);
+
+    	function slider5_value_binding_5(value) {
+    		/*slider5_value_binding_5*/ ctx[149](value);
+    	}
+
+    	let slider5_props = { min: 0, max: 360, className: "hueSlider" };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.hue !== void 0) {
+    		slider5_props.value = /*flareSettings*/ ctx[0].lensOrbs.hue;
+    	}
+
+    	slider5 = new Slider({ props: slider5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_5));
+    	slider5.$on("input", /*input_handler_63*/ ctx[150]);
+
+    	function slider6_value_binding_4(value) {
+    		/*slider6_value_binding_4*/ ctx[151](value);
+    	}
+
+    	let slider6_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.saturation !== void 0) {
+    		slider6_props.value = /*flareSettings*/ ctx[0].lensOrbs.saturation;
+    	}
+
+    	slider6 = new Slider({ props: slider6_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_4));
+    	slider6.$on("input", /*input_handler_64*/ ctx[152]);
+
+    	function slider7_value_binding_4(value) {
+    		/*slider7_value_binding_4*/ ctx[153](value);
+    	}
+
+    	let slider7_props = { min: 0, max: 810 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.radius !== void 0) {
+    		slider7_props.value = /*flareSettings*/ ctx[0].lensOrbs.radius;
+    	}
+
+    	slider7 = new Slider({ props: slider7_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_4));
+    	slider7.$on("input", /*input_handler_65*/ ctx[154]);
+
+    	function slider8_value_binding_4(value) {
+    		/*slider8_value_binding_4*/ ctx[155](value);
+    	}
+
+    	let slider8_props = { min: 3, max: 12 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.sides !== void 0) {
+    		slider8_props.value = /*flareSettings*/ ctx[0].lensOrbs.sides;
+    	}
+
+    	slider8 = new Slider({ props: slider8_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_4));
+    	slider8.$on("input", /*input_handler_66*/ ctx[156]);
+
+    	function slider9_value_binding_2(value) {
+    		/*slider9_value_binding_2*/ ctx[157](value);
+    	}
+
+    	let slider9_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.roundness !== void 0) {
+    		slider9_props.value = /*flareSettings*/ ctx[0].lensOrbs.roundness;
+    	}
+
+    	slider9 = new Slider({ props: slider9_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding_2));
+    	slider9.$on("input", /*input_handler_67*/ ctx[158]);
+
+    	function slider10_value_binding_1(value) {
+    		/*slider10_value_binding_1*/ ctx[159](value);
+    	}
+
+    	let slider10_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.fringeSize !== void 0) {
+    		slider10_props.value = /*flareSettings*/ ctx[0].lensOrbs.fringeSize;
+    	}
+
+    	slider10 = new Slider({ props: slider10_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider10, 'value', slider10_value_binding_1));
+    	slider10.$on("input", /*input_handler_68*/ ctx[160]);
+
+    	function slider11_value_binding_1(value) {
+    		/*slider11_value_binding_1*/ ctx[161](value);
+    	}
+
+    	let slider11_props = { min: 0, max: 30 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.blur !== void 0) {
+    		slider11_props.value = /*flareSettings*/ ctx[0].lensOrbs.blur;
+    	}
+
+    	slider11 = new Slider({ props: slider11_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider11, 'value', slider11_value_binding_1));
+    	slider11.$on("input", /*input_handler_69*/ ctx[162]);
+
+    	function slider12_value_binding_1(value) {
+    		/*slider12_value_binding_1*/ ctx[163](value);
+    	}
+
+    	let slider12_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.sizeVariance !== void 0) {
+    		slider12_props.value = /*flareSettings*/ ctx[0].lensOrbs.sizeVariance;
+    	}
+
+    	slider12 = new Slider({ props: slider12_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider12, 'value', slider12_value_binding_1));
+    	slider12.$on("input", /*input_handler_70*/ ctx[164]);
+
+    	function slider13_value_binding_1(value) {
+    		/*slider13_value_binding_1*/ ctx[165](value);
+    	}
+
+    	let slider13_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.alphaVariance !== void 0) {
+    		slider13_props.value = /*flareSettings*/ ctx[0].lensOrbs.alphaVariance;
+    	}
+
+    	slider13 = new Slider({ props: slider13_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider13, 'value', slider13_value_binding_1));
+    	slider13.$on("input", /*input_handler_71*/ ctx[166]);
+
+    	function slider14_value_binding_1(value) {
+    		/*slider14_value_binding_1*/ ctx[167](value);
+    	}
+
+    	let slider14_props = { min: 0, max: 180 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.hueVariance !== void 0) {
+    		slider14_props.value = /*flareSettings*/ ctx[0].lensOrbs.hueVariance;
+    	}
+
+    	slider14 = new Slider({ props: slider14_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider14, 'value', slider14_value_binding_1));
+    	slider14.$on("input", /*input_handler_72*/ ctx[168]);
+
+    	function slider15_value_binding_1(value) {
+    		/*slider15_value_binding_1*/ ctx[169](value);
+    	}
+
+    	let slider15_props = { min: 0, max: 999 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.seed !== void 0) {
+    		slider15_props.value = /*flareSettings*/ ctx[0].lensOrbs.seed;
+    	}
+
+    	slider15 = new Slider({ props: slider15_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider15, 'value', slider15_value_binding_1));
+    	slider15.$on("input", /*input_handler_73*/ ctx[170]);
+
+    	function slider16_value_binding_1(value) {
+    		/*slider16_value_binding_1*/ ctx[171](value);
+    	}
+
+    	let slider16_props = { min: 0, max: 100 };
+
+    	if (/*flareSettings*/ ctx[0].lensOrbs.anamorph !== void 0) {
+    		slider16_props.value = /*flareSettings*/ ctx[0].lensOrbs.anamorph;
+    	}
+
+    	slider16 = new Slider({ props: slider16_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider16, 'value', slider16_value_binding_1));
+    	slider16.$on("input", /*input_handler_74*/ ctx[172]);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("Count: ");
+    			create_component(slider0.$$.fragment);
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = text("\n    Threshold: ");
+    			create_component(slider1.$$.fragment);
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = text("\n    Fill Alpha: ");
+    			create_component(slider2.$$.fragment);
+    			t5 = space();
+    			br2 = element("br");
+    			t6 = text("\n    Fringe Alpha: ");
+    			create_component(slider3.$$.fragment);
+    			t7 = space();
+    			br3 = element("br");
+    			t8 = text("\n    Angle: ");
+    			create_component(slider4.$$.fragment);
+    			t9 = space();
+    			br4 = element("br");
+    			t10 = text("\n    Hue: ");
+    			create_component(slider5.$$.fragment);
+    			t11 = space();
+    			br5 = element("br");
+    			t12 = text("\n    Saturation: ");
+    			create_component(slider6.$$.fragment);
+    			t13 = space();
+    			br6 = element("br");
+    			t14 = text("\n    Size: ");
+    			create_component(slider7.$$.fragment);
+    			t15 = space();
+    			br7 = element("br");
+    			t16 = text("\n    Edges: ");
+    			create_component(slider8.$$.fragment);
+    			t17 = space();
+    			br8 = element("br");
+    			t18 = text("\n    Roundness: ");
+    			create_component(slider9.$$.fragment);
+    			t19 = space();
+    			br9 = element("br");
+    			t20 = text("\n    Fringe Size: ");
+    			create_component(slider10.$$.fragment);
+    			t21 = space();
+    			br10 = element("br");
+    			t22 = text("\n    Softness: ");
+    			create_component(slider11.$$.fragment);
+    			t23 = space();
+    			br11 = element("br");
+    			t24 = text("\n    Size Variance: ");
+    			create_component(slider12.$$.fragment);
+    			t25 = space();
+    			br12 = element("br");
+    			t26 = text("\n    Alpha Variance: ");
+    			create_component(slider13.$$.fragment);
+    			t27 = space();
+    			br13 = element("br");
+    			t28 = text("\n    Hue Variance: ");
+    			create_component(slider14.$$.fragment);
+    			t29 = space();
+    			br14 = element("br");
+    			t30 = text("\n    Random Seed: ");
+    			create_component(slider15.$$.fragment);
+    			t31 = space();
+    			br15 = element("br");
+    			t32 = text("\n    Anamorph: ");
+    			create_component(slider16.$$.fragment);
+    			t33 = space();
+    			br16 = element("br");
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 471, 162, 30566);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 472, 171, 30744);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 473, 171, 30922);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 474, 175, 31104);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 475, 162, 31273);
+    			attr_dev(br5, "class", "svelte-viz99f");
+    			add_location(br5, file, 476, 180, 31460);
+    			attr_dev(br6, "class", "svelte-viz99f");
+    			add_location(br6, file, 477, 172, 31639);
+    			attr_dev(br7, "class", "svelte-viz99f");
+    			add_location(br7, file, 478, 162, 31808);
+    			attr_dev(br8, "class", "svelte-viz99f");
+    			add_location(br8, file, 479, 161, 31976);
+    			attr_dev(br9, "class", "svelte-viz99f");
+    			add_location(br9, file, 480, 170, 32153);
+    			attr_dev(br10, "class", "svelte-viz99f");
+    			add_location(br10, file, 481, 173, 32333);
+    			attr_dev(br11, "class", "svelte-viz99f");
+    			add_location(br11, file, 482, 163, 32503);
+    			attr_dev(br12, "class", "svelte-viz99f");
+    			add_location(br12, file, 483, 177, 32687);
+    			attr_dev(br13, "class", "svelte-viz99f");
+    			add_location(br13, file, 484, 179, 32873);
+    			attr_dev(br14, "class", "svelte-viz99f");
+    			add_location(br14, file, 485, 175, 33055);
+    			attr_dev(br15, "class", "svelte-viz99f");
+    			add_location(br15, file, 486, 167, 33229);
+    			attr_dev(br16, "class", "svelte-viz99f");
+    			add_location(br16, file, 487, 168, 33404);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			mount_component(slider0, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(slider1, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(slider2, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, br2, anchor);
+    			insert_dev(target, t6, anchor);
+    			mount_component(slider3, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, br3, anchor);
+    			insert_dev(target, t8, anchor);
+    			mount_component(slider4, target, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, br4, anchor);
+    			insert_dev(target, t10, anchor);
+    			mount_component(slider5, target, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, br5, anchor);
+    			insert_dev(target, t12, anchor);
+    			mount_component(slider6, target, anchor);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, br6, anchor);
+    			insert_dev(target, t14, anchor);
+    			mount_component(slider7, target, anchor);
+    			insert_dev(target, t15, anchor);
+    			insert_dev(target, br7, anchor);
+    			insert_dev(target, t16, anchor);
+    			mount_component(slider8, target, anchor);
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, br8, anchor);
+    			insert_dev(target, t18, anchor);
+    			mount_component(slider9, target, anchor);
+    			insert_dev(target, t19, anchor);
+    			insert_dev(target, br9, anchor);
+    			insert_dev(target, t20, anchor);
+    			mount_component(slider10, target, anchor);
+    			insert_dev(target, t21, anchor);
+    			insert_dev(target, br10, anchor);
+    			insert_dev(target, t22, anchor);
+    			mount_component(slider11, target, anchor);
+    			insert_dev(target, t23, anchor);
+    			insert_dev(target, br11, anchor);
+    			insert_dev(target, t24, anchor);
+    			mount_component(slider12, target, anchor);
+    			insert_dev(target, t25, anchor);
+    			insert_dev(target, br12, anchor);
+    			insert_dev(target, t26, anchor);
+    			mount_component(slider13, target, anchor);
+    			insert_dev(target, t27, anchor);
+    			insert_dev(target, br13, anchor);
+    			insert_dev(target, t28, anchor);
+    			mount_component(slider14, target, anchor);
+    			insert_dev(target, t29, anchor);
+    			insert_dev(target, br14, anchor);
+    			insert_dev(target, t30, anchor);
+    			mount_component(slider15, target, anchor);
+    			insert_dev(target, t31, anchor);
+    			insert_dev(target, br15, anchor);
+    			insert_dev(target, t32, anchor);
+    			mount_component(slider16, target, anchor);
+    			insert_dev(target, t33, anchor);
+    			insert_dev(target, br16, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const slider0_changes = {};
+
+    			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value = true;
+    				slider0_changes.value = /*flareSettings*/ ctx[0].lensOrbs.count;
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			slider0.$set(slider0_changes);
+    			const slider1_changes = {};
+
+    			if (!updating_value_1 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_1 = true;
+    				slider1_changes.value = /*flareSettings*/ ctx[0].lensOrbs.threshold;
+    				add_flush_callback(() => updating_value_1 = false);
+    			}
+
+    			slider1.$set(slider1_changes);
+    			const slider2_changes = {};
+
+    			if (!updating_value_2 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_2 = true;
+    				slider2_changes.value = /*flareSettings*/ ctx[0].lensOrbs.fillAlpha;
+    				add_flush_callback(() => updating_value_2 = false);
+    			}
+
+    			slider2.$set(slider2_changes);
+    			const slider3_changes = {};
+
+    			if (!updating_value_3 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_3 = true;
+    				slider3_changes.value = /*flareSettings*/ ctx[0].lensOrbs.fringeAlpha;
+    				add_flush_callback(() => updating_value_3 = false);
+    			}
+
+    			slider3.$set(slider3_changes);
+    			const slider4_changes = {};
+
+    			if (!updating_value_4 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*flareSettings*/ ctx[0].lensOrbs.angle;
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    			const slider5_changes = {};
+
+    			if (!updating_value_5 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_5 = true;
+    				slider5_changes.value = /*flareSettings*/ ctx[0].lensOrbs.hue;
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			slider5.$set(slider5_changes);
+    			const slider6_changes = {};
+
+    			if (!updating_value_6 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_6 = true;
+    				slider6_changes.value = /*flareSettings*/ ctx[0].lensOrbs.saturation;
+    				add_flush_callback(() => updating_value_6 = false);
+    			}
+
+    			slider6.$set(slider6_changes);
+    			const slider7_changes = {};
+
+    			if (!updating_value_7 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_7 = true;
+    				slider7_changes.value = /*flareSettings*/ ctx[0].lensOrbs.radius;
+    				add_flush_callback(() => updating_value_7 = false);
+    			}
+
+    			slider7.$set(slider7_changes);
+    			const slider8_changes = {};
+
+    			if (!updating_value_8 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_8 = true;
+    				slider8_changes.value = /*flareSettings*/ ctx[0].lensOrbs.sides;
+    				add_flush_callback(() => updating_value_8 = false);
+    			}
+
+    			slider8.$set(slider8_changes);
+    			const slider9_changes = {};
+
+    			if (!updating_value_9 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_9 = true;
+    				slider9_changes.value = /*flareSettings*/ ctx[0].lensOrbs.roundness;
+    				add_flush_callback(() => updating_value_9 = false);
+    			}
+
+    			slider9.$set(slider9_changes);
+    			const slider10_changes = {};
+
+    			if (!updating_value_10 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_10 = true;
+    				slider10_changes.value = /*flareSettings*/ ctx[0].lensOrbs.fringeSize;
+    				add_flush_callback(() => updating_value_10 = false);
+    			}
+
+    			slider10.$set(slider10_changes);
+    			const slider11_changes = {};
+
+    			if (!updating_value_11 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_11 = true;
+    				slider11_changes.value = /*flareSettings*/ ctx[0].lensOrbs.blur;
+    				add_flush_callback(() => updating_value_11 = false);
+    			}
+
+    			slider11.$set(slider11_changes);
+    			const slider12_changes = {};
+
+    			if (!updating_value_12 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_12 = true;
+    				slider12_changes.value = /*flareSettings*/ ctx[0].lensOrbs.sizeVariance;
+    				add_flush_callback(() => updating_value_12 = false);
+    			}
+
+    			slider12.$set(slider12_changes);
+    			const slider13_changes = {};
+
+    			if (!updating_value_13 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_13 = true;
+    				slider13_changes.value = /*flareSettings*/ ctx[0].lensOrbs.alphaVariance;
+    				add_flush_callback(() => updating_value_13 = false);
+    			}
+
+    			slider13.$set(slider13_changes);
+    			const slider14_changes = {};
+
+    			if (!updating_value_14 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_14 = true;
+    				slider14_changes.value = /*flareSettings*/ ctx[0].lensOrbs.hueVariance;
+    				add_flush_callback(() => updating_value_14 = false);
+    			}
+
+    			slider14.$set(slider14_changes);
+    			const slider15_changes = {};
+
+    			if (!updating_value_15 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_15 = true;
+    				slider15_changes.value = /*flareSettings*/ ctx[0].lensOrbs.seed;
+    				add_flush_callback(() => updating_value_15 = false);
+    			}
+
+    			slider15.$set(slider15_changes);
+    			const slider16_changes = {};
+
+    			if (!updating_value_16 && dirty[0] & /*flareSettings*/ 1) {
+    				updating_value_16 = true;
+    				slider16_changes.value = /*flareSettings*/ ctx[0].lensOrbs.anamorph;
+    				add_flush_callback(() => updating_value_16 = false);
+    			}
+
+    			slider16.$set(slider16_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(slider0.$$.fragment, local);
+    			transition_in(slider1.$$.fragment, local);
+    			transition_in(slider2.$$.fragment, local);
+    			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider5.$$.fragment, local);
+    			transition_in(slider6.$$.fragment, local);
+    			transition_in(slider7.$$.fragment, local);
+    			transition_in(slider8.$$.fragment, local);
+    			transition_in(slider9.$$.fragment, local);
+    			transition_in(slider10.$$.fragment, local);
+    			transition_in(slider11.$$.fragment, local);
+    			transition_in(slider12.$$.fragment, local);
+    			transition_in(slider13.$$.fragment, local);
+    			transition_in(slider14.$$.fragment, local);
+    			transition_in(slider15.$$.fragment, local);
+    			transition_in(slider16.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(slider0.$$.fragment, local);
+    			transition_out(slider1.$$.fragment, local);
+    			transition_out(slider2.$$.fragment, local);
+    			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider5.$$.fragment, local);
+    			transition_out(slider6.$$.fragment, local);
+    			transition_out(slider7.$$.fragment, local);
+    			transition_out(slider8.$$.fragment, local);
+    			transition_out(slider9.$$.fragment, local);
+    			transition_out(slider10.$$.fragment, local);
+    			transition_out(slider11.$$.fragment, local);
+    			transition_out(slider12.$$.fragment, local);
+    			transition_out(slider13.$$.fragment, local);
+    			transition_out(slider14.$$.fragment, local);
+    			transition_out(slider15.$$.fragment, local);
+    			transition_out(slider16.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(br2);
+    			if (detaching) detach_dev(t6);
+    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(br3);
+    			if (detaching) detach_dev(t8);
+    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(br4);
+    			if (detaching) detach_dev(t10);
+    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(br5);
+    			if (detaching) detach_dev(t12);
+    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(br6);
+    			if (detaching) detach_dev(t14);
+    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(br7);
+    			if (detaching) detach_dev(t16);
+    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(br8);
+    			if (detaching) detach_dev(t18);
+    			destroy_component(slider9, detaching);
+    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(br9);
+    			if (detaching) detach_dev(t20);
+    			destroy_component(slider10, detaching);
+    			if (detaching) detach_dev(t21);
+    			if (detaching) detach_dev(br10);
+    			if (detaching) detach_dev(t22);
+    			destroy_component(slider11, detaching);
+    			if (detaching) detach_dev(t23);
+    			if (detaching) detach_dev(br11);
+    			if (detaching) detach_dev(t24);
+    			destroy_component(slider12, detaching);
+    			if (detaching) detach_dev(t25);
+    			if (detaching) detach_dev(br12);
+    			if (detaching) detach_dev(t26);
+    			destroy_component(slider13, detaching);
+    			if (detaching) detach_dev(t27);
+    			if (detaching) detach_dev(br13);
+    			if (detaching) detach_dev(t28);
+    			destroy_component(slider14, detaching);
+    			if (detaching) detach_dev(t29);
+    			if (detaching) detach_dev(br14);
+    			if (detaching) detach_dev(t30);
+    			destroy_component(slider15, detaching);
+    			if (detaching) detach_dev(t31);
+    			if (detaching) detach_dev(br15);
+    			if (detaching) detach_dev(t32);
+    			destroy_component(slider16, detaching);
+    			if (detaching) detach_dev(t33);
+    			if (detaching) detach_dev(br16);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot.name,
+    		type: "slot",
+    		source: "(471:0) <Collapsible title={\\\"Lens Orbs\\\"}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (492:0) {#if startScreenVisible}
+    function create_if_block(ctx) {
+    	let div2;
+    	let div0;
+    	let t0;
+    	let div1;
+    	let img;
+    	let img_src_value;
+    	let t1;
+    	let br0;
+    	let t2;
+    	let br1;
+    	let t3;
+    	let span0;
+    	let t5;
+    	let input0;
+    	let t6;
+    	let br2;
+    	let t7;
+    	let span1;
+    	let t9;
+    	let input1;
+    	let t10;
+    	let br3;
+    	let t11;
+    	let br4;
+    	let t12;
+    	let button;
+    	let t14;
+    	let br5;
+    	let t15;
+    	let br6;
+    	let t16;
+    	let span2;
+    	let t17;
+    	let br7;
+    	let t18;
+    	let div2_outro;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = space();
+    			div1 = element("div");
+    			img = element("img");
+    			t1 = space();
+    			br0 = element("br");
+    			t2 = space();
+    			br1 = element("br");
+    			t3 = space();
+    			span0 = element("span");
+    			span0.textContent = "Image Width";
+    			t5 = space();
+    			input0 = element("input");
+    			t6 = space();
+    			br2 = element("br");
+    			t7 = space();
+    			span1 = element("span");
+    			span1.textContent = "Image Height";
+    			t9 = space();
+    			input1 = element("input");
+    			t10 = space();
+    			br3 = element("br");
+    			t11 = space();
+    			br4 = element("br");
+    			t12 = space();
+    			button = element("button");
+    			button.textContent = "Create";
+    			t14 = space();
+    			br5 = element("br");
+    			t15 = space();
+    			br6 = element("br");
+    			t16 = space();
+    			span2 = element("span");
+    			t17 = text("© 2023 Lunal Graphics");
+    			br7 = element("br");
+    			t18 = text("Developed by Yikuan Sun");
+    			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
+    			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
+    			add_location(div0, file, 493, 8, 33505);
+    			attr_dev(img, "alt", "PROGEN FLARES 2");
+    			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "width", "321");
+    			attr_dev(img, "draggable", false);
+    			attr_dev(img, "class", "svelte-viz99f");
+    			add_location(img, file, 495, 12, 33754);
+    			attr_dev(br0, "class", "svelte-viz99f");
+    			add_location(br0, file, 496, 12, 33847);
+    			attr_dev(br1, "class", "svelte-viz99f");
+    			add_location(br1, file, 496, 19, 33854);
+    			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
+    			attr_dev(span0, "class", "svelte-viz99f");
+    			add_location(span0, file, 497, 12, 33873);
+    			attr_dev(input0, "type", "number");
+    			attr_dev(input0, "style", "width: 80px;");
+    			attr_dev(input0, "class", "svelte-viz99f");
+    			add_location(input0, file, 497, 102, 33963);
+    			attr_dev(br2, "class", "svelte-viz99f");
+    			add_location(br2, file, 498, 12, 34066);
+    			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
+    			attr_dev(span1, "class", "svelte-viz99f");
+    			add_location(span1, file, 499, 12, 34085);
+    			attr_dev(input1, "type", "number");
+    			attr_dev(input1, "style", "width: 80px;");
+    			attr_dev(input1, "class", "svelte-viz99f");
+    			add_location(input1, file, 499, 103, 34176);
+    			attr_dev(br3, "class", "svelte-viz99f");
+    			add_location(br3, file, 500, 12, 34280);
+    			attr_dev(br4, "class", "svelte-viz99f");
+    			add_location(br4, file, 500, 19, 34287);
+    			attr_dev(button, "class", "svelte-viz99f");
+    			add_location(button, file, 501, 12, 34306);
+    			attr_dev(br5, "class", "svelte-viz99f");
+    			add_location(br5, file, 502, 12, 34361);
+    			attr_dev(br6, "class", "svelte-viz99f");
+    			add_location(br6, file, 502, 19, 34368);
+    			attr_dev(br7, "class", "svelte-viz99f");
+    			add_location(br7, file, 503, 71, 34446);
+    			attr_dev(span2, "style", "font-size: 10px;");
+    			attr_dev(span2, "class", "svelte-viz99f");
+    			add_location(span2, file, 503, 12, 34387);
+    			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
+    			attr_dev(div1, "style", "text-align: center;");
+    			add_location(div1, file, 494, 8, 33687);
+    			attr_dev(div2, "id", "startScreen");
+    			attr_dev(div2, "class", "svelte-viz99f");
+    			add_location(div2, file, 492, 4, 33463);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div2, t0);
+    			append_dev(div2, div1);
+    			append_dev(div1, img);
+    			append_dev(div1, t1);
+    			append_dev(div1, br0);
+    			append_dev(div1, t2);
+    			append_dev(div1, br1);
+    			append_dev(div1, t3);
+    			append_dev(div1, span0);
+    			append_dev(div1, t5);
+    			append_dev(div1, input0);
+    			set_input_value(input0, /*flareSettings*/ ctx[0].dimensions.width);
+    			append_dev(div1, t6);
+    			append_dev(div1, br2);
+    			append_dev(div1, t7);
+    			append_dev(div1, span1);
+    			append_dev(div1, t9);
+    			append_dev(div1, input1);
+    			set_input_value(input1, /*flareSettings*/ ctx[0].dimensions.height);
+    			append_dev(div1, t10);
+    			append_dev(div1, br3);
+    			append_dev(div1, t11);
+    			append_dev(div1, br4);
+    			append_dev(div1, t12);
+    			append_dev(div1, button);
+    			append_dev(div1, t14);
+    			append_dev(div1, br5);
+    			append_dev(div1, t15);
+    			append_dev(div1, br6);
+    			append_dev(div1, t16);
+    			append_dev(div1, span2);
+    			append_dev(span2, t17);
+    			append_dev(span2, br7);
+    			append_dev(span2, t18);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[173]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[174]),
+    					listen_dev(button, "click", /*onStart*/ ctx[10], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*flareSettings*/ 1 && to_number(input0.value) !== /*flareSettings*/ ctx[0].dimensions.width) {
+    				set_input_value(input0, /*flareSettings*/ ctx[0].dimensions.width);
+    			}
+
+    			if (dirty[0] & /*flareSettings*/ 1 && to_number(input1.value) !== /*flareSettings*/ ctx[0].dimensions.height) {
+    				set_input_value(input1, /*flareSettings*/ ctx[0].dimensions.height);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			if (div2_outro) div2_outro.end(1);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			div2_outro = create_out_transition(div2, fade, {});
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (detaching && div2_outro) div2_outro.end();
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(492:0) {#if startScreenVisible}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	let div0;
+    	let button0;
+    	let t1;
+    	let span0;
+    	let t3;
+    	let select0;
+    	let option0;
+    	let option1;
+    	let option2;
+    	let t7;
+    	let div1;
+    	let canvas0;
+    	let canvas0_width_value;
+    	let canvas0_height_value;
+    	let t8;
+    	let canvas1;
+    	let canvas1_width_value;
+    	let canvas1_height_value;
+    	let t9;
+    	let div2;
+    	let t10;
+    	let select1;
+    	let option3;
+    	let option4;
+    	let option5;
+    	let option6;
+    	let option7;
+    	let t16;
+    	let span1;
+    	let t18;
+    	let input;
+    	let t19;
+    	let button1;
+    	let t21;
+    	let div4;
+    	let div3;
+    	let presetpicker;
+    	let t22;
+    	let button2;
+    	let t24;
+    	let collapsible0;
+    	let t25;
+    	let collapsible1;
+    	let t26;
+    	let collapsible2;
+    	let t27;
+    	let collapsible3;
+    	let t28;
+    	let collapsible4;
+    	let t29;
+    	let collapsible5;
+    	let t30;
+    	let collapsible6;
+    	let t31;
+    	let t32;
+    	let current;
+    	let mounted;
+    	let dispose;
+    	presetpicker = new PresetPicker({ $$inline: true });
+    	presetpicker.$on("choose", /*choose_handler*/ ctx[21]);
+
+    	collapsible0 = new Collapsible({
+    			props: {
+    				title: "Global",
+    				collapsed: false,
+    				$$slots: { default: [create_default_slot_6] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	collapsible1 = new Collapsible({
+    			props: {
+    				title: "Hotspot",
+    				$$slots: { default: [create_default_slot_5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	collapsible2 = new Collapsible({
+    			props: {
+    				title: "Streak",
+    				$$slots: { default: [create_default_slot_4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	collapsible3 = new Collapsible({
+    			props: {
+    				title: "Ring",
+    				$$slots: { default: [create_default_slot_3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	collapsible4 = new Collapsible({
+    			props: {
+    				title: "Multi-Iris",
+    				$$slots: { default: [create_default_slot_2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	collapsible5 = new Collapsible({
+    			props: {
+    				title: "Glow",
+    				$$slots: { default: [create_default_slot_1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	collapsible6 = new Collapsible({
+    			props: {
+    				title: "Lens Orbs",
+    				$$slots: { default: [create_default_slot] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	let if_block = /*startScreenVisible*/ ctx[3] && create_if_block(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			button0 = element("button");
+    			button0.textContent = "Export";
+    			t1 = space();
+    			span0 = element("span");
+    			span0.textContent = "as";
+    			t3 = space();
+    			select0 = element("select");
+    			option0 = element("option");
+    			option0.textContent = "PNG";
+    			option1 = element("option");
+    			option1.textContent = "JPG";
+    			option2 = element("option");
+    			option2.textContent = "WebP";
+    			t7 = space();
+    			div1 = element("div");
+    			canvas0 = element("canvas");
+    			t8 = space();
+    			canvas1 = element("canvas");
+    			t9 = space();
+    			div2 = element("div");
+    			t10 = text("Preview quality\n");
+    			select1 = element("select");
+    			option3 = element("option");
+    			option3.textContent = "100%";
+    			option4 = element("option");
+    			option4.textContent = "80%";
+    			option5 = element("option");
+    			option5.textContent = "60%";
+    			option6 = element("option");
+    			option6.textContent = "40%";
+    			option7 = element("option");
+    			option7.textContent = "20%";
+    			t16 = space();
+    			span1 = element("span");
+    			span1.textContent = `${"    |    "}`;
+    			t18 = space();
+    			input = element("input");
+    			t19 = text("\nReference Image\n");
+    			button1 = element("button");
+    			button1.textContent = "Import";
+    			t21 = space();
+    			div4 = element("div");
+    			div3 = element("div");
+    			create_component(presetpicker.$$.fragment);
+    			t22 = space();
+    			button2 = element("button");
+    			button2.textContent = "Save Preset";
+    			t24 = space();
+    			create_component(collapsible0.$$.fragment);
+    			t25 = space();
+    			create_component(collapsible1.$$.fragment);
+    			t26 = space();
+    			create_component(collapsible2.$$.fragment);
+    			t27 = space();
+    			create_component(collapsible3.$$.fragment);
+    			t28 = space();
+    			create_component(collapsible4.$$.fragment);
+    			t29 = space();
+    			create_component(collapsible5.$$.fragment);
+    			t30 = space();
+    			create_component(collapsible6.$$.fragment);
+    			t31 = space();
+    			if (if_block) if_block.c();
+    			t32 = space();
+    			attr_dev(button0, "class", "svelte-viz99f");
+    			add_location(button0, file, 356, 0, 19246);
+    			attr_dev(span0, "style", "display: inline-block; margin-left: 5px; margin-right: 5px;");
+    			attr_dev(span0, "class", "svelte-viz99f");
+    			add_location(span0, file, 357, 0, 19326);
+    			option0.__value = "png";
+    			option0.value = option0.__value;
+    			attr_dev(option0, "class", "svelte-viz99f");
+    			add_location(option0, file, 359, 4, 19463);
+    			option1.__value = "jpeg";
+    			option1.value = option1.__value;
+    			attr_dev(option1, "class", "svelte-viz99f");
+    			add_location(option1, file, 360, 4, 19502);
+    			option2.__value = "webp";
+    			option2.value = option2.__value;
+    			attr_dev(option2, "class", "svelte-viz99f");
+    			add_location(option2, file, 361, 4, 19542);
+    			attr_dev(select0, "class", "svelte-viz99f");
+    			if (/*flareSettings*/ ctx[0].exportType === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[15].call(select0));
+    			add_location(select0, file, 358, 0, 19412);
+    			attr_dev(div0, "id", "exportPanel");
+    			attr_dev(div0, "class", "svelte-viz99f");
+    			add_location(div0, file, 355, 0, 19221);
+    			attr_dev(canvas0, "id", "referenceImage");
+    			attr_dev(canvas0, "width", canvas0_width_value = /*flareSettings*/ ctx[0].dimensions.width);
+    			attr_dev(canvas0, "height", canvas0_height_value = /*flareSettings*/ ctx[0].dimensions.height);
+    			attr_dev(canvas0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
+    			add_location(canvas0, file, 366, 4, 19632);
+    			attr_dev(canvas1, "id", "baseCanvas");
+    			attr_dev(canvas1, "width", canvas1_width_value = /*flareSettings*/ ctx[0].dimensions.width);
+    			attr_dev(canvas1, "height", canvas1_height_value = /*flareSettings*/ ctx[0].dimensions.height);
+    			attr_dev(canvas1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
+    			add_location(canvas1, file, 367, 4, 19802);
+    			attr_dev(div1, "id", "previewSection");
+    			attr_dev(div1, "class", "svelte-viz99f");
+    			add_location(div1, file, 365, 0, 19597);
+    			option3.__value = 1;
+    			option3.value = option3.__value;
+    			attr_dev(option3, "class", "svelte-viz99f");
+    			add_location(option3, file, 373, 4, 20190);
+    			option4.__value = 5 / 4;
+    			option4.value = option4.__value;
+    			attr_dev(option4, "class", "svelte-viz99f");
+    			add_location(option4, file, 374, 4, 20226);
+    			option5.__value = 5 / 3;
+    			option5.value = option5.__value;
+    			attr_dev(option5, "class", "svelte-viz99f");
+    			add_location(option5, file, 375, 4, 20263);
+    			option6.__value = 5 / 2;
+    			option6.value = option6.__value;
+    			attr_dev(option6, "class", "svelte-viz99f");
+    			add_location(option6, file, 376, 4, 20300);
+    			option7.__value = 5;
+    			option7.value = option7.__value;
+    			attr_dev(option7, "class", "svelte-viz99f");
+    			add_location(option7, file, 377, 4, 20337);
+    			attr_dev(select1, "class", "svelte-viz99f");
+    			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[18].call(select1));
+    			add_location(select1, file, 372, 0, 20068);
+    			attr_dev(span1, "style", "white-space: pre; color: grey;");
+    			attr_dev(span1, "class", "svelte-viz99f");
+    			add_location(span1, file, 379, 0, 20378);
+    			attr_dev(input, "type", "checkbox");
+    			input.checked = true;
+    			attr_dev(input, "style", "margin-bottom: 0;");
+    			attr_dev(input, "class", "svelte-viz99f");
+    			add_location(input, file, 380, 0, 20446);
+    			attr_dev(button1, "class", "svelte-viz99f");
+    			add_location(button1, file, 382, 0, 20583);
+    			attr_dev(div2, "id", "sectionAbovePreview");
+    			attr_dev(div2, "class", "svelte-viz99f");
+    			add_location(div2, file, 370, 0, 20019);
+    			attr_dev(button2, "style", "float: right;");
+    			attr_dev(button2, "class", "svelte-viz99f");
+    			add_location(button2, file, 397, 4, 20946);
+
+    			attr_dev(div3, "style", `
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-scheme-6);
+    padding: 5px;
+    box-sizing: border-box;
+        border-bottom: 1px solid #353535;
+`);
+
+    			attr_dev(div3, "class", "svelte-viz99f");
+    			add_location(div3, file, 387, 0, 20668);
+    			attr_dev(div4, "id", "controlPanel");
+    			attr_dev(div4, "class", "svelte-viz99f");
+    			add_location(div4, file, 385, 0, 20641);
+    			document_1.title = "Progen Flares 2";
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, button0);
+    			append_dev(div0, t1);
+    			append_dev(div0, span0);
+    			append_dev(div0, t3);
+    			append_dev(div0, select0);
+    			append_dev(select0, option0);
+    			append_dev(select0, option1);
+    			append_dev(select0, option2);
+    			select_option(select0, /*flareSettings*/ ctx[0].exportType);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, canvas0);
+    			/*canvas0_binding*/ ctx[16](canvas0);
+    			append_dev(div1, t8);
+    			append_dev(div1, canvas1);
+    			/*canvas1_binding*/ ctx[17](canvas1);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, t10);
+    			append_dev(div2, select1);
+    			append_dev(select1, option3);
+    			append_dev(select1, option4);
+    			append_dev(select1, option5);
+    			append_dev(select1, option6);
+    			append_dev(select1, option7);
+    			select_option(select1, /*flareSettings*/ ctx[0].downscaling);
+    			append_dev(div2, t16);
+    			append_dev(div2, span1);
+    			append_dev(div2, t18);
+    			append_dev(div2, input);
+    			/*input_binding*/ ctx[20](input);
+    			append_dev(div2, t19);
+    			append_dev(div2, button1);
+    			insert_dev(target, t21, anchor);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div3);
+    			mount_component(presetpicker, div3, null);
+    			append_dev(div3, t22);
+    			append_dev(div3, button2);
+    			append_dev(div4, t24);
+    			mount_component(collapsible0, div4, null);
+    			append_dev(div4, t25);
+    			mount_component(collapsible1, div4, null);
+    			append_dev(div4, t26);
+    			mount_component(collapsible2, div4, null);
+    			append_dev(div4, t27);
+    			mount_component(collapsible3, div4, null);
+    			append_dev(div4, t28);
+    			mount_component(collapsible4, div4, null);
+    			append_dev(div4, t29);
+    			mount_component(collapsible5, div4, null);
+    			append_dev(div4, t30);
+    			mount_component(collapsible6, div4, null);
+    			insert_dev(target, t31, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t32, anchor);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[14], false, false, false),
+    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[15]),
+    					action_destroyer(canvasClickDrag_1.call(null, canvas1)),
+    					listen_dev(canvas1, "clickDrag", /*handleClickDrag*/ ctx[6], false, false, false),
+    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[18]),
+    					listen_dev(select1, "change", /*change_handler*/ ctx[19], false, false, false),
+    					listen_dev(input, "change", /*handleRIcheckbox*/ ctx[12], false, false, false),
+    					listen_dev(button1, "click", /*handleRIbutton*/ ctx[11], false, false, false),
+    					listen_dev(button2, "click", /*click_handler_1*/ ctx[22], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*flareSettings*/ 1) {
+    				select_option(select0, /*flareSettings*/ ctx[0].exportType);
+    			}
+
+    			if (!current || dirty[0] & /*flareSettings*/ 1 && canvas0_width_value !== (canvas0_width_value = /*flareSettings*/ ctx[0].dimensions.width)) {
+    				attr_dev(canvas0, "width", canvas0_width_value);
+    			}
+
+    			if (!current || dirty[0] & /*flareSettings*/ 1 && canvas0_height_value !== (canvas0_height_value = /*flareSettings*/ ctx[0].dimensions.height)) {
+    				attr_dev(canvas0, "height", canvas0_height_value);
+    			}
+
+    			if (!current || dirty[0] & /*flareSettings*/ 1 && canvas1_width_value !== (canvas1_width_value = /*flareSettings*/ ctx[0].dimensions.width)) {
+    				attr_dev(canvas1, "width", canvas1_width_value);
+    			}
+
+    			if (!current || dirty[0] & /*flareSettings*/ 1 && canvas1_height_value !== (canvas1_height_value = /*flareSettings*/ ctx[0].dimensions.height)) {
+    				attr_dev(canvas1, "height", canvas1_height_value);
+    			}
+
+    			if (dirty[0] & /*flareSettings*/ 1) {
+    				select_option(select1, /*flareSettings*/ ctx[0].downscaling);
+    			}
+
+    			const collapsible0_changes = {};
+
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
+    				collapsible0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			collapsible0.$set(collapsible0_changes);
+    			const collapsible1_changes = {};
+
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
+    				collapsible1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			collapsible1.$set(collapsible1_changes);
+    			const collapsible2_changes = {};
+
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
+    				collapsible2_changes.$$scope = { dirty, ctx };
+    			}
+
+    			collapsible2.$set(collapsible2_changes);
+    			const collapsible3_changes = {};
+
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
+    				collapsible3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			collapsible3.$set(collapsible3_changes);
+    			const collapsible4_changes = {};
+
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
+    				collapsible4_changes.$$scope = { dirty, ctx };
+    			}
+
+    			collapsible4.$set(collapsible4_changes);
+    			const collapsible5_changes = {};
+
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
+    				collapsible5_changes.$$scope = { dirty, ctx };
+    			}
+
+    			collapsible5.$set(collapsible5_changes);
+    			const collapsible6_changes = {};
+
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 2097152) {
+    				collapsible6_changes.$$scope = { dirty, ctx };
+    			}
+
+    			collapsible6.$set(collapsible6_changes);
+
+    			if (/*startScreenVisible*/ ctx[3]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty[0] & /*startScreenVisible*/ 8) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(t32.parentNode, t32);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(presetpicker.$$.fragment, local);
+    			transition_in(collapsible0.$$.fragment, local);
+    			transition_in(collapsible1.$$.fragment, local);
+    			transition_in(collapsible2.$$.fragment, local);
+    			transition_in(collapsible3.$$.fragment, local);
+    			transition_in(collapsible4.$$.fragment, local);
+    			transition_in(collapsible5.$$.fragment, local);
+    			transition_in(collapsible6.$$.fragment, local);
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(presetpicker.$$.fragment, local);
+    			transition_out(collapsible0.$$.fragment, local);
+    			transition_out(collapsible1.$$.fragment, local);
+    			transition_out(collapsible2.$$.fragment, local);
+    			transition_out(collapsible3.$$.fragment, local);
+    			transition_out(collapsible4.$$.fragment, local);
+    			transition_out(collapsible5.$$.fragment, local);
+    			transition_out(collapsible6.$$.fragment, local);
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(div1);
+    			/*canvas0_binding*/ ctx[16](null);
+    			/*canvas1_binding*/ ctx[17](null);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(div2);
+    			/*input_binding*/ ctx[20](null);
+    			if (detaching) detach_dev(t21);
+    			if (detaching) detach_dev(div4);
+    			destroy_component(presetpicker);
+    			destroy_component(collapsible0);
+    			destroy_component(collapsible1);
+    			destroy_component(collapsible2);
+    			destroy_component(collapsible3);
+    			destroy_component(collapsible4);
+    			destroy_component(collapsible5);
+    			destroy_component(collapsible6);
+    			if (detaching) detach_dev(t31);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(t32);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('App', slots, []);
+
+    	var flareComponents = {
+    		hotspot: new SpotComponent(256, { deformationFrequency: 0.006 }),
+    		streak: new SpotComponent(256, { deformationAmount: 0, intensity: 0 }),
+    		ring: new RingComponent(256, { cropSize: 0 }),
+    		miIris: new IrisComponent(256, { roundness: 20 }),
+    		glow: new SpotComponent(256, { deformationAmount: 0, intensity: -50 }),
+    		lensOrbs: new IrisComponent(256, {})
+    	};
+
+    	var flareSettings = {
+    		downscaling: 5 / 2,
+    		exportType: "png",
+    		sizeMultiplier: 1,
+    		dimensions: { width: 1920, height: 1080 },
+    		positioning: { x: 960, y: 540, pivotX: 960, pivotY: 540 },
+    		hotspot: {
+    			radius: 500,
+    			intensity: 5,
+    			deformationAmount: 1.6,
+    			deformationFrequency: 0.006,
+    			deformationSeed: 1,
+    			alpha: 100,
+    			angle: 0,
+    			hue: 200,
+    			saturation: 100,
+    			anamorph: 0
+    		},
+    		streak: {
+    			thickness: 64,
+    			width: 1600,
+    			intensity: 5,
+    			count: 1,
+    			angle: 0,
+    			shift: 36,
+    			alpha: 100,
+    			angle: 0,
+    			hue: 200,
+    			saturation: 100
+    		},
+    		ring: {
+    			radius: 200,
+    			thickness: 40,
+    			blur: 5,
+    			cropSize: 0,
+    			cropHardness: 50,
+    			alpha: 21,
+    			hue: 200,
+    			saturation: 100,
+    			anamorph: 0
+    		},
+    		miIris: {
+    			radius: 81,
+    			sides: 5,
+    			roundness: 20,
+    			angle: 0,
+    			fillAlpha: 25,
+    			fringeAlpha: 50,
+    			fringeSize: 10,
+    			blur: 4,
+    			countAway: 5,
+    			countTowards: 12,
+    			spread: 30,
+    			sizeVariance: 40,
+    			perspective: 100,
+    			alphaVariance: 50,
+    			seed: 123,
+    			hue: 200,
+    			saturation: 100,
+    			hueVariance: 30,
+    			anamorph: 0
+    		},
+    		glow: {
+    			radius: 960,
+    			alpha: 50,
+    			softening: 70,
+    			hue: 200,
+    			saturation: 100,
+    			anamorph: 0
+    		},
+    		lensOrbs: {
+    			radius: 45,
+    			sides: 6,
+    			roundness: 100,
+    			angle: 0,
+    			fillAlpha: 8,
+    			fringeAlpha: 11,
+    			fringeSize: 17,
+    			blur: 5,
+    			count: 100,
+    			threshold: 1200,
+    			seed: 124,
+    			sizeVariance: 0,
+    			alphaVariance: 50,
+    			hue: 200,
+    			saturation: 100,
+    			hueVariance: 360,
+    			anamorph: 0
+    		}
+    	};
+
+    	var baseCanvas, referenceImage;
+
+    	function renderFlare(
+    		renderHotspot = false,
+    	renderStreak = false,
+    	renderRing = false,
+    	renderMI = false,
+    	renderGlow = false,
+    	renderLensOrbs = false
+    	) {
+    		if (renderHotspot) {
+    			flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
+    			flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity;
+    			flareComponents.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
+    			flareComponents.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
+    			flareComponents.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
+    			flareComponents.hotspot.options.hue = flareSettings.hotspot.hue;
+    			flareComponents.hotspot.options.saturation = flareSettings.hotspot.saturation;
+    			flareComponents.hotspot.options.angle = flareSettings.hotspot.angle;
+    			flareComponents.hotspot.render();
+    		}
+
+    		if (renderStreak) {
+    			flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
+    			flareComponents.streak.options.intensity = flareSettings.streak.intensity;
+    			flareComponents.streak.options.hue = flareSettings.streak.hue;
+    			flareComponents.streak.options.saturation = flareSettings.streak.saturation;
+    			flareComponents.streak.render();
+    			flareComponents.streakLeftHalf = new HalfComponent(flareComponents.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, true, false);
+    			flareComponents.streakRightHalf = new HalfComponent(flareComponents.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, false, true);
+    		}
+
+    		if (renderRing) {
+    			flareComponents.ring.radius = Math.floor(flareSettings.ring.radius / flareSettings.downscaling);
+    			flareComponents.ring.options.thickness = flareSettings.ring.thickness / flareSettings.downscaling;
+    			flareComponents.ring.options.blur = flareSettings.ring.blur / flareSettings.downscaling;
+    			flareComponents.ring.options.cropSize = flareSettings.ring.cropSize / flareSettings.downscaling;
+    			flareComponents.ring.options.cropHardness = flareSettings.ring.cropHardness;
+    			flareComponents.ring.options.hue = flareSettings.ring.hue;
+    			flareComponents.ring.options.saturation = flareSettings.ring.saturation;
+    			flareComponents.ring.render();
+    		}
+
+    		if (renderMI) {
+    			flareComponents.miIris.radius = Math.floor(flareSettings.miIris.radius / flareSettings.downscaling);
+    			flareComponents.miIris.options.sides = flareSettings.miIris.sides;
+    			flareComponents.miIris.options.roundness = flareSettings.miIris.roundness;
+    			flareComponents.miIris.options.fillAlpha = flareSettings.miIris.fillAlpha;
+    			flareComponents.miIris.options.fringeAlpha = flareSettings.miIris.fringeAlpha;
+    			flareComponents.miIris.options.fringeSize = flareSettings.miIris.fringeSize / flareSettings.downscaling;
+    			flareComponents.miIris.options.blur = flareSettings.miIris.blur / flareSettings.downscaling;
+    			flareComponents.miIris.options.angle = flareSettings.miIris.angle;
+    			flareComponents.miIris.options.hue = flareSettings.miIris.hue;
+    			flareComponents.miIris.options.saturation = flareSettings.miIris.saturation;
+    			flareComponents.miIris.render();
+    		}
+
+    		if (renderGlow) {
+    			flareComponents.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
+    			flareComponents.glow.options.intensity = -flareSettings.glow.softening;
+    			flareComponents.glow.options.hue = flareSettings.glow.hue;
+    			flareComponents.glow.options.saturation = flareSettings.glow.saturation;
+    			flareComponents.glow.render();
+    		}
+
+    		if (renderLensOrbs) {
+    			flareComponents.lensOrbs.radius = Math.floor(flareSettings.lensOrbs.radius / flareSettings.downscaling);
+    			flareComponents.lensOrbs.options.sides = flareSettings.lensOrbs.sides;
+    			flareComponents.lensOrbs.options.roundness = flareSettings.lensOrbs.roundness;
+    			flareComponents.lensOrbs.options.fillAlpha = flareSettings.lensOrbs.fillAlpha;
+    			flareComponents.lensOrbs.options.fringeAlpha = flareSettings.lensOrbs.fringeAlpha;
+    			flareComponents.lensOrbs.options.fringeSize = flareSettings.lensOrbs.fringeSize / flareSettings.downscaling;
+    			flareComponents.lensOrbs.options.blur = flareSettings.lensOrbs.blur / flareSettings.downscaling;
+    			flareComponents.lensOrbs.options.angle = flareSettings.lensOrbs.angle;
+    			flareComponents.lensOrbs.options.hue = flareSettings.lensOrbs.hue;
+    			flareComponents.lensOrbs.options.saturation = flareSettings.lensOrbs.saturation;
+    			flareComponents.lensOrbs.render();
+    		}
+
+    		var ctx = baseCanvas.getContext("2d");
+    		ctx.restore();
+    		ctx.save();
+    		ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
+    		ctx.fillStyle = "black";
+    		ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
+    		drawComponent_1(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
+    		var streakAngle = flareSettings.streak.angle;
+
+    		for (var i = 0; i < flareSettings.streak.count; i++) {
+    			var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
+    			if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * (i % 2 == 0 ? -1 : 1) / 100 * flareSettings.streak.width;
+    			drawComponent_1(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
+    			drawComponent_1(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
+    			streakAngle += 180 / flareSettings.streak.count;
+    		}
+
+    		drawComponent_1(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
+    		var miRng = seedrandom(flareSettings.miIris.seed);
+
+    		for (var i = 1; i < flareSettings.miIris.countTowards; i++) {
+    			var irisPosition = {
+    				x: flareSettings.positioning.x + i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
+    				y: flareSettings.positioning.y + i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100
+    			};
+
+    			var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+    			irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
+    			drawComponent_1(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+    		}
+
+    		for (var i = 1; i < flareSettings.miIris.countAway; i++) {
+    			var irisPosition = {
+    				x: flareSettings.positioning.x - i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
+    				y: flareSettings.positioning.y - i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100
+    			};
+
+    			var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+    			irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
+    			drawComponent_1(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+    		}
+
+    		drawComponent_1(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
+    		var lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
+
+    		for (var i = 1; i < flareSettings.lensOrbs.count; i++) {
+    			var orbPosition = {
+    				x: lensOrbsRng() * flareSettings.dimensions.width,
+    				y: lensOrbsRng() * flareSettings.dimensions.height
+    			};
+
+    			var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
+    			var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
+    			orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
+    			var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
+    			drawComponent_1(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
+    		}
+    	}
+
+    	window.onload = function () {
+    		renderFlare(true, true, true, true, true, true);
+    	};
+
+    	function handleClickDrag(e) {
+    		//console.log(e.detail);
+    		$$invalidate(0, flareSettings.positioning.x = e.detail.x, flareSettings);
+
+    		$$invalidate(0, flareSettings.positioning.y = e.detail.y, flareSettings);
+    		renderFlare();
+    	}
+
+    	function createDownloadLink() {
+    		var initialDownscaling = flareSettings.downscaling;
+    		$$invalidate(0, flareSettings.downscaling = 1, flareSettings);
+    		renderFlare(true, true, true, true, true);
+    		var a = document.createElement("a");
+    		a.href = baseCanvas.toDataURL("image/" + flareSettings.exportType);
+    		a.download = "ProgenFlares2-flare." + flareSettings.exportType;
+    		$$invalidate(0, flareSettings.downscaling = initialDownscaling, flareSettings);
+    		renderFlare(true, true, true, true, true);
+    		return a;
+    	}
+
+    	function createPresetSaveLink() {
+    		var fileContents = JSON.stringify({
+    			hotspot: flareSettings.hotspot,
+    			streak: flareSettings.streak,
+    			ring: flareSettings.ring,
+    			miIris: flareSettings.miIris,
+    			glow: flareSettings.glow,
+    			lensOrbs: flareSettings.lensOrbs
+    		});
+
+    		var textFile = new Blob([fileContents], { "type": "application/json" });
+    		var a = document.createElement("a");
+    		a.href = URL.createObjectURL(textFile);
+    		a.download = "ProgenFlares2-preset.pgf2";
+    		return a;
+    	}
+
+    	function setPreset(presetData) {
+    		for (var keyi in presetData) {
+    			if (!flareSettings[keyi]) $$invalidate(0, flareSettings[keyi] = {}, flareSettings);
+
+    			for (var keyj in presetData[keyi]) {
+    				$$invalidate(0, flareSettings[keyi][keyj] = presetData[keyi][keyj], flareSettings);
+    			}
+    		}
+
+    		renderFlare(true, true, true, true, true, true);
+    	}
+
+    	var startScreenVisible = true;
+
+    	function onStart() {
+    		setPreset({
+    			"hotspot": {
+    				"radius": 595,
+    				"intensity": 10,
+    				"deformationAmount": 1.5,
+    				"deformationFrequency": 0.01,
+    				"deformationSeed": 239,
+    				"alpha": 100,
+    				"angle": 0,
+    				"hue": 39,
+    				"saturation": 88,
+    				"anamorph": 0
+    			},
+    			"streak": {
+    				"thickness": 121,
+    				"width": 2435,
+    				"intensity": -25,
+    				"count": 1,
+    				"angle": 0,
+    				"shift": 48,
+    				"alpha": 100,
+    				"hue": 216,
+    				"saturation": 100
+    			},
+    			"ring": {
+    				"radius": 300,
+    				"thickness": 50,
+    				"blur": 4,
+    				"cropSize": 0,
+    				"cropHardness": 50,
+    				"alpha": 0,
+    				"hue": 200,
+    				"saturation": 100,
+    				"anamorph": 0
+    			},
+    			"miIris": {
+    				"radius": 72,
+    				"sides": 6,
+    				"roundness": 50,
+    				"angle": 0,
+    				"fillAlpha": 10,
+    				"fringeAlpha": 12,
+    				"fringeSize": 28,
+    				"blur": 3,
+    				"countAway": 5,
+    				"countTowards": 12,
+    				"spread": 30,
+    				"sizeVariance": 40,
+    				"perspective": 100,
+    				"alphaVariance": 50,
+    				"seed": 333,
+    				"hue": 39,
+    				"saturation": 100,
+    				"hueVariance": 40,
+    				"anamorph": 0
+    			},
+    			"glow": {
+    				"radius": 999,
+    				"alpha": 25,
+    				"softening": 0,
+    				"hue": 23,
+    				"saturation": 100,
+    				"anamorph": 0
+    			},
+    			"lensOrbs": {
+    				"radius": 21,
+    				"sides": 6,
+    				"roundness": 100,
+    				"angle": 0,
+    				"fillAlpha": 3,
+    				"fringeAlpha": 6,
+    				"fringeSize": 4,
+    				"blur": 2,
+    				"count": 123,
+    				"threshold": 1210,
+    				"seed": 222,
+    				"sizeVariance": 0,
+    				"alphaVariance": 42,
+    				"hue": 16,
+    				"saturation": 100,
+    				"hueVariance": 0,
+    				"anamorph": 0
+    			}
+    		});
+
+    		$$invalidate(0, flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2, flareSettings);
+    		$$invalidate(0, flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2, flareSettings);
+    		$$invalidate(0, flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5, flareSettings);
+    		$$invalidate(0, flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5, flareSettings);
+    		renderFlare(true, true, true, true, true, true);
+    		$$invalidate(3, startScreenVisible = false);
+    	}
+
+    	var rIcheckbox;
+
+    	function handleRIbutton() {
+    		var fileInput = document.createElement("input");
+    		fileInput.type = "file";
+    		fileInput.accept = "image/png, image/jpeg";
+
+    		fileInput.addEventListener("change", () => {
+    			var file = fileInput.files[0];
+    			var fR = new FileReader();
+
+    			fR.addEventListener("loadend", e => {
+    				$$invalidate(2, referenceImage.style.backgroundImage = `url("${e.target.result}")`, referenceImage);
+    				this.value = "Custom";
+    				$$invalidate(4, rIcheckbox.checked = true, rIcheckbox);
+    				handleRIcheckbox.bind(rIcheckbox)();
+    			});
+
+    			fR.readAsDataURL(file);
+    		});
+
+    		fileInput.click();
+    	}
+
+    	function handleRIcheckbox() {
+    		if (this.checked) $$invalidate(2, referenceImage.style.backgroundSize = "100% 100%", referenceImage); else $$invalidate(2, referenceImage.style.backgroundSize = "0 0", referenceImage);
+    	}
+
+    	function handleScaleMultiplier() {
+    		$$invalidate(0, flareSettings.hotspot.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.streak.thickness *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.streak.width *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.ring.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.ring.thickness *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.ring.blur *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.ring.cropSize *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.miIris.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.miIris.fringeSize *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.miIris.blur *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.glow.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.lensOrbs.radius *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.lensOrbs.fringeSize *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.lensOrbs.blur *= flareSettings.sizeMultiplier, flareSettings);
+    		$$invalidate(0, flareSettings.sizeMultiplier = 1, flareSettings);
+    		renderFlare(true, true, true, true, true, true);
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = function () {
+    		createDownloadLink().click();
+    	};
+
+    	function select0_change_handler() {
+    		flareSettings.exportType = select_value(this);
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	function canvas0_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			referenceImage = $$value;
+    			$$invalidate(2, referenceImage);
+    		});
+    	}
+
+    	function canvas1_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			baseCanvas = $$value;
+    			$$invalidate(1, baseCanvas);
+    		});
+    	}
+
+    	function select1_change_handler() {
+    		flareSettings.downscaling = select_value(this);
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	const change_handler = function () {
+    		renderFlare(true, true, true, true, true);
+    	};
+
+    	function input_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			rIcheckbox = $$value;
+    			$$invalidate(4, rIcheckbox);
+    		});
+    	}
+
+    	const choose_handler = function (e) {
+    		setPreset(e.detail);
+    	};
+
+    	const click_handler_1 = function () {
+    		createPresetSaveLink().click();
+    	};
+
+    	function slider0_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.positioning.x, value)) {
+    			flareSettings.positioning.x = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler = function () {
+    		renderFlare();
+    	};
+
+    	function slider1_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.positioning.y, value)) {
+    			flareSettings.positioning.y = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_1 = function () {
+    		renderFlare();
+    	};
+
+    	function slider2_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.positioning.pivotX, value)) {
+    			flareSettings.positioning.pivotX = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_2 = function () {
+    		renderFlare();
+    	};
+
+    	function slider3_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.positioning.pivotY, value)) {
+    			flareSettings.positioning.pivotY = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_3 = function () {
+    		renderFlare();
+    	};
+
+    	function slider4_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.sizeMultiplier, value)) {
+    			flareSettings.sizeMultiplier = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_4 = function () {
+    		renderFlare();
+    	};
+
+    	function slider0_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.alpha, value)) {
+    			flareSettings.hotspot.alpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_5 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider1_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.angle, value)) {
+    			flareSettings.hotspot.angle = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_6 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider2_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.hue, value)) {
+    			flareSettings.hotspot.hue = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_7 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider3_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.saturation, value)) {
+    			flareSettings.hotspot.saturation = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_8 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider4_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.radius, value)) {
+    			flareSettings.hotspot.radius = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_9 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider5_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.intensity, value)) {
+    			flareSettings.hotspot.intensity = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_10 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider6_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.deformationFrequency, value)) {
+    			flareSettings.hotspot.deformationFrequency = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_11 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider7_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.deformationAmount, value)) {
+    			flareSettings.hotspot.deformationAmount = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_12 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider8_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.deformationSeed, value)) {
+    			flareSettings.hotspot.deformationSeed = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_13 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider9_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.hotspot.anamorph, value)) {
+    			flareSettings.hotspot.anamorph = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_14 = function () {
+    		renderFlare(true);
+    	};
+
+    	function slider0_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.alpha, value)) {
+    			flareSettings.streak.alpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_15 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider1_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.angle, value)) {
+    			flareSettings.streak.angle = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_16 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider2_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.hue, value)) {
+    			flareSettings.streak.hue = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_17 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider3_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.saturation, value)) {
+    			flareSettings.streak.saturation = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_18 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider4_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.thickness, value)) {
+    			flareSettings.streak.thickness = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_19 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider5_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.width, value)) {
+    			flareSettings.streak.width = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_20 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider6_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.intensity, value)) {
+    			flareSettings.streak.intensity = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_21 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider7_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.count, value)) {
+    			flareSettings.streak.count = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_22 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider8_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.streak.shift, value)) {
+    			flareSettings.streak.shift = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_23 = function () {
+    		renderFlare(false, true);
+    	};
+
+    	function slider0_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.alpha, value)) {
+    			flareSettings.ring.alpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_24 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider1_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.hue, value)) {
+    			flareSettings.ring.hue = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_25 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider2_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.saturation, value)) {
+    			flareSettings.ring.saturation = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_26 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider3_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.radius, value)) {
+    			flareSettings.ring.radius = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_27 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider4_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.thickness, value)) {
+    			flareSettings.ring.thickness = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_28 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider5_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.blur, value)) {
+    			flareSettings.ring.blur = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_29 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider6_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.cropSize, value)) {
+    			flareSettings.ring.cropSize = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_30 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider7_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.cropHardness, value)) {
+    			flareSettings.ring.cropHardness = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_31 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider8_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.ring.anamorph, value)) {
+    			flareSettings.ring.anamorph = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_32 = function () {
+    		renderFlare(false, false, true);
+    	};
+
+    	function slider0_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.fillAlpha, value)) {
+    			flareSettings.miIris.fillAlpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_33 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider1_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.fringeAlpha, value)) {
+    			flareSettings.miIris.fringeAlpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_34 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider2_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.angle, value)) {
+    			flareSettings.miIris.angle = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_35 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider3_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.hue, value)) {
+    			flareSettings.miIris.hue = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_36 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider4_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.saturation, value)) {
+    			flareSettings.miIris.saturation = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_37 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider5_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.radius, value)) {
+    			flareSettings.miIris.radius = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_38 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider6_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.sides, value)) {
+    			flareSettings.miIris.sides = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_39 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider7_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.roundness, value)) {
+    			flareSettings.miIris.roundness = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_40 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider8_value_binding_3(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.fringeSize, value)) {
+    			flareSettings.miIris.fringeSize = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_41 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider9_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.blur, value)) {
+    			flareSettings.miIris.blur = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_42 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider10_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.countTowards, value)) {
+    			flareSettings.miIris.countTowards = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_43 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider11_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.countAway, value)) {
+    			flareSettings.miIris.countAway = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_44 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider12_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.spread, value)) {
+    			flareSettings.miIris.spread = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_45 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider13_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.sizeVariance, value)) {
+    			flareSettings.miIris.sizeVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_46 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider14_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.perspective, value)) {
+    			flareSettings.miIris.perspective = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_47 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider15_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.alphaVariance, value)) {
+    			flareSettings.miIris.alphaVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_48 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider16_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.hueVariance, value)) {
+    			flareSettings.miIris.hueVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_49 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider17_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.seed, value)) {
+    			flareSettings.miIris.seed = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_50 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider18_value_binding(value) {
+    		if ($$self.$$.not_equal(flareSettings.miIris.anamorph, value)) {
+    			flareSettings.miIris.anamorph = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_51 = function () {
+    		renderFlare(false, false, false, true);
+    	};
+
+    	function slider0_value_binding_5(value) {
+    		if ($$self.$$.not_equal(flareSettings.glow.alpha, value)) {
+    			flareSettings.glow.alpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_52 = function () {
+    		renderFlare(false, false, false, false, true);
+    	};
+
+    	function slider1_value_binding_5(value) {
+    		if ($$self.$$.not_equal(flareSettings.glow.hue, value)) {
+    			flareSettings.glow.hue = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_53 = function () {
+    		renderFlare(false, false, false, false, true);
+    	};
+
+    	function slider2_value_binding_5(value) {
+    		if ($$self.$$.not_equal(flareSettings.glow.saturation, value)) {
+    			flareSettings.glow.saturation = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_54 = function () {
+    		renderFlare(false, false, false, false, true);
+    	};
+
+    	function slider3_value_binding_5(value) {
+    		if ($$self.$$.not_equal(flareSettings.glow.radius, value)) {
+    			flareSettings.glow.radius = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_55 = function () {
+    		renderFlare(false, false, false, false, true);
+    	};
+
+    	function slider4_value_binding_5(value) {
+    		if ($$self.$$.not_equal(flareSettings.glow.softening, value)) {
+    			flareSettings.glow.softening = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_56 = function () {
+    		renderFlare(false, false, false, false, true);
+    	};
+
+    	function slider5_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.glow.anamorph, value)) {
+    			flareSettings.glow.anamorph = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_57 = function () {
+    		renderFlare(false, false, false, false, true);
+    	};
+
+    	function slider0_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.count, value)) {
+    			flareSettings.lensOrbs.count = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_58 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider1_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.threshold, value)) {
+    			flareSettings.lensOrbs.threshold = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_59 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider2_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.fillAlpha, value)) {
+    			flareSettings.lensOrbs.fillAlpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_60 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider3_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.fringeAlpha, value)) {
+    			flareSettings.lensOrbs.fringeAlpha = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_61 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider4_value_binding_6(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.angle, value)) {
+    			flareSettings.lensOrbs.angle = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_62 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider5_value_binding_5(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.hue, value)) {
+    			flareSettings.lensOrbs.hue = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_63 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider6_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.saturation, value)) {
+    			flareSettings.lensOrbs.saturation = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_64 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider7_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.radius, value)) {
+    			flareSettings.lensOrbs.radius = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_65 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider8_value_binding_4(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.sides, value)) {
+    			flareSettings.lensOrbs.sides = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_66 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider9_value_binding_2(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.roundness, value)) {
+    			flareSettings.lensOrbs.roundness = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_67 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider10_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.fringeSize, value)) {
+    			flareSettings.lensOrbs.fringeSize = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_68 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider11_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.blur, value)) {
+    			flareSettings.lensOrbs.blur = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_69 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider12_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.sizeVariance, value)) {
+    			flareSettings.lensOrbs.sizeVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_70 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider13_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.alphaVariance, value)) {
+    			flareSettings.lensOrbs.alphaVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_71 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider14_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.hueVariance, value)) {
+    			flareSettings.lensOrbs.hueVariance = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_72 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider15_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.seed, value)) {
+    			flareSettings.lensOrbs.seed = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_73 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function slider16_value_binding_1(value) {
+    		if ($$self.$$.not_equal(flareSettings.lensOrbs.anamorph, value)) {
+    			flareSettings.lensOrbs.anamorph = value;
+    			$$invalidate(0, flareSettings);
+    		}
+    	}
+
+    	const input_handler_74 = function () {
+    		renderFlare(false, false, false, false, false, true);
+    	};
+
+    	function input0_input_handler() {
+    		flareSettings.dimensions.width = to_number(this.value);
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	function input1_input_handler() {
+    		flareSettings.dimensions.height = to_number(this.value);
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		Collapsible,
+    		colorvibrance: colorvibrance_1,
+    		SpotComponent,
+    		RingComponent,
+    		Slider,
+    		drawComponent: drawComponent_1,
+    		canvasClickDrag: canvasClickDrag_1,
+    		IrisComponent,
+    		seedrandom,
+    		HalfComponent,
+    		PresetPicker,
+    		fade,
+    		flareComponents,
+    		flareSettings,
+    		baseCanvas,
+    		referenceImage,
+    		renderFlare,
+    		handleClickDrag,
+    		createDownloadLink,
+    		createPresetSaveLink,
+    		setPreset,
+    		startScreenVisible,
+    		onStart,
+    		rIcheckbox,
+    		handleRIbutton,
+    		handleRIcheckbox,
+    		handleScaleMultiplier
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('flareComponents' in $$props) flareComponents = $$props.flareComponents;
+    		if ('flareSettings' in $$props) $$invalidate(0, flareSettings = $$props.flareSettings);
+    		if ('baseCanvas' in $$props) $$invalidate(1, baseCanvas = $$props.baseCanvas);
+    		if ('referenceImage' in $$props) $$invalidate(2, referenceImage = $$props.referenceImage);
+    		if ('startScreenVisible' in $$props) $$invalidate(3, startScreenVisible = $$props.startScreenVisible);
+    		if ('rIcheckbox' in $$props) $$invalidate(4, rIcheckbox = $$props.rIcheckbox);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		flareSettings,
+    		baseCanvas,
+    		referenceImage,
+    		startScreenVisible,
+    		rIcheckbox,
+    		renderFlare,
+    		handleClickDrag,
+    		createDownloadLink,
+    		createPresetSaveLink,
+    		setPreset,
+    		onStart,
+    		handleRIbutton,
+    		handleRIcheckbox,
+    		handleScaleMultiplier,
+    		click_handler,
+    		select0_change_handler,
+    		canvas0_binding,
+    		canvas1_binding,
+    		select1_change_handler,
+    		change_handler,
+    		input_binding,
+    		choose_handler,
+    		click_handler_1,
+    		slider0_value_binding,
+    		input_handler,
+    		slider1_value_binding,
+    		input_handler_1,
+    		slider2_value_binding,
+    		input_handler_2,
+    		slider3_value_binding,
+    		input_handler_3,
+    		slider4_value_binding,
+    		input_handler_4,
+    		slider0_value_binding_1,
+    		input_handler_5,
+    		slider1_value_binding_1,
+    		input_handler_6,
+    		slider2_value_binding_1,
+    		input_handler_7,
+    		slider3_value_binding_1,
+    		input_handler_8,
+    		slider4_value_binding_1,
+    		input_handler_9,
+    		slider5_value_binding,
+    		input_handler_10,
+    		slider6_value_binding,
+    		input_handler_11,
+    		slider7_value_binding,
+    		input_handler_12,
+    		slider8_value_binding,
+    		input_handler_13,
+    		slider9_value_binding,
+    		input_handler_14,
+    		slider0_value_binding_2,
+    		input_handler_15,
+    		slider1_value_binding_2,
+    		input_handler_16,
+    		slider2_value_binding_2,
+    		input_handler_17,
+    		slider3_value_binding_2,
+    		input_handler_18,
+    		slider4_value_binding_2,
+    		input_handler_19,
+    		slider5_value_binding_1,
+    		input_handler_20,
+    		slider6_value_binding_1,
+    		input_handler_21,
+    		slider7_value_binding_1,
+    		input_handler_22,
+    		slider8_value_binding_1,
+    		input_handler_23,
+    		slider0_value_binding_3,
+    		input_handler_24,
+    		slider1_value_binding_3,
+    		input_handler_25,
+    		slider2_value_binding_3,
+    		input_handler_26,
+    		slider3_value_binding_3,
+    		input_handler_27,
+    		slider4_value_binding_3,
+    		input_handler_28,
+    		slider5_value_binding_2,
+    		input_handler_29,
+    		slider6_value_binding_2,
+    		input_handler_30,
+    		slider7_value_binding_2,
+    		input_handler_31,
+    		slider8_value_binding_2,
+    		input_handler_32,
+    		slider0_value_binding_4,
+    		input_handler_33,
+    		slider1_value_binding_4,
+    		input_handler_34,
+    		slider2_value_binding_4,
+    		input_handler_35,
+    		slider3_value_binding_4,
+    		input_handler_36,
+    		slider4_value_binding_4,
+    		input_handler_37,
+    		slider5_value_binding_3,
+    		input_handler_38,
+    		slider6_value_binding_3,
+    		input_handler_39,
+    		slider7_value_binding_3,
+    		input_handler_40,
+    		slider8_value_binding_3,
+    		input_handler_41,
+    		slider9_value_binding_1,
+    		input_handler_42,
+    		slider10_value_binding,
+    		input_handler_43,
+    		slider11_value_binding,
+    		input_handler_44,
+    		slider12_value_binding,
+    		input_handler_45,
+    		slider13_value_binding,
+    		input_handler_46,
+    		slider14_value_binding,
+    		input_handler_47,
+    		slider15_value_binding,
+    		input_handler_48,
+    		slider16_value_binding,
+    		input_handler_49,
+    		slider17_value_binding,
+    		input_handler_50,
+    		slider18_value_binding,
+    		input_handler_51,
+    		slider0_value_binding_5,
+    		input_handler_52,
+    		slider1_value_binding_5,
+    		input_handler_53,
+    		slider2_value_binding_5,
+    		input_handler_54,
+    		slider3_value_binding_5,
+    		input_handler_55,
+    		slider4_value_binding_5,
+    		input_handler_56,
+    		slider5_value_binding_4,
+    		input_handler_57,
+    		slider0_value_binding_6,
+    		input_handler_58,
+    		slider1_value_binding_6,
+    		input_handler_59,
+    		slider2_value_binding_6,
+    		input_handler_60,
+    		slider3_value_binding_6,
+    		input_handler_61,
+    		slider4_value_binding_6,
+    		input_handler_62,
+    		slider5_value_binding_5,
+    		input_handler_63,
+    		slider6_value_binding_4,
+    		input_handler_64,
+    		slider7_value_binding_4,
+    		input_handler_65,
+    		slider8_value_binding_4,
+    		input_handler_66,
+    		slider9_value_binding_2,
+    		input_handler_67,
+    		slider10_value_binding_1,
+    		input_handler_68,
+    		slider11_value_binding_1,
+    		input_handler_69,
+    		slider12_value_binding_1,
+    		input_handler_70,
+    		slider13_value_binding_1,
+    		input_handler_71,
+    		slider14_value_binding_1,
+    		input_handler_72,
+    		slider15_value_binding_1,
+    		input_handler_73,
+    		slider16_value_binding_1,
+    		input_handler_74,
+    		input0_input_handler,
+    		input1_input_handler
+    	];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {}, null, [-1, -1, -1, -1, -1, -1]);
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    const app = new App({
+        target: document.body,
+        props: {
+        }
+    });
+
+    return app;
+
+})();
 //# sourceMappingURL=bundle.js.map

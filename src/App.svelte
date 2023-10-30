@@ -137,7 +137,7 @@
     function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false, renderLensOrbs=false) {
         if (renderHotspot) {
             flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
-            flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity / flareSettings.downscaling;
+            flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity;
             flareComponents.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
             flareComponents.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
             flareComponents.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
@@ -148,7 +148,7 @@
         }
         if (renderStreak) {
             flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
-            flareComponents.streak.options.intensity = flareSettings.streak.intensity / flareSettings.downscaling;
+            flareComponents.streak.options.intensity = flareSettings.streak.intensity;
             flareComponents.streak.options.hue = flareSettings.streak.hue;
             flareComponents.streak.options.saturation = flareSettings.streak.saturation;
             flareComponents.streak.render();
@@ -180,7 +180,7 @@
         }
         if (renderGlow) {
             flareComponents.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
-            flareComponents.glow.options.intensity = -flareSettings.glow.softening / flareSettings.downscaling;
+            flareComponents.glow.options.intensity = -flareSettings.glow.softening;
             flareComponents.glow.options.hue = flareSettings.glow.hue;
             flareComponents.glow.options.saturation = flareSettings.glow.saturation;
             flareComponents.glow.render();
@@ -335,10 +335,8 @@
 
     function handleScaleMultiplier() {
         flareSettings.hotspot.radius *= flareSettings.sizeMultiplier;
-        flareSettings.hotspot.intensity *= flareSettings.sizeMultiplier;
         flareSettings.streak.thickness *= flareSettings.sizeMultiplier;
         flareSettings.streak.width *= flareSettings.sizeMultiplier;
-        flareSettings.streak.intensity *= flareSettings.sizeMultiplier;
         flareSettings.ring.radius *= flareSettings.sizeMultiplier;
         flareSettings.ring.thickness *= flareSettings.sizeMultiplier;
         flareSettings.ring.blur *= flareSettings.sizeMultiplier;
@@ -347,7 +345,6 @@
         flareSettings.miIris.fringeSize *= flareSettings.sizeMultiplier;
         flareSettings.miIris.blur *= flareSettings.sizeMultiplier;
         flareSettings.glow.radius *= flareSettings.sizeMultiplier;
-        flareSettings.glow.softening *= flareSettings.sizeMultiplier;
         flareSettings.lensOrbs.radius *= flareSettings.sizeMultiplier;
         flareSettings.lensOrbs.fringeSize *= flareSettings.sizeMultiplier;
         flareSettings.lensOrbs.blur *= flareSettings.sizeMultiplier;
