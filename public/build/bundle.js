@@ -2892,7 +2892,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 57, 12, 18408);
+    			add_location(option, file$1, 57, 12, 18409);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2952,17 +2952,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 53, 4, 18184);
+    			add_location(option0, file$1, 53, 4, 18185);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 54, 4, 18254);
+    			add_location(option1, file$1, 54, 4, 18255);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 55, 4, 18317);
+    			add_location(optgroup, file$1, 55, 4, 18318);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 52, 0, 18125);
+    			add_location(select, file$1, 52, 0, 18126);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 62, 0, 18518);
+    			add_location(input, file$1, 62, 0, 18519);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3926,7 +3926,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 531,
-    					"intensity": 35,
+    					"intensity": 19,
     					"deformationAmount": 0,
     					"deformationFrequency": 0.006,
     					"deformationSeed": 1,
@@ -4013,7 +4013,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 345,
-    					"intensity": 5,
+    					"intensity": 28,
     					"deformationAmount": 2.1,
     					"deformationFrequency": 0.015,
     					"deformationSeed": 633,
@@ -4100,7 +4100,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 591,
-    					"intensity": 12,
+    					"intensity": 21,
     					"deformationAmount": 2.1,
     					"deformationFrequency": 0.007,
     					"deformationSeed": 611,
