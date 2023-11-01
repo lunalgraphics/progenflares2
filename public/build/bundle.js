@@ -1332,7 +1332,7 @@ var app = (function () {
             ctx.save();
             ctx.fillStyle = "#FFFFFF";
             ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-            ctx.drawImage(EllipticalGradient_1.canvas, 0, 1, this.canvas.width, this.canvas.height - 1);
+            ctx.drawImage(EllipticalGradient_1.canvas, 0, 0, this.canvas.width, this.canvas.height);
 
             var deformationTexture = new FractalNoise_1(1024, 1024, {
                 baseFrequency: [this.options.deformationFrequency, 0],
