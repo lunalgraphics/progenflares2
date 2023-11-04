@@ -11,6 +11,7 @@
     import HalfComponent from "./HalfComponent";
     import PresetPicker from "./PresetPicker.svelte";
     import { fade } from "svelte/transition";
+    import { onMount } from "svelte";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -252,7 +253,9 @@
         }
     }
 
-    window.onload = function() { renderFlare(true, true, true, true, true, true); };
+    onMount(function() {
+        renderFlare(true, true, true, true, true, true);
+    });
 
     function handleClickDrag(e) {
         //console.log(e.detail);
