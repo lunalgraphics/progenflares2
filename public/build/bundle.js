@@ -2892,7 +2892,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 57, 12, 18409);
+    			add_location(option, file$1, 57, 12, 18412);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2952,17 +2952,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 53, 4, 18185);
+    			add_location(option0, file$1, 53, 4, 18188);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 54, 4, 18255);
+    			add_location(option1, file$1, 54, 4, 18258);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 55, 4, 18318);
+    			add_location(optgroup, file$1, 55, 4, 18321);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 52, 0, 18126);
+    			add_location(select, file$1, 52, 0, 18129);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 62, 0, 18519);
+    			add_location(input, file$1, 62, 0, 18522);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3056,7 +3056,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 595,
-    					"intensity": 10,
+    					"intensity": 20,
     					"deformationAmount": 1.5,
     					"deformationFrequency": 0.01,
     					"deformationSeed": 239,
@@ -3578,8 +3578,8 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 352,
-    					"intensity": 12,
-    					"deformationAmount": 1,
+    					"intensity": 24,
+    					"deformationAmount": 1.23,
     					"deformationFrequency": 0.007,
     					"deformationSeed": 497,
     					"alpha": 100,
@@ -3752,7 +3752,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 550,
-    					"intensity": 11,
+    					"intensity": 21,
     					"deformationAmount": 1.6,
     					"deformationFrequency": 0.013,
     					"deformationSeed": 139,
@@ -3839,7 +3839,7 @@ var app = (function () {
     			data: {
     				"hotspot": {
     					"radius": 632,
-    					"intensity": 11,
+    					"intensity": 20,
     					"deformationAmount": 1.42,
     					"deformationFrequency": 0.012,
     					"deformationSeed": 216,
@@ -9141,7 +9141,7 @@ var app = (function () {
     		setPreset({
     			"hotspot": {
     				"radius": 595,
-    				"intensity": 10,
+    				"intensity": 20,
     				"deformationAmount": 1.5,
     				"deformationFrequency": 0.01,
     				"deformationSeed": 239,
