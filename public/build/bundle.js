@@ -2912,7 +2912,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 57, 12, 18412);
+    			add_location(option, file$1, 57, 12, 18413);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2972,17 +2972,17 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 53, 4, 18188);
+    			add_location(option0, file$1, 53, 4, 18189);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 54, 4, 18258);
+    			add_location(option1, file$1, 54, 4, 18259);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 55, 4, 18321);
+    			add_location(optgroup, file$1, 55, 4, 18322);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 52, 0, 18129);
+    			add_location(select, file$1, 52, 0, 18130);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 62, 0, 18522);
+    			add_location(input, file$1, 62, 0, 18523);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3712,7 +3712,7 @@ var app = (function () {
     					"blur": 13,
     					"cropSize": 0,
     					"cropHardness": 50,
-    					"alpha": 8,
+    					"alpha": 16,
     					"hue": 230,
     					"saturation": 100,
     					"anamorph": 50
