@@ -253,10 +253,6 @@
         }
     }
 
-    onMount(function() {
-        renderFlare(true, true, true, true, true, true);
-    });
-
     function handleClickDrag(e) {
         //console.log(e.detail);
         flareSettings.positioning.x = e.detail.x;
@@ -354,16 +350,45 @@
         flareSettings.sizeMultiplier = 1;
         renderFlare(true, true, true, true, true, true);
     }
+
+    let isPopupPlugin = false;
+    onMount(function() {
+        renderFlare(true, true, true, true, true, true);
+
+        let locSearch = new URLSearchParams(location.search);
+        if (locSearch.get("popupPlugin") == "yeah") {
+            isPopupPlugin = true;
+            flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
+            flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
+            setTimeout(onStart, 1);
+            window.addEventListener("message", function(e) {
+                console.log(e.data);
+                if (e.data[0] == "refImage") {
+                    referenceImage.style.backgroundImage = `url("${e.data[1]}")`;
+                    rIcheckbox.checked = true;
+                    (handleRIcheckbox.bind(rIcheckbox))();
+                }
+            });
+            window.postMessage(["pluginStatus", "ready"]);
+        }
+    });
 </script>
 
 <div id={"exportPanel"}>
-<button on:click={function() { createDownloadLink().click(); }}>Export</button>
-<span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
-<select bind:value={flareSettings.exportType}>
-    <option value={"png"}>PNG</option>
-    <option value={"jpeg"}>JPG</option>
-    <option value={"webp"}>WebP</option>
-</select>
+{#if (!isPopupPlugin)}
+    <button on:click={function() { createDownloadLink().click(); }}>Export</button>
+    <span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
+    <select bind:value={flareSettings.exportType}>
+        <option value={"png"}>PNG</option>
+        <option value={"jpeg"}>JPG</option>
+        <option value={"webp"}>WebP</option>
+    </select>
+{/if}
+{#if (isPopupPlugin)}
+    <button on:click={function() { window.postMessage(["finalImage", createDownloadLink().href]); window.close(); }}>Finish</button>
+    <span style="white-space: pre;">{"  "}</span>
+    <button on:click={function() { window.close(); }}>Close</button>
+{/if}
 </div>
 
 <div id={"previewSection"}>   
