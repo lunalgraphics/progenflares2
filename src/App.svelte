@@ -137,7 +137,7 @@
     function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false, renderLensOrbs=false) {
         if (renderHotspot) {
             flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
-            flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity / flareSettings.downscaling;
+            flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity;
             flareComponents.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
             flareComponents.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
             flareComponents.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
@@ -148,7 +148,7 @@
         }
         if (renderStreak) {
             flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
-            flareComponents.streak.options.intensity = flareSettings.streak.intensity / flareSettings.downscaling;
+            flareComponents.streak.options.intensity = flareSettings.streak.intensity;
             flareComponents.streak.options.hue = flareSettings.streak.hue;
             flareComponents.streak.options.saturation = flareSettings.streak.saturation;
             flareComponents.streak.render();
@@ -180,7 +180,7 @@
         }
         if (renderGlow) {
             flareComponents.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
-            flareComponents.glow.options.intensity = -flareSettings.glow.softening / flareSettings.downscaling;
+            flareComponents.glow.options.intensity = -flareSettings.glow.softening;
             flareComponents.glow.options.hue = flareSettings.glow.hue;
             flareComponents.glow.options.saturation = flareSettings.glow.saturation;
             flareComponents.glow.render();
@@ -301,7 +301,7 @@
 
     var startScreenVisible = true;
     function onStart() {
-        setPreset({"hotspot":{"radius":595,"intensity":10,"deformationAmount":1.5,"deformationFrequency":0.01,"deformationSeed":239,"alpha":100,"angle":0,"hue":39,"saturation":88,"anamorph":0},"streak":{"thickness":121,"width":2435,"intensity":-25,"count":1,"angle":0,"shift":48,"alpha":100,"hue":216,"saturation":100},"ring":{"radius":300,"thickness":50,"blur":4,"cropSize":0,"cropHardness":50,"alpha":0,"hue":200,"saturation":100,"anamorph":0},"miIris":{"radius":72,"sides":6,"roundness":50,"angle":0,"fillAlpha":10,"fringeAlpha":12,"fringeSize":28,"blur":3,"countAway":5,"countTowards":12,"spread":30,"sizeVariance":40,"perspective":100,"alphaVariance":50,"seed":333,"hue":39,"saturation":100,"hueVariance":40,"anamorph":0},"glow":{"radius":999,"alpha":25,"softening":0,"hue":23,"saturation":100,"anamorph":0},"lensOrbs":{"radius":21,"sides":6,"roundness":100,"angle":0,"fillAlpha":3,"fringeAlpha":6,"fringeSize":4,"blur":2,"count":123,"threshold":1210,"seed":222,"sizeVariance":0,"alphaVariance":42,"hue":16,"saturation":100,"hueVariance":0,"anamorph":0}});
+        setPreset({"hotspot":{"radius":595,"intensity":20,"deformationAmount":1.5,"deformationFrequency":0.01,"deformationSeed":239,"alpha":100,"angle":0,"hue":39,"saturation":88,"anamorph":0},"streak":{"thickness":121,"width":2435,"intensity":-25,"count":1,"angle":0,"shift":48,"alpha":100,"hue":216,"saturation":100},"ring":{"radius":300,"thickness":50,"blur":4,"cropSize":0,"cropHardness":50,"alpha":0,"hue":200,"saturation":100,"anamorph":0},"miIris":{"radius":72,"sides":6,"roundness":50,"angle":0,"fillAlpha":10,"fringeAlpha":12,"fringeSize":28,"blur":3,"countAway":5,"countTowards":12,"spread":30,"sizeVariance":40,"perspective":100,"alphaVariance":50,"seed":333,"hue":39,"saturation":100,"hueVariance":40,"anamorph":0},"glow":{"radius":999,"alpha":25,"softening":0,"hue":23,"saturation":100,"anamorph":0},"lensOrbs":{"radius":21,"sides":6,"roundness":100,"angle":0,"fillAlpha":3,"fringeAlpha":6,"fringeSize":4,"blur":2,"count":123,"threshold":1210,"seed":222,"sizeVariance":0,"alphaVariance":42,"hue":16,"saturation":100,"hueVariance":0,"anamorph":0}});
         flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2;
         flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2;
         flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5;
@@ -335,10 +335,8 @@
 
     function handleScaleMultiplier() {
         flareSettings.hotspot.radius *= flareSettings.sizeMultiplier;
-        flareSettings.hotspot.intensity *= flareSettings.sizeMultiplier;
         flareSettings.streak.thickness *= flareSettings.sizeMultiplier;
         flareSettings.streak.width *= flareSettings.sizeMultiplier;
-        flareSettings.streak.intensity *= flareSettings.sizeMultiplier;
         flareSettings.ring.radius *= flareSettings.sizeMultiplier;
         flareSettings.ring.thickness *= flareSettings.sizeMultiplier;
         flareSettings.ring.blur *= flareSettings.sizeMultiplier;
@@ -347,7 +345,6 @@
         flareSettings.miIris.fringeSize *= flareSettings.sizeMultiplier;
         flareSettings.miIris.blur *= flareSettings.sizeMultiplier;
         flareSettings.glow.radius *= flareSettings.sizeMultiplier;
-        flareSettings.glow.softening *= flareSettings.sizeMultiplier;
         flareSettings.lensOrbs.radius *= flareSettings.sizeMultiplier;
         flareSettings.lensOrbs.fringeSize *= flareSettings.sizeMultiplier;
         flareSettings.lensOrbs.blur *= flareSettings.sizeMultiplier;
