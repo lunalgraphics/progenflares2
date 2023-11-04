@@ -4559,7 +4559,7 @@ var app = (function () {
     const { console: console_1, document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (378:0) {#if (!isPopupPlugin)}
+    // (394:0) {#if (!isPopupPlugin)}
     function create_if_block_2(ctx) {
     	let button;
     	let t1;
@@ -4588,25 +4588,25 @@ var app = (function () {
     			option2 = element("option");
     			option2.textContent = "WebP";
     			attr_dev(button, "class", "svelte-viz99f");
-    			add_location(button, file, 378, 4, 20136);
+    			add_location(button, file, 394, 4, 20787);
     			attr_dev(span, "style", "display: inline-block; margin-left: 5px; margin-right: 5px;");
     			attr_dev(span, "class", "svelte-viz99f");
-    			add_location(span, file, 379, 4, 20220);
+    			add_location(span, file, 395, 4, 20871);
     			option0.__value = "png";
     			option0.value = option0.__value;
     			attr_dev(option0, "class", "svelte-viz99f");
-    			add_location(option0, file, 381, 8, 20365);
+    			add_location(option0, file, 397, 8, 21016);
     			option1.__value = "jpeg";
     			option1.value = option1.__value;
     			attr_dev(option1, "class", "svelte-viz99f");
-    			add_location(option1, file, 382, 8, 20408);
+    			add_location(option1, file, 398, 8, 21059);
     			option2.__value = "webp";
     			option2.value = option2.__value;
     			attr_dev(option2, "class", "svelte-viz99f");
-    			add_location(option2, file, 383, 8, 20452);
+    			add_location(option2, file, 399, 8, 21103);
     			attr_dev(select, "class", "svelte-viz99f");
     			if (/*flareSettings*/ ctx[0].exportType === void 0) add_render_callback(() => /*select_change_handler*/ ctx[16].call(select));
-    			add_location(select, file, 380, 4, 20310);
+    			add_location(select, file, 396, 4, 20961);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -4648,14 +4648,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(378:0) {#if (!isPopupPlugin)}",
+    		source: "(394:0) {#if (!isPopupPlugin)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (387:0) {#if (isPopupPlugin)}
+    // (403:0) {#if (isPopupPlugin)}
     function create_if_block_1(ctx) {
     	let button0;
     	let t1;
@@ -4676,12 +4676,12 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Close";
     			attr_dev(button0, "class", "svelte-viz99f");
-    			add_location(button0, file, 387, 4, 20535);
+    			add_location(button0, file, 403, 4, 21186);
     			set_style(span, "white-space", "pre");
     			attr_dev(span, "class", "svelte-viz99f");
-    			add_location(span, file, 388, 4, 20668);
+    			add_location(span, file, 404, 4, 21319);
     			attr_dev(button1, "class", "svelte-viz99f");
-    			add_location(button1, file, 389, 4, 20718);
+    			add_location(button1, file, 405, 4, 21369);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button0, anchor);
@@ -4715,14 +4715,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(387:0) {#if (isPopupPlugin)}",
+    		source: "(403:0) {#if (isPopupPlugin)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (429:0) <Collapsible title={"Global"} collapsed={false}>
+    // (445:0) <Collapsible title={"Global"} collapsed={false}>
     function create_default_slot_6(ctx) {
     	let t0;
     	let slider0;
@@ -4857,15 +4857,15 @@ var app = (function () {
     			t9 = space();
     			br4 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 429, 151, 22465);
+    			add_location(br0, file, 445, 151, 23116);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 430, 152, 22624);
+    			add_location(br1, file, 446, 152, 23275);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 431, 156, 22787);
+    			add_location(br2, file, 447, 156, 23438);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 432, 157, 22951);
+    			add_location(br3, file, 448, 157, 23602);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 433, 181, 23139);
+    			add_location(br4, file, 449, 181, 23790);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4986,69 +4986,74 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(429:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
+    		source: "(445:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (436:0) <Collapsible title={"Hotspot"}>
+    // (452:0) <Collapsible title={"Hotspot"}>
     function create_default_slot_5(ctx) {
+    	let label;
+    	let input;
     	let t0;
+    	let t1;
     	let slider0;
     	let updating_value;
-    	let t1;
-    	let br0;
     	let t2;
+    	let br0;
+    	let t3;
     	let slider1;
     	let updating_value_1;
-    	let t3;
-    	let br1;
     	let t4;
+    	let br1;
+    	let t5;
     	let slider2;
     	let updating_value_2;
-    	let t5;
-    	let br2;
     	let t6;
+    	let br2;
+    	let t7;
     	let slider3;
     	let updating_value_3;
-    	let t7;
-    	let br3;
     	let t8;
+    	let br3;
+    	let t9;
     	let slider4;
     	let updating_value_4;
-    	let t9;
-    	let br4;
     	let t10;
+    	let br4;
+    	let t11;
     	let slider5;
     	let updating_value_5;
-    	let t11;
-    	let br5;
     	let t12;
+    	let br5;
+    	let t13;
     	let slider6;
     	let updating_value_6;
-    	let t13;
-    	let br6;
     	let t14;
+    	let br6;
+    	let t15;
     	let slider7;
     	let updating_value_7;
-    	let t15;
-    	let br7;
     	let t16;
+    	let br7;
+    	let t17;
     	let slider8;
     	let updating_value_8;
-    	let t17;
-    	let br8;
     	let t18;
+    	let br8;
+    	let t19;
     	let slider9;
     	let updating_value_9;
-    	let t19;
+    	let t20;
     	let br9;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	function slider0_value_binding_1(value) {
-    		/*slider0_value_binding_1*/ ctx[36](value);
+    		/*slider0_value_binding_1*/ ctx[38](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -5059,10 +5064,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_1));
-    	slider0.$on("input", /*input_handler_5*/ ctx[37]);
+    	slider0.$on("input", /*input_handler_5*/ ctx[39]);
 
     	function slider1_value_binding_1(value) {
-    		/*slider1_value_binding_1*/ ctx[38](value);
+    		/*slider1_value_binding_1*/ ctx[40](value);
     	}
 
     	let slider1_props = { min: 0, max: 360 };
@@ -5073,10 +5078,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_1));
-    	slider1.$on("input", /*input_handler_6*/ ctx[39]);
+    	slider1.$on("input", /*input_handler_6*/ ctx[41]);
 
     	function slider2_value_binding_1(value) {
-    		/*slider2_value_binding_1*/ ctx[40](value);
+    		/*slider2_value_binding_1*/ ctx[42](value);
     	}
 
     	let slider2_props = { min: 0, max: 360, className: "hueSlider" };
@@ -5087,10 +5092,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_1));
-    	slider2.$on("input", /*input_handler_7*/ ctx[41]);
+    	slider2.$on("input", /*input_handler_7*/ ctx[43]);
 
     	function slider3_value_binding_1(value) {
-    		/*slider3_value_binding_1*/ ctx[42](value);
+    		/*slider3_value_binding_1*/ ctx[44](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -5101,10 +5106,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_1));
-    	slider3.$on("input", /*input_handler_8*/ ctx[43]);
+    	slider3.$on("input", /*input_handler_8*/ ctx[45]);
 
     	function slider4_value_binding_1(value) {
-    		/*slider4_value_binding_1*/ ctx[44](value);
+    		/*slider4_value_binding_1*/ ctx[46](value);
     	}
 
     	let slider4_props = { min: 0, max: 1000 };
@@ -5115,10 +5120,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_1));
-    	slider4.$on("input", /*input_handler_9*/ ctx[45]);
+    	slider4.$on("input", /*input_handler_9*/ ctx[47]);
 
     	function slider5_value_binding(value) {
-    		/*slider5_value_binding*/ ctx[46](value);
+    		/*slider5_value_binding*/ ctx[48](value);
     	}
 
     	let slider5_props = { min: 0, max: 50 };
@@ -5129,10 +5134,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding));
-    	slider5.$on("input", /*input_handler_10*/ ctx[47]);
+    	slider5.$on("input", /*input_handler_10*/ ctx[49]);
 
     	function slider6_value_binding(value) {
-    		/*slider6_value_binding*/ ctx[48](value);
+    		/*slider6_value_binding*/ ctx[50](value);
     	}
 
     	let slider6_props = { min: 0, max: 0.05, step: 0.001 };
@@ -5143,10 +5148,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding));
-    	slider6.$on("input", /*input_handler_11*/ ctx[49]);
+    	slider6.$on("input", /*input_handler_11*/ ctx[51]);
 
     	function slider7_value_binding(value) {
-    		/*slider7_value_binding*/ ctx[50](value);
+    		/*slider7_value_binding*/ ctx[52](value);
     	}
 
     	let slider7_props = { min: 0, max: 2.1, step: 0.01 };
@@ -5157,10 +5162,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding));
-    	slider7.$on("input", /*input_handler_12*/ ctx[51]);
+    	slider7.$on("input", /*input_handler_12*/ ctx[53]);
 
     	function slider8_value_binding(value) {
-    		/*slider8_value_binding*/ ctx[52](value);
+    		/*slider8_value_binding*/ ctx[54](value);
     	}
 
     	let slider8_props = { min: 1, max: 999 };
@@ -5171,10 +5176,10 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding));
-    	slider8.$on("input", /*input_handler_13*/ ctx[53]);
+    	slider8.$on("input", /*input_handler_13*/ ctx[55]);
 
     	function slider9_value_binding(value) {
-    		/*slider9_value_binding*/ ctx[54](value);
+    		/*slider9_value_binding*/ ctx[56](value);
     	}
 
     	let slider9_props = { min: 0, max: 100 };
@@ -5185,115 +5190,141 @@ var app = (function () {
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding));
-    	slider9.$on("input", /*input_handler_14*/ ctx[55]);
+    	slider9.$on("input", /*input_handler_14*/ ctx[57]);
 
     	const block = {
     		c: function create() {
-    			t0 = text("Alpha: ");
+    			label = element("label");
+    			input = element("input");
+    			t0 = text("\n        Visible");
+    			t1 = text("\n    Alpha: ");
     			create_component(slider0.$$.fragment);
-    			t1 = space();
+    			t2 = space();
     			br0 = element("br");
-    			t2 = text("\n    Angle: ");
+    			t3 = text("\n    Angle: ");
     			create_component(slider1.$$.fragment);
-    			t3 = space();
+    			t4 = space();
     			br1 = element("br");
-    			t4 = text("\n    Hue: ");
+    			t5 = text("\n    Hue: ");
     			create_component(slider2.$$.fragment);
-    			t5 = space();
+    			t6 = space();
     			br2 = element("br");
-    			t6 = text("\n    Saturation: ");
+    			t7 = text("\n    Saturation: ");
     			create_component(slider3.$$.fragment);
-    			t7 = space();
+    			t8 = space();
     			br3 = element("br");
-    			t8 = text("\n    Size: ");
+    			t9 = text("\n    Size: ");
     			create_component(slider4.$$.fragment);
-    			t9 = space();
+    			t10 = space();
     			br4 = element("br");
-    			t10 = text("\n    Intensity: ");
+    			t11 = text("\n    Intensity: ");
     			create_component(slider5.$$.fragment);
-    			t11 = space();
+    			t12 = space();
     			br5 = element("br");
-    			t12 = text("\n    Rays Frequency: ");
+    			t13 = text("\n    Rays Frequency: ");
     			create_component(slider6.$$.fragment);
-    			t13 = space();
+    			t14 = space();
     			br6 = element("br");
-    			t14 = text("\n    Rays Definition: ");
+    			t15 = text("\n    Rays Definition: ");
     			create_component(slider7.$$.fragment);
-    			t15 = space();
+    			t16 = space();
     			br7 = element("br");
-    			t16 = text("\n    Random Seed: ");
+    			t17 = text("\n    Random Seed: ");
     			create_component(slider8.$$.fragment);
-    			t17 = space();
+    			t18 = space();
     			br8 = element("br");
-    			t18 = text("\n    Anamorph: ");
+    			t19 = text("\n    Anamorph: ");
     			create_component(slider9.$$.fragment);
-    			t19 = space();
+    			t20 = space();
     			br9 = element("br");
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-viz99f");
+    			add_location(input, file, 453, 8, 23892);
+    			set_style(label, "text-align", "center");
+    			attr_dev(label, "class", "svelte-viz99f");
+    			add_location(label, file, 452, 4, 23848);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 436, 126, 23319);
+    			add_location(br0, file, 456, 126, 24164);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 437, 126, 23452);
+    			add_location(br1, file, 457, 126, 24297);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 438, 144, 23603);
+    			add_location(br2, file, 458, 144, 24448);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 439, 136, 23746);
+    			add_location(br3, file, 459, 136, 24591);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 440, 127, 23880);
+    			add_location(br4, file, 460, 127, 24725);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 441, 133, 24020);
+    			add_location(br5, file, 461, 133, 24865);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 442, 164, 24191);
+    			add_location(br6, file, 462, 164, 25036);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 443, 160, 24358);
+    			add_location(br7, file, 463, 160, 25203);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 444, 142, 24507);
+    			add_location(br8, file, 464, 142, 25352);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 445, 132, 24646);
+    			add_location(br9, file, 465, 132, 25491);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			mount_component(slider0, target, anchor);
+    			insert_dev(target, label, anchor);
+    			append_dev(label, input);
+    			input.checked = /*flareSettings*/ ctx[0].hotspot.visible;
+    			append_dev(label, t0);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, br0, anchor);
+    			mount_component(slider0, target, anchor);
     			insert_dev(target, t2, anchor);
-    			mount_component(slider1, target, anchor);
+    			insert_dev(target, br0, anchor);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, br1, anchor);
+    			mount_component(slider1, target, anchor);
     			insert_dev(target, t4, anchor);
-    			mount_component(slider2, target, anchor);
+    			insert_dev(target, br1, anchor);
     			insert_dev(target, t5, anchor);
-    			insert_dev(target, br2, anchor);
+    			mount_component(slider2, target, anchor);
     			insert_dev(target, t6, anchor);
-    			mount_component(slider3, target, anchor);
+    			insert_dev(target, br2, anchor);
     			insert_dev(target, t7, anchor);
-    			insert_dev(target, br3, anchor);
+    			mount_component(slider3, target, anchor);
     			insert_dev(target, t8, anchor);
-    			mount_component(slider4, target, anchor);
+    			insert_dev(target, br3, anchor);
     			insert_dev(target, t9, anchor);
-    			insert_dev(target, br4, anchor);
+    			mount_component(slider4, target, anchor);
     			insert_dev(target, t10, anchor);
-    			mount_component(slider5, target, anchor);
+    			insert_dev(target, br4, anchor);
     			insert_dev(target, t11, anchor);
-    			insert_dev(target, br5, anchor);
+    			mount_component(slider5, target, anchor);
     			insert_dev(target, t12, anchor);
-    			mount_component(slider6, target, anchor);
+    			insert_dev(target, br5, anchor);
     			insert_dev(target, t13, anchor);
-    			insert_dev(target, br6, anchor);
+    			mount_component(slider6, target, anchor);
     			insert_dev(target, t14, anchor);
-    			mount_component(slider7, target, anchor);
+    			insert_dev(target, br6, anchor);
     			insert_dev(target, t15, anchor);
-    			insert_dev(target, br7, anchor);
+    			mount_component(slider7, target, anchor);
     			insert_dev(target, t16, anchor);
-    			mount_component(slider8, target, anchor);
+    			insert_dev(target, br7, anchor);
     			insert_dev(target, t17, anchor);
-    			insert_dev(target, br8, anchor);
+    			mount_component(slider8, target, anchor);
     			insert_dev(target, t18, anchor);
-    			mount_component(slider9, target, anchor);
+    			insert_dev(target, br8, anchor);
     			insert_dev(target, t19, anchor);
+    			mount_component(slider9, target, anchor);
+    			insert_dev(target, t20, anchor);
     			insert_dev(target, br9, anchor);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input, "change", /*input_change_handler*/ ctx[36]),
+    					listen_dev(input, "change", /*change_handler_1*/ ctx[37], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*flareSettings*/ 1) {
+    				input.checked = /*flareSettings*/ ctx[0].hotspot.visible;
+    			}
+
     			const slider0_changes = {};
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
@@ -5413,46 +5444,49 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(label);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(br0);
+    			destroy_component(slider0, detaching);
     			if (detaching) detach_dev(t2);
-    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(br0);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(br1);
+    			destroy_component(slider1, detaching);
     			if (detaching) detach_dev(t4);
-    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(br1);
     			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(br2);
+    			destroy_component(slider2, detaching);
     			if (detaching) detach_dev(t6);
-    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(br2);
     			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(br3);
+    			destroy_component(slider3, detaching);
     			if (detaching) detach_dev(t8);
-    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(br3);
     			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(br4);
+    			destroy_component(slider4, detaching);
     			if (detaching) detach_dev(t10);
-    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(br4);
     			if (detaching) detach_dev(t11);
-    			if (detaching) detach_dev(br5);
+    			destroy_component(slider5, detaching);
     			if (detaching) detach_dev(t12);
-    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(br5);
     			if (detaching) detach_dev(t13);
-    			if (detaching) detach_dev(br6);
+    			destroy_component(slider6, detaching);
     			if (detaching) detach_dev(t14);
-    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(br6);
     			if (detaching) detach_dev(t15);
-    			if (detaching) detach_dev(br7);
+    			destroy_component(slider7, detaching);
     			if (detaching) detach_dev(t16);
-    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(br7);
     			if (detaching) detach_dev(t17);
-    			if (detaching) detach_dev(br8);
+    			destroy_component(slider8, detaching);
     			if (detaching) detach_dev(t18);
-    			destroy_component(slider9, detaching);
+    			if (detaching) detach_dev(br8);
     			if (detaching) detach_dev(t19);
+    			destroy_component(slider9, detaching);
+    			if (detaching) detach_dev(t20);
     			if (detaching) detach_dev(br9);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -5460,64 +5494,69 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(436:0) <Collapsible title={\\\"Hotspot\\\"}>",
+    		source: "(452:0) <Collapsible title={\\\"Hotspot\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (448:0) <Collapsible title={"Streak"}>
+    // (468:0) <Collapsible title={"Streak"}>
     function create_default_slot_4(ctx) {
+    	let label;
+    	let input;
     	let t0;
+    	let t1;
     	let slider0;
     	let updating_value;
-    	let t1;
-    	let br0;
     	let t2;
+    	let br0;
+    	let t3;
     	let slider1;
     	let updating_value_1;
-    	let t3;
-    	let br1;
     	let t4;
+    	let br1;
+    	let t5;
     	let slider2;
     	let updating_value_2;
-    	let t5;
-    	let br2;
     	let t6;
+    	let br2;
+    	let t7;
     	let slider3;
     	let updating_value_3;
-    	let t7;
-    	let br3;
     	let t8;
+    	let br3;
+    	let t9;
     	let slider4;
     	let updating_value_4;
-    	let t9;
-    	let br4;
     	let t10;
+    	let br4;
+    	let t11;
     	let slider5;
     	let updating_value_5;
-    	let t11;
-    	let br5;
     	let t12;
+    	let br5;
+    	let t13;
     	let slider6;
     	let updating_value_6;
-    	let t13;
-    	let br6;
     	let t14;
+    	let br6;
+    	let t15;
     	let slider7;
     	let updating_value_7;
-    	let t15;
-    	let br7;
     	let t16;
+    	let br7;
+    	let t17;
     	let slider8;
     	let updating_value_8;
-    	let t17;
+    	let t18;
     	let br8;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	function slider0_value_binding_2(value) {
-    		/*slider0_value_binding_2*/ ctx[56](value);
+    		/*slider0_value_binding_2*/ ctx[60](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -5528,10 +5567,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_2));
-    	slider0.$on("input", /*input_handler_15*/ ctx[57]);
+    	slider0.$on("input", /*input_handler_15*/ ctx[61]);
 
     	function slider1_value_binding_2(value) {
-    		/*slider1_value_binding_2*/ ctx[58](value);
+    		/*slider1_value_binding_2*/ ctx[62](value);
     	}
 
     	let slider1_props = { min: 0, max: 360 };
@@ -5542,10 +5581,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_2));
-    	slider1.$on("input", /*input_handler_16*/ ctx[59]);
+    	slider1.$on("input", /*input_handler_16*/ ctx[63]);
 
     	function slider2_value_binding_2(value) {
-    		/*slider2_value_binding_2*/ ctx[60](value);
+    		/*slider2_value_binding_2*/ ctx[64](value);
     	}
 
     	let slider2_props = { min: 0, max: 360, className: "hueSlider" };
@@ -5556,10 +5595,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_2));
-    	slider2.$on("input", /*input_handler_17*/ ctx[61]);
+    	slider2.$on("input", /*input_handler_17*/ ctx[65]);
 
     	function slider3_value_binding_2(value) {
-    		/*slider3_value_binding_2*/ ctx[62](value);
+    		/*slider3_value_binding_2*/ ctx[66](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -5570,10 +5609,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_2));
-    	slider3.$on("input", /*input_handler_18*/ ctx[63]);
+    	slider3.$on("input", /*input_handler_18*/ ctx[67]);
 
     	function slider4_value_binding_2(value) {
-    		/*slider4_value_binding_2*/ ctx[64](value);
+    		/*slider4_value_binding_2*/ ctx[68](value);
     	}
 
     	let slider4_props = { min: 0, max: 200 };
@@ -5584,10 +5623,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_2));
-    	slider4.$on("input", /*input_handler_19*/ ctx[65]);
+    	slider4.$on("input", /*input_handler_19*/ ctx[69]);
 
     	function slider5_value_binding_1(value) {
-    		/*slider5_value_binding_1*/ ctx[66](value);
+    		/*slider5_value_binding_1*/ ctx[70](value);
     	}
 
     	let slider5_props = { min: 0, max: 5000 };
@@ -5598,10 +5637,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_1));
-    	slider5.$on("input", /*input_handler_20*/ ctx[67]);
+    	slider5.$on("input", /*input_handler_20*/ ctx[71]);
 
     	function slider6_value_binding_1(value) {
-    		/*slider6_value_binding_1*/ ctx[68](value);
+    		/*slider6_value_binding_1*/ ctx[72](value);
     	}
 
     	let slider6_props = { min: -30, max: 50 };
@@ -5612,10 +5651,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_1));
-    	slider6.$on("input", /*input_handler_21*/ ctx[69]);
+    	slider6.$on("input", /*input_handler_21*/ ctx[73]);
 
     	function slider7_value_binding_1(value) {
-    		/*slider7_value_binding_1*/ ctx[70](value);
+    		/*slider7_value_binding_1*/ ctx[74](value);
     	}
 
     	let slider7_props = { min: 1, max: 8 };
@@ -5626,10 +5665,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_1));
-    	slider7.$on("input", /*input_handler_22*/ ctx[71]);
+    	slider7.$on("input", /*input_handler_22*/ ctx[75]);
 
     	function slider8_value_binding_1(value) {
-    		/*slider8_value_binding_1*/ ctx[72](value);
+    		/*slider8_value_binding_1*/ ctx[76](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -5640,105 +5679,131 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_1));
-    	slider8.$on("input", /*input_handler_23*/ ctx[73]);
+    	slider8.$on("input", /*input_handler_23*/ ctx[77]);
 
     	const block = {
     		c: function create() {
-    			t0 = text("Alpha: ");
+    			label = element("label");
+    			input = element("input");
+    			t0 = text("\n        Visible");
+    			t1 = text("\n    Alpha: ");
     			create_component(slider0.$$.fragment);
-    			t1 = space();
+    			t2 = space();
     			br0 = element("br");
-    			t2 = text("\n    Angle: ");
+    			t3 = text("\n    Angle: ");
     			create_component(slider1.$$.fragment);
-    			t3 = space();
+    			t4 = space();
     			br1 = element("br");
-    			t4 = text("\n    Hue: ");
+    			t5 = text("\n    Hue: ");
     			create_component(slider2.$$.fragment);
-    			t5 = space();
+    			t6 = space();
     			br2 = element("br");
-    			t6 = text("\n    Saturation: ");
+    			t7 = text("\n    Saturation: ");
     			create_component(slider3.$$.fragment);
-    			t7 = space();
+    			t8 = space();
     			br3 = element("br");
-    			t8 = text("\n    Thickness: ");
+    			t9 = text("\n    Thickness: ");
     			create_component(slider4.$$.fragment);
-    			t9 = space();
+    			t10 = space();
     			br4 = element("br");
-    			t10 = text("\n    Length: ");
+    			t11 = text("\n    Length: ");
     			create_component(slider5.$$.fragment);
-    			t11 = space();
+    			t12 = space();
     			br5 = element("br");
-    			t12 = text("\n    Intensity: ");
+    			t13 = text("\n    Intensity: ");
     			create_component(slider6.$$.fragment);
-    			t13 = space();
+    			t14 = space();
     			br6 = element("br");
-    			t14 = text("\n    Starring: ");
+    			t15 = text("\n    Starring: ");
     			create_component(slider7.$$.fragment);
-    			t15 = space();
+    			t16 = space();
     			br7 = element("br");
-    			t16 = text("\n    Shift: ");
+    			t17 = text("\n    Shift: ");
     			create_component(slider8.$$.fragment);
-    			t17 = space();
+    			t18 = space();
     			br8 = element("br");
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-viz99f");
+    			add_location(input, file, 469, 8, 25592);
+    			set_style(label, "text-align", "center");
+    			attr_dev(label, "class", "svelte-viz99f");
+    			add_location(label, file, 468, 4, 25548);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 448, 132, 24831);
+    			add_location(br0, file, 472, 132, 25876);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 449, 132, 24970);
+    			add_location(br1, file, 473, 132, 26015);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 450, 150, 25127);
+    			add_location(br2, file, 474, 150, 26172);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 451, 142, 25276);
+    			add_location(br3, file, 475, 142, 26321);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 452, 140, 25423);
+    			add_location(br4, file, 476, 140, 26468);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 453, 134, 25564);
+    			add_location(br5, file, 477, 134, 26609);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 454, 141, 25712);
+    			add_location(br6, file, 478, 141, 26757);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 455, 133, 25852);
+    			add_location(br7, file, 479, 133, 26897);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 456, 132, 25991);
+    			add_location(br8, file, 480, 132, 27036);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			mount_component(slider0, target, anchor);
+    			insert_dev(target, label, anchor);
+    			append_dev(label, input);
+    			input.checked = /*flareSettings*/ ctx[0].streak.visible;
+    			append_dev(label, t0);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, br0, anchor);
+    			mount_component(slider0, target, anchor);
     			insert_dev(target, t2, anchor);
-    			mount_component(slider1, target, anchor);
+    			insert_dev(target, br0, anchor);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, br1, anchor);
+    			mount_component(slider1, target, anchor);
     			insert_dev(target, t4, anchor);
-    			mount_component(slider2, target, anchor);
+    			insert_dev(target, br1, anchor);
     			insert_dev(target, t5, anchor);
-    			insert_dev(target, br2, anchor);
+    			mount_component(slider2, target, anchor);
     			insert_dev(target, t6, anchor);
-    			mount_component(slider3, target, anchor);
+    			insert_dev(target, br2, anchor);
     			insert_dev(target, t7, anchor);
-    			insert_dev(target, br3, anchor);
+    			mount_component(slider3, target, anchor);
     			insert_dev(target, t8, anchor);
-    			mount_component(slider4, target, anchor);
+    			insert_dev(target, br3, anchor);
     			insert_dev(target, t9, anchor);
-    			insert_dev(target, br4, anchor);
+    			mount_component(slider4, target, anchor);
     			insert_dev(target, t10, anchor);
-    			mount_component(slider5, target, anchor);
+    			insert_dev(target, br4, anchor);
     			insert_dev(target, t11, anchor);
-    			insert_dev(target, br5, anchor);
+    			mount_component(slider5, target, anchor);
     			insert_dev(target, t12, anchor);
-    			mount_component(slider6, target, anchor);
+    			insert_dev(target, br5, anchor);
     			insert_dev(target, t13, anchor);
-    			insert_dev(target, br6, anchor);
+    			mount_component(slider6, target, anchor);
     			insert_dev(target, t14, anchor);
-    			mount_component(slider7, target, anchor);
+    			insert_dev(target, br6, anchor);
     			insert_dev(target, t15, anchor);
-    			insert_dev(target, br7, anchor);
+    			mount_component(slider7, target, anchor);
     			insert_dev(target, t16, anchor);
-    			mount_component(slider8, target, anchor);
+    			insert_dev(target, br7, anchor);
     			insert_dev(target, t17, anchor);
+    			mount_component(slider8, target, anchor);
+    			insert_dev(target, t18, anchor);
     			insert_dev(target, br8, anchor);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input, "change", /*input_change_handler_1*/ ctx[58]),
+    					listen_dev(input, "change", /*change_handler_2*/ ctx[59], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*flareSettings*/ 1) {
+    				input.checked = /*flareSettings*/ ctx[0].streak.visible;
+    			}
+
     			const slider0_changes = {};
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
@@ -5847,42 +5912,45 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(label);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(br0);
+    			destroy_component(slider0, detaching);
     			if (detaching) detach_dev(t2);
-    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(br0);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(br1);
+    			destroy_component(slider1, detaching);
     			if (detaching) detach_dev(t4);
-    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(br1);
     			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(br2);
+    			destroy_component(slider2, detaching);
     			if (detaching) detach_dev(t6);
-    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(br2);
     			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(br3);
+    			destroy_component(slider3, detaching);
     			if (detaching) detach_dev(t8);
-    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(br3);
     			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(br4);
+    			destroy_component(slider4, detaching);
     			if (detaching) detach_dev(t10);
-    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(br4);
     			if (detaching) detach_dev(t11);
-    			if (detaching) detach_dev(br5);
+    			destroy_component(slider5, detaching);
     			if (detaching) detach_dev(t12);
-    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(br5);
     			if (detaching) detach_dev(t13);
-    			if (detaching) detach_dev(br6);
+    			destroy_component(slider6, detaching);
     			if (detaching) detach_dev(t14);
-    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(br6);
     			if (detaching) detach_dev(t15);
-    			if (detaching) detach_dev(br7);
+    			destroy_component(slider7, detaching);
     			if (detaching) detach_dev(t16);
-    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(br7);
     			if (detaching) detach_dev(t17);
+    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(t18);
     			if (detaching) detach_dev(br8);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -5890,64 +5958,69 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(448:0) <Collapsible title={\\\"Streak\\\"}>",
+    		source: "(468:0) <Collapsible title={\\\"Streak\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (459:0) <Collapsible title={"Ring"}>
+    // (483:0) <Collapsible title={"Ring"}>
     function create_default_slot_3(ctx) {
+    	let label;
+    	let input;
     	let t0;
+    	let t1;
     	let slider0;
     	let updating_value;
-    	let t1;
-    	let br0;
     	let t2;
+    	let br0;
+    	let t3;
     	let slider1;
     	let updating_value_1;
-    	let t3;
-    	let br1;
     	let t4;
+    	let br1;
+    	let t5;
     	let slider2;
     	let updating_value_2;
-    	let t5;
-    	let br2;
     	let t6;
+    	let br2;
+    	let t7;
     	let slider3;
     	let updating_value_3;
-    	let t7;
-    	let br3;
     	let t8;
+    	let br3;
+    	let t9;
     	let slider4;
     	let updating_value_4;
-    	let t9;
-    	let br4;
     	let t10;
+    	let br4;
+    	let t11;
     	let slider5;
     	let updating_value_5;
-    	let t11;
-    	let br5;
     	let t12;
+    	let br5;
+    	let t13;
     	let slider6;
     	let updating_value_6;
-    	let t13;
-    	let br6;
     	let t14;
+    	let br6;
+    	let t15;
     	let slider7;
     	let updating_value_7;
-    	let t15;
-    	let br7;
     	let t16;
+    	let br7;
+    	let t17;
     	let slider8;
     	let updating_value_8;
-    	let t17;
+    	let t18;
     	let br8;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	function slider0_value_binding_3(value) {
-    		/*slider0_value_binding_3*/ ctx[74](value);
+    		/*slider0_value_binding_3*/ ctx[80](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -5958,10 +6031,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_3));
-    	slider0.$on("input", /*input_handler_24*/ ctx[75]);
+    	slider0.$on("input", /*input_handler_24*/ ctx[81]);
 
     	function slider1_value_binding_3(value) {
-    		/*slider1_value_binding_3*/ ctx[76](value);
+    		/*slider1_value_binding_3*/ ctx[82](value);
     	}
 
     	let slider1_props = { min: 0, max: 360, className: "hueSlider" };
@@ -5972,10 +6045,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_3));
-    	slider1.$on("input", /*input_handler_25*/ ctx[77]);
+    	slider1.$on("input", /*input_handler_25*/ ctx[83]);
 
     	function slider2_value_binding_3(value) {
-    		/*slider2_value_binding_3*/ ctx[78](value);
+    		/*slider2_value_binding_3*/ ctx[84](value);
     	}
 
     	let slider2_props = { min: 0, max: 100 };
@@ -5986,10 +6059,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_3));
-    	slider2.$on("input", /*input_handler_26*/ ctx[79]);
+    	slider2.$on("input", /*input_handler_26*/ ctx[85]);
 
     	function slider3_value_binding_3(value) {
-    		/*slider3_value_binding_3*/ ctx[80](value);
+    		/*slider3_value_binding_3*/ ctx[86](value);
     	}
 
     	let slider3_props = { min: 0, max: 810 };
@@ -6000,10 +6073,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_3));
-    	slider3.$on("input", /*input_handler_27*/ ctx[81]);
+    	slider3.$on("input", /*input_handler_27*/ ctx[87]);
 
     	function slider4_value_binding_3(value) {
-    		/*slider4_value_binding_3*/ ctx[82](value);
+    		/*slider4_value_binding_3*/ ctx[88](value);
     	}
 
     	let slider4_props = { min: 0, max: 500 };
@@ -6014,10 +6087,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_3));
-    	slider4.$on("input", /*input_handler_28*/ ctx[83]);
+    	slider4.$on("input", /*input_handler_28*/ ctx[89]);
 
     	function slider5_value_binding_2(value) {
-    		/*slider5_value_binding_2*/ ctx[84](value);
+    		/*slider5_value_binding_2*/ ctx[90](value);
     	}
 
     	let slider5_props = { min: 0, max: 50 };
@@ -6028,10 +6101,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_2));
-    	slider5.$on("input", /*input_handler_29*/ ctx[85]);
+    	slider5.$on("input", /*input_handler_29*/ ctx[91]);
 
     	function slider6_value_binding_2(value) {
-    		/*slider6_value_binding_2*/ ctx[86](value);
+    		/*slider6_value_binding_2*/ ctx[92](value);
     	}
 
     	let slider6_props = { min: 0, max: 810 };
@@ -6042,10 +6115,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_2));
-    	slider6.$on("input", /*input_handler_30*/ ctx[87]);
+    	slider6.$on("input", /*input_handler_30*/ ctx[93]);
 
     	function slider7_value_binding_2(value) {
-    		/*slider7_value_binding_2*/ ctx[88](value);
+    		/*slider7_value_binding_2*/ ctx[94](value);
     	}
 
     	let slider7_props = { min: 0, max: 100 };
@@ -6056,10 +6129,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_2));
-    	slider7.$on("input", /*input_handler_31*/ ctx[89]);
+    	slider7.$on("input", /*input_handler_31*/ ctx[95]);
 
     	function slider8_value_binding_2(value) {
-    		/*slider8_value_binding_2*/ ctx[90](value);
+    		/*slider8_value_binding_2*/ ctx[96](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -6070,105 +6143,131 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_2));
-    	slider8.$on("input", /*input_handler_32*/ ctx[91]);
+    	slider8.$on("input", /*input_handler_32*/ ctx[97]);
 
     	const block = {
     		c: function create() {
-    			t0 = text("Alpha: ");
+    			label = element("label");
+    			input = element("input");
+    			t0 = text("\n        Visible");
+    			t1 = text("\n    Alpha: ");
     			create_component(slider0.$$.fragment);
-    			t1 = space();
+    			t2 = space();
     			br0 = element("br");
-    			t2 = text("\n    Hue: ");
+    			t3 = text("\n    Hue: ");
     			create_component(slider1.$$.fragment);
-    			t3 = space();
+    			t4 = space();
     			br1 = element("br");
-    			t4 = text("\n    Saturation: ");
+    			t5 = text("\n    Saturation: ");
     			create_component(slider2.$$.fragment);
-    			t5 = space();
+    			t6 = space();
     			br2 = element("br");
-    			t6 = text("\n    Size: ");
+    			t7 = text("\n    Size: ");
     			create_component(slider3.$$.fragment);
-    			t7 = space();
+    			t8 = space();
     			br3 = element("br");
-    			t8 = text("\n    Thickness: ");
+    			t9 = text("\n    Thickness: ");
     			create_component(slider4.$$.fragment);
-    			t9 = space();
+    			t10 = space();
     			br4 = element("br");
-    			t10 = text("\n    Softness: ");
+    			t11 = text("\n    Softness: ");
     			create_component(slider5.$$.fragment);
-    			t11 = space();
+    			t12 = space();
     			br5 = element("br");
-    			t12 = text("\n    Crop Size: ");
+    			t13 = text("\n    Crop Size: ");
     			create_component(slider6.$$.fragment);
-    			t13 = space();
+    			t14 = space();
     			br6 = element("br");
-    			t14 = text("\n    Crop Hardness: ");
+    			t15 = text("\n    Crop Hardness: ");
     			create_component(slider7.$$.fragment);
-    			t15 = space();
+    			t16 = space();
     			br7 = element("br");
-    			t16 = text("\n    Anamorph: ");
+    			t17 = text("\n    Anamorph: ");
     			create_component(slider8.$$.fragment);
-    			t17 = space();
+    			t18 = space();
     			br8 = element("br");
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-viz99f");
+    			add_location(input, file, 484, 8, 27135);
+    			set_style(label, "text-align", "center");
+    			attr_dev(label, "class", "svelte-viz99f");
+    			add_location(label, file, 483, 4, 27091);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 459, 137, 26179);
+    			add_location(br0, file, 487, 137, 27429);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 460, 155, 26341);
+    			add_location(br1, file, 488, 155, 27591);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 461, 147, 26495);
+    			add_location(br2, file, 489, 147, 27745);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 462, 137, 26639);
+    			add_location(br3, file, 490, 137, 27889);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 463, 145, 26791);
+    			add_location(br4, file, 491, 145, 28041);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 464, 138, 26936);
+    			add_location(br5, file, 492, 138, 28186);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 465, 144, 27087);
+    			add_location(br6, file, 493, 144, 28337);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 466, 152, 27246);
+    			add_location(br7, file, 494, 152, 28496);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 467, 143, 27396);
+    			add_location(br8, file, 495, 143, 28646);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			mount_component(slider0, target, anchor);
+    			insert_dev(target, label, anchor);
+    			append_dev(label, input);
+    			input.checked = /*flareSettings*/ ctx[0].ring.visible;
+    			append_dev(label, t0);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, br0, anchor);
+    			mount_component(slider0, target, anchor);
     			insert_dev(target, t2, anchor);
-    			mount_component(slider1, target, anchor);
+    			insert_dev(target, br0, anchor);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, br1, anchor);
+    			mount_component(slider1, target, anchor);
     			insert_dev(target, t4, anchor);
-    			mount_component(slider2, target, anchor);
+    			insert_dev(target, br1, anchor);
     			insert_dev(target, t5, anchor);
-    			insert_dev(target, br2, anchor);
+    			mount_component(slider2, target, anchor);
     			insert_dev(target, t6, anchor);
-    			mount_component(slider3, target, anchor);
+    			insert_dev(target, br2, anchor);
     			insert_dev(target, t7, anchor);
-    			insert_dev(target, br3, anchor);
+    			mount_component(slider3, target, anchor);
     			insert_dev(target, t8, anchor);
-    			mount_component(slider4, target, anchor);
+    			insert_dev(target, br3, anchor);
     			insert_dev(target, t9, anchor);
-    			insert_dev(target, br4, anchor);
+    			mount_component(slider4, target, anchor);
     			insert_dev(target, t10, anchor);
-    			mount_component(slider5, target, anchor);
+    			insert_dev(target, br4, anchor);
     			insert_dev(target, t11, anchor);
-    			insert_dev(target, br5, anchor);
+    			mount_component(slider5, target, anchor);
     			insert_dev(target, t12, anchor);
-    			mount_component(slider6, target, anchor);
+    			insert_dev(target, br5, anchor);
     			insert_dev(target, t13, anchor);
-    			insert_dev(target, br6, anchor);
+    			mount_component(slider6, target, anchor);
     			insert_dev(target, t14, anchor);
-    			mount_component(slider7, target, anchor);
+    			insert_dev(target, br6, anchor);
     			insert_dev(target, t15, anchor);
-    			insert_dev(target, br7, anchor);
+    			mount_component(slider7, target, anchor);
     			insert_dev(target, t16, anchor);
-    			mount_component(slider8, target, anchor);
+    			insert_dev(target, br7, anchor);
     			insert_dev(target, t17, anchor);
+    			mount_component(slider8, target, anchor);
+    			insert_dev(target, t18, anchor);
     			insert_dev(target, br8, anchor);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input, "change", /*input_change_handler_2*/ ctx[78]),
+    					listen_dev(input, "change", /*change_handler_3*/ ctx[79], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*flareSettings*/ 1) {
+    				input.checked = /*flareSettings*/ ctx[0].ring.visible;
+    			}
+
     			const slider0_changes = {};
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
@@ -6277,42 +6376,45 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(label);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(br0);
+    			destroy_component(slider0, detaching);
     			if (detaching) detach_dev(t2);
-    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(br0);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(br1);
+    			destroy_component(slider1, detaching);
     			if (detaching) detach_dev(t4);
-    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(br1);
     			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(br2);
+    			destroy_component(slider2, detaching);
     			if (detaching) detach_dev(t6);
-    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(br2);
     			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(br3);
+    			destroy_component(slider3, detaching);
     			if (detaching) detach_dev(t8);
-    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(br3);
     			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(br4);
+    			destroy_component(slider4, detaching);
     			if (detaching) detach_dev(t10);
-    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(br4);
     			if (detaching) detach_dev(t11);
-    			if (detaching) detach_dev(br5);
+    			destroy_component(slider5, detaching);
     			if (detaching) detach_dev(t12);
-    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(br5);
     			if (detaching) detach_dev(t13);
-    			if (detaching) detach_dev(br6);
+    			destroy_component(slider6, detaching);
     			if (detaching) detach_dev(t14);
-    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(br6);
     			if (detaching) detach_dev(t15);
-    			if (detaching) detach_dev(br7);
+    			destroy_component(slider7, detaching);
     			if (detaching) detach_dev(t16);
-    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(br7);
     			if (detaching) detach_dev(t17);
+    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(t18);
     			if (detaching) detach_dev(br8);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -6320,114 +6422,119 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(459:0) <Collapsible title={\\\"Ring\\\"}>",
+    		source: "(483:0) <Collapsible title={\\\"Ring\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (470:0) <Collapsible title={"Multi-Iris"}>
+    // (498:0) <Collapsible title={"Multi-Iris"}>
     function create_default_slot_2(ctx) {
+    	let label;
+    	let input;
     	let t0;
+    	let t1;
     	let slider0;
     	let updating_value;
-    	let t1;
-    	let br0;
     	let t2;
+    	let br0;
+    	let t3;
     	let slider1;
     	let updating_value_1;
-    	let t3;
-    	let br1;
     	let t4;
+    	let br1;
+    	let t5;
     	let slider2;
     	let updating_value_2;
-    	let t5;
-    	let br2;
     	let t6;
+    	let br2;
+    	let t7;
     	let slider3;
     	let updating_value_3;
-    	let t7;
-    	let br3;
     	let t8;
+    	let br3;
+    	let t9;
     	let slider4;
     	let updating_value_4;
-    	let t9;
-    	let br4;
     	let t10;
+    	let br4;
+    	let t11;
     	let slider5;
     	let updating_value_5;
-    	let t11;
-    	let br5;
     	let t12;
+    	let br5;
+    	let t13;
     	let slider6;
     	let updating_value_6;
-    	let t13;
-    	let br6;
     	let t14;
+    	let br6;
+    	let t15;
     	let slider7;
     	let updating_value_7;
-    	let t15;
-    	let br7;
     	let t16;
+    	let br7;
+    	let t17;
     	let slider8;
     	let updating_value_8;
-    	let t17;
-    	let br8;
     	let t18;
+    	let br8;
+    	let t19;
     	let slider9;
     	let updating_value_9;
-    	let t19;
-    	let br9;
     	let t20;
+    	let br9;
+    	let t21;
     	let slider10;
     	let updating_value_10;
-    	let t21;
-    	let br10;
     	let t22;
+    	let br10;
+    	let t23;
     	let slider11;
     	let updating_value_11;
-    	let t23;
-    	let br11;
     	let t24;
+    	let br11;
+    	let t25;
     	let slider12;
     	let updating_value_12;
-    	let t25;
-    	let br12;
     	let t26;
+    	let br12;
+    	let t27;
     	let slider13;
     	let updating_value_13;
-    	let t27;
-    	let br13;
     	let t28;
+    	let br13;
+    	let t29;
     	let slider14;
     	let updating_value_14;
-    	let t29;
-    	let br14;
     	let t30;
+    	let br14;
+    	let t31;
     	let slider15;
     	let updating_value_15;
-    	let t31;
-    	let br15;
     	let t32;
+    	let br15;
+    	let t33;
     	let slider16;
     	let updating_value_16;
-    	let t33;
-    	let br16;
     	let t34;
+    	let br16;
+    	let t35;
     	let slider17;
     	let updating_value_17;
-    	let t35;
-    	let br17;
     	let t36;
+    	let br17;
+    	let t37;
     	let slider18;
     	let updating_value_18;
-    	let t37;
+    	let t38;
     	let br18;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	function slider0_value_binding_4(value) {
-    		/*slider0_value_binding_4*/ ctx[92](value);
+    		/*slider0_value_binding_4*/ ctx[100](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -6438,10 +6545,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_4));
-    	slider0.$on("input", /*input_handler_33*/ ctx[93]);
+    	slider0.$on("input", /*input_handler_33*/ ctx[101]);
 
     	function slider1_value_binding_4(value) {
-    		/*slider1_value_binding_4*/ ctx[94](value);
+    		/*slider1_value_binding_4*/ ctx[102](value);
     	}
 
     	let slider1_props = { min: 0, max: 100 };
@@ -6452,10 +6559,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_4));
-    	slider1.$on("input", /*input_handler_34*/ ctx[95]);
+    	slider1.$on("input", /*input_handler_34*/ ctx[103]);
 
     	function slider2_value_binding_4(value) {
-    		/*slider2_value_binding_4*/ ctx[96](value);
+    		/*slider2_value_binding_4*/ ctx[104](value);
     	}
 
     	let slider2_props = { min: 0, max: 360 };
@@ -6466,10 +6573,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_4));
-    	slider2.$on("input", /*input_handler_35*/ ctx[97]);
+    	slider2.$on("input", /*input_handler_35*/ ctx[105]);
 
     	function slider3_value_binding_4(value) {
-    		/*slider3_value_binding_4*/ ctx[98](value);
+    		/*slider3_value_binding_4*/ ctx[106](value);
     	}
 
     	let slider3_props = { min: 0, max: 360, className: "hueSlider" };
@@ -6480,10 +6587,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_4));
-    	slider3.$on("input", /*input_handler_36*/ ctx[99]);
+    	slider3.$on("input", /*input_handler_36*/ ctx[107]);
 
     	function slider4_value_binding_4(value) {
-    		/*slider4_value_binding_4*/ ctx[100](value);
+    		/*slider4_value_binding_4*/ ctx[108](value);
     	}
 
     	let slider4_props = { min: 0, max: 100 };
@@ -6494,10 +6601,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_4));
-    	slider4.$on("input", /*input_handler_37*/ ctx[101]);
+    	slider4.$on("input", /*input_handler_37*/ ctx[109]);
 
     	function slider5_value_binding_3(value) {
-    		/*slider5_value_binding_3*/ ctx[102](value);
+    		/*slider5_value_binding_3*/ ctx[110](value);
     	}
 
     	let slider5_props = { min: 0, max: 810 };
@@ -6508,10 +6615,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_3));
-    	slider5.$on("input", /*input_handler_38*/ ctx[103]);
+    	slider5.$on("input", /*input_handler_38*/ ctx[111]);
 
     	function slider6_value_binding_3(value) {
-    		/*slider6_value_binding_3*/ ctx[104](value);
+    		/*slider6_value_binding_3*/ ctx[112](value);
     	}
 
     	let slider6_props = { min: 3, max: 12 };
@@ -6522,10 +6629,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_3));
-    	slider6.$on("input", /*input_handler_39*/ ctx[105]);
+    	slider6.$on("input", /*input_handler_39*/ ctx[113]);
 
     	function slider7_value_binding_3(value) {
-    		/*slider7_value_binding_3*/ ctx[106](value);
+    		/*slider7_value_binding_3*/ ctx[114](value);
     	}
 
     	let slider7_props = { min: 0, max: 100 };
@@ -6536,10 +6643,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_3));
-    	slider7.$on("input", /*input_handler_40*/ ctx[107]);
+    	slider7.$on("input", /*input_handler_40*/ ctx[115]);
 
     	function slider8_value_binding_3(value) {
-    		/*slider8_value_binding_3*/ ctx[108](value);
+    		/*slider8_value_binding_3*/ ctx[116](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -6550,10 +6657,10 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_3));
-    	slider8.$on("input", /*input_handler_41*/ ctx[109]);
+    	slider8.$on("input", /*input_handler_41*/ ctx[117]);
 
     	function slider9_value_binding_1(value) {
-    		/*slider9_value_binding_1*/ ctx[110](value);
+    		/*slider9_value_binding_1*/ ctx[118](value);
     	}
 
     	let slider9_props = { min: 0, max: 30 };
@@ -6564,10 +6671,10 @@ var app = (function () {
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding_1));
-    	slider9.$on("input", /*input_handler_42*/ ctx[111]);
+    	slider9.$on("input", /*input_handler_42*/ ctx[119]);
 
     	function slider10_value_binding(value) {
-    		/*slider10_value_binding*/ ctx[112](value);
+    		/*slider10_value_binding*/ ctx[120](value);
     	}
 
     	let slider10_props = { min: 0, max: 50 };
@@ -6578,10 +6685,10 @@ var app = (function () {
 
     	slider10 = new Slider({ props: slider10_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider10, 'value', slider10_value_binding));
-    	slider10.$on("input", /*input_handler_43*/ ctx[113]);
+    	slider10.$on("input", /*input_handler_43*/ ctx[121]);
 
     	function slider11_value_binding(value) {
-    		/*slider11_value_binding*/ ctx[114](value);
+    		/*slider11_value_binding*/ ctx[122](value);
     	}
 
     	let slider11_props = { min: 0, max: 50 };
@@ -6592,10 +6699,10 @@ var app = (function () {
 
     	slider11 = new Slider({ props: slider11_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider11, 'value', slider11_value_binding));
-    	slider11.$on("input", /*input_handler_44*/ ctx[115]);
+    	slider11.$on("input", /*input_handler_44*/ ctx[123]);
 
     	function slider12_value_binding(value) {
-    		/*slider12_value_binding*/ ctx[116](value);
+    		/*slider12_value_binding*/ ctx[124](value);
     	}
 
     	let slider12_props = { min: 0, max: 100 };
@@ -6606,10 +6713,10 @@ var app = (function () {
 
     	slider12 = new Slider({ props: slider12_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider12, 'value', slider12_value_binding));
-    	slider12.$on("input", /*input_handler_45*/ ctx[117]);
+    	slider12.$on("input", /*input_handler_45*/ ctx[125]);
 
     	function slider13_value_binding(value) {
-    		/*slider13_value_binding*/ ctx[118](value);
+    		/*slider13_value_binding*/ ctx[126](value);
     	}
 
     	let slider13_props = { min: 0, max: 100 };
@@ -6620,10 +6727,10 @@ var app = (function () {
 
     	slider13 = new Slider({ props: slider13_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider13, 'value', slider13_value_binding));
-    	slider13.$on("input", /*input_handler_46*/ ctx[119]);
+    	slider13.$on("input", /*input_handler_46*/ ctx[127]);
 
     	function slider14_value_binding(value) {
-    		/*slider14_value_binding*/ ctx[120](value);
+    		/*slider14_value_binding*/ ctx[128](value);
     	}
 
     	let slider14_props = { min: 0, max: 100 };
@@ -6634,10 +6741,10 @@ var app = (function () {
 
     	slider14 = new Slider({ props: slider14_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider14, 'value', slider14_value_binding));
-    	slider14.$on("input", /*input_handler_47*/ ctx[121]);
+    	slider14.$on("input", /*input_handler_47*/ ctx[129]);
 
     	function slider15_value_binding(value) {
-    		/*slider15_value_binding*/ ctx[122](value);
+    		/*slider15_value_binding*/ ctx[130](value);
     	}
 
     	let slider15_props = { min: 0, max: 100 };
@@ -6648,10 +6755,10 @@ var app = (function () {
 
     	slider15 = new Slider({ props: slider15_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider15, 'value', slider15_value_binding));
-    	slider15.$on("input", /*input_handler_48*/ ctx[123]);
+    	slider15.$on("input", /*input_handler_48*/ ctx[131]);
 
     	function slider16_value_binding(value) {
-    		/*slider16_value_binding*/ ctx[124](value);
+    		/*slider16_value_binding*/ ctx[132](value);
     	}
 
     	let slider16_props = { min: 0, max: 180 };
@@ -6662,10 +6769,10 @@ var app = (function () {
 
     	slider16 = new Slider({ props: slider16_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider16, 'value', slider16_value_binding));
-    	slider16.$on("input", /*input_handler_49*/ ctx[125]);
+    	slider16.$on("input", /*input_handler_49*/ ctx[133]);
 
     	function slider17_value_binding(value) {
-    		/*slider17_value_binding*/ ctx[126](value);
+    		/*slider17_value_binding*/ ctx[134](value);
     	}
 
     	let slider17_props = { min: 0, max: 999 };
@@ -6676,10 +6783,10 @@ var app = (function () {
 
     	slider17 = new Slider({ props: slider17_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider17, 'value', slider17_value_binding));
-    	slider17.$on("input", /*input_handler_50*/ ctx[127]);
+    	slider17.$on("input", /*input_handler_50*/ ctx[135]);
 
     	function slider18_value_binding(value) {
-    		/*slider18_value_binding*/ ctx[128](value);
+    		/*slider18_value_binding*/ ctx[136](value);
     	}
 
     	let slider18_props = { min: 0, max: 100 };
@@ -6690,205 +6797,231 @@ var app = (function () {
 
     	slider18 = new Slider({ props: slider18_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider18, 'value', slider18_value_binding));
-    	slider18.$on("input", /*input_handler_51*/ ctx[129]);
+    	slider18.$on("input", /*input_handler_51*/ ctx[137]);
 
     	const block = {
     		c: function create() {
-    			t0 = text("Fill Alpha: ");
+    			label = element("label");
+    			input = element("input");
+    			t0 = text("\n        Visible");
+    			t1 = text("\n    Fill Alpha: ");
     			create_component(slider0.$$.fragment);
-    			t1 = space();
+    			t2 = space();
     			br0 = element("br");
-    			t2 = text("\n    Fringe Alpha: ");
+    			t3 = text("\n    Fringe Alpha: ");
     			create_component(slider1.$$.fragment);
-    			t3 = space();
+    			t4 = space();
     			br1 = element("br");
-    			t4 = text("\n    Angle: ");
+    			t5 = text("\n    Angle: ");
     			create_component(slider2.$$.fragment);
-    			t5 = space();
+    			t6 = space();
     			br2 = element("br");
-    			t6 = text("\n    Hue: ");
+    			t7 = text("\n    Hue: ");
     			create_component(slider3.$$.fragment);
-    			t7 = space();
+    			t8 = space();
     			br3 = element("br");
-    			t8 = text("\n    Saturation: ");
+    			t9 = text("\n    Saturation: ");
     			create_component(slider4.$$.fragment);
-    			t9 = space();
+    			t10 = space();
     			br4 = element("br");
-    			t10 = text("\n    Size: ");
+    			t11 = text("\n    Size: ");
     			create_component(slider5.$$.fragment);
-    			t11 = space();
+    			t12 = space();
     			br5 = element("br");
-    			t12 = text("\n    Edges: ");
+    			t13 = text("\n    Edges: ");
     			create_component(slider6.$$.fragment);
-    			t13 = space();
+    			t14 = space();
     			br6 = element("br");
-    			t14 = text("\n    Roundness: ");
+    			t15 = text("\n    Roundness: ");
     			create_component(slider7.$$.fragment);
-    			t15 = space();
+    			t16 = space();
     			br7 = element("br");
-    			t16 = text("\n    Fringe Size: ");
+    			t17 = text("\n    Fringe Size: ");
     			create_component(slider8.$$.fragment);
-    			t17 = space();
+    			t18 = space();
     			br8 = element("br");
-    			t18 = text("\n    Softness: ");
+    			t19 = text("\n    Softness: ");
     			create_component(slider9.$$.fragment);
-    			t19 = space();
+    			t20 = space();
     			br9 = element("br");
-    			t20 = text("\n    Count Towards: ");
+    			t21 = text("\n    Count Towards: ");
     			create_component(slider10.$$.fragment);
-    			t21 = space();
+    			t22 = space();
     			br10 = element("br");
-    			t22 = text("\n    Count Away: ");
+    			t23 = text("\n    Count Away: ");
     			create_component(slider11.$$.fragment);
-    			t23 = space();
+    			t24 = space();
     			br11 = element("br");
-    			t24 = text("\n    Spread: ");
+    			t25 = text("\n    Spread: ");
     			create_component(slider12.$$.fragment);
-    			t25 = space();
+    			t26 = space();
     			br12 = element("br");
-    			t26 = text("\n    Size Variance: ");
+    			t27 = text("\n    Size Variance: ");
     			create_component(slider13.$$.fragment);
-    			t27 = space();
+    			t28 = space();
     			br13 = element("br");
-    			t28 = text("\n    Perspective: ");
+    			t29 = text("\n    Perspective: ");
     			create_component(slider14.$$.fragment);
-    			t29 = space();
+    			t30 = space();
     			br14 = element("br");
-    			t30 = text("\n    Alpha Variance: ");
+    			t31 = text("\n    Alpha Variance: ");
     			create_component(slider15.$$.fragment);
-    			t31 = space();
+    			t32 = space();
     			br15 = element("br");
-    			t32 = text("\n    Hue Variance: ");
+    			t33 = text("\n    Hue Variance: ");
     			create_component(slider16.$$.fragment);
-    			t33 = space();
+    			t34 = space();
     			br16 = element("br");
-    			t34 = text("\n    Random Seed: ");
+    			t35 = text("\n    Random Seed: ");
     			create_component(slider17.$$.fragment);
-    			t35 = space();
+    			t36 = space();
     			br17 = element("br");
-    			t36 = text("\n    Anamorph: ");
+    			t37 = text("\n    Anamorph: ");
     			create_component(slider18.$$.fragment);
-    			t37 = space();
+    			t38 = space();
     			br18 = element("br");
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-viz99f");
+    			add_location(input, file, 499, 8, 28751);
+    			set_style(label, "text-align", "center");
+    			attr_dev(label, "class", "svelte-viz99f");
+    			add_location(label, file, 498, 4, 28707);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 470, 155, 27608);
+    			add_location(br0, file, 502, 155, 29072);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 471, 159, 27774);
+    			add_location(br1, file, 503, 159, 29238);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 472, 146, 27927);
+    			add_location(br2, file, 504, 146, 29391);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 473, 164, 28098);
+    			add_location(br3, file, 505, 164, 29562);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 474, 156, 28261);
+    			add_location(br4, file, 506, 156, 29725);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 475, 146, 28414);
+    			add_location(br5, file, 507, 146, 29878);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 476, 145, 28566);
+    			add_location(br6, file, 508, 145, 30030);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 477, 154, 28727);
+    			add_location(br7, file, 509, 154, 30191);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 478, 157, 28891);
+    			add_location(br8, file, 510, 157, 30355);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 479, 147, 29045);
+    			add_location(br9, file, 511, 147, 30509);
     			attr_dev(br10, "class", "svelte-viz99f");
-    			add_location(br10, file, 480, 160, 29212);
+    			add_location(br10, file, 512, 160, 30676);
     			attr_dev(br11, "class", "svelte-viz99f");
-    			add_location(br11, file, 481, 154, 29373);
+    			add_location(br11, file, 513, 154, 30837);
     			attr_dev(br12, "class", "svelte-viz99f");
-    			add_location(br12, file, 482, 148, 29528);
+    			add_location(br12, file, 514, 148, 30992);
     			attr_dev(br13, "class", "svelte-viz99f");
-    			add_location(br13, file, 483, 161, 29696);
+    			add_location(br13, file, 515, 161, 31160);
     			attr_dev(br14, "class", "svelte-viz99f");
-    			add_location(br14, file, 484, 158, 29861);
+    			add_location(br14, file, 516, 158, 31325);
     			attr_dev(br15, "class", "svelte-viz99f");
-    			add_location(br15, file, 485, 163, 30031);
+    			add_location(br15, file, 517, 163, 31495);
     			attr_dev(br16, "class", "svelte-viz99f");
-    			add_location(br16, file, 486, 159, 30197);
+    			add_location(br16, file, 518, 159, 31661);
     			attr_dev(br17, "class", "svelte-viz99f");
-    			add_location(br17, file, 487, 151, 30355);
+    			add_location(br17, file, 519, 151, 31819);
     			attr_dev(br18, "class", "svelte-viz99f");
-    			add_location(br18, file, 488, 152, 30514);
+    			add_location(br18, file, 520, 152, 31978);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			mount_component(slider0, target, anchor);
+    			insert_dev(target, label, anchor);
+    			append_dev(label, input);
+    			input.checked = /*flareSettings*/ ctx[0].miIris.visible;
+    			append_dev(label, t0);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, br0, anchor);
+    			mount_component(slider0, target, anchor);
     			insert_dev(target, t2, anchor);
-    			mount_component(slider1, target, anchor);
+    			insert_dev(target, br0, anchor);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, br1, anchor);
+    			mount_component(slider1, target, anchor);
     			insert_dev(target, t4, anchor);
-    			mount_component(slider2, target, anchor);
+    			insert_dev(target, br1, anchor);
     			insert_dev(target, t5, anchor);
-    			insert_dev(target, br2, anchor);
+    			mount_component(slider2, target, anchor);
     			insert_dev(target, t6, anchor);
-    			mount_component(slider3, target, anchor);
+    			insert_dev(target, br2, anchor);
     			insert_dev(target, t7, anchor);
-    			insert_dev(target, br3, anchor);
+    			mount_component(slider3, target, anchor);
     			insert_dev(target, t8, anchor);
-    			mount_component(slider4, target, anchor);
+    			insert_dev(target, br3, anchor);
     			insert_dev(target, t9, anchor);
-    			insert_dev(target, br4, anchor);
+    			mount_component(slider4, target, anchor);
     			insert_dev(target, t10, anchor);
-    			mount_component(slider5, target, anchor);
+    			insert_dev(target, br4, anchor);
     			insert_dev(target, t11, anchor);
-    			insert_dev(target, br5, anchor);
+    			mount_component(slider5, target, anchor);
     			insert_dev(target, t12, anchor);
-    			mount_component(slider6, target, anchor);
+    			insert_dev(target, br5, anchor);
     			insert_dev(target, t13, anchor);
-    			insert_dev(target, br6, anchor);
+    			mount_component(slider6, target, anchor);
     			insert_dev(target, t14, anchor);
-    			mount_component(slider7, target, anchor);
+    			insert_dev(target, br6, anchor);
     			insert_dev(target, t15, anchor);
-    			insert_dev(target, br7, anchor);
+    			mount_component(slider7, target, anchor);
     			insert_dev(target, t16, anchor);
-    			mount_component(slider8, target, anchor);
+    			insert_dev(target, br7, anchor);
     			insert_dev(target, t17, anchor);
-    			insert_dev(target, br8, anchor);
+    			mount_component(slider8, target, anchor);
     			insert_dev(target, t18, anchor);
-    			mount_component(slider9, target, anchor);
+    			insert_dev(target, br8, anchor);
     			insert_dev(target, t19, anchor);
-    			insert_dev(target, br9, anchor);
+    			mount_component(slider9, target, anchor);
     			insert_dev(target, t20, anchor);
-    			mount_component(slider10, target, anchor);
+    			insert_dev(target, br9, anchor);
     			insert_dev(target, t21, anchor);
-    			insert_dev(target, br10, anchor);
+    			mount_component(slider10, target, anchor);
     			insert_dev(target, t22, anchor);
-    			mount_component(slider11, target, anchor);
+    			insert_dev(target, br10, anchor);
     			insert_dev(target, t23, anchor);
-    			insert_dev(target, br11, anchor);
+    			mount_component(slider11, target, anchor);
     			insert_dev(target, t24, anchor);
-    			mount_component(slider12, target, anchor);
+    			insert_dev(target, br11, anchor);
     			insert_dev(target, t25, anchor);
-    			insert_dev(target, br12, anchor);
+    			mount_component(slider12, target, anchor);
     			insert_dev(target, t26, anchor);
-    			mount_component(slider13, target, anchor);
+    			insert_dev(target, br12, anchor);
     			insert_dev(target, t27, anchor);
-    			insert_dev(target, br13, anchor);
+    			mount_component(slider13, target, anchor);
     			insert_dev(target, t28, anchor);
-    			mount_component(slider14, target, anchor);
+    			insert_dev(target, br13, anchor);
     			insert_dev(target, t29, anchor);
-    			insert_dev(target, br14, anchor);
+    			mount_component(slider14, target, anchor);
     			insert_dev(target, t30, anchor);
-    			mount_component(slider15, target, anchor);
+    			insert_dev(target, br14, anchor);
     			insert_dev(target, t31, anchor);
-    			insert_dev(target, br15, anchor);
+    			mount_component(slider15, target, anchor);
     			insert_dev(target, t32, anchor);
-    			mount_component(slider16, target, anchor);
+    			insert_dev(target, br15, anchor);
     			insert_dev(target, t33, anchor);
-    			insert_dev(target, br16, anchor);
+    			mount_component(slider16, target, anchor);
     			insert_dev(target, t34, anchor);
-    			mount_component(slider17, target, anchor);
+    			insert_dev(target, br16, anchor);
     			insert_dev(target, t35, anchor);
-    			insert_dev(target, br17, anchor);
+    			mount_component(slider17, target, anchor);
     			insert_dev(target, t36, anchor);
-    			mount_component(slider18, target, anchor);
+    			insert_dev(target, br17, anchor);
     			insert_dev(target, t37, anchor);
+    			mount_component(slider18, target, anchor);
+    			insert_dev(target, t38, anchor);
     			insert_dev(target, br18, anchor);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input, "change", /*input_change_handler_3*/ ctx[98]),
+    					listen_dev(input, "change", /*change_handler_4*/ ctx[99], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*flareSettings*/ 1) {
+    				input.checked = /*flareSettings*/ ctx[0].miIris.visible;
+    			}
+
     			const slider0_changes = {};
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
@@ -7107,82 +7240,85 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(label);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(br0);
+    			destroy_component(slider0, detaching);
     			if (detaching) detach_dev(t2);
-    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(br0);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(br1);
+    			destroy_component(slider1, detaching);
     			if (detaching) detach_dev(t4);
-    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(br1);
     			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(br2);
+    			destroy_component(slider2, detaching);
     			if (detaching) detach_dev(t6);
-    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(br2);
     			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(br3);
+    			destroy_component(slider3, detaching);
     			if (detaching) detach_dev(t8);
-    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(br3);
     			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(br4);
+    			destroy_component(slider4, detaching);
     			if (detaching) detach_dev(t10);
-    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(br4);
     			if (detaching) detach_dev(t11);
-    			if (detaching) detach_dev(br5);
+    			destroy_component(slider5, detaching);
     			if (detaching) detach_dev(t12);
-    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(br5);
     			if (detaching) detach_dev(t13);
-    			if (detaching) detach_dev(br6);
+    			destroy_component(slider6, detaching);
     			if (detaching) detach_dev(t14);
-    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(br6);
     			if (detaching) detach_dev(t15);
-    			if (detaching) detach_dev(br7);
+    			destroy_component(slider7, detaching);
     			if (detaching) detach_dev(t16);
-    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(br7);
     			if (detaching) detach_dev(t17);
-    			if (detaching) detach_dev(br8);
+    			destroy_component(slider8, detaching);
     			if (detaching) detach_dev(t18);
-    			destroy_component(slider9, detaching);
+    			if (detaching) detach_dev(br8);
     			if (detaching) detach_dev(t19);
-    			if (detaching) detach_dev(br9);
+    			destroy_component(slider9, detaching);
     			if (detaching) detach_dev(t20);
-    			destroy_component(slider10, detaching);
+    			if (detaching) detach_dev(br9);
     			if (detaching) detach_dev(t21);
-    			if (detaching) detach_dev(br10);
+    			destroy_component(slider10, detaching);
     			if (detaching) detach_dev(t22);
-    			destroy_component(slider11, detaching);
+    			if (detaching) detach_dev(br10);
     			if (detaching) detach_dev(t23);
-    			if (detaching) detach_dev(br11);
+    			destroy_component(slider11, detaching);
     			if (detaching) detach_dev(t24);
-    			destroy_component(slider12, detaching);
+    			if (detaching) detach_dev(br11);
     			if (detaching) detach_dev(t25);
-    			if (detaching) detach_dev(br12);
+    			destroy_component(slider12, detaching);
     			if (detaching) detach_dev(t26);
-    			destroy_component(slider13, detaching);
+    			if (detaching) detach_dev(br12);
     			if (detaching) detach_dev(t27);
-    			if (detaching) detach_dev(br13);
+    			destroy_component(slider13, detaching);
     			if (detaching) detach_dev(t28);
-    			destroy_component(slider14, detaching);
+    			if (detaching) detach_dev(br13);
     			if (detaching) detach_dev(t29);
-    			if (detaching) detach_dev(br14);
+    			destroy_component(slider14, detaching);
     			if (detaching) detach_dev(t30);
-    			destroy_component(slider15, detaching);
+    			if (detaching) detach_dev(br14);
     			if (detaching) detach_dev(t31);
-    			if (detaching) detach_dev(br15);
+    			destroy_component(slider15, detaching);
     			if (detaching) detach_dev(t32);
-    			destroy_component(slider16, detaching);
+    			if (detaching) detach_dev(br15);
     			if (detaching) detach_dev(t33);
-    			if (detaching) detach_dev(br16);
+    			destroy_component(slider16, detaching);
     			if (detaching) detach_dev(t34);
-    			destroy_component(slider17, detaching);
+    			if (detaching) detach_dev(br16);
     			if (detaching) detach_dev(t35);
-    			if (detaching) detach_dev(br17);
+    			destroy_component(slider17, detaching);
     			if (detaching) detach_dev(t36);
-    			destroy_component(slider18, detaching);
+    			if (detaching) detach_dev(br17);
     			if (detaching) detach_dev(t37);
+    			destroy_component(slider18, detaching);
+    			if (detaching) detach_dev(t38);
     			if (detaching) detach_dev(br18);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -7190,49 +7326,54 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(470:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
+    		source: "(498:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (491:0) <Collapsible title={"Glow"}>
+    // (523:0) <Collapsible title={"Glow"}>
     function create_default_slot_1(ctx) {
+    	let label;
+    	let input;
     	let t0;
+    	let t1;
     	let slider0;
     	let updating_value;
-    	let t1;
-    	let br0;
     	let t2;
+    	let br0;
+    	let t3;
     	let slider1;
     	let updating_value_1;
-    	let t3;
-    	let br1;
     	let t4;
+    	let br1;
+    	let t5;
     	let slider2;
     	let updating_value_2;
-    	let t5;
-    	let br2;
     	let t6;
+    	let br2;
+    	let t7;
     	let slider3;
     	let updating_value_3;
-    	let t7;
-    	let br3;
     	let t8;
+    	let br3;
+    	let t9;
     	let slider4;
     	let updating_value_4;
-    	let t9;
-    	let br4;
     	let t10;
+    	let br4;
+    	let t11;
     	let slider5;
     	let updating_value_5;
-    	let t11;
+    	let t12;
     	let br5;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	function slider0_value_binding_5(value) {
-    		/*slider0_value_binding_5*/ ctx[130](value);
+    		/*slider0_value_binding_5*/ ctx[140](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -7243,10 +7384,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_5));
-    	slider0.$on("input", /*input_handler_52*/ ctx[131]);
+    	slider0.$on("input", /*input_handler_52*/ ctx[141]);
 
     	function slider1_value_binding_5(value) {
-    		/*slider1_value_binding_5*/ ctx[132](value);
+    		/*slider1_value_binding_5*/ ctx[142](value);
     	}
 
     	let slider1_props = { min: 0, max: 360, className: "hueSlider" };
@@ -7257,10 +7398,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_5));
-    	slider1.$on("input", /*input_handler_53*/ ctx[133]);
+    	slider1.$on("input", /*input_handler_53*/ ctx[143]);
 
     	function slider2_value_binding_5(value) {
-    		/*slider2_value_binding_5*/ ctx[134](value);
+    		/*slider2_value_binding_5*/ ctx[144](value);
     	}
 
     	let slider2_props = { min: 0, max: 100 };
@@ -7271,10 +7412,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_5));
-    	slider2.$on("input", /*input_handler_54*/ ctx[135]);
+    	slider2.$on("input", /*input_handler_54*/ ctx[145]);
 
     	function slider3_value_binding_5(value) {
-    		/*slider3_value_binding_5*/ ctx[136](value);
+    		/*slider3_value_binding_5*/ ctx[146](value);
     	}
 
     	let slider3_props = { min: 0, max: 1500 };
@@ -7285,10 +7426,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_5));
-    	slider3.$on("input", /*input_handler_55*/ ctx[137]);
+    	slider3.$on("input", /*input_handler_55*/ ctx[147]);
 
     	function slider4_value_binding_5(value) {
-    		/*slider4_value_binding_5*/ ctx[138](value);
+    		/*slider4_value_binding_5*/ ctx[148](value);
     	}
 
     	let slider4_props = { min: 0, max: 200 };
@@ -7299,10 +7440,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_5));
-    	slider4.$on("input", /*input_handler_56*/ ctx[139]);
+    	slider4.$on("input", /*input_handler_56*/ ctx[149]);
 
     	function slider5_value_binding_4(value) {
-    		/*slider5_value_binding_4*/ ctx[140](value);
+    		/*slider5_value_binding_4*/ ctx[150](value);
     	}
 
     	let slider5_props = { min: 0, max: 100 };
@@ -7313,75 +7454,101 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_4));
-    	slider5.$on("input", /*input_handler_57*/ ctx[141]);
+    	slider5.$on("input", /*input_handler_57*/ ctx[151]);
 
     	const block = {
     		c: function create() {
-    			t0 = text("Alpha: ");
+    			label = element("label");
+    			input = element("input");
+    			t0 = text("\n        Visible");
+    			t1 = text("\n    Alpha: ");
     			create_component(slider0.$$.fragment);
-    			t1 = space();
+    			t2 = space();
     			br0 = element("br");
-    			t2 = text("\n    Hue: ");
+    			t3 = text("\n    Hue: ");
     			create_component(slider1.$$.fragment);
-    			t3 = space();
+    			t4 = space();
     			br1 = element("br");
-    			t4 = text("\n    Saturation: ");
+    			t5 = text("\n    Saturation: ");
     			create_component(slider2.$$.fragment);
-    			t5 = space();
+    			t6 = space();
     			br2 = element("br");
-    			t6 = text("\n    Size: ");
+    			t7 = text("\n    Size: ");
     			create_component(slider3.$$.fragment);
-    			t7 = space();
+    			t8 = space();
     			br3 = element("br");
-    			t8 = text("\n    Softness: ");
+    			t9 = text("\n    Softness: ");
     			create_component(slider4.$$.fragment);
-    			t9 = space();
+    			t10 = space();
     			br4 = element("br");
-    			t10 = text("\n    Anamorph: ");
+    			t11 = text("\n    Anamorph: ");
     			create_component(slider5.$$.fragment);
-    			t11 = space();
+    			t12 = space();
     			br5 = element("br");
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-viz99f");
+    			add_location(input, file, 524, 8, 32077);
+    			set_style(label, "text-align", "center");
+    			attr_dev(label, "class", "svelte-viz99f");
+    			add_location(label, file, 523, 4, 32033);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 491, 151, 30716);
+    			add_location(br0, file, 527, 151, 32399);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 492, 169, 30892);
+    			add_location(br1, file, 528, 169, 32575);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 493, 161, 31060);
+    			add_location(br2, file, 529, 161, 32743);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 494, 152, 31219);
+    			add_location(br3, file, 530, 152, 32902);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 495, 158, 31384);
+    			add_location(br4, file, 531, 158, 33067);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 496, 157, 31548);
+    			add_location(br5, file, 532, 157, 33231);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			mount_component(slider0, target, anchor);
+    			insert_dev(target, label, anchor);
+    			append_dev(label, input);
+    			input.checked = /*flareSettings*/ ctx[0].glow.visible;
+    			append_dev(label, t0);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, br0, anchor);
+    			mount_component(slider0, target, anchor);
     			insert_dev(target, t2, anchor);
-    			mount_component(slider1, target, anchor);
+    			insert_dev(target, br0, anchor);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, br1, anchor);
+    			mount_component(slider1, target, anchor);
     			insert_dev(target, t4, anchor);
-    			mount_component(slider2, target, anchor);
+    			insert_dev(target, br1, anchor);
     			insert_dev(target, t5, anchor);
-    			insert_dev(target, br2, anchor);
+    			mount_component(slider2, target, anchor);
     			insert_dev(target, t6, anchor);
-    			mount_component(slider3, target, anchor);
+    			insert_dev(target, br2, anchor);
     			insert_dev(target, t7, anchor);
-    			insert_dev(target, br3, anchor);
+    			mount_component(slider3, target, anchor);
     			insert_dev(target, t8, anchor);
-    			mount_component(slider4, target, anchor);
+    			insert_dev(target, br3, anchor);
     			insert_dev(target, t9, anchor);
-    			insert_dev(target, br4, anchor);
+    			mount_component(slider4, target, anchor);
     			insert_dev(target, t10, anchor);
-    			mount_component(slider5, target, anchor);
+    			insert_dev(target, br4, anchor);
     			insert_dev(target, t11, anchor);
+    			mount_component(slider5, target, anchor);
+    			insert_dev(target, t12, anchor);
     			insert_dev(target, br5, anchor);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input, "change", /*input_change_handler_4*/ ctx[138]),
+    					listen_dev(input, "change", /*change_handler_5*/ ctx[139], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*flareSettings*/ 1) {
+    				input.checked = /*flareSettings*/ ctx[0].glow.visible;
+    			}
+
     			const slider0_changes = {};
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
@@ -7457,30 +7624,33 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(label);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(br0);
+    			destroy_component(slider0, detaching);
     			if (detaching) detach_dev(t2);
-    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(br0);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(br1);
+    			destroy_component(slider1, detaching);
     			if (detaching) detach_dev(t4);
-    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(br1);
     			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(br2);
+    			destroy_component(slider2, detaching);
     			if (detaching) detach_dev(t6);
-    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(br2);
     			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(br3);
+    			destroy_component(slider3, detaching);
     			if (detaching) detach_dev(t8);
-    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(br3);
     			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(br4);
+    			destroy_component(slider4, detaching);
     			if (detaching) detach_dev(t10);
-    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(br4);
     			if (detaching) detach_dev(t11);
+    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(t12);
     			if (detaching) detach_dev(br5);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -7488,104 +7658,109 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(491:0) <Collapsible title={\\\"Glow\\\"}>",
+    		source: "(523:0) <Collapsible title={\\\"Glow\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (499:0) <Collapsible title={"Lens Orbs"}>
+    // (535:0) <Collapsible title={"Lens Orbs"}>
     function create_default_slot(ctx) {
+    	let label;
+    	let input;
     	let t0;
+    	let t1;
     	let slider0;
     	let updating_value;
-    	let t1;
-    	let br0;
     	let t2;
+    	let br0;
+    	let t3;
     	let slider1;
     	let updating_value_1;
-    	let t3;
-    	let br1;
     	let t4;
+    	let br1;
+    	let t5;
     	let slider2;
     	let updating_value_2;
-    	let t5;
-    	let br2;
     	let t6;
+    	let br2;
+    	let t7;
     	let slider3;
     	let updating_value_3;
-    	let t7;
-    	let br3;
     	let t8;
+    	let br3;
+    	let t9;
     	let slider4;
     	let updating_value_4;
-    	let t9;
-    	let br4;
     	let t10;
+    	let br4;
+    	let t11;
     	let slider5;
     	let updating_value_5;
-    	let t11;
-    	let br5;
     	let t12;
+    	let br5;
+    	let t13;
     	let slider6;
     	let updating_value_6;
-    	let t13;
-    	let br6;
     	let t14;
+    	let br6;
+    	let t15;
     	let slider7;
     	let updating_value_7;
-    	let t15;
-    	let br7;
     	let t16;
+    	let br7;
+    	let t17;
     	let slider8;
     	let updating_value_8;
-    	let t17;
-    	let br8;
     	let t18;
+    	let br8;
+    	let t19;
     	let slider9;
     	let updating_value_9;
-    	let t19;
-    	let br9;
     	let t20;
+    	let br9;
+    	let t21;
     	let slider10;
     	let updating_value_10;
-    	let t21;
-    	let br10;
     	let t22;
+    	let br10;
+    	let t23;
     	let slider11;
     	let updating_value_11;
-    	let t23;
-    	let br11;
     	let t24;
+    	let br11;
+    	let t25;
     	let slider12;
     	let updating_value_12;
-    	let t25;
-    	let br12;
     	let t26;
+    	let br12;
+    	let t27;
     	let slider13;
     	let updating_value_13;
-    	let t27;
-    	let br13;
     	let t28;
+    	let br13;
+    	let t29;
     	let slider14;
     	let updating_value_14;
-    	let t29;
-    	let br14;
     	let t30;
+    	let br14;
+    	let t31;
     	let slider15;
     	let updating_value_15;
-    	let t31;
-    	let br15;
     	let t32;
+    	let br15;
+    	let t33;
     	let slider16;
     	let updating_value_16;
-    	let t33;
+    	let t34;
     	let br16;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	function slider0_value_binding_6(value) {
-    		/*slider0_value_binding_6*/ ctx[142](value);
+    		/*slider0_value_binding_6*/ ctx[154](value);
     	}
 
     	let slider0_props = { min: 0, max: 200 };
@@ -7596,10 +7771,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_6));
-    	slider0.$on("input", /*input_handler_58*/ ctx[143]);
+    	slider0.$on("input", /*input_handler_58*/ ctx[155]);
 
     	function slider1_value_binding_6(value) {
-    		/*slider1_value_binding_6*/ ctx[144](value);
+    		/*slider1_value_binding_6*/ ctx[156](value);
     	}
 
     	let slider1_props = { min: 0, max: 1500 };
@@ -7610,10 +7785,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_6));
-    	slider1.$on("input", /*input_handler_59*/ ctx[145]);
+    	slider1.$on("input", /*input_handler_59*/ ctx[157]);
 
     	function slider2_value_binding_6(value) {
-    		/*slider2_value_binding_6*/ ctx[146](value);
+    		/*slider2_value_binding_6*/ ctx[158](value);
     	}
 
     	let slider2_props = { min: 0, max: 100 };
@@ -7624,10 +7799,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_6));
-    	slider2.$on("input", /*input_handler_60*/ ctx[147]);
+    	slider2.$on("input", /*input_handler_60*/ ctx[159]);
 
     	function slider3_value_binding_6(value) {
-    		/*slider3_value_binding_6*/ ctx[148](value);
+    		/*slider3_value_binding_6*/ ctx[160](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -7638,10 +7813,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_6));
-    	slider3.$on("input", /*input_handler_61*/ ctx[149]);
+    	slider3.$on("input", /*input_handler_61*/ ctx[161]);
 
     	function slider4_value_binding_6(value) {
-    		/*slider4_value_binding_6*/ ctx[150](value);
+    		/*slider4_value_binding_6*/ ctx[162](value);
     	}
 
     	let slider4_props = { min: 0, max: 360 };
@@ -7652,10 +7827,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_6));
-    	slider4.$on("input", /*input_handler_62*/ ctx[151]);
+    	slider4.$on("input", /*input_handler_62*/ ctx[163]);
 
     	function slider5_value_binding_5(value) {
-    		/*slider5_value_binding_5*/ ctx[152](value);
+    		/*slider5_value_binding_5*/ ctx[164](value);
     	}
 
     	let slider5_props = { min: 0, max: 360, className: "hueSlider" };
@@ -7666,10 +7841,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_5));
-    	slider5.$on("input", /*input_handler_63*/ ctx[153]);
+    	slider5.$on("input", /*input_handler_63*/ ctx[165]);
 
     	function slider6_value_binding_4(value) {
-    		/*slider6_value_binding_4*/ ctx[154](value);
+    		/*slider6_value_binding_4*/ ctx[166](value);
     	}
 
     	let slider6_props = { min: 0, max: 100 };
@@ -7680,10 +7855,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_4));
-    	slider6.$on("input", /*input_handler_64*/ ctx[155]);
+    	slider6.$on("input", /*input_handler_64*/ ctx[167]);
 
     	function slider7_value_binding_4(value) {
-    		/*slider7_value_binding_4*/ ctx[156](value);
+    		/*slider7_value_binding_4*/ ctx[168](value);
     	}
 
     	let slider7_props = { min: 0, max: 810 };
@@ -7694,10 +7869,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_4));
-    	slider7.$on("input", /*input_handler_65*/ ctx[157]);
+    	slider7.$on("input", /*input_handler_65*/ ctx[169]);
 
     	function slider8_value_binding_4(value) {
-    		/*slider8_value_binding_4*/ ctx[158](value);
+    		/*slider8_value_binding_4*/ ctx[170](value);
     	}
 
     	let slider8_props = { min: 3, max: 12 };
@@ -7708,10 +7883,10 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_4));
-    	slider8.$on("input", /*input_handler_66*/ ctx[159]);
+    	slider8.$on("input", /*input_handler_66*/ ctx[171]);
 
     	function slider9_value_binding_2(value) {
-    		/*slider9_value_binding_2*/ ctx[160](value);
+    		/*slider9_value_binding_2*/ ctx[172](value);
     	}
 
     	let slider9_props = { min: 0, max: 100 };
@@ -7722,10 +7897,10 @@ var app = (function () {
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding_2));
-    	slider9.$on("input", /*input_handler_67*/ ctx[161]);
+    	slider9.$on("input", /*input_handler_67*/ ctx[173]);
 
     	function slider10_value_binding_1(value) {
-    		/*slider10_value_binding_1*/ ctx[162](value);
+    		/*slider10_value_binding_1*/ ctx[174](value);
     	}
 
     	let slider10_props = { min: 0, max: 100 };
@@ -7736,10 +7911,10 @@ var app = (function () {
 
     	slider10 = new Slider({ props: slider10_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider10, 'value', slider10_value_binding_1));
-    	slider10.$on("input", /*input_handler_68*/ ctx[163]);
+    	slider10.$on("input", /*input_handler_68*/ ctx[175]);
 
     	function slider11_value_binding_1(value) {
-    		/*slider11_value_binding_1*/ ctx[164](value);
+    		/*slider11_value_binding_1*/ ctx[176](value);
     	}
 
     	let slider11_props = { min: 0, max: 30 };
@@ -7750,10 +7925,10 @@ var app = (function () {
 
     	slider11 = new Slider({ props: slider11_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider11, 'value', slider11_value_binding_1));
-    	slider11.$on("input", /*input_handler_69*/ ctx[165]);
+    	slider11.$on("input", /*input_handler_69*/ ctx[177]);
 
     	function slider12_value_binding_1(value) {
-    		/*slider12_value_binding_1*/ ctx[166](value);
+    		/*slider12_value_binding_1*/ ctx[178](value);
     	}
 
     	let slider12_props = { min: 0, max: 100 };
@@ -7764,10 +7939,10 @@ var app = (function () {
 
     	slider12 = new Slider({ props: slider12_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider12, 'value', slider12_value_binding_1));
-    	slider12.$on("input", /*input_handler_70*/ ctx[167]);
+    	slider12.$on("input", /*input_handler_70*/ ctx[179]);
 
     	function slider13_value_binding_1(value) {
-    		/*slider13_value_binding_1*/ ctx[168](value);
+    		/*slider13_value_binding_1*/ ctx[180](value);
     	}
 
     	let slider13_props = { min: 0, max: 100 };
@@ -7778,10 +7953,10 @@ var app = (function () {
 
     	slider13 = new Slider({ props: slider13_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider13, 'value', slider13_value_binding_1));
-    	slider13.$on("input", /*input_handler_71*/ ctx[169]);
+    	slider13.$on("input", /*input_handler_71*/ ctx[181]);
 
     	function slider14_value_binding_1(value) {
-    		/*slider14_value_binding_1*/ ctx[170](value);
+    		/*slider14_value_binding_1*/ ctx[182](value);
     	}
 
     	let slider14_props = { min: 0, max: 180 };
@@ -7792,10 +7967,10 @@ var app = (function () {
 
     	slider14 = new Slider({ props: slider14_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider14, 'value', slider14_value_binding_1));
-    	slider14.$on("input", /*input_handler_72*/ ctx[171]);
+    	slider14.$on("input", /*input_handler_72*/ ctx[183]);
 
     	function slider15_value_binding_1(value) {
-    		/*slider15_value_binding_1*/ ctx[172](value);
+    		/*slider15_value_binding_1*/ ctx[184](value);
     	}
 
     	let slider15_props = { min: 0, max: 999 };
@@ -7806,10 +7981,10 @@ var app = (function () {
 
     	slider15 = new Slider({ props: slider15_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider15, 'value', slider15_value_binding_1));
-    	slider15.$on("input", /*input_handler_73*/ ctx[173]);
+    	slider15.$on("input", /*input_handler_73*/ ctx[185]);
 
     	function slider16_value_binding_1(value) {
-    		/*slider16_value_binding_1*/ ctx[174](value);
+    		/*slider16_value_binding_1*/ ctx[186](value);
     	}
 
     	let slider16_props = { min: 0, max: 100 };
@@ -7820,185 +7995,211 @@ var app = (function () {
 
     	slider16 = new Slider({ props: slider16_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider16, 'value', slider16_value_binding_1));
-    	slider16.$on("input", /*input_handler_74*/ ctx[175]);
+    	slider16.$on("input", /*input_handler_74*/ ctx[187]);
 
     	const block = {
     		c: function create() {
-    			t0 = text("Count: ");
+    			label = element("label");
+    			input = element("input");
+    			t0 = text("\n        Visible");
+    			t1 = text("\n    Count: ");
     			create_component(slider0.$$.fragment);
-    			t1 = space();
+    			t2 = space();
     			br0 = element("br");
-    			t2 = text("\n    Threshold: ");
+    			t3 = text("\n    Threshold: ");
     			create_component(slider1.$$.fragment);
-    			t3 = space();
+    			t4 = space();
     			br1 = element("br");
-    			t4 = text("\n    Fill Alpha: ");
+    			t5 = text("\n    Fill Alpha: ");
     			create_component(slider2.$$.fragment);
-    			t5 = space();
+    			t6 = space();
     			br2 = element("br");
-    			t6 = text("\n    Fringe Alpha: ");
+    			t7 = text("\n    Fringe Alpha: ");
     			create_component(slider3.$$.fragment);
-    			t7 = space();
+    			t8 = space();
     			br3 = element("br");
-    			t8 = text("\n    Angle: ");
+    			t9 = text("\n    Angle: ");
     			create_component(slider4.$$.fragment);
-    			t9 = space();
+    			t10 = space();
     			br4 = element("br");
-    			t10 = text("\n    Hue: ");
+    			t11 = text("\n    Hue: ");
     			create_component(slider5.$$.fragment);
-    			t11 = space();
+    			t12 = space();
     			br5 = element("br");
-    			t12 = text("\n    Saturation: ");
+    			t13 = text("\n    Saturation: ");
     			create_component(slider6.$$.fragment);
-    			t13 = space();
+    			t14 = space();
     			br6 = element("br");
-    			t14 = text("\n    Size: ");
+    			t15 = text("\n    Size: ");
     			create_component(slider7.$$.fragment);
-    			t15 = space();
+    			t16 = space();
     			br7 = element("br");
-    			t16 = text("\n    Edges: ");
+    			t17 = text("\n    Edges: ");
     			create_component(slider8.$$.fragment);
-    			t17 = space();
+    			t18 = space();
     			br8 = element("br");
-    			t18 = text("\n    Roundness: ");
+    			t19 = text("\n    Roundness: ");
     			create_component(slider9.$$.fragment);
-    			t19 = space();
+    			t20 = space();
     			br9 = element("br");
-    			t20 = text("\n    Fringe Size: ");
+    			t21 = text("\n    Fringe Size: ");
     			create_component(slider10.$$.fragment);
-    			t21 = space();
+    			t22 = space();
     			br10 = element("br");
-    			t22 = text("\n    Softness: ");
+    			t23 = text("\n    Softness: ");
     			create_component(slider11.$$.fragment);
-    			t23 = space();
+    			t24 = space();
     			br11 = element("br");
-    			t24 = text("\n    Size Variance: ");
+    			t25 = text("\n    Size Variance: ");
     			create_component(slider12.$$.fragment);
-    			t25 = space();
+    			t26 = space();
     			br12 = element("br");
-    			t26 = text("\n    Alpha Variance: ");
+    			t27 = text("\n    Alpha Variance: ");
     			create_component(slider13.$$.fragment);
-    			t27 = space();
+    			t28 = space();
     			br13 = element("br");
-    			t28 = text("\n    Hue Variance: ");
+    			t29 = text("\n    Hue Variance: ");
     			create_component(slider14.$$.fragment);
-    			t29 = space();
+    			t30 = space();
     			br14 = element("br");
-    			t30 = text("\n    Random Seed: ");
+    			t31 = text("\n    Random Seed: ");
     			create_component(slider15.$$.fragment);
-    			t31 = space();
+    			t32 = space();
     			br15 = element("br");
-    			t32 = text("\n    Anamorph: ");
+    			t33 = text("\n    Anamorph: ");
     			create_component(slider16.$$.fragment);
-    			t33 = space();
+    			t34 = space();
     			br16 = element("br");
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-viz99f");
+    			add_location(input, file, 536, 8, 33335);
+    			set_style(label, "text-align", "center");
+    			attr_dev(label, "class", "svelte-viz99f");
+    			add_location(label, file, 535, 4, 33291);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 499, 162, 31766);
+    			add_location(br0, file, 539, 162, 33679);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 500, 171, 31944);
+    			add_location(br1, file, 540, 171, 33857);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 501, 171, 32122);
+    			add_location(br2, file, 541, 171, 34035);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 502, 175, 32304);
+    			add_location(br3, file, 542, 175, 34217);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 503, 162, 32473);
+    			add_location(br4, file, 543, 162, 34386);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 504, 180, 32660);
+    			add_location(br5, file, 544, 180, 34573);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 505, 172, 32839);
+    			add_location(br6, file, 545, 172, 34752);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 506, 162, 33008);
+    			add_location(br7, file, 546, 162, 34921);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 507, 161, 33176);
+    			add_location(br8, file, 547, 161, 35089);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 508, 170, 33353);
+    			add_location(br9, file, 548, 170, 35266);
     			attr_dev(br10, "class", "svelte-viz99f");
-    			add_location(br10, file, 509, 173, 33533);
+    			add_location(br10, file, 549, 173, 35446);
     			attr_dev(br11, "class", "svelte-viz99f");
-    			add_location(br11, file, 510, 163, 33703);
+    			add_location(br11, file, 550, 163, 35616);
     			attr_dev(br12, "class", "svelte-viz99f");
-    			add_location(br12, file, 511, 177, 33887);
+    			add_location(br12, file, 551, 177, 35800);
     			attr_dev(br13, "class", "svelte-viz99f");
-    			add_location(br13, file, 512, 179, 34073);
+    			add_location(br13, file, 552, 179, 35986);
     			attr_dev(br14, "class", "svelte-viz99f");
-    			add_location(br14, file, 513, 175, 34255);
+    			add_location(br14, file, 553, 175, 36168);
     			attr_dev(br15, "class", "svelte-viz99f");
-    			add_location(br15, file, 514, 167, 34429);
+    			add_location(br15, file, 554, 167, 36342);
     			attr_dev(br16, "class", "svelte-viz99f");
-    			add_location(br16, file, 515, 168, 34604);
+    			add_location(br16, file, 555, 168, 36517);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			mount_component(slider0, target, anchor);
+    			insert_dev(target, label, anchor);
+    			append_dev(label, input);
+    			input.checked = /*flareSettings*/ ctx[0].lensOrbs.visible;
+    			append_dev(label, t0);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, br0, anchor);
+    			mount_component(slider0, target, anchor);
     			insert_dev(target, t2, anchor);
-    			mount_component(slider1, target, anchor);
+    			insert_dev(target, br0, anchor);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, br1, anchor);
+    			mount_component(slider1, target, anchor);
     			insert_dev(target, t4, anchor);
-    			mount_component(slider2, target, anchor);
+    			insert_dev(target, br1, anchor);
     			insert_dev(target, t5, anchor);
-    			insert_dev(target, br2, anchor);
+    			mount_component(slider2, target, anchor);
     			insert_dev(target, t6, anchor);
-    			mount_component(slider3, target, anchor);
+    			insert_dev(target, br2, anchor);
     			insert_dev(target, t7, anchor);
-    			insert_dev(target, br3, anchor);
+    			mount_component(slider3, target, anchor);
     			insert_dev(target, t8, anchor);
-    			mount_component(slider4, target, anchor);
+    			insert_dev(target, br3, anchor);
     			insert_dev(target, t9, anchor);
-    			insert_dev(target, br4, anchor);
+    			mount_component(slider4, target, anchor);
     			insert_dev(target, t10, anchor);
-    			mount_component(slider5, target, anchor);
+    			insert_dev(target, br4, anchor);
     			insert_dev(target, t11, anchor);
-    			insert_dev(target, br5, anchor);
+    			mount_component(slider5, target, anchor);
     			insert_dev(target, t12, anchor);
-    			mount_component(slider6, target, anchor);
+    			insert_dev(target, br5, anchor);
     			insert_dev(target, t13, anchor);
-    			insert_dev(target, br6, anchor);
+    			mount_component(slider6, target, anchor);
     			insert_dev(target, t14, anchor);
-    			mount_component(slider7, target, anchor);
+    			insert_dev(target, br6, anchor);
     			insert_dev(target, t15, anchor);
-    			insert_dev(target, br7, anchor);
+    			mount_component(slider7, target, anchor);
     			insert_dev(target, t16, anchor);
-    			mount_component(slider8, target, anchor);
+    			insert_dev(target, br7, anchor);
     			insert_dev(target, t17, anchor);
-    			insert_dev(target, br8, anchor);
+    			mount_component(slider8, target, anchor);
     			insert_dev(target, t18, anchor);
-    			mount_component(slider9, target, anchor);
+    			insert_dev(target, br8, anchor);
     			insert_dev(target, t19, anchor);
-    			insert_dev(target, br9, anchor);
+    			mount_component(slider9, target, anchor);
     			insert_dev(target, t20, anchor);
-    			mount_component(slider10, target, anchor);
+    			insert_dev(target, br9, anchor);
     			insert_dev(target, t21, anchor);
-    			insert_dev(target, br10, anchor);
+    			mount_component(slider10, target, anchor);
     			insert_dev(target, t22, anchor);
-    			mount_component(slider11, target, anchor);
+    			insert_dev(target, br10, anchor);
     			insert_dev(target, t23, anchor);
-    			insert_dev(target, br11, anchor);
+    			mount_component(slider11, target, anchor);
     			insert_dev(target, t24, anchor);
-    			mount_component(slider12, target, anchor);
+    			insert_dev(target, br11, anchor);
     			insert_dev(target, t25, anchor);
-    			insert_dev(target, br12, anchor);
+    			mount_component(slider12, target, anchor);
     			insert_dev(target, t26, anchor);
-    			mount_component(slider13, target, anchor);
+    			insert_dev(target, br12, anchor);
     			insert_dev(target, t27, anchor);
-    			insert_dev(target, br13, anchor);
+    			mount_component(slider13, target, anchor);
     			insert_dev(target, t28, anchor);
-    			mount_component(slider14, target, anchor);
+    			insert_dev(target, br13, anchor);
     			insert_dev(target, t29, anchor);
-    			insert_dev(target, br14, anchor);
+    			mount_component(slider14, target, anchor);
     			insert_dev(target, t30, anchor);
-    			mount_component(slider15, target, anchor);
+    			insert_dev(target, br14, anchor);
     			insert_dev(target, t31, anchor);
-    			insert_dev(target, br15, anchor);
+    			mount_component(slider15, target, anchor);
     			insert_dev(target, t32, anchor);
-    			mount_component(slider16, target, anchor);
+    			insert_dev(target, br15, anchor);
     			insert_dev(target, t33, anchor);
+    			mount_component(slider16, target, anchor);
+    			insert_dev(target, t34, anchor);
     			insert_dev(target, br16, anchor);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input, "change", /*input_change_handler_5*/ ctx[152]),
+    					listen_dev(input, "change", /*change_handler_6*/ ctx[153], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*flareSettings*/ 1) {
+    				input.checked = /*flareSettings*/ ctx[0].lensOrbs.visible;
+    			}
+
     			const slider0_changes = {};
 
     			if (!updating_value && dirty[0] & /*flareSettings*/ 1) {
@@ -8195,74 +8396,77 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			destroy_component(slider0, detaching);
+    			if (detaching) detach_dev(label);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(br0);
+    			destroy_component(slider0, detaching);
     			if (detaching) detach_dev(t2);
-    			destroy_component(slider1, detaching);
+    			if (detaching) detach_dev(br0);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(br1);
+    			destroy_component(slider1, detaching);
     			if (detaching) detach_dev(t4);
-    			destroy_component(slider2, detaching);
+    			if (detaching) detach_dev(br1);
     			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(br2);
+    			destroy_component(slider2, detaching);
     			if (detaching) detach_dev(t6);
-    			destroy_component(slider3, detaching);
+    			if (detaching) detach_dev(br2);
     			if (detaching) detach_dev(t7);
-    			if (detaching) detach_dev(br3);
+    			destroy_component(slider3, detaching);
     			if (detaching) detach_dev(t8);
-    			destroy_component(slider4, detaching);
+    			if (detaching) detach_dev(br3);
     			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(br4);
+    			destroy_component(slider4, detaching);
     			if (detaching) detach_dev(t10);
-    			destroy_component(slider5, detaching);
+    			if (detaching) detach_dev(br4);
     			if (detaching) detach_dev(t11);
-    			if (detaching) detach_dev(br5);
+    			destroy_component(slider5, detaching);
     			if (detaching) detach_dev(t12);
-    			destroy_component(slider6, detaching);
+    			if (detaching) detach_dev(br5);
     			if (detaching) detach_dev(t13);
-    			if (detaching) detach_dev(br6);
+    			destroy_component(slider6, detaching);
     			if (detaching) detach_dev(t14);
-    			destroy_component(slider7, detaching);
+    			if (detaching) detach_dev(br6);
     			if (detaching) detach_dev(t15);
-    			if (detaching) detach_dev(br7);
+    			destroy_component(slider7, detaching);
     			if (detaching) detach_dev(t16);
-    			destroy_component(slider8, detaching);
+    			if (detaching) detach_dev(br7);
     			if (detaching) detach_dev(t17);
-    			if (detaching) detach_dev(br8);
+    			destroy_component(slider8, detaching);
     			if (detaching) detach_dev(t18);
-    			destroy_component(slider9, detaching);
+    			if (detaching) detach_dev(br8);
     			if (detaching) detach_dev(t19);
-    			if (detaching) detach_dev(br9);
+    			destroy_component(slider9, detaching);
     			if (detaching) detach_dev(t20);
-    			destroy_component(slider10, detaching);
+    			if (detaching) detach_dev(br9);
     			if (detaching) detach_dev(t21);
-    			if (detaching) detach_dev(br10);
+    			destroy_component(slider10, detaching);
     			if (detaching) detach_dev(t22);
-    			destroy_component(slider11, detaching);
+    			if (detaching) detach_dev(br10);
     			if (detaching) detach_dev(t23);
-    			if (detaching) detach_dev(br11);
+    			destroy_component(slider11, detaching);
     			if (detaching) detach_dev(t24);
-    			destroy_component(slider12, detaching);
+    			if (detaching) detach_dev(br11);
     			if (detaching) detach_dev(t25);
-    			if (detaching) detach_dev(br12);
+    			destroy_component(slider12, detaching);
     			if (detaching) detach_dev(t26);
-    			destroy_component(slider13, detaching);
+    			if (detaching) detach_dev(br12);
     			if (detaching) detach_dev(t27);
-    			if (detaching) detach_dev(br13);
+    			destroy_component(slider13, detaching);
     			if (detaching) detach_dev(t28);
-    			destroy_component(slider14, detaching);
+    			if (detaching) detach_dev(br13);
     			if (detaching) detach_dev(t29);
-    			if (detaching) detach_dev(br14);
+    			destroy_component(slider14, detaching);
     			if (detaching) detach_dev(t30);
-    			destroy_component(slider15, detaching);
+    			if (detaching) detach_dev(br14);
     			if (detaching) detach_dev(t31);
-    			if (detaching) detach_dev(br15);
+    			destroy_component(slider15, detaching);
     			if (detaching) detach_dev(t32);
-    			destroy_component(slider16, detaching);
+    			if (detaching) detach_dev(br15);
     			if (detaching) detach_dev(t33);
+    			destroy_component(slider16, detaching);
+    			if (detaching) detach_dev(t34);
     			if (detaching) detach_dev(br16);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -8270,14 +8474,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(499:0) <Collapsible title={\\\"Lens Orbs\\\"}>",
+    		source: "(535:0) <Collapsible title={\\\"Lens Orbs\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (520:0) {#if startScreenVisible}
+    // (560:0) {#if startScreenVisible}
     function create_if_block(ctx) {
     	let div2;
     	let div0;
@@ -8360,54 +8564,54 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
-    			add_location(div0, file, 521, 8, 34705);
+    			add_location(div0, file, 561, 8, 36618);
     			attr_dev(img, "alt", "PROGEN FLARES 2");
     			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "321");
     			attr_dev(img, "draggable", false);
     			attr_dev(img, "class", "svelte-viz99f");
-    			add_location(img, file, 523, 12, 34954);
+    			add_location(img, file, 563, 12, 36867);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 524, 12, 35047);
+    			add_location(br0, file, 564, 12, 36960);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 524, 19, 35054);
+    			add_location(br1, file, 564, 19, 36967);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 525, 12, 35073);
+    			add_location(span0, file, 565, 12, 36986);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-viz99f");
-    			add_location(input0, file, 525, 102, 35163);
+    			add_location(input0, file, 565, 102, 37076);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 526, 12, 35266);
+    			add_location(br2, file, 566, 12, 37179);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 527, 12, 35285);
+    			add_location(span1, file, 567, 12, 37198);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-viz99f");
-    			add_location(input1, file, 527, 103, 35376);
+    			add_location(input1, file, 567, 103, 37289);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 528, 12, 35480);
+    			add_location(br3, file, 568, 12, 37393);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 528, 19, 35487);
+    			add_location(br4, file, 568, 19, 37400);
     			attr_dev(button, "class", "svelte-viz99f");
-    			add_location(button, file, 529, 12, 35506);
+    			add_location(button, file, 569, 12, 37419);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 530, 12, 35561);
+    			add_location(br5, file, 570, 12, 37474);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 530, 19, 35568);
+    			add_location(br6, file, 570, 19, 37481);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 531, 71, 35646);
+    			add_location(br7, file, 571, 71, 37559);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-viz99f");
-    			add_location(span2, file, 531, 12, 35587);
+    			add_location(span2, file, 571, 12, 37500);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 522, 8, 34887);
+    			add_location(div1, file, 562, 8, 36800);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 520, 4, 34663);
+    			add_location(div2, file, 560, 4, 36576);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -8450,8 +8654,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[176]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[177]),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[188]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[189]),
     					listen_dev(button, "click", /*onStart*/ ctx[11], false, false, false)
     				];
 
@@ -8488,7 +8692,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(520:0) {#if startScreenVisible}",
+    		source: "(560:0) {#if startScreenVisible}",
     		ctx
     	});
 
@@ -8677,59 +8881,59 @@ var app = (function () {
     			t26 = space();
     			attr_dev(div0, "id", "exportPanel");
     			attr_dev(div0, "class", "svelte-viz99f");
-    			add_location(div0, file, 376, 0, 20084);
+    			add_location(div0, file, 392, 0, 20735);
     			attr_dev(canvas0, "id", "referenceImage");
     			attr_dev(canvas0, "width", canvas0_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas0, "height", canvas0_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas0, file, 394, 4, 20832);
+    			add_location(canvas0, file, 410, 4, 21483);
     			attr_dev(canvas1, "id", "baseCanvas");
     			attr_dev(canvas1, "width", canvas1_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas1, "height", canvas1_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas1, file, 395, 4, 21002);
+    			add_location(canvas1, file, 411, 4, 21653);
     			attr_dev(div1, "id", "previewSection");
     			attr_dev(div1, "class", "svelte-viz99f");
-    			add_location(div1, file, 393, 0, 20797);
+    			add_location(div1, file, 409, 0, 21448);
     			option0.__value = 1;
     			option0.value = option0.__value;
     			attr_dev(option0, "class", "svelte-viz99f");
-    			add_location(option0, file, 401, 4, 21390);
+    			add_location(option0, file, 417, 4, 22041);
     			option1.__value = 5 / 4;
     			option1.value = option1.__value;
     			attr_dev(option1, "class", "svelte-viz99f");
-    			add_location(option1, file, 402, 4, 21426);
+    			add_location(option1, file, 418, 4, 22077);
     			option2.__value = 5 / 3;
     			option2.value = option2.__value;
     			attr_dev(option2, "class", "svelte-viz99f");
-    			add_location(option2, file, 403, 4, 21463);
+    			add_location(option2, file, 419, 4, 22114);
     			option3.__value = 5 / 2;
     			option3.value = option3.__value;
     			attr_dev(option3, "class", "svelte-viz99f");
-    			add_location(option3, file, 404, 4, 21500);
+    			add_location(option3, file, 420, 4, 22151);
     			option4.__value = 5;
     			option4.value = option4.__value;
     			attr_dev(option4, "class", "svelte-viz99f");
-    			add_location(option4, file, 405, 4, 21537);
+    			add_location(option4, file, 421, 4, 22188);
     			attr_dev(select, "class", "svelte-viz99f");
     			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler_1*/ ctx[21].call(select));
-    			add_location(select, file, 400, 0, 21268);
+    			add_location(select, file, 416, 0, 21919);
     			attr_dev(span, "style", "white-space: pre; color: grey;");
     			attr_dev(span, "class", "svelte-viz99f");
-    			add_location(span, file, 407, 0, 21578);
+    			add_location(span, file, 423, 0, 22229);
     			attr_dev(input, "type", "checkbox");
     			input.checked = true;
     			attr_dev(input, "style", "margin-bottom: 0;");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 408, 0, 21646);
+    			add_location(input, file, 424, 0, 22297);
     			attr_dev(button0, "class", "svelte-viz99f");
-    			add_location(button0, file, 410, 0, 21783);
+    			add_location(button0, file, 426, 0, 22434);
     			attr_dev(div2, "id", "sectionAbovePreview");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 398, 0, 21219);
+    			add_location(div2, file, 414, 0, 21870);
     			attr_dev(button1, "style", "float: right;");
     			attr_dev(button1, "class", "svelte-viz99f");
-    			add_location(button1, file, 425, 4, 22146);
+    			add_location(button1, file, 441, 4, 22797);
 
     			attr_dev(div3, "style", `
     position: sticky;
@@ -8742,10 +8946,10 @@ var app = (function () {
 `);
 
     			attr_dev(div3, "class", "svelte-viz99f");
-    			add_location(div3, file, 415, 0, 21868);
+    			add_location(div3, file, 431, 0, 22519);
     			attr_dev(div4, "id", "controlPanel");
     			attr_dev(div4, "class", "svelte-viz99f");
-    			add_location(div4, file, 413, 0, 21841);
+    			add_location(div4, file, 429, 0, 22492);
     			document_1.title = "Progen Flares 2";
     		},
     		l: function claim(nodes) {
@@ -8868,49 +9072,49 @@ var app = (function () {
 
     			const collapsible0_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
     				collapsible0_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible0.$set(collapsible0_changes);
     			const collapsible1_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
     				collapsible1_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible1.$set(collapsible1_changes);
     			const collapsible2_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
     				collapsible2_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible2.$set(collapsible2_changes);
     			const collapsible3_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
     				collapsible3_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible3.$set(collapsible3_changes);
     			const collapsible4_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
     				collapsible4_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible4.$set(collapsible4_changes);
     			const collapsible5_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
     				collapsible5_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible5.$set(collapsible5_changes);
     			const collapsible6_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[5] & /*$$scope*/ 16777216) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
     				collapsible6_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9024,6 +9228,7 @@ var app = (function () {
     		dimensions: { width: 1920, height: 1080 },
     		positioning: { x: 960, y: 540, pivotX: 960, pivotY: 540 },
     		hotspot: {
+    			visible: true,
     			radius: 500,
     			intensity: 5,
     			deformationAmount: 1.6,
@@ -9036,6 +9241,7 @@ var app = (function () {
     			anamorph: 0
     		},
     		streak: {
+    			visible: true,
     			thickness: 64,
     			width: 1600,
     			intensity: 5,
@@ -9048,6 +9254,7 @@ var app = (function () {
     			saturation: 100
     		},
     		ring: {
+    			visible: true,
     			radius: 200,
     			thickness: 40,
     			blur: 5,
@@ -9059,6 +9266,7 @@ var app = (function () {
     			anamorph: 0
     		},
     		miIris: {
+    			visible: true,
     			radius: 81,
     			sides: 5,
     			roundness: 20,
@@ -9080,6 +9288,7 @@ var app = (function () {
     			anamorph: 0
     		},
     		glow: {
+    			visible: true,
     			radius: 960,
     			alpha: 50,
     			softening: 70,
@@ -9088,6 +9297,7 @@ var app = (function () {
     			anamorph: 0
     		},
     		lensOrbs: {
+    			visible: true,
     			radius: 45,
     			sides: 6,
     			roundness: 100,
@@ -9193,56 +9403,72 @@ var app = (function () {
     		ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
     		ctx.fillStyle = "black";
     		ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
-    		drawComponent_1(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
-    		var streakAngle = flareSettings.streak.angle;
 
-    		for (var i = 0; i < flareSettings.streak.count; i++) {
-    			var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
-    			if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * (i % 2 == 0 ? -1 : 1) / 100 * flareSettings.streak.width;
-    			drawComponent_1(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
-    			drawComponent_1(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
-    			streakAngle += 180 / flareSettings.streak.count;
+    		if (flareSettings.hotspot.visible) {
+    			drawComponent_1(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
     		}
 
-    		drawComponent_1(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
-    		var miRng = seedrandom(flareSettings.miIris.seed);
+    		if (flareSettings.streak.visible) {
+    			var streakAngle = flareSettings.streak.angle;
 
-    		for (var i = 1; i < flareSettings.miIris.countTowards; i++) {
-    			var irisPosition = {
-    				x: flareSettings.positioning.x + i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
-    				y: flareSettings.positioning.y + i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100
-    			};
-
-    			var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
-    			irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-    			drawComponent_1(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+    			for (var i = 0; i < flareSettings.streak.count; i++) {
+    				var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
+    				if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * (i % 2 == 0 ? -1 : 1) / 100 * flareSettings.streak.width;
+    				drawComponent_1(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
+    				drawComponent_1(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
+    				streakAngle += 180 / flareSettings.streak.count;
+    			}
     		}
 
-    		for (var i = 1; i < flareSettings.miIris.countAway; i++) {
-    			var irisPosition = {
-    				x: flareSettings.positioning.x - i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
-    				y: flareSettings.positioning.y - i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100
-    			};
-
-    			var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
-    			irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-    			drawComponent_1(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+    		if (flareSettings.ring.visible) {
+    			drawComponent_1(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
     		}
 
-    		drawComponent_1(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
-    		var lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
+    		if (flareSettings.miIris.visible) {
+    			var miRng = seedrandom(flareSettings.miIris.seed);
 
-    		for (var i = 1; i < flareSettings.lensOrbs.count; i++) {
-    			var orbPosition = {
-    				x: lensOrbsRng() * flareSettings.dimensions.width,
-    				y: lensOrbsRng() * flareSettings.dimensions.height
-    			};
+    			for (var i = 1; i < flareSettings.miIris.countTowards; i++) {
+    				var irisPosition = {
+    					x: flareSettings.positioning.x + i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
+    					y: flareSettings.positioning.y + i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100
+    				};
 
-    			var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
-    			var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
-    			orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
-    			var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
-    			drawComponent_1(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
+    				var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+    				irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
+    				drawComponent_1(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+    			}
+
+    			for (var i = 1; i < flareSettings.miIris.countAway; i++) {
+    				var irisPosition = {
+    					x: flareSettings.positioning.x - i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
+    					y: flareSettings.positioning.y - i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100
+    				};
+
+    				var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+    				irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
+    				drawComponent_1(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+    			}
+    		}
+
+    		if (flareSettings.glow.visible) {
+    			drawComponent_1(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
+    		}
+
+    		if (flareSettings.lensOrbs.visible) {
+    			var lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
+
+    			for (var i = 1; i < flareSettings.lensOrbs.count; i++) {
+    				var orbPosition = {
+    					x: lensOrbsRng() * flareSettings.dimensions.width,
+    					y: lensOrbsRng() * flareSettings.dimensions.height
+    				};
+
+    				var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
+    				var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
+    				orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
+    				var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
+    				drawComponent_1(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
+    			}
     		}
     	}
 
@@ -9581,6 +9807,15 @@ var app = (function () {
     		renderFlare();
     	};
 
+    	function input_change_handler() {
+    		flareSettings.hotspot.visible = this.checked;
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	const change_handler_1 = function () {
+    		renderFlare(true);
+    	};
+
     	function slider0_value_binding_1(value) {
     		if ($$self.$$.not_equal(flareSettings.hotspot.alpha, value)) {
     			flareSettings.hotspot.alpha = value;
@@ -9691,6 +9926,15 @@ var app = (function () {
     		renderFlare(true);
     	};
 
+    	function input_change_handler_1() {
+    		flareSettings.streak.visible = this.checked;
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	const change_handler_2 = function () {
+    		renderFlare(false, true);
+    	};
+
     	function slider0_value_binding_2(value) {
     		if ($$self.$$.not_equal(flareSettings.streak.alpha, value)) {
     			flareSettings.streak.alpha = value;
@@ -9790,6 +10034,15 @@ var app = (function () {
     		renderFlare(false, true);
     	};
 
+    	function input_change_handler_2() {
+    		flareSettings.ring.visible = this.checked;
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	const change_handler_3 = function () {
+    		renderFlare(false, false, true);
+    	};
+
     	function slider0_value_binding_3(value) {
     		if ($$self.$$.not_equal(flareSettings.ring.alpha, value)) {
     			flareSettings.ring.alpha = value;
@@ -9887,6 +10140,15 @@ var app = (function () {
 
     	const input_handler_32 = function () {
     		renderFlare(false, false, true);
+    	};
+
+    	function input_change_handler_3() {
+    		flareSettings.miIris.visible = this.checked;
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	const change_handler_4 = function () {
+    		renderFlare(false, false, false, true);
     	};
 
     	function slider0_value_binding_4(value) {
@@ -10098,6 +10360,15 @@ var app = (function () {
     		renderFlare(false, false, false, true);
     	};
 
+    	function input_change_handler_4() {
+    		flareSettings.glow.visible = this.checked;
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	const change_handler_5 = function () {
+    		renderFlare(false, false, false, false, true);
+    	};
+
     	function slider0_value_binding_5(value) {
     		if ($$self.$$.not_equal(flareSettings.glow.alpha, value)) {
     			flareSettings.glow.alpha = value;
@@ -10162,6 +10433,15 @@ var app = (function () {
 
     	const input_handler_57 = function () {
     		renderFlare(false, false, false, false, true);
+    	};
+
+    	function input_change_handler_5() {
+    		flareSettings.lensOrbs.visible = this.checked;
+    		$$invalidate(0, flareSettings);
+    	}
+
+    	const change_handler_6 = function () {
+    		renderFlare(false, false, false, false, false, true);
     	};
 
     	function slider0_value_binding_6(value) {
@@ -10444,6 +10724,8 @@ var app = (function () {
     		input_handler_3,
     		slider4_value_binding,
     		input_handler_4,
+    		input_change_handler,
+    		change_handler_1,
     		slider0_value_binding_1,
     		input_handler_5,
     		slider1_value_binding_1,
@@ -10464,6 +10746,8 @@ var app = (function () {
     		input_handler_13,
     		slider9_value_binding,
     		input_handler_14,
+    		input_change_handler_1,
+    		change_handler_2,
     		slider0_value_binding_2,
     		input_handler_15,
     		slider1_value_binding_2,
@@ -10482,6 +10766,8 @@ var app = (function () {
     		input_handler_22,
     		slider8_value_binding_1,
     		input_handler_23,
+    		input_change_handler_2,
+    		change_handler_3,
     		slider0_value_binding_3,
     		input_handler_24,
     		slider1_value_binding_3,
@@ -10500,6 +10786,8 @@ var app = (function () {
     		input_handler_31,
     		slider8_value_binding_2,
     		input_handler_32,
+    		input_change_handler_3,
+    		change_handler_4,
     		slider0_value_binding_4,
     		input_handler_33,
     		slider1_value_binding_4,
@@ -10538,6 +10826,8 @@ var app = (function () {
     		input_handler_50,
     		slider18_value_binding,
     		input_handler_51,
+    		input_change_handler_4,
+    		change_handler_5,
     		slider0_value_binding_5,
     		input_handler_52,
     		slider1_value_binding_5,
@@ -10550,6 +10840,8 @@ var app = (function () {
     		input_handler_56,
     		slider5_value_binding_4,
     		input_handler_57,
+    		input_change_handler_5,
+    		change_handler_6,
     		slider0_value_binding_6,
     		input_handler_58,
     		slider1_value_binding_6,
@@ -10592,7 +10884,7 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, {}, null, [-1, -1, -1, -1, -1, -1]);
+    		init(this, options, instance, create_fragment, safe_not_equal, {}, null, [-1, -1, -1, -1, -1, -1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,

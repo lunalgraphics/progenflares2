@@ -49,6 +49,7 @@
             pivotY: 540,
         },
         hotspot: {
+            visible: true,
             radius: 500,
             intensity: 5,
             deformationAmount: 1.6,
@@ -61,6 +62,7 @@
             anamorph: 0,
         },
         streak: {
+            visible: true,
             thickness: 64,
             width: 1600,
             intensity: 5,
@@ -73,6 +75,7 @@
             saturation: 100,
         },
         ring: {
+            visible: true,
             radius: 200,
             thickness: 40,
             blur: 5,
@@ -84,6 +87,7 @@
             anamorph: 0,
         },
         miIris: {
+            visible: true,
             radius: 81,
             sides: 5,
             roundness: 20,
@@ -105,6 +109,7 @@
             anamorph: 0,
         },
         glow: {
+            visible: true,
             radius: 960,
             alpha: 50,
             softening: 70,
@@ -113,6 +118,7 @@
             anamorph: 0,
         },
         lensOrbs: {
+            visible: true,
             radius: 45,
             sides: 6,
             roundness: 100,
@@ -206,50 +212,60 @@
         ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
-        drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
-        var streakAngle = flareSettings.streak.angle;
-        for (var i = 0; i < flareSettings.streak.count; i++) {
-            var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
-            if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * ((i % 2 == 0)?-1:1) / 100 * flareSettings.streak.width;
-            drawComponent(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
-            drawComponent(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
-            streakAngle += 180 / flareSettings.streak.count;
-        }
-        drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
 
-        var miRng = seedrandom(flareSettings.miIris.seed);
-        for (var i = 1; i < flareSettings.miIris.countTowards; i++) {
-            var irisPosition = {
-                x: flareSettings.positioning.x + i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
-                y: flareSettings.positioning.y + i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
-            };
-            var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
-            irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-            drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+        if (flareSettings.hotspot.visible) {
+            drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
         }
-        for (var i = 1; i < flareSettings.miIris.countAway; i++) {
-            var irisPosition = {
-                x: flareSettings.positioning.x - i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
-                y: flareSettings.positioning.y - i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
-            };
-            var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
-            irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-            drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+        if (flareSettings.streak.visible) {
+            var streakAngle = flareSettings.streak.angle;
+            for (var i = 0; i < flareSettings.streak.count; i++) {
+                var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
+                if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * ((i % 2 == 0)?-1:1) / 100 * flareSettings.streak.width;
+                drawComponent(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
+                drawComponent(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
+                streakAngle += 180 / flareSettings.streak.count;
+            }
         }
-
-        drawComponent(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
-
-        var lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
-        for (var i = 1; i < flareSettings.lensOrbs.count; i++) {
-            var orbPosition = {
-                x: lensOrbsRng() * flareSettings.dimensions.width,
-                y: lensOrbsRng() * flareSettings.dimensions.height,
-            };
-            var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
-            var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
-            orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
-            var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
-            drawComponent(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
+        if (flareSettings.ring.visible) {
+            drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
+        }
+        if (flareSettings.miIris.visible) {
+            var miRng = seedrandom(flareSettings.miIris.seed);
+            for (var i = 1; i < flareSettings.miIris.countTowards; i++) {
+                var irisPosition = {
+                    x: flareSettings.positioning.x + i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
+                    y: flareSettings.positioning.y + i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
+                };
+                var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+                irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
+                drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+            }
+            for (var i = 1; i < flareSettings.miIris.countAway; i++) {
+                var irisPosition = {
+                    x: flareSettings.positioning.x - i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
+                    y: flareSettings.positioning.y - i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
+                };
+                var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+                irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
+                drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+            }
+        }
+        if (flareSettings.glow.visible) {
+            drawComponent(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
+        }
+        if (flareSettings.lensOrbs.visible) {
+            var lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
+            for (var i = 1; i < flareSettings.lensOrbs.count; i++) {
+                var orbPosition = {
+                    x: lensOrbsRng() * flareSettings.dimensions.width,
+                    y: lensOrbsRng() * flareSettings.dimensions.height,
+                };
+                var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
+                var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
+                orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
+                var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
+                drawComponent(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
+            }
         }
     }
 
@@ -434,6 +450,10 @@ Reference Image
     Scale Multiplier: <Slider min={0.01} max={2} step={0.01} bind:value={flareSettings.sizeMultiplier} on:input={function() { renderFlare(); }} on:change={handleScaleMultiplier} /> <br />
 </Collapsible>
 <Collapsible title={"Hotspot"}>
+    <label style="text-align: center;">
+        <input type="checkbox" bind:checked={flareSettings.hotspot.visible} on:change={function() { renderFlare(true); }} />
+        Visible
+    </label>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.hotspot.alpha} on:input={function() { renderFlare(true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.hotspot.angle} on:input={function() { renderFlare(true); }} /> <br />
     Hue: <Slider min={0} max={360} bind:value={flareSettings.hotspot.hue} on:input={function() { renderFlare(true); }} className="hueSlider" /> <br />
@@ -446,6 +466,10 @@ Reference Image
     Anamorph: <Slider min={0} max={100} bind:value={flareSettings.hotspot.anamorph} on:input={function() { renderFlare(true); }} /> <br />
 </Collapsible>
 <Collapsible title={"Streak"}>
+    <label style="text-align: center;">
+        <input type="checkbox" bind:checked={flareSettings.streak.visible} on:change={function() { renderFlare(false, true); }} />
+        Visible
+    </label>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.streak.alpha} on:input={function() { renderFlare(false, true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.streak.angle} on:input={function() { renderFlare(false, true); }} /> <br />
     Hue: <Slider min={0} max={360} bind:value={flareSettings.streak.hue} on:input={function() { renderFlare(false, true); }} className="hueSlider" /> <br />
@@ -457,6 +481,10 @@ Reference Image
     Shift: <Slider min={0} max={100} bind:value={flareSettings.streak.shift} on:input={function() { renderFlare(false, true); }} /> <br />
 </Collapsible>
 <Collapsible title={"Ring"}>
+    <label style="text-align: center;">
+        <input type="checkbox" bind:checked={flareSettings.ring.visible} on:change={function() { renderFlare(false, false, true); }} />
+        Visible
+    </label>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.ring.alpha} on:input={function() { renderFlare(false, false, true); }} /> <br />
     Hue: <Slider min={0} max={360} bind:value={flareSettings.ring.hue} on:input={function() { renderFlare(false, false, true); }} className="hueSlider" /> <br />
     Saturation: <Slider min={0} max={100} bind:value={flareSettings.ring.saturation} on:input={function() { renderFlare(false, false, true); }} /> <br />
@@ -468,6 +496,10 @@ Reference Image
     Anamorph: <Slider min={0} max={100} bind:value={flareSettings.ring.anamorph} on:input={function() { renderFlare(false, false, true); }} /> <br />
 </Collapsible>
 <Collapsible title={"Multi-Iris"}>
+    <label style="text-align: center;">
+        <input type="checkbox" bind:checked={flareSettings.miIris.visible} on:change={function() { renderFlare(false, false, false, true); }} />
+        Visible
+    </label>
     Fill Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fillAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
     Angle: <Slider min={0} max={360} bind:value={flareSettings.miIris.angle} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
@@ -489,6 +521,10 @@ Reference Image
     Anamorph: <Slider min={0} max={100} bind:value={flareSettings.miIris.anamorph} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
 </Collapsible>
 <Collapsible title={"Glow"}>
+    <label style="text-align: center;">
+        <input type="checkbox" bind:checked={flareSettings.glow.visible} on:change={function() { renderFlare(false, false, false, false, true); }} />
+        Visible
+    </label>
     Alpha: <Slider min={0} max={100} bind:value={flareSettings.glow.alpha} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
     Hue: <Slider min={0} max={360} bind:value={flareSettings.glow.hue} on:input={function() { renderFlare(false, false, false, false, true); }} className="hueSlider" /> <br />
     Saturation: <Slider min={0} max={100} bind:value={flareSettings.glow.saturation} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
@@ -497,6 +533,10 @@ Reference Image
     Anamorph: <Slider min={0} max={100} bind:value={flareSettings.glow.anamorph} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
 </Collapsible>
 <Collapsible title={"Lens Orbs"}>
+    <label style="text-align: center;">
+        <input type="checkbox" bind:checked={flareSettings.lensOrbs.visible} on:change={function() { renderFlare(false, false, false, false, false, true); }} />
+        Visible
+    </label>
     Count: <Slider min={0} max={200} bind:value={flareSettings.lensOrbs.count} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
     Threshold: <Slider min={0} max={1500} bind:value={flareSettings.lensOrbs.threshold} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
     Fill Alpha: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.fillAlpha} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
