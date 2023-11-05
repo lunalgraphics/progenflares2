@@ -401,7 +401,7 @@
     </select>
 {/if}
 {#if (isPopupPlugin)}
-    <button on:click={function() { window.postMessage(["finalImage", createDownloadLink().href]); window.close(); }}>Finish</button>
+    <button on:click={function() { window.postMessage(["finalImage", createDownloadLink().href]); }}>Finish</button>
     <span style="white-space: pre;">{"  "}</span>
     <button on:click={function() { window.close(); }}>Close</button>
 {/if}
