@@ -60,7 +60,7 @@
     </optgroup>
 </select>
 
-<input type={"file"} bind:this={fileInput} on:change={handleFileInput} />
+<input type={"file"} bind:this={fileInput} on:change={handleFileInput} accept=".pgf2" />
 
 <style>
     select {

@@ -2981,6 +2981,7 @@ var app = (function () {
     			attr_dev(select, "class", "svelte-1cxpn51");
     			add_location(select, file$1, 52, 0, 18130);
     			attr_dev(input, "type", "file");
+    			attr_dev(input, "accept", ".pgf2");
     			attr_dev(input, "class", "svelte-1cxpn51");
     			add_location(input, file$1, 62, 0, 18523);
     		},
@@ -9502,7 +9503,7 @@ var app = (function () {
     			lensOrbs: flareSettings.lensOrbs
     		});
 
-    		var textFile = new Blob([fileContents], { "type": "application/json" });
+    		var textFile = new Blob([fileContents], { "type": "application/pgf2" });
     		var a = document.createElement("a");
     		a.href = URL.createObjectURL(textFile);
     		a.download = "ProgenFlares2-preset.pgf2";

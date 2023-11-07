@@ -297,7 +297,7 @@
             glow: flareSettings.glow,
             lensOrbs: flareSettings.lensOrbs,
         });
-        var textFile = new Blob([fileContents], { "type": "application/json" });
+        var textFile = new Blob([fileContents], { "type": "application/pgf2" });
         var a = document.createElement("a");
         a.href = URL.createObjectURL(textFile);
         a.download = "ProgenFlares2-preset.pgf2";
