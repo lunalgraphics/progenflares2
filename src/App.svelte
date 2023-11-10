@@ -12,6 +12,8 @@
     import PresetPicker from "./PresetPicker.svelte";
     import { fade } from "svelte/transition";
     import { onMount } from "svelte";
+    import textLogo from "./images/textLogo.png";
+    import coverImage from "./images/coverImage.jpg";
 
     var flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -559,10 +561,10 @@ Reference Image
 </div>
 
 {#if startScreenVisible}
-    <div id={"startScreen"} out:fade>
+    <div id={"startScreen"} style="background-image: url({coverImage});" out:fade>
         <div class={"centered"} style={"width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;"}></div>
         <div class={"centered"} style={"text-align: center;"}>
-            <img alt="PROGEN FLARES 2" src="./textLogo.png" width="321" draggable={false} />
+            <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
             <br /> <br />
             <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
             <br />
@@ -673,7 +675,6 @@ Reference Image
         position: fixed;
         top: 0;
         left: 0;
-        background-image: url("../coverImage.jpg");
         background-size: cover;
         background-position: center;
     }
