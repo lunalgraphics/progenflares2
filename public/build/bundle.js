@@ -2891,28 +2891,60 @@ var app = (function () {
         }
     }
 
+    var hotspot$f={visible:true,radius:595,intensity:20,deformationAmount:1.5,deformationFrequency:0.01,deformationSeed:239,alpha:100,angle:0,hue:39,saturation:88,anamorph:0};var streak$f={visible:true,thickness:121,width:2435,intensity:-25,count:1,angle:0,shift:48,alpha:100,hue:216,saturation:100};var ring$f={visible:false,radius:300,thickness:50,blur:14,cropSize:0,cropHardness:50,alpha:34,hue:222,saturation:100,anamorph:0};var miIris$f={visible:true,radius:72,sides:6,roundness:50,angle:0,fillAlpha:10,fringeAlpha:12,fringeSize:28,blur:3,countAway:5,countTowards:12,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:333,hue:39,saturation:100,hueVariance:40,anamorph:0};var glow$f={visible:true,radius:999,alpha:25,softening:0,hue:23,saturation:100,anamorph:0};var lensOrbs$f={visible:true,radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:6,fringeSize:4,blur:2,count:123,threshold:1210,seed:222,sizeVariance:0,alphaVariance:42,hue:16,saturation:100,hueVariance:0,anamorph:0};var sundigital = {hotspot:hotspot$f,streak:streak$f,ring:ring$f,miIris:miIris$f,glow:glow$f,lensOrbs:lensOrbs$f};
+
+    var hotspot$e={visible:true,radius:500,intensity:5,deformationAmount:1.6,deformationFrequency:0.006,deformationSeed:1,alpha:100,angle:0,hue:200,saturation:100,anamorph:0};var streak$e={visible:true,thickness:64,width:1600,intensity:5,count:1,angle:0,shift:36,alpha:100,hue:200,saturation:100};var ring$e={visible:true,radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:21,hue:200,saturation:100,anamorph:0};var miIris$e={visible:true,radius:81,sides:5,roundness:20,angle:0,fillAlpha:25,fringeAlpha:50,fringeSize:10,blur:4,countAway:5,countTowards:12,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:123,hue:200,saturation:100,hueVariance:30,anamorph:0};var glow$e={visible:true,radius:960,alpha:50,softening:70,hue:200,saturation:100,anamorph:0};var lensOrbs$e={visible:true,radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:123,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0};var simplecyan = {hotspot:hotspot$e,streak:streak$e,ring:ring$e,miIris:miIris$e,glow:glow$e,lensOrbs:lensOrbs$e};
+
+    var hotspot$d={visible:true,radius:802,intensity:16,deformationAmount:1.6,deformationFrequency:0.006,deformationSeed:1,alpha:100,angle:0,hue:36,saturation:100,anamorph:42};var streak$d={visible:true,thickness:95,width:3210,intensity:5,count:1,angle:0,shift:54,alpha:100,hue:29,saturation:81};var ring$d={visible:true,radius:333,thickness:67,blur:7,cropSize:0,cropHardness:23,alpha:16,hue:12,saturation:100,anamorph:42};var miIris$d={visible:true,radius:84,sides:8,roundness:24,angle:24,fillAlpha:17,fringeAlpha:41,fringeSize:10,blur:4,countAway:8,countTowards:15,spread:25,sizeVariance:40,perspective:100,alphaVariance:50,seed:285,hue:29,saturation:100,hueVariance:44,anamorph:35};var glow$d={visible:true,radius:1117,alpha:44,softening:26,hue:10,saturation:100,anamorph:0};var lensOrbs$d={visible:true,radius:22,sides:8,roundness:25,angle:24,fillAlpha:2,fringeAlpha:12,fringeSize:4,blur:2,count:135,threshold:931,seed:100,sizeVariance:0,alphaVariance:15,hue:14,saturation:100,hueVariance:0,anamorph:42};var flamboyantanamorphic = {hotspot:hotspot$d,streak:streak$d,ring:ring$d,miIris:miIris$d,glow:glow$d,lensOrbs:lensOrbs$d};
+
+    var hotspot$c={visible:true,radius:372,intensity:21,deformationAmount:0.76,deformationFrequency:0.01,deformationSeed:157,alpha:100,angle:0,hue:287,saturation:48,anamorph:0};var streak$c={visible:true,thickness:81,width:2145,intensity:10,count:1,angle:0,shift:45,alpha:100,hue:279,saturation:54};var ring$c={visible:true,radius:356,thickness:42,blur:4,cropSize:543,cropHardness:35,alpha:100,hue:281,saturation:67,anamorph:0};var miIris$c={visible:true,radius:81,sides:5,roundness:20,angle:54,fillAlpha:21,fringeAlpha:21,fringeSize:19,blur:3,countAway:5,countTowards:12,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:342,hue:283,saturation:100,hueVariance:20,anamorph:0};var glow$c={visible:true,radius:1101,alpha:20,softening:70,hue:281,saturation:100,anamorph:0};var lensOrbs$c={visible:false,radius:21,sides:6,roundness:100,angle:0,fillAlpha:8,fringeAlpha:8,fringeSize:4,blur:2,count:94,threshold:645,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0};var seaoffog = {hotspot:hotspot$c,streak:streak$c,ring:ring$c,miIris:miIris$c,glow:glow$c,lensOrbs:lensOrbs$c};
+
+    var hotspot$b={visible:true,radius:288,intensity:12,deformationAmount:0.87,deformationFrequency:0.01,deformationSeed:290,alpha:100,angle:0,hue:31,saturation:49,anamorph:0};var streak$b={visible:true,thickness:46,width:1028,intensity:-10,count:5,angle:21,shift:18,alpha:100,hue:47,saturation:14};var ring$b={visible:false,radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:10,hue:200,saturation:100,anamorph:0};var miIris$b={visible:true,radius:81,sides:5,roundness:42,angle:55,fillAlpha:9,fringeAlpha:21,fringeSize:10,blur:4,countAway:8,countTowards:15,spread:28,sizeVariance:53,perspective:100,alphaVariance:71,seed:342,hue:222,saturation:26,hueVariance:102,anamorph:0};var glow$b={visible:true,radius:1064,alpha:44,softening:70,hue:188,saturation:58,anamorph:0};var lensOrbs$b={visible:false,radius:21,sides:6,roundness:100,angle:0,fillAlpha:8,fringeAlpha:8,fringeSize:4,blur:2,count:99,threshold:943,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0};var interstellar = {hotspot:hotspot$b,streak:streak$b,ring:ring$b,miIris:miIris$b,glow:glow$b,lensOrbs:lensOrbs$b};
+
+    var hotspot$a={visible:true,radius:476,intensity:23,deformationAmount:1.6,deformationFrequency:0.015,deformationSeed:109,alpha:100,angle:0,hue:36,saturation:25,anamorph:0};var streak$a={visible:true,thickness:64,width:1600,intensity:5,count:1,angle:0,shift:36,alpha:0,hue:200,saturation:100};var ring$a={visible:true,radius:281,thickness:40,blur:12,cropSize:0,cropHardness:50,alpha:14,hue:52,saturation:28,anamorph:0};var miIris$a={visible:true,radius:59,sides:5,roundness:100,angle:0,fillAlpha:10,fringeAlpha:21,fringeSize:17,blur:2,countAway:7,countTowards:15,spread:18,sizeVariance:50,perspective:100,alphaVariance:100,seed:117,hue:60,saturation:40,hueVariance:82,anamorph:0};var glow$a={visible:true,radius:935,alpha:50,softening:70,hue:34,saturation:45,anamorph:0};var lensOrbs$a={visible:true,radius:25,sides:6,roundness:100,angle:0,fillAlpha:2,fringeAlpha:4,fringeSize:12,blur:2,count:84,threshold:969,seed:40,sizeVariance:0,alphaVariance:32,hue:210,saturation:100,hueVariance:99,anamorph:0};var sunflower = {hotspot:hotspot$a,streak:streak$a,ring:ring$a,miIris:miIris$a,glow:glow$a,lensOrbs:lensOrbs$a};
+
+    var hotspot$9={visible:true,radius:352,intensity:24,deformationAmount:1.23,deformationFrequency:0.007,deformationSeed:497,alpha:100,angle:0,hue:81,saturation:100,anamorph:0};var streak$9={visible:false,thickness:99,width:4394,intensity:-30,count:1,angle:0,shift:54,alpha:100,hue:81,saturation:100};var ring$9={visible:true,radius:270,thickness:40,blur:8,cropSize:0,cropHardness:50,alpha:7,hue:125,saturation:100,anamorph:0};var miIris$9={visible:true,radius:41,sides:10,roundness:100,angle:0,fillAlpha:40,fringeAlpha:0,fringeSize:10,blur:15,countAway:5,countTowards:12,spread:25,sizeVariance:58,perspective:0,alphaVariance:100,seed:470,hue:165,saturation:100,hueVariance:12,anamorph:0};var glow$9={visible:true,radius:960,alpha:44,softening:70,hue:122,saturation:100,anamorph:0};var lensOrbs$9={visible:false,radius:21,sides:6,roundness:100,angle:0,fillAlpha:5,fringeAlpha:5,fringeSize:4,blur:2,count:90,threshold:1096,seed:100,sizeVariance:0,alphaVariance:42,hue:81,saturation:100,hueVariance:0,anamorph:0};var daisysbeacon = {hotspot:hotspot$9,streak:streak$9,ring:ring$9,miIris:miIris$9,glow:glow$9,lensOrbs:lensOrbs$9};
+
+    var hotspot$8={visible:true,radius:611,intensity:16,deformationAmount:1.6,deformationFrequency:0.01,deformationSeed:157,alpha:100,angle:0,hue:204,saturation:100,anamorph:50};var streak$8={visible:true,thickness:83,width:3210,intensity:10,count:1,angle:0,shift:36,alpha:100,hue:214,saturation:100};var ring$8={visible:true,radius:400,thickness:74,blur:13,cropSize:0,cropHardness:50,alpha:16,hue:230,saturation:100,anamorph:50};var miIris$8={visible:true,radius:73,sides:6,roundness:45,angle:0,fillAlpha:20,fringeAlpha:30,fringeSize:10,blur:5,countAway:7,countTowards:12,spread:30,sizeVariance:27,perspective:100,alphaVariance:81,seed:271,hue:211,saturation:100,hueVariance:36,anamorph:50};var glow$8={visible:true,radius:960,alpha:57,softening:12,hue:212,saturation:100,anamorph:0};var lensOrbs$8={visible:true,radius:28,sides:6,roundness:25,angle:0,fillAlpha:2,fringeAlpha:8,fringeSize:10,blur:2,count:135,threshold:931,seed:100,sizeVariance:0,alphaVariance:15,hue:236,saturation:100,hueVariance:0,anamorph:42};var bluedwarf = {hotspot:hotspot$8,streak:streak$8,ring:ring$8,miIris:miIris$8,glow:glow$8,lensOrbs:lensOrbs$8};
+
+    var hotspot$7={visible:true,radius:550,intensity:21,deformationAmount:1.6,deformationFrequency:0.013,deformationSeed:139,alpha:100,angle:0,hue:200,saturation:19,anamorph:0};var streak$7={visible:true,thickness:84,width:2661,intensity:12,count:1,angle:0,shift:50,alpha:100,hue:204,saturation:100};var ring$7={visible:true,radius:325,thickness:37,blur:9,cropSize:0,cropHardness:50,alpha:8,hue:200,saturation:100,anamorph:0};var miIris$7={visible:true,radius:60,sides:6,roundness:45,angle:0,fillAlpha:12,fringeAlpha:11,fringeSize:12,blur:3,countAway:7,countTowards:14,spread:40,sizeVariance:30,perspective:100,alphaVariance:50,seed:520,hue:210,saturation:100,hueVariance:36,anamorph:15};var glow$7={visible:true,radius:1200,alpha:28,softening:0,hue:205,saturation:100,anamorph:0};var lensOrbs$7={visible:true,radius:25,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:5,fringeSize:9,blur:2,count:111,threshold:1234,seed:315,sizeVariance:0,alphaVariance:42,hue:223,saturation:100,hueVariance:0,anamorph:0};var clairdelune = {hotspot:hotspot$7,streak:streak$7,ring:ring$7,miIris:miIris$7,glow:glow$7,lensOrbs:lensOrbs$7};
+
+    var hotspot$6={visible:true,radius:632,intensity:20,deformationAmount:1.42,deformationFrequency:0.012,deformationSeed:216,alpha:94,angle:0,hue:45,saturation:100,anamorph:0};var streak$6={visible:true,thickness:92,width:3210,intensity:0,count:1,angle:0,shift:36,alpha:100,hue:42,saturation:100};var ring$6={visible:true,radius:406,thickness:44,blur:6,cropSize:392,cropHardness:62,alpha:25,hue:27,saturation:100,anamorph:50};var miIris$6={visible:true,radius:152,sides:5,roundness:100,angle:0,fillAlpha:25,fringeAlpha:0,fringeSize:10,blur:30,countAway:9,countTowards:16,spread:19,sizeVariance:40,perspective:100,alphaVariance:50,seed:342,hue:42,saturation:100,hueVariance:16,anamorph:88};var glow$6={visible:true,radius:1082,alpha:39,softening:26,hue:45,saturation:100,anamorph:0};var lensOrbs$6={visible:false,radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:103,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:54,saturation:100,hueVariance:0,anamorph:0};var goldencentury = {hotspot:hotspot$6,streak:streak$6,ring:ring$6,miIris:miIris$6,glow:glow$6,lensOrbs:lensOrbs$6};
+
+    var hotspot$5={visible:true,radius:531,intensity:19,deformationAmount:0,deformationFrequency:0.006,deformationSeed:1,alpha:100,angle:0,hue:25,saturation:21,anamorph:60};var streak$5={visible:true,thickness:115,width:2695,intensity:-12,count:1,angle:0,shift:36,alpha:100,hue:222,saturation:100};var ring$5={visible:false,radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:100,hue:200,saturation:100,anamorph:0};var miIris$5={visible:true,radius:121,sides:5,roundness:100,angle:0,fillAlpha:25,fringeAlpha:0,fringeSize:10,blur:30,countAway:8,countTowards:18,spread:30,sizeVariance:40,perspective:100,alphaVariance:50,seed:123,hue:222,saturation:100,hueVariance:30,anamorph:72};var glow$5={visible:true,radius:1111,alpha:45,softening:0,hue:21,saturation:100,anamorph:37};var lensOrbs$5={visible:false,radius:21,sides:6,roundness:100,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:111,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:210,saturation:100,hueVariance:0,anamorph:0};var industrialanamorphic = {hotspot:hotspot$5,streak:streak$5,ring:ring$5,miIris:miIris$5,glow:glow$5,lensOrbs:lensOrbs$5};
+
+    var hotspot$4={visible:true,radius:345,intensity:28,deformationAmount:2.1,deformationFrequency:0.015,deformationSeed:633,alpha:100,angle:0,hue:200,saturation:0,anamorph:0};var streak$4={visible:true,thickness:42,width:1212,intensity:12,count:3,angle:0,shift:0,alpha:100,hue:200,saturation:0};var ring$4={visible:false,radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:24,hue:200,saturation:100,anamorph:0};var miIris$4={visible:true,radius:64,sides:6,roundness:45,angle:0,fillAlpha:10,fringeAlpha:10,fringeSize:25,blur:3,countAway:10,countTowards:19,spread:20,sizeVariance:40,perspective:100,alphaVariance:64,seed:397,hue:200,saturation:20,hueVariance:180,anamorph:0};var glow$4={visible:true,radius:960,alpha:48,softening:70,hue:196,saturation:24,anamorph:0};var lensOrbs$4={visible:true,radius:24,sides:6,roundness:16,angle:0,fillAlpha:3,fringeAlpha:4,fringeSize:6,blur:2,count:100,threshold:943,seed:678,sizeVariance:0,alphaVariance:100,hue:214,saturation:11,hueVariance:22,anamorph:0};var hexastar = {hotspot:hotspot$4,streak:streak$4,ring:ring$4,miIris:miIris$4,glow:glow$4,lensOrbs:lensOrbs$4};
+
+    var hotspot$3={visible:true,radius:591,intensity:21,deformationAmount:2.1,deformationFrequency:0.007,deformationSeed:611,alpha:100,angle:0,hue:14,saturation:100,anamorph:56};var streak$3={visible:true,thickness:64,width:3210,intensity:5,count:1,angle:0,shift:50,alpha:100,hue:14,saturation:100};var ring$3={visible:false,radius:365,thickness:126,blur:8,cropSize:0,cropHardness:50,alpha:11,hue:0,saturation:100,anamorph:67};var miIris$3={visible:true,radius:49,sides:5,roundness:100,angle:0,fillAlpha:26,fringeAlpha:32,fringeSize:10,blur:4,countAway:9,countTowards:16,spread:30,sizeVariance:48,perspective:100,alphaVariance:100,seed:556,hue:25,saturation:100,hueVariance:25,anamorph:56};var glow$3={visible:true,radius:960,alpha:50,softening:70,hue:9,saturation:100,anamorph:0};var lensOrbs$3={visible:false,radius:21,sides:6,roundness:100,angle:0,fillAlpha:7,fringeAlpha:8,fringeSize:4,blur:2,count:111,threshold:1210,seed:100,sizeVariance:0,alphaVariance:42,hue:24,saturation:100,hueVariance:0,anamorph:0};var lasermeme = {hotspot:hotspot$3,streak:streak$3,ring:ring$3,miIris:miIris$3,glow:glow$3,lensOrbs:lensOrbs$3};
+
+    var hotspot$2={visible:true,radius:443,intensity:5,deformationAmount:1.6,deformationFrequency:0.008,deformationSeed:320,alpha:100,angle:0,hue:325,saturation:100,anamorph:0};var streak$2={visible:true,thickness:99,width:3232,intensity:5,count:1,angle:0,shift:50,alpha:100,hue:284,saturation:100};var ring$2={visible:true,radius:462,thickness:83,blur:9,cropSize:443,cropHardness:82,alpha:21,hue:298,saturation:100,anamorph:0};var miIris$2={visible:true,radius:57,sides:8,roundness:42,angle:0,fillAlpha:16,fringeAlpha:32,fringeSize:30,blur:4,countAway:8,countTowards:16,spread:30,sizeVariance:47,perspective:100,alphaVariance:50,seed:315,hue:292,saturation:100,hueVariance:25,anamorph:0};var glow$2={visible:true,radius:960,alpha:50,softening:70,hue:279,saturation:100,anamorph:0};var lensOrbs$2={visible:true,radius:24,sides:8,roundness:24,angle:0,fillAlpha:3,fringeAlpha:8,fringeSize:4,blur:2,count:94,threshold:1045,seed:535,sizeVariance:0,alphaVariance:42,hue:295,saturation:100,hueVariance:0,anamorph:0};var cherrytree = {hotspot:hotspot$2,streak:streak$2,ring:ring$2,miIris:miIris$2,glow:glow$2,lensOrbs:lensOrbs$2};
+
+    var hotspot$1={visible:true,radius:347,intensity:10,deformationAmount:0,deformationFrequency:0.006,deformationSeed:1,alpha:100,angle:0,hue:176,saturation:14,anamorph:0};var streak$1={visible:true,thickness:56,width:1100,intensity:11,count:2,angle:45,shift:0,alpha:100,hue:188,saturation:18};var ring$1={visible:false,radius:200,thickness:40,blur:5,cropSize:0,cropHardness:50,alpha:24,hue:200,saturation:100,anamorph:0};var miIris$1={visible:true,radius:60,sides:8,roundness:42,angle:22,fillAlpha:12,fringeAlpha:12,fringeSize:22,blur:3,countAway:9,countTowards:19,spread:24,sizeVariance:32,perspective:100,alphaVariance:50,seed:438,hue:180,saturation:100,hueVariance:45,anamorph:0};var glow$1={visible:true,radius:1114,alpha:32,softening:33,hue:212,saturation:37,anamorph:0};var lensOrbs$1={visible:true,radius:24,sides:8,roundness:12,angle:0,fillAlpha:2,fringeAlpha:2,fringeSize:6,blur:2,count:99,threshold:943,seed:807,sizeVariance:0,alphaVariance:24,hue:196,saturation:11,hueVariance:22,anamorph:0};var ancientmariner = {hotspot:hotspot$1,streak:streak$1,ring:ring$1,miIris:miIris$1,glow:glow$1,lensOrbs:lensOrbs$1};
+
+    var hotspot={visible:true,radius:575,intensity:5,deformationAmount:1.6,deformationFrequency:0.01,deformationSeed:134,alpha:100,angle:0,hue:48,saturation:27,anamorph:0};var streak={visible:true,thickness:68,width:691,intensity:0,count:3,angle:30,shift:23,alpha:100,hue:51,saturation:18};var ring={visible:true,radius:311,thickness:83,blur:13,cropSize:0,cropHardness:50,alpha:21,hue:45,saturation:100,anamorph:0};var miIris={visible:true,radius:49,sides:5,roundness:100,angle:0,fillAlpha:25,fringeAlpha:50,fringeSize:10,blur:16,countAway:5,countTowards:16,spread:30,sizeVariance:37,perspective:100,alphaVariance:50,seed:329,hue:55,saturation:32,hueVariance:30,anamorph:0};var glow={visible:true,radius:1203,alpha:50,softening:70,hue:45,saturation:35,anamorph:0};var lensOrbs={visible:true,radius:24,sides:6,roundness:12,angle:0,fillAlpha:1,fringeAlpha:2,fringeSize:12,blur:2,count:99,threshold:987,seed:807,sizeVariance:0,alphaVariance:50,hue:33,saturation:11,hueVariance:22,anamorph:0};var lemonlight = {hotspot:hotspot,streak:streak,ring:ring,miIris:miIris,glow:glow,lensOrbs:lensOrbs};
+
     /* src/PresetPicker.svelte generated by Svelte v3.55.1 */
     const file$1 = "src/PresetPicker.svelte";
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[8] = list[i];
+    	child_ctx[9] = list[i];
     	return child_ctx;
     }
 
-    // (57:8) {#each builtInPresets as preset}
+    // (75:8) {#each builtInPresets as preset}
     function create_each_block(ctx) {
     	let option;
-    	let t_value = /*preset*/ ctx[8].name + "";
+    	let t_value = /*preset*/ ctx[9].name + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = JSON.stringify(/*preset*/ ctx[8].data);
+    			option.__value = JSON.stringify(/*preset*/ ctx[9].data);
     			option.value = option.__value;
-    			add_location(option, file$1, 57, 12, 18413);
+    			add_location(option, file$1, 75, 12, 3111);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2928,7 +2960,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(57:8) {#each builtInPresets as preset}",
+    		source: "(75:8) {#each builtInPresets as preset}",
     		ctx
     	});
 
@@ -2972,18 +3004,18 @@ var app = (function () {
     			option0.selected = true;
     			option0.disabled = true;
     			option0.hidden = true;
-    			add_location(option0, file$1, 53, 4, 18189);
+    			add_location(option0, file$1, 71, 4, 2887);
     			option1.__value = "UPLOAD_PRESET";
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 54, 4, 18259);
+    			add_location(option1, file$1, 72, 4, 2957);
     			attr_dev(optgroup, "label", "Built-In Presets");
-    			add_location(optgroup, file$1, 55, 4, 18322);
+    			add_location(optgroup, file$1, 73, 4, 3020);
     			attr_dev(select, "class", "svelte-1cxpn51");
-    			add_location(select, file$1, 52, 0, 18130);
+    			add_location(select, file$1, 70, 0, 2828);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "accept", ".pgf2");
     			attr_dev(input, "class", "svelte-1cxpn51");
-    			add_location(input, file$1, 62, 0, 18523);
+    			add_location(input, file$1, 80, 0, 3221);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2998,10 +3030,10 @@ var app = (function () {
     				each_blocks[i].m(optgroup, null);
     			}
 
-    			/*select_binding*/ ctx[5](select);
+    			/*select_binding*/ ctx[6](select);
     			insert_dev(target, t2, anchor);
     			insert_dev(target, input, anchor);
-    			/*input_binding*/ ctx[6](input);
+    			/*input_binding*/ ctx[7](input);
 
     			if (!mounted) {
     				dispose = [
@@ -3042,10 +3074,10 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(select);
     			destroy_each(each_blocks, detaching);
-    			/*select_binding*/ ctx[5](null);
+    			/*select_binding*/ ctx[6](null);
     			if (detaching) detach_dev(t2);
     			if (detaching) detach_dev(input);
-    			/*input_binding*/ ctx[6](null);
+    			/*input_binding*/ ctx[7](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -3072,1398 +3104,37 @@ var app = (function () {
     	let fileInput;
 
     	var builtInPresets = [
-    		{
-    			name: "Sun Digital",
-    			data: {
-    				"hotspot": {
-    					"radius": 595,
-    					"intensity": 20,
-    					"deformationAmount": 1.5,
-    					"deformationFrequency": 0.01,
-    					"deformationSeed": 239,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 39,
-    					"saturation": 88,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 121,
-    					"width": 2435,
-    					"intensity": -25,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 48,
-    					"alpha": 100,
-    					"hue": 216,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 300,
-    					"thickness": 50,
-    					"blur": 4,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 0,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 72,
-    					"sides": 6,
-    					"roundness": 50,
-    					"angle": 0,
-    					"fillAlpha": 10,
-    					"fringeAlpha": 12,
-    					"fringeSize": 28,
-    					"blur": 3,
-    					"countAway": 5,
-    					"countTowards": 12,
-    					"spread": 30,
-    					"sizeVariance": 40,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 333,
-    					"hue": 39,
-    					"saturation": 100,
-    					"hueVariance": 40,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 999,
-    					"alpha": 25,
-    					"softening": 0,
-    					"hue": 23,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 21,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 6,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 123,
-    					"threshold": 1210,
-    					"seed": 222,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 16,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
-    		},
-    		{
-    			name: "Simple Cyan",
-    			data: {
-    				"hotspot": {
-    					"radius": 500,
-    					"intensity": 5,
-    					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.006,
-    					"deformationSeed": 1,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 64,
-    					"width": 1600,
-    					"intensity": 5,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 36,
-    					"alpha": 100,
-    					"hue": 200,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 200,
-    					"thickness": 40,
-    					"blur": 5,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 21,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 81,
-    					"sides": 5,
-    					"roundness": 20,
-    					"angle": 0,
-    					"fillAlpha": 25,
-    					"fringeAlpha": 50,
-    					"fringeSize": 10,
-    					"blur": 4,
-    					"countAway": 5,
-    					"countTowards": 12,
-    					"spread": 30,
-    					"sizeVariance": 40,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 123,
-    					"hue": 200,
-    					"saturation": 100,
-    					"hueVariance": 30,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 960,
-    					"alpha": 50,
-    					"softening": 70,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 21,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 8,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 123,
-    					"threshold": 1210,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
-    		},
+    		{ name: "Sun Digital", data: sundigital },
+    		{ name: "Simple Cyan", data: simplecyan },
     		{
     			name: "Flamboyant Anamorphic",
-    			data: {
-    				"hotspot": {
-    					"radius": 802,
-    					"intensity": 16,
-    					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.006,
-    					"deformationSeed": 1,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 36,
-    					"saturation": 100,
-    					"anamorph": 42
-    				},
-    				"streak": {
-    					"thickness": 95,
-    					"width": 3210,
-    					"intensity": 5,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 54,
-    					"alpha": 100,
-    					"hue": 29,
-    					"saturation": 81
-    				},
-    				"ring": {
-    					"radius": 333,
-    					"thickness": 67,
-    					"blur": 7,
-    					"cropSize": 0,
-    					"cropHardness": 23,
-    					"alpha": 16,
-    					"hue": 12,
-    					"saturation": 100,
-    					"anamorph": 42
-    				},
-    				"miIris": {
-    					"radius": 84,
-    					"sides": 8,
-    					"roundness": 24,
-    					"angle": 24,
-    					"fillAlpha": 17,
-    					"fringeAlpha": 41,
-    					"fringeSize": 10,
-    					"blur": 4,
-    					"countAway": 8,
-    					"countTowards": 15,
-    					"spread": 25,
-    					"sizeVariance": 40,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 285,
-    					"hue": 29,
-    					"saturation": 100,
-    					"hueVariance": 44,
-    					"anamorph": 35
-    				},
-    				"glow": {
-    					"radius": 1117,
-    					"alpha": 44,
-    					"softening": 26,
-    					"hue": 10,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 22,
-    					"sides": 8,
-    					"roundness": 25,
-    					"angle": 24,
-    					"fillAlpha": 2,
-    					"fringeAlpha": 12,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 135,
-    					"threshold": 931,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 15,
-    					"hue": 14,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 42
-    				}
-    			}
+    			data: flamboyantanamorphic
     		},
-    		{
-    			name: "Sea of Fog",
-    			data: {
-    				"hotspot": {
-    					"radius": 372,
-    					"intensity": 21,
-    					"deformationAmount": 0.76,
-    					"deformationFrequency": 0.01,
-    					"deformationSeed": 157,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 287,
-    					"saturation": 48,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 81,
-    					"width": 2145,
-    					"intensity": 10,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 45,
-    					"alpha": 100,
-    					"hue": 279,
-    					"saturation": 54
-    				},
-    				"ring": {
-    					"radius": 356,
-    					"thickness": 42,
-    					"blur": 4,
-    					"cropSize": 543,
-    					"cropHardness": 35,
-    					"alpha": 100,
-    					"hue": 281,
-    					"saturation": 67,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 81,
-    					"sides": 5,
-    					"roundness": 20,
-    					"angle": 54,
-    					"fillAlpha": 21,
-    					"fringeAlpha": 21,
-    					"fringeSize": 19,
-    					"blur": 3,
-    					"countAway": 5,
-    					"countTowards": 12,
-    					"spread": 30,
-    					"sizeVariance": 40,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 342,
-    					"hue": 283,
-    					"saturation": 100,
-    					"hueVariance": 20,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 1101,
-    					"alpha": 20,
-    					"softening": 70,
-    					"hue": 281,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 21,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 8,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 0,
-    					"threshold": 1210,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
-    		},
-    		{
-    			name: "Interstellar",
-    			data: {
-    				"hotspot": {
-    					"radius": 288,
-    					"intensity": 12,
-    					"deformationAmount": 0.87,
-    					"deformationFrequency": 0.01,
-    					"deformationSeed": 290,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 31,
-    					"saturation": 49,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 46,
-    					"width": 1028,
-    					"intensity": -10,
-    					"count": 5,
-    					"angle": 21,
-    					"shift": 18,
-    					"alpha": 100,
-    					"hue": 47,
-    					"saturation": 14
-    				},
-    				"ring": {
-    					"radius": 200,
-    					"thickness": 40,
-    					"blur": 5,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 0,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 81,
-    					"sides": 5,
-    					"roundness": 42,
-    					"angle": 55,
-    					"fillAlpha": 9,
-    					"fringeAlpha": 21,
-    					"fringeSize": 10,
-    					"blur": 4,
-    					"countAway": 8,
-    					"countTowards": 15,
-    					"spread": 28,
-    					"sizeVariance": 53,
-    					"perspective": 100,
-    					"alphaVariance": 71,
-    					"seed": 342,
-    					"hue": 222,
-    					"saturation": 26,
-    					"hueVariance": 102,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 1064,
-    					"alpha": 44,
-    					"softening": 70,
-    					"hue": 188,
-    					"saturation": 58,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 21,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 8,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 0,
-    					"threshold": 1210,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
-    		},
-    		{
-    			name: "Sunflower",
-    			data: {
-    				"hotspot": {
-    					"radius": 476,
-    					"intensity": 15,
-    					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.015,
-    					"deformationSeed": 109,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 36,
-    					"saturation": 25,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 64,
-    					"width": 1600,
-    					"intensity": 5,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 36,
-    					"alpha": 0,
-    					"hue": 200,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 281,
-    					"thickness": 40,
-    					"blur": 12,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 14,
-    					"hue": 52,
-    					"saturation": 28,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 59,
-    					"sides": 5,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 10,
-    					"fringeAlpha": 21,
-    					"fringeSize": 17,
-    					"blur": 2,
-    					"countAway": 7,
-    					"countTowards": 15,
-    					"spread": 18,
-    					"sizeVariance": 50,
-    					"perspective": 100,
-    					"alphaVariance": 100,
-    					"seed": 117,
-    					"hue": 60,
-    					"saturation": 40,
-    					"hueVariance": 82,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 935,
-    					"alpha": 50,
-    					"softening": 70,
-    					"hue": 34,
-    					"saturation": 45,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 25,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 2,
-    					"fringeAlpha": 4,
-    					"fringeSize": 12,
-    					"blur": 2,
-    					"count": 84,
-    					"threshold": 969,
-    					"seed": 40,
-    					"sizeVariance": 0,
-    					"alphaVariance": 32,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 99,
-    					"anamorph": 0
-    				}
-    			}
-    		},
+    		{ name: "Sea of Fog", data: seaoffog },
+    		{ name: "Interstellar", data: interstellar },
+    		{ name: "Sunflower", data: sunflower },
     		{
     			name: "Daisy's Beacon",
-    			data: {
-    				"hotspot": {
-    					"radius": 352,
-    					"intensity": 24,
-    					"deformationAmount": 1.23,
-    					"deformationFrequency": 0.007,
-    					"deformationSeed": 497,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 81,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 64,
-    					"width": 1600,
-    					"intensity": 5,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 36,
-    					"alpha": 0,
-    					"hue": 200,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 270,
-    					"thickness": 40,
-    					"blur": 8,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 7,
-    					"hue": 125,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 41,
-    					"sides": 10,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 40,
-    					"fringeAlpha": 0,
-    					"fringeSize": 10,
-    					"blur": 15,
-    					"countAway": 5,
-    					"countTowards": 12,
-    					"spread": 25,
-    					"sizeVariance": 58,
-    					"perspective": 0,
-    					"alphaVariance": 100,
-    					"seed": 470,
-    					"hue": 165,
-    					"saturation": 100,
-    					"hueVariance": 12,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 960,
-    					"alpha": 44,
-    					"softening": 70,
-    					"hue": 122,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 21,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 8,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 0,
-    					"threshold": 1210,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
+    			data: daisysbeacon
     		},
-    		{
-    			name: "Blue Dwarf",
-    			data: {
-    				"hotspot": {
-    					"radius": 611,
-    					"intensity": 16,
-    					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.01,
-    					"deformationSeed": 157,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 204,
-    					"saturation": 100,
-    					"anamorph": 50
-    				},
-    				"streak": {
-    					"thickness": 83,
-    					"width": 3210,
-    					"intensity": 10,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 36,
-    					"alpha": 100,
-    					"hue": 214,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 400,
-    					"thickness": 74,
-    					"blur": 13,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 16,
-    					"hue": 230,
-    					"saturation": 100,
-    					"anamorph": 50
-    				},
-    				"miIris": {
-    					"radius": 73,
-    					"sides": 6,
-    					"roundness": 45,
-    					"angle": 0,
-    					"fillAlpha": 20,
-    					"fringeAlpha": 30,
-    					"fringeSize": 10,
-    					"blur": 5,
-    					"countAway": 7,
-    					"countTowards": 12,
-    					"spread": 30,
-    					"sizeVariance": 27,
-    					"perspective": 100,
-    					"alphaVariance": 81,
-    					"seed": 271,
-    					"hue": 211,
-    					"saturation": 100,
-    					"hueVariance": 36,
-    					"anamorph": 50
-    				},
-    				"glow": {
-    					"radius": 960,
-    					"alpha": 57,
-    					"softening": 12,
-    					"hue": 212,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 28,
-    					"sides": 6,
-    					"roundness": 25,
-    					"angle": 0,
-    					"fillAlpha": 2,
-    					"fringeAlpha": 8,
-    					"fringeSize": 10,
-    					"blur": 2,
-    					"count": 135,
-    					"threshold": 931,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 15,
-    					"hue": 236,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 42
-    				}
-    			}
-    		},
-    		{
-    			name: "Clair de Lune",
-    			data: {
-    				"hotspot": {
-    					"radius": 550,
-    					"intensity": 21,
-    					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.013,
-    					"deformationSeed": 139,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 200,
-    					"saturation": 19,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 84,
-    					"width": 2661,
-    					"intensity": 12,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 50,
-    					"alpha": 100,
-    					"hue": 204,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 325,
-    					"thickness": 37,
-    					"blur": 9,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 8,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 60,
-    					"sides": 6,
-    					"roundness": 45,
-    					"angle": 0,
-    					"fillAlpha": 12,
-    					"fringeAlpha": 11,
-    					"fringeSize": 12,
-    					"blur": 3,
-    					"countAway": 7,
-    					"countTowards": 14,
-    					"spread": 40,
-    					"sizeVariance": 30,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 520,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 36,
-    					"anamorph": 15
-    				},
-    				"glow": {
-    					"radius": 1200,
-    					"alpha": 28,
-    					"softening": 0,
-    					"hue": 205,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 25,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 5,
-    					"fringeSize": 9,
-    					"blur": 2,
-    					"count": 111,
-    					"threshold": 1234,
-    					"seed": 315,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 223,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
-    		},
+    		{ name: "Blue Dwarf", data: bluedwarf },
+    		{ name: "Clair de Lune", data: clairdelune },
     		{
     			name: "Golden Century",
-    			data: {
-    				"hotspot": {
-    					"radius": 632,
-    					"intensity": 20,
-    					"deformationAmount": 1.42,
-    					"deformationFrequency": 0.012,
-    					"deformationSeed": 216,
-    					"alpha": 94,
-    					"angle": 0,
-    					"hue": 45,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 92,
-    					"width": 3210,
-    					"intensity": 0,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 36,
-    					"alpha": 100,
-    					"hue": 42,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 406,
-    					"thickness": 44,
-    					"blur": 6,
-    					"cropSize": 392,
-    					"cropHardness": 62,
-    					"alpha": 25,
-    					"hue": 27,
-    					"saturation": 100,
-    					"anamorph": 50
-    				},
-    				"miIris": {
-    					"radius": 152,
-    					"sides": 5,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 25,
-    					"fringeAlpha": 0,
-    					"fringeSize": 10,
-    					"blur": 30,
-    					"countAway": 9,
-    					"countTowards": 16,
-    					"spread": 19,
-    					"sizeVariance": 40,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 342,
-    					"hue": 42,
-    					"saturation": 100,
-    					"hueVariance": 16,
-    					"anamorph": 88
-    				},
-    				"glow": {
-    					"radius": 1082,
-    					"alpha": 39,
-    					"softening": 26,
-    					"hue": 45,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 21,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 8,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 0,
-    					"threshold": 1210,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
+    			data: goldencentury
     		},
     		{
     			name: "Industrial Anamorphic",
-    			data: {
-    				"hotspot": {
-    					"radius": 531,
-    					"intensity": 19,
-    					"deformationAmount": 0,
-    					"deformationFrequency": 0.006,
-    					"deformationSeed": 1,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 25,
-    					"saturation": 21,
-    					"anamorph": 60
-    				},
-    				"streak": {
-    					"thickness": 115,
-    					"width": 2695,
-    					"intensity": -12,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 36,
-    					"alpha": 100,
-    					"hue": 222,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 200,
-    					"thickness": 40,
-    					"blur": 5,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 0,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 121,
-    					"sides": 5,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 25,
-    					"fringeAlpha": 0,
-    					"fringeSize": 10,
-    					"blur": 30,
-    					"countAway": 8,
-    					"countTowards": 18,
-    					"spread": 30,
-    					"sizeVariance": 40,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 123,
-    					"hue": 222,
-    					"saturation": 100,
-    					"hueVariance": 30,
-    					"anamorph": 72
-    				},
-    				"glow": {
-    					"radius": 1111,
-    					"alpha": 45,
-    					"softening": 0,
-    					"hue": 21,
-    					"saturation": 100,
-    					"anamorph": 37
-    				},
-    				"lensOrbs": {
-    					"radius": 21,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 8,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 0,
-    					"threshold": 1210,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
+    			data: industrialanamorphic
     		},
-    		{
-    			name: "Hexastar",
-    			data: {
-    				"hotspot": {
-    					"radius": 345,
-    					"intensity": 28,
-    					"deformationAmount": 2.1,
-    					"deformationFrequency": 0.015,
-    					"deformationSeed": 633,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 200,
-    					"saturation": 0,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 42,
-    					"width": 1212,
-    					"intensity": 12,
-    					"count": 3,
-    					"angle": 0,
-    					"shift": 0,
-    					"alpha": 100,
-    					"hue": 200,
-    					"saturation": 0
-    				},
-    				"ring": {
-    					"radius": 200,
-    					"thickness": 40,
-    					"blur": 5,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 0,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 64,
-    					"sides": 6,
-    					"roundness": 45,
-    					"angle": 0,
-    					"fillAlpha": 10,
-    					"fringeAlpha": 10,
-    					"fringeSize": 25,
-    					"blur": 3,
-    					"countAway": 10,
-    					"countTowards": 19,
-    					"spread": 20,
-    					"sizeVariance": 40,
-    					"perspective": 100,
-    					"alphaVariance": 64,
-    					"seed": 397,
-    					"hue": 200,
-    					"saturation": 20,
-    					"hueVariance": 180,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 960,
-    					"alpha": 48,
-    					"softening": 70,
-    					"hue": 196,
-    					"saturation": 24,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 24,
-    					"sides": 6,
-    					"roundness": 16,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 4,
-    					"fringeSize": 6,
-    					"blur": 2,
-    					"count": 100,
-    					"threshold": 943,
-    					"seed": 678,
-    					"sizeVariance": 0,
-    					"alphaVariance": 100,
-    					"hue": 214,
-    					"saturation": 11,
-    					"hueVariance": 22,
-    					"anamorph": 0
-    				}
-    			}
-    		},
-    		{
-    			name: "Laser Meme",
-    			data: {
-    				"hotspot": {
-    					"radius": 591,
-    					"intensity": 21,
-    					"deformationAmount": 2.1,
-    					"deformationFrequency": 0.007,
-    					"deformationSeed": 611,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 14,
-    					"saturation": 100,
-    					"anamorph": 56
-    				},
-    				"streak": {
-    					"thickness": 64,
-    					"width": 3210,
-    					"intensity": 5,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 50,
-    					"alpha": 100,
-    					"hue": 14,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 200,
-    					"thickness": 40,
-    					"blur": 5,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 0,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 49,
-    					"sides": 5,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 26,
-    					"fringeAlpha": 32,
-    					"fringeSize": 10,
-    					"blur": 4,
-    					"countAway": 9,
-    					"countTowards": 16,
-    					"spread": 30,
-    					"sizeVariance": 48,
-    					"perspective": 100,
-    					"alphaVariance": 100,
-    					"seed": 556,
-    					"hue": 25,
-    					"saturation": 100,
-    					"hueVariance": 25,
-    					"anamorph": 56
-    				},
-    				"glow": {
-    					"radius": 960,
-    					"alpha": 50,
-    					"softening": 70,
-    					"hue": 9,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 21,
-    					"sides": 6,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 8,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 0,
-    					"threshold": 1210,
-    					"seed": 100,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 210,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
-    		},
-    		{
-    			name: "Cherry Tree",
-    			data: {
-    				"hotspot": {
-    					"radius": 443,
-    					"intensity": 5,
-    					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.008,
-    					"deformationSeed": 320,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 325,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 99,
-    					"width": 3232,
-    					"intensity": 5,
-    					"count": 1,
-    					"angle": 0,
-    					"shift": 50,
-    					"alpha": 100,
-    					"hue": 284,
-    					"saturation": 100
-    				},
-    				"ring": {
-    					"radius": 462,
-    					"thickness": 83,
-    					"blur": 9,
-    					"cropSize": 443,
-    					"cropHardness": 82,
-    					"alpha": 21,
-    					"hue": 298,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 57,
-    					"sides": 8,
-    					"roundness": 42,
-    					"angle": 0,
-    					"fillAlpha": 16,
-    					"fringeAlpha": 32,
-    					"fringeSize": 30,
-    					"blur": 4,
-    					"countAway": 8,
-    					"countTowards": 16,
-    					"spread": 30,
-    					"sizeVariance": 47,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 315,
-    					"hue": 292,
-    					"saturation": 100,
-    					"hueVariance": 25,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 960,
-    					"alpha": 50,
-    					"softening": 70,
-    					"hue": 279,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 24,
-    					"sides": 8,
-    					"roundness": 24,
-    					"angle": 0,
-    					"fillAlpha": 3,
-    					"fringeAlpha": 8,
-    					"fringeSize": 4,
-    					"blur": 2,
-    					"count": 94,
-    					"threshold": 1045,
-    					"seed": 535,
-    					"sizeVariance": 0,
-    					"alphaVariance": 42,
-    					"hue": 295,
-    					"saturation": 100,
-    					"hueVariance": 0,
-    					"anamorph": 0
-    				}
-    			}
-    		},
+    		{ name: "Hexastar", data: hexastar },
+    		{ name: "Laser Meme", data: lasermeme },
+    		{ name: "Cherry Tree", data: cherrytree },
     		{
     			name: "Ancient Mariner",
-    			data: {
-    				"hotspot": {
-    					"radius": 347,
-    					"intensity": 10,
-    					"deformationAmount": 0,
-    					"deformationFrequency": 0.006,
-    					"deformationSeed": 1,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 176,
-    					"saturation": 14,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 56,
-    					"width": 1100,
-    					"intensity": 11,
-    					"count": 2,
-    					"angle": 45,
-    					"shift": 0,
-    					"alpha": 100,
-    					"hue": 188,
-    					"saturation": 18
-    				},
-    				"ring": {
-    					"radius": 200,
-    					"thickness": 40,
-    					"blur": 5,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 0,
-    					"hue": 200,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 60,
-    					"sides": 8,
-    					"roundness": 42,
-    					"angle": 22,
-    					"fillAlpha": 12,
-    					"fringeAlpha": 12,
-    					"fringeSize": 22,
-    					"blur": 3,
-    					"countAway": 9,
-    					"countTowards": 19,
-    					"spread": 24,
-    					"sizeVariance": 32,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 438,
-    					"hue": 180,
-    					"saturation": 100,
-    					"hueVariance": 45,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 1114,
-    					"alpha": 32,
-    					"softening": 33,
-    					"hue": 212,
-    					"saturation": 37,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 24,
-    					"sides": 8,
-    					"roundness": 12,
-    					"angle": 0,
-    					"fillAlpha": 2,
-    					"fringeAlpha": 2,
-    					"fringeSize": 6,
-    					"blur": 2,
-    					"count": 99,
-    					"threshold": 943,
-    					"seed": 807,
-    					"sizeVariance": 0,
-    					"alphaVariance": 24,
-    					"hue": 196,
-    					"saturation": 11,
-    					"hueVariance": 22,
-    					"anamorph": 0
-    				}
-    			}
+    			data: ancientmariner
     		},
-    		{
-    			name: "Lemon Light",
-    			data: {
-    				"hotspot": {
-    					"radius": 575,
-    					"intensity": 5,
-    					"deformationAmount": 1.6,
-    					"deformationFrequency": 0.01,
-    					"deformationSeed": 134,
-    					"alpha": 100,
-    					"angle": 0,
-    					"hue": 48,
-    					"saturation": 27,
-    					"anamorph": 0
-    				},
-    				"streak": {
-    					"thickness": 68,
-    					"width": 691,
-    					"intensity": 0,
-    					"count": 3,
-    					"angle": 30,
-    					"shift": 23,
-    					"alpha": 100,
-    					"hue": 51,
-    					"saturation": 18
-    				},
-    				"ring": {
-    					"radius": 311,
-    					"thickness": 83,
-    					"blur": 13,
-    					"cropSize": 0,
-    					"cropHardness": 50,
-    					"alpha": 21,
-    					"hue": 45,
-    					"saturation": 100,
-    					"anamorph": 0
-    				},
-    				"miIris": {
-    					"radius": 49,
-    					"sides": 5,
-    					"roundness": 100,
-    					"angle": 0,
-    					"fillAlpha": 25,
-    					"fringeAlpha": 50,
-    					"fringeSize": 10,
-    					"blur": 16,
-    					"countAway": 5,
-    					"countTowards": 16,
-    					"spread": 30,
-    					"sizeVariance": 37,
-    					"perspective": 100,
-    					"alphaVariance": 50,
-    					"seed": 329,
-    					"hue": 55,
-    					"saturation": 32,
-    					"hueVariance": 30,
-    					"anamorph": 0
-    				},
-    				"glow": {
-    					"radius": 1203,
-    					"alpha": 50,
-    					"softening": 70,
-    					"hue": 45,
-    					"saturation": 35,
-    					"anamorph": 0
-    				},
-    				"lensOrbs": {
-    					"radius": 24,
-    					"sides": 6,
-    					"roundness": 12,
-    					"angle": 0,
-    					"fillAlpha": 1,
-    					"fringeAlpha": 2,
-    					"fringeSize": 12,
-    					"blur": 2,
-    					"count": 99,
-    					"threshold": 987,
-    					"seed": 807,
-    					"sizeVariance": 0,
-    					"alphaVariance": 50,
-    					"hue": 33,
-    					"saturation": 11,
-    					"hueVariance": 22,
-    					"anamorph": 0
-    				}
-    			}
-    		}
+    		{ name: "Lemon Light", data: lemonlight }
     	];
 
     	function handleChange() {
@@ -4488,6 +3159,7 @@ var app = (function () {
     		this.value = null;
     	}
 
+    	const defaultPreset = builtInPresets[0].data;
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -4512,12 +3184,29 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		current,
     		createEventDispatcher,
+    		sundigital,
+    		simplecyan,
+    		flamboyantanamorphic,
+    		seaoffog,
+    		interstellar,
+    		sunflower,
+    		daisysbeacon,
+    		bluedwarf,
+    		clairdelune,
+    		goldencentury,
+    		industrialanamorphic,
+    		hexastar,
+    		lasermeme,
+    		cherrytree,
+    		ancientmariner,
+    		lemonlight,
     		dispatch,
     		dropdown,
     		fileInput,
     		builtInPresets,
     		handleChange,
-    		handleFileInput
+    		handleFileInput,
+    		defaultPreset
     	});
 
     	$$self.$inject_state = $$props => {
@@ -4536,6 +3225,7 @@ var app = (function () {
     		builtInPresets,
     		handleChange,
     		handleFileInput,
+    		defaultPreset,
     		select_binding,
     		input_binding
     	];
@@ -4544,7 +3234,7 @@ var app = (function () {
     class PresetPicker extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { defaultPreset: 5 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -4553,6 +3243,14 @@ var app = (function () {
     			id: create_fragment$1.name
     		});
     	}
+
+    	get defaultPreset() {
+    		return this.$$.ctx[5];
+    	}
+
+    	set defaultPreset(value) {
+    		throw new Error("<PresetPicker>: Cannot set read-only property 'defaultPreset'");
+    	}
     }
 
     /* src/App.svelte generated by Svelte v3.55.1 */
@@ -4560,7 +3258,7 @@ var app = (function () {
     const { console: console_1, document: document_1 } = globals;
     const file = "src/App.svelte";
 
-    // (394:0) {#if (!isPopupPlugin)}
+    // (395:0) {#if (!isPopupPlugin)}
     function create_if_block_2(ctx) {
     	let button;
     	let t1;
@@ -4589,25 +3287,25 @@ var app = (function () {
     			option2 = element("option");
     			option2.textContent = "WebP";
     			attr_dev(button, "class", "svelte-viz99f");
-    			add_location(button, file, 394, 4, 20787);
+    			add_location(button, file, 395, 4, 19798);
     			attr_dev(span, "style", "display: inline-block; margin-left: 5px; margin-right: 5px;");
     			attr_dev(span, "class", "svelte-viz99f");
-    			add_location(span, file, 395, 4, 20871);
+    			add_location(span, file, 396, 4, 19882);
     			option0.__value = "png";
     			option0.value = option0.__value;
     			attr_dev(option0, "class", "svelte-viz99f");
-    			add_location(option0, file, 397, 8, 21016);
+    			add_location(option0, file, 398, 8, 20027);
     			option1.__value = "jpeg";
     			option1.value = option1.__value;
     			attr_dev(option1, "class", "svelte-viz99f");
-    			add_location(option1, file, 398, 8, 21059);
+    			add_location(option1, file, 399, 8, 20070);
     			option2.__value = "webp";
     			option2.value = option2.__value;
     			attr_dev(option2, "class", "svelte-viz99f");
-    			add_location(option2, file, 399, 8, 21103);
+    			add_location(option2, file, 400, 8, 20114);
     			attr_dev(select, "class", "svelte-viz99f");
-    			if (/*flareSettings*/ ctx[0].exportType === void 0) add_render_callback(() => /*select_change_handler*/ ctx[16].call(select));
-    			add_location(select, file, 396, 4, 20961);
+    			if (/*flareSettings*/ ctx[0].exportType === void 0) add_render_callback(() => /*select_change_handler*/ ctx[17].call(select));
+    			add_location(select, file, 397, 4, 19972);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -4622,8 +3320,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button, "click", /*click_handler*/ ctx[15], false, false, false),
-    					listen_dev(select, "change", /*select_change_handler*/ ctx[16])
+    					listen_dev(button, "click", /*click_handler*/ ctx[16], false, false, false),
+    					listen_dev(select, "change", /*select_change_handler*/ ctx[17])
     				];
 
     				mounted = true;
@@ -4649,14 +3347,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(394:0) {#if (!isPopupPlugin)}",
+    		source: "(395:0) {#if (!isPopupPlugin)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (403:0) {#if (isPopupPlugin)}
+    // (404:0) {#if (isPopupPlugin)}
     function create_if_block_1(ctx) {
     	let button0;
     	let t1;
@@ -4677,12 +3375,12 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Close";
     			attr_dev(button0, "class", "svelte-viz99f");
-    			add_location(button0, file, 403, 4, 21186);
+    			add_location(button0, file, 404, 4, 20197);
     			set_style(span, "white-space", "pre");
     			attr_dev(span, "class", "svelte-viz99f");
-    			add_location(span, file, 404, 4, 21303);
+    			add_location(span, file, 405, 4, 20314);
     			attr_dev(button1, "class", "svelte-viz99f");
-    			add_location(button1, file, 405, 4, 21353);
+    			add_location(button1, file, 406, 4, 20364);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button0, anchor);
@@ -4693,8 +3391,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler_1*/ ctx[17], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_2*/ ctx[18], false, false, false)
+    					listen_dev(button0, "click", /*click_handler_1*/ ctx[18], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_2*/ ctx[19], false, false, false)
     				];
 
     				mounted = true;
@@ -4716,14 +3414,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(403:0) {#if (isPopupPlugin)}",
+    		source: "(404:0) {#if (isPopupPlugin)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (445:0) <Collapsible title={"Global"} collapsed={false}>
+    // (446:0) <Collapsible title={"Global"} collapsed={false}>
     function create_default_slot_6(ctx) {
     	let t0;
     	let slider0;
@@ -4753,7 +3451,7 @@ var app = (function () {
     	let current;
 
     	function slider0_value_binding(value) {
-    		/*slider0_value_binding*/ ctx[26](value);
+    		/*slider0_value_binding*/ ctx[28](value);
     	}
 
     	let slider0_props = {
@@ -4767,10 +3465,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding));
-    	slider0.$on("input", /*input_handler*/ ctx[27]);
+    	slider0.$on("input", /*input_handler*/ ctx[29]);
 
     	function slider1_value_binding(value) {
-    		/*slider1_value_binding*/ ctx[28](value);
+    		/*slider1_value_binding*/ ctx[30](value);
     	}
 
     	let slider1_props = {
@@ -4784,10 +3482,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding));
-    	slider1.$on("input", /*input_handler_1*/ ctx[29]);
+    	slider1.$on("input", /*input_handler_1*/ ctx[31]);
 
     	function slider2_value_binding(value) {
-    		/*slider2_value_binding*/ ctx[30](value);
+    		/*slider2_value_binding*/ ctx[32](value);
     	}
 
     	let slider2_props = {
@@ -4801,10 +3499,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding));
-    	slider2.$on("input", /*input_handler_2*/ ctx[31]);
+    	slider2.$on("input", /*input_handler_2*/ ctx[33]);
 
     	function slider3_value_binding(value) {
-    		/*slider3_value_binding*/ ctx[32](value);
+    		/*slider3_value_binding*/ ctx[34](value);
     	}
 
     	let slider3_props = {
@@ -4818,10 +3516,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding));
-    	slider3.$on("input", /*input_handler_3*/ ctx[33]);
+    	slider3.$on("input", /*input_handler_3*/ ctx[35]);
 
     	function slider4_value_binding(value) {
-    		/*slider4_value_binding*/ ctx[34](value);
+    		/*slider4_value_binding*/ ctx[36](value);
     	}
 
     	let slider4_props = { min: 0.01, max: 2, step: 0.01 };
@@ -4832,8 +3530,8 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding));
-    	slider4.$on("input", /*input_handler_4*/ ctx[35]);
-    	slider4.$on("change", /*handleScaleMultiplier*/ ctx[14]);
+    	slider4.$on("input", /*input_handler_4*/ ctx[37]);
+    	slider4.$on("change", /*handleScaleMultiplier*/ ctx[15]);
 
     	const block = {
     		c: function create() {
@@ -4858,15 +3556,15 @@ var app = (function () {
     			t9 = space();
     			br4 = element("br");
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 445, 151, 23100);
+    			add_location(br0, file, 446, 151, 22138);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 446, 152, 23259);
+    			add_location(br1, file, 447, 152, 22297);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 447, 156, 23422);
+    			add_location(br2, file, 448, 156, 22460);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 448, 157, 23586);
+    			add_location(br3, file, 449, 157, 22624);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 449, 181, 23774);
+    			add_location(br4, file, 450, 181, 22812);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -4987,14 +3685,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(445:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
+    		source: "(446:0) <Collapsible title={\\\"Global\\\"} collapsed={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (452:0) <Collapsible title={"Hotspot"}>
+    // (453:0) <Collapsible title={"Hotspot"}>
     function create_default_slot_5(ctx) {
     	let label;
     	let input;
@@ -5054,7 +3752,7 @@ var app = (function () {
     	let dispose;
 
     	function slider0_value_binding_1(value) {
-    		/*slider0_value_binding_1*/ ctx[38](value);
+    		/*slider0_value_binding_1*/ ctx[40](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -5065,10 +3763,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_1));
-    	slider0.$on("input", /*input_handler_5*/ ctx[39]);
+    	slider0.$on("input", /*input_handler_5*/ ctx[41]);
 
     	function slider1_value_binding_1(value) {
-    		/*slider1_value_binding_1*/ ctx[40](value);
+    		/*slider1_value_binding_1*/ ctx[42](value);
     	}
 
     	let slider1_props = { min: 0, max: 360 };
@@ -5079,10 +3777,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_1));
-    	slider1.$on("input", /*input_handler_6*/ ctx[41]);
+    	slider1.$on("input", /*input_handler_6*/ ctx[43]);
 
     	function slider2_value_binding_1(value) {
-    		/*slider2_value_binding_1*/ ctx[42](value);
+    		/*slider2_value_binding_1*/ ctx[44](value);
     	}
 
     	let slider2_props = { min: 0, max: 360, className: "hueSlider" };
@@ -5093,10 +3791,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_1));
-    	slider2.$on("input", /*input_handler_7*/ ctx[43]);
+    	slider2.$on("input", /*input_handler_7*/ ctx[45]);
 
     	function slider3_value_binding_1(value) {
-    		/*slider3_value_binding_1*/ ctx[44](value);
+    		/*slider3_value_binding_1*/ ctx[46](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -5107,10 +3805,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_1));
-    	slider3.$on("input", /*input_handler_8*/ ctx[45]);
+    	slider3.$on("input", /*input_handler_8*/ ctx[47]);
 
     	function slider4_value_binding_1(value) {
-    		/*slider4_value_binding_1*/ ctx[46](value);
+    		/*slider4_value_binding_1*/ ctx[48](value);
     	}
 
     	let slider4_props = { min: 0, max: 1000 };
@@ -5121,10 +3819,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_1));
-    	slider4.$on("input", /*input_handler_9*/ ctx[47]);
+    	slider4.$on("input", /*input_handler_9*/ ctx[49]);
 
     	function slider5_value_binding(value) {
-    		/*slider5_value_binding*/ ctx[48](value);
+    		/*slider5_value_binding*/ ctx[50](value);
     	}
 
     	let slider5_props = { min: 0, max: 50 };
@@ -5135,10 +3833,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding));
-    	slider5.$on("input", /*input_handler_10*/ ctx[49]);
+    	slider5.$on("input", /*input_handler_10*/ ctx[51]);
 
     	function slider6_value_binding(value) {
-    		/*slider6_value_binding*/ ctx[50](value);
+    		/*slider6_value_binding*/ ctx[52](value);
     	}
 
     	let slider6_props = { min: 0, max: 0.05, step: 0.001 };
@@ -5149,10 +3847,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding));
-    	slider6.$on("input", /*input_handler_11*/ ctx[51]);
+    	slider6.$on("input", /*input_handler_11*/ ctx[53]);
 
     	function slider7_value_binding(value) {
-    		/*slider7_value_binding*/ ctx[52](value);
+    		/*slider7_value_binding*/ ctx[54](value);
     	}
 
     	let slider7_props = { min: 0, max: 2.1, step: 0.01 };
@@ -5163,10 +3861,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding));
-    	slider7.$on("input", /*input_handler_12*/ ctx[53]);
+    	slider7.$on("input", /*input_handler_12*/ ctx[55]);
 
     	function slider8_value_binding(value) {
-    		/*slider8_value_binding*/ ctx[54](value);
+    		/*slider8_value_binding*/ ctx[56](value);
     	}
 
     	let slider8_props = { min: 1, max: 999 };
@@ -5177,10 +3875,10 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding));
-    	slider8.$on("input", /*input_handler_13*/ ctx[55]);
+    	slider8.$on("input", /*input_handler_13*/ ctx[57]);
 
     	function slider9_value_binding(value) {
-    		/*slider9_value_binding*/ ctx[56](value);
+    		/*slider9_value_binding*/ ctx[58](value);
     	}
 
     	let slider9_props = { min: 0, max: 100 };
@@ -5191,7 +3889,7 @@ var app = (function () {
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding));
-    	slider9.$on("input", /*input_handler_14*/ ctx[57]);
+    	slider9.$on("input", /*input_handler_14*/ ctx[59]);
 
     	const block = {
     		c: function create() {
@@ -5240,30 +3938,30 @@ var app = (function () {
     			br9 = element("br");
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 453, 8, 23876);
+    			add_location(input, file, 454, 8, 22914);
     			set_style(label, "text-align", "center");
     			attr_dev(label, "class", "svelte-viz99f");
-    			add_location(label, file, 452, 4, 23832);
+    			add_location(label, file, 453, 4, 22870);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 456, 126, 24148);
+    			add_location(br0, file, 457, 126, 23186);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 457, 126, 24281);
+    			add_location(br1, file, 458, 126, 23319);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 458, 144, 24432);
+    			add_location(br2, file, 459, 144, 23470);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 459, 136, 24575);
+    			add_location(br3, file, 460, 136, 23613);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 460, 127, 24709);
+    			add_location(br4, file, 461, 127, 23747);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 461, 133, 24849);
+    			add_location(br5, file, 462, 133, 23887);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 462, 164, 25020);
+    			add_location(br6, file, 463, 164, 24058);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 463, 160, 25187);
+    			add_location(br7, file, 464, 160, 24225);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 464, 142, 25336);
+    			add_location(br8, file, 465, 142, 24374);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 465, 132, 25475);
+    			add_location(br9, file, 466, 132, 24513);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -5314,8 +4012,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "change", /*input_change_handler*/ ctx[36]),
-    					listen_dev(input, "change", /*change_handler_1*/ ctx[37], false, false, false)
+    					listen_dev(input, "change", /*input_change_handler*/ ctx[38]),
+    					listen_dev(input, "change", /*change_handler_1*/ ctx[39], false, false, false)
     				];
 
     				mounted = true;
@@ -5495,14 +4193,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(452:0) <Collapsible title={\\\"Hotspot\\\"}>",
+    		source: "(453:0) <Collapsible title={\\\"Hotspot\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (468:0) <Collapsible title={"Streak"}>
+    // (469:0) <Collapsible title={"Streak"}>
     function create_default_slot_4(ctx) {
     	let label;
     	let input;
@@ -5557,7 +4255,7 @@ var app = (function () {
     	let dispose;
 
     	function slider0_value_binding_2(value) {
-    		/*slider0_value_binding_2*/ ctx[60](value);
+    		/*slider0_value_binding_2*/ ctx[62](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -5568,10 +4266,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_2));
-    	slider0.$on("input", /*input_handler_15*/ ctx[61]);
+    	slider0.$on("input", /*input_handler_15*/ ctx[63]);
 
     	function slider1_value_binding_2(value) {
-    		/*slider1_value_binding_2*/ ctx[62](value);
+    		/*slider1_value_binding_2*/ ctx[64](value);
     	}
 
     	let slider1_props = { min: 0, max: 360 };
@@ -5582,10 +4280,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_2));
-    	slider1.$on("input", /*input_handler_16*/ ctx[63]);
+    	slider1.$on("input", /*input_handler_16*/ ctx[65]);
 
     	function slider2_value_binding_2(value) {
-    		/*slider2_value_binding_2*/ ctx[64](value);
+    		/*slider2_value_binding_2*/ ctx[66](value);
     	}
 
     	let slider2_props = { min: 0, max: 360, className: "hueSlider" };
@@ -5596,10 +4294,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_2));
-    	slider2.$on("input", /*input_handler_17*/ ctx[65]);
+    	slider2.$on("input", /*input_handler_17*/ ctx[67]);
 
     	function slider3_value_binding_2(value) {
-    		/*slider3_value_binding_2*/ ctx[66](value);
+    		/*slider3_value_binding_2*/ ctx[68](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -5610,10 +4308,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_2));
-    	slider3.$on("input", /*input_handler_18*/ ctx[67]);
+    	slider3.$on("input", /*input_handler_18*/ ctx[69]);
 
     	function slider4_value_binding_2(value) {
-    		/*slider4_value_binding_2*/ ctx[68](value);
+    		/*slider4_value_binding_2*/ ctx[70](value);
     	}
 
     	let slider4_props = { min: 0, max: 200 };
@@ -5624,10 +4322,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_2));
-    	slider4.$on("input", /*input_handler_19*/ ctx[69]);
+    	slider4.$on("input", /*input_handler_19*/ ctx[71]);
 
     	function slider5_value_binding_1(value) {
-    		/*slider5_value_binding_1*/ ctx[70](value);
+    		/*slider5_value_binding_1*/ ctx[72](value);
     	}
 
     	let slider5_props = { min: 0, max: 5000 };
@@ -5638,10 +4336,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_1));
-    	slider5.$on("input", /*input_handler_20*/ ctx[71]);
+    	slider5.$on("input", /*input_handler_20*/ ctx[73]);
 
     	function slider6_value_binding_1(value) {
-    		/*slider6_value_binding_1*/ ctx[72](value);
+    		/*slider6_value_binding_1*/ ctx[74](value);
     	}
 
     	let slider6_props = { min: -30, max: 50 };
@@ -5652,10 +4350,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_1));
-    	slider6.$on("input", /*input_handler_21*/ ctx[73]);
+    	slider6.$on("input", /*input_handler_21*/ ctx[75]);
 
     	function slider7_value_binding_1(value) {
-    		/*slider7_value_binding_1*/ ctx[74](value);
+    		/*slider7_value_binding_1*/ ctx[76](value);
     	}
 
     	let slider7_props = { min: 1, max: 8 };
@@ -5666,10 +4364,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_1));
-    	slider7.$on("input", /*input_handler_22*/ ctx[75]);
+    	slider7.$on("input", /*input_handler_22*/ ctx[77]);
 
     	function slider8_value_binding_1(value) {
-    		/*slider8_value_binding_1*/ ctx[76](value);
+    		/*slider8_value_binding_1*/ ctx[78](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -5680,7 +4378,7 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_1));
-    	slider8.$on("input", /*input_handler_23*/ ctx[77]);
+    	slider8.$on("input", /*input_handler_23*/ ctx[79]);
 
     	const block = {
     		c: function create() {
@@ -5725,28 +4423,28 @@ var app = (function () {
     			br8 = element("br");
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 469, 8, 25576);
+    			add_location(input, file, 470, 8, 24614);
     			set_style(label, "text-align", "center");
     			attr_dev(label, "class", "svelte-viz99f");
-    			add_location(label, file, 468, 4, 25532);
+    			add_location(label, file, 469, 4, 24570);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 472, 132, 25860);
+    			add_location(br0, file, 473, 132, 24898);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 473, 132, 25999);
+    			add_location(br1, file, 474, 132, 25037);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 474, 150, 26156);
+    			add_location(br2, file, 475, 150, 25194);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 475, 142, 26305);
+    			add_location(br3, file, 476, 142, 25343);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 476, 140, 26452);
+    			add_location(br4, file, 477, 140, 25490);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 477, 134, 26593);
+    			add_location(br5, file, 478, 134, 25631);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 478, 141, 26741);
+    			add_location(br6, file, 479, 141, 25779);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 479, 133, 26881);
+    			add_location(br7, file, 480, 133, 25919);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 480, 132, 27020);
+    			add_location(br8, file, 481, 132, 26058);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -5793,8 +4491,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "change", /*input_change_handler_1*/ ctx[58]),
-    					listen_dev(input, "change", /*change_handler_2*/ ctx[59], false, false, false)
+    					listen_dev(input, "change", /*input_change_handler_1*/ ctx[60]),
+    					listen_dev(input, "change", /*change_handler_2*/ ctx[61], false, false, false)
     				];
 
     				mounted = true;
@@ -5959,14 +4657,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(468:0) <Collapsible title={\\\"Streak\\\"}>",
+    		source: "(469:0) <Collapsible title={\\\"Streak\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (483:0) <Collapsible title={"Ring"}>
+    // (484:0) <Collapsible title={"Ring"}>
     function create_default_slot_3(ctx) {
     	let label;
     	let input;
@@ -6021,7 +4719,7 @@ var app = (function () {
     	let dispose;
 
     	function slider0_value_binding_3(value) {
-    		/*slider0_value_binding_3*/ ctx[80](value);
+    		/*slider0_value_binding_3*/ ctx[82](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -6032,10 +4730,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_3));
-    	slider0.$on("input", /*input_handler_24*/ ctx[81]);
+    	slider0.$on("input", /*input_handler_24*/ ctx[83]);
 
     	function slider1_value_binding_3(value) {
-    		/*slider1_value_binding_3*/ ctx[82](value);
+    		/*slider1_value_binding_3*/ ctx[84](value);
     	}
 
     	let slider1_props = { min: 0, max: 360, className: "hueSlider" };
@@ -6046,10 +4744,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_3));
-    	slider1.$on("input", /*input_handler_25*/ ctx[83]);
+    	slider1.$on("input", /*input_handler_25*/ ctx[85]);
 
     	function slider2_value_binding_3(value) {
-    		/*slider2_value_binding_3*/ ctx[84](value);
+    		/*slider2_value_binding_3*/ ctx[86](value);
     	}
 
     	let slider2_props = { min: 0, max: 100 };
@@ -6060,10 +4758,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_3));
-    	slider2.$on("input", /*input_handler_26*/ ctx[85]);
+    	slider2.$on("input", /*input_handler_26*/ ctx[87]);
 
     	function slider3_value_binding_3(value) {
-    		/*slider3_value_binding_3*/ ctx[86](value);
+    		/*slider3_value_binding_3*/ ctx[88](value);
     	}
 
     	let slider3_props = { min: 0, max: 810 };
@@ -6074,10 +4772,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_3));
-    	slider3.$on("input", /*input_handler_27*/ ctx[87]);
+    	slider3.$on("input", /*input_handler_27*/ ctx[89]);
 
     	function slider4_value_binding_3(value) {
-    		/*slider4_value_binding_3*/ ctx[88](value);
+    		/*slider4_value_binding_3*/ ctx[90](value);
     	}
 
     	let slider4_props = { min: 0, max: 500 };
@@ -6088,10 +4786,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_3));
-    	slider4.$on("input", /*input_handler_28*/ ctx[89]);
+    	slider4.$on("input", /*input_handler_28*/ ctx[91]);
 
     	function slider5_value_binding_2(value) {
-    		/*slider5_value_binding_2*/ ctx[90](value);
+    		/*slider5_value_binding_2*/ ctx[92](value);
     	}
 
     	let slider5_props = { min: 0, max: 50 };
@@ -6102,10 +4800,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_2));
-    	slider5.$on("input", /*input_handler_29*/ ctx[91]);
+    	slider5.$on("input", /*input_handler_29*/ ctx[93]);
 
     	function slider6_value_binding_2(value) {
-    		/*slider6_value_binding_2*/ ctx[92](value);
+    		/*slider6_value_binding_2*/ ctx[94](value);
     	}
 
     	let slider6_props = { min: 0, max: 810 };
@@ -6116,10 +4814,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_2));
-    	slider6.$on("input", /*input_handler_30*/ ctx[93]);
+    	slider6.$on("input", /*input_handler_30*/ ctx[95]);
 
     	function slider7_value_binding_2(value) {
-    		/*slider7_value_binding_2*/ ctx[94](value);
+    		/*slider7_value_binding_2*/ ctx[96](value);
     	}
 
     	let slider7_props = { min: 0, max: 100 };
@@ -6130,10 +4828,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_2));
-    	slider7.$on("input", /*input_handler_31*/ ctx[95]);
+    	slider7.$on("input", /*input_handler_31*/ ctx[97]);
 
     	function slider8_value_binding_2(value) {
-    		/*slider8_value_binding_2*/ ctx[96](value);
+    		/*slider8_value_binding_2*/ ctx[98](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -6144,7 +4842,7 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_2));
-    	slider8.$on("input", /*input_handler_32*/ ctx[97]);
+    	slider8.$on("input", /*input_handler_32*/ ctx[99]);
 
     	const block = {
     		c: function create() {
@@ -6189,28 +4887,28 @@ var app = (function () {
     			br8 = element("br");
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 484, 8, 27119);
+    			add_location(input, file, 485, 8, 26157);
     			set_style(label, "text-align", "center");
     			attr_dev(label, "class", "svelte-viz99f");
-    			add_location(label, file, 483, 4, 27075);
+    			add_location(label, file, 484, 4, 26113);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 487, 137, 27413);
+    			add_location(br0, file, 488, 137, 26451);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 488, 155, 27575);
+    			add_location(br1, file, 489, 155, 26613);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 489, 147, 27729);
+    			add_location(br2, file, 490, 147, 26767);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 490, 137, 27873);
+    			add_location(br3, file, 491, 137, 26911);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 491, 145, 28025);
+    			add_location(br4, file, 492, 145, 27063);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 492, 138, 28170);
+    			add_location(br5, file, 493, 138, 27208);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 493, 144, 28321);
+    			add_location(br6, file, 494, 144, 27359);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 494, 152, 28480);
+    			add_location(br7, file, 495, 152, 27518);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 495, 143, 28630);
+    			add_location(br8, file, 496, 143, 27668);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -6257,8 +4955,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "change", /*input_change_handler_2*/ ctx[78]),
-    					listen_dev(input, "change", /*change_handler_3*/ ctx[79], false, false, false)
+    					listen_dev(input, "change", /*input_change_handler_2*/ ctx[80]),
+    					listen_dev(input, "change", /*change_handler_3*/ ctx[81], false, false, false)
     				];
 
     				mounted = true;
@@ -6423,14 +5121,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(483:0) <Collapsible title={\\\"Ring\\\"}>",
+    		source: "(484:0) <Collapsible title={\\\"Ring\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (498:0) <Collapsible title={"Multi-Iris"}>
+    // (499:0) <Collapsible title={"Multi-Iris"}>
     function create_default_slot_2(ctx) {
     	let label;
     	let input;
@@ -6535,7 +5233,7 @@ var app = (function () {
     	let dispose;
 
     	function slider0_value_binding_4(value) {
-    		/*slider0_value_binding_4*/ ctx[100](value);
+    		/*slider0_value_binding_4*/ ctx[102](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -6546,10 +5244,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_4));
-    	slider0.$on("input", /*input_handler_33*/ ctx[101]);
+    	slider0.$on("input", /*input_handler_33*/ ctx[103]);
 
     	function slider1_value_binding_4(value) {
-    		/*slider1_value_binding_4*/ ctx[102](value);
+    		/*slider1_value_binding_4*/ ctx[104](value);
     	}
 
     	let slider1_props = { min: 0, max: 100 };
@@ -6560,10 +5258,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_4));
-    	slider1.$on("input", /*input_handler_34*/ ctx[103]);
+    	slider1.$on("input", /*input_handler_34*/ ctx[105]);
 
     	function slider2_value_binding_4(value) {
-    		/*slider2_value_binding_4*/ ctx[104](value);
+    		/*slider2_value_binding_4*/ ctx[106](value);
     	}
 
     	let slider2_props = { min: 0, max: 360 };
@@ -6574,10 +5272,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_4));
-    	slider2.$on("input", /*input_handler_35*/ ctx[105]);
+    	slider2.$on("input", /*input_handler_35*/ ctx[107]);
 
     	function slider3_value_binding_4(value) {
-    		/*slider3_value_binding_4*/ ctx[106](value);
+    		/*slider3_value_binding_4*/ ctx[108](value);
     	}
 
     	let slider3_props = { min: 0, max: 360, className: "hueSlider" };
@@ -6588,10 +5286,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_4));
-    	slider3.$on("input", /*input_handler_36*/ ctx[107]);
+    	slider3.$on("input", /*input_handler_36*/ ctx[109]);
 
     	function slider4_value_binding_4(value) {
-    		/*slider4_value_binding_4*/ ctx[108](value);
+    		/*slider4_value_binding_4*/ ctx[110](value);
     	}
 
     	let slider4_props = { min: 0, max: 100 };
@@ -6602,10 +5300,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_4));
-    	slider4.$on("input", /*input_handler_37*/ ctx[109]);
+    	slider4.$on("input", /*input_handler_37*/ ctx[111]);
 
     	function slider5_value_binding_3(value) {
-    		/*slider5_value_binding_3*/ ctx[110](value);
+    		/*slider5_value_binding_3*/ ctx[112](value);
     	}
 
     	let slider5_props = { min: 0, max: 810 };
@@ -6616,10 +5314,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_3));
-    	slider5.$on("input", /*input_handler_38*/ ctx[111]);
+    	slider5.$on("input", /*input_handler_38*/ ctx[113]);
 
     	function slider6_value_binding_3(value) {
-    		/*slider6_value_binding_3*/ ctx[112](value);
+    		/*slider6_value_binding_3*/ ctx[114](value);
     	}
 
     	let slider6_props = { min: 3, max: 12 };
@@ -6630,10 +5328,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_3));
-    	slider6.$on("input", /*input_handler_39*/ ctx[113]);
+    	slider6.$on("input", /*input_handler_39*/ ctx[115]);
 
     	function slider7_value_binding_3(value) {
-    		/*slider7_value_binding_3*/ ctx[114](value);
+    		/*slider7_value_binding_3*/ ctx[116](value);
     	}
 
     	let slider7_props = { min: 0, max: 100 };
@@ -6644,10 +5342,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_3));
-    	slider7.$on("input", /*input_handler_40*/ ctx[115]);
+    	slider7.$on("input", /*input_handler_40*/ ctx[117]);
 
     	function slider8_value_binding_3(value) {
-    		/*slider8_value_binding_3*/ ctx[116](value);
+    		/*slider8_value_binding_3*/ ctx[118](value);
     	}
 
     	let slider8_props = { min: 0, max: 100 };
@@ -6658,10 +5356,10 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_3));
-    	slider8.$on("input", /*input_handler_41*/ ctx[117]);
+    	slider8.$on("input", /*input_handler_41*/ ctx[119]);
 
     	function slider9_value_binding_1(value) {
-    		/*slider9_value_binding_1*/ ctx[118](value);
+    		/*slider9_value_binding_1*/ ctx[120](value);
     	}
 
     	let slider9_props = { min: 0, max: 30 };
@@ -6672,10 +5370,10 @@ var app = (function () {
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding_1));
-    	slider9.$on("input", /*input_handler_42*/ ctx[119]);
+    	slider9.$on("input", /*input_handler_42*/ ctx[121]);
 
     	function slider10_value_binding(value) {
-    		/*slider10_value_binding*/ ctx[120](value);
+    		/*slider10_value_binding*/ ctx[122](value);
     	}
 
     	let slider10_props = { min: 0, max: 50 };
@@ -6686,10 +5384,10 @@ var app = (function () {
 
     	slider10 = new Slider({ props: slider10_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider10, 'value', slider10_value_binding));
-    	slider10.$on("input", /*input_handler_43*/ ctx[121]);
+    	slider10.$on("input", /*input_handler_43*/ ctx[123]);
 
     	function slider11_value_binding(value) {
-    		/*slider11_value_binding*/ ctx[122](value);
+    		/*slider11_value_binding*/ ctx[124](value);
     	}
 
     	let slider11_props = { min: 0, max: 50 };
@@ -6700,10 +5398,10 @@ var app = (function () {
 
     	slider11 = new Slider({ props: slider11_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider11, 'value', slider11_value_binding));
-    	slider11.$on("input", /*input_handler_44*/ ctx[123]);
+    	slider11.$on("input", /*input_handler_44*/ ctx[125]);
 
     	function slider12_value_binding(value) {
-    		/*slider12_value_binding*/ ctx[124](value);
+    		/*slider12_value_binding*/ ctx[126](value);
     	}
 
     	let slider12_props = { min: 0, max: 100 };
@@ -6714,10 +5412,10 @@ var app = (function () {
 
     	slider12 = new Slider({ props: slider12_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider12, 'value', slider12_value_binding));
-    	slider12.$on("input", /*input_handler_45*/ ctx[125]);
+    	slider12.$on("input", /*input_handler_45*/ ctx[127]);
 
     	function slider13_value_binding(value) {
-    		/*slider13_value_binding*/ ctx[126](value);
+    		/*slider13_value_binding*/ ctx[128](value);
     	}
 
     	let slider13_props = { min: 0, max: 100 };
@@ -6728,10 +5426,10 @@ var app = (function () {
 
     	slider13 = new Slider({ props: slider13_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider13, 'value', slider13_value_binding));
-    	slider13.$on("input", /*input_handler_46*/ ctx[127]);
+    	slider13.$on("input", /*input_handler_46*/ ctx[129]);
 
     	function slider14_value_binding(value) {
-    		/*slider14_value_binding*/ ctx[128](value);
+    		/*slider14_value_binding*/ ctx[130](value);
     	}
 
     	let slider14_props = { min: 0, max: 100 };
@@ -6742,10 +5440,10 @@ var app = (function () {
 
     	slider14 = new Slider({ props: slider14_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider14, 'value', slider14_value_binding));
-    	slider14.$on("input", /*input_handler_47*/ ctx[129]);
+    	slider14.$on("input", /*input_handler_47*/ ctx[131]);
 
     	function slider15_value_binding(value) {
-    		/*slider15_value_binding*/ ctx[130](value);
+    		/*slider15_value_binding*/ ctx[132](value);
     	}
 
     	let slider15_props = { min: 0, max: 100 };
@@ -6756,10 +5454,10 @@ var app = (function () {
 
     	slider15 = new Slider({ props: slider15_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider15, 'value', slider15_value_binding));
-    	slider15.$on("input", /*input_handler_48*/ ctx[131]);
+    	slider15.$on("input", /*input_handler_48*/ ctx[133]);
 
     	function slider16_value_binding(value) {
-    		/*slider16_value_binding*/ ctx[132](value);
+    		/*slider16_value_binding*/ ctx[134](value);
     	}
 
     	let slider16_props = { min: 0, max: 180 };
@@ -6770,10 +5468,10 @@ var app = (function () {
 
     	slider16 = new Slider({ props: slider16_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider16, 'value', slider16_value_binding));
-    	slider16.$on("input", /*input_handler_49*/ ctx[133]);
+    	slider16.$on("input", /*input_handler_49*/ ctx[135]);
 
     	function slider17_value_binding(value) {
-    		/*slider17_value_binding*/ ctx[134](value);
+    		/*slider17_value_binding*/ ctx[136](value);
     	}
 
     	let slider17_props = { min: 0, max: 999 };
@@ -6784,10 +5482,10 @@ var app = (function () {
 
     	slider17 = new Slider({ props: slider17_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider17, 'value', slider17_value_binding));
-    	slider17.$on("input", /*input_handler_50*/ ctx[135]);
+    	slider17.$on("input", /*input_handler_50*/ ctx[137]);
 
     	function slider18_value_binding(value) {
-    		/*slider18_value_binding*/ ctx[136](value);
+    		/*slider18_value_binding*/ ctx[138](value);
     	}
 
     	let slider18_props = { min: 0, max: 100 };
@@ -6798,7 +5496,7 @@ var app = (function () {
 
     	slider18 = new Slider({ props: slider18_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider18, 'value', slider18_value_binding));
-    	slider18.$on("input", /*input_handler_51*/ ctx[137]);
+    	slider18.$on("input", /*input_handler_51*/ ctx[139]);
 
     	const block = {
     		c: function create() {
@@ -6883,48 +5581,48 @@ var app = (function () {
     			br18 = element("br");
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 499, 8, 28735);
+    			add_location(input, file, 500, 8, 27773);
     			set_style(label, "text-align", "center");
     			attr_dev(label, "class", "svelte-viz99f");
-    			add_location(label, file, 498, 4, 28691);
+    			add_location(label, file, 499, 4, 27729);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 502, 155, 29056);
+    			add_location(br0, file, 503, 155, 28094);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 503, 159, 29222);
+    			add_location(br1, file, 504, 159, 28260);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 504, 146, 29375);
+    			add_location(br2, file, 505, 146, 28413);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 505, 164, 29546);
+    			add_location(br3, file, 506, 164, 28584);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 506, 156, 29709);
+    			add_location(br4, file, 507, 156, 28747);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 507, 146, 29862);
+    			add_location(br5, file, 508, 146, 28900);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 508, 145, 30014);
+    			add_location(br6, file, 509, 145, 29052);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 509, 154, 30175);
+    			add_location(br7, file, 510, 154, 29213);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 510, 157, 30339);
+    			add_location(br8, file, 511, 157, 29377);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 511, 147, 30493);
+    			add_location(br9, file, 512, 147, 29531);
     			attr_dev(br10, "class", "svelte-viz99f");
-    			add_location(br10, file, 512, 160, 30660);
+    			add_location(br10, file, 513, 160, 29698);
     			attr_dev(br11, "class", "svelte-viz99f");
-    			add_location(br11, file, 513, 154, 30821);
+    			add_location(br11, file, 514, 154, 29859);
     			attr_dev(br12, "class", "svelte-viz99f");
-    			add_location(br12, file, 514, 148, 30976);
+    			add_location(br12, file, 515, 148, 30014);
     			attr_dev(br13, "class", "svelte-viz99f");
-    			add_location(br13, file, 515, 161, 31144);
+    			add_location(br13, file, 516, 161, 30182);
     			attr_dev(br14, "class", "svelte-viz99f");
-    			add_location(br14, file, 516, 158, 31309);
+    			add_location(br14, file, 517, 158, 30347);
     			attr_dev(br15, "class", "svelte-viz99f");
-    			add_location(br15, file, 517, 163, 31479);
+    			add_location(br15, file, 518, 163, 30517);
     			attr_dev(br16, "class", "svelte-viz99f");
-    			add_location(br16, file, 518, 159, 31645);
+    			add_location(br16, file, 519, 159, 30683);
     			attr_dev(br17, "class", "svelte-viz99f");
-    			add_location(br17, file, 519, 151, 31803);
+    			add_location(br17, file, 520, 151, 30841);
     			attr_dev(br18, "class", "svelte-viz99f");
-    			add_location(br18, file, 520, 152, 31962);
+    			add_location(br18, file, 521, 152, 31000);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -7011,8 +5709,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "change", /*input_change_handler_3*/ ctx[98]),
-    					listen_dev(input, "change", /*change_handler_4*/ ctx[99], false, false, false)
+    					listen_dev(input, "change", /*input_change_handler_3*/ ctx[100]),
+    					listen_dev(input, "change", /*change_handler_4*/ ctx[101], false, false, false)
     				];
 
     				mounted = true;
@@ -7327,14 +6025,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(498:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
+    		source: "(499:0) <Collapsible title={\\\"Multi-Iris\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (523:0) <Collapsible title={"Glow"}>
+    // (524:0) <Collapsible title={"Glow"}>
     function create_default_slot_1(ctx) {
     	let label;
     	let input;
@@ -7374,7 +6072,7 @@ var app = (function () {
     	let dispose;
 
     	function slider0_value_binding_5(value) {
-    		/*slider0_value_binding_5*/ ctx[140](value);
+    		/*slider0_value_binding_5*/ ctx[142](value);
     	}
 
     	let slider0_props = { min: 0, max: 100 };
@@ -7385,10 +6083,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_5));
-    	slider0.$on("input", /*input_handler_52*/ ctx[141]);
+    	slider0.$on("input", /*input_handler_52*/ ctx[143]);
 
     	function slider1_value_binding_5(value) {
-    		/*slider1_value_binding_5*/ ctx[142](value);
+    		/*slider1_value_binding_5*/ ctx[144](value);
     	}
 
     	let slider1_props = { min: 0, max: 360, className: "hueSlider" };
@@ -7399,10 +6097,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_5));
-    	slider1.$on("input", /*input_handler_53*/ ctx[143]);
+    	slider1.$on("input", /*input_handler_53*/ ctx[145]);
 
     	function slider2_value_binding_5(value) {
-    		/*slider2_value_binding_5*/ ctx[144](value);
+    		/*slider2_value_binding_5*/ ctx[146](value);
     	}
 
     	let slider2_props = { min: 0, max: 100 };
@@ -7413,10 +6111,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_5));
-    	slider2.$on("input", /*input_handler_54*/ ctx[145]);
+    	slider2.$on("input", /*input_handler_54*/ ctx[147]);
 
     	function slider3_value_binding_5(value) {
-    		/*slider3_value_binding_5*/ ctx[146](value);
+    		/*slider3_value_binding_5*/ ctx[148](value);
     	}
 
     	let slider3_props = { min: 0, max: 1500 };
@@ -7427,10 +6125,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_5));
-    	slider3.$on("input", /*input_handler_55*/ ctx[147]);
+    	slider3.$on("input", /*input_handler_55*/ ctx[149]);
 
     	function slider4_value_binding_5(value) {
-    		/*slider4_value_binding_5*/ ctx[148](value);
+    		/*slider4_value_binding_5*/ ctx[150](value);
     	}
 
     	let slider4_props = { min: 0, max: 200 };
@@ -7441,10 +6139,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_5));
-    	slider4.$on("input", /*input_handler_56*/ ctx[149]);
+    	slider4.$on("input", /*input_handler_56*/ ctx[151]);
 
     	function slider5_value_binding_4(value) {
-    		/*slider5_value_binding_4*/ ctx[150](value);
+    		/*slider5_value_binding_4*/ ctx[152](value);
     	}
 
     	let slider5_props = { min: 0, max: 100 };
@@ -7455,7 +6153,7 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_4));
-    	slider5.$on("input", /*input_handler_57*/ ctx[151]);
+    	slider5.$on("input", /*input_handler_57*/ ctx[153]);
 
     	const block = {
     		c: function create() {
@@ -7488,22 +6186,22 @@ var app = (function () {
     			br5 = element("br");
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 524, 8, 32061);
+    			add_location(input, file, 525, 8, 31099);
     			set_style(label, "text-align", "center");
     			attr_dev(label, "class", "svelte-viz99f");
-    			add_location(label, file, 523, 4, 32017);
+    			add_location(label, file, 524, 4, 31055);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 527, 151, 32383);
+    			add_location(br0, file, 528, 151, 31421);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 528, 169, 32559);
+    			add_location(br1, file, 529, 169, 31597);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 529, 161, 32727);
+    			add_location(br2, file, 530, 161, 31765);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 530, 152, 32886);
+    			add_location(br3, file, 531, 152, 31924);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 531, 158, 33051);
+    			add_location(br4, file, 532, 158, 32089);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 532, 157, 33215);
+    			add_location(br5, file, 533, 157, 32253);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -7538,8 +6236,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "change", /*input_change_handler_4*/ ctx[138]),
-    					listen_dev(input, "change", /*change_handler_5*/ ctx[139], false, false, false)
+    					listen_dev(input, "change", /*input_change_handler_4*/ ctx[140]),
+    					listen_dev(input, "change", /*change_handler_5*/ ctx[141], false, false, false)
     				];
 
     				mounted = true;
@@ -7659,14 +6357,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(523:0) <Collapsible title={\\\"Glow\\\"}>",
+    		source: "(524:0) <Collapsible title={\\\"Glow\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (535:0) <Collapsible title={"Lens Orbs"}>
+    // (536:0) <Collapsible title={"Lens Orbs"}>
     function create_default_slot(ctx) {
     	let label;
     	let input;
@@ -7761,7 +6459,7 @@ var app = (function () {
     	let dispose;
 
     	function slider0_value_binding_6(value) {
-    		/*slider0_value_binding_6*/ ctx[154](value);
+    		/*slider0_value_binding_6*/ ctx[156](value);
     	}
 
     	let slider0_props = { min: 0, max: 200 };
@@ -7772,10 +6470,10 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, 'value', slider0_value_binding_6));
-    	slider0.$on("input", /*input_handler_58*/ ctx[155]);
+    	slider0.$on("input", /*input_handler_58*/ ctx[157]);
 
     	function slider1_value_binding_6(value) {
-    		/*slider1_value_binding_6*/ ctx[156](value);
+    		/*slider1_value_binding_6*/ ctx[158](value);
     	}
 
     	let slider1_props = { min: 0, max: 1500 };
@@ -7786,10 +6484,10 @@ var app = (function () {
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, 'value', slider1_value_binding_6));
-    	slider1.$on("input", /*input_handler_59*/ ctx[157]);
+    	slider1.$on("input", /*input_handler_59*/ ctx[159]);
 
     	function slider2_value_binding_6(value) {
-    		/*slider2_value_binding_6*/ ctx[158](value);
+    		/*slider2_value_binding_6*/ ctx[160](value);
     	}
 
     	let slider2_props = { min: 0, max: 100 };
@@ -7800,10 +6498,10 @@ var app = (function () {
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, 'value', slider2_value_binding_6));
-    	slider2.$on("input", /*input_handler_60*/ ctx[159]);
+    	slider2.$on("input", /*input_handler_60*/ ctx[161]);
 
     	function slider3_value_binding_6(value) {
-    		/*slider3_value_binding_6*/ ctx[160](value);
+    		/*slider3_value_binding_6*/ ctx[162](value);
     	}
 
     	let slider3_props = { min: 0, max: 100 };
@@ -7814,10 +6512,10 @@ var app = (function () {
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, 'value', slider3_value_binding_6));
-    	slider3.$on("input", /*input_handler_61*/ ctx[161]);
+    	slider3.$on("input", /*input_handler_61*/ ctx[163]);
 
     	function slider4_value_binding_6(value) {
-    		/*slider4_value_binding_6*/ ctx[162](value);
+    		/*slider4_value_binding_6*/ ctx[164](value);
     	}
 
     	let slider4_props = { min: 0, max: 360 };
@@ -7828,10 +6526,10 @@ var app = (function () {
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, 'value', slider4_value_binding_6));
-    	slider4.$on("input", /*input_handler_62*/ ctx[163]);
+    	slider4.$on("input", /*input_handler_62*/ ctx[165]);
 
     	function slider5_value_binding_5(value) {
-    		/*slider5_value_binding_5*/ ctx[164](value);
+    		/*slider5_value_binding_5*/ ctx[166](value);
     	}
 
     	let slider5_props = { min: 0, max: 360, className: "hueSlider" };
@@ -7842,10 +6540,10 @@ var app = (function () {
 
     	slider5 = new Slider({ props: slider5_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider5, 'value', slider5_value_binding_5));
-    	slider5.$on("input", /*input_handler_63*/ ctx[165]);
+    	slider5.$on("input", /*input_handler_63*/ ctx[167]);
 
     	function slider6_value_binding_4(value) {
-    		/*slider6_value_binding_4*/ ctx[166](value);
+    		/*slider6_value_binding_4*/ ctx[168](value);
     	}
 
     	let slider6_props = { min: 0, max: 100 };
@@ -7856,10 +6554,10 @@ var app = (function () {
 
     	slider6 = new Slider({ props: slider6_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider6, 'value', slider6_value_binding_4));
-    	slider6.$on("input", /*input_handler_64*/ ctx[167]);
+    	slider6.$on("input", /*input_handler_64*/ ctx[169]);
 
     	function slider7_value_binding_4(value) {
-    		/*slider7_value_binding_4*/ ctx[168](value);
+    		/*slider7_value_binding_4*/ ctx[170](value);
     	}
 
     	let slider7_props = { min: 0, max: 810 };
@@ -7870,10 +6568,10 @@ var app = (function () {
 
     	slider7 = new Slider({ props: slider7_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider7, 'value', slider7_value_binding_4));
-    	slider7.$on("input", /*input_handler_65*/ ctx[169]);
+    	slider7.$on("input", /*input_handler_65*/ ctx[171]);
 
     	function slider8_value_binding_4(value) {
-    		/*slider8_value_binding_4*/ ctx[170](value);
+    		/*slider8_value_binding_4*/ ctx[172](value);
     	}
 
     	let slider8_props = { min: 3, max: 12 };
@@ -7884,10 +6582,10 @@ var app = (function () {
 
     	slider8 = new Slider({ props: slider8_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider8, 'value', slider8_value_binding_4));
-    	slider8.$on("input", /*input_handler_66*/ ctx[171]);
+    	slider8.$on("input", /*input_handler_66*/ ctx[173]);
 
     	function slider9_value_binding_2(value) {
-    		/*slider9_value_binding_2*/ ctx[172](value);
+    		/*slider9_value_binding_2*/ ctx[174](value);
     	}
 
     	let slider9_props = { min: 0, max: 100 };
@@ -7898,10 +6596,10 @@ var app = (function () {
 
     	slider9 = new Slider({ props: slider9_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider9, 'value', slider9_value_binding_2));
-    	slider9.$on("input", /*input_handler_67*/ ctx[173]);
+    	slider9.$on("input", /*input_handler_67*/ ctx[175]);
 
     	function slider10_value_binding_1(value) {
-    		/*slider10_value_binding_1*/ ctx[174](value);
+    		/*slider10_value_binding_1*/ ctx[176](value);
     	}
 
     	let slider10_props = { min: 0, max: 100 };
@@ -7912,10 +6610,10 @@ var app = (function () {
 
     	slider10 = new Slider({ props: slider10_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider10, 'value', slider10_value_binding_1));
-    	slider10.$on("input", /*input_handler_68*/ ctx[175]);
+    	slider10.$on("input", /*input_handler_68*/ ctx[177]);
 
     	function slider11_value_binding_1(value) {
-    		/*slider11_value_binding_1*/ ctx[176](value);
+    		/*slider11_value_binding_1*/ ctx[178](value);
     	}
 
     	let slider11_props = { min: 0, max: 30 };
@@ -7926,10 +6624,10 @@ var app = (function () {
 
     	slider11 = new Slider({ props: slider11_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider11, 'value', slider11_value_binding_1));
-    	slider11.$on("input", /*input_handler_69*/ ctx[177]);
+    	slider11.$on("input", /*input_handler_69*/ ctx[179]);
 
     	function slider12_value_binding_1(value) {
-    		/*slider12_value_binding_1*/ ctx[178](value);
+    		/*slider12_value_binding_1*/ ctx[180](value);
     	}
 
     	let slider12_props = { min: 0, max: 100 };
@@ -7940,10 +6638,10 @@ var app = (function () {
 
     	slider12 = new Slider({ props: slider12_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider12, 'value', slider12_value_binding_1));
-    	slider12.$on("input", /*input_handler_70*/ ctx[179]);
+    	slider12.$on("input", /*input_handler_70*/ ctx[181]);
 
     	function slider13_value_binding_1(value) {
-    		/*slider13_value_binding_1*/ ctx[180](value);
+    		/*slider13_value_binding_1*/ ctx[182](value);
     	}
 
     	let slider13_props = { min: 0, max: 100 };
@@ -7954,10 +6652,10 @@ var app = (function () {
 
     	slider13 = new Slider({ props: slider13_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider13, 'value', slider13_value_binding_1));
-    	slider13.$on("input", /*input_handler_71*/ ctx[181]);
+    	slider13.$on("input", /*input_handler_71*/ ctx[183]);
 
     	function slider14_value_binding_1(value) {
-    		/*slider14_value_binding_1*/ ctx[182](value);
+    		/*slider14_value_binding_1*/ ctx[184](value);
     	}
 
     	let slider14_props = { min: 0, max: 180 };
@@ -7968,10 +6666,10 @@ var app = (function () {
 
     	slider14 = new Slider({ props: slider14_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider14, 'value', slider14_value_binding_1));
-    	slider14.$on("input", /*input_handler_72*/ ctx[183]);
+    	slider14.$on("input", /*input_handler_72*/ ctx[185]);
 
     	function slider15_value_binding_1(value) {
-    		/*slider15_value_binding_1*/ ctx[184](value);
+    		/*slider15_value_binding_1*/ ctx[186](value);
     	}
 
     	let slider15_props = { min: 0, max: 999 };
@@ -7982,10 +6680,10 @@ var app = (function () {
 
     	slider15 = new Slider({ props: slider15_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider15, 'value', slider15_value_binding_1));
-    	slider15.$on("input", /*input_handler_73*/ ctx[185]);
+    	slider15.$on("input", /*input_handler_73*/ ctx[187]);
 
     	function slider16_value_binding_1(value) {
-    		/*slider16_value_binding_1*/ ctx[186](value);
+    		/*slider16_value_binding_1*/ ctx[188](value);
     	}
 
     	let slider16_props = { min: 0, max: 100 };
@@ -7996,7 +6694,7 @@ var app = (function () {
 
     	slider16 = new Slider({ props: slider16_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider16, 'value', slider16_value_binding_1));
-    	slider16.$on("input", /*input_handler_74*/ ctx[187]);
+    	slider16.$on("input", /*input_handler_74*/ ctx[189]);
 
     	const block = {
     		c: function create() {
@@ -8073,44 +6771,44 @@ var app = (function () {
     			br16 = element("br");
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 536, 8, 33319);
+    			add_location(input, file, 537, 8, 32357);
     			set_style(label, "text-align", "center");
     			attr_dev(label, "class", "svelte-viz99f");
-    			add_location(label, file, 535, 4, 33275);
+    			add_location(label, file, 536, 4, 32313);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 539, 162, 33663);
+    			add_location(br0, file, 540, 162, 32701);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 540, 171, 33841);
+    			add_location(br1, file, 541, 171, 32879);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 541, 171, 34019);
+    			add_location(br2, file, 542, 171, 33057);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 542, 175, 34201);
+    			add_location(br3, file, 543, 175, 33239);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 543, 162, 34370);
+    			add_location(br4, file, 544, 162, 33408);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 544, 180, 34557);
+    			add_location(br5, file, 545, 180, 33595);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 545, 172, 34736);
+    			add_location(br6, file, 546, 172, 33774);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 546, 162, 34905);
+    			add_location(br7, file, 547, 162, 33943);
     			attr_dev(br8, "class", "svelte-viz99f");
-    			add_location(br8, file, 547, 161, 35073);
+    			add_location(br8, file, 548, 161, 34111);
     			attr_dev(br9, "class", "svelte-viz99f");
-    			add_location(br9, file, 548, 170, 35250);
+    			add_location(br9, file, 549, 170, 34288);
     			attr_dev(br10, "class", "svelte-viz99f");
-    			add_location(br10, file, 549, 173, 35430);
+    			add_location(br10, file, 550, 173, 34468);
     			attr_dev(br11, "class", "svelte-viz99f");
-    			add_location(br11, file, 550, 163, 35600);
+    			add_location(br11, file, 551, 163, 34638);
     			attr_dev(br12, "class", "svelte-viz99f");
-    			add_location(br12, file, 551, 177, 35784);
+    			add_location(br12, file, 552, 177, 34822);
     			attr_dev(br13, "class", "svelte-viz99f");
-    			add_location(br13, file, 552, 179, 35970);
+    			add_location(br13, file, 553, 179, 35008);
     			attr_dev(br14, "class", "svelte-viz99f");
-    			add_location(br14, file, 553, 175, 36152);
+    			add_location(br14, file, 554, 175, 35190);
     			attr_dev(br15, "class", "svelte-viz99f");
-    			add_location(br15, file, 554, 167, 36326);
+    			add_location(br15, file, 555, 167, 35364);
     			attr_dev(br16, "class", "svelte-viz99f");
-    			add_location(br16, file, 555, 168, 36501);
+    			add_location(br16, file, 556, 168, 35539);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
@@ -8189,8 +6887,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "change", /*input_change_handler_5*/ ctx[152]),
-    					listen_dev(input, "change", /*change_handler_6*/ ctx[153], false, false, false)
+    					listen_dev(input, "change", /*input_change_handler_5*/ ctx[154]),
+    					listen_dev(input, "change", /*change_handler_6*/ ctx[155], false, false, false)
     				];
 
     				mounted = true;
@@ -8475,14 +7173,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(535:0) <Collapsible title={\\\"Lens Orbs\\\"}>",
+    		source: "(536:0) <Collapsible title={\\\"Lens Orbs\\\"}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (560:0) {#if startScreenVisible}
+    // (561:0) {#if startScreenVisible}
     function create_if_block(ctx) {
     	let div2;
     	let div0;
@@ -8565,54 +7263,54 @@ var app = (function () {
     			t18 = text("Developed by Yikuan Sun");
     			attr_dev(div0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div0, "style", "width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;");
-    			add_location(div0, file, 561, 8, 36602);
+    			add_location(div0, file, 562, 8, 35640);
     			attr_dev(img, "alt", "PROGEN FLARES 2");
     			if (!src_url_equal(img.src, img_src_value = "./textLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "width", "321");
     			attr_dev(img, "draggable", false);
     			attr_dev(img, "class", "svelte-viz99f");
-    			add_location(img, file, 563, 12, 36851);
+    			add_location(img, file, 564, 12, 35889);
     			attr_dev(br0, "class", "svelte-viz99f");
-    			add_location(br0, file, 564, 12, 36944);
+    			add_location(br0, file, 565, 12, 35982);
     			attr_dev(br1, "class", "svelte-viz99f");
-    			add_location(br1, file, 564, 19, 36951);
+    			add_location(br1, file, 565, 19, 35989);
     			attr_dev(span0, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span0, "class", "svelte-viz99f");
-    			add_location(span0, file, 565, 12, 36970);
+    			add_location(span0, file, 566, 12, 36008);
     			attr_dev(input0, "type", "number");
     			attr_dev(input0, "style", "width: 80px;");
     			attr_dev(input0, "class", "svelte-viz99f");
-    			add_location(input0, file, 565, 102, 37060);
+    			add_location(input0, file, 566, 102, 36098);
     			attr_dev(br2, "class", "svelte-viz99f");
-    			add_location(br2, file, 566, 12, 37163);
+    			add_location(br2, file, 567, 12, 36201);
     			attr_dev(span1, "style", "width: 145px; text-align: left; display: inline-block;");
     			attr_dev(span1, "class", "svelte-viz99f");
-    			add_location(span1, file, 567, 12, 37182);
+    			add_location(span1, file, 568, 12, 36220);
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "style", "width: 80px;");
     			attr_dev(input1, "class", "svelte-viz99f");
-    			add_location(input1, file, 567, 103, 37273);
+    			add_location(input1, file, 568, 103, 36311);
     			attr_dev(br3, "class", "svelte-viz99f");
-    			add_location(br3, file, 568, 12, 37377);
+    			add_location(br3, file, 569, 12, 36415);
     			attr_dev(br4, "class", "svelte-viz99f");
-    			add_location(br4, file, 568, 19, 37384);
+    			add_location(br4, file, 569, 19, 36422);
     			attr_dev(button, "class", "svelte-viz99f");
-    			add_location(button, file, 569, 12, 37403);
+    			add_location(button, file, 570, 12, 36441);
     			attr_dev(br5, "class", "svelte-viz99f");
-    			add_location(br5, file, 570, 12, 37458);
+    			add_location(br5, file, 571, 12, 36496);
     			attr_dev(br6, "class", "svelte-viz99f");
-    			add_location(br6, file, 570, 19, 37465);
+    			add_location(br6, file, 571, 19, 36503);
     			attr_dev(br7, "class", "svelte-viz99f");
-    			add_location(br7, file, 571, 71, 37543);
+    			add_location(br7, file, 572, 71, 36581);
     			attr_dev(span2, "style", "font-size: 10px;");
     			attr_dev(span2, "class", "svelte-viz99f");
-    			add_location(span2, file, 571, 12, 37484);
+    			add_location(span2, file, 572, 12, 36522);
     			attr_dev(div1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
     			attr_dev(div1, "style", "text-align: center;");
-    			add_location(div1, file, 562, 8, 36784);
+    			add_location(div1, file, 563, 8, 35822);
     			attr_dev(div2, "id", "startScreen");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 560, 4, 36560);
+    			add_location(div2, file, 561, 4, 35598);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -8655,9 +7353,9 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[188]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[189]),
-    					listen_dev(button, "click", /*onStart*/ ctx[11], false, false, false)
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[190]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[191]),
+    					listen_dev(button, "click", /*onStart*/ ctx[12], false, false, false)
     				];
 
     				mounted = true;
@@ -8693,7 +7391,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(560:0) {#if startScreenVisible}",
+    		source: "(561:0) {#if startScreenVisible}",
     		ctx
     	});
 
@@ -8752,10 +7450,17 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = !/*isPopupPlugin*/ ctx[5] && create_if_block_2(ctx);
-    	let if_block1 = /*isPopupPlugin*/ ctx[5] && create_if_block_1(ctx);
-    	presetpicker = new PresetPicker({ $$inline: true });
-    	presetpicker.$on("choose", /*choose_handler*/ ctx[24]);
+    	let if_block0 = !/*isPopupPlugin*/ ctx[6] && create_if_block_2(ctx);
+    	let if_block1 = /*isPopupPlugin*/ ctx[6] && create_if_block_1(ctx);
+    	let presetpicker_props = {};
+
+    	presetpicker = new PresetPicker({
+    			props: presetpicker_props,
+    			$$inline: true
+    		});
+
+    	/*presetpicker_binding*/ ctx[25](presetpicker);
+    	presetpicker.$on("choose", /*choose_handler*/ ctx[26]);
 
     	collapsible0 = new Collapsible({
     			props: {
@@ -8882,59 +7587,59 @@ var app = (function () {
     			t26 = space();
     			attr_dev(div0, "id", "exportPanel");
     			attr_dev(div0, "class", "svelte-viz99f");
-    			add_location(div0, file, 392, 0, 20735);
+    			add_location(div0, file, 393, 0, 19746);
     			attr_dev(canvas0, "id", "referenceImage");
     			attr_dev(canvas0, "width", canvas0_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas0, "height", canvas0_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas0, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas0, file, 410, 4, 21467);
+    			add_location(canvas0, file, 411, 4, 20478);
     			attr_dev(canvas1, "id", "baseCanvas");
     			attr_dev(canvas1, "width", canvas1_width_value = /*flareSettings*/ ctx[0].dimensions.width);
     			attr_dev(canvas1, "height", canvas1_height_value = /*flareSettings*/ ctx[0].dimensions.height);
     			attr_dev(canvas1, "class", "" + (null_to_empty("centered") + " svelte-viz99f"));
-    			add_location(canvas1, file, 411, 4, 21637);
+    			add_location(canvas1, file, 412, 4, 20648);
     			attr_dev(div1, "id", "previewSection");
     			attr_dev(div1, "class", "svelte-viz99f");
-    			add_location(div1, file, 409, 0, 21432);
+    			add_location(div1, file, 410, 0, 20443);
     			option0.__value = 1;
     			option0.value = option0.__value;
     			attr_dev(option0, "class", "svelte-viz99f");
-    			add_location(option0, file, 417, 4, 22025);
+    			add_location(option0, file, 418, 4, 21036);
     			option1.__value = 5 / 4;
     			option1.value = option1.__value;
     			attr_dev(option1, "class", "svelte-viz99f");
-    			add_location(option1, file, 418, 4, 22061);
+    			add_location(option1, file, 419, 4, 21072);
     			option2.__value = 5 / 3;
     			option2.value = option2.__value;
     			attr_dev(option2, "class", "svelte-viz99f");
-    			add_location(option2, file, 419, 4, 22098);
+    			add_location(option2, file, 420, 4, 21109);
     			option3.__value = 5 / 2;
     			option3.value = option3.__value;
     			attr_dev(option3, "class", "svelte-viz99f");
-    			add_location(option3, file, 420, 4, 22135);
+    			add_location(option3, file, 421, 4, 21146);
     			option4.__value = 5;
     			option4.value = option4.__value;
     			attr_dev(option4, "class", "svelte-viz99f");
-    			add_location(option4, file, 421, 4, 22172);
+    			add_location(option4, file, 422, 4, 21183);
     			attr_dev(select, "class", "svelte-viz99f");
-    			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler_1*/ ctx[21].call(select));
-    			add_location(select, file, 416, 0, 21903);
+    			if (/*flareSettings*/ ctx[0].downscaling === void 0) add_render_callback(() => /*select_change_handler_1*/ ctx[22].call(select));
+    			add_location(select, file, 417, 0, 20914);
     			attr_dev(span, "style", "white-space: pre; color: grey;");
     			attr_dev(span, "class", "svelte-viz99f");
-    			add_location(span, file, 423, 0, 22213);
+    			add_location(span, file, 424, 0, 21224);
     			attr_dev(input, "type", "checkbox");
     			input.checked = true;
     			attr_dev(input, "style", "margin-bottom: 0;");
     			attr_dev(input, "class", "svelte-viz99f");
-    			add_location(input, file, 424, 0, 22281);
+    			add_location(input, file, 425, 0, 21292);
     			attr_dev(button0, "class", "svelte-viz99f");
-    			add_location(button0, file, 426, 0, 22418);
+    			add_location(button0, file, 427, 0, 21429);
     			attr_dev(div2, "id", "sectionAbovePreview");
     			attr_dev(div2, "class", "svelte-viz99f");
-    			add_location(div2, file, 414, 0, 21854);
+    			add_location(div2, file, 415, 0, 20865);
     			attr_dev(button1, "style", "float: right;");
     			attr_dev(button1, "class", "svelte-viz99f");
-    			add_location(button1, file, 441, 4, 22781);
+    			add_location(button1, file, 442, 4, 21819);
 
     			attr_dev(div3, "style", `
     position: sticky;
@@ -8947,10 +7652,10 @@ var app = (function () {
 `);
 
     			attr_dev(div3, "class", "svelte-viz99f");
-    			add_location(div3, file, 431, 0, 22503);
+    			add_location(div3, file, 432, 0, 21514);
     			attr_dev(div4, "id", "controlPanel");
     			attr_dev(div4, "class", "svelte-viz99f");
-    			add_location(div4, file, 429, 0, 22476);
+    			add_location(div4, file, 430, 0, 21487);
     			document_1.title = "Progen Flares 2";
     		},
     		l: function claim(nodes) {
@@ -8964,10 +7669,10 @@ var app = (function () {
     			insert_dev(target, t1, anchor);
     			insert_dev(target, div1, anchor);
     			append_dev(div1, canvas0);
-    			/*canvas0_binding*/ ctx[19](canvas0);
+    			/*canvas0_binding*/ ctx[20](canvas0);
     			append_dev(div1, t2);
     			append_dev(div1, canvas1);
-    			/*canvas1_binding*/ ctx[20](canvas1);
+    			/*canvas1_binding*/ ctx[21](canvas1);
     			insert_dev(target, t3, anchor);
     			insert_dev(target, div2, anchor);
     			append_dev(div2, t4);
@@ -8982,7 +7687,7 @@ var app = (function () {
     			append_dev(div2, span);
     			append_dev(div2, t12);
     			append_dev(div2, input);
-    			/*input_binding*/ ctx[23](input);
+    			/*input_binding*/ ctx[24](input);
     			append_dev(div2, t13);
     			append_dev(div2, button0);
     			insert_dev(target, t15, anchor);
@@ -9013,19 +7718,19 @@ var app = (function () {
     			if (!mounted) {
     				dispose = [
     					action_destroyer(canvasClickDrag_1.call(null, canvas1)),
-    					listen_dev(canvas1, "clickDrag", /*handleClickDrag*/ ctx[7], false, false, false),
-    					listen_dev(select, "change", /*select_change_handler_1*/ ctx[21]),
-    					listen_dev(select, "change", /*change_handler*/ ctx[22], false, false, false),
-    					listen_dev(input, "change", /*handleRIcheckbox*/ ctx[13], false, false, false),
-    					listen_dev(button0, "click", /*handleRIbutton*/ ctx[12], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_3*/ ctx[25], false, false, false)
+    					listen_dev(canvas1, "clickDrag", /*handleClickDrag*/ ctx[8], false, false, false),
+    					listen_dev(select, "change", /*select_change_handler_1*/ ctx[22]),
+    					listen_dev(select, "change", /*change_handler*/ ctx[23], false, false, false),
+    					listen_dev(input, "change", /*handleRIcheckbox*/ ctx[14], false, false, false),
+    					listen_dev(button0, "click", /*handleRIbutton*/ ctx[13], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_3*/ ctx[27], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (!/*isPopupPlugin*/ ctx[5]) {
+    			if (!/*isPopupPlugin*/ ctx[6]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -9038,7 +7743,7 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (/*isPopupPlugin*/ ctx[5]) {
+    			if (/*isPopupPlugin*/ ctx[6]) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
@@ -9071,51 +7776,53 @@ var app = (function () {
     				select_option(select, /*flareSettings*/ ctx[0].downscaling);
     			}
 
+    			const presetpicker_changes = {};
+    			presetpicker.$set(presetpicker_changes);
     			const collapsible0_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 128) {
     				collapsible0_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible0.$set(collapsible0_changes);
     			const collapsible1_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 128) {
     				collapsible1_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible1.$set(collapsible1_changes);
     			const collapsible2_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 128) {
     				collapsible2_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible2.$set(collapsible2_changes);
     			const collapsible3_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 128) {
     				collapsible3_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible3.$set(collapsible3_changes);
     			const collapsible4_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 128) {
     				collapsible4_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible4.$set(collapsible4_changes);
     			const collapsible5_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 128) {
     				collapsible5_changes.$$scope = { dirty, ctx };
     			}
 
     			collapsible5.$set(collapsible5_changes);
     			const collapsible6_changes = {};
 
-    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 32) {
+    			if (dirty[0] & /*flareSettings*/ 1 | dirty[6] & /*$$scope*/ 128) {
     				collapsible6_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9175,13 +7882,14 @@ var app = (function () {
     			if (if_block1) if_block1.d();
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(div1);
-    			/*canvas0_binding*/ ctx[19](null);
-    			/*canvas1_binding*/ ctx[20](null);
+    			/*canvas0_binding*/ ctx[20](null);
+    			/*canvas1_binding*/ ctx[21](null);
     			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(div2);
-    			/*input_binding*/ ctx[23](null);
+    			/*input_binding*/ ctx[24](null);
     			if (detaching) detach_dev(t15);
     			if (detaching) detach_dev(div4);
+    			/*presetpicker_binding*/ ctx[25](null);
     			destroy_component(presetpicker);
     			destroy_component(collapsible0);
     			destroy_component(collapsible1);
@@ -9523,93 +8231,10 @@ var app = (function () {
     	}
 
     	var startScreenVisible = true;
+    	let myPresetPicker;
 
     	function onStart() {
-    		setPreset({
-    			"hotspot": {
-    				"radius": 595,
-    				"intensity": 20,
-    				"deformationAmount": 1.5,
-    				"deformationFrequency": 0.01,
-    				"deformationSeed": 239,
-    				"alpha": 100,
-    				"angle": 0,
-    				"hue": 39,
-    				"saturation": 88,
-    				"anamorph": 0
-    			},
-    			"streak": {
-    				"thickness": 121,
-    				"width": 2435,
-    				"intensity": -25,
-    				"count": 1,
-    				"angle": 0,
-    				"shift": 48,
-    				"alpha": 100,
-    				"hue": 216,
-    				"saturation": 100
-    			},
-    			"ring": {
-    				"radius": 300,
-    				"thickness": 50,
-    				"blur": 4,
-    				"cropSize": 0,
-    				"cropHardness": 50,
-    				"alpha": 0,
-    				"hue": 200,
-    				"saturation": 100,
-    				"anamorph": 0
-    			},
-    			"miIris": {
-    				"radius": 72,
-    				"sides": 6,
-    				"roundness": 50,
-    				"angle": 0,
-    				"fillAlpha": 10,
-    				"fringeAlpha": 12,
-    				"fringeSize": 28,
-    				"blur": 3,
-    				"countAway": 5,
-    				"countTowards": 12,
-    				"spread": 30,
-    				"sizeVariance": 40,
-    				"perspective": 100,
-    				"alphaVariance": 50,
-    				"seed": 333,
-    				"hue": 39,
-    				"saturation": 100,
-    				"hueVariance": 40,
-    				"anamorph": 0
-    			},
-    			"glow": {
-    				"radius": 999,
-    				"alpha": 25,
-    				"softening": 0,
-    				"hue": 23,
-    				"saturation": 100,
-    				"anamorph": 0
-    			},
-    			"lensOrbs": {
-    				"radius": 21,
-    				"sides": 6,
-    				"roundness": 100,
-    				"angle": 0,
-    				"fillAlpha": 3,
-    				"fringeAlpha": 6,
-    				"fringeSize": 4,
-    				"blur": 2,
-    				"count": 123,
-    				"threshold": 1210,
-    				"seed": 222,
-    				"sizeVariance": 0,
-    				"alphaVariance": 42,
-    				"hue": 16,
-    				"saturation": 100,
-    				"hueVariance": 0,
-    				"anamorph": 0
-    			}
-    		});
-
+    		setPreset(myPresetPicker.defaultPreset);
     		$$invalidate(0, flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2, flareSettings);
     		$$invalidate(0, flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2, flareSettings);
     		$$invalidate(0, flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5, flareSettings);
@@ -9632,7 +8257,7 @@ var app = (function () {
     			fR.addEventListener("loadend", e => {
     				$$invalidate(2, referenceImage.style.backgroundImage = `url("${e.target.result}")`, referenceImage);
     				this.value = "Custom";
-    				$$invalidate(4, rIcheckbox.checked = true, rIcheckbox);
+    				$$invalidate(5, rIcheckbox.checked = true, rIcheckbox);
     				handleRIcheckbox.bind(rIcheckbox)();
     			});
 
@@ -9672,7 +8297,7 @@ var app = (function () {
     		let locSearch = new URLSearchParams(location.search);
 
     		if (locSearch.get("popupPlugin") == "yeah") {
-    			$$invalidate(5, isPopupPlugin = true);
+    			$$invalidate(6, isPopupPlugin = true);
     			$$invalidate(0, flareSettings.dimensions.width = parseInt(locSearch.get("docWidth")), flareSettings);
     			$$invalidate(0, flareSettings.dimensions.height = parseInt(locSearch.get("docHeight")), flareSettings);
     			setTimeout(onStart, 1);
@@ -9682,7 +8307,7 @@ var app = (function () {
 
     				if (e.data[0] == "refImage") {
     					$$invalidate(2, referenceImage.style.backgroundImage = `url("${e.data[1]}")`, referenceImage);
-    					$$invalidate(4, rIcheckbox.checked = true, rIcheckbox);
+    					$$invalidate(5, rIcheckbox.checked = true, rIcheckbox);
     					handleRIcheckbox.bind(rIcheckbox)();
     				}
     			});
@@ -9740,7 +8365,14 @@ var app = (function () {
     	function input_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
     			rIcheckbox = $$value;
-    			$$invalidate(4, rIcheckbox);
+    			$$invalidate(5, rIcheckbox);
+    		});
+    	}
+
+    	function presetpicker_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			myPresetPicker = $$value;
+    			$$invalidate(4, myPresetPicker);
     		});
     	}
 
@@ -10665,6 +9297,7 @@ var app = (function () {
     		createPresetSaveLink,
     		setPreset,
     		startScreenVisible,
+    		myPresetPicker,
     		onStart,
     		rIcheckbox,
     		handleRIbutton,
@@ -10679,8 +9312,9 @@ var app = (function () {
     		if ('baseCanvas' in $$props) $$invalidate(1, baseCanvas = $$props.baseCanvas);
     		if ('referenceImage' in $$props) $$invalidate(2, referenceImage = $$props.referenceImage);
     		if ('startScreenVisible' in $$props) $$invalidate(3, startScreenVisible = $$props.startScreenVisible);
-    		if ('rIcheckbox' in $$props) $$invalidate(4, rIcheckbox = $$props.rIcheckbox);
-    		if ('isPopupPlugin' in $$props) $$invalidate(5, isPopupPlugin = $$props.isPopupPlugin);
+    		if ('myPresetPicker' in $$props) $$invalidate(4, myPresetPicker = $$props.myPresetPicker);
+    		if ('rIcheckbox' in $$props) $$invalidate(5, rIcheckbox = $$props.rIcheckbox);
+    		if ('isPopupPlugin' in $$props) $$invalidate(6, isPopupPlugin = $$props.isPopupPlugin);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10692,6 +9326,7 @@ var app = (function () {
     		baseCanvas,
     		referenceImage,
     		startScreenVisible,
+    		myPresetPicker,
     		rIcheckbox,
     		isPopupPlugin,
     		renderFlare,
@@ -10712,6 +9347,7 @@ var app = (function () {
     		select_change_handler_1,
     		change_handler,
     		input_binding,
+    		presetpicker_binding,
     		choose_handler,
     		click_handler_3,
     		slider0_value_binding,
