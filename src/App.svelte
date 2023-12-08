@@ -388,7 +388,7 @@
                     (handleRIcheckbox.bind(rIcheckbox))();
                 }
             });
-            window.postMessage(["pluginStatus", "ready"]);
+            window.opener.postMessage(["pluginStatus", "ready"]);
         }
     });
 </script>
@@ -404,7 +404,7 @@
     </select>
 {/if}
 {#if (isPopupPlugin)}
-    <button on:click={function() { window.postMessage(["finalImage", createDownloadLink().href]); }}>Finish</button>
+    <button on:click={function() { window.opener.postMessage(["finalImage", createDownloadLink().href]); }}>Finish</button>
     <span style="white-space: pre;">{"  "}</span>
     <button on:click={function() { window.close(); }}>Close</button>
 {/if}
