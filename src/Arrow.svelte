@@ -19,6 +19,8 @@
     border-right: {thickness}px solid {color};
     transform: rotate({-45 - direction}deg);
     transition: transform {rotationDuration}ms;
+    position: relative;
+    z-index: -1;
     {style}
 "></div>
 

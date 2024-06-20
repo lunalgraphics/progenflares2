@@ -20,6 +20,7 @@
     import cherrytree from "./builtinPresets/cherrytree.pgf2.json";
     import ancientmariner from "./builtinPresets/ancientmariner.pgf2.json";
     import lemonlight from "./builtinPresets/lemonlight.pgf2.json";
+    import { fade, slide } from 'svelte/transition';
 
     const dispatch = createEventDispatcher();
 
@@ -45,16 +46,6 @@
         { name: "Lemon Light", data: lemonlight },
     ];
 
-    function handleChange() {
-        if (this.value == "UPLOAD_PRESET") {
-            fileInput.click();
-        }
-        else {
-            dispatch("choose", JSON.parse(this.value));
-        }
-        this.value = "";
-    }
-
     function handleFileInput() {
         var file = this.files[0];
         var fR = new FileReader();
@@ -63,20 +54,44 @@
         });
         fR.readAsText(file);
         this.value = null;
+        pickerOpen = false;
     }
 
     export const defaultPreset = builtInPresets[0].data;
+
+    let pickerOpen = false;
 </script>
 
-<select bind:this={dropdown} on:change={handleChange}>
-    <option value={""} selected disabled hidden>Use a Preset</option>
-    <option value={"UPLOAD_PRESET"}>Import .pgf2 file</option>
-    <optgroup label={"Built-In Presets"}>
-        {#each builtInPresets as preset}
-            <option value={JSON.stringify(preset.data)}>{preset.name}</option>
-        {/each}
-    </optgroup>
-</select>
+<button style="width: 49%;" on:click={() => { pickerOpen = true; }}>Use a Preset</button>
+
+{#if pickerOpen}
+    <div class="greywall"
+        transition:fade
+        on:mousedown={() => { pickerOpen = false; }}
+    ></div>
+    <div class="modal"
+        transition:slide
+    >
+        <div style="width: 100%; height: 100%; overflow-y: scroll;">
+            <button on:click={() => {
+                fileInput.click();
+            }}>
+                Import .pgf2 file
+            </button>
+            <br />
+            <b>Built-in presets</b>
+            {#each builtInPresets as preset}
+                <br />
+                <button on:click={() => {
+                    dispatch("choose", preset["data"]);
+                    pickerOpen = false;
+                }}>
+                    {preset["name"]}
+                </button>
+            {/each}
+        </div>
+    </div>
+{/if}
 
 <input type={"file"} bind:this={fileInput} on:change={handleFileInput} accept=".pgf2" />
 
@@ -90,5 +105,29 @@
 
     input[type=file] {
         display: none;
+    }
+
+    .greywall {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0.75;
+        z-index: 36;
+    }
+
+    .modal {
+        position: fixed;
+        width: 500px;
+        height: 300px;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        background-color: var(--color-scheme-6);
+        border-radius: 8px;
+        z-index: 37;
+        padding: 16px;
     }
 </style>
