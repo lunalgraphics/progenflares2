@@ -5,6 +5,7 @@
 <script>
     import { createEventDispatcher } from 'svelte';
     import { slide } from "svelte/transition";
+    import Arrow from './Arrow.svelte';
 
     const dispatch = createEventDispatcher();
 
@@ -20,9 +21,12 @@
 </script>
 
 <div id={"nameTag"} on:mousedown={toggleCollapse}>
-    <div style={"width: 18px; text-align: center; display: inline-block;"}>
-        {collapsed?"+":"-"}
-    </div>
+    <Arrow
+        color="white"
+        size={5}
+        direction={collapsed?0:(-90)}
+        style="margin-bottom: 2px; margin-left: 7px; margin-right: 5px;"
+    ></Arrow>
     <b>{title}</b>
 </div>
 
