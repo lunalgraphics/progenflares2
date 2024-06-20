@@ -122,6 +122,8 @@
         position: fixed;
         width: 500px;
         height: 300px;
+        max-width: 100vw;
+        max-height: 100vh;
         top: 50vh;
         left: 50vw;
         transform: translate(-50%, -50%);
