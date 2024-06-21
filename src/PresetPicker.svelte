@@ -48,16 +48,17 @@
     ];
 
     function handleFileInput() {
-        var file = this.files[0];
-        var fR = new FileReader();
-        fR.addEventListener("loadend", function(e) {
-            userPresets = [...userPresets, {
-                name: file.name,
-                data: JSON.parse(e.target.result),
-            }];
-            setCookie("userPresets", JSON.stringify(userPresets), 900);
-        });
-        fR.readAsText(file);
+        for (let file of this.files) {
+            var fR = new FileReader();
+            fR.addEventListener("loadend", function(e) {
+                userPresets = [...userPresets, {
+                    name: file.name,
+                    data: JSON.parse(e.target.result),
+                }];
+                setCookie("userPresets", JSON.stringify(userPresets), 900);
+            });
+            fR.readAsText(file);
+        }
         this.value = null;
     }
 
@@ -119,16 +120,11 @@
     </div>
 {/if}
 
-<input type={"file"} bind:this={fileInput} on:change={handleFileInput} accept=".pgf2" />
+<input type={"file"} bind:this={fileInput} on:change={handleFileInput} accept=".pgf2" multiple={true} />
 
 <svelte:options accessors={true} />
 
 <style>
-    select {
-        outline: none;
-        width: 200px;
-    }
-
     input[type=file] {
         display: none;
     }
