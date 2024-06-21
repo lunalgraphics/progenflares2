@@ -21,7 +21,6 @@
     import ancientmariner from "./builtinPresets/ancientmariner.pgf2.json";
     import lemonlight from "./builtinPresets/lemonlight.pgf2.json";
     import { fade, slide } from 'svelte/transition';
-    import { setCookie, getCookie } from "./cookies"
 
     const dispatch = createEventDispatcher();
 
@@ -55,7 +54,7 @@
                     name: file.name,
                     data: JSON.parse(e.target.result),
                 }];
-                setCookie("userPresets", JSON.stringify(userPresets), 900);
+                window.localStorage.setItem("userPresets", JSON.stringify(userPresets), 900);
             });
             fR.readAsText(file);
         }
@@ -68,8 +67,8 @@
     let userPresets = [];
 
     onMount(() => {
-        if (getCookie("userPresets")) {
-            userPresets = JSON.parse(getCookie("userPresets"));
+        if (window.localStorage.getItem("userPresets")) {
+            userPresets = JSON.parse(window.localStorage.getItem("userPresets"));
         }
     });
 </script>
