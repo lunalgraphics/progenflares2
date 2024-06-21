@@ -94,13 +94,21 @@
             </div>
             <br />
             <b>Imported Presets</b>
-            {#each userPresets as preset}
+            {#each userPresets as preset, i}
                 <br />
                 <div on:mousedown={() => {
                     dispatch("choose", preset["data"]);
                     pickerOpen = false;
-                }} class="longButton" style="border-top-style: solid;">
+                }} class="longButton" style="border-top-style: solid; width: calc(100% - 40px);">
                     {preset["name"]}
+                </div>
+                <div on:mousedown={() => {
+                    userPresets = userPresets.filter((val, index) => {
+                        return index != i;
+                    });
+                    window.localStorage.setItem("userPresets", JSON.stringify(userPresets), 900);
+                }} class="longButton" style="border-top-style: solid; border-left-style: solid; width: 40px; float: right;">
+                    -
                 </div>
             {/each}
             <br />
