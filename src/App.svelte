@@ -442,7 +442,7 @@ Reference Image
         border-bottom: 1px solid #353535;
 `}>
     <PresetPicker on:choose={ function(e) { setPreset(e.detail); } } bind:this={myPresetPicker} />
-    <button on:click={function() { createPresetSaveLink().click(); }} style="float: right; width: 49%;">Save This Preset</button>
+    <button on:click={function() { createPresetSaveLink().click(); }} style="float: right; width: 49%;">Create Preset</button>
 </div>
 
 <Collapsible title={"Global"} collapsed={false}>

@@ -73,7 +73,7 @@
     });
 </script>
 
-<button style="width: 49%;" on:click={() => { pickerOpen = true; }}>Use a Preset</button>
+<button style="width: 49%;" on:click={() => { pickerOpen = true; }}>Apply Preset</button>
 
 {#if pickerOpen}
     <div class="greywall"
