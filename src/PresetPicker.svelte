@@ -3,7 +3,7 @@
 </script>
 
 <script>
-    import { createEventDispatcher } from 'svelte';
+    import { createEventDispatcher, onMount } from 'svelte';
     import sundigital from "./builtinPresets/sundigital.pgf2.json";
     import simplecyan from "./builtinPresets/simplecyan.pgf2.json";
     import flamboyantanamorphic from "./builtinPresets/flamboyantanamorphic.pgf2.json";
@@ -21,6 +21,7 @@
     import ancientmariner from "./builtinPresets/ancientmariner.pgf2.json";
     import lemonlight from "./builtinPresets/lemonlight.pgf2.json";
     import { fade, slide } from 'svelte/transition';
+    import { setCookie, getCookie } from "./cookies"
 
     const dispatch = createEventDispatcher();
 
@@ -50,16 +51,26 @@
         var file = this.files[0];
         var fR = new FileReader();
         fR.addEventListener("loadend", function(e) {
-            dispatch("choose", JSON.parse(e.target.result));
+            userPresets = [...userPresets, {
+                name: file.name,
+                data: JSON.parse(e.target.result),
+            }];
+            setCookie("userPresets", JSON.stringify(userPresets), 900);
         });
         fR.readAsText(file);
         this.value = null;
-        pickerOpen = false;
     }
 
     export const defaultPreset = builtInPresets[0].data;
 
     let pickerOpen = false;
+    let userPresets = [];
+
+    onMount(() => {
+        if (getCookie("userPresets")) {
+            userPresets = JSON.parse(getCookie("userPresets"));
+        }
+    });
 </script>
 
 <button style="width: 49%;" on:click={() => { pickerOpen = true; }}>Use a Preset</button>
@@ -81,6 +92,18 @@
                     pickerOpen = false;
                 }} class="longButton" style="width: 50%; float: right; border-bottom-style: solid;">Cancel</div>
             </div>
+            <br />
+            <b>Imported Presets</b>
+            {#each userPresets as preset}
+                <br />
+                <div on:mousedown={() => {
+                    dispatch("choose", preset["data"]);
+                    pickerOpen = false;
+                }} class="longButton" style="border-top-style: solid;">
+                    {preset["name"]}
+                </div>
+            {/each}
+            <br />
             <br />
             <b>Built-in presets</b>
             {#each builtInPresets as preset}
