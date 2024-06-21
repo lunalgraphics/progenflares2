@@ -73,21 +73,24 @@
         transition:slide
     >
         <div style="width: 100%; height: 100%; overflow-y: scroll;">
-            <button on:click={() => {
-                fileInput.click();
-            }}>
-                Import .pgf2 file
-            </button>
+            <div style="position: sticky; top: 0;">
+                <div on:mousedown={() => {
+                    fileInput.click();
+                }} class="longButton" style="width: 50%; border-bottom-style: solid; border-right-style: solid;">Import Preset</div>
+                <div on:mousedown={() => {
+                    pickerOpen = false;
+                }} class="longButton" style="width: 50%; float: right; border-bottom-style: solid;">Cancel</div>
+            </div>
             <br />
             <b>Built-in presets</b>
             {#each builtInPresets as preset}
                 <br />
-                <button on:click={() => {
+                <div on:mousedown={() => {
                     dispatch("choose", preset["data"]);
                     pickerOpen = false;
-                }}>
+                }} class="longButton" style="border-top-style: solid;">
                     {preset["name"]}
-                </button>
+                </div>
             {/each}
         </div>
     </div>
@@ -131,5 +134,22 @@
         border-radius: 8px;
         z-index: 37;
         padding: 16px;
+    }
+
+    .longButton {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        border: 1px hidden #333333;
+        text-align: center;
+        display: inline-block;
+        background-color: var(--color-scheme-6);
+        color: whitesmoke;
+        transition: background-color 0.2s;
+    }
+
+    .longButton:hover {
+        background-color: #333333;
+        cursor: pointer;
     }
 </style>
