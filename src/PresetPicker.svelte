@@ -3,7 +3,7 @@
 </script>
 
 <script>
-    import { createEventDispatcher } from 'svelte';
+    import { createEventDispatcher, onMount } from 'svelte';
     import sundigital from "./builtinPresets/sundigital.pgf2.json";
     import simplecyan from "./builtinPresets/simplecyan.pgf2.json";
     import flamboyantanamorphic from "./builtinPresets/flamboyantanamorphic.pgf2.json";
@@ -20,6 +20,7 @@
     import cherrytree from "./builtinPresets/cherrytree.pgf2.json";
     import ancientmariner from "./builtinPresets/ancientmariner.pgf2.json";
     import lemonlight from "./builtinPresets/lemonlight.pgf2.json";
+    import { fade, slide } from 'svelte/transition';
 
     const dispatch = createEventDispatcher();
 
@@ -45,50 +46,136 @@
         { name: "Lemon Light", data: lemonlight },
     ];
 
-    function handleChange() {
-        if (this.value == "UPLOAD_PRESET") {
-            fileInput.click();
-        }
-        else {
-            dispatch("choose", JSON.parse(this.value));
-        }
-        this.value = "";
-    }
-
     function handleFileInput() {
-        var file = this.files[0];
-        var fR = new FileReader();
-        fR.addEventListener("loadend", function(e) {
-            dispatch("choose", JSON.parse(e.target.result));
-        });
-        fR.readAsText(file);
+        for (let file of this.files) {
+            var fR = new FileReader();
+            fR.addEventListener("loadend", function(e) {
+                userPresets = [...userPresets, {
+                    name: file.name,
+                    data: JSON.parse(e.target.result),
+                }];
+                window.localStorage.setItem("userPresets", JSON.stringify(userPresets), 900);
+            });
+            fR.readAsText(file);
+        }
         this.value = null;
     }
 
     export const defaultPreset = builtInPresets[0].data;
+
+    let pickerOpen = false;
+    let userPresets = [];
+
+    onMount(() => {
+        if (window.localStorage.getItem("userPresets")) {
+            userPresets = JSON.parse(window.localStorage.getItem("userPresets"));
+        }
+    });
 </script>
 
-<select bind:this={dropdown} on:change={handleChange}>
-    <option value={""} selected disabled hidden>Use a Preset</option>
-    <option value={"UPLOAD_PRESET"}>Import .pgf2 file</option>
-    <optgroup label={"Built-In Presets"}>
-        {#each builtInPresets as preset}
-            <option value={JSON.stringify(preset.data)}>{preset.name}</option>
-        {/each}
-    </optgroup>
-</select>
+<button style="width: 49%;" on:click={() => { pickerOpen = true; }}>Apply Preset</button>
 
-<input type={"file"} bind:this={fileInput} on:change={handleFileInput} accept=".pgf2" />
+{#if pickerOpen}
+    <div class="greywall"
+        transition:fade
+        on:mousedown={() => { pickerOpen = false; }}
+    ></div>
+    <div class="modal"
+        transition:slide
+    >
+        <div style="width: 100%; height: 100%; overflow-y: scroll;">
+            <div style="position: sticky; top: 0;">
+                <div on:mousedown={() => {
+                    fileInput.click();
+                }} class="longButton" style="width: 50%; border-bottom-style: solid; border-right-style: solid;">Import Preset</div>
+                <div on:mousedown={() => {
+                    pickerOpen = false;
+                }} class="longButton" style="width: 50%; float: right; border-bottom-style: solid;">Cancel</div>
+            </div>
+            <br />
+            <b>Imported Presets</b>
+            {#each userPresets as preset, i}
+                <br />
+                <div on:mousedown={() => {
+                    dispatch("choose", preset["data"]);
+                    pickerOpen = false;
+                }} class="longButton" style="border-top-style: solid; width: calc(100% - 40px);">
+                    {preset["name"]}
+                </div>
+                <div on:mousedown={() => {
+                    userPresets = userPresets.filter((val, index) => {
+                        return index != i;
+                    });
+                    window.localStorage.setItem("userPresets", JSON.stringify(userPresets), 900);
+                }} class="longButton" style="border-top-style: solid; border-left-style: solid; width: 40px; float: right;">
+                    -
+                </div>
+            {/each}
+            <br />
+            <br />
+            <b>Built-in presets</b>
+            {#each builtInPresets as preset}
+                <br />
+                <div on:mousedown={() => {
+                    dispatch("choose", preset["data"]);
+                    pickerOpen = false;
+                }} class="longButton" style="border-top-style: solid;">
+                    {preset["name"]}
+                </div>
+            {/each}
+        </div>
+    </div>
+{/if}
+
+<input type={"file"} bind:this={fileInput} on:change={handleFileInput} accept=".pgf2" multiple={true} />
 
 <svelte:options accessors={true} />
 
 <style>
-    select {
-        outline: none;
-        width: 200px;
-    }
-
     input[type=file] {
         display: none;
+    }
+
+    .greywall {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: 0.75;
+        z-index: 36;
+    }
+
+    .modal {
+        position: fixed;
+        width: 500px;
+        height: 300px;
+        max-width: 100vw;
+        max-height: 100vh;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        background-color: var(--color-scheme-6);
+        border-radius: 8px;
+        z-index: 37;
+        padding: 16px;
+    }
+
+    .longButton {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        border: 1px hidden #333333;
+        text-align: center;
+        display: inline-block;
+        background-color: var(--color-scheme-6);
+        color: whitesmoke;
+        transition: background-color 0.2s;
+    }
+
+    .longButton:hover {
+        background-color: #333333;
+        cursor: pointer;
     }
 </style>

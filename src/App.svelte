@@ -442,7 +442,7 @@ Reference Image
         border-bottom: 1px solid #353535;
 `}>
     <PresetPicker on:choose={ function(e) { setPreset(e.detail); } } bind:this={myPresetPicker} />
-    <button on:click={function() { createPresetSaveLink().click(); }} style={"float: right;"}>Save Preset</button>
+    <button on:click={function() { createPresetSaveLink().click(); }} style="float: right; width: 49%;">Create Preset</button>
 </div>
 
 <Collapsible title={"Global"} collapsed={false}>
@@ -678,19 +678,19 @@ Reference Image
         background-size: cover;
         background-position: center;
     }
-    button {
+    :global(button) {
         padding: 4px 12px;
         background-color: #333333;
         border: 1px solid #555555;
         color: var(--color-scheme-1);
         transition: border 0.2s, box-shadow 0.2s, background-color 0.2s;
     }
-    button:focus, :global(select):focus {
+    :global(button):focus, :global(select):focus {
         border: 1px solid var(--color-scheme-1);
         box-shadow: inset 0 0 4px var(--color-scheme-2);
         outline: none!important;
     }
-    button:hover, :global(select):hover {
+    :global(button):hover, :global(select):hover {
         border: 1px solid var(--color-scheme-1);
     }
     :global(select) {
@@ -703,17 +703,17 @@ Reference Image
     :global(select), :global(button) {
         margin-bottom: 0;
     }
-    ::-webkit-scrollbar {
+    :global(::-webkit-scrollbar) {
         width: 10px;
         height: 10px;
     }
-    ::-webkit-scrollbar-track {
+    :global(::-webkit-scrollbar-track) {
         opacity: 0;
     }
-    ::-webkit-scrollbar-thumb {
+    :global(::-webkit-scrollbar-thumb) {
         background: #333333;
     }
-    ::-webkit-scrollbar-thumb:hover {
+    :global(::-webkit-scrollbar-thumb:hover) {
         background: var(--color-scheme-3);
     }
     :global(::selection) {
