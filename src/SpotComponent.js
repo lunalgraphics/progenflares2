@@ -11,6 +11,7 @@ class SpotComponent {
         deformationFrequency: 0.006,
         deformationAmount: 1.6,
         deformationSeed: 1,
+        deformationOctaves: 10,
         hue: 200,
         saturation: 100,
         angle: 0,
@@ -37,6 +38,7 @@ class SpotComponent {
         var deformationTexture = new FractalNoise(1024, 1024, {
             baseFrequency: [this.options.deformationFrequency, 0],
             seed: this.options.deformationSeed,
+            numOctaves: this.options.deformationOctaves, 
         });
         deformationTexture.render();
 
