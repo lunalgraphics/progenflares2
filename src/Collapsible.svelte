@@ -5,7 +5,7 @@
 <script>
     import { createEventDispatcher } from 'svelte';
     import { slide } from "svelte/transition";
-    import Arrow from './Arrow.svelte';
+    import PlusMinus from "./PlusMinus.svelte";
 
     const dispatch = createEventDispatcher();
 
@@ -21,12 +21,12 @@
 </script>
 
 <div id={"nameTag"} on:mousedown={toggleCollapse}>
-    <Arrow
+    <PlusMinus
         color="white"
-        size={5}
-        direction={collapsed?0:(-90)}
-        style="margin-bottom: 2px; margin-left: 7px; margin-right: 5px;"
-    ></Arrow>
+        size={9}
+        plus={collapsed}
+        style="margin-bottom: 1px; margin-left: 7px; margin-right: 5px;"
+    ></PlusMinus>
     <b>{title}</b>
 </div>
 
