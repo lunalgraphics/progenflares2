@@ -315,6 +315,8 @@
                 flareSettings[keyi][keyj] = presetData[keyi][keyj];
             }
         }
+        if (!presetData["lensOrbs"]) flareSettings["lensOrbs"]["visible"] = false;
+        if (!presetData["hotspot"]["deformationOctaves"]) flareSettings["hotspot"]["deformationOctaves"] = 10;
         renderFlare(true, true, true, true, true, true);
     }
 
