@@ -20,6 +20,7 @@
     import cherrytree from "./builtinPresets/cherrytree.pgf2.json";
     import ancientmariner from "./builtinPresets/ancientmariner.pgf2.json";
     import lemonlight from "./builtinPresets/lemonlight.pgf2.json";
+    import genericanamorphic from "./builtinPresets/genericanamorphic.pgf2.json"
     import { fade, slide } from 'svelte/transition';
 
     const dispatch = createEventDispatcher();
@@ -44,6 +45,7 @@
         { name: "Cherry Tree", data: cherrytree },
         { name: "Ancient Mariner", data: ancientmariner },
         { name: "Lemon Light", data: lemonlight },
+        { name: "Generic Anamorphic", data: genericanamorphic },
     ];
 
     function handleFileInput() {
