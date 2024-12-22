@@ -567,8 +567,14 @@ Reference Image
 
 {#if startScreenVisible}
     <div id={"startScreen"} style="background-image: url({coverImage});" out:fade>
-        <div class={"centered"} style={"width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;"}></div>
-        <div class={"centered"} style={"text-align: center;"}>
+        <div class={"centered"}
+            style:width="calc(min(500px, 100vw))"
+            style:height="calc(min(500px, 100vh))"
+            style:backdrop-filter="blur(5px) brightness(0.625)"
+            style:box-shadow="0 4.41px 22.22px #00000099"
+            style:border-radius="10px"
+            ></div>
+        <div class={"centered"} style:text-align="center">
             <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
             <br /> <br />
             <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
