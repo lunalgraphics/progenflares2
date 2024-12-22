@@ -57,7 +57,7 @@
             deformationAmount: 1.6,
             deformationFrequency: 0.006,
             deformationSeed: 1,
-            deformationOctaves: 10,
+            deformationOctaves: 5,
             alpha: 100,
             angle: 0,
             hue: 200,
@@ -316,7 +316,7 @@
             }
         }
         if (!presetData["lensOrbs"]) flareSettings["lensOrbs"]["visible"] = false;
-        if (!presetData["hotspot"]["deformationOctaves"]) flareSettings["hotspot"]["deformationOctaves"] = 10;
+        if (!presetData["hotspot"]["deformationOctaves"]) flareSettings["hotspot"]["deformationOctaves"] = 5;
         renderFlare(true, true, true, true, true, true);
     }
 
@@ -469,7 +469,7 @@ Reference Image
     Intensity: <Slider min={0} max={50} bind:value={flareSettings.hotspot.intensity} on:input={function() { renderFlare(true); }} /> <br />
     Rays Frequency: <Slider min={0} max={0.05} step={0.001} bind:value={flareSettings.hotspot.deformationFrequency} on:input={function() { renderFlare(true); }} /> <br />
     Rays Definition: <Slider min={0} max={2.1} step={0.01} bind:value={flareSettings.hotspot.deformationAmount} on:input={function() { renderFlare(true); }} /> <br />
-    Rays Detail: <Slider min={1} max={10} step={1} bind:value={flareSettings.hotspot.deformationOctaves} on:input={function() { renderFlare(true); }} /> <br />
+    Rays Detail: <Slider min={1} max={5} step={1} bind:value={flareSettings.hotspot.deformationOctaves} on:input={function() { renderFlare(true); }} /> <br />
     Random Seed: <Slider min={1} max={999} bind:value={flareSettings.hotspot.deformationSeed} on:input={function() { renderFlare(true); }} /> <br />
     Anamorph: <Slider min={0} max={100} bind:value={flareSettings.hotspot.anamorph} on:input={function() { renderFlare(true); }} /> <br />
 </Collapsible>
