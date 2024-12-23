@@ -57,6 +57,7 @@
             deformationAmount: 1.6,
             deformationFrequency: 0.006,
             deformationSeed: 1,
+            deformationOctaves: 5,
             alpha: 100,
             angle: 0,
             hue: 200,
@@ -150,6 +151,7 @@
             flareComponents.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
             flareComponents.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
             flareComponents.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
+            flareComponents.hotspot.options.deformationOctaves = flareSettings.hotspot.deformationOctaves;
             flareComponents.hotspot.options.hue = flareSettings.hotspot.hue;
             flareComponents.hotspot.options.saturation = flareSettings.hotspot.saturation;
             flareComponents.hotspot.options.angle = flareSettings.hotspot.angle;
@@ -313,6 +315,8 @@
                 flareSettings[keyi][keyj] = presetData[keyi][keyj];
             }
         }
+        if (!presetData["lensOrbs"]) flareSettings["lensOrbs"]["visible"] = false;
+        if (!presetData["hotspot"]["deformationOctaves"]) flareSettings["hotspot"]["deformationOctaves"] = 5;
         renderFlare(true, true, true, true, true, true);
     }
 
@@ -465,6 +469,7 @@ Reference Image
     Intensity: <Slider min={0} max={50} bind:value={flareSettings.hotspot.intensity} on:input={function() { renderFlare(true); }} /> <br />
     Rays Frequency: <Slider min={0} max={0.05} step={0.001} bind:value={flareSettings.hotspot.deformationFrequency} on:input={function() { renderFlare(true); }} /> <br />
     Rays Definition: <Slider min={0} max={2.1} step={0.01} bind:value={flareSettings.hotspot.deformationAmount} on:input={function() { renderFlare(true); }} /> <br />
+    Rays Detail: <Slider min={1} max={5} step={1} bind:value={flareSettings.hotspot.deformationOctaves} on:input={function() { renderFlare(true); }} /> <br />
     Random Seed: <Slider min={1} max={999} bind:value={flareSettings.hotspot.deformationSeed} on:input={function() { renderFlare(true); }} /> <br />
     Anamorph: <Slider min={0} max={100} bind:value={flareSettings.hotspot.anamorph} on:input={function() { renderFlare(true); }} /> <br />
 </Collapsible>
@@ -562,8 +567,14 @@ Reference Image
 
 {#if startScreenVisible}
     <div id={"startScreen"} style="background-image: url({coverImage});" out:fade>
-        <div class={"centered"} style={"width: calc(min(500px, 100vw)); height: calc(min(500px, 100vh)); backdrop-filter: blur(5px) brightness(0.625); border-radius: 7.5px;"}></div>
-        <div class={"centered"} style={"text-align: center;"}>
+        <div class={"centered"}
+            style:width="calc(min(500px, 100vw))"
+            style:height="calc(min(500px, 100vh))"
+            style:backdrop-filter="blur(5px) brightness(0.625)"
+            style:box-shadow="0 4.41px 22.22px #00000099"
+            style:border-radius="10px"
+            ></div>
+        <div class={"centered"} style:text-align="center">
             <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
             <br /> <br />
             <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
