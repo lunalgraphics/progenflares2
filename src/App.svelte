@@ -376,6 +376,7 @@
 
     let isPopupPlugin = false;
     let isPhotoshopPlugin = false;
+    let editingLayerPhotoshop = "no";
     onMount(function() {
         renderFlare(true, true, true, true, true, true);
 
@@ -399,6 +400,7 @@
             isPhotoshopPlugin = true;
             flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
             flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
+            editingLayerPhotoshop = locSearch.get("editingLayer");
             setTimeout(onStart, 1);
             window.addEventListener("message", function(e) {
                 if (typeof e.data == "string") e.data = JSON.parse(e.data);
@@ -441,6 +443,7 @@
             type: "exportLayer",
             data: Array.from(imageData.data),
             metadata: JSON.stringify(flareSettings),
+            editingLayer: editingLayerPhotoshop,
         });
     }}>Finish</button>
 {/if}
