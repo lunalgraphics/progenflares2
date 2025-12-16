@@ -375,6 +375,7 @@
     }
 
     let isPopupPlugin = false;
+    let isPhotoshopPlugin = false;
     onMount(function() {
         renderFlare(true, true, true, true, true, true);
 
@@ -394,11 +395,27 @@
             });
             window.opener.postMessage(["pluginStatus", "ready"]);
         }
+        else if (locSearch.get("photoshop") == "yeah") {
+            isPhotoshopPlugin = true;
+            flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
+            flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
+            setTimeout(onStart, 1);
+            window.addEventListener("message", function(e) {
+                if (typeof e.data == "string") e.data = JSON.parse(e.data);
+                console.log(e.data);
+                if (e.data.type == "refImage") {
+                    referenceImage.style.backgroundImage = `url("${e.data.data}")`;
+                    rIcheckbox.checked = true;
+                    (handleRIcheckbox.bind(rIcheckbox))();
+                }
+            });
+            window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
+        }
     });
 </script>
 
 <div id={"exportPanel"}>
-{#if (!isPopupPlugin)}
+{#if (!isPopupPlugin && !isPhotoshopPlugin)}
     <button on:click={function() { createDownloadLink().click(); }}>Export</button>
     <span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
     <select bind:value={flareSettings.exportType}>
@@ -406,11 +423,21 @@
         <option value={"jpeg"}>JPG</option>
         <option value={"webp"}>WebP</option>
     </select>
-{/if}
-{#if (isPopupPlugin)}
+{:else if (isPopupPlugin)}
     <button on:click={function() { window.opener.postMessage(["finalImage", createDownloadLink().href]); }}>Finish</button>
     <span style="white-space: pre;">{"  "}</span>
     <button on:click={function() { window.close(); }}>Close</button>
+{:else if (isPhotoshopPlugin)}
+    <button on:click={function() {
+        flareSettings.downscaling = 1;
+        renderFlare(true, true, true, true, true);
+        let imageData = baseCanvas.getContext("2d").getImageData(0, 0, baseCanvas.width, baseCanvas.height);
+        window.uxpHost.postMessage({
+            type: "exportLayer",
+            data: Array.from(imageData.data),
+            metadata: JSON.stringify(flareSettings),
+        });
+    }}>Finish</button>
 {/if}
 </div>
 
