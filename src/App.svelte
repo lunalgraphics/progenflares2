@@ -408,6 +408,11 @@
                     rIcheckbox.checked = true;
                     (handleRIcheckbox.bind(rIcheckbox))();
                 }
+                else if (e.data.type == "flareSettings") {
+                    flareSettings = (typeof e.data.data == "string") ? JSON.parse(e.data.data) : e.data.data;
+                    flareSettings.downscaling = 5/2;
+                    renderFlare(true, true, true, true, true, true);
+                }
             });
             window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
         }
