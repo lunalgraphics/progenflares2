@@ -480,7 +480,7 @@ Reference Image
     box-sizing: border-box;
         border-bottom: 1px solid #353535;
 `}>
-    <PresetPicker on:choose={ function(e) { setPreset(e.detail); } } bind:this={myPresetPicker} />
+    <PresetPicker on:choose={ function(e) { setPreset(e.detail); } } bind:this={myPresetPicker} isPhotoshopPlugin={isPhotoshopPlugin} />
     <button on:click={function() { createPresetSaveLink().click(); }} style="float: right; width: 49%;">Create Preset</button>
 </div>
 

@@ -48,6 +48,18 @@
         { name: "Generic Anamorphic", data: genericanamorphic },
     ];
 
+    function saveUserPresets() {
+        if (isPhotoshopPlugin) {
+            window.uxpHost.postMessage({
+                type: "savePresets",
+                data: userPresets,
+            });
+        }
+        else {
+            window.localStorage.setItem("userPresets", JSON.stringify(userPresets));
+        }
+    }
+
     function handleFileInput() {
         for (let file of this.files) {
             var fR = new FileReader();
@@ -56,7 +68,7 @@
                     name: file.name,
                     data: JSON.parse(e.target.result),
                 }];
-                window.localStorage.setItem("userPresets", JSON.stringify(userPresets), 900);
+                saveUserPresets();
             });
             fR.readAsText(file);
         }
@@ -64,16 +76,24 @@
     }
 
     export const defaultPreset = builtInPresets[0].data;
+    export let isPhotoshopPlugin = false;
 
     let pickerOpen = false;
     let userPresets = [];
 
     onMount(() => {
-        if (window.localStorage.getItem("userPresets")) {
+        if (!isPhotoshopPlugin && window.localStorage.getItem("userPresets")) {
             userPresets = JSON.parse(window.localStorage.getItem("userPresets"));
         }
     });
 </script>
+
+<svelte:window on:message={(e) => {
+    if (isPhotoshopPlugin && e.data.type == "loadPresets") {
+        if (typeof e.data.data == "string") e.data.data = JSON.parse(e.data.data);
+        userPresets = e.data.data;
+    }
+}} />
 
 <button style="width: 49%;" on:click={() => { pickerOpen = true; }}>Apply Preset</button>
 
@@ -108,7 +128,7 @@
                     userPresets = userPresets.filter((val, index) => {
                         return index != i;
                     });
-                    window.localStorage.setItem("userPresets", JSON.stringify(userPresets), 900);
+                    saveUserPresets();
                 }} class="longButton" style="border-top-style: solid; border-left-style: solid; width: 40px; float: right;">
                     -
                 </div>
