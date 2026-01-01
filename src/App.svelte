@@ -612,12 +612,14 @@ Reference Image
         <div class={"centered"} style:text-align="center">
             <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
             <br /> <br />
-            <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
-            <br />
-            <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Height</span> <input type="number" bind:value={flareSettings.dimensions.height} style={"width: 80px;"} />
-            <br /> <br />
-            <button on:click={onStart}>Create</button>
-            <br /> <br />
+            {#if !isPhotoshopPlugin && !isPopupPlugin}
+                <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
+                <br />
+                <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Height</span> <input type="number" bind:value={flareSettings.dimensions.height} style={"width: 80px;"} />
+                <br /> <br />
+                <button on:click={onStart}>Create</button>
+                <br /> <br />
+            {/if}
             <span style={"font-size: 10px;"}>&copy; 2023 Lunal Graphics<br />Developed by Yikuan Sun</span>
         </div>
     </div>
