@@ -620,7 +620,7 @@ Reference Image
                 <button on:click={onStart}>Create</button>
                 <br /> <br />
             {/if}
-            <span style={"font-size: 10px;"}>&copy; 2023 Lunal Graphics<br />Developed by Yikuan Sun</span>
+            <span style={"font-size: 10px;"}>&copy; 2026 Lunal Graphics<br />Developed by Yikuan Sun</span>
         </div>
     </div>
 {/if}
