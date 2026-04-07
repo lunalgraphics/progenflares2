@@ -15,7 +15,7 @@
     import textLogo from "./images/textLogo.png";
     import coverImage from "./images/coverImage.jpg";
 
-    var flareComponents = {
+    let flareComponents = {
         hotspot: new SpotComponent(256, {
             deformationFrequency: 0.006,
         }),
@@ -36,7 +36,7 @@
         lensOrbs: new IrisComponent(256, {}),
     };
 
-    var flareSettings = {
+    let flareSettings = {
         downscaling: 5/2,
         exportType: "png",
         sizeMultiplier: 1,
@@ -142,7 +142,7 @@
         },
     };
 
-    var baseCanvas, referenceImage;
+    let baseCanvas, referenceImage;
     
     function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false, renderLensOrbs=false) {
         if (renderHotspot) {
@@ -210,7 +210,7 @@
             flareComponents.lensOrbs.render();
         }
 
-        var ctx = baseCanvas.getContext("2d");
+        let ctx = baseCanvas.getContext("2d");
         ctx.restore();
         ctx.save();
         ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
@@ -221,9 +221,9 @@
             drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
         }
         if (flareSettings.streak.visible) {
-            var streakAngle = flareSettings.streak.angle;
-            for (var i = 0; i < flareSettings.streak.count; i++) {
-                var streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
+            let streakAngle = flareSettings.streak.angle;
+            for (let i = 0; i < flareSettings.streak.count; i++) {
+                let streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
                 if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * ((i % 2 == 0)?-1:1) / 100 * flareSettings.streak.width;
                 drawComponent(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
                 drawComponent(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
@@ -234,22 +234,22 @@
             drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
         }
         if (flareSettings.miIris.visible) {
-            var miRng = seedrandom(flareSettings.miIris.seed);
-            for (var i = 1; i < flareSettings.miIris.countTowards; i++) {
-                var irisPosition = {
+            let miRng = seedrandom(flareSettings.miIris.seed);
+            for (let i = 1; i < flareSettings.miIris.countTowards; i++) {
+                let irisPosition = {
                     x: flareSettings.positioning.x + i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
                     y: flareSettings.positioning.y + i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
                 };
-                var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+                let irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
                 irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
                 drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
             }
-            for (var i = 1; i < flareSettings.miIris.countAway; i++) {
-                var irisPosition = {
+            for (let i = 1; i < flareSettings.miIris.countAway; i++) {
+                let irisPosition = {
                     x: flareSettings.positioning.x - i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
                     y: flareSettings.positioning.y - i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
                 };
-                var irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
+                let irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
                 irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
                 drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
             }
@@ -258,16 +258,16 @@
             drawComponent(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
         }
         if (flareSettings.lensOrbs.visible) {
-            var lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
-            for (var i = 1; i < flareSettings.lensOrbs.count; i++) {
-                var orbPosition = {
+            let lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
+            for (let i = 1; i < flareSettings.lensOrbs.count; i++) {
+                let orbPosition = {
                     x: lensOrbsRng() * flareSettings.dimensions.width,
                     y: lensOrbsRng() * flareSettings.dimensions.height,
                 };
-                var distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
-                var orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
+                let distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
+                let orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
                 orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
-                var orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
+                let orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
                 drawComponent(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
             }
         }
@@ -281,10 +281,10 @@
     }
 
     function createDownloadLink() {
-        var initialDownscaling = flareSettings.downscaling;
+        let initialDownscaling = flareSettings.downscaling;
         flareSettings.downscaling = 1;
         renderFlare(true, true, true, true, true);
-        var a = document.createElement("a");
+        let a = document.createElement("a");
         a.href = baseCanvas.toDataURL("image/" + flareSettings.exportType);
         a.download = "ProgenFlares2-flare." + flareSettings.exportType;
         flareSettings.downscaling = initialDownscaling;
@@ -293,7 +293,7 @@
     }
 
     function createPresetSaveLink() {
-        var fileContents = JSON.stringify({
+        let fileContents = JSON.stringify({
             hotspot: flareSettings.hotspot,
             streak: flareSettings.streak,
             ring: flareSettings.ring,
@@ -301,17 +301,17 @@
             glow: flareSettings.glow,
             lensOrbs: flareSettings.lensOrbs,
         });
-        var textFile = new Blob([fileContents], { "type": "application/pgf2" });
-        var a = document.createElement("a");
+        let textFile = new Blob([fileContents], { "type": "application/pgf2" });
+        let a = document.createElement("a");
         a.href = URL.createObjectURL(textFile);
         a.download = "ProgenFlares2-preset.pgf2";
         return a;
     }
 
     function setPreset(presetData) {
-        for (var keyi in presetData) {
+        for (let keyi in presetData) {
             if (!flareSettings[keyi]) flareSettings[keyi] = {};
-            for (var keyj in presetData[keyi]) {
+            for (let keyj in presetData[keyi]) {
                 flareSettings[keyi][keyj] = presetData[keyi][keyj];
             }
         }
@@ -320,7 +320,7 @@
         renderFlare(true, true, true, true, true, true);
     }
 
-    var startScreenVisible = true;
+    let startScreenVisible = true;
     let myPresetPicker;
     function onStart() {
         setPreset(myPresetPicker.defaultPreset);
@@ -332,14 +332,14 @@
         startScreenVisible = false;
     }
 
-    var rIcheckbox;
+    let rIcheckbox;
     function handleRIbutton() {
-            var fileInput = document.createElement("input");
+            let fileInput = document.createElement("input");
             fileInput.type = "file";
             fileInput.accept = "image/png, image/jpeg";
             fileInput.addEventListener("change", () => {
-                var file = fileInput.files[0];
-                var fR = new FileReader();
+                let file = fileInput.files[0];
+                let fR = new FileReader();
                 fR.addEventListener("loadend", (e) => {
                     referenceImage.style.backgroundImage = `url("${e.target.result}")`;
                     this.value = "Custom";
