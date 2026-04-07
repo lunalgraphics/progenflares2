@@ -6,8 +6,10 @@ import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import json from '@rollup/plugin-json';
 import image from '@rollup/plugin-image';
+import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
+const isPhotoshopPlugin = process.env.PHOTOSHOP_PLUGIN === 'true';
 
 function serve() {
     let server;
@@ -39,6 +41,11 @@ export default {
         file: 'public/build/bundle.js'
     },
     plugins: [
+        replace({
+            preventAssignment: true,
+            '__IS_PHOTOSHOP_PLUGIN__': JSON.stringify(isPhotoshopPlugin),
+        }),
+
         svelte({
             compilerOptions: {
                 // enable run-time checks when not in production

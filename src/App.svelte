@@ -375,37 +375,26 @@
     }
 
     let isPopupPlugin = false;
-    let isPhotoshopPlugin = false;
+    // isPhotoshopPlugin is injected at build time via rollup replace plugin.
+    // Use `npm run build:photoshop` to set this to true.
+    let isPhotoshopPlugin = __IS_PHOTOSHOP_PLUGIN__;
     let editingLayerPhotoshop = "no";
     onMount(function() {
         renderFlare(true, true, true, true, true, true);
 
-        let locSearch = new URLSearchParams(location.search);
-        if (locSearch.get("popupPlugin") == "yeah") {
-            isPopupPlugin = true;
-            flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
-            flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
-            setTimeout(onStart, 1);
-            window.addEventListener("message", function(e) {
-                console.log(e.data);
-                if (e.data[0] == "refImage") {
-                    referenceImage.style.backgroundImage = `url("${e.data[1]}")`;
-                    rIcheckbox.checked = true;
-                    (handleRIcheckbox.bind(rIcheckbox))();
-                }
-            });
-            window.opener.postMessage(["pluginStatus", "ready"]);
-        }
-        else if (locSearch.get("photoshop") == "yeah") {
-            isPhotoshopPlugin = true;
-            flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
-            flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
-            editingLayerPhotoshop = locSearch.get("editingLayer");
-            setTimeout(onStart, 1);
+        if (isPhotoshopPlugin) {
             window.addEventListener("message", function(e) {
                 if (typeof e.data == "string") e.data = JSON.parse(e.data);
                 console.log(e.data);
-                if (e.data.type == "refImage") {
+                if (e.data.type == "init") {
+                    // Receive docWidth, docHeight, and editingLayer via message
+                    // instead of location.search (UXP does not support location.search)
+                    flareSettings.dimensions.width = parseInt(e.data.docWidth);
+                    flareSettings.dimensions.height = parseInt(e.data.docHeight);
+                    editingLayerPhotoshop = e.data.editingLayer ?? "no";
+                    setTimeout(onStart, 1);
+                }
+                else if (e.data.type == "refImage") {
                     referenceImage.style.backgroundImage = `url("${e.data.data}")`;
                     rIcheckbox.checked = true;
                     (handleRIcheckbox.bind(rIcheckbox))();
@@ -417,6 +406,23 @@
                 }
             });
             window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
+        } else {
+            let locSearch = new URLSearchParams(location.search);
+            if (locSearch.get("popupPlugin") == "yeah") {
+                isPopupPlugin = true;
+                flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
+                flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
+                setTimeout(onStart, 1);
+                window.addEventListener("message", function(e) {
+                    console.log(e.data);
+                    if (e.data[0] == "refImage") {
+                        referenceImage.style.backgroundImage = `url("${e.data[1]}")`;
+                        rIcheckbox.checked = true;
+                        (handleRIcheckbox.bind(rIcheckbox))();
+                    }
+                });
+                window.opener.postMessage(["pluginStatus", "ready"]);
+            }
         }
     });
 </script>
