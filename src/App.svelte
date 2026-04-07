@@ -322,12 +322,15 @@
 
     let startScreenVisible = true;
     let myPresetPicker;
+    let overrideSetPreset = false;
     function onStart() {
-        setPreset(myPresetPicker.defaultPreset);
-        flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2;
-        flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2;
-        flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5;
-        flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5;
+        if (!overrideSetPreset) {
+            setPreset(myPresetPicker.defaultPreset);
+            flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2;
+            flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2;
+            flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5;
+            flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5;
+        }
         renderFlare(true, true, true, true, true, true);
         startScreenVisible = false;
     }
@@ -405,12 +408,9 @@
                     // If onStart already fired, apply the settings directly.
                     let incoming = (typeof e.data.data == "string") ? JSON.parse(e.data.data) : e.data.data;
                     incoming.downscaling = 5/2;
-                    if (startScreenVisible) {
-                        myPresetPicker.defaultPreset = incoming;
-                    } else {
-                        flareSettings = incoming;
-                        renderFlare(true, true, true, true, true, true);
-                    }
+                    if (startScreenVisible) overrideSetPreset = true;
+                    flareSettings = incoming;
+                    renderFlare(true, true, true, true, true, true);
                 }
             });
             window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
