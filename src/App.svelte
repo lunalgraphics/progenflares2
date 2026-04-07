@@ -400,9 +400,17 @@
                     (handleRIcheckbox.bind(rIcheckbox))();
                 }
                 else if (e.data.type == "flareSettings") {
-                    flareSettings = (typeof e.data.data == "string") ? JSON.parse(e.data.data) : e.data.data;
-                    flareSettings.downscaling = 5/2;
-                    renderFlare(true, true, true, true, true, true);
+                    // If onStart hasn't fired yet, override the default preset so
+                    // onStart uses the existing layer's settings instead of the default.
+                    // If onStart already fired, apply the settings directly.
+                    let incoming = (typeof e.data.data == "string") ? JSON.parse(e.data.data) : e.data.data;
+                    incoming.downscaling = 5/2;
+                    if (startScreenVisible) {
+                        myPresetPicker.defaultPreset = incoming;
+                    } else {
+                        flareSettings = incoming;
+                        renderFlare(true, true, true, true, true, true);
+                    }
                 }
             });
             window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
