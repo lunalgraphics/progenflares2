@@ -14,6 +14,7 @@
     import { onMount } from "svelte";
     import textLogo from "./images/textLogo.png";
     import coverImage from "./images/coverImage.jpg";
+    import Divider from "./components/Divider.svelte";
 
     let flareComponents = {
         hotspot: new SpotComponent(256, {
@@ -377,11 +378,18 @@
         renderFlare(true, true, true, true, true, true);
     }
 
+    // Responsive design + dividers
+    /** @type {"horizontal" | "vertical"} */
+    let layout = "horizontal";
+    let dividerX = 360;
+    let dividerY = 360;
+
     let isPopupPlugin = false;
     // isPhotoshopPlugin is injected at build time via rollup replace plugin.
     // Use `npm run build:photoshop` to set this to true.
     let isPhotoshopPlugin = __IS_PHOTOSHOP_PLUGIN__;
     let editingLayerPhotoshop = "no";
+
     onMount(function() {
         renderFlare(true, true, true, true, true, true);
 
@@ -435,7 +443,7 @@
     });
 </script>
 
-<div id={"exportPanel"}>
+<div id={"exportPanel"} style:width="calc(100vw - {dividerX}px)">
 {#if (!isPopupPlugin && !isPhotoshopPlugin)}
     <button on:click={function() { createDownloadLink().click(); }}>Export</button>
     <span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
@@ -463,12 +471,12 @@
 {/if}
 </div>
 
-<div id={"previewSection"}>   
+<div id={"previewSection"} style:width="calc(100vw - {dividerX}px)">
     <canvas bind:this={referenceImage} id={"referenceImage"} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
     <canvas bind:this={baseCanvas} id={"baseCanvas"} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
 </div>
 
-<div id={"sectionAbovePreview"}>
+<div id={"sectionAbovePreview"} style:width="calc(100vw - {dividerX}px)">
 Preview quality
 <select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true, true, true, true); }}>
     <option value={1}>100%</option>
@@ -483,7 +491,9 @@ Reference Image
 <button on:click={handleRIbutton}>Import</button>
 </div>
 
-<div id={"controlPanel"}>
+<Divider {layout} bind:dividerX bind:dividerY />
+
+<div id={"controlPanel"} style:width={layout == "horizontal" ? `${dividerX}px` : "100%"} style:height={layout == "vertical" ? `${dividerY}px` : "100%"}>
 
 <div style={`
     position: sticky;
@@ -739,6 +749,7 @@ Reference Image
         left: 0;
         background-size: cover;
         background-position: center;
+        z-index: 15;
     }
     :global(button) {
         padding: 4px 12px;
