@@ -383,6 +383,10 @@
     let layout = "horizontal";
     let dividerX = 360;
     let dividerY = 360;
+    function updateLayout() {
+        if (window.innerWidth < 400) layout = "vertical";
+        else layout = "horizontal";
+    }
 
     let isPopupPlugin = false;
     // isPhotoshopPlugin is injected at build time via rollup replace plugin.
@@ -440,10 +444,14 @@
                 window.opener.postMessage(["pluginStatus", "ready"]);
             }
         }
+        
+        updateLayout();
     });
 </script>
 
-<div id={"exportPanel"} style:width="calc(100vw - {dividerX}px)">
+<svelte:window on:resize={updateLayout} />
+
+<div id={"exportPanel"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
 {#if (!isPopupPlugin && !isPhotoshopPlugin)}
     <button on:click={function() { createDownloadLink().click(); }}>Export</button>
     <span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
@@ -471,12 +479,12 @@
 {/if}
 </div>
 
-<div id={"previewSection"} style:width="calc(100vw - {dividerX}px)">
+<div id={"previewSection"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
     <canvas bind:this={referenceImage} id={"referenceImage"} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
     <canvas bind:this={baseCanvas} id={"baseCanvas"} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
 </div>
 
-<div id={"sectionAbovePreview"} style:width="calc(100vw - {dividerX}px)">
+<div id={"sectionAbovePreview"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
 Preview quality
 <select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true, true, true, true); }}>
     <option value={1}>100%</option>
@@ -493,7 +501,7 @@ Reference Image
 
 <Divider {layout} bind:dividerX bind:dividerY />
 
-<div id={"controlPanel"} style:width={layout == "horizontal" ? `${dividerX}px` : "100%"} style:height={layout == "vertical" ? `${dividerY}px` : "100%"}>
+<div id={"controlPanel"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
 
 <div style={`
     position: sticky;
@@ -696,32 +704,48 @@ Reference Image
         border: 1px solid var(--color-scheme-1);
         -moz-appearance: revert!important;
     }
+
     #controlPanel {
-        width: 360px;
-        height: 100vh;
         position: fixed;
-        right: 0;
-        top: 0;
         overflow-y: scroll;
         border-left: 1px solid #353535;
+        right: 0;
     }
+    #controlPanel[data-layout="horizontal"] {
+        width: var(--divider-x);
+        height: 100vh;
+        bottom: 0;
+    }
+    #controlPanel[data-layout="vertical"] {
+        width: 100vw;
+        height: calc(var(--divider-y) - 84px);
+        bottom: 84px;
+    }
+
     #previewSection {
-        width: calc(100vw - 360px);
-        height: calc(100vh - 2 * 84px);
         box-sizing: border-box;
         padding: 25px;
         position: fixed;
         top: 84px;
         left: 0;
     }
+    #previewSection[data-layout="horizontal"] {
+        width: calc(100vw - var(--divider-x));
+        height: calc(100vh - 2 * 84px);
+    }
+    #previewSection[data-layout="vertical"] {
+        width: 100vw;
+        height: calc(100vh - 84px - var(--divider-y));
+    }
+
     .centered {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
     }
+
     #sectionAbovePreview {
-        width: calc(100vw - 360px);
         height: 84px;
         box-sizing: border-box;
         text-align: center;
@@ -730,8 +754,14 @@ Reference Image
         top: 0;
         left: 0;
     }
+    #sectionAbovePreview[data-layout="horizontal"] {
+        width: calc(100vw - var(--divider-x));
+    }
+    #sectionAbovePreview[data-layout="vertical"] {
+        width: 100vw;
+    }
+
     #exportPanel {
-        width: calc(100vw - 360px);
         height: 84px;
         box-sizing: border-box;
         text-align: center;
@@ -740,6 +770,13 @@ Reference Image
         bottom: 0;
         left: 0;
     }
+    #exportPanel[data-layout="horizontal"] {
+        width: calc(100vw - var(--divider-x));
+    }
+    #exportPanel[data-layout="vertical"] {
+        width: 100vw;
+    }
+
     #startScreen {
         width: 100vw;
         height: 100vh;
