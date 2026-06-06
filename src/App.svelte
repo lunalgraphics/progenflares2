@@ -1,873 +1,699 @@
+<!--
+  App.svelte — Main application shell for Progen Flares 2.
+  Manages the canvas preview, control panel layout, export functionality,
+  and platform-specific integrations (Photoshop UXP, popup plugin).
+-->
 <script>
-    import Collapsible from "./components/Collapsible.svelte";
-    import Spot from "./flareArtifacts/Spot";
-    import Ring from "./flareArtifacts/Ring";
-    import Slider from "./components/Slider.svelte";
-    import drawArtifact from "./drawArtifact";
-    import canvasClickDrag from "./canvasClickDrag";
-    import Iris from "./flareArtifacts/Iris";
-    import seedrandom from "../node_modules/seedrandom";
-    import Half from "./flareArtifacts/Half";
-    import PresetPicker from "./components/PresetPicker.svelte";
-    import { fade } from "svelte/transition";
-    import { onMount } from "svelte";
-    import textLogo from "./images/textLogo.png";
-    import coverImage from "./images/coverImage.jpg";
-    import Divider from "./components/Divider.svelte";
+  import { fade } from "svelte/transition";
+  import { onMount } from "svelte";
 
-    let flareArtifacts = {
-        hotspot: new Spot(256, {
-            deformationFrequency: 0.006,
-        }),
-        streak: new Spot(256, {
-            deformationAmount: 0,
-            intensity: 0,
-        }),
-        ring: new Ring(256, {
-            cropSize: 0,
-        }),
-        miIris: new Iris(256, {
-            roundness: 20,
-        }),
-        glow: new Spot(256, {
-            deformationAmount: 0,
-            intensity: -50,
-        }),
-        lensOrbs: new Iris(256, {}),
-    };
+  // Components
+  import Divider from "./components/Divider.svelte";
+  import PresetPicker from "./components/PresetPicker.svelte";
+  import GlobalControls from "./components/controls/GlobalControls.svelte";
+  import HotspotControls from "./components/controls/HotspotControls.svelte";
+  import StreakControls from "./components/controls/StreakControls.svelte";
+  import RingControls from "./components/controls/RingControls.svelte";
+  import MultiIrisControls from "./components/controls/MultiIrisControls.svelte";
+  import GlowControls from "./components/controls/GlowControls.svelte";
+  import LensOrbsControls from "./components/controls/LensOrbsControls.svelte";
 
-    let flareSettings = {
-        downscaling: 5/2,
-        exportType: "png",
-        sizeMultiplier: 1,
-        dimensions: {
-            width: 1920,
-            height: 1080,
-        },
-        positioning: {
-            x: 960,
-            y: 540,
-            pivotX: 960,
-            pivotY: 540,
-        },
-        hotspot: {
-            visible: true,
-            radius: 500,
-            intensity: 5,
-            deformationAmount: 1.6,
-            deformationFrequency: 0.006,
-            deformationSeed: 1,
-            deformationOctaves: 5,
-            alpha: 100,
-            angle: 0,
-            hue: 200,
-            saturation: 100,
-            anamorph: 0,
-        },
-        streak: {
-            visible: true,
-            thickness: 64,
-            width: 1600,
-            intensity: 5,
-            count: 1,
-            angle: 0,
-            shift: 36,
-            alpha: 100,
-            angle: 0,
-            hue: 200,
-            saturation: 100,
-        },
-        ring: {
-            visible: true,
-            radius: 200,
-            thickness: 40,
-            blur: 5,
-            cropSize: 0,
-            cropHardness: 50,
-            alpha: 21,
-            hue: 200,
-            saturation: 100,
-            anamorph: 0,
-        },
-        miIris: {
-            visible: true,
-            radius: 81,
-            sides: 5,
-            roundness: 20,
-            angle: 0,
-            fillAlpha: 25,
-            fringeAlpha: 50,
-            fringeSize: 10,
-            blur: 4,
-            countAway: 5,
-            countTowards: 12,
-            spread: 30,
-            sizeVariance: 40,
-            perspective: 100,
-            alphaVariance: 50,
-            seed: 123,
-            hue: 200,
-            saturation: 100,
-            hueVariance: 30,
-            anamorph: 0,
-        },
-        glow: {
-            visible: true,
-            radius: 960,
-            alpha: 50,
-            softening: 70,
-            hue: 200,
-            saturation: 100,
-            anamorph: 0,
-        },
-        lensOrbs: {
-            visible: true,
-            radius: 45,
-            sides: 6,
-            roundness: 100,
-            angle: 0,
-            fillAlpha: 8,
-            fringeAlpha: 11,
-            fringeSize: 17,
-            blur: 5,
-            count: 100,
-            threshold: 1200,
-            seed: 124,
-            sizeVariance: 0,
-            alphaVariance: 50,
-            hue: 200,
-            saturation: 100,
-            hueVariance: 360,
-            anamorph: 0,
-        },
-    };
+  // Flare engine
+  import { Spot, Ring, Iris } from "./flareArtifacts";
+  import { renderFlare } from "./state/renderEngine";
+  import { DEFAULT_FLARE_SETTINGS } from "./state/defaultSettings";
+  import canvasClickDrag from "./utils/canvasClickDrag";
 
-    let baseCanvas, referenceImage;
-    
-    function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false, renderLensOrbs=false) {
-        if (renderHotspot) {
-            flareArtifacts.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
-            flareArtifacts.hotspot.options.intensity = flareSettings.hotspot.intensity;
-            flareArtifacts.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
-            flareArtifacts.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
-            flareArtifacts.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
-            flareArtifacts.hotspot.options.deformationOctaves = flareSettings.hotspot.deformationOctaves;
-            flareArtifacts.hotspot.options.hue = flareSettings.hotspot.hue;
-            flareArtifacts.hotspot.options.saturation = flareSettings.hotspot.saturation;
-            flareArtifacts.hotspot.options.angle = flareSettings.hotspot.angle;
-            flareArtifacts.hotspot.render();
-        }
-        if (renderStreak) {
-            flareArtifacts.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
-            flareArtifacts.streak.options.intensity = flareSettings.streak.intensity;
-            flareArtifacts.streak.options.hue = flareSettings.streak.hue;
-            flareArtifacts.streak.options.saturation = flareSettings.streak.saturation;
-            flareArtifacts.streak.render();
-            flareArtifacts.streakLeftHalf = new Half(flareArtifacts.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, true, false);
-            flareArtifacts.streakRightHalf = new Half(flareArtifacts.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, false, true);
-        }
-        if (renderRing) {
-            flareArtifacts.ring.radius = Math.floor(flareSettings.ring.radius / flareSettings.downscaling);
-            flareArtifacts.ring.options.thickness = flareSettings.ring.thickness / flareSettings.downscaling;
-            flareArtifacts.ring.options.blur = flareSettings.ring.blur / flareSettings.downscaling;
-            flareArtifacts.ring.options.cropSize = flareSettings.ring.cropSize / flareSettings.downscaling;
-            flareArtifacts.ring.options.cropHardness = flareSettings.ring.cropHardness;
-            flareArtifacts.ring.options.hue = flareSettings.ring.hue;
-            flareArtifacts.ring.options.saturation = flareSettings.ring.saturation;
-            flareArtifacts.ring.render();
-        }
-        if (renderMI) {
-            flareArtifacts.miIris.radius = Math.floor(flareSettings.miIris.radius / flareSettings.downscaling);
-            flareArtifacts.miIris.options.sides = flareSettings.miIris.sides;
-            flareArtifacts.miIris.options.roundness = flareSettings.miIris.roundness;
-            flareArtifacts.miIris.options.fillAlpha = flareSettings.miIris.fillAlpha;
-            flareArtifacts.miIris.options.fringeAlpha = flareSettings.miIris.fringeAlpha;
-            flareArtifacts.miIris.options.fringeSize = flareSettings.miIris.fringeSize / flareSettings.downscaling;
-            flareArtifacts.miIris.options.blur = flareSettings.miIris.blur / flareSettings.downscaling;
-            flareArtifacts.miIris.options.angle = flareSettings.miIris.angle;
-            flareArtifacts.miIris.options.hue = flareSettings.miIris.hue;
-            flareArtifacts.miIris.options.saturation = flareSettings.miIris.saturation;
-            flareArtifacts.miIris.render();
-        }
-        if (renderGlow) {
-            flareArtifacts.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
-            flareArtifacts.glow.options.intensity = -flareSettings.glow.softening;
-            flareArtifacts.glow.options.hue = flareSettings.glow.hue;
-            flareArtifacts.glow.options.saturation = flareSettings.glow.saturation;
-            flareArtifacts.glow.render();
-        }
-        if (renderLensOrbs) {
-            flareArtifacts.lensOrbs.radius = Math.floor(flareSettings.lensOrbs.radius / flareSettings.downscaling);
-            flareArtifacts.lensOrbs.options.sides = flareSettings.lensOrbs.sides;
-            flareArtifacts.lensOrbs.options.roundness = flareSettings.lensOrbs.roundness;
-            flareArtifacts.lensOrbs.options.fillAlpha = flareSettings.lensOrbs.fillAlpha;
-            flareArtifacts.lensOrbs.options.fringeAlpha = flareSettings.lensOrbs.fringeAlpha;
-            flareArtifacts.lensOrbs.options.fringeSize = flareSettings.lensOrbs.fringeSize / flareSettings.downscaling;
-            flareArtifacts.lensOrbs.options.blur = flareSettings.lensOrbs.blur / flareSettings.downscaling;
-            flareArtifacts.lensOrbs.options.angle = flareSettings.lensOrbs.angle;
-            flareArtifacts.lensOrbs.options.hue = flareSettings.lensOrbs.hue;
-            flareArtifacts.lensOrbs.options.saturation = flareSettings.lensOrbs.saturation;
-            flareArtifacts.lensOrbs.render();
-        }
+  // Assets
+  import textLogo from "./images/textLogo.png";
+  import coverImage from "./images/coverImage.jpg";
 
-        let ctx = baseCanvas.getContext("2d");
-        ctx.restore();
-        ctx.save();
-        ctx.clearRect(0, 0, baseCanvas.width, baseCanvas.height);
-        ctx.fillStyle = "black";
-        ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
+  // ─── Flare Artifact Instances ────────────────────────────────────────
+  let flareArtifacts = {
+    hotspot: new Spot(256, { deformationFrequency: 0.006 }),
+    streak: new Spot(256, { deformationAmount: 0, intensity: 0 }),
+    ring: new Ring(256, { cropSize: 0 }),
+    miIris: new Iris(256, { roundness: 20 }),
+    glow: new Spot(256, { deformationAmount: 0, intensity: -50 }),
+    lensOrbs: new Iris(256, {}),
+  };
 
-        if (flareSettings.hotspot.visible) {
-            drawArtifact(ctx, flareArtifacts.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
-        }
-        if (flareSettings.streak.visible) {
-            let streakAngle = flareSettings.streak.angle;
-            for (let i = 0; i < flareSettings.streak.count; i++) {
-                let streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
-                if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * ((i % 2 == 0)?-1:1) / 100 * flareSettings.streak.width;
-                drawArtifact(ctx, flareArtifacts.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
-                drawArtifact(ctx, flareArtifacts.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
-                streakAngle += 180 / flareSettings.streak.count;
-            }
-        }
-        if (flareSettings.ring.visible) {
-            drawArtifact(ctx, flareArtifacts.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
-        }
-        if (flareSettings.miIris.visible) {
-            let miRng = seedrandom(flareSettings.miIris.seed);
-            for (let i = 1; i < flareSettings.miIris.countTowards; i++) {
-                let irisPosition = {
-                    x: flareSettings.positioning.x + i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
-                    y: flareSettings.positioning.y + i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
-                };
-                let irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
-                irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-                drawArtifact(ctx, flareArtifacts.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
-            }
-            for (let i = 1; i < flareSettings.miIris.countAway; i++) {
-                let irisPosition = {
-                    x: flareSettings.positioning.x - i * (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.miIris.spread / 100,
-                    y: flareSettings.positioning.y - i * (flareSettings.positioning.pivotY - flareSettings.positioning.y) * flareSettings.miIris.spread / 100,
-                };
-                let irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
-                irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-                drawArtifact(ctx, flareArtifacts.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
-            }
-        }
-        if (flareSettings.glow.visible) {
-            drawArtifact(ctx, flareArtifacts.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
-        }
-        if (flareSettings.lensOrbs.visible) {
-            let lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
-            for (let i = 1; i < flareSettings.lensOrbs.count; i++) {
-                let orbPosition = {
-                    x: lensOrbsRng() * flareSettings.dimensions.width,
-                    y: lensOrbsRng() * flareSettings.dimensions.height,
-                };
-                let distanceFromLight = Math.sqrt(Math.pow(flareSettings.positioning.x - orbPosition.x, 2) + Math.pow(flareSettings.positioning.y - orbPosition.y, 2));
-                let orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
-                orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
-                let orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
-                drawArtifact(ctx, flareArtifacts.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
-            }
-        }
-    }
+  // ─── Flare Settings State ───────────────────────────────────────────
+  let flareSettings = JSON.parse(JSON.stringify(DEFAULT_FLARE_SETTINGS));
 
-    function handleClickDrag(e) {
-        //console.log(e.detail);
-        flareSettings.positioning.x = e.detail.x;
-        flareSettings.positioning.y = e.detail.y;
-        renderFlare();
-    }
+  // ─── Canvas References ──────────────────────────────────────────────
+  let baseCanvas;
+  let referenceImage;
 
-    function createDownloadLink() {
-        let initialDownscaling = flareSettings.downscaling;
-        flareSettings.downscaling = 1;
-        renderFlare(true, true, true, true, true);
-        let a = document.createElement("a");
-        a.href = baseCanvas.toDataURL("image/" + flareSettings.exportType);
-        a.download = "ProgenFlares2-flare." + flareSettings.exportType;
-        flareSettings.downscaling = initialDownscaling;
-        renderFlare(true, true, true, true, true);
-        return a;
-    }
+  // ─── Render Helpers ─────────────────────────────────────────────────
 
-    function createPresetSaveLink() {
-        let fileContents = JSON.stringify({
-            hotspot: flareSettings.hotspot,
-            streak: flareSettings.streak,
-            ring: flareSettings.ring,
-            miIris: flareSettings.miIris,
-            glow: flareSettings.glow,
-            lensOrbs: flareSettings.lensOrbs,
-        });
-        let textFile = new Blob([fileContents], { "type": "application/pgf2" });
-        let a = document.createElement("a");
-        a.href = URL.createObjectURL(textFile);
-        a.download = "ProgenFlares2-preset.pgf2";
-        return a;
-    }
+  /** Trigger a re-render with specific artifact flags */
+  function render(flags = {}) {
+    renderFlare(baseCanvas, flareArtifacts, flareSettings, flags);
+  }
 
-    function setPreset(presetData) {
-        for (let keyi in presetData) {
-            if (!flareSettings[keyi]) flareSettings[keyi] = {};
-            for (let keyj in presetData[keyi]) {
-                flareSettings[keyi][keyj] = presetData[keyi][keyj];
-            }
-        }
-        if (!presetData["lensOrbs"]) flareSettings["lensOrbs"]["visible"] = false;
-        if (!presetData["hotspot"]["deformationOctaves"]) flareSettings["hotspot"]["deformationOctaves"] = 5;
-        renderFlare(true, true, true, true, true, true);
-    }
+  /** Re-render everything (all artifacts) */
+  function renderAll() {
+    render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true, lensOrbs: true });
+  }
 
-    let startScreenVisible = true;
-    let myPresetPicker;
-    let overrideSetPreset = false;
-    function onStart() {
-        if (!overrideSetPreset) {
-            setPreset(myPresetPicker.defaultPreset);
-            flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2;
-            flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2;
-            flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5;
-            flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5;
-        }
-        renderFlare(true, true, true, true, true, true);
-        startScreenVisible = false;
-    }
+  // ─── Canvas Interaction ─────────────────────────────────────────────
 
-    let rIcheckbox;
-    function handleRIbutton() {
-            let fileInput = document.createElement("input");
-            fileInput.type = "file";
-            fileInput.accept = "image/png, image/jpeg";
-            fileInput.addEventListener("change", () => {
-                let file = fileInput.files[0];
-                let fR = new FileReader();
-                fR.addEventListener("loadend", (e) => {
-                    referenceImage.style.backgroundImage = `url("${e.target.result}")`;
-                    this.value = "Custom";
-                    rIcheckbox.checked = true;
-                    (handleRIcheckbox.bind(rIcheckbox))();
-                });
-                fR.readAsDataURL(file);
-            });
-            fileInput.click();
-    }
-    function handleRIcheckbox() {
-        if (this.checked) referenceImage.style.backgroundSize = "100% 100%";
-        else referenceImage.style.backgroundSize = "0 0";
-    }
+  /** Handle click-drag on the canvas to move the light position */
+  function handleClickDrag(e) {
+    flareSettings.positioning.x = e.detail.x;
+    flareSettings.positioning.y = e.detail.y;
+    render();
+  }
 
-    function handleScaleMultiplier() {
-        flareSettings.hotspot.radius *= flareSettings.sizeMultiplier;
-        flareSettings.streak.thickness *= flareSettings.sizeMultiplier;
-        flareSettings.streak.width *= flareSettings.sizeMultiplier;
-        flareSettings.ring.radius *= flareSettings.sizeMultiplier;
-        flareSettings.ring.thickness *= flareSettings.sizeMultiplier;
-        flareSettings.ring.blur *= flareSettings.sizeMultiplier;
-        flareSettings.ring.cropSize *= flareSettings.sizeMultiplier;
-        flareSettings.miIris.radius *= flareSettings.sizeMultiplier;
-        flareSettings.miIris.fringeSize *= flareSettings.sizeMultiplier;
-        flareSettings.miIris.blur *= flareSettings.sizeMultiplier;
-        flareSettings.glow.radius *= flareSettings.sizeMultiplier;
-        flareSettings.lensOrbs.radius *= flareSettings.sizeMultiplier;
-        flareSettings.lensOrbs.fringeSize *= flareSettings.sizeMultiplier;
-        flareSettings.lensOrbs.blur *= flareSettings.sizeMultiplier;
-        flareSettings.sizeMultiplier = 1;
-        renderFlare(true, true, true, true, true, true);
-    }
+  // ─── Export Functions ───────────────────────────────────────────────
 
-    // Responsive design + dividers
-    /** @type {"horizontal" | "vertical"} */
-    let layout = "horizontal";
-    let dividerX = 360;
-    let dividerY = 360;
-    function updateLayout() {
-        if (window.innerWidth < 400) layout = "vertical";
-        else layout = "horizontal";
-    }
+  /** Create an anchor element with a full-quality export image */
+  function createDownloadLink() {
+    const initialDownscaling = flareSettings.downscaling;
+    flareSettings.downscaling = 1;
+    render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true });
 
-    let isPopupPlugin = false;
-    // isPhotoshopPlugin is injected at build time via rollup replace plugin.
-    // Use `npm run build:photoshop` to set this to true.
-    let isPhotoshopPlugin = __IS_PHOTOSHOP_PLUGIN__;
-    let editingLayerPhotoshop = "no";
+    const a = document.createElement("a");
+    a.href = baseCanvas.toDataURL("image/" + flareSettings.exportType);
+    a.download = "ProgenFlares2-flare." + flareSettings.exportType;
 
-    onMount(function() {
-        renderFlare(true, true, true, true, true, true);
+    // Restore preview quality
+    flareSettings.downscaling = initialDownscaling;
+    render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true });
+    return a;
+  }
 
-        if (isPhotoshopPlugin) {
-            window.addEventListener("message", function(e) {
-                if (typeof e.data == "string") e.data = JSON.parse(e.data);
-                console.log(e.data);
-                if (e.data.type == "init") {
-                    // Receive docWidth, docHeight, and editingLayer via message
-                    // instead of location.search (UXP does not support location.search)
-                    flareSettings.dimensions.width = parseInt(e.data.docWidth);
-                    flareSettings.dimensions.height = parseInt(e.data.docHeight);
-                    editingLayerPhotoshop = e.data.editingLayer ?? "no";
-                    setTimeout(onStart, 1);
-                }
-                else if (e.data.type == "refImage") {
-                    referenceImage.style.backgroundImage = `url("${e.data.data}")`;
-                    rIcheckbox.checked = true;
-                    (handleRIcheckbox.bind(rIcheckbox))();
-                }
-                else if (e.data.type == "flareSettings") {
-                    // If onStart hasn't fired yet, override the default preset so
-                    // onStart uses the existing layer's settings instead of the default.
-                    // If onStart already fired, apply the settings directly.
-                    let incoming = (typeof e.data.data == "string") ? JSON.parse(e.data.data) : e.data.data;
-                    incoming.downscaling = 5/2;
-                    if (startScreenVisible) overrideSetPreset = true;
-                    flareSettings = incoming;
-                    renderFlare(true, true, true, true, true, true);
-                }
-            });
-            window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
-        } else {
-            let locSearch = new URLSearchParams(location.search);
-            if (locSearch.get("popupPlugin") == "yeah") {
-                isPopupPlugin = true;
-                flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
-                flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
-                setTimeout(onStart, 1);
-                window.addEventListener("message", function(e) {
-                    console.log(e.data);
-                    if (e.data[0] == "refImage") {
-                        referenceImage.style.backgroundImage = `url("${e.data[1]}")`;
-                        rIcheckbox.checked = true;
-                        (handleRIcheckbox.bind(rIcheckbox))();
-                    }
-                });
-                window.opener.postMessage(["pluginStatus", "ready"]);
-            }
-        }
-        
-        updateLayout();
+  /** Create an anchor element to download current settings as a .pgf2 preset */
+  function createPresetSaveLink() {
+    const fileContents = JSON.stringify({
+      hotspot: flareSettings.hotspot,
+      streak: flareSettings.streak,
+      ring: flareSettings.ring,
+      miIris: flareSettings.miIris,
+      glow: flareSettings.glow,
+      lensOrbs: flareSettings.lensOrbs,
     });
+    const blob = new Blob([fileContents], { type: "application/pgf2" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "ProgenFlares2-preset.pgf2";
+    return a;
+  }
+
+  // ─── Preset Management ─────────────────────────────────────────────
+
+  /** Apply a preset's settings onto the current flareSettings */
+  function setPreset(presetData) {
+    for (const key in presetData) {
+      if (!flareSettings[key]) flareSettings[key] = {};
+      for (const subKey in presetData[key]) {
+        flareSettings[key][subKey] = presetData[key][subKey];
+      }
+    }
+    // Handle backwards compatibility for older presets
+    if (!presetData.lensOrbs) flareSettings.lensOrbs.visible = false;
+    if (!presetData.hotspot.deformationOctaves) flareSettings.hotspot.deformationOctaves = 5;
+    renderAll();
+  }
+
+  // ─── Start Screen ──────────────────────────────────────────────────
+
+  let startScreenVisible = true;
+  let myPresetPicker;
+  let overrideSetPreset = false;
+
+  /** Initialize the project and dismiss the start screen */
+  function onStart() {
+    if (!overrideSetPreset) {
+      setPreset(myPresetPicker.defaultPreset);
+      flareSettings.positioning.pivotX = flareSettings.dimensions.width / 2;
+      flareSettings.positioning.pivotY = flareSettings.dimensions.height / 2;
+      flareSettings.positioning.x = flareSettings.dimensions.width * 2 / 5;
+      flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5;
+    }
+    renderAll();
+    startScreenVisible = false;
+  }
+
+  // ─── Reference Image ───────────────────────────────────────────────
+
+  let rIcheckbox;
+
+  /** Open a file picker to import a reference image */
+  function handleRIbutton() {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/png, image/jpeg";
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+      reader.addEventListener("loadend", (e) => {
+        referenceImage.style.backgroundImage = `url("${e.target.result}")`;
+        rIcheckbox.checked = true;
+        handleRIcheckbox();
+      });
+      reader.readAsDataURL(file);
+    });
+    fileInput.click();
+  }
+
+  /** Toggle reference image visibility */
+  function handleRIcheckbox() {
+    if (rIcheckbox.checked) {
+      referenceImage.style.backgroundSize = "100% 100%";
+    } else {
+      referenceImage.style.backgroundSize = "0 0";
+    }
+  }
+
+  // ─── Scale Multiplier ──────────────────────────────────────────────
+
+  /** Apply the scale multiplier to all size-related settings, then reset it to 1 */
+  function handleScaleMultiplier() {
+    const m = flareSettings.sizeMultiplier;
+    flareSettings.hotspot.radius *= m;
+    flareSettings.streak.thickness *= m;
+    flareSettings.streak.width *= m;
+    flareSettings.ring.radius *= m;
+    flareSettings.ring.thickness *= m;
+    flareSettings.ring.blur *= m;
+    flareSettings.ring.cropSize *= m;
+    flareSettings.miIris.radius *= m;
+    flareSettings.miIris.fringeSize *= m;
+    flareSettings.miIris.blur *= m;
+    flareSettings.glow.radius *= m;
+    flareSettings.lensOrbs.radius *= m;
+    flareSettings.lensOrbs.fringeSize *= m;
+    flareSettings.lensOrbs.blur *= m;
+    flareSettings.sizeMultiplier = 1;
+    renderAll();
+  }
+
+  // ─── Responsive Layout ─────────────────────────────────────────────
+
+  /** @type {"horizontal" | "vertical"} */
+  let layout = "horizontal";
+  let dividerX = 360;
+  let dividerY = 360;
+
+  function updateLayout() {
+    layout = window.innerWidth < 400 ? "vertical" : "horizontal";
+  }
+
+  // ─── Platform Integration ──────────────────────────────────────────
+
+  let isPopupPlugin = false;
+  // Injected at build time via rollup replace plugin.
+  // Use `npm run build:photoshop` to set this to true.
+  let isPhotoshopPlugin = __IS_PHOTOSHOP_PLUGIN__;
+  let editingLayerPhotoshop = "no";
+
+  onMount(() => {
+    renderAll();
+
+    if (isPhotoshopPlugin) {
+      // Photoshop UXP plugin messaging
+      window.addEventListener("message", (e) => {
+        if (typeof e.data === "string") e.data = JSON.parse(e.data);
+
+        if (e.data.type === "init") {
+          flareSettings.dimensions.width = parseInt(e.data.docWidth);
+          flareSettings.dimensions.height = parseInt(e.data.docHeight);
+          editingLayerPhotoshop = e.data.editingLayer ?? "no";
+          setTimeout(onStart, 1);
+        } else if (e.data.type === "refImage") {
+          referenceImage.style.backgroundImage = `url("${e.data.data}")`;
+          rIcheckbox.checked = true;
+          handleRIcheckbox();
+        } else if (e.data.type === "flareSettings") {
+          const incoming = typeof e.data.data === "string"
+            ? JSON.parse(e.data.data)
+            : e.data.data;
+          incoming.downscaling = 5 / 2;
+          if (startScreenVisible) overrideSetPreset = true;
+          flareSettings = incoming;
+          renderAll();
+        }
+      });
+      window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
+    } else {
+      // Web / popup plugin mode
+      const locSearch = new URLSearchParams(location.search);
+      if (locSearch.get("popupPlugin") === "yeah") {
+        isPopupPlugin = true;
+        flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
+        flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
+        setTimeout(onStart, 1);
+        window.addEventListener("message", (e) => {
+          if (e.data[0] === "refImage") {
+            referenceImage.style.backgroundImage = `url("${e.data[1]}")`;
+            rIcheckbox.checked = true;
+            handleRIcheckbox();
+          }
+        });
+        window.opener.postMessage(["pluginStatus", "ready"]);
+      }
+    }
+
+    updateLayout();
+  });
 </script>
 
 <svelte:window on:resize={updateLayout} />
 
-<div id={"exportPanel"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
-    <div class="centered">
-        {#if (!isPopupPlugin && !isPhotoshopPlugin)}
-            <button on:click={function() { createDownloadLink().click(); }}>Export</button>
-            <span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
-            <select bind:value={flareSettings.exportType}>
-                <option value={"png"}>PNG</option>
-                <option value={"jpeg"}>JPG</option>
-                <option value={"webp"}>WebP</option>
-            </select>
-        {:else if (isPopupPlugin)}
-            <button on:click={function() { window.opener.postMessage(["finalImage", createDownloadLink().href]); }}>Finish</button>
-            <span style="white-space: pre;">{"  "}</span>
-            <button on:click={function() { window.close(); }}>Close</button>
-        {:else if (isPhotoshopPlugin)}
-            <button on:click={function() {
-                flareSettings.downscaling = 1;
-                renderFlare(true, true, true, true, true);
-                let imageData = baseCanvas.getContext("2d").getImageData(0, 0, baseCanvas.width, baseCanvas.height);
-                window.uxpHost.postMessage({
-                    type: "exportLayer",
-                    data: Array.from(imageData.data),
-                    metadata: JSON.stringify(flareSettings),
-                    editingLayer: editingLayerPhotoshop,
-                });
-            }}>Finish</button>
-        {/if}
-    </div>
+<!-- ─── Export Bar ──────────────────────────────────────────────────── -->
+<div id="exportPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
+  <div class="centered">
+    {#if !isPopupPlugin && !isPhotoshopPlugin}
+      <button on:click={() => createDownloadLink().click()}>Export</button>
+      <span style="display: inline-block; margin-left: 5px; margin-right: 5px;">as</span>
+      <select bind:value={flareSettings.exportType}>
+        <option value="png">PNG</option>
+        <option value="jpeg">JPG</option>
+        <option value="webp">WebP</option>
+      </select>
+    {:else if isPopupPlugin}
+      <button on:click={() => window.opener.postMessage(["finalImage", createDownloadLink().href])}>
+        Finish
+      </button>
+      <span style="white-space: pre;">{"  "}</span>
+      <button on:click={() => window.close()}>Close</button>
+    {:else if isPhotoshopPlugin}
+      <button on:click={() => {
+        flareSettings.downscaling = 1;
+        render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true });
+        const imageData = baseCanvas.getContext("2d").getImageData(0, 0, baseCanvas.width, baseCanvas.height);
+        window.uxpHost.postMessage({
+          type: "exportLayer",
+          data: Array.from(imageData.data),
+          metadata: JSON.stringify(flareSettings),
+          editingLayer: editingLayerPhotoshop,
+        });
+      }}>
+        Finish
+      </button>
+    {/if}
+  </div>
 </div>
 
-<div id={"previewSection"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
-    <canvas bind:this={referenceImage} id={"referenceImage"} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
-    <canvas bind:this={baseCanvas} id={"baseCanvas"} use:canvasClickDrag on:clickDrag={handleClickDrag} width={flareSettings.dimensions.width} height={flareSettings.dimensions.height} class={"centered"}></canvas>
+<!-- ─── Preview Section ─────────────────────────────────────────────── -->
+<div id="previewSection" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
+  <canvas
+    bind:this={referenceImage}
+    id="referenceImage"
+    width={flareSettings.dimensions.width}
+    height={flareSettings.dimensions.height}
+    class="centered"
+  />
+  <canvas
+    bind:this={baseCanvas}
+    id="baseCanvas"
+    use:canvasClickDrag
+    on:clickDrag={handleClickDrag}
+    width={flareSettings.dimensions.width}
+    height={flareSettings.dimensions.height}
+    class="centered"
+  />
 </div>
 
-<div id={"sectionAbovePreview"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
-    <div class="centered" style:width="100%" style:text-align="center">
-        Preview quality
-        <select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true, true, true, true); }}>
-            <option value={1}>100%</option>
-            <option value={5/4}>80%</option>
-            <option value={5/3}>60%</option>
-            <option value={5/2}>40%</option>
-            <option value={5}>20%</option>
-        </select>
-        <span style={"white-space: pre; color: grey;"}>{"    |    "}</span>
-        <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} checked={true} style={"margin-bottom: 0;"} />
-        Reference Image
-        <button on:click={handleRIbutton}>Import</button>
-    </div>
+<!-- ─── Preview Quality Bar ─────────────────────────────────────────── -->
+<div id="sectionAbovePreview" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
+  <div class="centered" style:width="100%" style:text-align="center">
+    Preview quality
+    <select bind:value={flareSettings.downscaling} on:change={() => render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true })}>
+      <option value={1}>100%</option>
+      <option value={5 / 4}>80%</option>
+      <option value={5 / 3}>60%</option>
+      <option value={5 / 2}>40%</option>
+      <option value={5}>20%</option>
+    </select>
+    <span style="white-space: pre; color: grey;">{"    |    "}</span>
+    <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} checked style="margin-bottom: 0;" />
+    Reference Image
+    <button on:click={handleRIbutton}>Import</button>
+  </div>
 </div>
 
+<!-- ─── Panel Divider ───────────────────────────────────────────────── -->
 <Divider {layout} bind:dividerX bind:dividerY />
 
-<div id={"controlPanel"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
+<!-- ─── Control Panel ───────────────────────────────────────────────── -->
+<div id="controlPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
+  <!-- Preset bar (sticky header) -->
+  <div class="preset-bar">
+    <PresetPicker
+      on:choose={(e) => setPreset(e.detail)}
+      bind:this={myPresetPicker}
+      {isPhotoshopPlugin}
+    />
+    <button on:click={() => createPresetSaveLink().click()} style="float: right; width: 49%;">
+      Create Preset
+    </button>
+  </div>
 
-<div style={`
+  <!-- Artifact control sections -->
+  <GlobalControls
+    bind:positioning={flareSettings.positioning}
+    dimensions={flareSettings.dimensions}
+    bind:sizeMultiplier={flareSettings.sizeMultiplier}
+    on:change={() => render()}
+    on:applyScale={handleScaleMultiplier}
+  />
+  <HotspotControls
+    bind:settings={flareSettings.hotspot}
+    on:change={() => render({ hotspot: true })}
+  />
+  <StreakControls
+    bind:settings={flareSettings.streak}
+    on:change={() => render({ streak: true })}
+  />
+  <RingControls
+    bind:settings={flareSettings.ring}
+    on:change={() => render({ ring: true })}
+  />
+  <MultiIrisControls
+    bind:settings={flareSettings.miIris}
+    on:change={() => render({ miIris: true })}
+  />
+  <GlowControls
+    bind:settings={flareSettings.glow}
+    on:change={() => render({ glow: true })}
+  />
+  <LensOrbsControls
+    bind:settings={flareSettings.lensOrbs}
+    on:change={() => render({ lensOrbs: true })}
+  />
+</div>
+
+<!-- ─── Start Screen ────────────────────────────────────────────────── -->
+{#if startScreenVisible}
+  <div id="startScreen" style="background-image: url({coverImage});" out:fade>
+    <div
+      class="centered"
+      style:width="calc(min(500px, 100vw))"
+      style:height="calc(min(500px, 100vh))"
+      style:backdrop-filter="blur(5px) brightness(0.625)"
+      style:box-shadow="0 4.41px 22.22px #00000099"
+      style:border-radius="10px"
+    />
+    <div class="centered" style:text-align="center">
+      <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
+      <br /><br />
+      {#if !isPhotoshopPlugin && !isPopupPlugin}
+        <span style="width: 145px; text-align: left; display: inline-block;">Image Width</span>
+        <input type="number" bind:value={flareSettings.dimensions.width} style="width: 80px;" />
+        <br />
+        <span style="width: 145px; text-align: left; display: inline-block;">Image Height</span>
+        <input type="number" bind:value={flareSettings.dimensions.height} style="width: 80px;" />
+        <br /><br />
+        <button on:click={onStart}>Create</button>
+        <br /><br />
+      {/if}
+      <span style="font-size: 10px;">&copy; 2026 Lunal Graphics<br />Developed by Yikuan Sun</span>
+    </div>
+  </div>
+{/if}
+
+<svelte:head>
+  <title>Progen Flares 2</title>
+</svelte:head>
+
+<style>
+  :root {
+    --color-scheme-1: #f27700;
+    --color-scheme-2: #d06100;
+    --color-scheme-3: #a24200;
+    --color-scheme-4: #712200;
+    --color-scheme-5: #430300;
+    --color-scheme-6: #242424;
+  }
+
+  :global(body) {
+    background-color: var(--color-scheme-6);
+    color: whitesmoke;
+    user-select: none;
+  }
+
+  /* ─── Canvas ─────────────────────────────────────────────────── */
+
+  #baseCanvas,
+  #referenceImage {
+    max-width: calc(100% - 50px);
+    max-height: calc(100% - 50px);
+  }
+
+  #referenceImage {
+    background-color: black;
+    background-size: 100% 100%;
+  }
+
+  #baseCanvas {
+    mix-blend-mode: screen;
+  }
+
+  /* ─── Form Controls ──────────────────────────────────────────── */
+
+  :global(slider) {
+    float: right;
+    accent-color: var(--color-scheme-1);
+  }
+
+  :global(input[type="number"]) {
+    color: var(--color-scheme-1);
+    background-color: #181818;
+    border: 1px solid #181818;
+    transition: border 0.2s, box-shadow 0.2s;
+    -moz-appearance: textfield;
+  }
+
+  :global(input[type="number"]):focus {
+    border: 1px solid var(--color-scheme-1);
+    box-shadow: inset 0 0 4px var(--color-scheme-2);
+    outline: none !important;
+    -moz-appearance: revert !important;
+  }
+
+  :global(input[type="number"]):hover {
+    border: 1px solid var(--color-scheme-1);
+    -moz-appearance: revert !important;
+  }
+
+  :global(button) {
+    padding: 4px 12px;
+    background-color: #333333;
+    border: 1px solid #555555;
+    color: var(--color-scheme-1);
+    transition: border 0.2s, box-shadow 0.2s, background-color 0.2s;
+  }
+
+  :global(button):focus,
+  :global(select):focus {
+    border: 1px solid var(--color-scheme-1);
+    box-shadow: inset 0 0 4px var(--color-scheme-2);
+    outline: none !important;
+  }
+
+  :global(button):hover,
+  :global(select):hover {
+    border: 1px solid var(--color-scheme-1);
+  }
+
+  :global(select) {
+    padding: 4px;
+    background-color: #333333;
+    border: 1px solid #555555;
+    color: var(--color-scheme-1);
+    transition: border 0.2s, box-shadow 0.2s;
+  }
+
+  :global(select),
+  :global(button) {
+    margin-bottom: 0;
+  }
+
+  :global(input[type="checkbox"]) {
+    accent-color: var(--color-scheme-2);
+  }
+
+  /* ─── Range Slider ───────────────────────────────────────────── */
+
+  :global(input[type="range"]) {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none !important;
+    background-color: #353535 !important;
+    height: 5px !important;
+    border: 0 !important;
+  }
+
+  :global(input[type="range"]::-webkit-slider-thumb) {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px !important;
+    width: 10px !important;
+    background-color: var(--color-scheme-1) !important;
+    border-radius: 50%;
+    border: 0 !important;
+  }
+
+  :global(input[type="range"]::-webkit-slider-thumb:hover) {
+    background-color: var(--color-scheme-3) !important;
+  }
+
+  :global(input[type="range"]::-moz-range-thumb) {
+    height: 10px !important;
+    width: 10px !important;
+    background-color: var(--color-scheme-1) !important;
+    border-radius: 50%;
+    border: 0 !important;
+  }
+
+  :global(input[type="range"]::-moz-range-thumb:hover) {
+    background-color: var(--color-scheme-3) !important;
+  }
+
+  :global(.hueSlider input[type="range"]) {
+    background: linear-gradient(
+      to right,
+      hsl(0, 100%, 25%),
+      hsl(30deg, 100%, 25%),
+      hsl(60deg, 100%, 25%),
+      hsl(90deg, 100%, 25%),
+      hsl(120deg, 100%, 25%),
+      hsl(150deg, 100%, 25%),
+      hsl(180deg, 100%, 25%),
+      hsl(210deg, 100%, 25%),
+      hsl(240deg, 100%, 25%),
+      hsl(270deg, 100%, 25%),
+      hsl(300deg, 100%, 25%),
+      hsl(330deg, 100%, 25%),
+      hsl(360deg, 100%, 25%)
+    );
+  }
+
+  /* ─── Scrollbar ──────────────────────────────────────────────── */
+
+  :global(::-webkit-scrollbar) {
+    width: 10px;
+    height: 10px;
+  }
+
+  :global(::-webkit-scrollbar-track) {
+    opacity: 0;
+  }
+
+  :global(::-webkit-scrollbar-thumb) {
+    background: #333333;
+  }
+
+  :global(::-webkit-scrollbar-thumb:hover) {
+    background: var(--color-scheme-3);
+  }
+
+  :global(::selection) {
+    background-color: var(--color-scheme-4);
+  }
+
+  /* ─── Layout Panels ──────────────────────────────────────────── */
+
+  #controlPanel {
+    position: fixed;
+    overflow-y: scroll;
+    border-left: 1px solid #353535;
+    right: 0;
+  }
+
+  #controlPanel[data-layout="horizontal"] {
+    width: var(--divider-x);
+    height: 100vh;
+    bottom: 0;
+  }
+
+  #controlPanel[data-layout="vertical"] {
+    width: 100vw;
+    height: calc(var(--divider-y) - 50px);
+    bottom: 50px;
+  }
+
+  #previewSection {
+    box-sizing: border-box;
+    padding: 25px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+  }
+
+  #previewSection[data-layout="horizontal"] {
+    width: calc(100vw - var(--divider-x));
+    height: calc(100vh - 2 * 50px);
+  }
+
+  #previewSection[data-layout="vertical"] {
+    width: 100vw;
+    height: calc(100vh - 50px - var(--divider-y));
+  }
+
+  .centered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #sectionAbovePreview {
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  #sectionAbovePreview[data-layout="horizontal"] {
+    width: calc(100vw - var(--divider-x));
+  }
+
+  #sectionAbovePreview[data-layout="vertical"] {
+    width: 100vw;
+  }
+
+  #exportPanel {
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  #exportPanel[data-layout="horizontal"] {
+    width: calc(100vw - var(--divider-x));
+  }
+
+  #exportPanel[data-layout="vertical"] {
+    width: 100vw;
+  }
+
+  #startScreen {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-scheme-6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 15;
+  }
+
+  .preset-bar {
     position: sticky;
     top: 0;
     width: 100%;
     background-color: var(--color-scheme-6);
     padding: 5px;
     box-sizing: border-box;
-        border-bottom: 1px solid #353535;
-`}>
-    <PresetPicker on:choose={ function(e) { setPreset(e.detail); } } bind:this={myPresetPicker} isPhotoshopPlugin={isPhotoshopPlugin} />
-    <button on:click={function() { createPresetSaveLink().click(); }} style="float: right; width: 49%;">Create Preset</button>
-</div>
-
-<Collapsible title={"Global"} collapsed={false}>
-    Light X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.x} on:input={function() { renderFlare(); }} /> <br />
-    Light Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.y} on:input={function() { renderFlare(); }} /> <br />
-    Focus X: <Slider min={0} max={flareSettings.dimensions.width} bind:value={flareSettings.positioning.pivotX} on:input={function() { renderFlare(); }} /> <br />
-    Focus Y: <Slider min={0} max={flareSettings.dimensions.height} bind:value={flareSettings.positioning.pivotY} on:input={function() { renderFlare(); }} /> <br />
-    Scale Multiplier: <Slider min={0.01} max={2} step={0.01} bind:value={flareSettings.sizeMultiplier} on:input={function() { renderFlare(); }} on:change={handleScaleMultiplier} /> <br />
-</Collapsible>
-<Collapsible title={"Hotspot"}>
-    <label style="text-align: center;">
-        <input type="checkbox" bind:checked={flareSettings.hotspot.visible} on:change={function() { renderFlare(true); }} />
-        Visible
-    </label>
-    Alpha: <Slider min={0} max={100} bind:value={flareSettings.hotspot.alpha} on:input={function() { renderFlare(true); }} /> <br />
-    Angle: <Slider min={0} max={360} bind:value={flareSettings.hotspot.angle} on:input={function() { renderFlare(true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.hotspot.hue} on:input={function() { renderFlare(true); }} className="hueSlider" /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.hotspot.saturation} on:input={function() { renderFlare(true); }} /> <br />
-    Size: <Slider min={0} max={1000} bind:value={flareSettings.hotspot.radius} on:input={function() { renderFlare(true); }} /> <br />
-    Intensity: <Slider min={0} max={50} bind:value={flareSettings.hotspot.intensity} on:input={function() { renderFlare(true); }} /> <br />
-    Rays Frequency: <Slider min={0} max={0.05} step={0.001} bind:value={flareSettings.hotspot.deformationFrequency} on:input={function() { renderFlare(true); }} /> <br />
-    Rays Definition: <Slider min={0} max={2.1} step={0.01} bind:value={flareSettings.hotspot.deformationAmount} on:input={function() { renderFlare(true); }} /> <br />
-    Rays Detail: <Slider min={1} max={5} step={1} bind:value={flareSettings.hotspot.deformationOctaves} on:input={function() { renderFlare(true); }} /> <br />
-    Random Seed: <Slider min={1} max={999} bind:value={flareSettings.hotspot.deformationSeed} on:input={function() { renderFlare(true); }} /> <br />
-    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.hotspot.anamorph} on:input={function() { renderFlare(true); }} /> <br />
-</Collapsible>
-<Collapsible title={"Streak"}>
-    <label style="text-align: center;">
-        <input type="checkbox" bind:checked={flareSettings.streak.visible} on:change={function() { renderFlare(false, true); }} />
-        Visible
-    </label>
-    Alpha: <Slider min={0} max={100} bind:value={flareSettings.streak.alpha} on:input={function() { renderFlare(false, true); }} /> <br />
-    Angle: <Slider min={0} max={360} bind:value={flareSettings.streak.angle} on:input={function() { renderFlare(false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.streak.hue} on:input={function() { renderFlare(false, true); }} className="hueSlider" /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.streak.saturation} on:input={function() { renderFlare(false, true); }} /> <br />
-    Thickness: <Slider min={0} max={200} bind:value={flareSettings.streak.thickness} on:input={function() { renderFlare(false, true); }} /> <br />
-    Length: <Slider min={0} max={5000} bind:value={flareSettings.streak.width} on:input={function() { renderFlare(false, true); }} /> <br />
-    Intensity: <Slider min={-30} max={50} bind:value={flareSettings.streak.intensity} on:input={function() { renderFlare(false, true); }} /> <br />
-    Starring: <Slider min={1} max={8} bind:value={flareSettings.streak.count} on:input={function() { renderFlare(false, true); }} /> <br />
-    Shift: <Slider min={0} max={100} bind:value={flareSettings.streak.shift} on:input={function() { renderFlare(false, true); }} /> <br />
-</Collapsible>
-<Collapsible title={"Ring"}>
-    <label style="text-align: center;">
-        <input type="checkbox" bind:checked={flareSettings.ring.visible} on:change={function() { renderFlare(false, false, true); }} />
-        Visible
-    </label>
-    Alpha: <Slider min={0} max={100} bind:value={flareSettings.ring.alpha} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.ring.hue} on:input={function() { renderFlare(false, false, true); }} className="hueSlider" /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.ring.saturation} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Size: <Slider min={0} max={810} bind:value={flareSettings.ring.radius} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Thickness: <Slider min={0} max={500} bind:value={flareSettings.ring.thickness} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Softness: <Slider min={0} max={50} bind:value={flareSettings.ring.blur} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Crop Size: <Slider min={0} max={810} bind:value={flareSettings.ring.cropSize} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Crop Hardness: <Slider min={0} max={100} bind:value={flareSettings.ring.cropHardness} on:input={function() { renderFlare(false, false, true); }} /> <br />
-    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.ring.anamorph} on:input={function() { renderFlare(false, false, true); }} /> <br />
-</Collapsible>
-<Collapsible title={"Multi-Iris"}>
-    <label style="text-align: center;">
-        <input type="checkbox" bind:checked={flareSettings.miIris.visible} on:change={function() { renderFlare(false, false, false, true); }} />
-        Visible
-    </label>
-    Fill Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fillAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeAlpha} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Angle: <Slider min={0} max={360} bind:value={flareSettings.miIris.angle} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.miIris.hue} on:input={function() { renderFlare(false, false, false, true); }} className="hueSlider" /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.miIris.saturation} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Size: <Slider min={0} max={810} bind:value={flareSettings.miIris.radius} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Edges: <Slider min={3} max={12} bind:value={flareSettings.miIris.sides} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Roundness: <Slider min={0} max={100} bind:value={flareSettings.miIris.roundness} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Fringe Size: <Slider min={0} max={100} bind:value={flareSettings.miIris.fringeSize} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Softness: <Slider min={0} max={30} bind:value={flareSettings.miIris.blur} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Count Towards: <Slider min={0} max={50} bind:value={flareSettings.miIris.countTowards} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Count Away: <Slider min={0} max={50} bind:value={flareSettings.miIris.countAway} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Spread: <Slider min={0} max={100} bind:value={flareSettings.miIris.spread} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Size Variance: <Slider min={0} max={100} bind:value={flareSettings.miIris.sizeVariance} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Perspective: <Slider min={0} max={100} bind:value={flareSettings.miIris.perspective} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Alpha Variance: <Slider min={0} max={100} bind:value={flareSettings.miIris.alphaVariance} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Hue Variance: <Slider min={0} max={180} bind:value={flareSettings.miIris.hueVariance} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Random Seed: <Slider min={0} max={999} bind:value={flareSettings.miIris.seed} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.miIris.anamorph} on:input={function() { renderFlare(false, false, false, true); }} /> <br />
-</Collapsible>
-<Collapsible title={"Glow"}>
-    <label style="text-align: center;">
-        <input type="checkbox" bind:checked={flareSettings.glow.visible} on:change={function() { renderFlare(false, false, false, false, true); }} />
-        Visible
-    </label>
-    Alpha: <Slider min={0} max={100} bind:value={flareSettings.glow.alpha} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.glow.hue} on:input={function() { renderFlare(false, false, false, false, true); }} className="hueSlider" /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.glow.saturation} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
-    Size: <Slider min={0} max={1500} bind:value={flareSettings.glow.radius} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
-    Softness: <Slider min={0} max={200} bind:value={flareSettings.glow.softening} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
-    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.glow.anamorph} on:input={function() { renderFlare(false, false, false, false, true); }} /> <br />
-</Collapsible>
-<Collapsible title={"Lens Orbs"}>
-    <label style="text-align: center;">
-        <input type="checkbox" bind:checked={flareSettings.lensOrbs.visible} on:change={function() { renderFlare(false, false, false, false, false, true); }} />
-        Visible
-    </label>
-    Count: <Slider min={0} max={200} bind:value={flareSettings.lensOrbs.count} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Threshold: <Slider min={0} max={1500} bind:value={flareSettings.lensOrbs.threshold} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Fill Alpha: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.fillAlpha} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Fringe Alpha: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.fringeAlpha} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Angle: <Slider min={0} max={360} bind:value={flareSettings.lensOrbs.angle} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Hue: <Slider min={0} max={360} bind:value={flareSettings.lensOrbs.hue} on:input={function() { renderFlare(false, false, false, false, false, true); }} className="hueSlider" /> <br />
-    Saturation: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.saturation} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Size: <Slider min={0} max={810} bind:value={flareSettings.lensOrbs.radius} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Edges: <Slider min={3} max={12} bind:value={flareSettings.lensOrbs.sides} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Roundness: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.roundness} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Fringe Size: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.fringeSize} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Softness: <Slider min={0} max={30} bind:value={flareSettings.lensOrbs.blur} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Size Variance: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.sizeVariance} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Alpha Variance: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.alphaVariance} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Hue Variance: <Slider min={0} max={180} bind:value={flareSettings.lensOrbs.hueVariance} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Random Seed: <Slider min={0} max={999} bind:value={flareSettings.lensOrbs.seed} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-    Anamorph: <Slider min={0} max={100} bind:value={flareSettings.lensOrbs.anamorph} on:input={function() { renderFlare(false, false, false, false, false, true); }} /> <br />
-</Collapsible>
-</div>
-
-{#if startScreenVisible}
-    <div id={"startScreen"} style="background-image: url({coverImage});" out:fade>
-        <div class={"centered"}
-            style:width="calc(min(500px, 100vw))"
-            style:height="calc(min(500px, 100vh))"
-            style:backdrop-filter="blur(5px) brightness(0.625)"
-            style:box-shadow="0 4.41px 22.22px #00000099"
-            style:border-radius="10px"
-            ></div>
-        <div class={"centered"} style:text-align="center">
-            <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
-            <br /> <br />
-            {#if !isPhotoshopPlugin && !isPopupPlugin}
-                <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Width</span> <input type="number" bind:value={flareSettings.dimensions.width} style={"width: 80px;"} />
-                <br />
-                <span style={"width: 145px; text-align: left; display: inline-block;"}>Image Height</span> <input type="number" bind:value={flareSettings.dimensions.height} style={"width: 80px;"} />
-                <br /> <br />
-                <button on:click={onStart}>Create</button>
-                <br /> <br />
-            {/if}
-            <span style={"font-size: 10px;"}>&copy; 2026 Lunal Graphics<br />Developed by Yikuan Sun</span>
-        </div>
-    </div>
-{/if}
-
-<style>
-    :root {
-        --color-scheme-1: #f27700;
-        --color-scheme-2: #d06100;
-        --color-scheme-3: #a24200;
-        --color-scheme-4: #712200;
-        --color-scheme-5: #430300;
-        /*--color-scheme-6: #181d29;*/
-        --color-scheme-6: #242424;
-    }
-    :global(body) {
-        background-color: var(--color-scheme-6);
-        color: whitesmoke;
-        user-select: none;
-    }
-    #baseCanvas, #referenceImage {
-        max-width: calc(100% - 50px);
-        max-height: calc(100% - 50px);
-    }
-    #referenceImage {
-        background-color: black;
-        background-size: 100% 100%;
-    }
-    #baseCanvas {
-        mix-blend-mode: screen;
-    }
-    :global(slider) {
-        float: right;
-        accent-color: var(--color-scheme-1);
-    }
-    :global(input[type=number]) {
-        color: var(--color-scheme-1);
-        background-color: #181818;
-        border: 1px solid #181818;
-        transition: border 0.2s, box-shadow 0.2s;
-        -moz-appearance: textfield;
-    }
-    :global(input[type=number]):focus {
-        border: 1px solid var(--color-scheme-1);
-        box-shadow: inset 0 0 4px var(--color-scheme-2);
-        outline: none!important;
-        -moz-appearance: revert!important;
-    }
-    :global(input[type=number]):hover {
-        border: 1px solid var(--color-scheme-1);
-        -moz-appearance: revert!important;
-    }
-
-    #controlPanel {
-        position: fixed;
-        overflow-y: scroll;
-        border-left: 1px solid #353535;
-        right: 0;
-    }
-    #controlPanel[data-layout="horizontal"] {
-        width: var(--divider-x);
-        height: 100vh;
-        bottom: 0;
-    }
-    #controlPanel[data-layout="vertical"] {
-        width: 100vw;
-        height: calc(var(--divider-y) - 50px);
-        bottom: 50px;
-    }
-
-    #previewSection {
-        box-sizing: border-box;
-        padding: 25px;
-        position: fixed;
-        top: 50px;
-        left: 0;
-    }
-    #previewSection[data-layout="horizontal"] {
-        width: calc(100vw - var(--divider-x));
-        height: calc(100vh - 2 * 50px);
-    }
-    #previewSection[data-layout="vertical"] {
-        width: 100vw;
-        height: calc(100vh - 50px - var(--divider-y));
-    }
-
-    .centered {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    #sectionAbovePreview {
-        height: 50px;
-        box-sizing: border-box;
-        text-align: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-    #sectionAbovePreview[data-layout="horizontal"] {
-        width: calc(100vw - var(--divider-x));
-    }
-    #sectionAbovePreview[data-layout="vertical"] {
-        width: 100vw;
-    }
-
-    #exportPanel {
-        height: 50px;
-        box-sizing: border-box;
-        text-align: center;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-    }
-    #exportPanel[data-layout="horizontal"] {
-        width: calc(100vw - var(--divider-x));
-    }
-    #exportPanel[data-layout="vertical"] {
-        width: 100vw;
-    }
-
-    #startScreen {
-        width: 100vw;
-        height: 100vh;
-        background-color: var(--color-scheme-6);
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-size: cover;
-        background-position: center;
-        z-index: 15;
-    }
-    :global(button) {
-        padding: 4px 12px;
-        background-color: #333333;
-        border: 1px solid #555555;
-        color: var(--color-scheme-1);
-        transition: border 0.2s, box-shadow 0.2s, background-color 0.2s;
-    }
-    :global(button):focus, :global(select):focus {
-        border: 1px solid var(--color-scheme-1);
-        box-shadow: inset 0 0 4px var(--color-scheme-2);
-        outline: none!important;
-    }
-    :global(button):hover, :global(select):hover {
-        border: 1px solid var(--color-scheme-1);
-    }
-    :global(select) {
-        padding: 4px;
-        background-color: #333333;
-        border: 1px solid #555555;
-        color: var(--color-scheme-1);
-        transition: border 0.2s, box-shadow 0.2s;
-    }
-    :global(select), :global(button) {
-        margin-bottom: 0;
-    }
-    :global(::-webkit-scrollbar) {
-        width: 10px;
-        height: 10px;
-    }
-    :global(::-webkit-scrollbar-track) {
-        opacity: 0;
-    }
-    :global(::-webkit-scrollbar-thumb) {
-        background: #333333;
-    }
-    :global(::-webkit-scrollbar-thumb:hover) {
-        background: var(--color-scheme-3);
-    }
-    :global(::selection) {
-        background-color: var(--color-scheme-4);
-    }
-    :global(input[type=checkbox]) {
-        accent-color: var(--color-scheme-2);
-    }
-    :global(input[type=range]) {
-        -webkit-appearance: none;
-        appearance: none;
-        outline: none!important;
-        background-color: #353535!important;
-        height: 5px!important;
-        border: 0!important;
-    }
-    :global(input[type="range"]::-webkit-slider-thumb) {
-        -webkit-appearance: none;
-        appearance: none;
-        height: 10px!important;
-        width: 10px!important;
-        background-color: var(--color-scheme-1)!important;
-        border-radius: 50%;
-        border: 0!important;
-    }
-    :global(input[type="range"]::-webkit-slider-thumb:hover) {
-        background-color: var(--color-scheme-3)!important;
-    }
-    :global( input[type="range"]::-moz-range-thumb) {
-        height: 10px!important;
-        width: 10px!important;
-        background-color: var(--color-scheme-1)!important;
-        border-radius: 50%;
-        border: 0!important;
-    }
-    :global( input[type="range"]::-moz-range-thumb:hover) {
-        background-color: var(--color-scheme-3)!important;
-    }
-    :global(.hueSlider input[type="range"]) {
-        background: linear-gradient(to right, hsl(0, 100%, 25%), hsl(30deg, 100%, 25%), hsl(60deg, 100%, 25%), hsl(90deg, 100%, 25%), hsl(120deg, 100%, 25%), hsl(150deg, 100%, 25%), hsl(180deg, 100%, 25%), hsl(210deg, 100%, 25%), hsl(240deg, 100%, 25%), hsl(270deg, 100%, 25%), hsl(300deg, 100%, 25%), hsl(330deg, 100%, 25%), hsl(360deg, 100%, 25%));
-    }
+    border-bottom: 1px solid #353535;
+  }
 </style>
-
-<svelte:head>
-    <title>Progen Flares 2</title>
-</svelte:head>
