@@ -1,13 +1,13 @@
 <script>
     import Collapsible from "./components/Collapsible.svelte";
-    import SpotComponent from "./SpotComponent";
-    import RingComponent from "./RingComponent";
+    import Spot from "./flareArtifacts/Spot";
+    import Ring from "./flareArtifacts/Ring";
     import Slider from "./components/Slider.svelte";
-    import drawComponent from "./drawComponent";
+    import drawArtifact from "./drawArtifact";
     import canvasClickDrag from "./canvasClickDrag";
-    import IrisComponent from "./IrisComponent";
+    import Iris from "./flareArtifacts/Iris";
     import seedrandom from "../node_modules/seedrandom";
-    import HalfComponent from "./HalfComponent";
+    import Half from "./flareArtifacts/Half";
     import PresetPicker from "./components/PresetPicker.svelte";
     import { fade } from "svelte/transition";
     import { onMount } from "svelte";
@@ -15,25 +15,25 @@
     import coverImage from "./images/coverImage.jpg";
     import Divider from "./components/Divider.svelte";
 
-    let flareComponents = {
-        hotspot: new SpotComponent(256, {
+    let flareArtifacts = {
+        hotspot: new Spot(256, {
             deformationFrequency: 0.006,
         }),
-        streak: new SpotComponent(256, {
+        streak: new Spot(256, {
             deformationAmount: 0,
             intensity: 0,
         }),
-        ring: new RingComponent(256, {
+        ring: new Ring(256, {
             cropSize: 0,
         }),
-        miIris: new IrisComponent(256, {
+        miIris: new Iris(256, {
             roundness: 20,
         }),
-        glow: new SpotComponent(256, {
+        glow: new Spot(256, {
             deformationAmount: 0,
             intensity: -50,
         }),
-        lensOrbs: new IrisComponent(256, {}),
+        lensOrbs: new Iris(256, {}),
     };
 
     let flareSettings = {
@@ -146,68 +146,68 @@
     
     function renderFlare(renderHotspot=false, renderStreak=false, renderRing=false, renderMI=false, renderGlow=false, renderLensOrbs=false) {
         if (renderHotspot) {
-            flareComponents.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
-            flareComponents.hotspot.options.intensity = flareSettings.hotspot.intensity;
-            flareComponents.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
-            flareComponents.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
-            flareComponents.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
-            flareComponents.hotspot.options.deformationOctaves = flareSettings.hotspot.deformationOctaves;
-            flareComponents.hotspot.options.hue = flareSettings.hotspot.hue;
-            flareComponents.hotspot.options.saturation = flareSettings.hotspot.saturation;
-            flareComponents.hotspot.options.angle = flareSettings.hotspot.angle;
-            flareComponents.hotspot.render();
+            flareArtifacts.hotspot.radius = Math.floor(flareSettings.hotspot.radius / flareSettings.downscaling);
+            flareArtifacts.hotspot.options.intensity = flareSettings.hotspot.intensity;
+            flareArtifacts.hotspot.options.deformationAmount = flareSettings.hotspot.deformationAmount;
+            flareArtifacts.hotspot.options.deformationFrequency = flareSettings.hotspot.deformationFrequency;
+            flareArtifacts.hotspot.options.deformationSeed = flareSettings.hotspot.deformationSeed;
+            flareArtifacts.hotspot.options.deformationOctaves = flareSettings.hotspot.deformationOctaves;
+            flareArtifacts.hotspot.options.hue = flareSettings.hotspot.hue;
+            flareArtifacts.hotspot.options.saturation = flareSettings.hotspot.saturation;
+            flareArtifacts.hotspot.options.angle = flareSettings.hotspot.angle;
+            flareArtifacts.hotspot.render();
         }
         if (renderStreak) {
-            flareComponents.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
-            flareComponents.streak.options.intensity = flareSettings.streak.intensity;
-            flareComponents.streak.options.hue = flareSettings.streak.hue;
-            flareComponents.streak.options.saturation = flareSettings.streak.saturation;
-            flareComponents.streak.render();
-            flareComponents.streakLeftHalf = new HalfComponent(flareComponents.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, true, false);
-            flareComponents.streakRightHalf = new HalfComponent(flareComponents.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, false, true);
+            flareArtifacts.streak.radius = Math.floor(flareSettings.streak.thickness * 2 / flareSettings.downscaling);
+            flareArtifacts.streak.options.intensity = flareSettings.streak.intensity;
+            flareArtifacts.streak.options.hue = flareSettings.streak.hue;
+            flareArtifacts.streak.options.saturation = flareSettings.streak.saturation;
+            flareArtifacts.streak.render();
+            flareArtifacts.streakLeftHalf = new Half(flareArtifacts.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, true, false);
+            flareArtifacts.streakRightHalf = new Half(flareArtifacts.streak.canvas, flareSettings.streak.width * 2, flareSettings.streak.thickness * 2, false, true);
         }
         if (renderRing) {
-            flareComponents.ring.radius = Math.floor(flareSettings.ring.radius / flareSettings.downscaling);
-            flareComponents.ring.options.thickness = flareSettings.ring.thickness / flareSettings.downscaling;
-            flareComponents.ring.options.blur = flareSettings.ring.blur / flareSettings.downscaling;
-            flareComponents.ring.options.cropSize = flareSettings.ring.cropSize / flareSettings.downscaling;
-            flareComponents.ring.options.cropHardness = flareSettings.ring.cropHardness;
-            flareComponents.ring.options.hue = flareSettings.ring.hue;
-            flareComponents.ring.options.saturation = flareSettings.ring.saturation;
-            flareComponents.ring.render();
+            flareArtifacts.ring.radius = Math.floor(flareSettings.ring.radius / flareSettings.downscaling);
+            flareArtifacts.ring.options.thickness = flareSettings.ring.thickness / flareSettings.downscaling;
+            flareArtifacts.ring.options.blur = flareSettings.ring.blur / flareSettings.downscaling;
+            flareArtifacts.ring.options.cropSize = flareSettings.ring.cropSize / flareSettings.downscaling;
+            flareArtifacts.ring.options.cropHardness = flareSettings.ring.cropHardness;
+            flareArtifacts.ring.options.hue = flareSettings.ring.hue;
+            flareArtifacts.ring.options.saturation = flareSettings.ring.saturation;
+            flareArtifacts.ring.render();
         }
         if (renderMI) {
-            flareComponents.miIris.radius = Math.floor(flareSettings.miIris.radius / flareSettings.downscaling);
-            flareComponents.miIris.options.sides = flareSettings.miIris.sides;
-            flareComponents.miIris.options.roundness = flareSettings.miIris.roundness;
-            flareComponents.miIris.options.fillAlpha = flareSettings.miIris.fillAlpha;
-            flareComponents.miIris.options.fringeAlpha = flareSettings.miIris.fringeAlpha;
-            flareComponents.miIris.options.fringeSize = flareSettings.miIris.fringeSize / flareSettings.downscaling;
-            flareComponents.miIris.options.blur = flareSettings.miIris.blur / flareSettings.downscaling;
-            flareComponents.miIris.options.angle = flareSettings.miIris.angle;
-            flareComponents.miIris.options.hue = flareSettings.miIris.hue;
-            flareComponents.miIris.options.saturation = flareSettings.miIris.saturation;
-            flareComponents.miIris.render();
+            flareArtifacts.miIris.radius = Math.floor(flareSettings.miIris.radius / flareSettings.downscaling);
+            flareArtifacts.miIris.options.sides = flareSettings.miIris.sides;
+            flareArtifacts.miIris.options.roundness = flareSettings.miIris.roundness;
+            flareArtifacts.miIris.options.fillAlpha = flareSettings.miIris.fillAlpha;
+            flareArtifacts.miIris.options.fringeAlpha = flareSettings.miIris.fringeAlpha;
+            flareArtifacts.miIris.options.fringeSize = flareSettings.miIris.fringeSize / flareSettings.downscaling;
+            flareArtifacts.miIris.options.blur = flareSettings.miIris.blur / flareSettings.downscaling;
+            flareArtifacts.miIris.options.angle = flareSettings.miIris.angle;
+            flareArtifacts.miIris.options.hue = flareSettings.miIris.hue;
+            flareArtifacts.miIris.options.saturation = flareSettings.miIris.saturation;
+            flareArtifacts.miIris.render();
         }
         if (renderGlow) {
-            flareComponents.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
-            flareComponents.glow.options.intensity = -flareSettings.glow.softening;
-            flareComponents.glow.options.hue = flareSettings.glow.hue;
-            flareComponents.glow.options.saturation = flareSettings.glow.saturation;
-            flareComponents.glow.render();
+            flareArtifacts.glow.radius = Math.floor(flareSettings.glow.radius / flareSettings.downscaling);
+            flareArtifacts.glow.options.intensity = -flareSettings.glow.softening;
+            flareArtifacts.glow.options.hue = flareSettings.glow.hue;
+            flareArtifacts.glow.options.saturation = flareSettings.glow.saturation;
+            flareArtifacts.glow.render();
         }
         if (renderLensOrbs) {
-            flareComponents.lensOrbs.radius = Math.floor(flareSettings.lensOrbs.radius / flareSettings.downscaling);
-            flareComponents.lensOrbs.options.sides = flareSettings.lensOrbs.sides;
-            flareComponents.lensOrbs.options.roundness = flareSettings.lensOrbs.roundness;
-            flareComponents.lensOrbs.options.fillAlpha = flareSettings.lensOrbs.fillAlpha;
-            flareComponents.lensOrbs.options.fringeAlpha = flareSettings.lensOrbs.fringeAlpha;
-            flareComponents.lensOrbs.options.fringeSize = flareSettings.lensOrbs.fringeSize / flareSettings.downscaling;
-            flareComponents.lensOrbs.options.blur = flareSettings.lensOrbs.blur / flareSettings.downscaling;
-            flareComponents.lensOrbs.options.angle = flareSettings.lensOrbs.angle;
-            flareComponents.lensOrbs.options.hue = flareSettings.lensOrbs.hue;
-            flareComponents.lensOrbs.options.saturation = flareSettings.lensOrbs.saturation;
-            flareComponents.lensOrbs.render();
+            flareArtifacts.lensOrbs.radius = Math.floor(flareSettings.lensOrbs.radius / flareSettings.downscaling);
+            flareArtifacts.lensOrbs.options.sides = flareSettings.lensOrbs.sides;
+            flareArtifacts.lensOrbs.options.roundness = flareSettings.lensOrbs.roundness;
+            flareArtifacts.lensOrbs.options.fillAlpha = flareSettings.lensOrbs.fillAlpha;
+            flareArtifacts.lensOrbs.options.fringeAlpha = flareSettings.lensOrbs.fringeAlpha;
+            flareArtifacts.lensOrbs.options.fringeSize = flareSettings.lensOrbs.fringeSize / flareSettings.downscaling;
+            flareArtifacts.lensOrbs.options.blur = flareSettings.lensOrbs.blur / flareSettings.downscaling;
+            flareArtifacts.lensOrbs.options.angle = flareSettings.lensOrbs.angle;
+            flareArtifacts.lensOrbs.options.hue = flareSettings.lensOrbs.hue;
+            flareArtifacts.lensOrbs.options.saturation = flareSettings.lensOrbs.saturation;
+            flareArtifacts.lensOrbs.render();
         }
 
         let ctx = baseCanvas.getContext("2d");
@@ -218,20 +218,20 @@
         ctx.fillRect(0, 0, baseCanvas.width, baseCanvas.height);
 
         if (flareSettings.hotspot.visible) {
-            drawComponent(ctx, flareComponents.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
+            drawArtifact(ctx, flareArtifacts.hotspot, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.hotspot.radius * 2, flareSettings.hotspot.radius * 2 * (1 - flareSettings.hotspot.anamorph / 100), 0, flareSettings.hotspot.alpha, 0, flareSettings.sizeMultiplier);
         }
         if (flareSettings.streak.visible) {
             let streakAngle = flareSettings.streak.angle;
             for (let i = 0; i < flareSettings.streak.count; i++) {
                 let streakOffset = (flareSettings.positioning.pivotX - flareSettings.positioning.x) * flareSettings.streak.shift / 100;
                 if (flareSettings.streak.count > 1) streakOffset = flareSettings.streak.shift * ((i % 2 == 0)?-1:1) / 100 * flareSettings.streak.width;
-                drawComponent(ctx, flareComponents.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
-                drawComponent(ctx, flareComponents.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
+                drawArtifact(ctx, flareArtifacts.streakRightHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width + streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
+                drawArtifact(ctx, flareArtifacts.streakLeftHalf, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.streak.width - streakOffset, flareSettings.streak.thickness, streakAngle, flareSettings.streak.alpha, 0, flareSettings.sizeMultiplier);
                 streakAngle += 180 / flareSettings.streak.count;
             }
         }
         if (flareSettings.ring.visible) {
-            drawComponent(ctx, flareComponents.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
+            drawArtifact(ctx, flareArtifacts.ring, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.ring.radius * 2, flareSettings.ring.radius * 2 * (1 - flareSettings.ring.anamorph / 100), 0, flareSettings.ring.alpha, 0, flareSettings.sizeMultiplier);
         }
         if (flareSettings.miIris.visible) {
             let miRng = seedrandom(flareSettings.miIris.seed);
@@ -242,7 +242,7 @@
                 };
                 let irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
                 irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-                drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+                drawArtifact(ctx, flareArtifacts.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
             }
             for (let i = 1; i < flareSettings.miIris.countAway; i++) {
                 let irisPosition = {
@@ -251,11 +251,11 @@
                 };
                 let irisScale = 1 + (miRng() - 0.5) * 2 * flareSettings.miIris.sizeVariance / 100;
                 irisScale -= (1 - i / flareSettings.miIris.countTowards) * flareSettings.miIris.perspective / 100;
-                drawComponent(ctx, flareComponents.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
+                drawArtifact(ctx, flareArtifacts.miIris, irisPosition.x, irisPosition.y, flareSettings.miIris.radius * 2 * irisScale, flareSettings.miIris.radius * 2 * irisScale * (1 - flareSettings.miIris.anamorph / 100), 0, 100 - flareSettings.miIris.alphaVariance * miRng(), flareSettings.miIris.hueVariance * (miRng() * 2 - 1), flareSettings.sizeMultiplier);
             }
         }
         if (flareSettings.glow.visible) {
-            drawComponent(ctx, flareComponents.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
+            drawArtifact(ctx, flareArtifacts.glow, flareSettings.positioning.x, flareSettings.positioning.y, flareSettings.glow.radius * 2, flareSettings.glow.radius * 2 * (1 - flareSettings.glow.anamorph / 100), 0, flareSettings.glow.alpha, 0, flareSettings.sizeMultiplier);
         }
         if (flareSettings.lensOrbs.visible) {
             let lensOrbsRng = seedrandom(flareSettings.lensOrbs.seed);
@@ -268,7 +268,7 @@
                 let orbAlpha = Math.max(0, (1 - distanceFromLight / flareSettings.lensOrbs.threshold) * 100);
                 orbAlpha = Math.max(0, orbAlpha - flareSettings.lensOrbs.alphaVariance * lensOrbsRng());
                 let orbScale = 1 + (lensOrbsRng() - 0.5) * 2 * flareSettings.lensOrbs.sizeVariance / 100;
-                drawComponent(ctx, flareComponents.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
+                drawArtifact(ctx, flareArtifacts.lensOrbs, orbPosition.x, orbPosition.y, flareSettings.lensOrbs.radius * 2 * orbScale, flareSettings.lensOrbs.radius * 2 * orbScale * (1 - flareSettings.lensOrbs.anamorph / 100), 0, orbAlpha, flareSettings.lensOrbs.hueVariance * (lensOrbsRng() * 2 - 1), flareSettings.sizeMultiplier);
             }
         }
     }

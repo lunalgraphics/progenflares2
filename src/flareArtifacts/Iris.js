@@ -1,6 +1,6 @@
-import colorvibrance from "./colorvibrance";
+import colorvibrance from "../colorvibrance";
 
-class IrisComponent {
+class Iris {
     canvas = document.createElement("canvas");
     radius = 512;
     options = {
@@ -98,4 +98,4 @@ class IrisComponent {
     }
 }
 
-export default IrisComponent;
+export default Iris;

@@ -1,10 +1,10 @@
-import colorvibrance from "./colorvibrance";
-import PrerenderedEllipticalGradient from "./EllipticalGradient";
-import FractalNoise from "./FractalNoise";
-import polarCoordinatesFilter from "./polarCoordinatesFilter";
-import intensity from "./intensity";
+import colorvibrance from "../colorvibrance";
+import PrerenderedEllipticalGradient from "../EllipticalGradient";
+import FractalNoise from "../FractalNoise";
+import polarCoordinatesFilter from "../polarCoordinatesFilter";
+import intensity from "../intensity";
 
-class SpotComponent {
+class Spot {
     canvas = document.createElement("canvas");
     options = {
         intensity: 10,
@@ -60,4 +60,4 @@ class SpotComponent {
     }
 }
 
-export default SpotComponent;
+export default Spot;

@@ -1,6 +1,6 @@
-import colorvibrance from "./colorvibrance";
+import colorvibrance from "../colorvibrance";
 
-class RingComponent {
+class Ring {
     canvas = document.createElement("canvas");
     radius = 512;
     options = {
@@ -61,4 +61,4 @@ class RingComponent {
     }
 }
 
-export default RingComponent;
+export default Ring;

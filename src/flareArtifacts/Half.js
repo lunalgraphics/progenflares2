@@ -1,4 +1,4 @@
-class HalfComponent {
+class Half {
     canvas = document.createElement("canvas");
     
     setCanvas(canvas, width, height, leftHalf=true, rightHalf=true) {
@@ -15,4 +15,4 @@ class HalfComponent {
     }
 }
 
-export default HalfComponent;
+export default Half;

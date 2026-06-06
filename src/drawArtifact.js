@@ -1,4 +1,4 @@
-function drawComponent(ctx, component, centerX, centerY, width, height, angle=0, opacity=100, hueshift=0, scaler=1) {
+function drawArtifact(ctx, component, centerX, centerY, width, height, angle=0, opacity=100, hueshift=0, scaler=1) {
     if (width <= 0 || height <= 0 || opacity <= 0 || scaler <= 0) return;
 
     ctx.restore();
@@ -15,4 +15,4 @@ function drawComponent(ctx, component, centerX, centerY, width, height, angle=0,
     ctx.save();
 }
 
-module.exports = drawComponent;
+module.exports = drawArtifact;
