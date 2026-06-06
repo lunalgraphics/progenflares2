@@ -1,15 +1,14 @@
 <script>
-    import Collapsible from "./Collapsible.svelte";
-    import colorvibrance from "./colorvibrance";
+    import Collapsible from "./components/Collapsible.svelte";
     import SpotComponent from "./SpotComponent";
     import RingComponent from "./RingComponent";
-    import Slider from "./Slider.svelte";
+    import Slider from "./components/Slider.svelte";
     import drawComponent from "./drawComponent";
     import canvasClickDrag from "./canvasClickDrag";
     import IrisComponent from "./IrisComponent";
     import seedrandom from "../node_modules/seedrandom";
     import HalfComponent from "./HalfComponent";
-    import PresetPicker from "./PresetPicker.svelte";
+    import PresetPicker from "./components/PresetPicker.svelte";
     import { fade } from "svelte/transition";
     import { onMount } from "svelte";
     import textLogo from "./images/textLogo.png";

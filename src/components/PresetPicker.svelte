@@ -4,23 +4,23 @@
 
 <script>
     import { createEventDispatcher, onMount } from 'svelte';
-    import sundigital from "./builtinPresets/sundigital.pgf2.json";
-    import simplecyan from "./builtinPresets/simplecyan.pgf2.json";
-    import flamboyantanamorphic from "./builtinPresets/flamboyantanamorphic.pgf2.json";
-    import seaoffog from "./builtinPresets/seaoffog.pgf2.json";
-    import interstellar from "./builtinPresets/interstellar.pgf2.json";
-    import sunflower from "./builtinPresets/sunflower.pgf2.json";
-    import daisysbeacon from "./builtinPresets/daisysbeacon.pgf2.json";
-    import bluedwarf from "./builtinPresets/bluedwarf.pgf2.json";
-    import clairdelune from "./builtinPresets/clairdelune.pgf2.json";
-    import goldencentury from "./builtinPresets/goldencentury.pgf2.json";
-    import industrialanamorphic from "./builtinPresets/industrialanamorphic.pgf2.json";
-    import hexastar from "./builtinPresets/hexastar.pgf2.json";
-    import lasermeme from "./builtinPresets/lasermeme.pgf2.json";
-    import cherrytree from "./builtinPresets/cherrytree.pgf2.json";
-    import ancientmariner from "./builtinPresets/ancientmariner.pgf2.json";
-    import lemonlight from "./builtinPresets/lemonlight.pgf2.json";
-    import genericanamorphic from "./builtinPresets/genericanamorphic.pgf2.json"
+    import sundigital from "../builtinPresets/sundigital.pgf2.json";
+    import simplecyan from "../builtinPresets/simplecyan.pgf2.json";
+    import flamboyantanamorphic from "../builtinPresets/flamboyantanamorphic.pgf2.json";
+    import seaoffog from "../builtinPresets/seaoffog.pgf2.json";
+    import interstellar from "../builtinPresets/interstellar.pgf2.json";
+    import sunflower from "../builtinPresets/sunflower.pgf2.json";
+    import daisysbeacon from "../builtinPresets/daisysbeacon.pgf2.json";
+    import bluedwarf from "../builtinPresets/bluedwarf.pgf2.json";
+    import clairdelune from "../builtinPresets/clairdelune.pgf2.json";
+    import goldencentury from "../builtinPresets/goldencentury.pgf2.json";
+    import industrialanamorphic from "../builtinPresets/industrialanamorphic.pgf2.json";
+    import hexastar from "../builtinPresets/hexastar.pgf2.json";
+    import lasermeme from "../builtinPresets/lasermeme.pgf2.json";
+    import cherrytree from "../builtinPresets/cherrytree.pgf2.json";
+    import ancientmariner from "../builtinPresets/ancientmariner.pgf2.json";
+    import lemonlight from "../builtinPresets/lemonlight.pgf2.json";
+    import genericanamorphic from "../builtinPresets/genericanamorphic.pgf2.json"
     import { fade, slide } from 'svelte/transition';
 
     const dispatch = createEventDispatcher();
