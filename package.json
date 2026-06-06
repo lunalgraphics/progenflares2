@@ -6,7 +6,7 @@
     "build": "rollup -c",
     "build:photoshop": "cross-env PHOTOSHOP_PLUGIN=true rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear"
+    "start": "sirv public --no-clear --port 8181"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",

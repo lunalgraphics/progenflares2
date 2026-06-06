@@ -6,7 +6,7 @@
     export let dividerY = 360;
     // clamp possible x and y values
     export let minX = 360;
-    export let minY = 360;
+    export let minY = 50;
 
     let dragging = false;
 
@@ -42,7 +42,7 @@
         background-color: #353535;
         pointer-events: all;
         z-index: 2;
-        --divider-size: 5px;
+        --divider-size: 4px;
     }
 
     #divider:hover {

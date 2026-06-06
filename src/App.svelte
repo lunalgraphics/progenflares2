@@ -452,31 +452,33 @@
 <svelte:window on:resize={updateLayout} />
 
 <div id={"exportPanel"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
-{#if (!isPopupPlugin && !isPhotoshopPlugin)}
-    <button on:click={function() { createDownloadLink().click(); }}>Export</button>
-    <span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
-    <select bind:value={flareSettings.exportType}>
-        <option value={"png"}>PNG</option>
-        <option value={"jpeg"}>JPG</option>
-        <option value={"webp"}>WebP</option>
-    </select>
-{:else if (isPopupPlugin)}
-    <button on:click={function() { window.opener.postMessage(["finalImage", createDownloadLink().href]); }}>Finish</button>
-    <span style="white-space: pre;">{"  "}</span>
-    <button on:click={function() { window.close(); }}>Close</button>
-{:else if (isPhotoshopPlugin)}
-    <button on:click={function() {
-        flareSettings.downscaling = 1;
-        renderFlare(true, true, true, true, true);
-        let imageData = baseCanvas.getContext("2d").getImageData(0, 0, baseCanvas.width, baseCanvas.height);
-        window.uxpHost.postMessage({
-            type: "exportLayer",
-            data: Array.from(imageData.data),
-            metadata: JSON.stringify(flareSettings),
-            editingLayer: editingLayerPhotoshop,
-        });
-    }}>Finish</button>
-{/if}
+    <div class="centered">
+        {#if (!isPopupPlugin && !isPhotoshopPlugin)}
+            <button on:click={function() { createDownloadLink().click(); }}>Export</button>
+            <span style={"display: inline-block; margin-left: 5px; margin-right: 5px;"}>as</span>
+            <select bind:value={flareSettings.exportType}>
+                <option value={"png"}>PNG</option>
+                <option value={"jpeg"}>JPG</option>
+                <option value={"webp"}>WebP</option>
+            </select>
+        {:else if (isPopupPlugin)}
+            <button on:click={function() { window.opener.postMessage(["finalImage", createDownloadLink().href]); }}>Finish</button>
+            <span style="white-space: pre;">{"  "}</span>
+            <button on:click={function() { window.close(); }}>Close</button>
+        {:else if (isPhotoshopPlugin)}
+            <button on:click={function() {
+                flareSettings.downscaling = 1;
+                renderFlare(true, true, true, true, true);
+                let imageData = baseCanvas.getContext("2d").getImageData(0, 0, baseCanvas.width, baseCanvas.height);
+                window.uxpHost.postMessage({
+                    type: "exportLayer",
+                    data: Array.from(imageData.data),
+                    metadata: JSON.stringify(flareSettings),
+                    editingLayer: editingLayerPhotoshop,
+                });
+            }}>Finish</button>
+        {/if}
+    </div>
 </div>
 
 <div id={"previewSection"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
@@ -485,18 +487,20 @@
 </div>
 
 <div id={"sectionAbovePreview"} data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
-Preview quality
-<select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true, true, true, true); }}>
-    <option value={1}>100%</option>
-    <option value={5/4}>80%</option>
-    <option value={5/3}>60%</option>
-    <option value={5/2}>40%</option>
-    <option value={5}>20%</option>
-</select>
-<span style={"white-space: pre; color: grey;"}>{"    |    "}</span>
-<input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} checked={true} style={"margin-bottom: 0;"} />
-Reference Image
-<button on:click={handleRIbutton}>Import</button>
+    <div class="centered" style:width="100%" style:text-align="center">
+        Preview quality
+        <select bind:value={flareSettings.downscaling} on:change={function() { renderFlare(true, true, true, true, true); }}>
+            <option value={1}>100%</option>
+            <option value={5/4}>80%</option>
+            <option value={5/3}>60%</option>
+            <option value={5/2}>40%</option>
+            <option value={5}>20%</option>
+        </select>
+        <span style={"white-space: pre; color: grey;"}>{"    |    "}</span>
+        <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} checked={true} style={"margin-bottom: 0;"} />
+        Reference Image
+        <button on:click={handleRIbutton}>Import</button>
+    </div>
 </div>
 
 <Divider {layout} bind:dividerX bind:dividerY />
@@ -718,24 +722,24 @@ Reference Image
     }
     #controlPanel[data-layout="vertical"] {
         width: 100vw;
-        height: calc(var(--divider-y) - 84px);
-        bottom: 84px;
+        height: calc(var(--divider-y) - 50px);
+        bottom: 50px;
     }
 
     #previewSection {
         box-sizing: border-box;
         padding: 25px;
         position: fixed;
-        top: 84px;
+        top: 50px;
         left: 0;
     }
     #previewSection[data-layout="horizontal"] {
         width: calc(100vw - var(--divider-x));
-        height: calc(100vh - 2 * 84px);
+        height: calc(100vh - 2 * 50px);
     }
     #previewSection[data-layout="vertical"] {
         width: 100vw;
-        height: calc(100vh - 84px - var(--divider-y));
+        height: calc(100vh - 50px - var(--divider-y));
     }
 
     .centered {
@@ -746,10 +750,9 @@ Reference Image
     }
 
     #sectionAbovePreview {
-        height: 84px;
+        height: 50px;
         box-sizing: border-box;
         text-align: center;
-        padding: 20px;
         position: fixed;
         top: 0;
         left: 0;
@@ -762,10 +765,9 @@ Reference Image
     }
 
     #exportPanel {
-        height: 84px;
+        height: 50px;
         box-sizing: border-box;
         text-align: center;
-        padding: 20px;
         position: fixed;
         bottom: 0;
         left: 0;
