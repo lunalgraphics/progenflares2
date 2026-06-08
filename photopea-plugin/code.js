@@ -1,71 +1,104 @@
-// https://www.photopea.com/#%7B%22files%22%3A%5B%22https%3A%2F%2Fwww.photopea.com%2Fapi%2Fimg2%2Fpug.png%22%5D%2C%22environment%22%3A%7B%22plugins%22%3A%5B%7B%22name%22%3A%22pgf2%22%2C%22url%22%3A%22http%3A%2F%2Flocalhost%3A1995%2F%22%2C%22icon%22%3A%22http%3A%2F%2Flocalhost%3A1995%2Ficon120.png%22%7D%5D%7D%7D
+/**
+ * Progen Flares 2 — Photopea Plugin Entry Point
+ *
+ * Launches the flare editor in a popup window and communicates with
+ * Photopea via the Photopea JS API to export the final flare as a
+ * screen-blended layer on the active document.
+ */
 
-let $ = function(e) { return document.querySelector(e); };
-let pea = new Photopea(window.parent);
+const $ = (selector) => document.querySelector(selector);
+const pea = new Photopea(window.parent);
 
+// ─── Flare Layer Export ──────────────────────────────────────────────
+
+/**
+ * Receives the final rendered flare image from the popup and places it
+ * as a new screen-blended layer in the active Photopea document.
+ *
+ * @param {Array} data - Message array where data[1] is a base64 data URI.
+ */
 async function handleFinalImage(data) {
-    let b64uri = data[1];
-    await pea.runScript("app.activeDocument.activeLayer = app.activeDocument.layers[0];");
-    await pea.openFromURL(b64uri);
-    await pea.runScript("app.activeDocument.activeLayer.blendMode = 'scrn';");
-    await pea.runScript("app.activeDocument.activeLayer.name = 'Lens Flare (Progen Flares 2)';");
+  const b64uri = data[1];
+  await pea.runScript("app.activeDocument.activeLayer = app.activeDocument.layers[0];");
+  await pea.openFromURL(b64uri);
+  await pea.runScript("app.activeDocument.activeLayer.blendMode = 'scrn';");
+  await pea.runScript("app.activeDocument.activeLayer.name = 'Lens Flare (Progen Flares 2)';");
 }
 
-function createPopup(w, h, imgURI) {
-    let pluginURL = new URL("./frame-contents/index.html", location);
-    pluginURL.searchParams.set("popupPlugin", "yeah");
-    pluginURL.searchParams.set("docWidth", w);
-    pluginURL.searchParams.set("docHeight", h);
+// ─── Popup Window ────────────────────────────────────────────────────
 
-    let popupOptions = {
-        width: 1400,
-        height: 700,
-        left: window.outerWidth / 2 - 700,
-        top: window.outerHeight / 2 - 350,
-    };
-    let windowFeatures = "";
-    for (let key in popupOptions) {
-        windowFeatures += key + "=" + popupOptions[key] + ",";
+/**
+ * Opens the flare editor UI in a centered popup window and sets up
+ * message passing for the reference image and final export.
+ *
+ * @param {number} width - Document width in pixels.
+ * @param {number} height - Document height in pixels.
+ * @param {string} imgURI - Base64 data URI of the current document composite.
+ * @returns {Window|null} The popup window reference, or null if blocked.
+ */
+function createPopup(width, height, imgURI) {
+  const pluginURL = new URL("./frame-contents/index.html", location);
+  pluginURL.searchParams.set("popupPlugin", "yeah");
+  pluginURL.searchParams.set("docWidth", width);
+  pluginURL.searchParams.set("docHeight", height);
+
+  const popupOptions = {
+    width: 1400,
+    height: 700,
+    left: Math.round(window.outerWidth / 2 - 700),
+    top: Math.round(window.outerHeight / 2 - 350),
+  };
+
+  const windowFeatures = Object.entries(popupOptions)
+    .map(([key, val]) => `${key}=${val}`)
+    .join(",");
+
+  const popup = window.open(pluginURL, "_blank", windowFeatures);
+
+  window.addEventListener("message", (e) => {
+    if (e.data[0] === "pluginStatus" && e.data[1] === "ready") {
+      popup.window.postMessage(["refImage", imgURI]);
     }
-    
-    let popup = window.open(pluginURL, "_blank", windowFeatures);
-    window.addEventListener("message", function (e) {
-        if (e.data[0] == "pluginStatus" && e.data[1] == "ready") {
-            popup.window.postMessage(["refImage", imgURI]);
-        }
-        if (e.data[0] == "finalImage") {
-            handleFinalImage(e.data);
-            popup.window.close();
-        }
-    });
+    if (e.data[0] === "finalImage") {
+      handleFinalImage(e.data);
+      popup.window.close();
+    }
+  });
 
-    return popup;
+  return popup;
 }
 
+// ─── Plugin Initialization ───────────────────────────────────────────
+
+/**
+ * Exports the active document as a PNG, reads its dimensions, then
+ * opens the flare editor popup with the image as a reference.
+ */
 function startPlugin() {
-    $("#loadingSpinner").style.display = "inline-block";
-    $("#message").style.innerText = "Loading plugin...\n\nPlease ensure that popups are allowed.";
+  $("#loadingSpinner").style.display = "inline-block";
+  $("#message").innerText = "Loading plugin...\n\nPlease ensure that popups are allowed.";
 
-    pea.exportImage("png").then(function(blobby) {
-        var fR = new FileReader();
-        fR.addEventListener("load", function(e) {
-            let img = new Image();
-            img.addEventListener("load", () => {
-                let popup = createPopup(img.width, img.height, img.src);
-                $("#loadingSpinner").style.display = "none";
-                if (popup) {
-                    $("#message").innerText = "Plugin opened in a popup window.";
-                }
-                else {
-                    $("#message").innerText = "Plugin failed to open.\n\nPlease allow popups from Photopea.";
-                }
-            });
-            img.src = e.target.result;
-        });
-        fR.readAsDataURL(blobby);
+  pea.exportImage("png").then((blob) => {
+    const reader = new FileReader();
+    reader.addEventListener("load", (e) => {
+      const img = new Image();
+      img.addEventListener("load", () => {
+        const popup = createPopup(img.width, img.height, img.src);
+        $("#loadingSpinner").style.display = "none";
+
+        if (popup) {
+          $("#message").innerText = "Plugin opened in a popup window.";
+        } else {
+          $("#message").innerText = "Plugin failed to open.\n\nPlease allow popups from Photopea.";
+        }
+      });
+      img.src = e.target.result;
     });
+    reader.readAsDataURL(blob);
+  });
 }
+
+// ─── Event Bindings ──────────────────────────────────────────────────
 
 window.addEventListener("load", startPlugin);
-
-$("#reloadButton").addEventListener("click", function() { location.reload(); });
+$("#reloadButton").addEventListener("click", () => location.reload());
