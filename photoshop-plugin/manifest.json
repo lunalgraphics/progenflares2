@@ -1,0 +1,57 @@
+{
+    "manifestVersion": 5,
+    "id": "ee1af5e5",
+    "name": "Progen Flares 2",
+    "version": "1.0.1",
+    "main": "index.html",
+    "description": "Beautiful, fully-customizable lens flares",
+    "author": "Yikuan Sun",
+    "host": {
+        "app": "PS",
+        "minVersion": "23.3.0"
+    },
+    "entrypoints": [
+        {
+            "type": "panel",
+            "id": "panel",
+            "label": "Progen Flares 2",
+            "minimumSize": {
+                "width": 240,
+                "height": 240
+            },
+            "maximumSize": {
+                "width": 240,
+                "height": 240
+            },
+            "icons": [
+                {
+                    "width": 28,
+                    "height": 28,
+                    "path": "icons/icon.png",
+                    "scale": [1, 2, 4],
+                    "theme": ["darkest", "dark", "medium", "light", "lightest"]
+                }
+            ]
+        }
+    ],
+    "icons": [
+        {
+            "width": 28,
+            "height": 28,
+            "path": "icons/icon.png",
+            "scale": [1, 2, 4],
+            "theme": ["darkest", "dark", "medium", "light", "lightest"]
+        }
+    ],
+    "requiredPermissions": {
+        "webview": {
+            "allow": "yes",
+            "domains": ["https://yikuansun.github.io", "https://*.adobe.com"],
+            "allowLocalRendering": "yes",
+            "enableMessageBridge": "localAndRemote"
+        },
+        "launchProcess": {
+            "schemes": ["http", "https"]
+        }
+    }
+}
