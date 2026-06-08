@@ -209,6 +209,9 @@
   let isPhotoshopPlugin = __IS_PHOTOSHOP_PLUGIN__;
   let editingLayerPhotoshop = "no";
 
+  // ─── Preset Picker ───────────────────────────────────────────────────────
+  let presetPickerOpen = false;
+
   onMount(() => {
     renderAll();
 
@@ -339,11 +342,9 @@
 <div id="controlPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
   <!-- Preset bar (sticky header) -->
   <div class="preset-bar">
-    <PresetPicker
-      on:choose={(e) => setPreset(e.detail)}
-      bind:this={myPresetPicker}
-      {isPhotoshopPlugin}
-    />
+    <button style="width: 49%;" on:click={() => (presetPickerOpen = true)}>
+      Apply Preset
+    </button>
     <button on:click={() => createPresetSaveLink().click()} style="float: right; width: 49%;">
       Create Preset
     </button>
@@ -382,6 +383,14 @@
     on:change={() => render({ lensOrbs: true })}
   />
 </div>
+
+<!-- Preset Picker (Modal) -->
+<PresetPicker
+  on:choose={(e) => setPreset(e.detail)}
+  bind:this={myPresetPicker}
+  {isPhotoshopPlugin}
+  bind:pickerOpen={presetPickerOpen}
+/>
 
 <!-- ─── Start Screen ────────────────────────────────────────────────── -->
 {#if startScreenVisible}

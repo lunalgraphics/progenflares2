@@ -39,7 +39,7 @@
   export const defaultPreset = sundigital;
 
   let fileInput;
-  let pickerOpen = false;
+  export let pickerOpen = false;
   let userPresets = [];
 
   const builtInPresets = [
@@ -115,10 +115,6 @@
     }
   }}
 />
-
-<button style="width: 49%;" on:click={() => (pickerOpen = true)}>
-  Apply Preset
-</button>
 
 {#if pickerOpen}
   <div class="greywall" transition:fade on:mousedown={() => (pickerOpen = false)} />
