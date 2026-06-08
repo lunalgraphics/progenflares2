@@ -126,9 +126,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-package-lock.json
-
-public/build
-
-photoshop-plugin/webview-contents/build
-photopea-plugin/frame-contents/build
+frame-contents/build

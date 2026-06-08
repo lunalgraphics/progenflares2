@@ -10,6 +10,11 @@ import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
 const isPhotoshopPlugin = process.env.PHOTOSHOP_PLUGIN === 'true';
+const isPhotopeaPlugin = process.env.PHOTOPEA_PLUGIN === 'true';
+
+let outputDir = 'public/build';
+if (isPhotoshopPlugin) outputDir = 'photoshop-plugin/webview-contents/build';
+else if (isPhotopeaPlugin) outputDir = 'photopea-plugin/frame-contents/build';
 
 function serve() {
     let server;
@@ -38,12 +43,13 @@ export default {
         sourcemap: true,
         format: 'iife',
         name: 'app',
-        file: isPhotoshopPlugin ? 'photoshop-plugin/webview-contents/build/bundle.js' : 'public/build/bundle.js'
+        file: outputDir + '/bundle.js',
     },
     plugins: [
         replace({
             preventAssignment: true,
             '__IS_PHOTOSHOP_PLUGIN__': JSON.stringify(isPhotoshopPlugin),
+            '__IS_PHOTOPEA_PLUGIN__': JSON.stringify(isPhotopeaPlugin),
         }),
 
         svelte({

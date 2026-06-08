@@ -5,6 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "build:photoshop": "cross-env PHOTOSHOP_PLUGIN=true rollup -c",
+    "build:photopea": "cross-env PHOTOPEA_PLUGIN=true rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear --port 8181"
   },

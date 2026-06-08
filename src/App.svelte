@@ -203,9 +203,9 @@
 
   // ─── Platform Integration ──────────────────────────────────────────
 
-  let isPopupPlugin = false;
   // Injected at build time via rollup replace plugin.
-  // Use `npm run build:photoshop` to set this to true.
+  // Use `npm run build:photoshop` or `npm run build:photopea` to set this to true.
+  let isPhotopeaPlugin = __IS_PHOTOPEA_PLUGIN__;
   let isPhotoshopPlugin = __IS_PHOTOSHOP_PLUGIN__;
   let editingLayerPhotoshop = "no";
 
@@ -237,23 +237,20 @@
         }
       });
       window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
-    } else {
-      // Web / popup plugin mode
+    } else if (isPhotopeaPlugin) {
+      // Photopea plugin mode
       const locSearch = new URLSearchParams(location.search);
-      if (locSearch.get("popupPlugin") === "yeah") {
-        isPopupPlugin = true;
-        flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
-        flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
-        setTimeout(onStart, 1);
-        window.addEventListener("message", (e) => {
-          if (e.data[0] === "refImage") {
-            referenceImage.style.backgroundImage = `url("${e.data[1]}")`;
-            rIcheckbox.checked = true;
-            handleRIcheckbox();
-          }
-        });
-        window.opener.postMessage(["pluginStatus", "ready"]);
-      }
+      flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
+      flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
+      setTimeout(onStart, 1);
+      window.addEventListener("message", (e) => {
+        if (e.data[0] === "refImage") {
+          referenceImage.style.backgroundImage = `url("${e.data[1]}")`;
+          rIcheckbox.checked = true;
+          handleRIcheckbox();
+        }
+      });
+      window.opener.postMessage(["pluginStatus", "ready"]);
     }
 
     updateLayout();
@@ -265,7 +262,7 @@
 <!-- ─── Export Bar ──────────────────────────────────────────────────── -->
 <div id="exportPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
   <div class="centered">
-    {#if !isPopupPlugin && !isPhotoshopPlugin}
+    {#if !isPhotopeaPlugin && !isPhotoshopPlugin}
       <button on:click={() => createDownloadLink().click()}>Export</button>
       <span style="display: inline-block; margin-left: 5px; margin-right: 5px;">as</span>
       <select bind:value={flareSettings.exportType}>
@@ -273,7 +270,7 @@
         <option value="jpeg">JPG</option>
         <option value="webp">WebP</option>
       </select>
-    {:else if isPopupPlugin}
+    {:else if isPhotopeaPlugin}
       <button on:click={() => window.opener.postMessage(["finalImage", createDownloadLink().href])}>
         Finish
       </button>
@@ -400,7 +397,7 @@
     <div class="centered" style:text-align="center">
       <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
       <br /><br />
-      {#if !isPhotoshopPlugin && !isPopupPlugin}
+      {#if !isPhotoshopPlugin && !isPhotopeaPlugin}
         <span style="width: 145px; text-align: left; display: inline-block;">Image Width</span>
         <input type="number" bind:value={flareSettings.dimensions.width} style="width: 80px;" />
         <br />
