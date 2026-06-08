@@ -284,9 +284,16 @@
         flareSettings.downscaling = 1;
         render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true });
         const imageData = baseCanvas.getContext("2d").getImageData(0, 0, baseCanvas.width, baseCanvas.height);
+        // Encode raw RGBA pixels as base64. Chunked String.fromCharCode prevents stack overflow on large images.
+        let bytes = new Uint8Array(imageData.data.buffer);
+        let binary = "";
+        const CHUNK = 8192;
+        for (let i = 0; i < bytes.length; i += CHUNK) {
+            binary += String.fromCharCode(...bytes.subarray(i, i + CHUNK));
+        }
         window.uxpHost.postMessage({
           type: "exportLayer",
-          data: Array.from(imageData.data),
+          data: btoa(binary),
           metadata: JSON.stringify(flareSettings),
           editingLayer: editingLayerPhotoshop,
         });

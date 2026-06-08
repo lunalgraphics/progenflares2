@@ -45,11 +45,17 @@ window.addEventListener("message", (e) => {
  * Creates or updates a Photoshop layer with the rendered flare image data.
  */
 function handleExportLayer(data) {
-  const view = Uint8Array.from(data.data);
   modal.close();
 
+  // Decode base64 → binary string → Uint8Array of raw RGBA bytes
+  let binary = atob(data.data);
+  let bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+      bytes[i] = binary.charCodeAt(i);
+  }
+
   core.executeAsModal(async () => {
-    const imageData = await imaging.createImageDataFromBuffer(view, {
+    const imageData = await imaging.createImageDataFromBuffer(bytes, {
       width: app.activeDocument.width,
       height: app.activeDocument.height,
       components: 4,
@@ -251,7 +257,7 @@ async function editLayer() {
 
     // Extract settings JSON from the metadata text layer
     let flareSettings = textLayer.textItem.contents;
-    flareSettings = flareSettings.replaceAll("\u201C", '"'); // Fix smart quotes
+    flareSettings = flareSettings.replaceAll("\u201C", '"').replaceAll("\u201D", '"'); // Fix smart quotes
 
     await app.activeDocument.close(constants.SaveOptions.DONOTSAVECHANGES);
     layer.visible = false;
