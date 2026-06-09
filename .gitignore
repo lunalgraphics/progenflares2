@@ -130,3 +130,7 @@ public/build
 
 photoshop-plugin/webview-contents/build
 photopea-plugin/frame-contents/build
+
+electron-app/dist
+electron-app/app/build
+*/node_modules

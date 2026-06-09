@@ -11,10 +11,12 @@ import replace from '@rollup/plugin-replace';
 const production = !process.env.ROLLUP_WATCH;
 const isPhotoshopPlugin = process.env.PHOTOSHOP_PLUGIN === 'true';
 const isPhotopeaPlugin = process.env.PHOTOPEA_PLUGIN === 'true';
+const isElectronApp = process.env.ELECTRON_APP === 'true';
 
 let outputDir = 'public/build';
 if (isPhotoshopPlugin) outputDir = 'photoshop-plugin/webview-contents/build';
 else if (isPhotopeaPlugin) outputDir = 'photopea-plugin/frame-contents/build';
+else if (isElectronApp) outputDir = 'electron-app/app/build';
 
 function serve() {
     let server;
