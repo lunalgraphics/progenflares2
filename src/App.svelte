@@ -718,6 +718,6 @@
     background-color: var(--color-scheme-6);
     padding: 5px;
     box-sizing: border-box;
-    border-bottom: 1px solid #353535;
+    border-bottom: 2px solid #353535;
   }
 </style>
