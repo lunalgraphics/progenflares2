@@ -660,6 +660,7 @@
   #sectionAbovePreview {
     height: 50px;
     box-sizing: border-box;
+    border-bottom: 1px solid #353535;
     text-align: center;
     position: fixed;
     top: 0;
@@ -677,6 +678,7 @@
   #exportPanel {
     height: 50px;
     box-sizing: border-box;
+    border-top: 1px solid #353535;
     text-align: center;
     position: fixed;
     bottom: 0;
