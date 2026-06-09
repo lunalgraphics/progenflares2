@@ -51,7 +51,9 @@
   /** The actual CSS scale applied to the canvas container */
   $: effectiveScale = baseScale * zoom;
 
-  /** Update viewport dimensions on mount and resize */
+  /** Update viewport dimensions whenever the element resizes */
+  let resizeObserver;
+
   function measureViewport() {
     if (viewport) {
       viewportWidth = viewport.clientWidth;
@@ -61,6 +63,10 @@
 
   onMount(() => {
     measureViewport();
+    // Use ResizeObserver to track viewport size changes from layout/divider/window
+    resizeObserver = new ResizeObserver(() => measureViewport());
+    resizeObserver.observe(viewport);
+    return () => resizeObserver.disconnect();
   });
 
   // ─── Pan via Right-Click / Middle-Click Drag ───────────────────────
@@ -166,8 +172,6 @@
   /** Formatted zoom percentage for display */
   $: zoomPercent = Math.round(zoom * 100);
 </script>
-
-<svelte:window on:resize={measureViewport} />
 
 <div
   class="preview-viewport {className}"
