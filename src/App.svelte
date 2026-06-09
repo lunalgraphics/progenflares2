@@ -616,7 +616,7 @@
   #controlPanel {
     position: fixed;
     overflow-y: scroll;
-    border-left: 1px solid #353535;
+    border-left: 2px solid #353535;
     right: 0;
   }
 
@@ -660,7 +660,7 @@
   #sectionAbovePreview {
     height: 50px;
     box-sizing: border-box;
-    border-bottom: 1px solid #353535;
+    border-bottom: 2px solid #353535;
     text-align: center;
     position: fixed;
     top: 0;
@@ -678,7 +678,7 @@
   #exportPanel {
     height: 50px;
     box-sizing: border-box;
-    border-top: 1px solid #353535;
+    border-top: 2px solid #353535;
     text-align: center;
     position: fixed;
     bottom: 0;
