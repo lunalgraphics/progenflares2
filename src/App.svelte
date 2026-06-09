@@ -10,6 +10,7 @@
   // Components
   import Divider from "./components/Divider.svelte";
   import PresetPicker from "./components/PresetPicker.svelte";
+  import PreviewCanvas from "./components/PreviewCanvas.svelte";
   import GlobalControls from "./components/controls/GlobalControls.svelte";
   import HotspotControls from "./components/controls/HotspotControls.svelte";
   import StreakControls from "./components/controls/StreakControls.svelte";
@@ -306,22 +307,22 @@
 
 <!-- ─── Preview Section ─────────────────────────────────────────────── -->
 <div id="previewSection" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
-  <canvas
-    bind:this={referenceImage}
-    id="referenceImage"
-    width={flareSettings.dimensions.width}
-    height={flareSettings.dimensions.height}
-    class="centered"
-  />
-  <canvas
-    bind:this={baseCanvas}
-    id="baseCanvas"
-    use:canvasClickDrag
-    on:clickDrag={handleClickDrag}
-    width={flareSettings.dimensions.width}
-    height={flareSettings.dimensions.height}
-    class="centered"
-  />
+  <PreviewCanvas contentWidth={flareSettings.dimensions.width} contentHeight={flareSettings.dimensions.height}>
+    <canvas
+      bind:this={referenceImage}
+      id="referenceImage"
+      width={flareSettings.dimensions.width}
+      height={flareSettings.dimensions.height}
+    />
+    <canvas
+      bind:this={baseCanvas}
+      id="baseCanvas"
+      use:canvasClickDrag
+      on:clickDrag={handleClickDrag}
+      width={flareSettings.dimensions.width}
+      height={flareSettings.dimensions.height}
+    />
+  </PreviewCanvas>
 </div>
 
 <!-- ─── Preview Quality Bar ─────────────────────────────────────────── -->
@@ -452,8 +453,7 @@
 
   #baseCanvas,
   #referenceImage {
-    max-width: calc(100% - 50px);
-    max-height: calc(100% - 50px);
+    display: block;
   }
 
   #referenceImage {
@@ -463,6 +463,9 @@
 
   #baseCanvas {
     mix-blend-mode: screen;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   /* ─── Form Controls ──────────────────────────────────────────── */
@@ -631,10 +634,10 @@
 
   #previewSection {
     box-sizing: border-box;
-    padding: 25px;
     position: fixed;
     top: 50px;
     left: 0;
+    overflow: hidden;
   }
 
   #previewSection[data-layout="horizontal"] {

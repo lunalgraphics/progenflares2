@@ -1,7 +1,10 @@
 /**
- * Svelte action that enables click-and-drag interaction on a canvas element.
+ * Svelte action that enables left-click-and-drag interaction on a canvas element.
  * Dispatches a custom "clickDrag" event with relative canvas coordinates
- * whenever the user clicks or drags on the canvas.
+ * whenever the user left-clicks or drags on the canvas.
+ *
+ * Only responds to the primary mouse button (left click) so that
+ * right-click can be used for other interactions like panning.
  *
  * Usage in Svelte: <canvas use:canvasClickDrag on:clickDrag={handler} />
  *
@@ -32,12 +35,15 @@ export default function canvasClickDrag(node) {
   };
 
   const handleMouseDown = (e) => {
+    // Only respond to left-click (button 0)
+    if (e.button !== 0) return;
     mouseDown = true;
     setMousePos(e);
     dispatchEvt();
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e) => {
+    if (e.button !== 0) return;
     mouseDown = false;
   };
 
