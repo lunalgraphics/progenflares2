@@ -20,13 +20,13 @@
     <input type="checkbox" bind:checked={settings.visible} on:change={update} />
     Visible
   </label>
-  Alpha: <Slider min={0} max={100} bind:value={settings.alpha} on:input={update} /> <br />
-  Hue: <Slider min={0} max={360} bind:value={settings.hue} on:input={update} className="hueSlider" /> <br />
-  Saturation: <Slider min={0} max={100} bind:value={settings.saturation} on:input={update} /> <br />
-  Size: <Slider min={0} max={810} bind:value={settings.radius} on:input={update} /> <br />
-  Thickness: <Slider min={0} max={500} bind:value={settings.thickness} on:input={update} /> <br />
-  Softness: <Slider min={0} max={50} bind:value={settings.blur} on:input={update} /> <br />
-  Crop Size: <Slider min={0} max={810} bind:value={settings.cropSize} on:input={update} /> <br />
-  Crop Hardness: <Slider min={0} max={100} bind:value={settings.cropHardness} on:input={update} /> <br />
-  Anamorph: <Slider min={0} max={100} bind:value={settings.anamorph} on:input={update} /> <br />
+  <label title="Opacity of the ring">Alpha: <Slider min={0} max={100} bind:value={settings.alpha} on:input={update} /></label>
+  <label title="Color hue of the ring">Hue: <Slider min={0} max={360} bind:value={settings.hue} on:input={update} className="hueSlider" /></label>
+  <label title="Color saturation intensity">Saturation: <Slider min={0} max={100} bind:value={settings.saturation} on:input={update} /></label>
+  <label title="Radius of the ring">Size: <Slider min={0} max={810} bind:value={settings.radius} on:input={update} /></label>
+  <label title="Width of the ring band">Thickness: <Slider min={0} max={500} bind:value={settings.thickness} on:input={update} /></label>
+  <label title="Gaussian blur applied to the ring">Softness: <Slider min={0} max={50} bind:value={settings.blur} on:input={update} /></label>
+  <label title="Height of the vertical crop fade">Crop Size: <Slider min={0} max={810} bind:value={settings.cropSize} on:input={update} /></label>
+  <label title="Sharpness of the crop edge transition">Crop Hardness: <Slider min={0} max={100} bind:value={settings.cropHardness} on:input={update} /></label>
+  <label title="Vertical squash for anamorphic lens look">Anamorph: <Slider min={0} max={100} bind:value={settings.anamorph} on:input={update} /></label>
 </Collapsible>
