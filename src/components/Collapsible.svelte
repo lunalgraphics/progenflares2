@@ -3,9 +3,6 @@
   Renders a clickable header that toggles visibility of its slot content
   with a slide transition.
 -->
-<script context="module">
-  let current;
-</script>
 
 <script>
   import { createEventDispatcher } from "svelte";
