@@ -150,7 +150,7 @@
       const file = fileInput.files[0];
       const reader = new FileReader();
       reader.addEventListener("loadend", (e) => {
-        referenceImage.style.backgroundImage = `url("${e.target.result}")`;
+        referenceImage.src = e.target.result;
         rIcheckbox.checked = true;
         handleRIcheckbox();
       });
@@ -162,9 +162,9 @@
   /** Toggle reference image visibility */
   function handleRIcheckbox() {
     if (rIcheckbox.checked) {
-      referenceImage.style.backgroundSize = "100% 100%";
+      referenceImage.style.opacity = "1";
     } else {
-      referenceImage.style.backgroundSize = "0 0";
+      referenceImage.style.opacity = "0";
     }
   }
 
@@ -227,7 +227,7 @@
           editingLayerPhotoshop = e.data.editingLayer ?? "no";
           setTimeout(onStart, 1);
         } else if (e.data.type === "refImage") {
-          referenceImage.style.backgroundImage = `url("${e.data.data}")`;
+          referenceImage.src = e.data.data;
           rIcheckbox.checked = true;
           handleRIcheckbox();
         } else if (e.data.type === "flareSettings") {
@@ -249,7 +249,7 @@
       setTimeout(onStart, 1);
       window.addEventListener("message", (e) => {
         if (e.data[0] === "refImage") {
-          referenceImage.style.backgroundImage = `url("${e.data[1]}")`;
+          referenceImage.src = e.data[1];
           rIcheckbox.checked = true;
           handleRIcheckbox();
         }
@@ -308,11 +308,13 @@
 <!-- ─── Preview Section ─────────────────────────────────────────────── -->
 <div id="previewSection" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
   <PreviewCanvas contentWidth={flareSettings.dimensions.width} contentHeight={flareSettings.dimensions.height}>
-    <canvas
+    <img
+      alt=""
       bind:this={referenceImage}
       id="referenceImage"
       width={flareSettings.dimensions.width}
       height={flareSettings.dimensions.height}
+      style:opacity="0"
     />
     <canvas
       bind:this={baseCanvas}
@@ -337,7 +339,7 @@
       <option value={5}>20%</option>
     </select>
     <span style="white-space: pre; color: grey;">{"    |    "}</span>
-    <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} checked style="margin-bottom: 0;" />
+    <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} style="margin-bottom: 0;" />
     Reference Image
     <button on:click={handleRIbutton} title="Import reference image" style="padding: 4px 8px; line-height: 1;">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
