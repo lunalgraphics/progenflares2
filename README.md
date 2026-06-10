@@ -1,107 +1,79 @@
-# This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework and don't mind using pre-1.0 software — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
+# Progen Flares 2
 
----
+A procedural lens flare generator built with Svelte. Create photorealistic, fully customizable lens flare effects with real-time preview and export.
 
-# svelte app
+## Features
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+- Real-time procedural flare rendering on HTML5 Canvas
+- 6 customizable artifact layers: Hotspot, Streak, Ring, Multi-Iris, Glow, Lens Orbs
+- Zoom/pan canvas preview with fit-to-window scaling
+- Preset system with 17 built-in presets and user import/export (.pgf2 format)
+- Undo/redo history (Ctrl+Z / Ctrl+Y)
+- Export as PNG, JPG, or WebP
+- Responsive layout with draggable panel divider
+- Multiple deployment targets: web, Electron desktop app, Photoshop plugin, Photopea plugin
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
+## Getting Started
 
 ```bash
-cd svelte-app
 npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
 npm run dev
 ```
 
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+Open http://localhost:8181 in your browser.
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+## Build Commands
 
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
+| Command | Output | Description |
+|---------|--------|-------------|
+| `npm run build` | `public/build/` | Production web build |
+| `npm run build:electron` | `electron-app/app/build/` | Electron app bundle |
+| `npm run build:photoshop` | `photoshop-plugin/webview-contents/build/` | Photoshop UXP plugin |
+| `npm run build:photopea` | `photopea-plugin/frame-contents/build/` | Photopea popup plugin |
+| `npm run dev` | `public/build/` | Dev server with live reload |
 
-## Building and running in production mode
+## Project Structure
 
-To create an optimised version of the app:
+```
+src/
+├── App.svelte              Main app shell (layout, export, platform integration)
+├── main.js                 Entry point
+├── components/             UI components (Slider, Collapsible, Divider, etc.)
+│   └── controls/           Control panel sections (per-artifact settings)
+├── flareArtifacts/         Canvas rendering classes (Spot, Ring, Iris, Half)
+├── state/                  Settings defaults, render engine, undo history
+├── utils/                  Shared utilities (noise, color, drawing, canvas actions)
+├── builtinPresets/         .pgf2 preset JSON files
+└── images/                 Logo and cover image assets
 
-```bash
-npm run build
+electron-app/              Electron desktop wrapper
+photoshop-plugin/          Adobe Photoshop UXP plugin
+photopea-plugin/           Photopea web plugin
 ```
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+## Architecture
 
+The flare is composed of independent artifact layers, each rendered to an offscreen canvas, then composited onto the main preview canvas with screen blending. The render pipeline:
 
-## Single-page app mode
+1. **Artifact render** — Each artifact class (Spot, Ring, Iris) generates its texture
+2. **Composition** — `renderEngine.js` draws all visible artifacts to the output canvas
+3. **Preview** — The `PreviewCanvas` component provides zoom/pan interaction
+4. **Export** — Temporarily sets downscaling to 1, renders at full resolution, encodes to data URL
 
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
+Settings are stored as a plain JSON object (`flareSettings`) which doubles as the preset format.
 
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
+## Tech Stack
 
-```js
-"start": "sirv public --single"
-```
+- **Svelte 3** — UI framework
+- **Rollup** — Module bundler with environment-specific builds
+- **Canvas 2D API** — All rendering
+- **SVG feTurbulence** — Fractal noise generation (via persistent hidden SVG)
+- **seedrandom** — Deterministic RNG for reproducible randomized effects
 
-## Using TypeScript
+## License
 
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
+See [LICENSE.md](./LICENSE.md).
 
-```bash
-node scripts/setupTypeScript.js
-```
+---
 
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-If you want to use `baseUrl` or `path` aliases within your `tsconfig`, you need to set up `@rollup/plugin-alias` to tell Rollup to resolve the aliases. For more info, see [this StackOverflow question](https://stackoverflow.com/questions/63427935/setup-tsconfig-path-in-svelte).
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+© 2026 Lunal Graphics — Developed by Yikuan Sun
