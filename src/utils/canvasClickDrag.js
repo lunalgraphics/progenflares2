@@ -44,6 +44,9 @@ export default function canvasClickDrag(node) {
 
   const handleMouseUp = (e) => {
     if (e.button !== 0) return;
+    if (mouseDown) {
+      node.dispatchEvent(new CustomEvent("clickDragEnd"));
+    }
     mouseDown = false;
   };
 

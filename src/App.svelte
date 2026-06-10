@@ -23,6 +23,7 @@
   import { Spot, Ring, Iris } from "./flareArtifacts";
   import { renderFlare } from "./state/renderEngine";
   import { DEFAULT_FLARE_SETTINGS } from "./state/defaultSettings";
+  import * as history from "./state/history";
   import canvasClickDrag from "./utils/canvasClickDrag";
 
   // Assets
@@ -56,6 +57,45 @@
   /** Re-render everything (all artifacts) */
   function renderAll() {
     render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true, lensOrbs: true });
+  }
+
+  // ─── Undo/Redo ─────────────────────────────────────────────────────
+
+  /**
+   * Commit the current flareSettings to history.
+   * Call this when the user finishes a discrete change (mouseup, preset apply, etc.)
+   */
+  function commitState() {
+    history.push(flareSettings);
+  }
+
+  /** Undo to the previous settings state */
+  function undo() {
+    var prev = history.undo();
+    if (prev) {
+      flareSettings = prev;
+      renderAll();
+    }
+  }
+
+  /** Redo to the next settings state */
+  function redo() {
+    var next = history.redo();
+    if (next) {
+      flareSettings = next;
+      renderAll();
+    }
+  }
+
+  /** Handle keyboard shortcuts for undo/redo */
+  function handleKeydown(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === "z" && !e.shiftKey) {
+      e.preventDefault();
+      undo();
+    } else if ((e.ctrlKey || e.metaKey) && (e.key === "y" || (e.key.toLowerCase() === "z" && e.shiftKey))) {
+      e.preventDefault();
+      redo();
+    }
   }
 
   // ─── Canvas Interaction ─────────────────────────────────────────────
@@ -116,6 +156,7 @@
     if (!presetData.lensOrbs) flareSettings.lensOrbs.visible = false;
     if (!presetData.hotspot.deformationOctaves) flareSettings.hotspot.deformationOctaves = 5;
     renderAll();
+    commitState();
   }
 
   // ─── Start Screen ──────────────────────────────────────────────────
@@ -134,6 +175,9 @@
       flareSettings.positioning.y = flareSettings.dimensions.height * 2 / 5;
     }
     renderAll();
+    // Push initial state as the baseline for undo history
+    history.clear();
+    commitState();
     startScreenVisible = false;
   }
 
@@ -261,7 +305,7 @@
   });
 </script>
 
-<svelte:window on:resize={updateLayout} />
+<svelte:window on:resize={updateLayout} on:keydown={handleKeydown} />
 
 <!-- ─── Export Bar ──────────────────────────────────────────────────── -->
 <div id="exportPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
@@ -321,6 +365,7 @@
       id="baseCanvas"
       use:canvasClickDrag
       on:clickDrag={handleClickDrag}
+      on:clickDragEnd={commitState}
       width={flareSettings.dimensions.width}
       height={flareSettings.dimensions.height}
     />
@@ -330,6 +375,9 @@
 <!-- ─── Preview Quality Bar ─────────────────────────────────────────── -->
 <div id="sectionAbovePreview" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
   <div class="centered" style:width="100%" style:text-align="center">
+    <!--<button on:click={undo} title="Undo (Ctrl+Z)" class="icon-btn">↩</button>
+    <button on:click={redo} title="Redo (Ctrl+Y)" class="icon-btn">↪</button>
+    <span style="white-space: pre; color: grey;">{"  |  "}</span>-->
     Preview quality
     <select bind:value={flareSettings.downscaling} on:change={() => render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true })}>
       <option value={1}>100%</option>
@@ -338,7 +386,7 @@
       <option value={5 / 2}>40%</option>
       <option value={5}>20%</option>
     </select>
-    <span style="white-space: pre; color: grey;">{"    |    "}</span>
+    <span style="white-space: pre; color: grey;">{"  |  "}</span>
     <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} style="margin-bottom: 0;" />
     Reference Image
     <button on:click={handleRIbutton} title="Import reference image" style="padding: 4px 8px; line-height: 1;">
@@ -355,7 +403,8 @@
 <Divider {layout} bind:dividerX bind:dividerY />
 
 <!-- ─── Control Panel ───────────────────────────────────────────────── -->
-<div id="controlPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
+<div id="controlPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px"
+  on:pointerup={commitState} on:change={commitState}>
   <!-- Preset bar (sticky header) -->
   <div class="preset-bar">
     <button style="width: 49%;" on:click={() => (presetPickerOpen = true)}>
@@ -721,5 +770,11 @@
     padding: 5px;
     box-sizing: border-box;
     border-bottom: 2px solid #353535;
+  }
+
+  .icon-btn {
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1;
   }
 </style>
