@@ -8,6 +8,7 @@
     "build:photopea": "cross-env PHOTOPEA_PLUGIN=true rollup -c",
     "build:electron": "cross-env ELECTRON_APP=true rollup -c",
     "dev": "rollup -c -w",
+    "dev:photopea": "node test-photopea-plugin.mjs",
     "start": "sirv public --no-clear --port 8181"
   },
   "devDependencies": {
