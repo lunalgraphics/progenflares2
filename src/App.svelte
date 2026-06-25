@@ -375,21 +375,17 @@
 <!-- ─── Preview Quality Bar ─────────────────────────────────────────── -->
 <div id="sectionAbovePreview" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
   <div class="centered" style:width="100%" style:text-align="center">
-    Preview quality
-    <select bind:value={flareSettings.downscaling} on:change={() => render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true })}>
+    {#if layout === "horizontal"}Preview quality{:else}Quality{/if}
+    <select bind:value={flareSettings.downscaling} on:change={() => render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true })} style:font-size="small">
       <option value={1}>100%</option>
       <option value={5 / 4}>80%</option>
       <option value={5 / 3}>60%</option>
       <option value={5 / 2}>40%</option>
       <option value={5}>20%</option>
     </select>
-    {#if layout === "horizontal"}
-      <span style="white-space: pre; color: grey;">{"  |  "}</span>
-    {:else}
-      <br />
-    {/if}
+    <span style="white-space: pre; color: grey;">{"  |  "}</span>
     <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} style="margin-bottom: 0;" />
-    Reference Image
+    {#if layout === "horizontal"}Reference Image{:else}Image{/if}
     <button on:click={handleRIbutton} title="Import reference image" style="padding: 4px 8px; line-height: 1;">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
