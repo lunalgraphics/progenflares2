@@ -49,8 +49,16 @@
 <svelte:options accessors={true} />
 
 <style>
+  slider {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+  }
+
   input[type="number"] {
     width: 54px;
+    flex-shrink: 0;
     font-size: 12px;
     padding: 3px;
     outline: none !important;
@@ -61,6 +69,7 @@
     padding: 0;
     margin: 0;
     vertical-align: middle;
-    width: 128px;
+    flex: 1;
+    min-width: 0;
   }
 </style>

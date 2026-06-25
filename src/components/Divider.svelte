@@ -10,7 +10,7 @@
   /** @type {number} Divider Y position (controls panel height from bottom) */
   export let dividerY = 360;
   /** @type {number} Minimum X value (minimum panel width) */
-  export let minX = 360;
+  export let minX = 270;
   /** @type {number} Minimum Y value */
   export let minY = 50;
 

@@ -46,9 +46,26 @@
   }
 
   .contents {
+    display: grid;
+    grid-template-columns: 14ch 1fr; /* Adjust 12ch based on length of longest text label */ 
+    align-items: center;
+    row-gap: 2px;
+    column-gap: 5px;
     padding: 2px 5px 5px 25px;
     box-sizing: border-box;
     line-height: 27px;
     border-bottom: 1px solid #373737;
+  }
+
+  .contents > :global(label) {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    align-items: center;
+  }
+
+  .contents > :global(label[style*="text-align: center"]) {
+    display: block;
+    text-align: center;
   }
 </style>
