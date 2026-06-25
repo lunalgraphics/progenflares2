@@ -240,7 +240,7 @@
   /** @type {"horizontal" | "vertical"} */
   let layout = "horizontal";
   let dividerX = 360;
-  let dividerY = 360;
+  let dividerY = 200;
 
   function updateLayout() {
     layout = window.innerWidth < 400 ? "vertical" : "horizontal";
@@ -309,7 +309,7 @@
 
 <!-- ─── Export Bar ──────────────────────────────────────────────────── -->
 <div id="exportPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
-  <div class="centered">
+  <div class="centered" style:width="100%">
     {#if !isPhotopeaPlugin && !isPhotoshopPlugin}
       <button on:click={() => createDownloadLink().click()}>Export</button>
       <span style="display: inline-block; margin-left: 5px; margin-right: 5px;">as</span>
@@ -375,9 +375,6 @@
 <!-- ─── Preview Quality Bar ─────────────────────────────────────────── -->
 <div id="sectionAbovePreview" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
   <div class="centered" style:width="100%" style:text-align="center">
-    <!--<button on:click={undo} title="Undo (Ctrl+Z)" class="icon-btn">↩</button>
-    <button on:click={redo} title="Redo (Ctrl+Y)" class="icon-btn">↪</button>
-    <span style="white-space: pre; color: grey;">{"  |  "}</span>-->
     Preview quality
     <select bind:value={flareSettings.downscaling} on:change={() => render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true })}>
       <option value={1}>100%</option>
@@ -386,7 +383,11 @@
       <option value={5 / 2}>40%</option>
       <option value={5}>20%</option>
     </select>
-    <span style="white-space: pre; color: grey;">{"  |  "}</span>
+    {#if layout === "horizontal"}
+      <span style="white-space: pre; color: grey;">{"  |  "}</span>
+    {:else}
+      <br />
+    {/if}
     <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} style="margin-bottom: 0;" />
     Reference Image
     <button on:click={handleRIbutton} title="Import reference image" style="padding: 4px 8px; line-height: 1;">
