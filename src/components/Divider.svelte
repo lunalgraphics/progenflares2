@@ -57,13 +57,13 @@
   }
 
   .divider:hover {
-    background-color: #555555;
+    background-color: var(--color-scheme-3);
   }
 
   .divider[data-layout="horizontal"] {
     height: 100vh;
     width: var(--divider-size);
-    cursor: ew-resize;
+    cursor: col-resize;
     bottom: 0;
     right: var(--divider-x);
     transform: translateX(50%);
