@@ -466,7 +466,7 @@
       style:border-radius="10px"
     />
     <div class="centered" style:text-align="center">
-      <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
+      <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} style:max-width="calc(100vw - 20px)" />
       <br /><br />
       {#if !isPhotoshopPlugin && !isPhotopeaPlugin}
         <span style="width: 145px; text-align: left; display: inline-block;">Image Width</span>
