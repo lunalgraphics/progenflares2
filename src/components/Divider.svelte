@@ -72,7 +72,7 @@
   .divider[data-layout="vertical"] {
     height: var(--divider-size);
     width: 100vw;
-    cursor: ns-resize;
+    cursor: row-resize;
     bottom: var(--divider-y);
     right: 0;
     transform: translateY(50%);
