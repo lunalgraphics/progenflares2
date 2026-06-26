@@ -5,7 +5,7 @@
 -->
 <script>
   import { fade } from "svelte/transition";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
 
   // Components
   import Divider from "./components/Divider.svelte";
@@ -29,6 +29,9 @@
   // Assets
   import textLogo from "./images/textLogo.png";
   import coverImage from "./images/coverImage.jpg";
+
+  // For Photopea plugin use only
+  import Photopea from "photopea";
 
   // ─── Flare Artifact Instances ────────────────────────────────────────
   let flareArtifacts = {
@@ -287,18 +290,23 @@
       window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
     } else if (isPhotopeaPlugin) {
       // Photopea plugin mode
-      const locSearch = new URLSearchParams(location.search);
-      flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
-      flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
-      setTimeout(onStart, 1);
-      window.addEventListener("message", (e) => {
-        if (e.data[0] === "refImage") {
-          referenceImage.src = e.data[1];
-          rIcheckbox.checked = true;
-          handleRIcheckbox();
-        }
+      const pea = new Photopea(window.parent);
+      pea.exportImage("png").then((blob) => {
+        const reader = new FileReader();
+        reader.addEventListener("load", (e) => {
+          const img = new Image();
+          img.addEventListener("load", () => {
+            flareSettings.dimensions.width = img.width;
+            flareSettings.dimensions.height = img.height;
+            referenceImage.src = img.src;
+            rIcheckbox.checked = true;
+            handleRIcheckbox();
+            tick().then(onStart);
+          });
+          img.src = e.target.result;
+        });
+        reader.readAsDataURL(blob);
       });
-      window.opener.postMessage(["pluginStatus", "ready"]);
     }
 
     updateLayout();
@@ -319,11 +327,15 @@
         <option value="webp">WebP</option>
       </select>
     {:else if isPhotopeaPlugin}
-      <button on:click={() => window.opener.postMessage(["finalImage", createDownloadLink().href])}>
+      <button on:click={async () => {
+        const pea = new Photopea(window.parent);
+        await pea.runScript("app.activeDocument.activeLayer = app.activeDocument.layers[0];");
+        await pea.openFromURL(createDownloadLink().href);
+        await pea.runScript("app.activeDocument.activeLayer.blendMode = 'scrn';");
+        await pea.runScript("app.activeDocument.activeLayer.name = 'Lens Flare (Progen Flares 2)';");
+      }}>
         Finish
       </button>
-      <span style="white-space: pre;">{"  "}</span>
-      <button on:click={() => window.close()}>Close</button>
     {:else if isPhotoshopPlugin}
       <button on:click={() => {
         flareSettings.downscaling = 1;
