@@ -1,33 +1,34 @@
 import { exec } from 'child_process';
+import express from 'express';
 import chokidar from 'chokidar';
 
 const PORT = 8181;
 
-// Open dev server
-let sirvProcess = exec(`npx sirv photopea-plugin --port ${PORT}`);
-sirvProcess.on("exit", () => {
-    console.log("Server closed. Restarting...");
-    setTimeout(() => {
-        sirvProcess = exec(`npx sirv photopea-plugin --port ${PORT}`);
-        console.log("Server restarted.");
-    }, 200);
+// Start express static server
+const app = express();
+app.use(express.static('photopea-plugin', { etag: false, lastModified: false }));
+app.listen(PORT, () => {
+    console.log(`Dev server on http://localhost:${PORT}`);
 });
 
-// Watch for changes
-let watcher = chokidar.watch("src", {
+// Watch for changes and rebuild
+const watcher = chokidar.watch("src", {
     ignoreInitial: true,
     awaitWriteFinish: true,
 });
 watcher.on("change", (path) => {
     console.log(`File changed at path ${path}`);
     exec(`npm run build:photopea`, (err, out) => {
+        if (err) {
+            console.error("Build failed:", err.message);
+            return;
+        }
         console.log("Rebuilt project");
-        sirvProcess.kill();
     });
 });
 
 // Get Photopea URL
-let url = `https://www.photopea.com#${encodeURIComponent(JSON.stringify({
+const url = `https://www.photopea.com#${encodeURIComponent(JSON.stringify({
     environment: {
         plugins: [{
             name: "Progen Flares 2",

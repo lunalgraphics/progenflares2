@@ -9,7 +9,7 @@
     "build:electron": "cross-env ELECTRON_APP=true rollup -c",
     "dev": "rollup -c -w",
     "dev:photopea": "node test-photopea-plugin.mjs",
-    "start": "sirv public --no-clear --port 8181"
+    "start": "node -e \"const express = require('express'); const app = express(); app.use(express.static('public', { etag: false, lastModified: false })); app.listen(8181, () => console.log('http://localhost:8181'));\""
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -27,8 +27,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "express": "^4.21.0",
     "photopea": "^1.1.2",
-    "seedrandom": "^3.0.5",
-    "sirv-cli": "^2.0.0"
+    "seedrandom": "^3.0.5"
   }
 }
