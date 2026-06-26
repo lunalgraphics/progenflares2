@@ -513,6 +513,7 @@
   #referenceImage {
     background-color: black;
     background-size: 100% 100%;
+    pointer-events: none;
   }
 
   #baseCanvas {
@@ -520,6 +521,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    cursor: crosshair;
   }
 
   /* ─── Form Controls ──────────────────────────────────────────── */
