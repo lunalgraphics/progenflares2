@@ -25,9 +25,9 @@
 </script>
 
 <Collapsible title="Global" collapsed={false}>
-  <label title="Horizontal position of the light source">Light X: <Slider min={0} max={dimensions.width} bind:value={positioning.x} on:input={update} /></label>
-  <label title="Vertical position of the light source">Light Y: <Slider min={0} max={dimensions.height} bind:value={positioning.y} on:input={update} /></label>
-  <label title="Horizontal focal point for iris reflections">Focus X: <Slider min={0} max={dimensions.width} bind:value={positioning.pivotX} on:input={update} /></label>
-  <label title="Vertical focal point for iris reflections">Focus Y: <Slider min={0} max={dimensions.height} bind:value={positioning.pivotY} on:input={update} /></label>
-  <label title="Multiply all artifact sizes (applied on release)">Scale Multiplier: <Slider min={0.01} max={2} step={0.01} bind:value={sizeMultiplier} on:input={update} on:change={applyScale} /></label>
+  <label title="Horizontal position of the light source">Light X <Slider min={0} max={dimensions.width} bind:value={positioning.x} on:input={update} /></label>
+  <label title="Vertical position of the light source">Light Y <Slider min={0} max={dimensions.height} bind:value={positioning.y} on:input={update} /></label>
+  <label title="Horizontal focal point for iris reflections">Focus X <Slider min={0} max={dimensions.width} bind:value={positioning.pivotX} on:input={update} /></label>
+  <label title="Vertical focal point for iris reflections">Focus Y <Slider min={0} max={dimensions.height} bind:value={positioning.pivotY} on:input={update} /></label>
+  <label title="Multiply all artifact sizes (applied on release)">Scale Multiplier <Slider min={0.01} max={2} step={0.01} bind:value={sizeMultiplier} on:input={update} on:change={applyScale} /></label>
 </Collapsible>

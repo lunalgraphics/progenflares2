@@ -15,26 +15,21 @@ const isElectronApp = process.env.ELECTRON_APP === 'true';
 
 let outputDir = 'public/build';
 if (isPhotoshopPlugin) outputDir = 'photoshop-plugin/webview-contents/build';
-else if (isPhotopeaPlugin) outputDir = 'photopea-plugin/frame-contents/build';
+else if (isPhotopeaPlugin) outputDir = 'photopea-plugin/build';
 else if (isElectronApp) outputDir = 'electron-app/app/build';
 
 function serve() {
-    let server;
-
-    function toExit() {
-        if (server) server.kill(0);
-    }
-
+    let started = false;
     return {
         writeBundle() {
-            if (server) return;
-            server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
-                stdio: ['ignore', 'inherit', 'inherit'],
-                shell: true
+            if (started) return;
+            started = true;
+            const express = require('express');
+            const app = express();
+            app.use(express.static('public', { etag: false, lastModified: false }));
+            app.listen(8181, () => {
+                console.log('Dev server on http://localhost:8181');
             });
-
-            process.on('SIGTERM', toExit);
-            process.on('exit', toExit);
         }
     };
 }

@@ -10,7 +10,7 @@
   /** @type {number} Divider Y position (controls panel height from bottom) */
   export let dividerY = 360;
   /** @type {number} Minimum X value (minimum panel width) */
-  export let minX = 360;
+  export let minX = 270;
   /** @type {number} Minimum Y value */
   export let minY = 50;
 
@@ -57,13 +57,13 @@
   }
 
   .divider:hover {
-    background-color: #555555;
+    background-color: var(--color-scheme-3);
   }
 
   .divider[data-layout="horizontal"] {
     height: 100vh;
     width: var(--divider-size);
-    cursor: ew-resize;
+    cursor: col-resize;
     bottom: 0;
     right: var(--divider-x);
     transform: translateX(50%);
@@ -72,7 +72,7 @@
   .divider[data-layout="vertical"] {
     height: var(--divider-size);
     width: 100vw;
-    cursor: ns-resize;
+    cursor: row-resize;
     bottom: var(--divider-y);
     right: 0;
     transform: translateY(50%);

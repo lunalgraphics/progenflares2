@@ -5,7 +5,7 @@
 -->
 <script>
   import { fade } from "svelte/transition";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
 
   // Components
   import Divider from "./components/Divider.svelte";
@@ -29,6 +29,9 @@
   // Assets
   import textLogo from "./images/textLogo.png";
   import coverImage from "./images/coverImage.jpg";
+
+  // For Photopea plugin use only
+  import Photopea from "photopea";
 
   // ─── Flare Artifact Instances ────────────────────────────────────────
   let flareArtifacts = {
@@ -240,7 +243,7 @@
   /** @type {"horizontal" | "vertical"} */
   let layout = "horizontal";
   let dividerX = 360;
-  let dividerY = 360;
+  let dividerY = 200;
 
   function updateLayout() {
     layout = window.innerWidth < 400 ? "vertical" : "horizontal";
@@ -287,18 +290,23 @@
       window.uxpHost.postMessage({ type: "webViewLoaded", data: true });
     } else if (isPhotopeaPlugin) {
       // Photopea plugin mode
-      const locSearch = new URLSearchParams(location.search);
-      flareSettings.dimensions.width = parseInt(locSearch.get("docWidth"));
-      flareSettings.dimensions.height = parseInt(locSearch.get("docHeight"));
-      setTimeout(onStart, 1);
-      window.addEventListener("message", (e) => {
-        if (e.data[0] === "refImage") {
-          referenceImage.src = e.data[1];
-          rIcheckbox.checked = true;
-          handleRIcheckbox();
-        }
+      const pea = new Photopea(window.parent);
+      pea.exportImage("png").then((blob) => {
+        const reader = new FileReader();
+        reader.addEventListener("load", (e) => {
+          const img = new Image();
+          img.addEventListener("load", () => {
+            flareSettings.dimensions.width = img.width;
+            flareSettings.dimensions.height = img.height;
+            referenceImage.src = img.src;
+            rIcheckbox.checked = true;
+            handleRIcheckbox();
+            tick().then(onStart);
+          });
+          img.src = e.target.result;
+        });
+        reader.readAsDataURL(blob);
       });
-      window.opener.postMessage(["pluginStatus", "ready"]);
     }
 
     updateLayout();
@@ -309,7 +317,7 @@
 
 <!-- ─── Export Bar ──────────────────────────────────────────────────── -->
 <div id="exportPanel" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
-  <div class="centered">
+  <div class="centered" style:width="100%">
     {#if !isPhotopeaPlugin && !isPhotoshopPlugin}
       <button on:click={() => createDownloadLink().click()}>Export</button>
       <span style="display: inline-block; margin-left: 5px; margin-right: 5px;">as</span>
@@ -319,11 +327,15 @@
         <option value="webp">WebP</option>
       </select>
     {:else if isPhotopeaPlugin}
-      <button on:click={() => window.opener.postMessage(["finalImage", createDownloadLink().href])}>
+      <button on:click={async () => {
+        const pea = new Photopea(window.parent);
+        await pea.runScript("app.activeDocument.activeLayer = app.activeDocument.layers[0];");
+        await pea.openFromURL(createDownloadLink().href);
+        await pea.runScript("app.activeDocument.activeLayer.blendMode = 'scrn';");
+        await pea.runScript("app.activeDocument.activeLayer.name = 'Lens Flare (Progen Flares 2)';");
+      }}>
         Finish
       </button>
-      <span style="white-space: pre;">{"  "}</span>
-      <button on:click={() => window.close()}>Close</button>
     {:else if isPhotoshopPlugin}
       <button on:click={() => {
         flareSettings.downscaling = 1;
@@ -375,11 +387,8 @@
 <!-- ─── Preview Quality Bar ─────────────────────────────────────────── -->
 <div id="sectionAbovePreview" data-layout={layout} style:--divider-x="{dividerX}px" style:--divider-y="{dividerY}px">
   <div class="centered" style:width="100%" style:text-align="center">
-    <!--<button on:click={undo} title="Undo (Ctrl+Z)" class="icon-btn">↩</button>
-    <button on:click={redo} title="Redo (Ctrl+Y)" class="icon-btn">↪</button>
-    <span style="white-space: pre; color: grey;">{"  |  "}</span>-->
-    Preview quality
-    <select bind:value={flareSettings.downscaling} on:change={() => render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true })}>
+    {#if layout === "horizontal"}Preview quality{:else}Quality{/if}
+    <select bind:value={flareSettings.downscaling} on:change={() => render({ hotspot: true, streak: true, ring: true, miIris: true, glow: true })} style:font-size="small">
       <option value={1}>100%</option>
       <option value={5 / 4}>80%</option>
       <option value={5 / 3}>60%</option>
@@ -388,14 +397,16 @@
     </select>
     <span style="white-space: pre; color: grey;">{"  |  "}</span>
     <input type="checkbox" bind:this={rIcheckbox} on:change={handleRIcheckbox} style="margin-bottom: 0;" />
-    Reference Image
-    <button on:click={handleRIbutton} title="Import reference image" style="padding: 4px 8px; line-height: 1;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-        <polyline points="17 8 12 3 7 8"/>
-        <line x1="12" y1="3" x2="12" y2="15"/>
-      </svg>
-    </button>
+    {#if layout === "horizontal"}Reference Image{:else}Reference{/if}
+    {#if !isPhotopeaPlugin && !isPhotoshopPlugin}
+      <button on:click={handleRIbutton} title="Import reference image" style="padding: 4px 8px; line-height: 1;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+      </button>
+    {/if}
   </div>
 </div>
 
@@ -469,7 +480,7 @@
       style:border-radius="10px"
     />
     <div class="centered" style:text-align="center">
-      <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} />
+      <img alt="PROGEN FLARES 2" src={textLogo} width="321" draggable={false} style:max-width="calc(100vw - 20px)" />
       <br /><br />
       {#if !isPhotoshopPlugin && !isPhotopeaPlugin}
         <span style="width: 145px; text-align: left; display: inline-block;">Image Width</span>
